@@ -31,7 +31,7 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
     /** 0 = remaining countdown (and ranged ring); other values are the extra types, see [buildKind]. */
     open val kind: Int get() = 0
 
-    /** Provider class name used for the minute-pulse PendingIntent; debug previews spoof a real provider. */
+    /** Provider class name used to cancel legacy minute-pulse PendingIntents. */
     open val selfName: String get() = javaClass.name
 
     /** Countdown text style; previews override to compare native renderings. */
@@ -130,15 +130,16 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         }
     }
 
-    /** Kept only while a ranged-value face is active, to advance its progress ring once a minute. */
-    internal fun scheduleNextMinute() {
-        val at = (System.currentTimeMillis() / 60000 + 1) * 60000 + 500
+    /** Battery-policy change from original 1.1.2: remove the old minute wake pulse.
+     * The system's provider update period refreshes ranged values; text remains a
+     * native TimeDifferenceComplicationText. Only prayer/iqama boundaries wake us.
+     */
+    internal fun cancelLegacyMinutePulse() {
         val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pi = PendingIntent.getBroadcast(this, 8001,
             Intent(this, ComplicationTickReceiver::class.java).setAction("tick_" + selfName).putExtra("cls", selfName),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        try { am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
-        catch (_: SecurityException) { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
+        if (pi != null) { am.cancel(pi); pi.cancel() }
     }
 
     override suspend fun onComplicationRequest(request: ComplicationRequest): ComplicationData? {
@@ -147,22 +148,22 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         Log.i("WathakkerCd", "request cls=$selfName id=${request.complicationInstanceId} type=${request.complicationType}")
         if (kind == 0 || kind == 8) {
             scheduleBoundary(iq?.at ?: s.next.at)
-            // Only an actual ranged-value request keeps the minute pulse alive (its progress ring
-            // needs it). When the ring face is removed, requests stop and the pulse dies with the
-            // next fire - no idle wake tail. After boot/update the system re-queries active
-            // complications, which re-arms it if a ring face is still present.
-            if (request.complicationType == ComplicationType.RANGED_VALUE) scheduleNextMinute()
+            cancelLegacyMinutePulse()
         }
         return build(request.complicationType, s, iq = iq)
     }
 }
 
-/** Fires the minute pulse that advances the progress ring on ranged-value faces. Arms only from actual ranged requests; dies with the next fire once they stop. */
+/** Compatibility receiver: discard a legacy minute pulse without requesting or rearming updates. */
 class ComplicationTickReceiver : BroadcastReceiver() {
     override fun onReceive(c: Context, i: Intent) {
         val cls = i.getStringExtra("cls") ?: return
-        Log.i("WathakkerCd", "tick fire cls=$cls")
-        ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
+        val am = c.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val pi = PendingIntent.getBroadcast(c, 8001,
+            Intent(c, ComplicationTickReceiver::class.java).setAction("tick_" + cls).putExtra("cls", cls),
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
+        if (pi != null) { am.cancel(pi); pi.cancel() }
+        Log.i("WathakkerCd", "legacy minute pulse discarded cls=$cls")
     }
 }
 
