@@ -156,13 +156,14 @@ fun PatternSection(selected: Int, onPick: (Int) -> Unit) {
 }
 
 @Composable
-fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, showColors: Boolean = true, showPattern: Boolean = true, onApply: (String, String, Int, Int) -> Unit, onNeedFilesPermission: () -> Unit = {}) {
+fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, showColors: Boolean = true, showPattern: Boolean = true, currentTapOpen: Boolean = true, tapRefresh: Boolean = false, onApply: (String, String, Int, Int, Boolean) -> Unit, onNeedFilesPermission: () -> Unit = {}) {
     val cs = MaterialTheme.colorScheme
     // Taps only select; nothing is saved or closed until Apply (One UI style).
     var barSel by remember { mutableStateOf(current) }
     var bgSel by remember { mutableStateOf(currentBg) }
     var patSel by remember { mutableStateOf(currentPattern) }
     var accentSel by remember { mutableStateOf(currentAccent.toString()) }
+    var tapOpen by remember { mutableStateOf(currentTapOpen) }
     Box(
         modifier = Modifier.fillMaxSize().background(cs.background).padding(24.dp),
         contentAlignment = Alignment.Center
@@ -181,6 +182,14 @@ fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, cu
             ) {
                 Text(L10n.t(S.WidgetSettings), color = cs.onSurface, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(12.dp))
+                Text(L10n.t(S.WidgetTapTitle), color = cs.onSurfaceVariant, fontSize = 13.sp)
+                Spacer(Modifier.height(8.dp))
+                com.example.ui.oneui.OneUISegmented(
+                    options = listOf(L10n.t(S.WidgetTapOpenApp), L10n.t(if (tapRefresh) S.WidgetTapRefresh else S.WidgetTapNothing)),
+                    selected = if (tapOpen) 0 else 1,
+                    onSelect = { tapOpen = it == 0 }
+                )
+                Spacer(Modifier.height(16.dp))
                 // The decorated OneUI widget has fixed bar/bg colours but a selectable accent
                 // (3.3.3): the accent section goes ABOVE the pattern section (his call 22.10.2026).
                 if (showColors) {
@@ -204,7 +213,7 @@ fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, cu
                         .height(52.dp)
                         .clip(RoundedCornerShape(26.dp))
                         .background(Color(0xFF377AFF))
-                        .plainClickable { onApply(barSel, bgSel, patSel, accentSel.toIntOrNull() ?: 0) },
+                        .plainClickable { onApply(barSel, bgSel, patSel, accentSel.toIntOrNull() ?: 0, tapOpen) },
                     contentAlignment = Alignment.Center
                 ) {
                     Text(L10n.t(S.Apply), color = Color.White, fontSize = 17.sp, fontWeight = FontWeight.Bold)
@@ -260,9 +269,13 @@ class WidgetConfigActivity : ComponentActivity() {
                     currentAccent = sp.getInt(keyFor("widget_oneui_color"), 0),
                     showColors = !decorated && !tapOnly,
                     showPattern = decorated,
+                    currentTapOpen = sp.getString(keyFor("widget_tap"), "open") == "open",
+                    tapRefresh = prov in setOf("com.example.widget.HeroWidgetProvider", "com.example.widget.NextPrayerWidgetProvider", "com.example.widget.PrayerBarWidgetProvider", "com.example.widget.ClockWidgetProvider", "com.example.widget.PillWidgetProvider", "com.example.widget.OneUIWidgetProvider"),
                     onNeedFilesPermission = { com.example.ui.PermissionFlow.requestFilesIfNeeded(this@WidgetConfigActivity) },
-                    onApply = { bar, bg, pat, accent ->
+                    onApply = { bar, bg, pat, accent, tapOpen ->
                         sp.edit().putString(keyFor("widget_bar_color"), bar).putString(keyFor("widget_bg_color"), bg).putInt(keyFor("widget_pattern"), pat).putInt(keyFor("widget_oneui_color"), accent).apply()
+                        val refresh = prov in setOf("com.example.widget.HeroWidgetProvider", "com.example.widget.NextPrayerWidgetProvider", "com.example.widget.PrayerBarWidgetProvider", "com.example.widget.ClockWidgetProvider", "com.example.widget.PillWidgetProvider", "com.example.widget.OneUIWidgetProvider")
+                        sp.edit().putString(keyFor("widget_tap"), if (tapOpen) "open" else if (refresh) "refresh" else "none").apply()
                         WidgetUpdater.INSTANCE.updateAll(this@WidgetConfigActivity)
                         com.example.lockwidgets.HomeWidgets.updateAll(this@WidgetConfigActivity)
                         setResult(RESULT_OK, Intent().putExtra("appWidgetId", appWidgetId))
