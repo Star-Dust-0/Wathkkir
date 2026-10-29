@@ -154,7 +154,16 @@ fun OneUIScreen(
                                 Icon(Icons.Outlined.Menu, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Menu), tint = MaterialTheme.colorScheme.onBackground)
                             }
                         }
-                        Spacer(Modifier.weight(1f))
+                        Spacer(Modifier.width(14.dp))
+                        Text(
+                            title,
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            fontSize = 18.sp,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.weight(1f)
+                        )
                         if (actions != null) actions()
                     }
                     Spacer(Modifier.height(20.dp))
