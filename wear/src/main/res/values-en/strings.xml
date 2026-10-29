@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">Wathkkir</string>
+  <string name="comp_both">Gregorian &amp; Hijri</string>
+  <string name="comp_countdown">Next prayer countdown</string>
+  <string name="comp_greg">Gregorian date</string>
+  <string name="comp_hijri">Hijri date</string>
+  <string name="comp_next_time">Next prayer time</string>
+  <string name="complication_name">Next prayer</string>
+  <string name="tile_name">Next prayer</string>
+</resources>

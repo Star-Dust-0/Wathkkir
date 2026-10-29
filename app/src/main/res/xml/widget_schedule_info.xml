@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider android:description="@string/widget_schedule_desc" android:minWidth="250.0dip" android:minHeight="40.0dip" android:updatePeriodMillis="0" android:initialLayout="@layout/widget_schedule" android:previewImage="@drawable/home_preview_schedule" android:resizeMode="horizontal|vertical" android:widgetCategory="home_screen|keyguard" android:widgetFeatures="reconfigurable" android:previewLayout="@layout/home_preview_schedule" android:maxResizeWidth="330.0dip" android:maxResizeHeight="110.0dip" android:targetCellWidth="4" android:targetCellHeight="1"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
-
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_schedule_desc"
+    android:minWidth="250dp"
+    android:minHeight="40dp"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_schedule"
+    android:configure="com.example.widget.WidgetConfigActivity"
+    android:previewImage="@drawable/home_preview_schedule"
+    android:resizeMode="vertical|horizontal"
+    android:widgetCategory="keyguard|home_screen"
+    android:widgetFeatures="reconfigurable"
+    android:previewLayout="@layout/home_preview_schedule"
+    android:maxResizeWidth="330dp"
+    android:maxResizeHeight="110dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="1"/>
