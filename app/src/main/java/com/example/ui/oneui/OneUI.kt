@@ -668,37 +668,28 @@ fun OneUIBottomBar(
 ) {
     val cs = MaterialTheme.colorScheme
     val navInset = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-    // One UI 7 floating pill bar (colours sampled from the original 3.4.2 light theme capture)
+    // Original b51.c/cb0.a: the prayer-sky tint uses the theme surface, not white
+    // or the card background. Radius is 28dp; the parent provides bottom alignment.
     val skyMode = if (selectedRoute == "prayer") PrayerSky.mode else 0
-    val lightBar = skyMode == 0 && cs.background.luminance() > 0.5f
     val barShape = RoundedCornerShape(32.dp)
+    val dark = ThemeSettings.isDark()
+    val selectedTint = if (dark) Color(0xFF78B8F8) else Color(0xFF2E6DB4)
     Box(modifier.fillMaxWidth()) {
-    if (skyMode == 0) Box(
-        Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(navInset + 12.dp + 6.dp)
-            .background(androidx.compose.ui.graphics.Brush.verticalGradient(0f to Color.Transparent, 0.3f to cs.background, 1f to cs.background))
-    )
     Row(
         Modifier.align(Alignment.BottomCenter)
             .fillMaxWidth()
             .padding(horizontal = 20.dp)
             .padding(bottom = navInset + 12.dp)
-            .height(64.dp)
-            .then(
-                if (skyMode == 1) Modifier.oneUIGlass(barShape, Color(0xFF17171B), alpha = 0.46f, blurRadius = 24)
-                else if (skyMode == 2) Modifier.oneUIGlass(barShape, Color.White, alpha = 0.55f, blurRadius = 24)
-                else if (lightBar) Modifier.clip(barShape).background(Color(0xFFEDEDF0)) else Modifier.oneUIGlass(barShape, cs.surface, alpha = 0.85f, blurRadius = 28))
-            .padding(horizontal = 2.dp),
+            .then(Modifier.oneUIGlass(barShape, cs.surface,
+                alpha = if (skyMode == 1) 0.46f else if (skyMode == 2) 0.55f else 0.85f,
+                blurRadius = 28))
+            .height(64.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
             tabs.forEach { tab ->
                 val selected = tab.route == selectedRoute
                 val tint by animateColorAsState(
-                    when {
-                        skyMode == 1 -> if (selected) Color(0xFF3E91FF) else Color(0xB8FFFFFF)
-                        skyMode == 2 -> if (selected) Color(0xFF0381FE) else Color(0xFF111114)
-                        selected -> if (lightBar) Color(0xFF2E6DB4) else cs.primary
-                        else -> if (lightBar) Color(0xFF333334) else cs.onSurface.copy(alpha = 0.78f)
-                    }, label = "tabTint")
+                    if (selected) selectedTint else cs.onSurface.copy(alpha = 0.78f), label = "tabTint")
                 Column(
                     Modifier
                         .weight(1f)
@@ -715,7 +706,7 @@ fun OneUIBottomBar(
                             .height(30.dp)
                             .width(56.dp)
                             .clip(CircleShape)
-                            .background(if (selected) (if (skyMode != 0) tint.copy(alpha = 0.18f) else if (lightBar) Color(0xFFCCD7E6) else cs.primary.copy(alpha = 0.16f)) else Color.Transparent),
+                            .background(if (selected) selectedTint.copy(alpha = 0.16f) else Color.Transparent),
                         contentAlignment = Alignment.Center
                     ) { tab.icon(tint) }
                     Text(
@@ -725,7 +716,7 @@ fun OneUIBottomBar(
                         fontSize = 11.sp,
                         maxLines = 1,
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth().padding(horizontal = 1.3.dp)
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 2.dp)
                     )
                 }
             }

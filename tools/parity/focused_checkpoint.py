@@ -16,11 +16,25 @@ def prefs(wear,lang):
  if wear: xml=f'<map><int name="lang" value="{2 if lang=="en" else 1}"/><boolean name="perm_asked" value="true"/></map>';name='wear_prefs'
  else: xml=f'<map><string name="language">{lang}</string><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>';name='app_prefs'
  adb('shell',f"echo '{xml}' > {folder}/{name}.xml; chown $(stat -c %u:%g /data/data/{app}) {folder}/{name}.xml; chmod 660 {folder}/{name}.xml")
-adb('root');time.sleep(3);adb('shell','settings','put','global','hide_error_dialogs','1')
+adb('wait-for-device')
+for i in range(90):
+ if adb('shell','getprop','sys.boot_completed').strip() == '1': break
+ time.sleep(3)
+time.sleep(30)
+adb('root');time.sleep(4);adb('wait-for-device')
+adb('shell','settings','put','global','hide_error_dialogs','1')
+adb('shell','svc','power','stayon','true')
+adb('shell','settings','put','system','screen_off_timeout','1800000')
+adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
 for build in ['original','rebuilt']:
  adb('uninstall','com.wathakker.app')
  print(adb('install','-g',f'{kind}-{build}.apk'),flush=True)
  if kind=='phone':print(adb('install','-r','widgethost.apk'),flush=True)
+ else:
+  # One-time warm-up after installation, before any English reference capture.
+  adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
+  print(adb('shell','am','start','-W','-n','com.wathakker.app/com.wathakker.wear.MainActivity'),flush=True)
+  time.sleep(20)
  for lang in ['en','ar']:
   adb('shell','am','force-stop','com.wathakker.app');prefs(kind=='watch',lang);clock();adb('logcat','-c')
   if kind=='watch':
