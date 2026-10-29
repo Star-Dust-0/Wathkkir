@@ -118,7 +118,7 @@ fun OneUIScreen(
     val hazeState = LocalHazeState.current
     Box(modifier.fillMaxSize().background(bg)) {
         if (background != null) {
-            Box(Modifier.fillMaxSize().then(if (hazeState != null) Modifier.hazeSource(hazeState) else Modifier)) { background() }
+            Box(Modifier.fillMaxSize()) { background() }
         }
         LazyColumn(
             state = listState,

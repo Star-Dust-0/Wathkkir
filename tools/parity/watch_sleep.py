@@ -46,7 +46,7 @@ for build in ['original','rebuilt']:
  results[build]={'boundary_fire_observed':'boundary fire' in log,'legacy_tick_events':[l for l in log.splitlines() if 'tick' in l.lower()]}
  # Capture all six actual provider renderings for visual inspection.
  for k in [0,1,2,3,4,8]:
-  save(f'{build}-provider-{k}-start.txt',adb('shell','am','start','-W','-n','com.wathakker.app/com.wathakker.wear.PreviewActivity','--es','mode','short','--ei','kind',str(k)))
+  save(f'{build}-provider-{k}-start.txt',adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.wathakker.wear.PreviewActivity','--es','mode','short','--ei','kind',str(k)))
   time.sleep(2);shot(f'{build}-provider-{k}.png')
  save(build+'-package.txt',adb('shell','dumpsys','package','com.wathakker.app'))
 (out/'sleep-results.json').write_text(json.dumps(results,indent=2))

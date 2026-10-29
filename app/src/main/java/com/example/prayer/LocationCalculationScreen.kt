@@ -98,6 +98,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
         try { com.example.prayer.alerts.PrayerAlertScheduler.INSTANCE.scheduleAll(context) } catch (_: Throwable) {}
         try { WidgetUpdater.INSTANCE.updateAll(context) } catch (_: Throwable) {}
         try { LockWidgets.updateAll(context) } catch (_: Throwable) {}
+        try { com.example.utils.WearSync.push(context) } catch (_: Throwable) {}
     }
 
     if (showCityDialog) {

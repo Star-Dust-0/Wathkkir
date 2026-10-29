@@ -66,6 +66,7 @@ import com.example.fajr.calculation.PrayerAdjustments
 import com.example.fajr.calculation.PrayerTimesCalculator
 import com.example.fajr.ui.CitySearchDialog
 import com.example.ui.oneui.oneUIGlass
+import dev.chrisbanes.haze.hazeSource
 import androidx.compose.material.icons.outlined.Settings
 import com.example.ui.oneui.OneUIDivider
 import com.example.ui.oneui.OneUIProgressBar
@@ -317,6 +318,9 @@ fun PrayerTimesContent(
     // The prayer tab is always drawn on the dark sky scene, whatever the app theme is.
     // Original palette per sky phase: Fajr, Maghrib and Isha skies use light-on-dark; Shuruq, Dhuhr and Asr use dark ink on light glass.
     val lightSky = skyIndex.coerceIn(0, 5) in 1..3
+    val outerHaze = com.example.ui.oneui.LocalHazeState.current
+    val skyHaze = dev.chrisbanes.haze.rememberHazeState()
+    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.oneui.LocalHazeState provides skyHaze) {
     MaterialTheme(colorScheme = if (lightSky) com.example.ui.theme.ForcedLightScheme else com.example.ui.theme.ForcedDarkScheme, typography = MaterialTheme.typography, shapes = MaterialTheme.shapes) {
     val cs0 = MaterialTheme.colorScheme
     val cs = if (lightSky) cs0.copy(onSurface = Color(0xFF111114), onSurfaceVariant = Color(0xA81E1E22), primary = Color(0xFF0381FE)) else cs0
@@ -347,7 +351,8 @@ fun PrayerTimesContent(
                     painter = androidx.compose.ui.res.painterResource(skyRes[i]),
                     contentDescription = null,
                     contentScale = androidx.compose.ui.layout.ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize().hazeSource(skyHaze)
+                        .then(if (outerHaze != null) Modifier.hazeSource(outerHaze) else Modifier)
                 )
             }
         }
@@ -468,6 +473,8 @@ fun PrayerTimesContent(
         }
     }
     }
+}
+
 }
 
 private fun formatMinSec(millis: Long): String {
