@@ -18,19 +18,33 @@ object WearSync {
     /** Time of the last successful hand-off to the Data Layer on this phone; 0 if never. */
     fun lastSyncMillis(c: Context): Long = c.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getLong("last_sync", 0L)
 
+    internal fun payload(app: Context): com.google.android.gms.wearable.DataMap {
+        val p = FajrPreferences(app)
+        return com.google.android.gms.wearable.DataMap().apply {
+            putDouble("lat", p.latitude)
+            putDouble("lon", p.longitude)
+            putString("city", p.cityName)
+            putBoolean("h24", is24h(app))
+            putString("lang", app.getSharedPreferences("app_prefs", Context.MODE_PRIVATE).getString("language", "ar") ?: "ar")
+            putLong("ts", System.currentTimeMillis())
+        }
+    }
+
+    internal fun signature(data: com.google.android.gms.wearable.DataMap): String =
+        "${data.getDouble("lat")}|${data.getDouble("lon")}|${data.getString("city")}|${data.getBoolean("h24")}|${data.getString("lang")}"
+
     fun push(context: Context, onDone: ((Boolean) -> Unit)? = null) {
         try {
             val app = context.applicationContext
-            val p = FajrPreferences(app)
+            val data = payload(app)
+            val sig = signature(data)
+            val prefs = app.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            if (prefs.getString("last_sig", null) == sig) { onDone?.invoke(true); return }
             val req = PutDataMapRequest.create("/wathakker/location")
-            req.dataMap.putDouble("lat", p.latitude)
-            req.dataMap.putDouble("lon", p.longitude)
-            req.dataMap.putString("city", p.cityName)
-            req.dataMap.putBoolean("h24", is24h(app))
-            req.dataMap.putLong("ts", System.currentTimeMillis())
+            req.dataMap.putAll(data)
             Wearable.getDataClient(app).putDataItem(req.asPutDataRequest().setUrgent())
                 .addOnSuccessListener {
-                    app.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putLong("last_sync", System.currentTimeMillis()).apply()
+                    app.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putLong("last_sync", System.currentTimeMillis()).putString("last_sig", sig).apply()
                     onDone?.invoke(true)
                 }
                 .addOnFailureListener { onDone?.invoke(false) }
