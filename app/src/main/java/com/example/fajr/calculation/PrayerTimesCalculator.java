@@ -219,86 +219,53 @@ public final class PrayerTimesCalculator {
         return new SolarParams((((((TimeZone.getDefault().getOffset(calendar.getTimeInMillis()) / 3600000.0d) * 15.0d) - d) / 15.0d) + 12.0d) - ((fixAngle2 / 15.0d) - (fixAngle(Math.toDegrees(Math.atan2(Math.sin(Math.toRadians(fixAngle3)) * Math.cos(Math.toRadians(d4)), Math.cos(Math.toRadians(fixAngle3))))) / 15.0d)), Math.toDegrees(Math.asin(Math.sin(Math.toRadians(fixAngle3)) * Math.sin(Math.toRadians(d4)))));
     }
 
-    public final DayPrayerTimes calculateAll(Calendar calendar, double d, double d2, CalculationMethod calculationMethod, int i, int i2, int[] iArr) {
-        double d3;
-        long roundMinute;
-        long roundMinute2;
-        PrayerTimesCalculator prayerTimesCalculator;
-        double d4;
-        long roundMinute3;
-        long floorMinute;
-        long roundMinute4;
-        long roundMinute5;
+    public final DayPrayerTimes calculateAll(Calendar calendar, double latitude, double longitude,
+            CalculationMethod method, int asrFactor, int highLatitudeRule, int[] offsets) {
         calendar.getClass();
-        calculationMethod.getClass();
-        SolarParams solarParams = solarParams(calendar, d2);
-        double transit = solarParams.getTransit();
-        double declination = solarParams.getDeclination();
-        double hourAngleBelowHorizon = hourAngleBelowHorizon(0.833d, d, declination) / 15.0d;
-        double d5 = transit - hourAngleBelowHorizon;
-        double d6 = transit + hourAngleBelowHorizon;
-        double d7 = 24.0d - (d6 - d5);
-        PrayerTimesCalculator prayerTimesCalculator2 = this;
-        double hourAngleAboveHorizon = prayerTimesCalculator2.hourAngleAboveHorizon(Math.toDegrees(Math.atan(1.0d / (Math.tan(Math.toRadians(Math.abs(d - declination))) + i))), d, declination);
-        long roundMinute6 = roundMinute(prayerTimesCalculator2.hoursToMillis(calendar, d6));
-        Double ishaAngle = calculationMethod.getIshaAngle();
-        double doubleValue = ishaAngle != null ? ishaAngle.doubleValue() : 17.0d;
-        if (calculationMethod.getIshaMinutesAfterMaghrib() != null) {
-            roundMinute = roundMinute6 + (calculationMethod.getIshaMinutesAfterMaghrib().intValue() * 60000);
-            d3 = d7;
+        method.getClass();
+        SolarParams solar = solarParams(calendar, longitude);
+        double transit = solar.getTransit();
+        double declination = solar.getDeclination();
+        double sunHourAngle = hourAngleBelowHorizon(0.833d, latitude, declination) / 15.0d;
+        double sunriseHours = transit - sunHourAngle;
+        double sunsetHours = transit + sunHourAngle;
+        double nightHours = 24.0d - (sunsetHours - sunriseHours);
+        double asrAngle = Math.toDegrees(Math.atan(1.0d /
+                (Math.tan(Math.toRadians(Math.abs(latitude - declination))) + asrFactor)));
+        long maghrib = roundMinute(hoursToMillis(calendar, sunsetHours));
+        double ishaAngle = method.getIshaAngle() != null ? method.getIshaAngle() : 17.0d;
+        long isha;
+        if (method.getIshaMinutesAfterMaghrib() != null) {
+            isha = maghrib + method.getIshaMinutesAfterMaghrib() * 60000L;
+        } else if (invalidBelowHorizon(ishaAngle, latitude, declination) && highLatitudeRule > 0) {
+            isha = roundMinute(hoursToMillis(calendar,
+                    highLatNightTime(sunsetHours, nightHours, ishaAngle, highLatitudeRule, true)));
         } else {
-            if (prayerTimesCalculator2.invalidBelowHorizon(doubleValue, d, declination) && i2 > 0) {
-                prayerTimesCalculator2 = this;
-                double highLatNightTime = prayerTimesCalculator2.highLatNightTime(d6, d7, doubleValue, i2, true);
-                d3 = d7;
-                roundMinute2 = roundMinute(prayerTimesCalculator2.hoursToMillis(calendar, highLatNightTime));
-                declination = declination;
-                if (prayerTimesCalculator2.invalidBelowHorizon(calculationMethod.getFajrAngle(), d, declination) || i2 <= 0) {
-                    prayerTimesCalculator = this;
-                    d4 = d5;
-                    roundMinute3 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, transit - (prayerTimesCalculator.hourAngleBelowHorizon(calculationMethod.getFajrAngle(), d, declination) / 15.0d)));
-                } else {
-                    double d8 = d3;
-                    prayerTimesCalculator = this;
-                    d4 = d5;
-                    roundMinute3 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, prayerTimesCalculator.highLatNightTime(d5, d8, calculationMethod.getFajrAngle(), i2, false)));
-                }
-                floorMinute = floorMinute(prayerTimesCalculator.hoursToMillis(calendar, d4));
-                roundMinute4 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, transit));
-                roundMinute5 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, (hourAngleAboveHorizon / 15.0d) + transit));
-                if (iArr != null && iArr.length >= 6) {
-                    roundMinute3 += iArr[0] * 60000;
-                    floorMinute += iArr[1] * 60000;
-                    roundMinute4 += iArr[2] * 60000;
-                    roundMinute5 += iArr[3] * 60000;
-                    roundMinute6 = (iArr[4] * 60000) + roundMinute6;
-                    roundMinute2 = (iArr[5] * 60000) + roundMinute2;
-                }
-                return new DayPrayerTimes(roundMinute3, floorMinute, roundMinute4, roundMinute5, roundMinute6, roundMinute2);
-            }
-            d3 = d7;
-            prayerTimesCalculator2 = this;
-            declination = declination;
-            roundMinute = roundMinute(prayerTimesCalculator2.hoursToMillis(calendar, (prayerTimesCalculator2.hourAngleBelowHorizon(doubleValue, d, declination) / 15.0d) + transit));
+            isha = roundMinute(hoursToMillis(calendar,
+                    transit + hourAngleBelowHorizon(ishaAngle, latitude, declination) / 15.0d));
         }
-        roundMinute2 = roundMinute;
-        if (prayerTimesCalculator2.invalidBelowHorizon(calculationMethod.getFajrAngle(), d, declination)) {
+        double fajrHours;
+        // The original bytecode takes the night-portion branch when the angle is
+        // unavailable AND a high-latitude rule is selected. JADX inverted/lost it.
+        if (invalidBelowHorizon(method.getFajrAngle(), latitude, declination) && highLatitudeRule > 0) {
+            fajrHours = highLatNightTime(sunriseHours, nightHours, method.getFajrAngle(), highLatitudeRule, false);
+        } else {
+            fajrHours = transit - hourAngleBelowHorizon(method.getFajrAngle(), latitude, declination) / 15.0d;
         }
-        prayerTimesCalculator = this;
-        d4 = d5;
-        roundMinute3 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, transit - (prayerTimesCalculator.hourAngleBelowHorizon(calculationMethod.getFajrAngle(), d, declination) / 15.0d)));
-        floorMinute = floorMinute(prayerTimesCalculator.hoursToMillis(calendar, d4));
-        roundMinute4 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, transit));
-        roundMinute5 = roundMinute(prayerTimesCalculator.hoursToMillis(calendar, (hourAngleAboveHorizon / 15.0d) + transit));
-        if (iArr != null) {
-            roundMinute3 += iArr[0] * 60000;
-            floorMinute += iArr[1] * 60000;
-            roundMinute4 += iArr[2] * 60000;
-            roundMinute5 += iArr[3] * 60000;
-            roundMinute6 = (iArr[4] * 60000) + roundMinute6;
-            roundMinute2 = (iArr[5] * 60000) + roundMinute2;
+        long fajr = roundMinute(hoursToMillis(calendar, fajrHours));
+        long sunrise = floorMinute(hoursToMillis(calendar, sunriseHours));
+        long dhuhr = roundMinute(hoursToMillis(calendar, transit));
+        long asr = roundMinute(hoursToMillis(calendar,
+                transit + hourAngleAboveHorizon(asrAngle, latitude, declination) / 15.0d));
+        if (offsets != null && offsets.length >= 6) {
+            fajr += offsets[0] * 60000L;
+            sunrise += offsets[1] * 60000L;
+            dhuhr += offsets[2] * 60000L;
+            asr += offsets[3] * 60000L;
+            maghrib += offsets[4] * 60000L;
+            isha += offsets[5] * 60000L;
         }
-        return new DayPrayerTimes(roundMinute3, floorMinute, roundMinute4, roundMinute5, roundMinute6, roundMinute2);
+        return new DayPrayerTimes(fajr, sunrise, dhuhr, asr, maghrib, isha);
     }
 
     public final long calculateFajrTime(Calendar calendar, double d, double d2, CalculationMethod calculationMethod) {
