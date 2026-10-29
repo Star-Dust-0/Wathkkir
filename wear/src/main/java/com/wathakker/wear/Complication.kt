@@ -146,6 +146,15 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         val s = Prayer.compute(this)
         val iq = Prayer.iqamaNow(this)
         Log.i("WathakkerCd", "request cls=$selfName id=${request.complicationInstanceId} type=${request.complicationType}")
+        if (kind in 1..3) {
+            scheduleBoundary(java.util.Calendar.getInstance().apply {
+                add(java.util.Calendar.DAY_OF_YEAR, 1)
+                set(java.util.Calendar.HOUR_OF_DAY, 0)
+                set(java.util.Calendar.MINUTE, 0)
+                set(java.util.Calendar.SECOND, 0)
+                set(java.util.Calendar.MILLISECOND, 0)
+            }.timeInMillis)
+        }
         if (kind == 0 || kind == 8) {
             scheduleBoundary(iq?.at ?: s.next.at)
             cancelLegacyMinutePulse()
@@ -172,7 +181,7 @@ class ComplicationBoundaryReceiver : BroadcastReceiver() {
     override fun onReceive(c: Context, i: Intent) {
         Log.i("WathakkerCd", "boundary fire")
         c.getSharedPreferences("cdb", 0).edit().remove("armed").apply()
-        for (cls in listOf(PrayerComplicationService::class.java, UpcomingCountdownComplication::class.java, NextTimeComplication::class.java)) {
+        for (cls in listOf(PrayerComplicationService::class.java, DateGregComplication::class.java, DateHijriComplication::class.java, DateBothComplication::class.java, UpcomingCountdownComplication::class.java, NextTimeComplication::class.java)) {
             ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
         }
     }
