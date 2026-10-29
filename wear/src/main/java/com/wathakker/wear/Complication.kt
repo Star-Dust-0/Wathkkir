@@ -81,8 +81,13 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
             ComplicationType.RANGED_VALUE -> {
                 val total = (((iq?.at ?: s.next.at) - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceAtLeast(1f)
                 val elapsed = ((s.now - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceIn(0f, total)
-                RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
-                    .setText(countdown).setTitle(title).setTapAction(tap()).build()
+                val builder = if (android.os.Build.VERSION.SDK_INT >= 33 && !preview) {
+                    RangedValueComplicationData.Builder(
+                        nativeRing(iq?.prayer?.at ?: s.prev.at, iq?.at ?: s.next.at),
+                        elapsed, 0f, total, desc
+                    )
+                } else RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
+                builder.setText(countdown).setTitle(title).setTapAction(tap()).build()
             }
             ComplicationType.SHORT_TEXT ->
                 ShortTextComplicationData.Builder(countdown, desc).setTitle(title).setTapAction(tap()).build()
@@ -91,6 +96,20 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
     }
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? = build(type, Prayer.compute(this), preview = true)
+
+    /** Native-first deviation: the platform evaluates ring progress from its clock.
+     * Never encode the large epoch as a float: subtract instants before conversion.
+     * The static fallback is retained for hosts without dynamic expression support.
+     */
+    @androidx.annotation.RequiresApi(33)
+    internal fun nativeRing(start: Long, end: Long): androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat {
+        val D = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(start))
+        val now = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
+        val elapsed = D.durationUntil(now).toIntSeconds().asFloat().div(60f)
+        val maximum = ((end - start) / 60000f).coerceAtLeast(1f)
+        val lower = androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(elapsed.lt(0f)).use(0f).elseUse(elapsed)
+        return androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(lower.gt(maximum)).use(maximum).elseUse(lower)
+    }
 
     /** Native countdown text; host renders and advances it without waking this provider. */
     internal fun nativeCountdown(target: Long) = TimeDifferenceComplicationText.Builder(
