@@ -3,4 +3,9 @@
     <string name="app_name">وذكّر</string>
     <string name="complication_name">الصلاة القادمة</string>
     <string name="tile_name">الصلاة القادمة</string>
+    <string name="comp_greg">التاريخ الميلادي</string>
+    <string name="comp_hijri">التاريخ الهجري</string>
+    <string name="comp_both">الميلادي والهجري</string>
+    <string name="comp_next_time">موعد الصلاة القادمة</string>
+    <string name="comp_countdown">العد التنازلي للصلاة القادمة</string>
 </resources>
