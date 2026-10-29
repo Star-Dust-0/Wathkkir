@@ -113,8 +113,8 @@ The watch app is a separate download and runs on Wear OS 3 and newer. Its featur
 
 ## 📥 Download
 
-- **[Latest release](https://github.com/StarsDust01/Wathkkir/releases/latest)**: the phone app and the watch app.
-- All versions: [Releases page](https://github.com/StarsDust01/Wathkkir/releases).
+- [Releases page](https://github.com/Star-Dust-0/Wathkkir/releases) for phone and watch APKs when published.
+- No release is published yet. Source recovery and original-app verification are in progress.
 
 ---
 

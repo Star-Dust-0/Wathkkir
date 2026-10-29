@@ -117,8 +117,8 @@
 
 ## 📥 التحميل
 
-- **[أحدث إصدار](https://github.com/StarsDust01/Wathkkir/releases/latest)**: ملف الهاتف وملف الساعة.
-- كل الإصدارات: [صفحة الإصدارات](https://github.com/StarsDust01/Wathkkir/releases).
+- [صفحة الإصدارات](https://github.com/Star-Dust-0/Wathkkir/releases) لملفات الهاتف والساعة عند نشرها.
+- لم يُنشر إصدار بعد. استعادة السورس والتحقق من مطابقته للتطبيق الأصلي ما زالا جاريين.
 
 ---
 

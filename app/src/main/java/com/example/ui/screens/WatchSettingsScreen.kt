@@ -32,7 +32,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-private const val WATCH_RELEASE_URL = "https://github.com/StarsDust01/Wathkkir/releases/tag/v3.3.0"
+private const val WATCH_RELEASE_URL = "https://github.com/Star-Dust-0/Wathkkir/releases"
 
 private fun w(ar: String, en: String) = if (L10n.lang == Lang.AR) ar else en
 
@@ -66,7 +66,7 @@ fun WatchSettingsScreen(onBack: () -> Unit) {
                 OneUIDivider(70.dp)
                 OneUIRow(
                     title = w("تحميل تطبيق الساعة", "Download the watch app"),
-                    summary = w("ملف التثبيت في صفحة الإصدار على GitHub", "The install file is on the GitHub release page"),
+                    summary = w("صفحة إصدارات الساعة على GitHub عند نشرها", "Watch releases on GitHub, when published"),
                     leading = { OneUIIconBadge(Icons.Outlined.Download) },
                     onClick = { uri.openUri(WATCH_RELEASE_URL) }
                 )
