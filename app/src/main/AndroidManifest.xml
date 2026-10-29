@@ -270,7 +270,7 @@
         </receiver>
         <receiver
             android:label="اليوم - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Day"
+            android:name="com.example.lockwidgets.LockWidgets$Day"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -281,7 +281,7 @@
         </receiver>
         <receiver
             android:label="التسبيح - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Tasbih"
+            android:name="com.example.lockwidgets.LockWidgets$Tasbih"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -292,7 +292,7 @@
         </receiver>
         <receiver
             android:label="التاريخ الهجري - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Hijri"
+            android:name="com.example.lockwidgets.LockWidgets$Hijri"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -303,7 +303,7 @@
         </receiver>
         <receiver
             android:label="التاريخ الميلادي - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Gregorian"
+            android:name="com.example.lockwidgets.LockWidgets$Gregorian"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -314,7 +314,7 @@
         </receiver>
         <receiver
             android:label="الصلاة القادمة - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Next"
+            android:name="com.example.lockwidgets.LockWidgets$Next"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -336,7 +336,7 @@
         </receiver>
         <receiver
             android:label="شريط الصلاة - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Bar"
+            android:name="com.example.lockwidgets.LockWidgets$Bar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -347,7 +347,7 @@
         </receiver>
         <receiver
             android:label="مؤقت الصلاة - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.Countdown"
+            android:name="com.example.lockwidgets.LockWidgets$Countdown"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -358,7 +358,7 @@
         </receiver>
         <receiver
             android:label="مؤقت الصلاة بدون عنوان - قفل"
-            android:name="com.example.lockwidgets.LockWidgets.CountdownClean"
+            android:name="com.example.lockwidgets.LockWidgets$CountdownClean"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>

@@ -25,6 +25,20 @@ public class WidgetRecoveryTest {
         c.getSharedPreferences("fajr_prefs", 0).edit().putString("language", language).commit();
         return c;
     }
+    @Test public void allPublishedLockWidgetReceiversResolveToRealClasses() throws Exception {
+        Context c = context("en");
+        for (Class<?> kind : new Class<?>[]{LockWidgets.Day.class, LockWidgets.Tasbih.class,
+                LockWidgets.Hijri.class, LockWidgets.Gregorian.class, LockWidgets.Next.class,
+                LockWidgets.Bar.class, LockWidgets.Countdown.class, LockWidgets.CountdownClean.class}) {
+            android.content.pm.ActivityInfo info = c.getPackageManager().getReceiverInfo(
+                    new android.content.ComponentName(c, kind), android.content.pm.PackageManager.GET_META_DATA);
+            assertEquals(kind.getName(), info.name);
+            assertTrue(kind.getName(), info.exported);
+            assertNotNull(info.metaData);
+            assertTrue(info.metaData.getInt("android.appwidget.provider") != 0);
+            assertEquals(kind, Class.forName(info.name));
+        }
+    }
     @Test public void lockWidgetsRenderInBothLanguagesAndSizes() throws Exception {
         for (String language : new String[]{"en", "ar"}) {
             Context c = context(language);
