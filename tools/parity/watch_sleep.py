@@ -31,8 +31,11 @@ for build in ['original','rebuilt']:
  save(build+'-alarm-before.txt',adb('shell','dumpsys','alarm'))
  save(build+'-log-before.txt',adb('logcat','-d','-s','WathakkerCd:I','*:S'))
  adb('shell','svc','power','stayon','false');adb('shell','dumpsys','battery','unplug');adb('shell','input','keyevent','KEYCODE_SLEEP')
- save(build+'-idle-enter.txt',adb('shell','cmd','deviceidle','force-idle'))
- save(build+'-idle-before.txt',adb('shell','dumpsys','deviceidle'))
+ save(build+'-idle-enable.txt',adb('shell','cmd','deviceidle','enable','all'))
+ save(build+'-idle-enter.txt',adb('shell','cmd','deviceidle','force-idle','deep'))
+ idle=adb('shell','dumpsys','deviceidle');save(build+'-idle-before.txt',idle)
+ if 'mState=IDLE' not in idle:
+  raise RuntimeError(build+': deep idle was not entered; refusing false-positive sleep pass')
  time.sleep(145)
  save(build+'-idle-after.txt',adb('shell','dumpsys','deviceidle'))
  log=adb('logcat','-d','-s','WathakkerCd:I','*:S');save(build+'-sleep-log.txt',log)
