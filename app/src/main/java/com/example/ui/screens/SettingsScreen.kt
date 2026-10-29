@@ -1,0 +1,175 @@
+package com.example.ui.screens
+
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
+import com.example.ui.i18n.Lang
+import android.app.Activity
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.media.RingtoneManager
+import android.net.Uri
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.ui.oneui.*
+import com.example.ui.viewmodel.MainViewModel
+
+@Composable
+fun SettingsScreen(viewModel: MainViewModel, onBack: () -> Unit, onNavigateToFajr: (() -> Unit)? = null, onLocation: (() -> Unit)? = null, onOptionalTimes: (() -> Unit)? = null) {
+    val vibration by viewModel.vibrationEnabled.collectAsState()
+    val toneState by viewModel.notificationSound.collectAsState()
+    val settingsCtx = androidx.compose.ui.platform.LocalContext.current
+    val toneSummary = remember(toneState) { com.example.utils.NotifPrefs.toneTitle(settingsCtx) ?: L10n.t(S.Default) }
+    val appFont by viewModel.appFont.collectAsState()
+    var showFontPicker by remember { mutableStateOf(false) }
+    var showLockWidgets by remember { mutableStateOf(false) }
+    val ringtoneLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val uri: Uri? = result.data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
+            if (uri != null) viewModel.updateNotificationSound(uri.toString())
+        }
+    }
+    SettingsContent(
+        vibration = vibration,
+        fontTitle = com.example.ui.theme.FontChoice.fromId(appFont).title,
+        onBack = onBack,
+        onVibration = viewModel::updateVibrationEnabled,
+        onPickFont = { showFontPicker = true },
+        onPickSound = {
+            ringtoneLauncher.launch(Intent(RingtoneManager.ACTION_RINGTONE_PICKER).apply {
+                putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION)
+                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true)
+                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, true)
+            })
+        },
+        toneSummary = toneSummary,
+        onLocation = onLocation,
+        onOptionalTimes = onOptionalTimes,
+        onLockWidgets = { showLockWidgets = true }
+    )
+
+    if (showFontPicker) {
+        FontPickerDialog(
+            selected = com.example.ui.theme.FontChoice.fromId(appFont),
+            onSelect = { viewModel.updateAppFont(it.id) },
+            onDismiss = { showFontPicker = false }
+        )
+    }
+    if (showLockWidgets) {
+        LockWidgetsDialog(onDismiss = { showLockWidgets = false })
+    }
+}
+
+/** Explains + launches Samsung's native lock screen editor so the user can pin
+ *  any Wathakker widget in the dedicated under-clock area (One UI 8 / Android 16 QPR). */
+@Composable
+fun LockWidgetsDialog(onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val cs = MaterialTheme.colorScheme
+    val toast = L10n.t(S.LockWidgetsToast)
+    OneUIDialog(
+        title = L10n.t(S.LockWidgets),
+        onDismiss = onDismiss,
+        onConfirm = {
+            // Samsung "Wallpaper & style" (DressRoom) hosts the native lock screen editor on One UI 6+.
+            val launch = context.packageManager.getLaunchIntentForPackage("com.samsung.android.app.dressroom")
+            if (launch != null) {
+                try { context.startActivity(launch) } catch (_: ActivityNotFoundException) {
+                    Toast.makeText(context, toast, Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(context, toast, Toast.LENGTH_LONG).show()
+            }
+            onDismiss()
+        },
+        confirmText = L10n.t(S.OpenEditor),
+        dismissText = L10n.t(S.Close)
+    ) {
+        Text(
+            L10n.t(S.LockWidgetsDesc),
+            style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, fontSize = 16.sp
+        )
+        Spacer(Modifier.height(14.dp))
+        Text(
+            L10n.t(S.LockWidgetsSteps),
+            style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, fontSize = 16.sp
+        )
+        Spacer(Modifier.height(14.dp))
+        Text(
+            L10n.t(S.LockWidgetsHint),
+            style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant,
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
+
+@Composable
+fun SettingsContent(
+    vibration: Boolean,
+    fontTitle: String,
+    onBack: () -> Unit,
+    onVibration: (Boolean) -> Unit,
+    toneSummary: String,
+    onPickFont: () -> Unit,
+    onPickSound: () -> Unit,
+    onLocation: (() -> Unit)?,
+    onOptionalTimes: (() -> Unit)?,
+    onLockWidgets: () -> Unit = {}
+) {
+    val ctx = LocalContext.current
+    val haptics = com.example.utils.AppHaptics.enabled
+    // Original: Arabic and English carry their own literals, other languages use the table.
+    val vibLabel = when (L10n.lang) { Lang.AR -> "الاهتزاز للإشعارات"; Lang.EN -> "Notification vibration"; else -> L10n.t(S.Vibration) }
+    val hapticLabel = when (L10n.lang) { Lang.AR -> "الاستجابة اللمسية"; else -> "Haptic feedback" }
+    OneUIScreen(title = L10n.t(S.Settings), onBack = onBack) {
+        item(key = "loc-l") { SectionLabel(L10n.t(S.LocSection)) }
+        item(key = "loc") {
+            OneUICard {
+                OneUIRow(L10n.t(S.ChangeLocation), summary = L10n.t(S.LocCalcSubtitle), onClick = { onLocation?.invoke() },
+                    leading = { OneUIIconBadge(Icons.Outlined.LocationOn) }, trailing = { ChevronIcon() })
+                OneUIDivider(inset = 70.dp)
+                OneUIRow(L10n.t(S.OptTimesTitle), summary = L10n.t(S.OptTimesSub), onClick = { onOptionalTimes?.invoke() },
+                    leading = { OneUIIconBadge(Icons.Outlined.MoreTime) }, trailing = { ChevronIcon() })
+            }
+        }
+        item(key = "lock-l") { SectionLabel(L10n.t(S.LockScreenSection)) }
+        item(key = "lock") {
+            OneUICard {
+                OneUIRow(L10n.t(S.LockWidgets), summary = L10n.t(S.LockWidgetsRowSub), onClick = onLockWidgets,
+                    leading = { OneUIIconBadge(Icons.Outlined.Widgets) }, trailing = { ChevronIcon() })
+            }
+        }
+        item(key = "notif-l") { SectionLabel(L10n.t(S.Notifications)) }
+        item(key = "notif") {
+            OneUICard {
+                OneUIRow(L10n.t(S.NotifSound), summary = toneSummary, onClick = onPickSound,
+                    leading = { OneUIIconBadge(Icons.Outlined.MusicNote) }, trailing = { ChevronIcon() })
+                OneUIRow(vibLabel, leading = { OneUIIconBadge(Icons.Outlined.Vibration) },
+                    trailing = { OneUISwitch(vibration, onVibration) }, onClick = { onVibration(!vibration) })
+                OneUIRow(hapticLabel, leading = { OneUIIconBadge(Icons.Outlined.TouchApp) },
+                    trailing = { OneUISwitch(haptics, { com.example.utils.AppHaptics.set(ctx, it) }) },
+                    onClick = { com.example.utils.AppHaptics.set(ctx, !haptics) })
+            }
+        }
+        item(key = "look-l") { SectionLabel(L10n.t(S.Appearance)) }
+        item(key = "look") {
+            OneUICard {
+                OneUIRow(L10n.t(S.AppFont), summary = fontTitle, onClick = onPickFont,
+                    leading = { OneUIIconBadge(Icons.Outlined.TextFields) }, trailing = { ChevronIcon() })
+            }
+        }
+    }
+}

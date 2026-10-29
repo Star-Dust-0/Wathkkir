@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:background="@drawable/widget_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/widget_name_0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="الفجر" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+        <TextView android:id="@+id/widget_name_1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="الشروق" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+        <TextView android:id="@+id/widget_name_2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="الظهر" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+        <TextView android:id="@+id/widget_name_3" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="العصر" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+        <TextView android:id="@+id/widget_name_4" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="المغرب" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+        <TextView android:id="@+id/widget_name_5" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="العشاء" android:textColor="#FFA6A6A6" android:textSize="10sp" android:textDirection="locale" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/widget_time_0" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="5:34" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+        <TextView android:id="@+id/widget_time_1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="7:01" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+        <TextView android:id="@+id/widget_time_2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="12:50" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+        <TextView android:id="@+id/widget_time_3" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="4:07" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+        <TextView android:id="@+id/widget_time_4" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="6:36" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+        <TextView android:id="@+id/widget_time_5" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:text="7:54" android:textColor="#FFFFFFFF" android:textSize="11sp" android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

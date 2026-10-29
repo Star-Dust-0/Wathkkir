@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:id="@+id/widget_hero_compact_root"
+    android:background="@drawable/widget_bg"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="#ffffffff"
+            android:id="@+id/widget_hero_compact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="العصر 4:07"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/expoarabic_medium"
+            android:textDirection="rtl"/>
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#ffe5b455"
+            android:gravity="left"
+            android:id="@+id/widget_hero_compact_remaining"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="باقي 2 س 27 د"
+            android:includeFontPadding="false"
+            android:layout_weight="1"
+            android:fontFamily="@font/expoarabic_medium"
+            android:textDirection="rtl"/>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/widget_hero_compact_progress"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="6dp"
+        android:maxHeight="10dp"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/widget_progress_iqama"
+        android:minHeight="0dp"
+        android:layoutDirection="ltr"
+        style="?android:attr/progressBarStyleHorizontal"/>
+</LinearLayout>

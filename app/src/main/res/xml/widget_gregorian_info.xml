@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:configure="com.example.widget.WidgetConfigActivity" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="40dp" android:minHeight="40dp"
+    android:targetCellWidth="1" android:targetCellHeight="1"
+    android:maxResizeWidth="180dp" android:maxResizeHeight="110dp"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_gregorian"
+    android:previewLayout="@layout/widget_gregorian"
+    android:widgetCategory="home_screen|keyguard"
+    android:widgetFeatures="reconfigurable"
+    android:description="@string/widget_gregorian_desc" />

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/widget_bg">
+
+    <TextView
+        android:id="@+id/widget_hijri_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="29"
+        android:textColor="#FFFFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/widget_hijri_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ربيع الآخر"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13sp"
+        android:textDirection="locale" />
+    <TextView
+        android:id="@+id/widget_hijri_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1447 هـ"
+        android:textColor="#FFA6A6A6"
+        android:textSize="11sp" />
+</LinearLayout>

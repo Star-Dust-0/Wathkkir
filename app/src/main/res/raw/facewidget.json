@@ -1,0 +1,7 @@
+{
+  "wathakker_prayer": {
+    "menuInSetting": 1,
+    "labelResNameInSetting": "facewidget_prayer_title",
+    "actionDetailSetting": "com.example.widget.FACE_WIDGET_SETTINGS"
+  }
+}

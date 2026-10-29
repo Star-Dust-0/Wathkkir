@@ -1,0 +1,10 @@
+# Wathakker curated Baseline Profile (hand-maintained, not device-generated).
+# Scope: cold-start entry points and the broadcast paths that must spin up fast.
+# The Compose/AndroidX library hot paths are already covered by the baseline
+# profiles bundled inside those AARs, which AGP merges automatically.
+HSPLcom/example/MainActivity;-><init>()V
+HSPLcom/example/MainActivity;->onCreate(Landroid/os/Bundle;)V
+HSPLcom/example/widget/WidgetTickReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+HSPLcom/example/prayer/alerts/PrayerAlertReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+HSPLcom/example/receiver/BootReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+HSPLcom/example/prayer/EventReminderReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V

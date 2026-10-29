@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- These layouts are referenced only by name through Resources.getIdentifier
+     in HomeWidgets/LockWidgets, so the resource shrinker cannot see them. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@layout/home_prayer_art,@layout/home_prayer_art_fit,@drawable/oneui_preview,@layout/lock_widget_image" />
