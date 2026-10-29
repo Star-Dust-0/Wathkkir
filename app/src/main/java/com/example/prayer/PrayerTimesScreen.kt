@@ -363,7 +363,7 @@ fun PrayerTimesContent(
                         modifier = Modifier.clip(RoundedCornerShape(12.dp)).clickable(onClick = onChangeCity).padding(vertical = 6.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Icon(Icons.Outlined.LocationOn, null, modifier = Modifier.size(40.dp).padding(8.dp), tint = cs.onSurfaceVariant)
+                        Icon(Icons.Outlined.LocationOn, null, modifier = Modifier.size(40.dp).padding(11.dp), tint = cs.onSurfaceVariant)
                         Spacer(Modifier.width(6.dp))
                         Text(SavedCity(), color = cs.onSurfaceVariant, style = MaterialTheme.typography.labelLarge)
                     }
@@ -430,10 +430,10 @@ fun PrayerTimesContent(
                             Icon(row.icon, null, modifier = Modifier.size(20.dp), tint = if (hl) HighlightInk else iconTint)
                         }
                         Spacer(Modifier.width(14.dp))
-                        Text(row.name, color = if (hl) HighlightInk else cs.onSurface, fontWeight = FontWeight.Medium, style = MaterialTheme.typography.bodyLarge)
+                        Text(row.name, color = if (hl) HighlightInk else cs.onSurface, fontWeight = if (hl) FontWeight.ExtraBold else FontWeight.Normal, style = MaterialTheme.typography.bodyLarge)
                         Spacer(Modifier.weight(1f))
                         val bellOn = bellIndex != null && bellStates.getOrElse(bellIndex) { false }
-                        Text(row.timeText, color = if (hl) HighlightInk else cs.onSurface, fontWeight = FontWeight.Medium, style = MaterialTheme.typography.bodyLarge)
+                        Text(row.timeText, color = if (hl) HighlightInk else cs.onSurface, fontWeight = if (hl) FontWeight.ExtraBold else FontWeight.Normal, style = MaterialTheme.typography.bodyLarge)
                         Spacer(Modifier.width(2.dp))
                         Box(
                             modifier = Modifier.size(48.dp).clip(CircleShape).then(
