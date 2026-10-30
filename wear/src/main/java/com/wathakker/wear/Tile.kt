@@ -40,6 +40,22 @@ open class PrayerTileService : TileService() {
                     .build()
             ).build()
 
+    /** Platform-time expression, evaluated by the tile host without provider minute ticks. */
+    private fun nativeCounter(s: PrayerState): LayoutElementBuilders.Text {
+        val D = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
+            .durationUntil(androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(s.next.at))).toIntSeconds()
+        val seconds = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInt32.onCondition(D.lt(0)).use(0).elseUse(D)
+        val two = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInt32.IntFormatter.Builder().setMinIntegerDigits(2).setGroupingUsed(false).build()
+        val value = androidx.wear.protolayout.expression.DynamicBuilders.DynamicString.constant(T("المتبقي ", "Left "))
+            .concat(seconds.div(3600).format()).concat(androidx.wear.protolayout.expression.DynamicBuilders.DynamicString.constant(":"))
+            .concat(seconds.div(60).rem(60).format(two))
+        val fallback = T("المتبقي ", "Left ") + Prayer.remainingText(s.next.at-s.now)
+        return LayoutElementBuilders.Text.Builder()
+            .setText(androidx.wear.protolayout.TypeBuilders.StringProp.Builder(fallback).setDynamicValue(value).build())
+            .setLayoutConstraintsForDynamicText(androidx.wear.protolayout.TypeBuilders.StringLayoutConstraint.Builder(T("المتبقي ", "Left ")+"00:00").build())
+            .setFontStyle(LayoutElementBuilders.FontStyle.Builder().setSize(sp(12f*WFonts.scale)).setColor(argb(tc.main)).setWeight(if(WFonts.bold)LayoutElementBuilders.FONT_WEIGHT_BOLD else LayoutElementBuilders.FONT_WEIGHT_NORMAL).build()).build()
+    }
+
     fun layout(s: PrayerState): LayoutElementBuilders.LayoutElement {
         val sweep = 270f
         val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(13f)).setColor(argb(tc.dark)).build()
@@ -54,7 +70,7 @@ open class PrayerTileService : TileService() {
             .addContent(gap(2f))
             .addContent(text(s.next.name, 19f, 0xFFFFFFFF.toInt(), true))
             .addContent(gap(5f))
-            .addContent(text(T("المتبقي ", "Left ") + Prayer.remainingText(s.next.at - s.now), 12f, tc.main, false))
+            .addContent(nativeCounter(s))
             .addContent(gap(7f))
             .addContent(text(Prayer.hijriDay(s.now), 26f, 0xFFFFFFFF.toInt(), true))
             .addContent(text(Prayer.hijriMonth(s.now), 12f, 0xFF9D9DA2.toInt(), false))

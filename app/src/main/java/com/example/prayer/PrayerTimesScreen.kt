@@ -393,7 +393,7 @@ fun PrayerTimesContent(
                     val remain = (nextMillis - now).coerceAtLeast(0L)
                     val countdown = if (iqama) formatMinSec(remain) else formatCountdown(remain)
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.Bottom) {
-                        Text(countdown, color = cdColor, fontSize = 32.sp, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.headlineMedium)
+                        com.example.ui.NativeCountdown(nextMillis, cdColor, 32f, bold = true)
                         Column(horizontalAlignment = Alignment.End) {
                             Text(nextPrayerName, color = cs.onSurface, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleLarge)
                             Text(nextPrayerTime, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)

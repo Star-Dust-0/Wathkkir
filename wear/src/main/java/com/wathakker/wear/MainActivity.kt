@@ -238,7 +238,7 @@ fun MainPage(s: PrayerState, now: Long, w: Float) {
             Text1(s.next.name, tx(w * 0.15f, Color.White, true))
             Text1(Prayer.time12(s.next.at), tx(w * 0.095f, Color.White))
             Spacer(Modifier.height((w * 0.035f).dp))
-            Text1(T("متبقي ", "Time left ") + Prayer.remainingText(s.next.at - now), tx(w * 0.062f, Gold))
+            NativeCountdown(s.next.at, Gold, w * 0.062f * WFonts.scale, prefix = T("متبقي ", "Time left "))
         }
     }
 }
