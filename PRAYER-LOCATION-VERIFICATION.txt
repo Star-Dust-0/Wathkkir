@@ -9,3 +9,5 @@ Rounding in application source: sunrise floors to minute; Fajr,Dhuhr,Asr,Maghrib
 Reproduce: tools/parity/prayer_location_fixture.sh with JDK17.
 FajrPreferences stores float latitude/longitude. Fresh/no-coordinate fallback30.0444/31.2357 (Cairo). PrayerTimesScreen loads saved values; GPS and manual selection write both values. CitiesDatabase has Cairo and Alexandria but no fixed New Borg item; custom city names can be aliases and cannot by themselves prove coordinates. Supplied New Borg fixture is not claimed to be a hard-coded recovered city entry.
 This confirms comparison calculator output. Same-location installed-app pixels remain pending and must not be inferred from this console test. No formula alteration made. No release.
+
+Installed-app verification41071419433 PASS24/24 visible-time assertions in original+comparison, New Borg+Cairo, saved coordinates captured. Actual paired New Borg pixels inspected16:35 and match all six original owner times. Formula unchanged.

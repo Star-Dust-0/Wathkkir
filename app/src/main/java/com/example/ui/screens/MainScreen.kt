@@ -171,11 +171,10 @@ fun MainScreen(viewModel: MainViewModel) {
                 modifier = Modifier.fillMaxSize()
             ) {
                 composable("tabs") {
-                    val wide = com.example.ui.oneui.isWideScreen()
                     val tabsContent: @Composable () -> Unit = {
-                        HorizontalPager(state = pagerState, userScrollEnabled = !wide, modifier = Modifier.fillMaxSize()) { page ->
+                        HorizontalPager(state = pagerState, modifier = Modifier.fillMaxSize()) { page ->
                             when (oneUITabs[page].route) {
-                                "calendar" -> com.example.ui.oneui.WideContentFrame { HijriCalendarScreen { drawerOpen = true } }
+                                "calendar" -> if (com.example.ui.oneui.isTwoPane()) HijriCalendarScreen { drawerOpen = true } else com.example.ui.oneui.WideContentFrame { HijriCalendarScreen { drawerOpen = true } }
                                 "prayer" -> PrayerTimesScreen(onQibla = { navController.navigate("qibla") }, onMenu = { drawerOpen = true }, onLocation = { navController.navigate("location_calc") })
                                 "hisn" -> if (com.example.ui.oneui.isTwoPane()) HisnTwoPane(
                                     hisnViewModel, viewModel,
@@ -194,35 +193,8 @@ fun MainScreen(viewModel: MainViewModel) {
                             }
                         }
                     }
-                    if (wide) {
-                        val onRailSelect: (BottomTab) -> Unit = { tab ->
-                            val i = oneUITabs.indexOf(tab)
-                            if (i >= 0) scope.launch { pagerState.scrollToPage(i) }
-                        }
-                        if (currentTabRoute == "prayer") {
-                            // The sky scene runs edge to edge; the rail floats over it and the page keeps clear of it.
-                            Box(Modifier.fillMaxSize()) {
-                                androidx.compose.runtime.CompositionLocalProvider(
-                                    com.example.ui.oneui.LocalRailInset provides com.example.ui.oneui.RailInset
-                                ) { tabsContent() }
-                                com.example.ui.oneui.OneUINavRail(
-                                    tabs = oneUITabs,
-                                    selectedRoute = currentTabRoute,
-                                    onSelect = onRailSelect,
-                                    solid = false
-                                )
-                            }
-                        } else {
-                            androidx.compose.foundation.layout.Row(Modifier.fillMaxSize()) {
-                                com.example.ui.oneui.OneUINavRail(
-                                    tabs = oneUITabs,
-                                    selectedRoute = currentTabRoute,
-                                    onSelect = onRailSelect
-                                )
-                                Box(Modifier.weight(1f).fillMaxSize()) { tabsContent() }
-                            }
-                        }
-                    } else tabsContent()
+                    // 3.4: tablets use the same bottom bar and swipe-between-pages as phones (no side rail).
+                    tabsContent()
                 }
                 composable(
                     "hisn/{id}",
@@ -279,7 +251,7 @@ fun MainScreen(viewModel: MainViewModel) {
             // use the same frost material as the cards; everywhere else they keep
             // their default look.
             val skyFrost = if (isTab && currentTabRoute == "prayer") PrayerSkyGlass.spec.value else null
-            if (isTab && !com.example.ui.oneui.isWideScreen()) {
+            if (isTab) {
                 OneUIBottomBar(
                     tabs = oneUITabs,
                     selectedRoute = currentTabRoute,
