@@ -8,3 +8,6 @@
 - Focused repaired menu batch https://github.com/Star-Dust-0/Wathkkir/actions/runs/41104578918 :pending.
 
 - Oct26 original watch source: historical application-source full Complication print14:43, final slices15:57 and16:45, exact mutations15:35/15:40/15:43. Confirm native STOPWATCH and original ranged pulse; restore location-mode refresh. No raw transcript included in source backups.
+
+- Original paired watch APK: https://drive.google.com/file/d/1t_mf5MscFOKgeoC62BYz3ZzZGan7HgXf/view?usp=drivesdk&authuser=m.a.elnaggar21%40gmail.com . Metadata/version and native text verified; jadx created partial readable decompile,5errors, not full behavioral proof.
+- Original Settings.kt printed Oct21 18:34 and original watch APK kg1 confirm five-pattern list and invalid-id fallback.

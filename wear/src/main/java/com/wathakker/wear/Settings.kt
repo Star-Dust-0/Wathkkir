@@ -29,12 +29,12 @@ object WTheme {
 object Settings {
     private const val P = "wear_prefs"
     /** Names of the background patterns shown in the Appearance list, with their internal ids. */
-    val patterns = listOf(1 to "ربع الحزب", 3 to "نجمة ثمانية في معين", 8 to "نجوم ومعينات", 9 to "شبكة سداسية", 10 to "نجمة ثمانية متقاطعة", 11 to "أرابيسك دائري")
+    val patterns = listOf(1 to "ربع الحزب", 8 to "نجوم ومعينات", 9 to "شبكة سداسية", 10 to "نجمة ثمانية متقاطعة", 11 to "أرابيسك دائري")
 
     fun load(c: Context) {
         val p = c.getSharedPreferences(P, Context.MODE_PRIVATE)
         Loc.refresh(c)
-        starPattern = p.getInt("pat", 1)
+        starPattern = p.getInt("pat", 1).let { v -> if (patterns.any { it.first == v }) v else 1 }
         WTheme.idx = p.getInt("theme", 0)
         WFonts.load(c)
     }
