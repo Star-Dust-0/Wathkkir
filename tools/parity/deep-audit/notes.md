@@ -52,3 +52,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## 2026-10-30 23:10 phone visual residuals
 - Stateful32pairs:11full PNGs exact. Other tiny residuals include status clock, input caret and navigation gesture animation, need precise classification. Appearance backgrounds differ from scrolling while title/button/text bounds match. Do not hide those differences with masking.
 - Actual EN/AR item-overflow popup images show a genuine offset error: recovered popup below anchor, original overlapping anchor and closer to screen edge. Exact Oct20 source operation adds DpOffset(14.dp, -44.dp), omitted in replay. Restored that exact operation; phone build passes, runtime recheck pending.
+
+## 2026-10-30 23:25 controlled watch result and tile source recovery
+- Run41126654104 completed455checks with1original first-launch foreground miss;148/152token pairs equal,119/152fullPNG exact. Explicit UTC environment captured for all4sessions. EN main/list prayer-time values and native STOPWATCH now match. Actual screenshot sheet inspected; first original AR frame captured watchface, not app, remains unproven startup.
+- Tile has genuine geometry mismatch despite equal strings. Fresh original Oct26 11:44 full Tile.kt print and shipped APK both show13dp arc,18dp top padding,gaps2.5/4.5/4/2. Older replay had16dp,16.5dp,gaps5/9.7/8/3.3. Restored exact original constants, keeping approved native dynamic ring changes untouched. Wear compile passed; paired updated tile screenshot still required.

@@ -66,10 +66,10 @@ open class PrayerTileService : TileService() {
         val fill = LayoutElementBuilders.ArcLine.Builder()
             .setLength(DimensionBuilders.DegreesProp.Builder(fillLen).apply { if(native) setDynamicValue(progress) }.build())
             .apply { if(native) setLayoutConstraintsForDynamicLength(DimensionBuilders.AngularLayoutConstraint.Builder(sweep).setAngularAlignment(LayoutElementBuilders.ANGULAR_ALIGNMENT_START).build()) }
-            .setThickness(dp(16f)).setColor(argb(tc.main)).build()
+            .setThickness(dp(13f)).setColor(argb(tc.main)).build()
         // A fixed background arc and a start-aligned dynamic overlay avoid reserving
         // two full dynamic lengths sequentially in the same Arc.
-        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
+        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(13f)).setColor(argb(tc.dark)).build()
         fun arc(line: LayoutElementBuilders.ArcLine) = LayoutElementBuilders.Arc.Builder()
             .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(line).build()
         val seconds0=now.durationUntil(DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(target))).toIntSeconds()
@@ -81,28 +81,26 @@ open class PrayerTileService : TileService() {
         val remaining=DynamicBuilders.DynamicString.constant(T("المتبقي ","Left ")).concat(numeric)
 
         fun gap(h: Float) = LayoutElementBuilders.Spacer.Builder().setHeight(dp(h)).build()
-        // Layout measured against the reference gold widget ON THE REAL WATCH (Samsung font renders
-        // ~1.4x taller than the emulator, so constants are scaled ~1.16x (0.776 * 1.30 * 1.15, i.e. +49.5% over installed build) to land on the reference
-        // spacing on the actual device; the 454px emulator shows it proportionally smaller).
+        // Recovered Oct26 tile geometry; native ring/text behavior remains separate.
         val center = LayoutElementBuilders.Column.Builder()
             .setHorizontalAlignment(LayoutElementBuilders.HORIZONTAL_ALIGN_CENTER)
             .setModifiers(ModifiersBuilders.Modifiers.Builder()
-                .setPadding(ModifiersBuilders.Padding.Builder().setTop(dp(16.5f)).build()).build())
+                .setPadding(ModifiersBuilders.Padding.Builder().setTop(dp(18f)).build()).build())
             .addContent(text(Prayer.time12(iq?.at ?: s.next.at), 25.5f, 0xFFFFFFFF.toInt(), false))
-            .addContent(gap(5f))
+            .addContent(gap(2.5f))
             .addContent(text(if (iq != null) T("إقامة ", "Iqama ") + iq.prayer.name else s.next.name, 19.5f, 0xFFFFFFFF.toInt(), false))
-            .addContent(gap(9.7f))
+            .addContent(gap(4.5f))
             .addContent(text(T("المتبقي ", "Left ") + Prayer.remainingText((iq?.at ?: s.next.at) - s.now), 14.5f, tc.main, true, if(native) remaining else null))
-            .addContent(gap(8f))
+            .addContent(gap(4f))
             .addContent(text(Prayer.hijriDay(s.now), 30f, 0xFFFFFFFF.toInt(), true))
-            .addContent(gap(3.3f))
+            .addContent(gap(2f))
             .addContent(text(Prayer.hijriMonth(s.now), 14.5f, 0xFF9D9DA2.toInt(), false))
             .build()
 
         val originalArc = LayoutElementBuilders.Arc.Builder().setAnchorAngle(degrees(-135f))
             .setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START)
-            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(16f)).setColor(argb(tc.main)).build())
-            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep-fillLen)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()).build()
+            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(13f)).setColor(argb(tc.main)).build())
+            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep-fillLen)).setThickness(dp(13f)).setColor(argb(tc.dark)).build()).build()
         val click = ModifiersBuilders.Clickable.Builder()
             .setId("open")
             .setOnClick(ActionBuilders.LaunchAction.Builder().setAndroidActivity(
