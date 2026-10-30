@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
             Log.i("WidgetRecoveryAudit","bound kind="+kind+" id="+id+" ok="+ok);
             if(kind.equals(getIntent().getStringExtra("tapKind"))) new Handler(Looper.getMainLooper()).postDelayed(()->{
                 String viewId=kind.startsWith("Lock:")?"lock_widget_art":"home_prayer_image";
-                android.view.View target=v.findViewById(getResources().getIdentifier(viewId,"id",PKG));
+                android.view.View target=v.findViewById(foreignId(viewId));
                 Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
             },9000);
 
@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
             String kind=in.getStringExtra("kind");
             for(int z=0;z<kinds.size();z++)if(kinds.get(z).equals(kind)){
                 String key=kind.startsWith("Lock:")?"lock_widget_art":"home_prayer_image";
-                android.view.View target=views.get(z).findViewById(getResources().getIdentifier(key,"id",PKG));
+                android.view.View target=views.get(z).findViewById(foreignId(key));
                 Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
             }
         }},new android.content.IntentFilter("com.example.widgethost.CLICK"),android.content.Context.RECEIVER_EXPORTED);
@@ -148,6 +148,8 @@ public class MainActivity extends Activity {
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 6000);
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 11000);
     }
+
+    private int foreignId(String name) { try { return getPackageManager().getResourcesForApplication(PKG).getIdentifier(name,"id",PKG); } catch(Exception e) { return 0; } }
 
     private void dumpNativeTimers(android.view.View view, String kind) {
         if (view instanceof android.widget.Chronometer) {

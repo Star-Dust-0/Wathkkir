@@ -5,7 +5,7 @@ def adb(*a):
  r=subprocess.run(['adb',*a],capture_output=True,timeout=70);return (r.stdout+r.stderr).decode(errors='replace')
 def check(item,ok,detail=''):checks.append(dict(item=item,passed=bool(ok),detail=detail));print(item,bool(ok),detail,flush=True)
 def shot(n):
- state=adb('shell','dumpsys','window','windows');(out/(n+'-window.txt')).write_text(state)
+ state=adb('shell','dumpsys','window');(out/(n+'-window.txt')).write_text(state)
  check(n+' foreground',any('mCurrentFocus=' in x and 'com.example.widgethost' in x for x in state.splitlines()) and 'Application Not Responding' not in state)
  (out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
 def host(pkg,mode,tap=None):
