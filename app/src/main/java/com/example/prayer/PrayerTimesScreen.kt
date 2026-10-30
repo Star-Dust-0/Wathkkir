@@ -329,7 +329,7 @@ fun PrayerTimesContent(
     val dividerCol = if (lightSky) Color(0x1A000000) else Color.White.copy(alpha = 0.14f)
     val cdColor = if (lightSky) Color(0xFF1E8FA8) else CountdownCyan
     val trackCol = if (lightSky) Color(0xFFC4C4CD) else BarTrack
-    val iconTint = if (lightSky) Color(0xFF111114) else Color.White.copy(alpha = 0.85f)
+    val iconTint = cs.onSurfaceVariant
     val bellOffTint = if (lightSky) Color(0xFF111114).copy(alpha = 0.5f) else Color.White.copy(alpha = 0.5f)
     androidx.compose.runtime.SideEffect { com.example.ui.oneui.PrayerSky.mode = if (lightSky) 2 else 1 }
     androidx.compose.runtime.DisposableEffect(Unit) { onDispose { com.example.ui.oneui.PrayerSky.mode = 0 } }
@@ -416,7 +416,7 @@ fun PrayerTimesContent(
                     val hl = bellIndex != null && bellIndex == highlightIndex
                     val prevHl = index > 0 && rowBells.getOrNull(index - 1).let { it != null && it == highlightIndex }
                     if (index > 0 && !hl && !prevHl) {
-                        Box(Modifier.fillMaxWidth().padding(horizontal = 16.dp).height(1.dp).background(dividerCol))
+                        Box(Modifier.fillMaxWidth().height(0.5.dp).background(dividerCol))
                     }
                     Row(
                         modifier = Modifier
