@@ -58,6 +58,7 @@ for build in ['original','rebuilt']:
    dims=adb('shell','wm','size').strip().split()[-1].split('x');ww,hh=map(int,dims)
    def tap(x,y): adb('shell','input','tap',str(int(ww*x)),str(int(hh*y)));time.sleep(2)
    def dump(name):
+    adb('shell','rm','-f','/sdcard/window.xml')
     adb('shell','uiautomator','dump','/sdcard/window.xml')
     (out/(name+'.xml')).write_text(adb('shell','cat','/sdcard/window.xml'))
    dump(f'{build}-{lang}-home-ui')

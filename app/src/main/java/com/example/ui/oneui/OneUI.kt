@@ -155,15 +155,17 @@ fun OneUIScreen(
                             }
                         }
                         Spacer(Modifier.width(14.dp))
-                        Text(
-                            title,
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onBackground,
-                            fontSize = 18.sp,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
-                            modifier = Modifier.weight(1f)
-                        )
+                        if (background != null) {
+                            Text(
+                                title,
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onBackground,
+                                fontSize = 18.sp,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                                modifier = Modifier.weight(1f)
+                            )
+                        } else Spacer(Modifier.weight(1f))
                         if (actions != null) actions()
                     }
                     Spacer(Modifier.height(20.dp))
@@ -324,8 +326,8 @@ fun OneUIRow(
         modifier
             .fillMaxWidth()
             .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
-            .heightIn(min = 60.dp)
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .heightIn(min = 64.dp)
+            .padding(horizontal = 16.dp, vertical = if (summary != null) 14.dp else 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (leading != null) {
@@ -335,10 +337,10 @@ fun OneUIRow(
         Column(Modifier.weight(1f)) {
             Text(title, style = MaterialTheme.typography.bodyLarge, color = titleColor)
             if (summary != null) {
-                Spacer(Modifier.height(4.2.dp))
+                Spacer(Modifier.height(2.dp))
                 Text(
                     summary,
-                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 13.sp, lineHeight = 17.6.sp),
+                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 14.sp, lineHeight = 20.sp),
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
@@ -668,8 +670,8 @@ fun OneUIBottomBar(
 ) {
     val cs = MaterialTheme.colorScheme
     val navInset = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-    // Original b51.c/cb0.a: the prayer-sky tint uses the theme surface, not white
-    // or the card background. Radius is 28dp; the parent provides bottom alignment.
+    // Original b51.c/xd1/cb0.a uses ml.G (surfaceContainer), not ml.p (surface).
+    // Radius is 28dp; the parent provides bottom alignment.
     val skyMode = if (selectedRoute == "prayer") PrayerSky.mode else 0
     val barShape = RoundedCornerShape(32.dp)
     val dark = ThemeSettings.isDark()
@@ -680,7 +682,7 @@ fun OneUIBottomBar(
             .fillMaxWidth()
             .padding(horizontal = 20.dp)
             .padding(bottom = navInset + 12.dp)
-            .then(Modifier.oneUIGlass(barShape, cs.surface,
+            .then(Modifier.oneUIGlass(barShape, cs.surfaceContainer,
                 alpha = if (skyMode == 1) 0.46f else if (skyMode == 2) 0.55f else 0.85f,
                 blurRadius = 28))
             .height(64.dp),
