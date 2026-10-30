@@ -331,7 +331,7 @@ private fun ConverterResult(weekday: String, dateText: String) {
         Text(weekday, color = cs.onSurfaceVariant, fontSize = 14.sp, textAlign = TextAlign.Center)
         Spacer(Modifier.height(4.dp))
         Text(
-            dateText,
+            com.example.utils.Digits.ui(dateText),
             color = cs.primary,
             fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
