@@ -7,7 +7,7 @@ for f in ['watch-original.apk','watch-rebuilt.apk','widgethost.apk']:
  s=adb('install','-r','-g',f);assert 'Success' in s,s
 states={}
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
- adb('shell','am','force-stop',pkg);adb('shell','pm','clear',pkg)
+ adb('shell','am','force-stop',pkg);adb('shell','pm','clear',pkg);(out/(name+'-package.txt')).write_text(adb('shell','pm','path',pkg))
  s=adb('shell','am','instrument','-w','-e','pkg',pkg,'-e','original',str(name=='original').lower(),'com.example.widgethost/.WatchEngineProbe');(out/(name+'-engine-raw.txt')).write_text(s)
  line=next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: engine=')),None)
  assert line,s
