@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
         }
         if ("barsB".equals(mode)) sv.setBackgroundColor(0xFFC8C8C8);
         if ("frost".equals(mode)) sv.setBackground(new android.graphics.drawable.GradientDrawable(android.graphics.drawable.GradientDrawable.Orientation.TL_BR, new int[]{0xFF1E88E5,0xFFE91E63,0xFFFFB300}));
-        String[][] selected="frost".equals(mode)?new String[][]{{"Hero","330","90"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"Clock","250","90"}}:"barsA".equals(mode)?new String[][]{{"Hero","330","90"},{"HeroLarge","330","160"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"WideBar","330","90"},{"OneUI","330","90"}}:"barsB".equals(mode)?new String[][]{{"Iqama","330","90"},{"IqamaSmall","110","90"},{"Lock:Countdown","123","54"},{"Lock:CountdownClean","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"}}:"oneui".equals(mode)?new String[][]{{"OneUI","330","90"},{"OneUI","330","180"}}:"iqama".equals(mode)?new String[][]{{"Hero","330","90"},{"Lock:CountdownClean","123","54"},{"Lock:Countdown","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"},{"Clock","250","90"}}:WIDGETS;
+        String[][] selected="frost".equals(mode)?new String[][]{{"Hero","330","90"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"Clock","250","90"}}:"barsA".equals(mode)?new String[][]{{"Hero","330","90"},{"HeroLarge","330","160"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"WideBar","330","90"},{"OneUI","330","90"}}:"barsB".equals(mode)?new String[][]{{"Iqama","330","90"},{"IqamaSmall","110","90"},{"Lock:Countdown","123","54"},{"Lock:CountdownClean","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"}}:"oneui".equals(mode)?new String[][]{{"OneUI","330","90"},{"OneUI","330","180"}}:"iqama".equals(mode)?new String[][]{{"Hero","330","90"},{"Lock:CountdownClean","123","54"},{"Lock:Countdown","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"},{"Clock","250","90"}}:"pill".equals(mode)?new String[][]{{"Pill","110","90"}}:WIDGETS;
         for (String[] w : selected) {
             String kind = w[0];
             int wd = Integer.parseInt(w[1]), ht = Integer.parseInt(w[2]);
@@ -91,7 +91,9 @@ public class MainActivity extends Activity {
             col.addView(label);
             int id = host.allocateAppWidgetId();
             ComponentName cn = new ComponentName(PKG, kind.startsWith("Lock:") ? "com.example.lockwidgets.LockWidgets$"+kind.substring(5) : "com.example.widget." + kind + "WidgetProvider");
-            boolean ok = awm.bindAppWidgetIdIfAllowed(id, cn, null);
+            Bundle bindOptions = new Bundle();
+            if (kind.startsWith("Lock:")) bindOptions.putInt(AppWidgetManager.OPTION_APPWIDGET_HOST_CATEGORY, AppWidgetProviderInfo.WIDGET_CATEGORY_KEYGUARD);
+            boolean ok = awm.bindAppWidgetIdIfAllowed(id, cn, bindOptions);
             Log.i("WidgetHost", "bind " + kind + " id=" + id + " -> " + ok);
             label.setText(kind + " bind=" + ok);
             if (!ok) continue;
@@ -109,8 +111,8 @@ public class MainActivity extends Activity {
         setContentView(sv);
         // After updates settle, dump per-widget pixel stats: a blank/never-updated
         // widget (the R8 regression) is a uniform surface -> std near 0.
-        new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 2000);
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 6000);
+        new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 11000);
     }
 
     private void dumpNativeTimers(android.view.View view, String kind) {

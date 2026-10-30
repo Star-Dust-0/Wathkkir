@@ -143,31 +143,31 @@
                 <action android:name="android.intent.action.TIME_SET" />
             </intent-filter>
         </receiver>
-        <receiver android:label="اليوم - قفل" android:name="com.example.lockwidgets.LockWidgets.Day" android:exported="true">
+        <receiver android:label="اليوم - قفل" android:name="com.example.lockwidgets.LockWidgets$Day" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_day_name_info" />
         </receiver>
-        <receiver android:label="التسبيح - قفل" android:name="com.example.lockwidgets.LockWidgets.Tasbih" android:exported="true">
+        <receiver android:label="التسبيح - قفل" android:name="com.example.lockwidgets.LockWidgets$Tasbih" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_tasbih_info" />
         </receiver>
-        <receiver android:label="التاريخ الهجري - قفل" android:name="com.example.lockwidgets.LockWidgets.Hijri" android:exported="true">
+        <receiver android:label="التاريخ الهجري - قفل" android:name="com.example.lockwidgets.LockWidgets$Hijri" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_hijri_date_info" />
         </receiver>
-        <receiver android:label="التاريخ الميلادي - قفل" android:name="com.example.lockwidgets.LockWidgets.Gregorian" android:exported="true">
+        <receiver android:label="التاريخ الميلادي - قفل" android:name="com.example.lockwidgets.LockWidgets$Gregorian" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_gregorian_date_info" />
         </receiver>
-        <receiver android:label="الصلاة القادمة - قفل" android:name="com.example.lockwidgets.LockWidgets.Next" android:exported="true">
+        <receiver android:label="الصلاة القادمة - قفل" android:name="com.example.lockwidgets.LockWidgets$Next" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -182,19 +182,19 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
-        <receiver android:label="شريط الصلاة - قفل" android:name="com.example.lockwidgets.LockWidgets.Bar" android:exported="true">
+        <receiver android:label="شريط الصلاة - قفل" android:name="com.example.lockwidgets.LockWidgets$Bar" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_prayer_bar_info" />
         </receiver>
-        <receiver android:label="مؤقت الصلاة - قفل" android:name="com.example.lockwidgets.LockWidgets.Countdown" android:exported="true">
+        <receiver android:label="مؤقت الصلاة - قفل" android:name="com.example.lockwidgets.LockWidgets$Countdown" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/lock_prayer_countdown_info" />
         </receiver>
-        <receiver android:label="مؤقت الصلاة بدون عنوان - قفل" android:name="com.example.lockwidgets.LockWidgets.CountdownClean" android:exported="true">
+        <receiver android:label="مؤقت الصلاة بدون عنوان - قفل" android:name="com.example.lockwidgets.LockWidgets$CountdownClean" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
