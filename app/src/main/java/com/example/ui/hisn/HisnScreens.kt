@@ -29,10 +29,10 @@ import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.NotificationAdd
 import androidx.compose.material.icons.outlined.Search
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.contentDescription
 import kotlinx.coroutines.launch
 import com.example.ui.oneui.OneUIIconAction
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.material.icons.outlined.StarBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -46,6 +46,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
@@ -89,9 +90,22 @@ fun HisnListContent(
     onMenu: (() -> Unit)? = null
 ) {
     val filtered = remember(state, items) { filterChapters(state, items) }
-    val subtitle = if (state.chapters.isEmpty()) null else "${state.chapters.size} بابًا من الأذكار والأدعية"
-    OneUIScreen(title = "حصن المسلم", subtitle = subtitle, onMenu = onMenu) {
-        item { OneUISearchField(state.query, onQuery, "ابحث في حصن المسلم") }
+    val subtitle = if (state.chapters.isEmpty()) null else L10n.t(S.ChaptersFmt).format(state.chapters.size)
+    val searchFocus = remember { androidx.compose.ui.focus.FocusRequester() }
+    val hisnListState = androidx.compose.foundation.lazy.rememberLazyListState()
+    val searchScope = androidx.compose.runtime.rememberCoroutineScope()
+    OneUIScreen(
+        title = L10n.t(S.HisnTab), subtitle = subtitle, onMenu = onMenu, listState = hisnListState,
+        actions = {
+            OneUIIconAction(Icons.Outlined.Search, L10n.t(S.SearchHisn)) {
+                searchScope.launch {
+                    hisnListState.animateScrollToItem(0)
+                    try { searchFocus.requestFocus() } catch (_: Exception) {}
+                }
+            }
+        }
+    ) {
+        item { OneUISearchField(state.query, onQuery, L10n.t(S.SearchHisn), focusRequester = searchFocus) }
         item {
             OneUIChipGroup(
                 items = listOf(OneUIChipItem(L10n.t(S.All)), OneUIChipItem(L10n.t(S.Favorites))),
@@ -102,7 +116,7 @@ fun HisnListContent(
         if (filtered.isEmpty()) {
             item {
                 OneUIEmptyState(
-                    if (state.onlyFavorites) "لا توجد أبواب مفضلة" else "لا توجد نتائج",
+                    if (state.onlyFavorites && state.query.isBlank()) L10n.t(S.NoFavChapters) else L10n.t(S.NoResults),
                     Icons.Outlined.Search
                 )
             }
@@ -160,7 +174,7 @@ private fun ChapterRow(
                 style = MaterialTheme.typography.bodyLarge
             )
             var meta = azkarCount(count)
-            if (read) meta += " · تمت قراءته اليوم"
+            if (read) meta += L10n.t(S.ReadTodaySuffix)
             Text(
                 meta,
                 color = if (read) cs.primary else cs.onSurfaceVariant,
@@ -169,7 +183,7 @@ private fun ChapterRow(
         }
         Icon(
             if (favorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
-            "المفضلة",
+            L10n.t(S.Favorites),
             modifier = Modifier.size(26.dp).clip(CircleShape).clickable(onClick = onFavorite),
             tint = if (favorite) Color(0xFFFFC107) else cs.onSurfaceVariant
         )
@@ -198,7 +212,7 @@ fun HisnChapterContent(
         actions = {
             OneUIIconAction(
                 if (favoriteChapter) Icons.Filled.Star else Icons.Outlined.StarBorder,
-                "المفضلة",
+                L10n.t(S.Favorites),
                 onToggleChapterFavorite
             )
         }
@@ -211,8 +225,8 @@ fun HisnChapterContent(
                 modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                OneUIButton("تمت القراءة", onMarkRead, Modifier.weight(1f), true, Icons.Outlined.Check)
-                OneUIButton("أضف إلى أذكاري", onAddToMyAzkar, Modifier.weight(1f), false, Icons.Outlined.NotificationAdd)
+                OneUIButton(L10n.t(S.ReadDone), onMarkRead, Modifier.weight(1f), true, Icons.Outlined.Check)
+                OneUIButton(L10n.t(S.AddToMyAzkar), onAddToMyAzkar, Modifier.weight(1f), false, Icons.Outlined.NotificationAdd)
             }
         }
     }
@@ -263,7 +277,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
                     Spacer(Modifier.width(8.dp))
                 }
                 val label = when {
-                    done -> "تم"
+                    done -> L10n.t(S.Done)
                     item.count > 1 -> "$remaining / ${item.count}"
                     else -> "اضغط للعد"
                 }
@@ -277,7 +291,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
             if (hasNotes) {
                 Icon(
                     Icons.Outlined.Info,
-                    if (L10n.t(S.Done) == "تم") "معلومات الذكر" else "Info",
+                    if (L10n.t(S.Done) == L10n.t(S.Done)) "معلومات الذكر" else "Info",
                     tint = if (showFadl) cs.primary else cs.onSurfaceVariant,
                     modifier = Modifier
                         .size(40.dp)
@@ -288,7 +302,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
             }
             Icon(
                 if (favorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
-                "المفضلة",
+                L10n.t(S.Favorites),
                 tint = if (favorite) Color(0xFFFFC107) else cs.onSurfaceVariant,
                 modifier = Modifier
                     .size(40.dp)

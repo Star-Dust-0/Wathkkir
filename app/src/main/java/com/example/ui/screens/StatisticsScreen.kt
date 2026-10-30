@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.S
+import com.example.ui.i18n.L10n
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -67,8 +69,8 @@ fun StatsContent(
 ) {
     val cs = MaterialTheme.colorScheme
     OneUIScreen(
-        title = "الإحصائيات",
-        subtitle = readsCount(stats.totalCount) + " إجمالًا",
+        title = L10n.t(S.Stats),
+        subtitle = readsCount(stats.totalCount) + L10n.t(S.TotalSuffix),
         onBack = onBack
     ) {
         item(key = "donut") {
@@ -82,14 +84,14 @@ fun StatsContent(
                                 color = cs.onSurface,
                                 style = MaterialTheme.typography.headlineMedium
                             )
-                            Text("اليوم", color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
+                            Text(L10n.t(S.DayLabel), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                         }
                     }
                     Spacer(Modifier.width(20.dp))
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         if (stats.topReadDhikr.isEmpty()) {
                             Text(
-                                "لا توجد قراءات بعد",
+                                L10n.t(S.NoReadsYet),
                                 color = cs.onSurfaceVariant,
                                 style = MaterialTheme.typography.bodyMedium
                             )
@@ -117,18 +119,18 @@ fun StatsContent(
                 }
             }
         }
-        item(key = "periods-l") { SectionLabel("الفترات الزمنية") }
+        item(key = "periods-l") { SectionLabel(L10n.t(S.Periods)) }
         item(key = "periods") {
             OneUICard {
                 Row(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 18.dp),
                     verticalAlignment = Alignment.Top
                 ) {
-                    PeriodCell("اليوم", stats.todayCount, Modifier.weight(1f))
+                    PeriodCell(L10n.t(S.DayLabel), stats.todayCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
-                    PeriodCell("الأسبوع", stats.weekCount, Modifier.weight(1f))
+                    PeriodCell(L10n.t(S.Week), stats.weekCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
-                    PeriodCell("الشهر", stats.monthCount, Modifier.weight(1f))
+                    PeriodCell(L10n.t(S.MonthLabel), stats.monthCount, Modifier.weight(1f))
                 }
             }
         }
@@ -136,7 +138,7 @@ fun StatsContent(
             OneUICard {
                 OneUIRow(
                     title = "الأيام المتتالية",
-                    summary = "استمر في المحافظة على أذكارك اليومية",
+                    summary = L10n.t(S.KeepGoing),
                     leading = { OneUIIconBadge(Icons.Outlined.LocalFireDepartment) },
                     trailing = {
                         Text(
@@ -148,8 +150,8 @@ fun StatsContent(
                 )
                 OneUIDivider(70.dp)
                 OneUIRow(
-                    title = "إجمالي القراءات",
-                    summary = "منذ بداية الاستخدام",
+                    title = L10n.t(S.TotalReads),
+                    summary = L10n.t(S.SinceStart),
                     leading = { OneUIIconBadge(Icons.Outlined.EmojiEvents) },
                     trailing = {
                         Text(
@@ -162,7 +164,7 @@ fun StatsContent(
             }
         }
         if (history.isNotEmpty()) {
-            item(key = "hist-l") { SectionLabel("آخر القراءات") }
+            item(key = "hist-l") { SectionLabel(L10n.t(S.RecentReads)) }
             item(key = "hist") {
                 OneUICard {
                     history.take(10).forEachIndexed { i, h ->
