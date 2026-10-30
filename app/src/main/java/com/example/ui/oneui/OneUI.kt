@@ -47,6 +47,13 @@ import androidx.compose.animation.core.tween
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.focus.focusRequester as focusReq
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.ui.draw.clip
@@ -89,6 +96,7 @@ fun OneUIScreen(
 ) {
     val density = LocalDensity.current
     val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+    val navigationBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
     val titleTopExtra = 0.dp
     val titleBottomTrim = 0.dp
     val expandedPx = with(density) { OneUIDimens.HeaderCollapseDistance.toPx() }
@@ -124,7 +132,28 @@ fun OneUIScreen(
             state = listState,
             modifier = Modifier
                 .fillMaxSize()
-                .then(if (hazeState != null && background == null) Modifier.hazeSource(hazeState) else Modifier),
+                .then(if (hazeState != null && background == null) Modifier.hazeSource(hazeState) else Modifier)
+                // Original b51.q masks the scrolling layer, not the floating bottom bar.
+                // Without this, the prayer card stays visible under the bar and looks like
+                // one tall glass shape instead of a separate 64dp pill.
+                .graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen }
+                .drawWithContent {
+                    drawContent()
+                    if (fraction > 0.001f) {
+                        val h = (statusTop + 112.dp).toPx()
+                        val rest = 1f - fraction
+                        drawRect(Brush.verticalGradient(
+                            0f to Color.Black.copy(alpha = 0f),
+                            .36f to Color.Black.copy(alpha = rest + .02f * fraction),
+                            .72f to Color.Black.copy(alpha = rest + .5f * fraction),
+                            1f to Color.Black, endY = h), size = Size(size.width, h), blendMode = BlendMode.DstIn)
+                    }
+                    val h = (84.dp + navigationBottom + 18.dp).toPx().coerceAtMost(size.height / 2)
+                    val y = size.height - h
+                    drawRect(Brush.verticalGradient(0f to Color.Black, .35f to Color.Black.copy(alpha = .7f),
+                        .75f to Color.Black.copy(alpha = .15f), 1f to Color.Transparent, startY = y, endY = size.height),
+                        topLeft = Offset(0f, y), size = Size(size.width, h), blendMode = BlendMode.DstIn)
+                },
             contentPadding = PaddingValues(
                 start = OneUIDimens.ScreenPadding,
                 end = OneUIDimens.ScreenPadding,

@@ -98,6 +98,12 @@ public class MainActivity extends Activity {
             if (info == null) { Log.i("WidgetHost", "no info for " + kind); continue; }
             AppWidgetHostView v = host.createView(getApplicationContext(), id, info);
             v.setAppWidget(id, info);
+            // Match a launcher: provider dimensions describe the padded content area,
+            // not the host's outer box. Otherwise bitmap scaling and native overlay
+            // coordinates disagree even when both use the same geometry.
+            int contentW = Math.max(1, wd - Math.round((v.getPaddingLeft() + v.getPaddingRight()) / d));
+            int contentH = Math.max(1, ht - Math.round((v.getPaddingTop() + v.getPaddingBottom()) / d));
+            v.updateAppWidgetSize(null, contentW, contentH, contentW, contentH, true);
             col.addView(v, new LinearLayout.LayoutParams((int)(wd * d), (int)(ht * d)));
             kinds.add(kind);
             views.add(v);
