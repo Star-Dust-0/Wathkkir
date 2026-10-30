@@ -1,0 +1,16 @@
+# Wathkkir deep parity audit
+Owner request Oct30 20:12 Africa/Cairo: deep comparison of every app corner, menus, scenarios, widgets and button behavior, across phone and watch. Target original phone3.4.2 code80; confirm paired watch reference metadata from encrypted preserved original. Days are acceptable. No release. Keep watch native countdown pending owner's decision.
+
+## Evidence rules
+Do not equate route navigation, compile success, equal text or test count with parity. Every matrix item has separate source, behavior, pixels, motion, persistence, boundary and hardware evidence. Unchecked stays unproven. Original APK is explicit behavior baseline; latest recovered source through Oct26 supplies source-first implementation. Document conflicts. Compare identical inputs, language/theme/digit/font/locale/timezone/dates/permissions/data. Deterministic freeze for snapshots, realtime separate for countdown/motion. Never hide differences with broad masks. Report exact static difference and small dynamic changes separately.
+
+## Work phases
+1. Inventory manifest, navigation routes, visible and nested controls, schedules, storage and cross-device messages in both implementations.
+2. Finish active focused repaired-menu rerun41104578918, inspect pixel pairs and frame-level motion. No extra CI dispatch until this batch lands.
+3. Complete literal source replay audit, including overlooked Oct19 glass revert on Tasbeeh. Compile and back up each source checkpoint.
+4. Build deliberate stateful phone scenario suites: onboarding/permissions; main tabs/drawer/back; Azkar CRUD/reminders/tags/favorites/Hisn; statistics/data actions; full settings; prayer/location/calculation/alerts/optional times; date conversion/calendar; Tasbeeh/Qibla; widget configuration/taps/resize/refresh/boundaries/alarms/reboot; phone-watch sync. Test Apply, Cancel, outside/back and reopen/persistence for every picker. Keep external app launches and network state distinguishable from product failure.
+5. Watch matrix: main/list/Qibla/settings every subpage; navigation, edge swipes, scroll return, rotary; theme/pattern/font/digits/lang/hijri adjustment/alarm/location/sync/open phone; circles; adhan dismiss/snooze; tile and every complication tap/time update/boundary/sleep/wake and no-fresh-data state.
+6. Parameter sweep engine parity across methods, asr/high latitude, hemisphere, DST/leap/year boundaries and offsets. Compare original engine outputs, no formula edits.
+7. Resource parity including all languages, icons/assets/font, preview/provider registration, manifests and persistence. API23/34/36 + representative phone/tablet/round watch sizes; no invented guarantee for arbitrary devices.
+8. Hardware-only gap assessment based on actual evidence: Samsung lock widget host, physical haptics/audio/sensors/rotary/connected phone-Watch handoff/background power. Try source/software checks first, then one grouped blocker if real devices required.
+9. Consolidate proven/mismatched/unproven with evidence links and repairs. A finite matrix cannot mathematically prove every possible event; never promise an ungrounded100% result. One final report, real blockers only before it.
