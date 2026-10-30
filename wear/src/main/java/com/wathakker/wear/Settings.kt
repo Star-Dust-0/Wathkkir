@@ -43,7 +43,7 @@ object Settings {
     fun themeIdx(c: Context) = c.getSharedPreferences(P, Context.MODE_PRIVATE).getInt("theme", 0)
     /** 0 = sync from the phone, 1 = automatic (GPS on the watch). */
     fun locMode(c: Context) = c.getSharedPreferences(P, Context.MODE_PRIVATE).getInt("locmode", 0)
-    fun saveLocMode(c: Context, v: Int) = c.getSharedPreferences(P, Context.MODE_PRIVATE).edit().putInt("locmode", v).apply()
+    fun saveLocMode(c: Context, v: Int) { c.getSharedPreferences(P, Context.MODE_PRIVATE).edit().putInt("locmode", v).apply(); try { requestAllComplications(c) } catch (_: Throwable) {} }
     fun saveGps(c: Context, lat: Double, lon: Double) {
         c.getSharedPreferences(P, Context.MODE_PRIVATE).edit()
             .putLong("gps_lat", java.lang.Double.doubleToLongBits(lat)).putLong("gps_lon", java.lang.Double.doubleToLongBits(lon)).apply()

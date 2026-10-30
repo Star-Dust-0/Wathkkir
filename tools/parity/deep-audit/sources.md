@@ -6,3 +6,5 @@
 - Broad menu batch https://github.com/Star-Dust-0/Wathkkir/actions/runs/41097582368 :251 route/action/foreground checks,68paired scenes,60recordings. Semantic and visual mismatches found, not parity pass.
 - Widget phone batch https://github.com/Star-Dust-0/Wathkkir/actions/runs/41092878869 :113checks. Phone original textual countdown restored; exact static date/lock groups; tiny moving edge differences in selected other scenes, not all-pixel claim.
 - Focused repaired menu batch https://github.com/Star-Dust-0/Wathkkir/actions/runs/41104578918 :pending.
+
+- Oct26 original watch source: historical application-source full Complication print14:43, final slices15:57 and16:45, exact mutations15:35/15:40/15:43. Confirm native STOPWATCH and original ranged pulse; restore location-mode refresh. No raw transcript included in source backups.
