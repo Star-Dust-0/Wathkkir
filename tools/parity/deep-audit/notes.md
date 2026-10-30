@@ -94,3 +94,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Watch engine probe setup failure
 - Run41140916694 built all APKs but original probe createPackageContext returned NameNotFound despite successful adb install. Host target34manifest omitted explicit package visibility queries. Add both exact verified package names and save pm path diagnostic. This run produced no engine outputs and proves no arithmetic result. Corrected Hisn rerun41142551606 proceeds before retry.
+
+## Finite Hisn repairs verified / engine probe route correction
+- Hisn41142551606:79checks0fails,32/32semantic pairs equal, actual paired pixels inspected for info/added/read/favorites. Final favorite/read/add DB contents match except real timestamps. One added chapter only after repeat. This is one short chapter inEN/light,AR/dark, not whole-corpus behavior or motion proof.
+- Watch engine41144194689 package visibility fixed, but reflection looked up JADX's synthetic defpackage.d21. Original runtime obfuscated root class is d21, so remove synthetic package. No engine outputs yet, no arithmetic verdict. Phone4mode digit sweep proceeds next before retry.
