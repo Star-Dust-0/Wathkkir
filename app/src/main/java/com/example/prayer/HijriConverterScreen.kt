@@ -19,6 +19,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.RestartAlt
+import androidx.compose.material.icons.outlined.KeyboardArrowDown
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -107,7 +108,7 @@ private fun DateField(
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(14.dp))
                 .background(cs.surfaceVariant.copy(alpha = 0.6f))
-                .padding(horizontal = 12.dp, vertical = 15.45.dp),
+                .padding(horizontal = 12.dp, vertical = 12.dp),
             contentAlignment = Alignment.Center
         ) {
             BasicTextField(
@@ -129,8 +130,31 @@ private fun DateField(
 
 /** Parses a month entry: a 1-12 number or a localized month name (case-insensitive). */
 @Composable
-private fun MonthField(value: String, onChange: (String) -> Unit, label: String, names: List<String>, modifier: Modifier = Modifier) =
-    DateField(value, onChange, label, modifier, numeric = false)
+private fun MonthField(value: String, onChange: (String) -> Unit, label: String, names: List<String>, modifier: Modifier = Modifier) {
+    val cs = MaterialTheme.colorScheme
+    var expanded by remember { mutableStateOf(false) }
+    val selected = parseMonth(value, names)
+    Column(modifier) {
+        Text(label, color = cs.onSurfaceVariant, fontSize = 11.sp, fontWeight = FontWeight.Medium)
+        Spacer(Modifier.height(4.dp))
+        Box {
+            Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp))
+                .background(cs.surfaceVariant.copy(alpha = 0.6f)).plainClickable { expanded = true }
+                .padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
+                Text(selected?.let { names.getOrNull(it - 1) } ?: "", Modifier.weight(1f),
+                    color = cs.onSurface, fontSize = 16.sp, textAlign = TextAlign.Center)
+                androidx.compose.material3.Icon(Icons.Outlined.KeyboardArrowDown, null, Modifier.width(18.dp), tint = cs.onSurfaceVariant)
+            }
+            androidx.compose.material3.DropdownMenu(expanded, { expanded = false }) {
+                names.forEachIndexed { i, name ->
+                    androidx.compose.material3.DropdownMenuItem(text = { Text(name) }, onClick = {
+                        onChange((i + 1).toString()); expanded = false
+                    })
+                }
+            }
+        }
+    }
+}
 
 private fun parseMonth(raw: String, names: List<String>): Int? {
     val t = raw.trim()
@@ -205,14 +229,14 @@ fun HijriConverterScreen(onBack: (() -> Unit)? = null) {
                         modifier = Modifier
                             .weight(1f)
                             .clip(RoundedCornerShape(20.dp))
-                            .background(if (active) cs.surface else Color.Transparent)
+                            .background(if (active) cs.primary.copy(alpha = 0.18f) else Color.Transparent)
                             .plainClickable { hijriToG = dir }
                             .padding(vertical = 9.dp, horizontal = 6.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
                             label,
-                            color = if (active) cs.onSurface else cs.onSurfaceVariant,
+                            color = if (active) cs.primary else cs.onSurfaceVariant,
                             fontSize = 14.sp, lineHeight = 19.4.sp, fontWeight = if (active) FontWeight.Bold else FontWeight.Medium,
                             textAlign = TextAlign.Center, maxLines = 2
                         )

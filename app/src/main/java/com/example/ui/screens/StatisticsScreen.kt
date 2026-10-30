@@ -91,13 +91,13 @@ fun StatsContent(stats: DhikrStats, titles: Map<Int, String>, history: List<Dhik
                 OneUIRow(
                     com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DayStreak), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.KeepGoing),
                     leading = { OneUIIconBadge(Icons.Default.LocalFireDepartment) },
-                    trailing = { Text(dayCount(stats.streakDays), style = MaterialTheme.typography.titleSmall, color = cs.primary) }
+                    trailing = { Text(dayCount(stats.streakDays), style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
                 )
                 OneUIDivider(inset = 70.dp)
                 OneUIRow(
                     com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TotalReads), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SinceStart),
                     leading = { OneUIIconBadge(Icons.Default.EmojiEvents) },
-                    trailing = { Text("${stats.totalCount}", style = MaterialTheme.typography.titleSmall, color = cs.primary) }
+                    trailing = { Text("${stats.totalCount}", style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
                 )
             }
         }

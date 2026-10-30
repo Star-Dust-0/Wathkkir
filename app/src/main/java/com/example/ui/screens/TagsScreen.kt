@@ -124,7 +124,7 @@ fun TagAddEditDialog(tag: Tag?, onDismiss: () -> Unit, onConfirm: (String, Strin
         title = if (tag == null) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NewTag) else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.EditTag),
         onDismiss = onDismiss,
         onConfirm = { if (name.isNotBlank()) onConfirm(name.trim(), color) },
-        confirmEnabled = name.isNotBlank()
+        confirmEnabled = true
     ) {
         OneUITextField(name, { name = it }, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TagName))
         Spacer(Modifier.height(16.dp))

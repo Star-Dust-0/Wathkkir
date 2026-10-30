@@ -63,7 +63,7 @@ fun AboutScreen(onBack: () -> Unit) {
 fun AppIconBadge() {
     val ctx = androidx.compose.ui.platform.LocalContext.current
     val bmp = androidx.compose.runtime.remember {
-        val d = androidx.core.content.ContextCompat.getDrawable(ctx, com.example.R.mipmap.ic_launcher)
+        val d = androidx.core.content.ContextCompat.getDrawable(ctx, com.example.R.drawable.app_icon)
         val px = (84 * ctx.resources.displayMetrics.density).toInt().coerceAtLeast(1)
         if (d == null) null else {
             val b = android.graphics.Bitmap.createBitmap(px, px, android.graphics.Bitmap.Config.ARGB_8888)
