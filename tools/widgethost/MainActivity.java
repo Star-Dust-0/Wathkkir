@@ -109,13 +109,26 @@ public class MainActivity extends Activity {
         setContentView(sv);
         // After updates settle, dump per-widget pixel stats: a blank/never-updated
         // widget (the R8 regression) is a uniform surface -> std near 0.
-        new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 8000);
+        new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 2000);
+        new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 6000);
+    }
+
+    private void dumpNativeTimers(android.view.View view, String kind) {
+        if (view instanceof android.widget.Chronometer) {
+            android.widget.Chronometer c = (android.widget.Chronometer)view;
+            Log.i("NativeTimerAudit", "kind="+kind+" visible="+c.isShown()+" countdown="+c.isCountDown()+" base="+c.getBase()+" text="+c.getText());
+        }
+        if (view instanceof android.view.ViewGroup) {
+            android.view.ViewGroup g=(android.view.ViewGroup)view;
+            for(int i=0;i<g.getChildCount();i++)dumpNativeTimers(g.getChildAt(i),kind);
+        }
     }
 
     private void dumpPixelStats() {
         for (int i = 0; i < views.size(); i++) {
             AppWidgetHostView v = views.get(i);
             String kind = kinds.get(i);
+            dumpNativeTimers(v, kind);
             try {
                 int w = v.getWidth(), h = v.getHeight();
                 if (w <= 0 || h <= 0) { Log.i("WidgetPix", kind + " w=" + w + " h=" + h + " SKIP"); continue; }
