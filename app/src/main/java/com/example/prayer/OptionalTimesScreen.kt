@@ -10,7 +10,7 @@ import androidx.compose.material.icons.outlined.Brightness2
 import androidx.compose.material.icons.outlined.Brightness3
 import androidx.compose.material.icons.outlined.Brightness5
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import com.example.ui.oneui.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
