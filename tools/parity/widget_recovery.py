@@ -42,7 +42,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
  # persist choices using freshly allocated widget IDs, then trigger a legitimate provider update.
  for choice in ['none','refresh']:
   prefs(pkg,'en',''.join(f'<string name="widget_tap_{i}">{choice}</string>' for i in ids.values()))
-  for k,i in ids.items():adb('shell','am','broadcast','-a','android.appwidget.action.APPWIDGET_UPDATE','-n',pkg+'/com.example.widget.'+k+'WidgetProvider','--eia','appWidgetIds',str(i))
+  for k,i in ids.items():adb('shell','am','broadcast','-a','android.appwidget.action.APPWIDGET_UPDATE','-n',pkg+'/com.example.widget.'+k+'WidgetProvider','--include-stopped-packages','--eia','appWidgetIds',str(i))
   time.sleep(6);adb('logcat','-c')
   # Pill is the third widget, after schedule + DayPrayer. Center inside its image at 420dpi.
   adb('shell','am','broadcast','-a','com.example.widgethost.CLICK','--es','kind','Pill');time.sleep(2);shot(name+'-tap-'+choice)

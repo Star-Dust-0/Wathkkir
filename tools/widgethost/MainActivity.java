@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
             String kind=in.getStringExtra("kind");
             for(int z=0;z<kinds.size();z++)if(kinds.get(z).equals(kind)){
                 String key=kind.startsWith("Lock:")?"lock_widget_art":"home_prayer_image";
-                android.view.View target=views.get(z).findViewById(foreignId(key));
+                android.view.View target=clickableChild(views.get(z));
                 Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
             }
         }},new android.content.IntentFilter("com.example.widgethost.CLICK"),android.content.Context.RECEIVER_EXPORTED);
@@ -149,6 +149,11 @@ public class MainActivity extends Activity {
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 11000);
     }
 
+    private android.view.View clickableChild(android.view.View v) {
+        if(v.hasOnClickListeners())return v;
+        if(v instanceof android.view.ViewGroup){android.view.ViewGroup g=(android.view.ViewGroup)v;for(int i=0;i<g.getChildCount();i++){android.view.View x=clickableChild(g.getChildAt(i));if(x!=null)return x;}}
+        return null;
+    }
     private int foreignId(String name) { try { return getPackageManager().getResourcesForApplication(PKG).getIdentifier(name,"id",PKG); } catch(Exception e) { return 0; } }
 
     private void dumpNativeTimers(android.view.View view, String kind) {
