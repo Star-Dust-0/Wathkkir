@@ -98,3 +98,6 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Finite Hisn repairs verified / engine probe route correction
 - Hisn41142551606:79checks0fails,32/32semantic pairs equal, actual paired pixels inspected for info/added/read/favorites. Final favorite/read/add DB contents match except real timestamps. One added chapter only after repeat. This is one short chapter inEN/light,AR/dark, not whole-corpus behavior or motion proof.
 - Watch engine41144194689 package visibility fixed, but reflection looked up JADX's synthetic defpackage.d21. Original runtime obfuscated root class is d21, so remove synthetic package. No engine outputs yet, no arithmetic verdict. Phone4mode digit sweep proceeds next before retry.
+
+## Four-mode digit fixture invalid, not parity evidence
+- Run41145732805:75checks72fail. Every scene fell into language onboarding. Runtime SharedPreferences rewrote XML header with single quotes; harness echo-single-quote transport stripped them when changing digit style and corrupted fixture XML. Use base64 fixture transport and assert retained onboarding preference. No UI parity conclusion from this run. Keep exact failure evidence.
