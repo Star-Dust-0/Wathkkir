@@ -5,3 +5,5 @@ Focused phone interaction41061755648:67checks, only4drawer-back exits reproduced
 16:38 focused settings41070778457 PASS35checks and same-coordinate prayer41071419433 PASS24time checks; actual pixels/motion frames inspected. Remaining recovered late tablet navigation patch now applied and compiles; final tablet capture pending. Drawer visual discrepancies and English font summary remain open, not physical-device handback.
 
 17:05 clean tablet41075052530 PASS12tab checks, actual drawer bounds original/comparison match for inspected rows. Calendar body remained old single-column despite route restoration; recovered Oct23 23:09 full split and23:19 equal-half correction now applied exactly, local compile PASS, rerun pending. No full parity claim.
+
+17:35 final calendar recovery41077514205 attempt2 PASS12/12 tab checks. Actual paired English/Arabic tablet calendar pixels inspected: equal halves, correct RTL mirroring, month grid and events visible, bottom bar present, no ANR overlay. First attempt failed SDK system-image download before testing; second used identical application code. Scoped settings/layout/haptics restoration verified; full app parity remains open.
