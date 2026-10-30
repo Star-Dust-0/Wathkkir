@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <queries>
-        <package android:name="com.wathakker.app" />
+        <package android:name="com.wathakker.app.compare" />
     </queries>
 
     <application

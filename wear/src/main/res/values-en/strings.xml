@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Wathkkir</string>
+  <string name="app_name">Wathkkir Test</string>
   <string name="comp_both">Gregorian &amp; Hijri</string>
   <string name="comp_countdown">Next prayer countdown</string>
   <string name="comp_greg">Gregorian date</string>
