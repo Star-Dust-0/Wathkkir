@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.S
+import com.example.ui.i18n.L10n
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -66,7 +68,7 @@ fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset
     val finalProgress = progress
     val track = cs.surfaceVariant
 
-    OneUIScreen(title = "السبحة", subtitle = "$count تسبيحة", onMenu = onMenu) {
+    OneUIScreen(title = L10n.t(S.TasbeehTab), subtitle = "$count تسبيحة", onMenu = onMenu) {
         item(key = "ring") {
             Box(
                 modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
@@ -109,7 +111,7 @@ fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset
                             lineHeight = 80.sp,
                             style = MaterialTheme.typography.displayLarge
                         )
-                        Text("اضغط للتسبيح", color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
+                        Text(L10n.t(S.TapToCount), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
                     }
                 }
             }
@@ -127,7 +129,7 @@ fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset
         item(key = "reset") {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
                 OneUIButton(
-                    text = "تصفير العداد",
+                    text = L10n.t(S.ResetCounter),
                     onClick = onReset,
                     filled = false,
                     icon = Icons.Outlined.Refresh,

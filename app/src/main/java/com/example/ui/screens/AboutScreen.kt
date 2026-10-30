@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.S
+import com.example.ui.i18n.L10n
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,7 +37,7 @@ import com.example.ui.oneui.OneUIScreen
 fun AboutScreen(onBack: () -> Unit) {
     val cs = MaterialTheme.colorScheme
     val uri = LocalUriHandler.current
-    OneUIScreen(title = "حول التطبيق", onBack = onBack) {
+    OneUIScreen(title = L10n.t(S.About), onBack = onBack) {
         item(key = "hero") {
             Column(
                 modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
@@ -45,7 +47,7 @@ fun AboutScreen(onBack: () -> Unit) {
                 Spacer(modifier = Modifier.height(12.dp))
                 Text("وَذكِّر", color = cs.onBackground, style = MaterialTheme.typography.headlineMedium)
                 Text(
-                    "تطبيق يساعدك على المحافظة على أذكارك في يومك وليلتك",
+                    L10n.t(S.Tagline),
                     modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
                     color = cs.onSurfaceVariant,
                     textAlign = TextAlign.Center,
@@ -56,19 +58,19 @@ fun AboutScreen(onBack: () -> Unit) {
         item(key = "info") {
             OneUICard {
                 OneUIRow(
-                    title = "الإصدار",
+                    title = L10n.t(S.Version),
                     leading = { OneUIIconBadge(Icons.Outlined.Info) },
                     trailing = { Text(com.example.BuildConfig.VERSION_NAME, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium) }
                 )
                 OneUIDivider(70.dp)
                 OneUIRow(
-                    title = "المطوّر",
+                    title = L10n.t(S.Developer),
                     leading = { OneUIIconBadge(Icons.Outlined.Person) },
-                    trailing = { Text("محمد النجار", color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium) }
+                    trailing = { Text(L10n.t(S.DevName), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium) }
                 )
                 OneUIDivider(70.dp)
                 OneUIRow(
-                    title = "حصن المسلم",
+                    title = L10n.t(S.HisnTab),
                     summary = "المحتوى من مشروع HisnElmoslem (مرخّص بـ GPL v3)",
                     leading = { OneUIIconBadge(Icons.AutoMirrored.Filled.MenuBook) }
                 )
@@ -77,7 +79,7 @@ fun AboutScreen(onBack: () -> Unit) {
         item(key = "credit") {
             OneUICard {
                 OneUIRow(
-                    title = "بُني بالتعاون مع Instinct",
+                    title = L10n.t(S.InstinctCredit),
                     summary = "brought to you by Instinct",
                     leading = { OneUIIconBadge(Icons.Outlined.Star) },
                     trailing = { ChevronIcon() },
@@ -88,7 +90,7 @@ fun AboutScreen(onBack: () -> Unit) {
         item(key = "dua") {
             OneUICard {
                 OneUIRow(
-                    title = "لا تنسونا من صالح دعائكم",
+                    title = L10n.t(S.Dua),
                     leading = { OneUIIconBadge(Icons.Outlined.Favorite) }
                 )
             }

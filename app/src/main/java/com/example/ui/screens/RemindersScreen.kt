@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.S
+import com.example.ui.i18n.L10n
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -31,9 +33,9 @@ fun RemindersScreen(viewModel: com.example.ui.viewmodel.MainViewModel, onBack: (
 @Composable
 fun RemindersContent(all: List<Dhikr>, onBack: () -> Unit, onToggle: (Dhikr) -> Unit) {
     val active = all.count { it.isEnabled }
-    OneUIScreen(title = "التنبيهات", subtitle = "$active من ${all.size} مفعّلة", onBack = onBack) {
+    OneUIScreen(title = L10n.t(S.Reminders), subtitle = "$active من ${all.size} مفعّلة", onBack = onBack) {
         if (all.isEmpty()) {
-            item { OneUIEmptyState("لا توجد تنبيهات", Icons.Outlined.NotificationsOff) }
+            item { OneUIEmptyState(L10n.t(S.NoReminders), Icons.Outlined.NotificationsOff) }
         } else {
             val sorted = all.sortedBy { it.reminderTimes.firstOrNull() ?: "" }
             item(key = "group") {

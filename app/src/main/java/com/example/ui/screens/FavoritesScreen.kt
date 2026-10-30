@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.S
+import com.example.ui.i18n.L10n
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Star
@@ -45,9 +47,9 @@ fun FavoritesContent(
     onEdit: (Dhikr) -> Unit,
     onDelete: (Dhikr) -> Unit
 ) {
-    OneUIScreen(title = "المفضلة", subtitle = azkarCount(favorites.size), onBack = onBack) {
+    OneUIScreen(title = L10n.t(S.Favorites), subtitle = azkarCount(favorites.size), onBack = onBack) {
         if (favorites.isEmpty()) {
-            item { OneUIEmptyState("لا توجد أذكار مفضلة", Icons.Outlined.Star) }
+            item { OneUIEmptyState(L10n.t(S.NoFavorites), Icons.Outlined.Star) }
         } else {
             dhikrCards(favorites, tagsMap, onToggleEnabled, onToggleFavorite, onClickTimes, onEdit, onDelete)
         }

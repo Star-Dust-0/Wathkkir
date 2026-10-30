@@ -22,10 +22,12 @@ def tap_text(label):
     adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(1);return True
  return False
 def foreground(pkg):
- return pkg in adb('shell','dumpsys','activity','activities').split('mResumedActivity:')[-1].split('\n')[0]
+ text=adb('shell','dumpsys','activity','activities')
+ return any(pkg+'/' in line and any(marker in line for marker in ['mResumedActivity:', 'topResumedActivity=', 'mFocusedApp=']) for line in text.splitlines())
 def relaunch(pkg):
  adb('shell','am','force-stop',pkg)
  adb('shell','am','start','-W','-n',f'{pkg}/com.example.MainActivity');time.sleep(3)
+ (OUT/(pkg+'-foreground.txt')).write_text(adb('shell','dumpsys','activity','activities'))
  check(pkg+'-foreground',foreground(pkg))
 def tap_bottom(label):
  root=ET.fromstring(hierarchy())
