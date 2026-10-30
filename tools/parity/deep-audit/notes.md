@@ -21,3 +21,9 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## 2026-10-30 21:02 localization recovery
 - The literal Oct17 bulk-localization operation covered Dialogs.kt and MoreScreen.kt. These edits were omitted from the rebuild although L10n tables and enum were present. Replayed existing exact AR-key mappings for those files; ReminderTime selected explicitly over the later AlertTiming alias. Restored lock widget toast key use in SettingsScreen.
 - Local phone debug build passed with verification module. Runtime CRUD/Apply/Cancel/persistence and screenshot comparison remain unproven after this source repair. Compilation is not a parity verdict.
+
+## 2026-10-30 21:05 full Oct19 revert audit
+- Recovered Oct19 literal revert names six files: WheelTimePicker, OneUIDialog, DashboardScreen, HijriCalendarScreen, HomeScreen, TasbeehScreen. The Tasbeeh-only fix did not exhaust that operation.
+- Current HomeScreen inner dhikr surface and DashboardScreen highlight still held the reverted frost material. WheelTimePicker selection also still had reverted translucent/hairline material. Restored the exact pre-change expressions shown in the original Oct19 diff; later Oct20-23 inspected history had no reapplication of these changes.
+- Calendar is now the later Oct23 segmented-control implementation rather than the former inline pill, so no blind rollback of calendar code was made. Dialog already separately restored its later final geometry. Local phone build passes; actual paired stateful screenshots remain required.
+- Added phone_stateful.py for isolated emulator create/cancel/save/edit/favorite/reminder/tag/picker persistence evidence, including direct DB snapshots after process stop. Harness syntax checked only, not yet run. No extra CI dispatched while watch batch pending.

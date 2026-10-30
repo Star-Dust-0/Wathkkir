@@ -1,9 +1,7 @@
 package com.example.ui.components
-import com.example.ui.oneui.oneUIBorderColor
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -155,8 +153,7 @@ private fun WheelPickerColumn(
                 .fillMaxWidth()
                 .height(itemHeight)
                 .clip(RoundedCornerShape(14.dp))
-                .background(cs.surfaceVariant.copy(alpha = 0.55f))
-                .border(1.dp, oneUIBorderColor(), RoundedCornerShape(14.dp))
+                .background(cs.surfaceVariant)
         )
         LazyColumn(
             state = listState,
