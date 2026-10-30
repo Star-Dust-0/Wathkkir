@@ -45,7 +45,7 @@ fun AboutScreen(onBack: () -> Unit) {
             ) {
                 AppIconBadge()
                 Spacer(modifier = Modifier.height(12.dp))
-                Text("وَذكِّر", color = cs.onBackground, style = MaterialTheme.typography.headlineMedium)
+                Text("وذكّر", color = cs.onBackground, style = MaterialTheme.typography.headlineMedium)
                 Text(
                     L10n.t(S.Tagline),
                     modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
@@ -71,7 +71,7 @@ fun AboutScreen(onBack: () -> Unit) {
                 OneUIDivider(70.dp)
                 OneUIRow(
                     title = L10n.t(S.HisnTab),
-                    summary = "المحتوى من مشروع HisnElmoslem (مرخّص بـ GPL v3)",
+                    summary = L10n.t(S.HisnCredit),
                     leading = { OneUIIconBadge(Icons.AutoMirrored.Filled.MenuBook) }
                 )
             }

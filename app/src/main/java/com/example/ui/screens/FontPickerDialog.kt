@@ -1,4 +1,5 @@
 package com.example.ui.screens
+import com.example.ui.theme.localizedTitle
 import com.example.ui.i18n.L10n
 import com.example.ui.i18n.S
 import androidx.compose.runtime.getValue
@@ -29,7 +30,7 @@ import com.example.ui.theme.fontFamilyFor
 @Composable
 fun FontPickerDialog(selected: FontChoice, onSelect: (FontChoice) -> Unit, onDismiss: () -> Unit) {
     var pending by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(selected) }
-    OneUIDialog(title = "الخط", onDismiss = onDismiss, onConfirm = { onSelect(pending); onDismiss() }, confirmText = L10n.t(S.Apply)) {
+    OneUIDialog(title = L10n.t(S.Font), onDismiss = onDismiss, onConfirm = { onSelect(pending); onDismiss() }, confirmText = L10n.t(S.Apply)) {
         FontChoice.entries.forEachIndexed { index, choice ->
             if (index > 0) OneUIDivider(4.dp)
             Row(
@@ -41,7 +42,7 @@ fun FontPickerDialog(selected: FontChoice, onSelect: (FontChoice) -> Unit, onDis
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    choice.titleAr,
+                    choice.localizedTitle(),
                     modifier = Modifier.weight(1f),
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 19.sp,
@@ -59,12 +60,12 @@ fun FontPickerDialog(selected: FontChoice, onSelect: (FontChoice) -> Unit, onDis
 @Composable
 fun ThemePickerDialog(selected: String, onSelect: (String) -> Unit, onDismiss: () -> Unit) {
     val options = listOf(
-        ThemeSettings.AUTO to "تلقائي (النظام)",
-        ThemeSettings.LIGHT to "فاتح",
-        ThemeSettings.DARK to "داكن"
+        ThemeSettings.AUTO to L10n.t(S.SystemAuto),
+        ThemeSettings.LIGHT to L10n.t(S.Light),
+        ThemeSettings.DARK to L10n.t(S.Dark)
     )
     var pending by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(selected) }
-    OneUIDialog(title = "المظهر", onDismiss = onDismiss, onConfirm = { onSelect(pending); onDismiss() }, confirmText = L10n.t(S.Apply)) {
+    OneUIDialog(title = L10n.t(S.Appearance), onDismiss = onDismiss, onConfirm = { onSelect(pending); onDismiss() }, confirmText = L10n.t(S.Apply)) {
         options.forEachIndexed { index, (key, label) ->
             if (index > 0) OneUIDivider(4.dp)
             Row(

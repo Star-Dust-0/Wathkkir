@@ -27,6 +27,8 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextAlign
@@ -76,7 +78,8 @@ fun OneUIDialogSurface(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .oneUIFrosted(RoundedCornerShape(30.dp), FrostSpec(cs.surface, 0.90f, oneUIBorderColor()), 24)
+                    .clip(RoundedCornerShape(28.dp))
+                    .background(oneUiMenuColor())
             ) {
                 Text(
                     title,
@@ -91,18 +94,16 @@ fun OneUIDialogSurface(
                     modifier = Modifier
                         .weight(1f, fill = false)
                         .then(if (scrollable) Modifier.verticalScroll(rememberScrollState()) else Modifier)
-                        .padding(horizontal = 24.dp),
-                    content = content
-                )
-                Spacer(modifier = Modifier.height(20.dp))
+                        .padding(horizontal = 24.dp)
+                ) {
+                    content()
+                    Spacer(modifier = Modifier.height(8.dp))
+                }
+                Spacer(modifier = Modifier.height(12.dp))
                 Row(
                     modifier = Modifier
-                        .padding(horizontal = 16.dp)
                         .fillMaxWidth()
-                        .height(56.dp)
-                        .clip(RoundedCornerShape(28.dp))
-                        .background(cs.surfaceContainerHighest.copy(alpha = 0.85f))
-                        .border(1.dp, oneUIBorderColor(), RoundedCornerShape(28.dp)),
+                        .height(56.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     val dismissBtn: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit = {
@@ -155,11 +156,12 @@ fun OneUIDialog(
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         BlurBehindDialogWindow()
         com.example.ui.theme.AppFontScaled {
+        val maxDialogHeight = (LocalConfiguration.current.screenHeightDp * 0.88f).dp
         OneUIDialogSurface(
             title = title,
             onDismiss = onDismiss,
             onConfirm = onConfirm,
-            modifier = Modifier.padding(horizontal = 24.dp),
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp).heightIn(max = maxDialogHeight),
             confirmText = confirmText,
             dismissText = dismissText ?: L10n.t(if (onConfirm == null) S.Back else S.Cancel),
             confirmEnabled = confirmEnabled,

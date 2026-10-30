@@ -30,7 +30,8 @@ import com.example.ui.oneui.OneUIDivider
 
 @Composable
 fun LanguagePickerDialog(selected: Lang, onSelect: (Lang) -> Unit, onDismiss: () -> Unit) {
-    OneUIDialog(title = L10n.t(S.Language), onDismiss = onDismiss, dismissText = L10n.t(S.Close)) {
+    var pending by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(selected) }
+    OneUIDialog(title = L10n.t(S.Language), onDismiss = onDismiss, onConfirm = { onSelect(pending); onDismiss() }, confirmText = L10n.t(S.Apply)) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -43,10 +44,7 @@ fun LanguagePickerDialog(selected: Lang, onSelect: (Lang) -> Unit, onDismiss: ()
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(14.dp))
-                        .clickable {
-                            onSelect(lang)
-                            onDismiss()
-                        }
+                        .clickable { pending = lang }
                         .padding(horizontal = 8.dp, vertical = 13.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -57,7 +55,7 @@ fun LanguagePickerDialog(selected: Lang, onSelect: (Lang) -> Unit, onDismiss: ()
                         fontSize = 19.sp,
                         style = MaterialTheme.typography.bodyLarge
                     )
-                    if (lang == selected) {
+                    if (lang == pending) {
                         Icon(Icons.Filled.CheckCircle, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
                     }
                 }
