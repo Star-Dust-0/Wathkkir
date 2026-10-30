@@ -52,12 +52,13 @@ class DhikrAlarmScheduler(private val context: Context) {
                 if (before(Calendar.getInstance())) add(Calendar.DAY_OF_YEAR, 1)
             }
             try {
-                // Original: when exact alarms are not permitted (API 31+) the inexact call is made
-                // first, then the exact call is attempted as well (and falls back on failure).
+                // Original fi0.w chooses the permitted branch, without attempting exact
+                // after the inexact call on API31+ when access was denied.
                 if (Build.VERSION.SDK_INT >= 31 && !am.canScheduleExactAlarms()) {
                     am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, cal.timeInMillis, pi)
+                } else {
+                    am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, cal.timeInMillis, pi)
                 }
-                am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, cal.timeInMillis, pi)
             } catch (e: Exception) {
                 Log.e("AlarmScheduler", "Error scheduling alarm for Dhikr id=${dhikr.id}", e)
                 try {
