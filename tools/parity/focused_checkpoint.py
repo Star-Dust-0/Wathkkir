@@ -71,6 +71,41 @@ for build in ['original','rebuilt']:
    adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(2)
    tap(.11 if lang=='en' else .89,.09);shot(f'{build}-{lang}-drawer');dump(f'{build}-{lang}-drawer-ui')
    adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1)
+   if lang == 'en':
+    import xml.etree.ElementTree as ET,re,json
+    checks=[]
+    def click_label(label):
+     adb('shell','rm','-f','/sdcard/action.xml')
+     adb('shell','uiautomator','dump','/sdcard/action.xml')
+     xml=adb('shell','cat','/sdcard/action.xml')
+     try: root=ET.fromstring(xml)
+     except ET.ParseError: return False
+     for node in root.iter('node'):
+      if label in (node.get('text'),node.get('content-desc')):
+       a=list(map(int,re.findall(r'\d+',node.get('bounds',''))))
+       if len(a)==4 and a[2]>a[0] and a[3]>a[1]:
+        adb('shell','input','tap',str((a[0]+a[2])//2),str((a[1]+a[3])//2));time.sleep(2);return True
+     return False
+    def reset_home():
+     adb('shell','am','force-stop','com.wathakker.app')
+     adb('shell','am','start','-W','-n','com.wathakker.app/com.example.MainActivity');time.sleep(3)
+    def swipe_up():
+     adb('shell','input','swipe',str(ww//2),str(int(hh*.78)),str(ww//2),str(int(hh*.30)),'400');time.sleep(2)
+    for route in ['Favorites','Reminders','Statistics','Tags','Date converter','Qibla','Tasbeeh','Fajr alarm','Settings','About']:
+     reset_home();tap(.11,.09)
+     opened=click_label(route);checks.append({'route':route,'opened':opened})
+     slug=route.lower().replace(' ','-')
+     shot(f'{build}-{lang}-route-{slug}');dump(f'{build}-{lang}-route-{slug}-ui')
+     if opened and route=='Settings':
+      for scroll in range(3):
+       swipe_up();shot(f'{build}-{lang}-settings-scroll{scroll}');dump(f'{build}-{lang}-settings-scroll{scroll}-ui')
+     if opened and route=='Tags':
+      checks.append({'route':'Tag add dialog','opened':click_label('Add tag')})
+      shot(f'{build}-{lang}-tag-add');dump(f'{build}-{lang}-tag-add-ui')
+     if opened and route=='Tasbeeh':
+      tap(.5,.48);shot(f'{build}-{lang}-tasbeeh-tap');dump(f'{build}-{lang}-tasbeeh-tap-ui')
+    (out/f'{build}-{lang}-navigation-checks.json').write_text(json.dumps(checks,indent=2))
+    reset_home()
    adb('push','widgethost.apk','/data/local/tmp/host.apk')
    print(adb('shell','CLASSPATH=/data/local/tmp/host.apk app_process / GrantBind com.example.widgethost'),flush=True)
    for mode in ['default','iqama','barsA']:
