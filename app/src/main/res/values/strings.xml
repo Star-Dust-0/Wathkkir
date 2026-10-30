@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">وذكّر</string>
+    <string name="app_name">Wathkkir Test</string>
     <string name="lock_widget_description">ويدجت شاشة القفل</string>
     <string name="widget_clock_desc">عداد الصلاة بين الصلاتين</string>
     <string name="widget_day_prayer_desc">اليوم والصلاة القادمة</string>

@@ -9,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.wathakker.app"
+        applicationId = "com.wathakker.app.compare"
         minSdk = 23
         targetSdk = 36
         versionCode = 80
