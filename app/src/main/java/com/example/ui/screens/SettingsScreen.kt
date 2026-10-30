@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
@@ -166,6 +168,8 @@ fun SettingsContent(
     onAbout: (() -> Unit)? = null
 ) {
     val ctx = LocalContext.current
+    LaunchedEffect(ctx) { com.example.utils.AppHaptics.load(ctx) }
+    val hapticView = androidx.compose.ui.platform.LocalView.current
     val haptics = com.example.utils.AppHaptics.enabled
     // Original: Arabic and English carry their own literals, other languages use the table.
     val vibLabel = when (L10n.lang) { Lang.AR -> "الاهتزاز للإشعارات"; Lang.EN -> "Notification vibration"; else -> L10n.t(S.Vibration) }
@@ -194,10 +198,10 @@ fun SettingsContent(
                 OneUIRow(L10n.t(S.NotifSound), summary = toneSummary, onClick = onPickSound,
                     leading = { OneUIIconBadge(Icons.Outlined.MusicNote) }, trailing = { ChevronIcon() })
                 OneUIRow(vibLabel, leading = { OneUIIconBadge(Icons.Outlined.Vibration) },
-                    trailing = { OneUISwitch(vibration, onVibration) }, onClick = { onVibration(!vibration) })
+                    trailing = { OneUISwitch(vibration, onVibration) }, onClick = { com.example.utils.AppHaptics.tick(hapticView); onVibration(!vibration) })
                 OneUIRow(hapticLabel, leading = { OneUIIconBadge(Icons.Outlined.TouchApp) },
                     trailing = { OneUISwitch(haptics, { com.example.utils.AppHaptics.set(ctx, it) }) },
-                    onClick = { com.example.utils.AppHaptics.set(ctx, !haptics) })
+                    onClick = { com.example.utils.AppHaptics.tick(hapticView); com.example.utils.AppHaptics.set(ctx, !haptics) })
             }
         }
         item(key = "look-l") { SectionLabel(L10n.t(S.Appearance)) }
@@ -212,8 +216,13 @@ fun SettingsContent(
                 OneUIRow(L10n.t(S.Language),summary=L10n.lang.nativeName,onClick=onLanguage,leading={OneUIIconBadge(Icons.Outlined.Language)},trailing={ChevronIcon()})
                 if(L10n.lang==Lang.AR) {
                     OneUIDivider(70.dp)
-                    Text("نوع الأرقام",modifier=Modifier.fillMaxWidth(),style=MaterialTheme.typography.bodyLarge)
-                    OneUISegmented(options=listOf("أرقام هندية  ١٢٣","أرقام عربية  1234"),selected=if(com.example.utils.Digits.isHindiChoice)0 else 1,onSelect={com.example.utils.Digits.set(ctx,it==0);com.example.widget.WidgetUpdater.INSTANCE.updateAll(ctx)})
+                    Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp)) {
+                        Text("نوع الأرقام", style = MaterialTheme.typography.bodyLarge, fontSize = 16.sp)
+                        Spacer(Modifier.height(10.dp))
+                        OneUISegmented(options=listOf("أرقام هندية  ١٢٣","أرقام عربية  1234"),
+                            selected=if(com.example.utils.Digits.isHindiChoice)0 else 1,
+                            onSelect={com.example.utils.Digits.set(ctx,it==0);com.example.widget.WidgetUpdater.INSTANCE.updateAll(ctx)})
+                    }
                 }
             }
         }

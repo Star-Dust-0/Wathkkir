@@ -12,6 +12,7 @@ object AppHaptics {
         private set
 
     fun tick(view: android.view.View) {
+        load(view.context)
         if (enabled) view.performHapticFeedback(android.view.HapticFeedbackConstants.CLOCK_TICK)
     }
 

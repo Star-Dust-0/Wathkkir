@@ -54,8 +54,6 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.focus.focusRequester as focusReq
-import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
@@ -76,8 +74,8 @@ object OneUIDimens {
     val CardRadius = 26.dp
     val HeaderCollapseDistance = 140.dp
     val BarHeight = 56.dp
-    val TitleTopGap = 0.dp
-    val TitleSubtitleBottomExtra = 0.dp
+    val TitleTopGap = 24.dp
+    val TitleSubtitleBottomExtra = 6.dp
 }
 
 /** Large collapsing One UI header + scrolling content. Content starts in the lower 2/3 of the screen. */
@@ -90,7 +88,7 @@ fun OneUIScreen(
     onMenu: (() -> Unit)? = null,
     actions: (@Composable RowScope.() -> Unit)? = null,
     listState: LazyListState = rememberLazyListState(),
-    bottomPadding: Dp = 120.dp,
+    bottomPadding: Dp? = null,
     background: (@Composable () -> Unit)? = null,
     content: LazyListScope.() -> Unit
 ) {
@@ -106,21 +104,12 @@ fun OneUIScreen(
             else (listState.firstVisibleItemScrollOffset / expandedPx).coerceIn(0f, 1f)
         }
     }
-    // One UI behavior: the pinned bar appears when scrolling up, hides when scrolling down.
-    val scrollingUp = remember { mutableStateOf(true) }
-    LaunchedEffect(listState) {
-        var prevIndex = listState.firstVisibleItemIndex
-        var prevOffset = listState.firstVisibleItemScrollOffset
-        snapshotFlow { listState.firstVisibleItemIndex to listState.firstVisibleItemScrollOffset }.collect { (i, o) ->
-            scrollingUp.value = i < prevIndex || (i == prevIndex && o <= prevOffset)
-            prevIndex = i
-            prevOffset = o
-        }
-    }
-    val barAlpha by animateFloatAsState(
-        targetValue = if (scrollingUp.value || !listState.isScrollInProgress) fraction else 0f,
-        animationSpec = tween(180),
-        label = "barAlpha"
+    // Original APK b51.q: titles appear only in the final third of header collapse.
+    val titleAlpha = ((fraction - 0.66f) / 0.34f).coerceIn(0f, 1f)
+    val barAlpha by animateFloatAsState(titleAlpha, tween(180), label = "barAlpha")
+    val tileAlpha by animateFloatAsState(
+        if (background != null) 1f else titleAlpha,
+        tween(180), label = "tileAlpha"
     )
     val bg = MaterialTheme.colorScheme.background
     val hazeState = LocalHazeState.current
@@ -157,119 +146,57 @@ fun OneUIScreen(
             contentPadding = PaddingValues(
                 start = OneUIDimens.ScreenPadding,
                 end = OneUIDimens.ScreenPadding,
-                bottom = bottomPadding
+                bottom = bottomPadding ?: (84.dp + navigationBottom)
             ),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             item(key = "oneui-header") {
                 Column(
-                    Modifier
-                        .fillMaxWidth()
-                        .padding(top = statusTop + 12.93.dp, bottom = 16.dp)
-                        .alpha(1f - fraction)
+                    Modifier.fillMaxWidth()
+                        .padding(top = statusTop + 4.dp + OneUIDimens.TitleTopGap + titleTopExtra,
+                            bottom = 16.dp - titleBottomTrim + (if (subtitle != null) OneUIDimens.TitleSubtitleBottomExtra else 0.dp))
+                        .alpha(1f - (fraction * 3f).coerceAtMost(1f))
                 ) {
-                    // Expanded top row: leading button (menu/back) and the screen actions, 48dp targets,
-                    // calibrated to the original (buttons at y=161px, x=59px / 57px from the edge).
-                    Row(
-                        Modifier.fillMaxWidth().padding(start = 6.5.dp, end = 5.7.dp).height(48.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        if (onBack != null) {
-                            IconButton(onClick = onBack) {
-                                Icon(Icons.AutoMirrored.Filled.ArrowBack, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Back), tint = MaterialTheme.colorScheme.onBackground)
-                            }
-                        } else if (onMenu != null) {
-                            IconButton(onClick = onMenu) {
-                                Icon(Icons.Outlined.Menu, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Menu), tint = MaterialTheme.colorScheme.onBackground)
-                            }
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        if (background != null) {
-                            Text(
-                                title,
-                                style = MaterialTheme.typography.titleMedium,
-                                color = MaterialTheme.colorScheme.onBackground,
-                                fontSize = 18.sp,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
-                                modifier = Modifier.weight(1f)
-                            )
-                        } else Spacer(Modifier.weight(1f))
-                        if (actions != null) actions()
-                    }
-                    Spacer(Modifier.height(20.dp))
-                    Column {
-                        Text(
-                            title,
-                            style = MaterialTheme.typography.headlineLarge,
-                            color = MaterialTheme.colorScheme.onBackground,
-                            fontSize = 36.sp,
-                            lineHeight = 44.sp
-                        )
-                        if (subtitle != null) {
-                            Text(
-                                subtitle,
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(Modifier.height(6.dp))
-                        }
-                    }
+                    Spacer(Modifier.height(52.dp))
+                    Text(title, style = MaterialTheme.typography.headlineLarge,
+                        color = MaterialTheme.colorScheme.onBackground, fontSize = 36.sp, lineHeight = 44.sp)
+                    if (subtitle != null) Text(subtitle, style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
             content()
         }
-        // One UI 7 style: floating glass pills instead of a connected top bar.
-        // Removed from the tree when hidden so they can't eat touches.
-        if (barAlpha > 0.01f) {
-            val cs = MaterialTheme.colorScheme
-            val pillLight = !ThemeSettings.isDark()
-            Box(
-                Modifier.fillMaxWidth().height(statusTop + 38.dp).alpha(barAlpha)
-                    .background(androidx.compose.ui.graphics.Brush.verticalGradient(0f to bg, 0.7f to bg, 1f to Color.Transparent))
-            )
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .padding(top = statusTop + 9.9.dp, start = 16.dp, end = 16.dp)
-                    .alpha(barAlpha),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Row(
-                    Modifier
-                        .weight(1f, fill = false)
-                        .then(if (pillLight) Modifier.clip(CircleShape).background(Color(0xFFEDEDF0)) else Modifier.oneUIGlass(CircleShape, cs.surface, alpha = 0.85f, blurRadius = 24))
-                        .height(52.dp)
-                        .padding(start = 6.5.dp, end = 18.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    if (onBack != null) {
-                        IconButton(onClick = onBack) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Back), tint = cs.onSurface)
+        // Header controls stay in one fixed row. Only pill backgrounds and the small title fade.
+        val cs = MaterialTheme.colorScheme
+        Row(
+            Modifier.fillMaxWidth().padding(top = statusTop + 10.dp, start = 16.dp, end = 16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Box(Modifier.weight(1f, fill = false)) {
+                Box(Modifier.matchParentSize().alpha(tileAlpha)
+                    .oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28))
+                Row(Modifier.height(52.dp).padding(start = 6.dp, end = 18.dp),
+                    verticalAlignment = Alignment.CenterVertically) {
+                    val leading = onBack ?: onMenu
+                    if (leading != null) {
+                        IconButton(onClick = leading) {
+                            Icon(if (onBack != null) Icons.AutoMirrored.Filled.ArrowBack else Icons.Outlined.Menu,
+                                com.example.ui.i18n.L10n.t(if (onBack != null) com.example.ui.i18n.S.Back else com.example.ui.i18n.S.Menu),
+                                tint = cs.onSurface)
                         }
-                    } else {
                         Spacer(Modifier.width(14.dp))
                     }
-                    Spacer(Modifier.width(13.7.dp))
-                    Text(
-                        title,
-                        style = MaterialTheme.typography.titleMedium,
-                        color = cs.onSurface,
-                        fontSize = 18.sp,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    Text(title, modifier = Modifier.alpha(if (background != null) tileAlpha else barAlpha),
+                        style = MaterialTheme.typography.titleMedium, color = cs.onSurface,
+                        fontSize = 18.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
-                if (actions != null) {
-                    Row(
-                        Modifier
-                            .then(if (pillLight) Modifier.clip(CircleShape).background(Color(0xFFEDEDF0)) else Modifier.oneUIGlass(CircleShape, cs.surface, alpha = 0.85f, blurRadius = 24))
-                            .height(52.dp)
-                            .padding(horizontal = 6.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) { actions() }
-                }
+            }
+            if (actions != null) Box {
+                Box(Modifier.matchParentSize().alpha(tileAlpha)
+                    .oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28))
+                Row(Modifier.height(52.dp).padding(horizontal = 6.dp),
+                    verticalAlignment = Alignment.CenterVertically) { actions() }
             }
         }
     }
@@ -571,14 +498,15 @@ fun OneUISwitch(
     modifier: Modifier = Modifier
 ) {
     val cs = MaterialTheme.colorScheme
-    val dark = cs.background == Color(0xFF000000)
+    val dark = cs.background.luminance() < 0.5f
     val track by animateColorAsState(
-        if (checked) cs.primary else if (dark) Color(0xFF5C5C5C) else Color(0xFFB7B7B7)
+        if (checked) cs.primary else if (dark) Color(0xFF39393C) else Color(0xFFB7B7B7)
     )
     val thumb by animateDpAsState(
         if (checked) 22.dp else 0.dp,
         spring(dampingRatio = 0.75f, stiffness = Spring.StiffnessMedium)
     )
+    val switchView = androidx.compose.ui.platform.LocalView.current
     Box(
         modifier
             .width(52.dp)
@@ -591,7 +519,15 @@ fun OneUISwitch(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
                 enabled = onCheckedChange != null,
-                onValueChange = { onCheckedChange?.invoke(it) }
+                onValueChange = {
+                    com.example.utils.AppHaptics.load(switchView.context)
+                    if (com.example.utils.AppHaptics.enabled) switchView.performHapticFeedback(
+                        if (android.os.Build.VERSION.SDK_INT >= 34)
+                            (if (!checked) android.view.HapticFeedbackConstants.TOGGLE_ON else android.view.HapticFeedbackConstants.TOGGLE_OFF)
+                        else android.view.HapticFeedbackConstants.CLOCK_TICK
+                    )
+                    onCheckedChange?.invoke(!checked)
+                }
             )
             .padding(3.dp),
         contentAlignment = Alignment.CenterStart
