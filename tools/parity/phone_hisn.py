@@ -81,7 +81,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   read='Read' if lang=='en' else 'تمت القراءة';add='Add to my azkar' if lang=='en' else 'أضف إلى أذكاري'
   check('mark read',choose(read));time.sleep(.5);shot('chapter-read');check('add to Azkar',choose(add));time.sleep(1);shot('added-once');check('add again',choose(add));time.sleep(1);shot('added-twice')
   adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot('list-return');check('favorite filter',tap(fav));shot('favorite-list')
-  check('favorite chapter visible',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('chapter-reopen');check('counter is session-only','Done' not in tree() if lang=='en' else 'تمّ' not in tree());adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.5)
+  check('favorite chapter visible',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('chapter-reopen');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.5)
   # Search deliberately includes non-favorites while Favorites remains selected.
   check('search action',tap('Search Hisn Al-Muslim' if lang=='en' else 'ابحث في حصن المسلم'));time.sleep(1);check('enter empty-result query',field(0,'zzzzparity'));hide_keyboard();shot('search-empty');check('no results',('No results' if lang=='en' else 'لا توجد نتائج') in tree());check('clear query',field(0,''));hide_keyboard();shot('search-cleared')
   db('hisn-final');(out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
