@@ -1,12 +1,12 @@
-name: Manual recovered Oct26 watch comparison
+name: Manual stateful phone comparison
 on:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  watch:
+  phone:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -20,11 +20,11 @@ jobs:
         env:
           FIXTURE_KEY: ${{ secrets.FIXTURE_KEY }}
         run: |
-          openssl enc -d -aes-256-cbc -pbkdf2 -pass env:FIXTURE_KEY -in tools/parity/reference-watch.enc -out watch-original.apk
+          openssl enc -d -aes-256-cbc -pbkdf2 -pass env:FIXTURE_KEY -in tools/parity/reference-phone.enc -out original.apk
           mkdir -p "$HOME/.android"
           keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -storepass android -keypass android -alias androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
-          gradle :wear:assembleDebug :widgethost:assembleDebug -PwithWear -PwithVerification --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
-          cp wear/build/outputs/apk/debug/*.apk watch-rebuilt.apk
+          gradle :app:assembleDebug :widgethost:assembleDebug -PwithVerification --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+          cp app/build/outputs/apk/debug/*.apk comparison.apk
           cp widgethost/build/outputs/apk/debug/*.apk widgethost.apk
       - name: Enable emulator acceleration
         run: |
@@ -33,19 +33,19 @@ jobs:
           sudo udevadm trigger --name-match=kvm
       - uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 33
+          api-level: 34
           arch: x86_64
-          target: android-wear
-          profile: wearos_large_round
+          target: google_apis
+          profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/watch_engine.py
+          script: python3 -u tools/parity/phone_hisn.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: watch-recovery-evidence
+          name: phone-stateful-evidence
           path: |
             evidence
-            wear/build/test-results
+            app/build/test-results
           retention-days: 7
       - if: always()
-        run: rm -f watch-original.apk
+        run: rm -f original.apk
