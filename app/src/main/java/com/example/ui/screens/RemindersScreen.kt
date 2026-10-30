@@ -33,7 +33,7 @@ fun RemindersScreen(viewModel: com.example.ui.viewmodel.MainViewModel, onBack: (
 @Composable
 fun RemindersContent(all: List<Dhikr>, onBack: () -> Unit, onToggle: (Dhikr) -> Unit) {
     val active = all.count { it.isEnabled }
-    OneUIScreen(title = L10n.t(S.Reminders), subtitle = "$active من ${all.size} مفعّلة", onBack = onBack) {
+    OneUIScreen(title = L10n.t(S.Reminders), subtitle = L10n.t(S.ActiveOfTotalFmt).format(active, all.size), onBack = onBack) {
         if (all.isEmpty()) {
             item { OneUIEmptyState(L10n.t(S.NoReminders), Icons.Outlined.NotificationsOff) }
         } else {
