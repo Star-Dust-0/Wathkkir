@@ -28,7 +28,17 @@ def choose(text):
   scroll()
  return False
 def launch(page=3,sub=0):
- adb('shell','am','force-stop',pkg);adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.MainActivity','--ei','page',str(page),'--ei','sub',str(sub));time.sleep(1.5)
+ adb('shell','am','force-stop',pkg);zone();adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.MainActivity','--ei','page',str(page),'--ei','sub',str(sub));time.sleep(4)
+ for _ in range(12):
+  x=tree()
+  if 'Starting' not in x and 'permissioncontroller' not in x:break
+  adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1)
+def zone():
+ # Wear's TimeZoneMediator can overwrite a raw setprop even with auto timezone off.
+ # UTC is deliberate here to isolate app arithmetic from different Cairo TZDB versions.
+ adb('shell','cmd','alarm','set-timezone','UTC');adb('shell','setprop','persist.sys.timezone','UTC')
+ adb('shell','am','broadcast','-a','android.intent.action.TIMEZONE_CHANGED','--es','time-zone','UTC')
+ (out/(slug+'-environment.txt')).write_text(adb('shell','date')+adb('shell','getprop','persist.sys.timezone')+adb('shell','settings','get','global','auto_time_zone'))
 def reset():
  adb('shell','am','force-stop',pkg);folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
  xml=f'<map><int name="lang" value="{2 if lang=="en" else 1}"/><int name="pat" value="1"/><int name="theme" value="0"/><int name="font_choice" value="1"/><float name="font_scale" value="1.0"/><boolean name="perm_asked" value="true"/></map>'
@@ -43,11 +53,11 @@ def stop(p,n):
  adb('pull','/sdcard/'+n+'.mp4',str(out/(n+'.mp4')))
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 for f in ['watch-original.apk','watch-rebuilt.apk','widgethost.apk']:check('install '+f,'Success' in adb('install','-r','-g',f))
-adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo')
+adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','cmd','connectivity','airplane-mode','enable');time.sleep(2);adb('shell','setprop','persist.sys.timezone','UTC')
 adb('shell','settings','put','global','window_animation_scale','1');adb('shell','settings','put','global','transition_animation_scale','1');adb('shell','settings','put','global','animator_duration_scale','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['ar','en']:
-  slug=name+'-'+lang;reset();adb('shell','date','103010002026.00');adb('logcat','-c')
+  slug=name+'-'+lang;reset();zone();adb('shell','date','103010002026.00');adb('logcat','-c')
   for page in range(4):
    launch(page);shot(slug+'-page'+str(page))
    if page in [1,3]:scroll();shot(slug+'-page'+str(page)+'-scroll')
@@ -65,7 +75,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   reset();launch(3,3);check(slug+' sync mode press',choose('Sync with phone' if lang=='en' else 'مزامنة مع الهاتف'));check(slug+' sync saved',prefs(slug+'-sync-prefs').get('locmode')=='0');shot(slug+'-sync')
   reset()
   for mode,kind in [('ranged',0),('short',0),('short',1),('short',2),('long',3),('short',4),('short',8),('tile',0)]:
-   adb('shell','am','force-stop',pkg);adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.PreviewActivity','--es','mode',mode,'--ei','kind',str(kind),'--ei','countdown_sec','180');time.sleep(1.5);shot(slug+'-provider-'+mode+str(kind))
+   adb('shell','am','force-stop',pkg);zone();adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.PreviewActivity','--es','mode',mode,'--ei','kind',str(kind),'--ei','countdown_sec','180','--es','cd_style','stopwatch');time.sleep(2);shot(slug+'-provider-'+mode+str(kind))
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'));(out/(slug+'-package.txt')).write_text(adb('shell','dumpsys','package',pkg))
 comparisons=[]
 for n,a in states.items():
