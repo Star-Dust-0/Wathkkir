@@ -1,0 +1,11 @@
+Prayer location verification,2026-10-30
+Original phone screenshot supplied by owner: New Borg El Arab;04:46,06:14,11:45,14:52,17:16,18:35.
+Exact comparison application Java calculator, full adjustment-aware overload:
+Date2026-10-30; timezone Africa/Cairo, UTC+2; Egyptian19.5/17.5 degrees; standard Asr factor1; angle-based high-lat rule3; offsets all0.
+New Borg fixture30.8619,29.5845 ->04:46 06:14 11:45 14:52 17:16 18:35. Exact six-field assertion PASS.
+Cairo30.0444,31.2357 ->04:39 06:07 11:39 14:47 17:10 18:29. Exact six-field assertion PASS.
+Offsets between rows:7,7,6,5,6,6 minutes. No formula or timezone change required. Geographic inputs explain earlier Cairo-vs-New-Borg discrepancy.
+Rounding in application source: sunrise floors to minute; Fajr,Dhuhr,Asr,Maghrib,Isha round to nearest minute after truncating fractional seconds in hoursToMillis. Noon on Friday is labeled Jumuah by UI, not a different solar equation.
+Reproduce: tools/parity/prayer_location_fixture.sh with JDK17.
+FajrPreferences stores float latitude/longitude. Fresh/no-coordinate fallback30.0444/31.2357 (Cairo). PrayerTimesScreen loads saved values; GPS and manual selection write both values. CitiesDatabase has Cairo and Alexandria but no fixed New Borg item; custom city names can be aliases and cannot by themselves prove coordinates. Supplied New Borg fixture is not claimed to be a hard-coded recovered city entry.
+This confirms comparison calculator output. Same-location installed-app pixels remain pending and must not be inferred from this console test. No formula alteration made. No release.
