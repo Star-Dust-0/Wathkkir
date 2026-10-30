@@ -2,7 +2,7 @@
 No network disclosure, release, real-device data mutation, or host account changes.
 Evidence, including failed setup, is saved per checkpoint. Counts are not parity.
 """
-import subprocess,time,pathlib,json,re,sqlite3,xml.etree.ElementTree as ET
+import base64,subprocess,time,pathlib,json,re,sqlite3,xml.etree.ElementTree as ET
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[];states={};databases={}
 def adb(*a):
  r=subprocess.run(['adb',*a],capture_output=True,timeout=50);return (r.stdout+r.stderr).decode(errors='replace')
@@ -70,9 +70,9 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();time.sleep(8)
   for style in ['hindi','latin']:
    adb('shell','am','force-stop',pkg);text=adb('shell','cat',folder+'/app_prefs.xml');text=re.sub(r'<string name="digits_style">.*?</string>',f'<string name="digits_style">{style}</string>',text)
-   adb('shell',f"echo '{text.strip()}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
+   encoded=base64.b64encode(text.encode()).decode();adb('shell',f"echo {encoded} | base64 -d > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
    slug=name+'-'+lang+'-'+style
-   launch();shot('prayer')
+   launch();check('fixture preferences retained',prefs().get('onboarding_done')=='true');shot('prayer')
    label='Tasbeeh' if lang=='en' else 'السبحة';check('Tasbeeh',route(label));shot('tasbeeh')
    label='Date converter' if lang=='en' else 'محول التاريخ';check('converter',route(label));check('reverse',tap('Hijri to Gregorian' if lang=='en' else 'من هجري إلى ميلادي'));check('Today',tap('Today' if lang=='en' else 'اليوم'));shot('converter-today')
    launch();check('Hisn',tap('Hisn' if lang=='en' else 'حصن المسلم'));time.sleep(5);shot('hisn')
