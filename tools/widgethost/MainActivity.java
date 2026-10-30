@@ -46,6 +46,11 @@ public class MainActivity extends Activity {
         AppWidgetManager awm = AppWidgetManager.getInstance(this);
         host = new AppWidgetHost(getApplicationContext(), 1024);
         host.startListening();
+        String operation=getIntent().getStringExtra("operation");
+        if ("delete".equals(operation)) { host.deleteHost(); Log.i("WidgetRecoveryAudit","deleted host"); finish(); return; }
+        host.deleteHost(); // Each scene owns a clean host, including deletion callbacks from the preceding scene.
+        host = new AppWidgetHost(getApplicationContext(), 1024);host.startListening();
+
         ScrollView sv = new ScrollView(this);
         LinearLayout col = new LinearLayout(this);
         col.setOrientation(LinearLayout.VERTICAL);
@@ -84,6 +89,12 @@ public class MainActivity extends Activity {
         if ("barsB".equals(mode)) sv.setBackgroundColor(0xFFC8C8C8);
         if ("frost".equals(mode)) sv.setBackground(new android.graphics.drawable.GradientDrawable(android.graphics.drawable.GradientDrawable.Orientation.TL_BR, new int[]{0xFF1E88E5,0xFFE91E63,0xFFFFB300}));
         String[][] selected="frost".equals(mode)?new String[][]{{"Hero","330","90"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"Clock","250","90"}}:"barsA".equals(mode)?new String[][]{{"Hero","330","90"},{"HeroLarge","330","160"},{"NextPrayer","110","90"},{"PrayerBar","250","60"},{"WideBar","330","90"},{"OneUI","330","90"}}:"barsB".equals(mode)?new String[][]{{"Iqama","330","90"},{"IqamaSmall","110","90"},{"Lock:Countdown","123","54"},{"Lock:CountdownClean","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"}}:"oneui".equals(mode)?new String[][]{{"OneUI","330","90"},{"OneUI","330","180"}}:"iqama".equals(mode)?new String[][]{{"Hero","330","90"},{"Lock:CountdownClean","123","54"},{"Lock:Countdown","123","54"},{"Lock:Bar","123","54"},{"Lock:Next","123","54"},{"Clock","250","90"}}:"pill".equals(mode)?new String[][]{{"Pill","110","90"}}:WIDGETS;
+
+        if ("recover-homeA".equals(mode)) selected=new String[][]{{"Hero","330","90"},{"NextPrayer","160","90"},{"PrayerBar","160","82"},{"Clock","240","90"}};
+        if ("recover-homeB".equals(mode)) selected=new String[][]{{"Schedule","330","90"},{"DayPrayer","160","82"},{"Pill","160","82"},{"OneUI","330","90"}};
+        if ("recover-dates".equals(mode)) selected=new String[][]{{"Hijri","82","90"},{"Gregorian","82","90"}};
+        if ("recover-lockA".equals(mode)) selected=new String[][]{{"Lock:Day","123","54"},{"Lock:Tasbih","123","54"},{"Lock:Hijri","123","54"},{"Lock:Gregorian","123","54"}};
+        if ("recover-lockB".equals(mode)) selected=new String[][]{{"Lock:Next","123","54"},{"Lock:Bar","123","54"},{"Lock:Countdown","123","54"},{"Lock:CountdownClean","123","54"}};
         for (String[] w : selected) {
             String kind = w[0];
             int wd = Integer.parseInt(w[1]), ht = Integer.parseInt(w[2]);
@@ -115,8 +126,23 @@ public class MainActivity extends Activity {
             col.addView(v, new LinearLayout.LayoutParams((int)(outerW * d), (int)(outerH * d)));
             kinds.add(kind);
             views.add(v);
+            Log.i("WidgetRecoveryAudit","bound kind="+kind+" id="+id+" ok="+ok);
+            if(kind.equals(getIntent().getStringExtra("tapKind"))) new Handler(Looper.getMainLooper()).postDelayed(()->{
+                String viewId=kind.startsWith("Lock:")?"lock_widget_art":"home_prayer_image";
+                android.view.View target=v.findViewById(getResources().getIdentifier(viewId,"id",PKG));
+                Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
+            },9000);
+
         }
         setContentView(sv);
+        registerReceiver(new android.content.BroadcastReceiver(){public void onReceive(android.content.Context c,android.content.Intent in){
+            String kind=in.getStringExtra("kind");
+            for(int z=0;z<kinds.size();z++)if(kinds.get(z).equals(kind)){
+                String key=kind.startsWith("Lock:")?"lock_widget_art":"home_prayer_image";
+                android.view.View target=views.get(z).findViewById(getResources().getIdentifier(key,"id",PKG));
+                Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
+            }
+        }},new android.content.IntentFilter("com.example.widgethost.CLICK"),android.content.Context.RECEIVER_EXPORTED);
         // After updates settle, dump per-widget pixel stats: a blank/never-updated
         // widget (the R8 regression) is a uniform surface -> std near 0.
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 6000);

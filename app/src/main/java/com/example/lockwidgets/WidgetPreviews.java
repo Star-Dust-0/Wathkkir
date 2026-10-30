@@ -82,6 +82,7 @@ public final class WidgetPreviews {
                     RemoteViews v = new RemoteViews(c.getPackageName(), res(c, "layout", "home_prayer_art_fit"));
                     HomeWidgets.ovBegin();
                     Bitmap b = HomeWidgets.renderKind(c, kind, wd, ht, 0);
+                    try { b.setDensity(1); } catch (Throwable e) { }
                     v.setImageViewBitmap(res(c, "id", "home_prayer_image"), b);
                     float pd = c.getResources().getDisplayMetrics().density;
                     HomeWidgets.ovApply(c, v, Math.round(wd * pd), Math.round(ht * pd));

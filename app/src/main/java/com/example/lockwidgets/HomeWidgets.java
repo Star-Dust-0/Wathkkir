@@ -4,7 +4,7 @@ public final class HomeWidgets {
  public static boolean openPrayer=false;
  static final ThreadLocal<State> batchState=new ThreadLocal<State>();
 
- // ---- User-approved native-first countdown overlay (before prayer and iqama): the bitmap skips the MM:SS text and a native Chronometer ticks it every second.
+ // ---- Native-first countdown overlay (before prayer and iqama): the bitmap skips the MM:SS text and a native Chronometer ticks it every second.
  static final ThreadLocal<Boolean> ovWanted=new ThreadLocal<Boolean>();
  static final ThreadLocal<String> ovToken=new ThreadLocal<String>();
  static final ThreadLocal<String> langForNative=new ThreadLocal<String>();

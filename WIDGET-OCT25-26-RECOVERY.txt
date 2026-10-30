@@ -1,0 +1,30 @@
+Oct25-26 widget recovery pass, 30 Oct 2026. Comparison branch only. No release.
+
+Oct25 22:01 source reconciliation records contain literal diff of HomeWidgets,
+OneUIWidget and WidgetPreviews from the final iqama/large-screen fixes merged at
+4110d716. Existing comparison code already contains the scale-free large-screen
+overlay, resize sizing/corner alternatives and bitmap-budget safeguards. The
+missing WidgetPreviews bitmap density normalization was recovered from that
+literal diff and restored. It is not a new appearance guess.
+
+Oct26 11:55-17:23 source operations: consolidated scheduling, all active-family
+checks, minute RTC non-wakeup pulse, independent RTC_WAKEUP prayer/iqama boundary,
+phase/static-kind optimization, daily calculation cache, legacy pulse cancellation,
+last-widget deletion scheduling and watch boundary scheduling. Present in code.
+Oct26 20:45-20:56 source operations: refreshable six-kind set (Hero, NextPrayer,
+PrayerBar, Clock, Pill, OneUI), native refresh Toast from the same rendered state,
+legacy none migration, real none for date/schedule/day kinds, per-widget config
+labels/storage and receiver registration/field correction. Present in code.
+All 10 enabled home kinds and 8 enabled lock kinds have drawing source. Disabled
+legacy Iqama/IqamaSmall/WideBar receivers are retained as disabled, matching the
+original manifest. HeroLarge is not a final enabled receiver, so no invented
+HeroLarge provider or new picker entry was added.
+
+Native-first before-prayer numeric countdown and dynamic watch ring remain later
+requested deviations, not Oct26 original parity. Bar-only progress is a recovered
+minute snapshot, not a new per-second dynamic-bar promise. Watch monochrome
+fallback source remains uncovered by these two days. Test-only host additions
+exercise real widget bindings, clicks and lifecycle, not shipped application UI.
+
+Phone and verification host compile passed after density restoration. Paired
+original/comparison host pixels, all kinds, refresh and scheduling checks pending.

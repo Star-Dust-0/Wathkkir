@@ -1,4 +1,4 @@
-name: Manual native phone countdown host check
+name: Manual recovered widget host check
 on:
   workflow_dispatch:
 permissions:
@@ -38,11 +38,11 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/native_phone.py
+          script: python3 -u tools/parity/widget_recovery.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: phone-native-countdown-evidence
+          name: recovered-widget-evidence
           path: |
             evidence
             app/build/test-results
