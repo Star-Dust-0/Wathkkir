@@ -1,4 +1,4 @@
-name: Manual recovered widget host check
+name: Manual recovered phone menu comparison
 on:
   workflow_dispatch:
 permissions:
@@ -38,11 +38,11 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/widget_recovery.py
+          script: python3 -u tools/parity/menu_recovery.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: recovered-widget-evidence
+          name: phone-menu-evidence
           path: |
             evidence
             app/build/test-results
