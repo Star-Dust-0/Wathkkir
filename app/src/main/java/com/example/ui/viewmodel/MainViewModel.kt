@@ -29,6 +29,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val tasbeehPrefs: SharedPreferences = application.getSharedPreferences("tasbeeh_prefs", Context.MODE_PRIVATE)
     private val appPrefs: SharedPreferences = application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
 
+    init { com.example.utils.NotifPrefs.migrate(application) }
+
     private val _vibrationEnabled = MutableStateFlow(appPrefs.getBoolean("vibration_enabled", true))
     val vibrationEnabled: StateFlow<Boolean> = _vibrationEnabled.asStateFlow()
 
@@ -151,12 +153,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun toggleVibration() {
         val v = !_vibrationEnabled.value
         _vibrationEnabled.value = v
-        appPrefs.edit().putBoolean("vibration_enabled", v).apply()
+        com.example.utils.NotifPrefs.setVibration(getApplication(), v)
     }
 
     fun updateNotificationSound(uri: String) {
         _notificationSound.value = uri
-        appPrefs.edit().putString("notification_sound", uri).apply()
+        val title = try { android.media.RingtoneManager.getRingtone(getApplication(), android.net.Uri.parse(uri))?.getTitle(getApplication()) } catch (_: Throwable) { null }
+        com.example.utils.NotifPrefs.setTone(getApplication(), uri, title)
     }
 
     fun setSearchQuery(q: String) { _searchQuery.value = q }
@@ -193,6 +196,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
     fun setSelectedTag(tag: Tag?) = selectTag(tag)
-    fun updateVibrationEnabled(v: Boolean) { _vibrationEnabled.value = v; appPrefs.edit().putBoolean("vibration_enabled", v).apply() }
+    fun updateVibrationEnabled(v: Boolean) { _vibrationEnabled.value = v; com.example.utils.NotifPrefs.setVibration(getApplication(), v) }
     fun updateAppFont(f: String) { _appFont.value = f; appPrefs.edit().putString("app_font", f).apply() }
 }
