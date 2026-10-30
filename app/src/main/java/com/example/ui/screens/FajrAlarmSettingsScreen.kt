@@ -54,6 +54,8 @@ import com.example.ui.i18n.Lang
 import com.example.ui.i18n.S
 import com.example.ui.oneui.OneUIButton
 import com.example.ui.oneui.OneUIChip
+import com.example.ui.oneui.OneUIChipGroup
+import com.example.ui.oneui.OneUIChipItem
 import com.example.ui.oneui.OneUICard
 import com.example.ui.oneui.OneUIDivider
 import com.example.ui.oneui.OneUIIconBadge
@@ -73,6 +75,11 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     val ctx = LocalContext.current
     val st by viewModel.uiState.collectAsStateWithLifecycle()
     var tick by remember { mutableIntStateOf(0) }
+    val fp = remember { com.example.fajr.data.FajrPreferences(ctx) }
+    var beforeMin by remember { mutableIntStateOf(fp.alarmBeforeMin) }
+    var afterMin by remember { mutableIntStateOf(fp.alarmAfterMin) }
+    var snoozeMin by remember { mutableIntStateOf(fp.snoozeMinutes) }
+    fun reschedule() { try { com.example.fajr.alarm.FajrAlarmScheduler(ctx).scheduleNextFajrAlarm() } catch (_: Throwable) {} }
     var volume by remember(st.alarmVolume) { mutableIntStateOf(st.alarmVolume) }
 
     LaunchedEffect(Unit) { viewModel.loadSettings(); viewModel.refreshFajrTimeManually() }
@@ -118,7 +125,7 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                     summary = if (enabled) L10n.t(S.AlarmOnDesc) else L10n.t(S.AlarmOffDesc),
                     leading = { OneUIIconBadge(Icons.Outlined.Alarm) },
                     trailing = { OneUISwitch(enabled, { viewModel.toggleAlarm(it) }) },
-                    onClick = { viewModel.toggleAlarm(!enabled) }
+                    onClick = com.example.utils.AppHaptics.tap { viewModel.toggleAlarm(!enabled) }
                 )
                 if (enabled) {
                     OneUIDivider(70.dp)
@@ -181,7 +188,7 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
             OneUICard {
                 OneUIRow(
                     title = w("نغمة المنبه", "Alarm tone"),
-                    summary = st.ringtoneTitle.takeIf { it.isNotBlank() } ?: L10n.t(S.DefaultAlarmTone),
+                    summary = st.ringtoneTitle?.takeIf { it.isNotBlank() } ?: L10n.t(S.DefaultAlarmTone),
                     leading = { OneUIIconBadge(Icons.Outlined.MusicNote) },
                     onClick = {
                         val intent = Intent("android.intent.action.RINGTONE_PICKER")
@@ -217,15 +224,11 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                     title = L10n.t(S.VibrateDuringAlarm),
                     leading = { OneUIIconBadge(Icons.Outlined.Vibration) },
                     trailing = { OneUISwitch(st.isVibrationEnabled, { viewModel.toggleVibration(it) }) },
-                    onClick = { viewModel.toggleVibration(!st.isVibrationEnabled) }
+                    onClick = com.example.utils.AppHaptics.tap { viewModel.toggleVibration(!st.isVibrationEnabled) }
                 )
             }
         }
         item(key = "fa-timing") {
-            val fp = remember { com.example.fajr.data.FajrPreferences(ctx) }
-            var beforeMin by remember { mutableIntStateOf(fp.alarmBeforeMin) }
-            var afterMin by remember { mutableIntStateOf(fp.alarmAfterMin) }
-            val steps = intArrayOf(0, 5, 10, 15, 30, 45, 60)
             OneUICard {
                 Column(Modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
                     Text(w("وقت التنبيه", "Alarm timing"), color = MaterialTheme.colorScheme.onSurface)
@@ -236,25 +239,20 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                     Spacer(Modifier.height(12.dp))
                     Text(w("قبل الأذان", "Before the adhan"), color = MaterialTheme.colorScheme.onSurface, fontSize = 13.sp)
                     Spacer(Modifier.height(6.dp))
-                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        for (m in steps) item {
-                            OneUIChip(if (m == 0) w("بدون", "Off") else L10n.minutesCount(m), beforeMin == m, {
-                                beforeMin = m; fp.alarmBeforeMin = m
-                                try { com.example.fajr.alarm.FajrAlarmScheduler(ctx).rescheduleFromPrefs() } catch (_: Throwable) {}
-                            })
-                        }
-                    }
+                    // 3.3.3: sliding-pill chip group (his spec: animation only, no joined container)
+                    OneUIChipGroup(
+                        items = intArrayOf(0, 5, 10, 15, 30, 45, 60).map { OneUIChipItem(if (it == 0) w("بدون", "Off") else L10n.minutesCount(it)) },
+                        selected = intArrayOf(0, 5, 10, 15, 30, 45, 60).indexOfFirst { it == beforeMin },
+                        onSelect = { i -> val m = intArrayOf(0, 5, 10, 15, 30, 45, 60)[i]; beforeMin = m; fp.alarmBeforeMin = m; reschedule() }
+                    )
                     Spacer(Modifier.height(12.dp))
                     Text(w("بعد الأذان", "After the adhan"), color = MaterialTheme.colorScheme.onSurface, fontSize = 13.sp)
                     Spacer(Modifier.height(6.dp))
-                    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        for (m in steps) item {
-                            OneUIChip(if (m == 0) w("بدون", "Off") else L10n.minutesCount(m), afterMin == m, {
-                                afterMin = m; fp.alarmAfterMin = m
-                                try { com.example.fajr.alarm.FajrAlarmScheduler(ctx).rescheduleFromPrefs() } catch (_: Throwable) {}
-                            })
-                        }
-                    }
+                    OneUIChipGroup(
+                        items = intArrayOf(0, 5, 10, 15, 30, 45, 60).map { OneUIChipItem(if (it == 0) w("بدون", "Off") else L10n.minutesCount(it)) },
+                        selected = intArrayOf(0, 5, 10, 15, 30, 45, 60).indexOfFirst { it == afterMin },
+                        onSelect = { i -> val m = intArrayOf(0, 5, 10, 15, 30, 45, 60)[i]; afterMin = m; fp.alarmAfterMin = m; reschedule() }
+                    )
                 }
             }
         }
@@ -276,13 +274,11 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                         }
                     }
                     Spacer(Modifier.height(14.dp))
-                    val fp2 = remember { com.example.fajr.data.FajrPreferences(ctx) }
-                    var snoozeMin by remember { mutableIntStateOf(fp2.snoozeMinutes) }
                     Text(w("مدة الغفوة (بالدقائق)", "Snooze length (minutes)"), color = MaterialTheme.colorScheme.onSurface)
                     Spacer(Modifier.height(8.dp))
                     LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         for (m in intArrayOf(5, 10, 15, 20, 30)) {
-                            item { OneUIChip(m.toString(), snoozeMin == m, { snoozeMin = m; fp2.snoozeMinutes = m }) }
+                            item { OneUIChip(m.toString(), snoozeMin == m, { snoozeMin = m; fp.snoozeMinutes = m }) }
                         }
                     }
                 }

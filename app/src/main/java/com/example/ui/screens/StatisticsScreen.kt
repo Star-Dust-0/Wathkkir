@@ -2,16 +2,27 @@ package com.example.ui.screens
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.outlined.LocalFireDepartment
-import androidx.compose.material.icons.outlined.EmojiEvents
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.EmojiEvents
+import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.LocalFireDepartment
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -24,8 +35,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.DhikrHistory
-import com.example.ui.oneui.*
-import androidx.compose.ui.unit.sp
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIIconBadge
+import com.example.ui.oneui.OneUIRow
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.SectionLabel
+import com.example.ui.oneui.readsCount
+import com.example.ui.theme.OneUICategoryViolet
 import com.example.ui.viewmodel.DhikrStats
 import com.example.ui.viewmodel.MainViewModel
 import java.text.SimpleDateFormat
@@ -42,79 +59,119 @@ fun StatisticsScreen(viewModel: MainViewModel, onBack: () -> Unit) {
 }
 
 @Composable
-fun StatsContent(stats: DhikrStats, titles: Map<Int, String>, history: List<DhikrHistory>, onBack: () -> Unit) {
+fun StatsContent(
+    stats: DhikrStats,
+    titles: Map<Int, String>,
+    history: List<DhikrHistory>,
+    onBack: () -> Unit
+) {
     val cs = MaterialTheme.colorScheme
-    OneUIScreen(title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Stats), subtitle = "${com.example.ui.i18n.L10n.readsCount(stats.totalCount)}${com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TotalSuffix)}", onBack = onBack) {
+    OneUIScreen(
+        title = "الإحصائيات",
+        subtitle = readsCount(stats.totalCount) + " إجمالًا",
+        onBack = onBack
+    ) {
         item(key = "donut") {
-            OneUICard(padding = PaddingValues(20.dp)) {
+            OneUICard(padding = androidx.compose.foundation.layout.PaddingValues(20.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Box(Modifier.size(120.dp), contentAlignment = Alignment.Center) {
                         Donut(stats.topReadDhikr.map { it.second })
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text("${stats.todayCount}", style = MaterialTheme.typography.headlineMedium, color = cs.onSurface)
-                            Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Today), style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+                            Text(
+                                stats.todayCount.toString(),
+                                color = cs.onSurface,
+                                style = MaterialTheme.typography.headlineMedium
+                            )
+                            Text("اليوم", color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                         }
                     }
                     Spacer(Modifier.width(20.dp))
-                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         if (stats.topReadDhikr.isEmpty()) {
-                            Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoReadsYet), style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
+                            Text(
+                                "لا توجد قراءات بعد",
+                                color = cs.onSurfaceVariant,
+                                style = MaterialTheme.typography.bodyMedium
+                            )
                         }
                         stats.topReadDhikr.take(3).forEachIndexed { i, (id, count) ->
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Box(Modifier.size(9.dp).clip(CircleShape).background(donutColor(i)))
                                 Spacer(Modifier.width(8.dp))
                                 Text(
-                                    titles[id] ?: com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DhikrIdFmt).format(id),
-                                    style = MaterialTheme.typography.bodyMedium, color = cs.onSurface,
-                                    maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f)
+                                    titles[id] ?: "ذكر #$id",
+                                    modifier = Modifier.weight(1f),
+                                    color = cs.onSurface,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis,
+                                    style = MaterialTheme.typography.bodyMedium
                                 )
-                                Text("$count", style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
+                                Text(
+                                    count.toString(),
+                                    color = cs.onSurfaceVariant,
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
                             }
                         }
                     }
                 }
             }
         }
-        item(key = "periods-l") { SectionLabel(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Periods)) }
+        item(key = "periods-l") { SectionLabel("الفترات الزمنية") }
         item(key = "periods") {
             OneUICard {
-                Row(Modifier.fillMaxWidth().padding(vertical = 18.dp)) {
-                    PeriodCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Today), stats.todayCount, Modifier.weight(1f))
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 18.dp),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    PeriodCell("اليوم", stats.todayCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
-                    PeriodCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Week), stats.weekCount, Modifier.weight(1f))
+                    PeriodCell("الأسبوع", stats.weekCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
-                    PeriodCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Month), stats.monthCount, Modifier.weight(1f))
+                    PeriodCell("الشهر", stats.monthCount, Modifier.weight(1f))
                 }
             }
         }
         item(key = "streak") {
             OneUICard {
                 OneUIRow(
-                    com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DayStreak), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.KeepGoing),
+                    title = "الأيام المتتالية",
+                    summary = "استمر في المحافظة على أذكارك اليومية",
                     leading = { OneUIIconBadge(Icons.Outlined.LocalFireDepartment) },
-                    trailing = { Text(dayCount(stats.streakDays), style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
+                    trailing = {
+                        Text(
+                            dayCount(stats.streakDays),
+                            color = OneUICategoryViolet,
+                            style = MaterialTheme.typography.titleSmall
+                        )
+                    }
                 )
-                OneUIDivider(inset = 70.dp)
+                OneUIDivider(70.dp)
                 OneUIRow(
-                    com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TotalReads), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SinceStart),
+                    title = "إجمالي القراءات",
+                    summary = "منذ بداية الاستخدام",
                     leading = { OneUIIconBadge(Icons.Outlined.EmojiEvents) },
-                    trailing = { Text("${stats.totalCount}", style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
+                    trailing = {
+                        Text(
+                            stats.totalCount.toString(),
+                            color = OneUICategoryViolet,
+                            style = MaterialTheme.typography.titleSmall
+                        )
+                    }
                 )
             }
         }
         if (history.isNotEmpty()) {
-            item(key = "hist-l") { SectionLabel(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.RecentReads)) }
+            item(key = "hist-l") { SectionLabel("آخر القراءات") }
             item(key = "hist") {
                 OneUICard {
                     history.take(10).forEachIndexed { i, h ->
-                        if (i > 0) OneUIDivider(inset = 70.dp)
-                        val time = remember(h.timestamp) {
-                            SimpleDateFormat("d MMM yyyy  hh:mm a", Locale("ar")).format(Date(h.timestamp))
-                        }
+                        if (i > 0) OneUIDivider(70.dp)
+                        val date = SimpleDateFormat("d MMM yyyy  hh:mm a", Locale("ar")).format(Date(h.timestamp))
                         OneUIRow(
-                            titles[h.dhikrId] ?: com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DhikrIdFmt).format(h.dhikrId), summary = time,
-                            leading = { OneUIIconBadge(Icons.Default.History) }
+                            title = titles[h.dhikrId] ?: "ذكر #${h.dhikrId}",
+                            summary = date,
+                            leading = { OneUIIconBadge(Icons.Outlined.History) }
                         )
                     }
                 }
@@ -123,20 +180,29 @@ fun StatsContent(stats: DhikrStats, titles: Map<Int, String>, history: List<Dhik
     }
 }
 
-private fun dayCount(n: Int) = com.example.ui.i18n.L10n.daysCount(n)
-
-@Composable
-private fun PeriodCell(label: String, value: Int, modifier: Modifier) {
-    Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-        Text("$value", style = MaterialTheme.typography.headlineMedium.copy(fontSize = 24.sp, lineHeight = 26.sp), color = MaterialTheme.colorScheme.onSurface)
-        Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
+private fun dayCount(n: Int): String = when {
+    n == 0 -> "لا أيام"
+    n == 1 -> "يوم واحد"
+    n == 2 -> "يومان"
+    n in 3..10 -> "$n أيام"
+    else -> "$n يومًا"
 }
 
 @Composable
+private fun PeriodCell(label: String, value: Int, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(value.toString(), color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.headlineSmall)
+        Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
+    }
+}
+
 private fun donutColor(i: Int): Color {
-    val p = MaterialTheme.colorScheme.primary
-    return when (i) { 0 -> p; 1 -> p.copy(alpha = 0.6f); else -> p.copy(alpha = 0.32f) }
+    val p = OneUICategoryViolet
+    return when (i) {
+        0 -> p
+        1 -> p.copy(alpha = 0.6f)
+        else -> p.copy(alpha = 0.32f)
+    }
 }
 
 @Composable
@@ -145,7 +211,7 @@ private fun Donut(values: List<Int>) {
     val colors = listOf(donutColor(0), donutColor(1), donutColor(2))
     Canvas(Modifier.fillMaxSize()) {
         val stroke = 12.dp.toPx()
-        val d = size.minDimension - stroke
+        val d = minOf(size.width, size.height) - stroke
         val tl = Offset((size.width - d) / 2f, (size.height - d) / 2f)
         val sz = Size(d, d)
         drawArc(track, 0f, 360f, false, tl, sz, style = Stroke(stroke))
@@ -154,7 +220,10 @@ private fun Donut(values: List<Int>) {
             var start = -90f
             values.take(3).forEachIndexed { i, v ->
                 val sweep = v / total * 360f
-                drawArc(colors[i], start, (sweep - 3f).coerceAtLeast(1f), false, tl, sz, style = Stroke(stroke, cap = StrokeCap.Round))
+                drawArc(
+                    colors[i], start, (sweep - 3f).coerceAtLeast(1f), false, tl, sz,
+                    style = Stroke(stroke, cap = StrokeCap.Round)
+                )
                 start += sweep
             }
         }

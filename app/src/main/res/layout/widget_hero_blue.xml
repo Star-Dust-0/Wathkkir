@@ -1,117 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:gravity="center_vertical"
-    android:orientation="vertical"
     android:id="@+id/widget_hero_root"
-    android:background="@drawable/widget_bg"
-    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl">
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    android:layoutDirection="rtl"
+    android:background="@drawable/widget_bg">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
-            android:textSize="24sp"
-            android:textColor="#ffffffff"
             android:id="@+id/widget_hero_prev_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="الظهر"
-            android:includeFontPadding="false"
-            android:fontFamily="@font/expoarabic_medium"
-            android:textDirection="rtl"/>
-        <TextView
+            android:textColor="#FFFFFFFF"
             android:textSize="24sp"
-            android:textColor="#ffffffff"
-            android:gravity="left"
+            android:textStyle="bold"
+            android:textDirection="locale" />
+        <TextView
             android:id="@+id/widget_hero_next_name"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="end"
             android:text="العصر"
-            android:includeFontPadding="false"
-            android:layout_weight="1"
-            android:fontFamily="@font/expoarabic_medium"
-            android:textDirection="rtl"/>
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textDirection="locale" />
     </LinearLayout>
+
     <ProgressBar
         android:id="@+id/widget_hero_progress"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="8dp"
         android:layout_marginTop="8dp"
-        android:maxHeight="10dp"
         android:max="100"
         android:progress="50"
-        android:progressDrawable="@drawable/widget_progress"
-        android:minHeight="0dp"
-        android:layoutDirection="ltr"
-        style="?android:attr/progressBarStyleHorizontal"/>
+        android:progressDrawable="@drawable/widget_progress" />
+
     <LinearLayout
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
         <TextView
-            android:textSize="17sp"
-            android:textColor="#ffffffff"
             android:id="@+id/widget_hero_prev_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12:50"
-            android:includeFontPadding="false"
-            android:fontFamily="@font/expoarabic_semibold"
-            android:textDirection="rtl"/>
+            android:textColor="#FFFFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textDirection="locale" />
         <TextView
-            android:textSize="14sp"
-            android:textColor="#ffe5b455"
-            android:gravity="center"
             android:id="@+id/widget_hero_remaining"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="باقي على صلاة العصر 2 س 27 د"
-            android:includeFontPadding="false"
             android:layout_weight="1"
-            android:fontFamily="@font/expoarabic_medium"
-            android:textDirection="rtl"/>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="باقي على صلاة العصر 2 س 27 د"
+            android:textColor="#FFE5B455"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textDirection="locale" />
         <TextView
-            android:textSize="17sp"
-            android:textColor="#ffffffff"
             android:id="@+id/widget_hero_next_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4:07"
-            android:includeFontPadding="false"
-            android:fontFamily="@font/expoarabic_semibold"
-            android:textDirection="rtl"/>
+            android:textColor="#FFFFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textDirection="locale" />
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
         <TextView
-            android:textSize="14sp"
-            android:textColor="#ffc9c9ce"
             android:id="@+id/widget_hero_greg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 أكتوبر 2026"
-            android:includeFontPadding="false"
-            android:fontFamily="@font/expoarabic_medium"
-            android:textDirection="rtl"/>
+            android:textColor="#FFA6A6A6"
+            android:textSize="12sp"
+            android:textDirection="locale" />
         <TextView
-            android:textSize="14sp"
-            android:textColor="#ffc9c9ce"
-            android:gravity="left"
             android:id="@+id/widget_hero_hijri"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="end"
             android:text="29 ربيع الثاني 1448"
-            android:includeFontPadding="false"
-            android:layout_weight="1"
-            android:fontFamily="@font/expoarabic_medium"
-            android:textDirection="rtl"/>
+            android:textColor="#FFA6A6A6"
+            android:textSize="12sp"
+            android:textDirection="locale" />
     </LinearLayout>
 </LinearLayout>

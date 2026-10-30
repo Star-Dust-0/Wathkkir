@@ -1,59 +1,105 @@
 package com.example.ui.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Label
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.Tag
-import com.example.ui.oneui.*
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIDialog
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIEmptyState
+import com.example.ui.oneui.OneUIIconAction
+import com.example.ui.oneui.OneUIRow
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.OneUITextField
+import com.example.ui.oneui.azkarCount
+import com.example.ui.oneui.parseColorSafe
 import com.example.ui.viewmodel.MainViewModel
 
 @Composable
 fun TagsScreen(viewModel: MainViewModel, onBack: () -> Unit) {
     val allTags by viewModel.allTags.collectAsStateWithLifecycle()
     val dhikrsWithTags by viewModel.dhikrsWithTags.collectAsStateWithLifecycle()
+    val counts = remember(dhikrsWithTags) {
+        val map = LinkedHashMap<Long, Int>()
+        dhikrsWithTags.forEach { dwt -> dwt.tags.forEach { map[it.tagId] = (map[it.tagId] ?: 0) + 1 } }
+        map
+    }
     var showAdd by remember { mutableStateOf(false) }
     var toEdit by remember { mutableStateOf<Tag?>(null) }
     var toDelete by remember { mutableStateOf<Tag?>(null) }
-    val counts = remember(dhikrsWithTags) {
-        val m = mutableMapOf<Long, Int>()
-        dhikrsWithTags.forEach { dw -> dw.tags.forEach { t -> m[t.tagId] = (m[t.tagId] ?: 0) + 1 } }
-        m
-    }
-    TagsContent(allTags, counts, onBack, onAdd = { showAdd = true }, onEdit = { toEdit = it }, onDelete = { toDelete = it })
 
-    if (showAdd) TagAddEditDialog(null, { showAdd = false }) { name, color -> viewModel.addTag(name, color); showAdd = false }
+    TagsContent(
+        tags = allTags,
+        counts = counts,
+        onBack = onBack,
+        onAdd = { showAdd = true },
+        onEdit = { toEdit = it },
+        onDelete = { toDelete = it }
+    )
+
+    if (showAdd) {
+        TagAddEditDialog(
+            tag = null,
+            onDismiss = { showAdd = false },
+            onConfirm = { name, color ->
+                viewModel.addTag(name, color)
+                showAdd = false
+            }
+        )
+    }
     toEdit?.let { tag ->
-        TagAddEditDialog(tag, { toEdit = null }) { name, color ->
-            viewModel.updateTag(tag.copy(name = name, colorHex = color)); toEdit = null
-        }
+        TagAddEditDialog(
+            tag = tag,
+            onDismiss = { toEdit = null },
+            onConfirm = { name, color ->
+                viewModel.updateTag(tag.copy(name = name, colorHex = color))
+                toEdit = null
+            }
+        )
     }
     toDelete?.let { tag ->
         OneUIDialog(
-            title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DeleteTag),
+            title = "حذف التصنيف",
             onDismiss = { toDelete = null },
-            onConfirm = { viewModel.deleteTag(tag); toDelete = null },
-            confirmText = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Delete)
+            onConfirm = {
+                viewModel.deleteTag(tag)
+                toDelete = null
+            },
+            confirmText = "حذف"
         ) {
             Text(
-                com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DeleteTagMsg).format(tag.name),
-                style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant
+                "سيتم حذف التصنيف \"${tag.name}\" من جميع الأذكار. لن تُحذف الأذكار نفسها.",
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodyLarge
             )
         }
     }
@@ -68,19 +114,20 @@ fun TagsContent(
     onEdit: (Tag) -> Unit,
     onDelete: (Tag) -> Unit
 ) {
+    val size = tags.size
     OneUIScreen(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Tags),
-        subtitle = com.example.ui.i18n.L10n.tagsCount(tags.size),
+        title = "التصنيفات",
+        subtitle = "$size " + (if (size in 3..10) "تصنيفات" else "تصنيف"),
         onBack = onBack,
-        actions = { OneUIIconAction(Icons.Default.Add, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.AddTag), onAdd) }
+        actions = { OneUIIconAction(Icons.Outlined.Add, "إضافة تصنيف", onAdd) }
     ) {
         if (tags.isEmpty()) {
-            item { OneUIEmptyState(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoTags), Icons.Default.Label) }
+            item { OneUIEmptyState("لا توجد تصنيفات", Icons.AutoMirrored.Filled.Label) }
         } else {
             item(key = "group") {
                 OneUICard {
-                    tags.forEachIndexed { i, tag ->
-                        if (i > 0) OneUIDivider(inset = 70.dp)
+                    tags.forEachIndexed { index, tag ->
+                        if (index > 0) OneUIDivider(70.dp)
                         TagRow(tag, counts[tag.tagId] ?: 0, { onEdit(tag) }, { onDelete(tag) })
                     }
                 }
@@ -90,23 +137,32 @@ fun TagsContent(
 }
 
 @Composable
-private fun TagRow(tag: Tag, count: Int, onEdit: () -> Unit, onDelete: () -> Unit) {
+fun TagRow(tag: Tag, count: Int, onEdit: () -> Unit, onDelete: () -> Unit) {
     val cs = MaterialTheme.colorScheme
+    val color = parseColorSafe(tag.colorHex)
     OneUIRow(
         title = tag.name,
         summary = azkarCount(count),
-        onClick = onEdit,
         leading = {
-            Box(Modifier.size(40.dp).clip(CircleShape).background(parseColorSafe(tag.colorHex).copy(alpha = 0.18f)), contentAlignment = Alignment.Center) {
-                Box(Modifier.size(16.dp).clip(CircleShape).background(parseColorSafe(tag.colorHex)))
+            Box(
+                modifier = Modifier.size(40.dp).clip(CircleShape).background(color.copy(alpha = 0.18f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(modifier = Modifier.size(16.dp).clip(CircleShape).background(color))
             }
         },
         trailing = {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Outlined.Edit, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Edit), tint = cs.onSurfaceVariant,
-                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onEdit).padding(9.dp))
-                Icon(Icons.Outlined.Delete, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Delete), tint = cs.onSurfaceVariant,
-                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onDelete).padding(9.dp))
+                Icon(
+                    Icons.Outlined.Edit, "تعديل",
+                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onEdit).padding(9.dp),
+                    tint = cs.onSurfaceVariant
+                )
+                Icon(
+                    Icons.Outlined.Delete, "حذف",
+                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onDelete).padding(9.dp),
+                    tint = cs.onSurfaceVariant
+                )
             }
         }
     )
@@ -121,27 +177,31 @@ fun TagAddEditDialog(tag: Tag?, onDismiss: () -> Unit, onConfirm: (String, Strin
         "#4F46E5", "#2563EB", "#0284C7", "#0D9488", "#16A34A", "#CA8A04"
     )
     OneUIDialog(
-        title = if (tag == null) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NewTag) else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.EditTag),
+        title = if (tag == null) "تصنيف جديد" else "تعديل التصنيف",
         onDismiss = onDismiss,
-        onConfirm = { if (name.isNotBlank()) onConfirm(name.trim(), color) },
-        confirmEnabled = true
+        onConfirm = { if (name.isNotBlank()) onConfirm(name.trim(), color) }
     ) {
-        OneUITextField(name, { name = it }, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TagName))
-        Spacer(Modifier.height(16.dp))
-        Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Color), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Spacer(Modifier.height(10.dp))
+        OneUITextField(name, { name = it }, "اسم التصنيف")
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("اللون", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.titleSmall)
+        Spacer(modifier = Modifier.height(10.dp))
         colors.chunked(6).forEach { rowColors ->
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            Row(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 rowColors.forEach { hex ->
-                    val selected = color.equals(hex, true)
+                    val selected = color.equals(hex, ignoreCase = true)
                     Box(
-                        Modifier.size(36.dp).clip(CircleShape).background(parseColorSafe(hex))
-                            .then(if (selected) Modifier.border(3.dp, MaterialTheme.colorScheme.onSurface, CircleShape) else Modifier)
+                        modifier = Modifier
+                            .size(36.dp)
+                            .clip(CircleShape)
+                            .background(parseColorSafe(hex))
+                            .then(
+                                if (selected) Modifier.border(BorderStroke(3.dp, MaterialTheme.colorScheme.onSurface), CircleShape)
+                                else Modifier
+                            )
                             .clickable { color = hex }
                     )
                 }
             }
-            Spacer(Modifier.height(10.dp))
         }
     }
 }

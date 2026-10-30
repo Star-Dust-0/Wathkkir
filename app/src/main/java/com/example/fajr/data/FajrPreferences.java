@@ -51,9 +51,9 @@ public final class FajrPreferences {
 
     public final String getCityNameLocalized(String str) {
         String cityName = getCityName();
-        boolean equals = "ar".equals(str);
+        boolean zEquals = "ar".equals(str);
         SharedPreferences sharedPreferences = this.prefs;
-        if (equals) {
+        if (zEquals) {
             String string = sharedPreferences.getString("city_name_ar", cityName);
             if (string != null) {
                 return string;

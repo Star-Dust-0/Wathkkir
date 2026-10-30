@@ -55,7 +55,7 @@ class PreviewActivity : Activity() {
             iq = null
         }
         if (mode == "tile") {
-            val layout = LayoutElementBuilders.Layout.Builder().setRoot(PreviewTile(this).layout(s)).build()
+            val layout = LayoutElementBuilders.Layout.Builder().setRoot(PreviewTile(this).layout(s, iq)).build()
             val res = ResourceBuilders.Resources.Builder().setVersion("1").build()
             // Note: the bundled TileRenderer mirrors the arc under an RTL system locale while the real
             // watch (sysui) does not; a per-renderer LTR context does NOT override that (verified on
@@ -134,4 +134,3 @@ class PreviewActivity : Activity() {
         }
     }
 }
-

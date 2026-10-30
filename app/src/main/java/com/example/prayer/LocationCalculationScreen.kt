@@ -1,4 +1,5 @@
 package com.example.prayer
+import com.example.utils.plainClickable
 
 import android.content.Context
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -22,7 +23,6 @@ import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.foundation.border
 import androidx.compose.material.icons.outlined.DateRange
 import androidx.compose.material.icons.outlined.EditLocation
 import androidx.compose.material.icons.outlined.GpsFixed
@@ -32,6 +32,7 @@ import androidx.compose.material.icons.outlined.Tune
 import androidx.compose.material.icons.outlined.Warning
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -60,7 +61,6 @@ import com.example.fajr.ui.CalculationMethodDialog
 import com.example.fajr.ui.CitySearchDialog
 import com.example.fajr.ui.FajrViewModel
 import com.example.lockwidgets.LockWidgets
-import kotlin.math.roundToInt
 import com.example.ui.i18n.L10n
 import com.example.ui.i18n.S
 import com.example.ui.oneui.OneUICard
@@ -83,6 +83,10 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     var showAsrDialog by remember { mutableStateOf(false) }
     var showHighLatDialog by remember { mutableStateOf(false) }
     var prefsTick by remember { mutableIntStateOf(0) }
+    var editingCity by remember { mutableStateOf(false) }
+    var cityEditText by remember { mutableStateOf("") }
+    val aliasVersion by viewModel.aliasVersion.collectAsStateWithLifecycle()
+    val cityAliased = remember(state.cityName, aliasVersion) { viewModel.isCurrentPlaceAliased() }
 
     LaunchedEffect(L10n.lang) { viewModel.refreshCityDisplay() }
 
@@ -95,10 +99,9 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     fun recalc() {
         prefsTick++
         viewModel.refreshFajrTimeManually()
-        try { com.example.prayer.alerts.PrayerAlertScheduler.INSTANCE.scheduleAll(context) } catch (_: Throwable) {}
+        try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context) } catch (_: Throwable) {}
         try { WidgetUpdater.INSTANCE.updateAll(context) } catch (_: Throwable) {}
         try { LockWidgets.updateAll(context) } catch (_: Throwable) {}
-        try { com.example.utils.WearSync.push(context) } catch (_: Throwable) {}
     }
 
     if (showCityDialog) {
@@ -118,18 +121,18 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
         OptionPickerDialog(
             title = L10n.t(S.AsrJuristic),
             options = listOf(L10n.t(S.AsrShafii), L10n.t(S.AsrHanafi)),
-            selected = if (PrayerAdjustments.INSTANCE.asrHanafi(context)) 1 else 0,
+            selected = if (PrayerAdjustments.asrHanafi(context)) 1 else 0,
             onDismiss = { showAsrDialog = false },
-            onPick = { PrayerAdjustments.INSTANCE.setAsrHanafi(context, it == 1); showAsrDialog = false; recalc() }
+            onPick = { PrayerAdjustments.setAsrHanafi(context, it == 1); showAsrDialog = false; recalc() }
         )
     }
     if (showHighLatDialog) {
         OptionPickerDialog(
             title = L10n.t(S.HighLatRule),
             options = listOf(L10n.t(S.HighLatNone), L10n.t(S.HighLatMiddle), L10n.t(S.HighLatSeventh), L10n.t(S.HighLatAngle)),
-            selected = PrayerAdjustments.INSTANCE.highLatRule(context),
+            selected = PrayerAdjustments.highLatRule(context),
             onDismiss = { showHighLatDialog = false },
-            onPick = { PrayerAdjustments.INSTANCE.setHighLatRule(context, it); showHighLatDialog = false; recalc() }
+            onPick = { PrayerAdjustments.setHighLatRule(context, it); showHighLatDialog = false; recalc() }
         )
     }
 
@@ -163,56 +166,66 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                     subtitle = L10n.t(S.PickCitySub),
                     onClick = { viewModel.setUseCurrentLocation(false) }
                 )
-                // Custom city name row (original): pin, hint + name, pencil -> inline editor with check / close.
-                var editingName by remember { mutableStateOf(false) }
-                var nameDraft by remember { mutableStateOf("") }
-                val cityPrefs = remember { com.example.fajr.data.FajrPreferences(context) }
+                // City summary row: identical metrics to LocOptionRow above - 12dp insets,
+                // icon on the same column axis as the radio rows' icons (RadioButton's
+                // minimum-interactive slot is 48dp + 8dp spacer = 56dp), same text styles,
+                // trailing change label like CalcRow.
                 Row(
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 10.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(14.dp))
+                        .plainClickable(enabled = !state.useCurrentLocation) { showCityDialog = true }
+                        .padding(12.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Spacer(Modifier.width(56.dp))
                     Icon(Icons.Outlined.LocationOn, null, tint = cs.primary)
                     Spacer(Modifier.width(10.dp))
-                    if (!editingName) {
+                    if (editingCity) {
+                        OutlinedTextField(
+                            value = cityEditText,
+                            onValueChange = { cityEditText = it },
+                            modifier = Modifier.weight(1f),
+                            singleLine = true
+                        )
+                        IconButton(onClick = {
+                            if (viewModel.setCityAlias(cityEditText)) {
+                                editingCity = false
+                                recalc()
+                                try { com.example.utils.WearSync.push(context, null) } catch (_: Throwable) {}
+                            }
+                        }) { Icon(Icons.Outlined.Check, L10n.t(S.Save), tint = cs.primary) }
+                        IconButton(onClick = { editingCity = false }) { Icon(Icons.Outlined.Close, L10n.t(S.Cancel), tint = cs.onSurfaceVariant) }
+                    } else {
                         Column(modifier = Modifier.weight(1f)) {
-                            Text(L10n.t(S.CustomLocationNameHint), color = cs.onSurfaceVariant, fontSize = 13.sp)
+                            Text(L10n.t(S.CustomLocationNameHint), modifier = Modifier.padding(top = 2.dp), color = cs.onSurfaceVariant, fontSize = 13.sp, lineHeight = 18.sp)
                             Text(state.cityName, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
                         }
-                        Icon(
-                            Icons.Outlined.Edit, L10n.t(S.EditCityName), tint = cs.primary.copy(alpha = 0.55f),
-                            modifier = Modifier.size(47.dp / 1.0f).clip(CircleShape).background(cs.primary.copy(alpha = 0.07f))
-                                .clickable { nameDraft = state.cityName; editingName = true }.padding(12.dp)
-                        )
-                    } else {
-                        androidx.compose.foundation.text.BasicTextField(
-                            value = nameDraft, onValueChange = { nameDraft = it }, singleLine = true,
-                            textStyle = androidx.compose.ui.text.TextStyle(fontSize = 16.sp, color = cs.onSurface),
-                            modifier = Modifier.weight(1f).border(1.dp, cs.outline, RoundedCornerShape(8.dp)).padding(horizontal = 14.dp, vertical = 14.dp)
-                        )
-                        Icon(
-                            Icons.Outlined.Check, L10n.t(S.Save), tint = cs.primary,
-                            modifier = Modifier.size(47.dp).clip(CircleShape).clickable {
-                                if(viewModel.setCityAlias(nameDraft)) recalc()
-                                editingName = false
-                            }.padding(12.dp)
-                        )
-                        Icon(
-                            Icons.Outlined.Close, L10n.t(S.Cancel), tint = cs.onSurfaceVariant,
-                            modifier = Modifier.size(47.dp).clip(CircleShape).clickable { editingName = false }.padding(12.dp)
-                        )
+                        if (cityAliased) {
+                            TextButton(onClick = { viewModel.clearCityAlias(); recalc(); try { com.example.utils.WearSync.push(context, null) } catch (_: Throwable) {} }) {
+                                Text(L10n.t(S.ResetCityNameAuto), color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                            }
+                        }
+                        androidx.compose.material3.Surface(shape = androidx.compose.foundation.shape.CircleShape, color = cs.primary.copy(alpha = 0.12f), modifier = Modifier.padding(start = 8.dp)) {
+                            IconButton(onClick = { cityEditText = state.cityName; editingCity = true }, modifier = Modifier.size(36.dp)) {
+                                Icon(Icons.Outlined.Edit, L10n.t(S.EditCityName), tint = cs.primary, modifier = Modifier.size(18.dp))
+                            }
+                        }
                     }
-                }
-                if (cityPrefs.cityNameArOrig != null) {
-                    Text(L10n.t(S.ResetCityNameAuto),color=cs.primary,modifier=Modifier.padding(start=68.dp,top=4.dp,bottom=8.dp).clickable {viewModel.resetCityAlias();recalc()})
                 }
                 if (state.useCurrentLocation && (!state.hasLocationPermission || !state.isGpsAvailable)) {
                     Spacer(Modifier.height(8.dp))
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Outlined.Warning, null, tint = cs.error)
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 12.dp, end = 12.dp, bottom = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Outlined.Warning, null, tint = cs.error, modifier = Modifier.size(20.dp))
                         Spacer(Modifier.width(8.dp))
                         Text(
                             if (!state.hasLocationPermission) L10n.t(S.NoLocPermission) else L10n.t(S.GpsOff),
+                            modifier = Modifier.weight(1f),
                             color = cs.error,
                             fontSize = 12.sp
                         )
@@ -233,14 +246,14 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                 CalcRow(
                     icon = Icons.Outlined.Tune,
                     title = L10n.t(S.AsrJuristic),
-                    value = L10n.t(if (remember(prefsTick) { PrayerAdjustments.INSTANCE.asrHanafi(context) }) S.AsrHanafi else S.AsrShafii),
+                    value = L10n.t(if (remember(prefsTick) { PrayerAdjustments.asrHanafi(context) }) S.AsrHanafi else S.AsrShafii),
                     onClick = { showAsrDialog = true }
                 )
                 CalcRow(
                     icon = Icons.Outlined.Tune,
                     title = L10n.t(S.HighLatRule),
                     value = L10n.t(
-                        when (remember(prefsTick) { PrayerAdjustments.INSTANCE.highLatRule(context) }) {
+                        when (remember(prefsTick) { PrayerAdjustments.highLatRule(context) }) {
                             1 -> S.HighLatMiddle
                             2 -> S.HighLatSeventh
                             3 -> S.HighLatAngle
@@ -257,24 +270,24 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
             OneUICard {
                 Text(L10n.t(S.AdjNote), color = cs.onSurfaceVariant, fontSize = 12.sp)
                 Spacer(Modifier.height(10.dp))
-                val offsets = remember(prefsTick) { PrayerAdjustments.INSTANCE.offsetMinutes(context) }
+                val offsets = remember(prefsTick) { PrayerAdjustments.offsetMinutes(context) }
                 val names = listOf(S.PrayerFajr, S.PrayerShuruq, S.PrayerDhuhr, S.PrayerAsr, S.PrayerMaghrib, S.PrayerIsha)
                 names.forEachIndexed { index, key ->
                     StepperRow(
                         title = L10n.t(key),
                         value = offsets[index],
                         unit = L10n.t(S.AdjMinShort),
-                        onChange = { PrayerAdjustments.INSTANCE.setOffsetMinutes(context, index, it); recalc() }
+                        onChange = { PrayerAdjustments.setOffsetMinutes(context, index, it); recalc() }
                     )
                 }
                 Spacer(Modifier.height(6.dp))
                 StepperRow(
                     title = L10n.t(S.AdjHijri),
                     icon = Icons.Outlined.DateRange,
-                    value = remember(prefsTick) { PrayerAdjustments.INSTANCE.hijriOffsetDays(context) },
+                    value = remember(prefsTick) { PrayerAdjustments.hijriOffsetDays(context) },
                     unit = L10n.t(S.AdjDayShort),
                     min = -2, max = 2,
-                    onChange = { PrayerAdjustments.INSTANCE.setHijriOffsetDays(context, it); recalc() }
+                    onChange = { PrayerAdjustments.setHijriOffsetDays(context, it); recalc() }
                 )
             }
         }
@@ -293,7 +306,7 @@ private fun LocOptionRow(selected: Boolean, icon: ImageVector, title: String, su
             .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        RadioButton(selected = selected, onClick = onClick)
+        RadioButton(selected = selected, onClick = com.example.utils.AppHaptics.tap(onClick))
         Spacer(Modifier.width(8.dp))
         Icon(icon, null, tint = cs.primary)
         Spacer(Modifier.width(10.dp))
@@ -311,8 +324,8 @@ private fun CalcRow(icon: ImageVector, title: String, value: String, onClick: ()
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .clickable(onClick = onClick)
-            .padding(vertical = 7.dp, horizontal = 4.dp),
+            .plainClickable(onClick = onClick)
+            .padding(vertical = 10.dp, horizontal = 4.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -331,36 +344,45 @@ private fun CalcRow(icon: ImageVector, title: String, value: String, onClick: ()
 @Composable
 private fun StepperRow(title: String, value: Int, unit: String, onChange: (Int) -> Unit, icon: ImageVector? = null, min: Int = -30, max: Int = 30) {
     val cs = MaterialTheme.colorScheme
-    val view = androidx.compose.ui.platform.LocalView.current
-    var live by remember(value) { mutableStateOf(value.toFloat()) }
-    Column(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 9.dp)) {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-            Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
-                if (icon != null) {
-                    Icon(icon, null, tint = cs.primary, modifier = Modifier.size(20.dp))
-                    Spacer(Modifier.width(8.dp))
-                }
-                Text(title, color = cs.onSurface, style = MaterialTheme.typography.bodyLarge)
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+            if (icon != null) {
+                Icon(icon, null, tint = cs.primary, modifier = Modifier.size(20.dp))
+                Spacer(Modifier.width(8.dp))
             }
-            val v = live.roundToInt()
-            Text(
-                text = "\u200e" + (if (v > 0) "+$v" else "$v") + " " + unit,
-                color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.widthIn(min = 56.dp), textAlign = androidx.compose.ui.text.style.TextAlign.End
-            )
+            Text(title, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
         }
-        androidx.compose.material3.Slider(
-            value = live,
-            onValueChange = {
-                val n = it.roundToInt()
-                if (n != live.roundToInt()) view.performHapticFeedback(android.view.HapticFeedbackConstants.CLOCK_TICK)
-                live = it
-            },
-            onValueChangeFinished = { onChange(live.roundToInt()) },
-            valueRange = min.toFloat()..max.toFloat(),
-            steps = max - min - 1,
-            modifier = Modifier.fillMaxWidth()
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            StepperButton(Icons.Outlined.Remove, value > min) { onChange(value - 1) }
+            Text(
+                text = (if (value > 0) "+$value" else "$value") + " " + unit,
+                color = if (value != 0) cs.primary else cs.onSurfaceVariant,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.width(72.dp),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+            StepperButton(Icons.Outlined.Add, value < max) { onChange(value + 1) }
+        }
+    }
+}
+
+@Composable
+private fun StepperButton(icon: ImageVector, enabled: Boolean, onClick: () -> Unit) {
+    val cs = MaterialTheme.colorScheme
+    IconButton(
+        onClick = onClick,
+        enabled = enabled,
+        modifier = Modifier
+            .size(34.dp)
+            .clip(CircleShape)
+            .background(if (enabled) cs.primary.copy(alpha = 0.12f) else cs.onSurface.copy(alpha = 0.05f))
+    ) {
+        Icon(icon, null, tint = if (enabled) cs.primary else cs.onSurfaceVariant.copy(alpha = 0.4f), modifier = Modifier.size(18.dp))
     }
 }
 

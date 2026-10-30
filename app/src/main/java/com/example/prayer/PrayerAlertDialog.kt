@@ -1,4 +1,15 @@
 package com.example.prayer
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
+import kotlin.math.roundToInt
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.foundation.background
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material3.RadioButton
+import com.example.utils.plainClickable
+
+import com.example.ui.i18n.Lang
 
 import android.app.NotificationManager
 import android.content.Context
@@ -20,6 +31,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Remove
@@ -29,6 +41,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
+import android.os.Build
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -42,14 +55,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.foundation.background
-import androidx.compose.material3.RadioButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.ui.text.input.KeyboardType
-import kotlin.math.roundToInt
 import com.example.fajr.data.FajrPreferences
 import com.example.fajr.sound.RingtoneHelper
 import com.example.prayer.alerts.PrayerAlertScheduler
@@ -62,14 +67,14 @@ import com.example.ui.oneui.OneUISwitch
 /**
  * Per-prayer bell settings (long-press a bell on the Prayer screen): enable, alert type
  * (notification / full alarm), timing relative to adhan, iqama reminder. Below the divider,
- * this prayer's sound/vibration overrides, falling back to the app settings.
+ * the SHARED sound/vibration/volume/duration profile (single profile for all prayers).
  */
 @Composable
 fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
     val context = LocalContext.current
     val cs = MaterialTheme.colorScheme
     var tick by remember { mutableIntStateOf(0) }
-    val snapshot = remember { PrayerAlertStore.INSTANCE.snapshot(context, prayer) }
+    val snapshot = remember { PrayerAlertStore.snapshot(context, prayer) }
 
     val ringtonePickerLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -79,7 +84,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
             val uri: android.net.Uri? = result.data?.getParcelableExtra("android.intent.extra.ringtone.PICKED_URI")
             if (uri != null) {
                 val title = RingtoneHelper(context).getRingtoneTitle(uri)
-                PrayerAlertStore.INSTANCE.setToneOverride(context, prayer, uri.toString(), title)
+                PrayerAlertStore.setToneOverride(context, prayer, uri.toString(), title); com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context)
                 tick++
             }
         }
@@ -89,27 +94,28 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
     ) { uri: android.net.Uri? ->
         if (uri != null) {
             val title = RingtoneHelper(context).getRingtoneTitle(uri)
-            PrayerAlertStore.INSTANCE.setToneOverride(context, prayer, uri.toString(), title)
+            PrayerAlertStore.setToneOverride(context, prayer, uri.toString(), title); com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context)
             tick++
         }
     }
 
     fun changed() {
         tick++
-        PrayerAlertScheduler.INSTANCE.scheduleAll(context)
+        PrayerAlertScheduler.scheduleAll(context)
     }
 
     val prefs = remember(tick) { FajrPreferences(context) }
-    val enabled = remember(tick) { PrayerAlertStore.INSTANCE.isEnabled(context, prayer) }
-    val offset = remember(tick) { PrayerAlertStore.INSTANCE.offsetMinutes(context, prayer) }
-    val iqama = remember(tick) { PrayerAlertStore.INSTANCE.iqamaReminder(context, prayer) }
+    val enabled = remember(tick) { PrayerAlertStore.isEnabled(context, prayer) }
+    val offset = remember(tick) { PrayerAlertStore.offsetMinutes(context, prayer) }
+    val iqama = remember(tick) { PrayerAlertStore.iqamaReminder(context, prayer) }
+    val fullScreen = remember(tick) { PrayerAlertStore.fullScreen(context, prayer) }
 
     OneUIDialog(
         title = prayerName,
         onDismiss = {
             // Cancel: discard everything changed in this dialog
-            PrayerAlertStore.INSTANCE.restore(context, prayer, snapshot)
-            PrayerAlertScheduler.INSTANCE.scheduleAll(context)
+            PrayerAlertStore.restore(context, prayer, snapshot)
+            PrayerAlertScheduler.scheduleAll(context)
             onDismiss()
         },
         onConfirm = onDismiss,
@@ -131,9 +137,46 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         Text(L10n.t(S.AtAdhanRowSub), color = cs.onSurfaceVariant, fontSize = 11.sp)
                     }
                 }
-                OneUISwitch(enabled, { PrayerAlertStore.INSTANCE.setEnabled(context, prayer, it); changed() })
+                OneUISwitch(enabled, { PrayerAlertStore.setEnabled(context, prayer, it); changed() })
             }
             if (enabled) {
+                Spacer(Modifier.height(10.dp))
+                // Alert style: notification (default) or full-screen, per prayer. One UI choice row
+                // opening a radio dialog - the current "adhan alert" option split in two.
+                var showTypePicker by remember { mutableStateOf(false) }
+                Row(
+                    modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).plainClickable { showTypePicker = true }.padding(vertical = 6.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(L10n.t(S.AdhanAlertType), color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                        Text(L10n.t(if (fullScreen) S.AlertTypeFullScreen else S.AlertTypeNotification), modifier = Modifier.padding(top = 2.dp), color = cs.primary, fontSize = 13.sp, lineHeight = 18.sp)
+                    }
+                }
+                if (showTypePicker) {
+                    var pendingType by remember { mutableStateOf(fullScreen) }
+                    OneUIDialog(
+                        title = L10n.t(S.AdhanAlertType),
+                        onDismiss = { showTypePicker = false },
+                        onConfirm = {
+                            if (pendingType != fullScreen) { PrayerAlertStore.setFullScreen(context, prayer, pendingType); changed() }
+                            showTypePicker = false
+                        },
+                        confirmText = L10n.t(S.Apply)
+                    ) {
+                        listOf(false to S.AlertTypeNotification, true to S.AlertTypeFullScreen).forEach { (v, key) ->
+                            Row(
+                                modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).plainClickable { pendingType = v }.padding(12.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(L10n.t(key), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                                if (v == pendingType) Icon(Icons.Outlined.Check, null, tint = cs.primary)
+                            }
+                        }
+                    }
+                }
                 Spacer(Modifier.height(10.dp))
                 // Early reminder: an ADDITION to the adhan-time notification, never a replacement.
                 val earlyOn = offset > 0
@@ -147,7 +190,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         Text(L10n.t(S.BeforeAdhanHelper), color = cs.onSurfaceVariant, fontSize = 11.sp)
                     }
                     OneUISwitch(earlyOn, { want ->
-                        PrayerAlertStore.INSTANCE.setOffsetMinutes(context, prayer, if (want) (if (offset > 0) offset else 10) else 0)
+                        PrayerAlertStore.setOffsetMinutes(context, prayer, if (want) (if (offset > 0) offset else 10) else 0)
                         changed()
                     })
                 }
@@ -165,7 +208,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         Text(
                             L10n.t(S.MinBeforeFmt).format(dragOffset),
                             color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold,
-                            modifier = Modifier.clickable { showMinuteInput = true }
+                            modifier = Modifier.plainClickable { showMinuteInput = true }
                         )
                     }
                     if (showMinuteInput) {
@@ -178,7 +221,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                                 if (v != null && v in 1..60) {
                                     dragOffset = v
                                     if (v != offset) {
-                                        PrayerAlertStore.INSTANCE.setOffsetMinutes(context, prayer, v)
+                                        PrayerAlertStore.setOffsetMinutes(context, prayer, v)
                                         changed()
                                     }
                                     showMinuteInput = false
@@ -195,12 +238,17 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                             )
                         }
                     }
+                    val hapticView = androidx.compose.ui.platform.LocalView.current
                     Slider(
                         value = dragOffset.toFloat(),
-                        onValueChange = { dragOffset = it.roundToInt().coerceIn(1, 60) },
+                        onValueChange = {
+                            val v = it.roundToInt().coerceIn(1, 60)
+                            if (v != dragOffset) com.example.utils.AppHaptics.tick(hapticView)
+                            dragOffset = v
+                        },
                         onValueChangeFinished = {
                             if (dragOffset != offset) {
-                                PrayerAlertStore.INSTANCE.setOffsetMinutes(context, prayer, dragOffset)
+                                PrayerAlertStore.setOffsetMinutes(context, prayer, dragOffset)
                                 changed()
                             }
                         },
@@ -221,7 +269,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                             Text(L10n.t(S.IqamaReminder), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
                             Text(L10n.t(S.IqamaReminderSub), color = cs.onSurfaceVariant, fontSize = 11.sp)
                         }
-                        OneUISwitch(iqama, { PrayerAlertStore.INSTANCE.setIqamaReminder(context, prayer, it); changed() })
+                        OneUISwitch(iqama, { PrayerAlertStore.setIqamaReminder(context, prayer, it); changed() })
                     }
                 }
                 if (prayer != 1) {
@@ -230,7 +278,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                         nm.isNotificationPolicyAccessGranted
                     }
-                    val dndOn = remember(tick) { PrayerAlertStore.INSTANCE.autoDnd(context, prayer) }
+                    val dndOn = remember(tick) { PrayerAlertStore.autoDnd(context, prayer) }
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -249,27 +297,31 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                                     )
                                 } catch (_: Throwable) {}
                             } else {
-                                PrayerAlertStore.INSTANCE.setAutoDnd(context, prayer, want)
+                                PrayerAlertStore.setAutoDnd(context, prayer, want)
                                 changed()
                             }
                         })
                     }
                 }
                 Spacer(Modifier.height(12.dp))
-                val hasOverride = remember(tick) { PrayerAlertStore.INSTANCE.hasOverride(context, prayer) }
-                val english = L10n.lang != com.example.ui.i18n.Lang.AR
-                Text(if (english) "This prayer's tone and vibration" else "نغمة واهتزاز هذه الصلاة", color = cs.onSurfaceVariant, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                Text(if (hasOverride) {
-                    if (english) "Custom for this prayer only" else "مخصص لهذه الصلاة فقط"
-                } else {
-                    if (english) "Follows app settings" else "يتبع إعدادات التطبيق"
-                }, color = cs.onSurfaceVariant, fontSize = 13.sp)
+                // 3.3.0: starts from the app-level tone/vibration; changing it here applies to this prayer only.
+                val isAr = L10n.lang == com.example.ui.i18n.Lang.AR
+                val customized = remember(tick) { PrayerAlertStore.hasOverride(context, prayer) }
+                Text(
+                    if (isAr) "نغمة واهتزاز هذه الصلاة" else "This prayer's tone and vibration",
+                    color = cs.onSurfaceVariant, fontSize = 12.sp, fontWeight = FontWeight.Bold
+                )
+                Text(
+                    if (customized) (if (isAr) "مخصص لهذه الصلاة فقط" else "Custom for this prayer only")
+                    else (if (isAr) "يتبع إعدادات التطبيق" else "Follows app settings"),
+                    color = cs.onSurfaceVariant, fontSize = 11.sp
+                )
                 Spacer(Modifier.height(4.dp))
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(12.dp))
-                        .clickable {
+                        .plainClickable {
                             val intent = Intent("android.intent.action.RINGTONE_PICKER")
                             intent.putExtra("android.intent.extra.ringtone.TYPE", 4)
                             intent.putExtra("android.intent.extra.ringtone.TITLE", L10n.t(S.PickRingtone))
@@ -284,13 +336,13 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                     Spacer(Modifier.width(10.dp))
                     Column(Modifier.weight(1f)) {
                         Text(L10n.t(S.SelectedTone), color = cs.onSurfaceVariant, fontSize = 11.sp)
-                        Text((if (PrayerAlertStore.INSTANCE.toneOverride(context, prayer) != null) PrayerAlertStore.INSTANCE.toneOverrideTitle(context, prayer) else com.example.utils.NotifPrefs.toneTitle(context)) ?: L10n.t(S.Default), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                        Text((if (PrayerAlertStore.toneOverride(context, prayer) != null) PrayerAlertStore.toneOverrideTitle(context, prayer) else com.example.utils.NotifPrefs.toneTitle(context)) ?: L10n.t(S.Default), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
                     }
                     Text(
                         L10n.t(S.AudioFile), color = cs.primary, fontSize = 12.sp, fontWeight = FontWeight.Bold,
                         modifier = Modifier
                             .clip(RoundedCornerShape(8.dp))
-                            .clickable { audioPickerLauncher.launch("audio/*") }
+                            .plainClickable { audioPickerLauncher.launch("audio/*") }
                             .padding(6.dp)
                     )
                 }
@@ -304,17 +356,52 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         Spacer(Modifier.width(10.dp))
                         Text(L10n.t(S.VibrateDuringAlarm), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
                     }
-                    OneUISwitch(PrayerAlertStore.INSTANCE.effectiveVibration(context, prayer), { PrayerAlertStore.INSTANCE.setVibrationOverride(context, prayer, it); tick++ })
+                    OneUISwitch(PrayerAlertStore.effectiveVibration(context, prayer), { PrayerAlertStore.setVibrationOverride(context, prayer, it); tick++ })
                 }
-                if (hasOverride) {
+                if (customized) {
                     Text(
-                        if (english) "Reset to app settings" else "العودة لإعدادات التطبيق",
+                        if (isAr) "العودة لإعدادات التطبيق" else "Reset to app settings",
                         color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold,
-                        modifier = Modifier.clip(RoundedCornerShape(8.dp)).clickable {
-                            PrayerAlertStore.INSTANCE.clearOverride(context, prayer)
-                            changed()
-                        }.padding(6.dp)
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .plainClickable {
+                                PrayerAlertStore.clearOverride(context, prayer)
+                                if (Build.VERSION.SDK_INT >= 26) {
+                                    val nmx = context.getSystemService(android.content.Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
+                                    com.example.utils.NotifPrefs.deleteVariants(nmx, "prayer_alerts_channel_p" + prayer, null)
+                                    com.example.utils.NotifPrefs.deleteVariants(nmx, "iqama_reminders_channel_p" + prayer, null)
+                                }
+                                changed()
+                            }
+                            .padding(6.dp)
                     )
+                }
+                Spacer(Modifier.height(4.dp))
+                Text(L10n.t(S.AlarmVolume), color = cs.onSurfaceVariant, fontSize = 12.sp)
+                Slider(
+                    value = prefs.alarmVolume / 100f,
+                    onValueChange = { prefs.alarmVolume = (it * 100).toInt(); tick++ },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(L10n.t(S.SnoozeDuration), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RoundBtn(Icons.Outlined.Remove, prefs.maxDurationMinutes > 1) {
+                            prefs.maxDurationMinutes = prefs.maxDurationMinutes - 1; tick++
+                        }
+                        Text(
+                            L10n.minutesCount(prefs.maxDurationMinutes),
+                            color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(horizontal = 10.dp)
+                        )
+                        RoundBtn(Icons.Outlined.Add, prefs.maxDurationMinutes < 30) {
+                            prefs.maxDurationMinutes = prefs.maxDurationMinutes + 1; tick++
+                        }
+                    }
                 }
             }
         }

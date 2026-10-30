@@ -27,7 +27,7 @@ class HisnViewModel(application: Application) : AndroidViewModel(application) {
     val query: StateFlow<String> = _query.asStateFlow()
     fun setQuery(q: String) { _query.value = q }
 
-    private val _onlyFavorites = MutableStateFlow(true)
+    private val _onlyFavorites = MutableStateFlow(false)
     val onlyFavorites: StateFlow<Boolean> = _onlyFavorites.asStateFlow()
     fun setOnlyFavorites(v: Boolean) { _onlyFavorites.value = v }
 

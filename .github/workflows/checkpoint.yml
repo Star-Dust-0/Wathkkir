@@ -21,7 +21,7 @@ jobs:
           FIXTURE_KEY: ${{ secrets.FIXTURE_KEY }}
         run: |
           openssl enc -d -aes-256-cbc -pbkdf2 -pass env:FIXTURE_KEY -in tools/parity/reference-phone.enc -out original.apk
-          gradle :app:assembleDebug :widgethost:assembleDebug :app:testDebugUnitTest --no-daemon
+          gradle :app:assembleDebug :widgethost:assembleDebug -PwithVerification --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
           cp app/build/outputs/apk/debug/*.apk comparison.apk
           cp widgethost/build/outputs/apk/debug/*.apk widgethost.apk
       - name: Enable emulator acceleration

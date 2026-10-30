@@ -31,7 +31,7 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
     /** 0 = remaining countdown (and ranged ring); other values are the extra types, see [buildKind]. */
     open val kind: Int get() = 0
 
-    /** Provider class name used to cancel legacy minute-pulse PendingIntents. */
+    /** Provider class name used for the minute-pulse PendingIntent; debug previews spoof a real provider. */
     open val selfName: String get() = javaClass.name
 
     /** Countdown text style; previews override to compare native renderings. */
@@ -81,13 +81,8 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
             ComplicationType.RANGED_VALUE -> {
                 val total = (((iq?.at ?: s.next.at) - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceAtLeast(1f)
                 val elapsed = ((s.now - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceIn(0f, total)
-                val builder = if (android.os.Build.VERSION.SDK_INT >= 33 && !preview) {
-                    RangedValueComplicationData.Builder(
-                        nativeRing(iq?.prayer?.at ?: s.prev.at, iq?.at ?: s.next.at),
-                        elapsed, 0f, total, desc
-                    )
-                } else RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
-                builder.setText(countdown).setTitle(title).setTapAction(tap()).build()
+                RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
+                    .setText(countdown).setTitle(title).setTapAction(tap()).build()
             }
             ComplicationType.SHORT_TEXT ->
                 ShortTextComplicationData.Builder(countdown, desc).setTitle(title).setTapAction(tap()).build()
@@ -97,68 +92,42 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? = build(type, Prayer.compute(this), preview = true)
 
-    /** Native-first deviation: the platform evaluates ring progress from its clock.
-     * Never encode the large epoch as a float: subtract instants before conversion.
-     * The static fallback is retained for hosts without dynamic expression support.
-     */
-    @androidx.annotation.RequiresApi(33)
-    internal fun nativeRing(start: Long, end: Long): androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat {
-        val D = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(start))
-        val now = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
-        val elapsed = D.durationUntil(now).toIntSeconds().asFloat().div(60f)
-        val maximum = ((end - start) / 60000f).coerceAtLeast(1f)
-        val lower = androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(elapsed.lt(0f)).use(0f).elseUse(elapsed)
-        return androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(lower.gt(maximum)).use(maximum).elseUse(lower)
-    }
-
     /** Native countdown text; host renders and advances it without waking this provider. */
     internal fun nativeCountdown(target: Long) = TimeDifferenceComplicationText.Builder(
         cdStyle,
         CountDownTimeReference(java.time.Instant.ofEpochMilli(target - 60_000L))
     ).setMinimumTimeUnit(java.util.concurrent.TimeUnit.MINUTES).setDisplayAsNow(false).build()
 
-    /** Push fresh data when the current countdown target passes (prayer or iqama time). */
+    /**
+     * Push fresh data when the current countdown target passes (prayer or iqama time).
+     *
+     * One PendingIntent PER TARGET (identity carries the target in the action), so a request
+     * computed after a target passed but before its boundary fired - the adhan/iqama crossover
+     * - arms a SEPARATE alarm instead of overwriting the pending earlier one. At most a couple
+     * of one-shot boundary alarms ever coexist; each fires once and is gone, and a stale one
+     * (after prayer-time changes) fires a harmless extra refresh. No persisted marker: nothing
+     * can suppress re-arming when alarms are absent (force-stop removes alarms; the next
+     * request simply arms again).
+     */
     internal fun scheduleBoundary(target: Long) {
         val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val sp = getSharedPreferences("cdb", Context.MODE_PRIVATE)
-        val want = target + 2000
-        val pending = sp.getLong("armed", 0L)
-        // The boundary PI is shared across all providers via FLAG_UPDATE_CURRENT: arming a
-        // later target would overwrite a pending earlier one, and across an adhan/iqama
-        // crossover (a request computed just after a target passed, before the boundary
-        // fired) that could postpone another class's refresh for hours. Only move it earlier.
-        if (pending > System.currentTimeMillis() && pending <= want) {
-            android.util.Log.i("WathakkerCd", "boundary skip pending=$pending want=$want")
-            return
-        }
         val pi = PendingIntent.getBroadcast(this, 8002,
-            Intent(this, ComplicationBoundaryReceiver::class.java),
+            Intent(this, ComplicationBoundaryReceiver::class.java).setAction("boundary_" + target),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        // The marker is written only after an alarm is actually scheduled, so a failed arm
-        // can never suppress a later re-arm. (Exact -> inexact fallback on permission loss.)
-        val armedOk = try { am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, want, pi); true }
-        catch (_: SecurityException) {
-            try { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, want, pi); true }
-            catch (_: Throwable) { false }
-        }
-        if (armedOk) {
-            sp.edit().putLong("armed", want).apply()
-            android.util.Log.i("WathakkerCd", "boundary arm want=$want")
-        } else {
-            android.util.Log.i("WathakkerCd", "boundary arm FAILED want=$want")
-        }
+        try { am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, target + 2000, pi) }
+        catch (_: SecurityException) { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, target + 2000, pi) }
+        android.util.Log.i("WathakkerCd", "boundary arm target=$target")
     }
 
-    /** Battery-policy change from original 1.1.2: remove the old minute wake pulse.
-     * The system's provider update period refreshes ranged values; text remains a
-     * native TimeDifferenceComplicationText. Only prayer/iqama boundaries wake us.
-     */
-    internal fun cancelLegacyMinutePulse() {
+    /** Kept only while a ranged-value face is active, to advance its progress ring once a minute. */
+    internal fun scheduleNextMinute() {
+        val at = (System.currentTimeMillis() / 60000 + 1) * 60000 + 500
         val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pi = PendingIntent.getBroadcast(this, 8001,
             Intent(this, ComplicationTickReceiver::class.java).setAction("tick_" + selfName).putExtra("cls", selfName),
-            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
-        if (pi != null) { am.cancel(pi); pi.cancel() }
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        try { am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
+        catch (_: SecurityException) { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
     }
 
     override suspend fun onComplicationRequest(request: ComplicationRequest): ComplicationData? {
@@ -166,43 +135,51 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         val iq = Prayer.iqamaNow(this)
         Log.i("WathakkerCd", "request cls=$selfName id=${request.complicationInstanceId} type=${request.complicationType}")
         if (kind in 1..3) {
-            scheduleBoundary(java.util.Calendar.getInstance().apply {
-                add(java.util.Calendar.DAY_OF_YEAR, 1)
-                set(java.util.Calendar.HOUR_OF_DAY, 0)
-                set(java.util.Calendar.MINUTE, 0)
-                set(java.util.Calendar.SECOND, 0)
-                set(java.util.Calendar.MILLISECOND, 0)
-            }.timeInMillis)
+            // Date complications: refresh at the next local midnight (UPDATE_PERIOD is 0,
+            // so without a boundary they would show yesterday's date for hours).
+            val cal = java.util.Calendar.getInstance()
+            cal.add(java.util.Calendar.DAY_OF_YEAR, 1)
+            cal.set(java.util.Calendar.HOUR_OF_DAY, 0); cal.set(java.util.Calendar.MINUTE, 0)
+            cal.set(java.util.Calendar.SECOND, 0); cal.set(java.util.Calendar.MILLISECOND, 0)
+            scheduleBoundary(cal.timeInMillis)
         }
         if (kind == 0 || kind == 8) {
             scheduleBoundary(iq?.at ?: s.next.at)
-            cancelLegacyMinutePulse()
+            // Only an actual ranged-value request keeps the minute pulse alive (its progress ring
+            // needs it). When the ring face is removed, requests stop and the pulse dies with the
+            // next fire - no idle wake tail. After boot/update the system re-queries active
+            // complications, which re-arms it if a ring face is still present.
+            if (request.complicationType == ComplicationType.RANGED_VALUE) scheduleNextMinute()
         }
         return build(request.complicationType, s, iq = iq)
     }
 }
 
-/** Compatibility receiver: discard a legacy minute pulse without requesting or rearming updates. */
+/** Fires the minute pulse that advances the progress ring on ranged-value faces. Arms only from actual ranged requests; dies with the next fire once they stop. */
+/** All five declared complication providers (dates included) - full-refresh fan-out. */
+internal val ALL_COMPLICATION_CLASSES = listOf(
+    DateGregComplication::class.java, DateHijriComplication::class.java, DateBothComplication::class.java,
+    NextTimeComplication::class.java, UpcomingCountdownComplication::class.java)
+
+/** Ask the host to re-query every complication. No-op when no face hosts them. */
+internal fun requestAllComplications(c: Context) {
+    for (cls in ALL_COMPLICATION_CLASSES)
+        ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
+}
+
 class ComplicationTickReceiver : BroadcastReceiver() {
     override fun onReceive(c: Context, i: Intent) {
         val cls = i.getStringExtra("cls") ?: return
-        val am = c.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pi = PendingIntent.getBroadcast(c, 8001,
-            Intent(c, ComplicationTickReceiver::class.java).setAction("tick_" + cls).putExtra("cls", cls),
-            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
-        if (pi != null) { am.cancel(pi); pi.cancel() }
-        Log.i("WathakkerCd", "legacy minute pulse discarded cls=$cls")
+        Log.i("WathakkerCd", "tick fire cls=$cls")
+        ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
     }
 }
 
 /** Fires when a countdown target passes; pulls fresh data so the next prayer/iqama target is served. */
 class ComplicationBoundaryReceiver : BroadcastReceiver() {
     override fun onReceive(c: Context, i: Intent) {
-        Log.i("WathakkerCd", "boundary fire")
-        c.getSharedPreferences("cdb", 0).edit().remove("armed").apply()
-        for (cls in listOf(PrayerComplicationService::class.java, DateGregComplication::class.java, DateHijriComplication::class.java, DateBothComplication::class.java, UpcomingCountdownComplication::class.java, NextTimeComplication::class.java)) {
-            ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
-        }
+        Log.i("WathakkerCd", "boundary fire action=" + i.action)
+        requestAllComplications(c)
     }
 }
 
@@ -211,4 +188,3 @@ class DateHijriComplication : PrayerComplicationService() { override val kind ge
 class DateBothComplication : PrayerComplicationService() { override val kind get() = 3 }
 class NextTimeComplication : PrayerComplicationService() { override val kind get() = 4 }
 class UpcomingCountdownComplication : PrayerComplicationService() { override val kind get() = 8 }
-

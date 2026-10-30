@@ -3,41 +3,50 @@ package com.example.data
 import android.content.Context
 import org.json.JSONObject
 
+/** Seeds the Hisn al-Muslim tables from the bundled hisn_elmoslem.json on first run. */
 object HisnImporter {
-    /** Imports the bundled Hisn el-Muslim content the first time (or if the tables are empty). */
     suspend fun ensureImported(context: Context, dao: HisnDao) {
-        if (dao.chapterCount() > 0) { seedDefaultFavorites(context, dao); return }
-        val text = context.assets.open("hisn_elmoslem.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
-        val root = JSONObject(text)
-        val chapters = root.getJSONArray("chapters")
-        val items = root.getJSONArray("items")
-        dao.insertChapters(List(chapters.length()) { i ->
-            val o = chapters.getJSONObject(i)
-            HisnChapter(o.getInt("id"), o.getInt("order"), o.getString("name"))
-        })
-        dao.insertItems(List(items.length()) { i ->
-            val o = items.getJSONObject(i)
-            HisnItem(
-                id = o.getInt("id"),
-                chapterId = o.getInt("chapterId"),
-                order = o.getInt("order"),
-                text = o.getString("text"),
-                count = o.optInt("count", 1).coerceAtLeast(1),
-                fadl = o.optString("fadl", ""),
-                source = o.optString("source", ""),
-                hokm = o.optString("hokm", "")
-            )
-        })
+        if (dao.chapterCount() == 0) importAll(context, dao)
         seedDefaultFavorites(context, dao)
     }
 
-    /** Original: first run seeds the four default favourite chapters (pref hisn_prefs/defaults_v330). */
-    suspend fun seedDefaultFavorites(context: Context, dao: HisnDao) {
+    /** 3.3.0: morning (29), evening (30), sleep (31) and travel (96) adhkar are favorites by default.
+     *  Additive and once only: existing favorites are never removed, and a favorite the user removes later stays removed. */
+    private suspend fun seedDefaultFavorites(context: Context, dao: HisnDao) {
         val prefs = context.getSharedPreferences("hisn_prefs", Context.MODE_PRIVATE)
         if (prefs.getBoolean("defaults_v330", false)) return
-        try {
-            for (id in intArrayOf(29, 30, 31, 96)) dao.addFavorite(HisnFavorite(chapterId = id, itemId = 0))
-        } catch (_: Exception) { return }
+        for (id in intArrayOf(29, 30, 31, 96)) {
+            try { dao.addFavorite(HisnFavorite(0L, id, 0)) } catch (e: Exception) { e.printStackTrace() }
+        }
         prefs.edit().putBoolean("defaults_v330", true).apply()
+    }
+
+    private suspend fun importAll(context: Context, dao: HisnDao) {
+
+        val text = context.assets.open("hisn_elmoslem.json").bufferedReader().use { it.readText() }
+        val root = JSONObject(text)
+        val chapterArr = root.getJSONArray("chapters")
+        val itemArr = root.getJSONArray("items")
+
+        val chapters = (0 until chapterArr.length()).map { i ->
+            val o = chapterArr.getJSONObject(i)
+            HisnChapter(o.getInt("id"), o.getInt("order"), o.getString("name"))
+        }
+        dao.insertChapters(chapters)
+
+        val items = (0 until itemArr.length()).map { i ->
+            val o = itemArr.getJSONObject(i)
+            HisnItem(
+                o.getInt("id"),
+                o.getInt("chapterId"),
+                o.getInt("order"),
+                o.getString("text"),
+                o.optInt("count", 1).coerceAtLeast(1),
+                o.optString("fadl", ""),
+                o.optString("source", ""),
+                o.optString("hokm", "")
+            )
+        }
+        dao.insertItems(items)
     }
 }

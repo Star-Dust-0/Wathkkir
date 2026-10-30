@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/widget_bg"
-    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:background="@drawable/widget_bg">
+
     <TextView
-        android:textSize="16sp"
-        android:textColor="#ffffffff"
-        android:gravity="center"
         android:id="@+id/widget_pill_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="أذان الفجر بعد 18 دقيقة"
-        android:includeFontPadding="false"
-        android:fontFamily="@font/expoarabic_medium"
-        android:textDirection="rtl"/>
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp"
+        android:textDirection="locale" />
 </LinearLayout>

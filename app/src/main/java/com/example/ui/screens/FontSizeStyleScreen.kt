@@ -119,4 +119,3 @@ private fun StepSlider(index: Int, count: Int, onChange: (Int, Boolean) -> Unit)
 
 private fun Modifier.onSizeChangedPx(f: (Float) -> Unit): Modifier =
     this.then(Modifier.onSizeChanged { f(it.width.toFloat()) })
-

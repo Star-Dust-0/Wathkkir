@@ -1,0 +1,1 @@
+Historical L10n/L10nTables text preserved. Missing entries first filled from literal historical translation dictionaries, then remaining uncovered entries from original APK named enum and literal map assignments. Existing recovered table values always win. Source keys are not invented from reference names. Historical translations may still need later text edits reconciled.

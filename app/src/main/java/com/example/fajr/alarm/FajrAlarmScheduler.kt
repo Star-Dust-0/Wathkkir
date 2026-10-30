@@ -11,83 +11,55 @@ import com.example.fajr.data.FajrPreferences
 import com.example.fajr.ui.FajrAlarmActivity
 import java.util.Calendar
 
-/**
- * Schedules the Fajr alarm (main, before and after slots). Rebuilt from the original 3.4.2
- * class (R8 name m30). Request codes: 88001 main, 88002 snooze, 88003 before, 88004 after.
- */
+// Secondary reconstruction from Oct20 historical scheduler and original APK m30.
 class FajrAlarmScheduler(private val context: Context) {
-    private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    private val alarmManager = context.getSystemService("alarm") as AlarmManager
     private val prefs = FajrPreferences(context)
-
-    private fun alarmIntent(): Intent =
-        Intent(context, FajrAlarmReceiver::class.java).setAction(ACTION_FAJR_ALARM)
-
-    private fun cancelCode(code: Int) {
-        val pi = PendingIntent.getBroadcast(context, code, alarmIntent(), PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
-        if (pi != null) {
-            alarmManager.cancel(pi)
-            pi.cancel()
-        }
-    }
-
-    fun cancelAll() {
-        cancelCode(REQ_MAIN)
-        cancelCode(REQ_BEFORE)
-        cancelCode(REQ_AFTER)
-        cancelCode(REQ_SNOOZE)
-    }
-
-    private fun fajrMillis(dayOffset: Int): Long {
-        val cal = Calendar.getInstance()
-        if (dayOffset != 0) cal.add(Calendar.DAY_OF_YEAR, dayOffset)
-        val method = CalculationMethod.INSTANCE.fromId(prefs.calculationMethodId)
-        return PrayerAdjustments.INSTANCE.fajrTime(context, cal, prefs.latitude, prefs.longitude, method)
-    }
-
-    /** Fajr of today plus [offset]; moves to tomorrow when that time is not after [now]. */
-    private fun nextTrigger(offset: Long, now: Long): Long {
-        val t = fajrMillis(0) + offset
-        return if (t <= now) fajrMillis(1) + offset else t
-    }
-
-    /** Re-arms all slots from the saved preferences. */
-    fun rescheduleFromPrefs() {
-        if (!prefs.isAlarmEnabled) {
-            cancelAll()
-            return
-        }
-        val now = System.currentTimeMillis()
-        val main = nextTrigger(0L, now)
-        prefs.lastCalculatedFajrTimeMillis = main
-        scheduleAt(REQ_MAIN, main)
-        val before = prefs.alarmBeforeMin
-        if (before > 0) scheduleAt(REQ_BEFORE, nextTrigger((-before * 60000).toLong(), now)) else cancelCode(REQ_BEFORE)
-        val after = prefs.alarmAfterMin
-        if (after > 0) scheduleAt(REQ_AFTER, nextTrigger((after * 60000).toLong(), now)) else cancelCode(REQ_AFTER)
-    }
-
-    fun scheduleAt(requestCode: Int, triggerAt: Long) {
-        val intent = Intent(context, FajrAlarmReceiver::class.java)
-            .setAction(if (requestCode == REQ_SNOOZE) "ACTION_SNOOZE_TRIGGER" else ACTION_FAJR_ALARM)
-            .putExtra("slot", when (requestCode) { REQ_BEFORE -> "before"; REQ_AFTER -> "after"; else -> "main" })
-        val pi = PendingIntent.getBroadcast(context, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        val show = PendingIntent.getActivity(
-            context, requestCode + 10,
-            Intent(context, FajrAlarmActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-        if (Build.VERSION.SDK_INT < 31 || alarmManager.canScheduleExactAlarms()) {
-            alarmManager.setAlarmClock(AlarmManager.AlarmClockInfo(triggerAt, show), pi)
-        } else {
-            alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAt, pi)
-        }
-    }
-
     companion object {
         const val ACTION_FAJR_ALARM = "com.example.fajr.ACTION_FAJR_ALARM"
-        const val REQ_MAIN = 88001
-        const val REQ_SNOOZE = 88002
-        const val REQ_BEFORE = 88003
-        const val REQ_AFTER = 88004
+        const val ALARM_REQUEST_CODE = 88001
+        const val SNOOZE_REQUEST_CODE = 88002
+        const val BEFORE_REQUEST_CODE = 88003
+        const val AFTER_REQUEST_CODE = 88004
     }
+    private fun fajrOn(dayOffset: Int): Long {
+        val calendar = Calendar.getInstance().apply { add(Calendar.DAY_OF_YEAR, dayOffset) }
+        return PrayerAdjustments.fajrTime(context, calendar, prefs.latitude, prefs.longitude, CalculationMethod.INSTANCE.fromId(prefs.calculationMethodId))
+    }
+    private fun nextWithOffset(offset: Long, now: Long): Long {
+        val today = fajrOn(0) + offset
+        return if (today <= now) fajrOn(1) + offset else today
+    }
+    fun scheduleNextFajrAlarm(): Long {
+        if (!prefs.isAlarmEnabled) { cancelAllAlarms(); return 0L }
+        val now = System.currentTimeMillis()
+        val next = nextWithOffset(0, now)
+        prefs.lastCalculatedFajrTimeMillis = next
+        setExactAlarm(next, ALARM_REQUEST_CODE)
+        if (prefs.alarmBeforeMin > 0) setExactAlarm(nextWithOffset(-prefs.alarmBeforeMin * 60000L, now), BEFORE_REQUEST_CODE)
+        else cancelCode(BEFORE_REQUEST_CODE)
+        if (prefs.alarmAfterMin > 0) setExactAlarm(nextWithOffset(prefs.alarmAfterMin * 60000L, now), AFTER_REQUEST_CODE)
+        else cancelCode(AFTER_REQUEST_CODE)
+        return next
+    }
+    fun scheduleSnooze(snoozeMinutes: Int) { setExactAlarm(System.currentTimeMillis() + snoozeMinutes * 60000L, SNOOZE_REQUEST_CODE) }
+    private fun setExactAlarm(trigger: Long, code: Int) {
+        val intent = Intent(context, FajrAlarmReceiver::class.java).apply {
+            action = if (code == SNOOZE_REQUEST_CODE) "ACTION_SNOOZE_TRIGGER" else ACTION_FAJR_ALARM
+            putExtra("slot", when (code) { BEFORE_REQUEST_CODE -> "before"; AFTER_REQUEST_CODE -> "after"; else -> "main" })
+        }
+        val pending = PendingIntent.getBroadcast(context, code, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        val show = Intent(context, FajrAlarmActivity::class.java).apply { flags = 335544320 }
+        val showPending = PendingIntent.getActivity(context, code + 10, show, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        if (Build.VERSION.SDK_INT < 31 || alarmManager.canScheduleExactAlarms())
+            alarmManager.setAlarmClock(AlarmManager.AlarmClockInfo(trigger, showPending), pending)
+        else alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, trigger, pending)
+    }
+    private fun cancelCode(code: Int) {
+        val intent = Intent(context, FajrAlarmReceiver::class.java).apply { action = ACTION_FAJR_ALARM }
+        PendingIntent.getBroadcast(context, code, intent, PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)?.let {
+            alarmManager.cancel(it); it.cancel()
+        }
+    }
+    fun cancelAllAlarms() { cancelCode(ALARM_REQUEST_CODE); cancelCode(BEFORE_REQUEST_CODE); cancelCode(AFTER_REQUEST_CODE); cancelCode(SNOOZE_REQUEST_CODE) }
 }

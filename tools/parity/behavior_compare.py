@@ -1,7 +1,9 @@
 """Paired interaction evidence. Failure is a gate, not an instruction to publish."""
 import subprocess,time,pathlib,json,re,xml.etree.ElementTree as ET
 OUT=pathlib.Path('evidence');OUT.mkdir(exist_ok=True);checks=[]
-def run(*args):return subprocess.run(args,capture_output=True,timeout=60).stdout.decode(errors='replace').strip()
+def run(*args):
+ r=subprocess.run(args,capture_output=True,timeout=60)
+ return (r.stdout+r.stderr).decode(errors='replace').strip()
 def adb(*args):return run('adb',*args)
 def hierarchy():
  text=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
@@ -80,3 +82,5 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
  (OUT/(name+'-vibrator.txt')).write_text(adb('shell','dumpsys','vibrator_manager'))
 (OUT/'checks.json').write_text(json.dumps(checks,indent=2));(OUT/'logcat.txt').write_text(adb('logcat','-d'))
 print(json.dumps({'checks':len(checks),'failures':[x for x in checks if not x['passed']]},indent=2))
+
+if any(not x["passed"] for x in checks): raise SystemExit("Interaction checks failed; inspect checks.json and actual screenshots")

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static widget-picker preview (API 31+): mimics the wide prayer widgets with
+     theme-aware colors. The dark PNG previewImage remains the pre-31 fallback. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center_vertical"
+    android:background="@drawable/widget_preview_card_bg"
+    android:layoutDirection="rtl"
+    android:paddingStart="16dp" android:paddingEnd="16dp"
+    android:paddingTop="10dp" android:paddingBottom="10dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="الظهر" android:textSize="15sp" android:textStyle="bold"
+            android:textColor="@color/widget_preview_text" />
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:text="المتبقي 2 ساعتان و17 دقيقة" android:textSize="12sp" android:gravity="center"
+            android:textColor="@color/widget_preview_amber" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="الفجر" android:textSize="15sp" android:textStyle="bold"
+            android:textColor="@color/widget_preview_text" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="6dp"
+        android:layout_marginTop="8dp" android:background="@drawable/widget_preview_track">
+        <TextView android:layout_width="140dp" android:layout_height="match_parent"
+            android:layout_gravity="start" android:background="@drawable/widget_preview_fill" />
+    </FrameLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="8dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="م 12:41" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="@color/widget_preview_text" />
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="1dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ص 5:28" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="@color/widget_preview_text" />
+    </LinearLayout>
+</LinearLayout>

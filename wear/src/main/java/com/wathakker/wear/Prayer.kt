@@ -28,9 +28,9 @@ class PrayerState(
 }
 
 object Prayer {
-    private val arNames = listOf("الفجر", "الشروق", "الظهر", "العصر", "المغرب", "العشاء")
-    private val enNames = listOf("Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha")
-    val names: List<String> get() = if (Loc.en) enNames else arNames
+    private val namesAr = listOf("الفجر", "الشروق", "الظهر", "العصر", "المغرب", "العشاء")
+    private val namesEn = listOf("Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha")
+    val names: List<String> get() = if (Loc.en) namesEn else namesAr
     // Default location until a phone sync exists: Cairo.
     const val DEFAULT_LAT = 30.0444
     const val DEFAULT_LON = 31.2357
@@ -51,10 +51,12 @@ object Prayer {
         val cal = Calendar.getInstance(TimeZone.getDefault())
         cal.timeInMillis = now
         cal.add(Calendar.DAY_OF_YEAR, offsetDays)
-        val d = PrayerTimesCalculator.INSTANCE.calculateAll(cal, lat, lon, CalculationMethod.EGYPTIAN, 1, 0, intArrayOf(0, 0, 0, 0, 0, 0))
+        val d = PrayerTimesCalculator.INSTANCE.calculateAll(cal, lat, lon, CalculationMethod.EGYPTIAN)
         val t = longArrayOf(d.fajr, d.sunrise, d.dhuhr, d.asr, d.maghrib, d.isha)
-        val fri = cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
-        return t.mapIndexed { i, v -> Slot(i, if (i == 2 && fri) (if (Loc.en) "Jumuah" else "الجمعة") else names[i], v) }
+        // Jumuah: on Friday the Dhuhr slot is displayed as الجمعة / Jumuah (no iqama, matches the phone app).
+        val ns = if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY)
+            names.toMutableList().apply { set(2, if (Loc.en) "Jumuah" else "الجمعة") } else names
+        return t.mapIndexed { i, v -> Slot(i, ns[i], v) }
     }
 
     /** One prayer's iqama window: [prayer] is the adhan slot, [at] is the iqama time. */
@@ -104,8 +106,7 @@ object Prayer {
     fun time12(ms: Long): String {
         if (h24) return fmt("HH:mm", ms)
         val cal = Calendar.getInstance(); cal.timeInMillis = ms
-        val am = cal.get(Calendar.HOUR_OF_DAY) < 12
-        val ap = if (Loc.en) (if (am) "AM" else "PM") else (if (am) "ص" else "م")
+        val ap = if (cal.get(Calendar.HOUR_OF_DAY) < 12) T("ص", "AM") else T("م", "PM")
         return fmt("hh:mm", ms) + " " + ap
     }
 
@@ -124,14 +125,11 @@ object Prayer {
         m == 1L -> "دقيقة"; m == 2L -> "دقيقتان"; m in 3..10 -> "$m دقائق"; else -> "$m دقيقة"
     }
 
+    /** "ساعتان و 29 دقيقة", same wording as the phone widget. */
     fun remainingText(deltaMs: Long): String {
         val total = max(0L, deltaMs / 60000)
         val h = total / 60; val m = total % 60
-        if (Loc.en) return when {
-            h == 0L -> "$m min"
-            m == 0L -> "$h hr"
-            else -> "$h hr $m min"
-        }
+        if (Loc.en) return when { h == 0L -> "$m min"; m == 0L -> "$h hr"; else -> "$h hr $m min" }
         return when {
             h == 0L -> mins(m)
             m == 0L -> hours(h)
@@ -139,24 +137,23 @@ object Prayer {
         }
     }
 
-    private val enWeekdays = listOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
-    private val enGreg = listOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
-    private val enHijri = listOf("Muharram", "Safar", "Rabi al-Awwal", "Rabi al-Thani", "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Shaaban", "Ramadan", "Shawwal", "Dhul Qadah", "Dhul Hijjah")
-
+    private val weekdaysEn = listOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+    private val gregMonthsEn = listOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+    private val hijriMonthsEn = listOf("Muharram", "Safar", "Rabi al-Awwal", "Rabi al-Thani", "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Shaaban", "Ramadan", "Shawwal", "Dhul Qadah", "Dhul Hijjah")
     private val weekdays = listOf("الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت")
     private val gregMonths = listOf("يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر")
     private val hijriMonths = listOf("محرم", "صفر", "ربيع الأول", "ربيع الآخر", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة")
 
-    fun weekday(ms: Long): String { val c = Calendar.getInstance(); c.timeInMillis = ms; val k = c.get(Calendar.DAY_OF_WEEK) - 1; return if (Loc.en) enWeekdays[k].take(3) else weekdays[k] }
-    fun gregDate(ms: Long): String { val c = Calendar.getInstance(); c.timeInMillis = ms; return "${c.get(Calendar.DAY_OF_MONTH)} ${if (Loc.en) enGreg[c.get(Calendar.MONTH)].take(3) else gregMonths[c.get(Calendar.MONTH)]}" }
+    fun weekday(ms: Long): String { val c = Calendar.getInstance(); c.timeInMillis = ms; return (if (Loc.en) weekdaysEn[c.get(Calendar.DAY_OF_WEEK) - 1].take(3) else weekdays[c.get(Calendar.DAY_OF_WEEK) - 1]) }
+    fun gregDate(ms: Long): String { val c = Calendar.getInstance(); c.timeInMillis = ms; return "${c.get(Calendar.DAY_OF_MONTH)} ${if (Loc.en) gregMonthsEn[c.get(Calendar.MONTH)].take(3) else gregMonths[c.get(Calendar.MONTH)]}" }
     fun hijri(ms: Long): String {
         val h = java.time.chrono.HijrahDate.from(java.time.Instant.ofEpochMilli(ms).atZone(java.time.ZoneId.systemDefault()))
-        return "${h.get(java.time.temporal.ChronoField.DAY_OF_MONTH)} ${(if (Loc.en) enHijri else hijriMonths)[h.get(java.time.temporal.ChronoField.MONTH_OF_YEAR) - 1]}"
+        return "${h.get(java.time.temporal.ChronoField.DAY_OF_MONTH)} ${(if (Loc.en) hijriMonthsEn else hijriMonths)[h.get(java.time.temporal.ChronoField.MONTH_OF_YEAR) - 1]}"
     }
 
     private fun hijriDate(ms: Long) = java.time.chrono.HijrahDate.from(java.time.Instant.ofEpochMilli(ms).atZone(java.time.ZoneId.systemDefault()))
     fun hijriDay(ms: Long): String = hijriDate(ms).get(java.time.temporal.ChronoField.DAY_OF_MONTH).toString()
-    fun hijriMonth(ms: Long): String = (if (Loc.en) enHijri else hijriMonths)[hijriDate(ms).get(java.time.temporal.ChronoField.MONTH_OF_YEAR) - 1]
+    fun hijriMonth(ms: Long): String = (if (Loc.en) hijriMonthsEn else hijriMonths)[hijriDate(ms).get(java.time.temporal.ChronoField.MONTH_OF_YEAR) - 1]
 
     /** Initial great-circle bearing to the Kaaba, degrees 0..360. */
     fun qiblaBearing(c: Context): Float {
@@ -169,6 +166,5 @@ object Prayer {
     }
 
     private val dirs = listOf("شمال", "شمال شرق", "شرق", "جنوب شرق", "جنوب", "جنوب غرب", "غرب", "شمال غرب")
-    private val dirsEn = listOf("N", "NE", "E", "SE", "S", "SW", "W", "NW")
-    fun directionName(deg: Float): String = (if (Loc.en) dirsEn else dirs)[(((deg + 22.5f) % 360f) / 45f).toInt().coerceIn(0, 7)]
+    fun directionName(deg: Float): String = (if (Loc.en) listOf("N", "NE", "E", "SE", "S", "SW", "W", "NW") else dirs)[(((deg + 22.5f) % 360f) / 45f).toInt().coerceIn(0, 7)]
 }

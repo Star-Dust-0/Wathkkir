@@ -1,4 +1,5 @@
 package com.wathakker.wear
+import androidx.compose.foundation.layout.offset
 
 import android.Manifest
 import android.content.Context
@@ -47,13 +48,13 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.ScalingLazyListAnchorType
+import androidx.wear.compose.foundation.lazy.ScalingLazyListState
 import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
 import kotlin.math.roundToInt
 
@@ -81,13 +82,13 @@ private fun ExternalIcon(w: Float, color: Color) {
  *  box re-keys its content on navigation and any AnimatedContent inside would restart fresh = no
  *  enter animation (his 19:44 report). The swipe-back gesture is the single swipe-to-dismiss level. */
 @Composable
-fun SettingsPage(w: Float, sub: Int, go: (Int) -> Unit) {
+fun SettingsPage(w: Float, sub: Int, go: (Int) -> Unit, rootListState: ScalingLazyListState? = null) {
     BackHandler(enabled = sub != 0) { go(0) }
-    SettingsContent(sub, w, go)
+    SettingsContent(sub, w, go, rootListState)
 }
 
 @Composable
-fun SettingsContent(sub: Int, w: Float, go: (Int) -> Unit) {
+fun SettingsContent(sub: Int, w: Float, go: (Int) -> Unit, rootListState: ScalingLazyListState? = null) {
     val ctx = LocalContext.current
     var locMode by remember { mutableIntStateOf(Settings.locMode(ctx)) }
     var perm by remember { mutableIntStateOf(0) }
@@ -212,7 +213,8 @@ fun SettingsContent(sub: Int, w: Float, go: (Int) -> Unit) {
     // Always open at the TOP with the title visible (his 19:44 report: it reopened mid-list):
     // the Wear default centers item 1, which pushed the title off the top edge. ItemStart anchoring
     // with item 0 aligned to the start puts the title at the top like One UI Watch.
-    val listState = rememberScalingLazyListState(initialCenterItemIndex = 0, initialCenterItemScrollOffset = 0)
+    val localListState = rememberScalingLazyListState(initialCenterItemIndex = 0, initialCenterItemScrollOffset = 0)
+    val listState = if (sub == 0 && rootListState != null) rootListState else localListState
     Box(Modifier.fillMaxSize().background(Color.Black)) {
         ScalingLazyColumn(
             Modifier.fillMaxSize(),
@@ -405,4 +407,3 @@ fun refreshGps(c: Context) {
         if (l != null) Settings.saveGps(c, l.latitude, l.longitude)
     } catch (_: Throwable) {}
 }
-

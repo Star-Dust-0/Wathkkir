@@ -1,34 +1,62 @@
 package com.example.fajr.ui
 
-import android.Manifest
-import android.app.Activity
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
+
+import android.content.Context
 import android.content.Intent
-import android.media.RingtoneManager
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Alarm
-import androidx.compose.material.icons.filled.AudioFile
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.EditLocation
-import androidx.compose.material.icons.filled.GpsFixed
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material.icons.filled.Stop
-import androidx.compose.material.icons.filled.Tune
-import androidx.compose.material.icons.filled.Vibration
-import androidx.compose.material.icons.filled.VolumeUp
-import androidx.compose.material.icons.filled.Warning
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.outlined.AlarmOff
+import androidx.compose.material.icons.outlined.AlarmOn
+import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.AudioFile
+import androidx.compose.material.icons.outlined.Check
+import androidx.compose.material.icons.outlined.EditLocation
+import androidx.compose.material.icons.outlined.GpsFixed
+import androidx.compose.material.icons.outlined.LocationOn
+import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.PlayArrow
+import androidx.compose.material.icons.outlined.Refresh
+import androidx.compose.material.icons.outlined.Stop
+import androidx.compose.material.icons.outlined.Tune
+import androidx.compose.material.icons.outlined.Vibration
+import androidx.compose.material.icons.outlined.VolumeUp
+import androidx.compose.material.icons.outlined.Warning
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Slider
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -36,10 +64,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.fajr.calculation.CalculationMethod
+import com.example.fajr.data.FajrPreferences
 import com.example.fajr.sound.RingtoneHelper
 import com.example.ui.oneui.OneUICard
 import com.example.ui.oneui.OneUIDialog
@@ -47,43 +77,42 @@ import com.example.ui.oneui.OneUIScreen
 import com.example.ui.oneui.OneUISwitch
 
 @Composable
-fun FajrSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit = {}) {
+fun FajrSettingsScreen(
+    viewModel: FajrViewModel,
+    onBack: (() -> Unit)? = null,
+    onMenu: (() -> Unit)? = null
+) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
-    val context = LocalContext.current
-
+    val context: Context = LocalContext.current
     var showCityDialog by remember { mutableStateOf(false) }
     var showMethodDialog by remember { mutableStateOf(false) }
     var isPlayingPreview by remember { mutableStateOf(false) }
 
     val locationPermissionLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.RequestMultiplePermissions()
+        ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
-        val granted = permissions.values.any { it }
-        if (granted) viewModel.updateLocationFromGps()
+        if (permissions.values.any { it }) viewModel.updateLocationFromGps()
     }
-
     val ringtonePickerLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.StartActivityForResult()
+        ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
+        if (result.resultCode == -1) {
             @Suppress("DEPRECATION")
-            val uri: Uri? = result.data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
+            val uri: Uri? = result.data?.getParcelableExtra("android.intent.extra.ringtone.PICKED_URI")
             if (uri != null) {
                 val title = RingtoneHelper(context).getRingtoneTitle(uri)
                 viewModel.setRingtone(uri, title)
             }
         }
     }
-
     val audioPickerLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
+        ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
         if (uri != null) {
             val title = RingtoneHelper(context).getRingtoneTitle(uri)
             viewModel.setRingtone(uri, title)
         }
     }
-
     DisposableEffect(Unit) {
         onDispose { viewModel.stopRingtonePreview() }
     }
@@ -91,29 +120,29 @@ fun FajrSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit = {}) {
     if (showCityDialog) {
         CitySearchDialog(
             onDismiss = { showCityDialog = false },
-            onCitySelected = { city -> viewModel.setCity(city) }
+            onCitySelected = { viewModel.setCity(it) }
         )
     }
-
     if (showMethodDialog) {
         CalculationMethodDialog(
             currentMethod = state.calculationMethod,
             onDismiss = { showMethodDialog = false },
-            onMethodSelected = { method -> viewModel.setCalculationMethod(method) }
+            onMethodSelected = { viewModel.setCalculationMethod(it) }
         )
     }
 
     FajrSettingsContent(
         state = state,
         onBack = onBack,
+        onMenu = onMenu,
         onToggleAlarm = { viewModel.toggleAlarm(it) },
         onSelectGps = {
             viewModel.setUseCurrentLocation(true)
             if (!state.hasLocationPermission) {
                 locationPermissionLauncher.launch(
                     arrayOf(
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
+                        "android.permission.ACCESS_FINE_LOCATION",
+                        "android.permission.ACCESS_COARSE_LOCATION"
                     )
                 )
             }
@@ -128,18 +157,17 @@ fun FajrSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit = {}) {
                 viewModel.stopRingtonePreview()
                 isPlayingPreview = false
             } else {
-                val uri = RingtoneHelper(context).getValidRingtoneUri(com.example.fajr.data.FajrPreferences(context))
+                val uri = RingtoneHelper(context).getValidRingtoneUri(FajrPreferences(context))
                 viewModel.playRingtonePreview(uri)
                 isPlayingPreview = true
             }
         },
         onPickSystemRingtone = {
-            val intent = Intent(RingtoneManager.ACTION_RINGTONE_PICKER).apply {
-                putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_ALARM)
-                putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "اختر نغمة المنبه")
-                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false)
-                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true)
-            }
+            val intent = Intent("android.intent.action.RINGTONE_PICKER")
+            intent.putExtra("android.intent.extra.ringtone.TYPE", 4)
+            intent.putExtra("android.intent.extra.ringtone.TITLE", "اختر نغمة المنبه")
+            intent.putExtra("android.intent.extra.ringtone.SHOW_SILENT", false)
+            intent.putExtra("android.intent.extra.ringtone.SHOW_DEFAULT", true)
             ringtonePickerLauncher.launch(intent)
         },
         onPickAudioFile = { audioPickerLauncher.launch("audio/*") },
@@ -149,10 +177,12 @@ fun FajrSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit = {}) {
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FajrSettingsContent(
     state: FajrSettingsState,
-    onBack: () -> Unit = {},
+    onBack: (() -> Unit)? = null,
+    onMenu: (() -> Unit)? = null,
     onToggleAlarm: (Boolean) -> Unit = {},
     onSelectGps: () -> Unit = {},
     onSelectManualCity: () -> Unit = {},
@@ -167,102 +197,70 @@ fun FajrSettingsContent(
     onSetVolume: (Int) -> Unit = {},
     onSetMaxDuration: (Int) -> Unit = {}
 ) {
-    OneUIScreen(title = "منبه صلاة الفجر", onBack = onBack) {
-        // Flat header: next fajr time + status, no card
+    val cs = MaterialTheme.colorScheme
+    OneUIScreen(title = "منبه صلاة الفجر", onBack = onBack, onMenu = onMenu) {
         item {
-            FajrHeader(
-                nextFajrTimeFormatted = state.nextFajrTimeFormatted,
-                isAlarmEnabled = state.isAlarmEnabled,
-                cityName = state.cityName
-            )
+            FajrHeader(state.nextFajrTimeFormatted, state.isAlarmEnabled, state.cityName)
         }
-
-        // Main alarm toggle
         item {
             OneUICard(padding = PaddingValues(18.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            modifier = Modifier
-                                .size(44.dp)
-                                .clip(CircleShape)
-                                .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.15f)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Alarm,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.size(24.dp)
-                            )
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        Column {
-                            Text(
-                                text = "تفعيل منبه صلاة الفجر",
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                            Text(
-                                text = if (state.isAlarmEnabled) "المنبه يعطي تنبيهاً وقت الفجر" else "المنبه متوقف حالياً",
-                                fontSize = 12.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                    OneUISwitch(
-                        checked = state.isAlarmEnabled,
-                        onCheckedChange = onToggleAlarm
-                    )
-                }
-            }
-        }
-
-        // Location mode
-        item {
-            OneUICard(padding = PaddingValues(18.dp)) {
-                Text(
-                    text = "طريقة تحديد الموقع",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Spacer(Modifier.height(12.dp))
-
-                LocationOptionRow(
-                    selected = state.useCurrentLocation,
-                    icon = Icons.Default.GpsFixed,
-                    title = "الموقع الحالي",
-                    subtitle = "تحديث تلقائي لموعد الفجر حسب موقعك",
-                    onClick = onSelectGps
-                )
-                Spacer(Modifier.height(8.dp))
-                LocationOptionRow(
-                    selected = !state.useCurrentLocation,
-                    icon = Icons.Default.EditLocation,
-                    title = "اختيار الدولة والمدينة",
-                    subtitle = "اختيار مدينتك يدوياً بدون الحاجة إلى تحديد الموقع",
-                    onClick = onSelectManualCity
-                )
-
-                Spacer(Modifier.height(14.dp))
-
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
-                        Icon(Icons.Default.LocationOn, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Spacer(Modifier.width(10.dp))
+                    Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                        Row(
+                            modifier = Modifier.size(44.dp).clip(CircleShape).background(cs.primary.copy(alpha = 0.15f)),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(Icons.Outlined.Alarm, null, modifier = Modifier.size(24.dp), tint = cs.primary)
+                        }
+                        Spacer(Modifier.width(14.dp))
                         Column {
-                            Text("المدينة الحالية", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text(state.cityName, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                            Text("تفعيل منبه صلاة الفجر", color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                            Text(
+                                if (state.isAlarmEnabled) "المنبه يعطي تنبيهاً وقت الفجر" else "المنبه متوقف حالياً",
+                                color = cs.onSurfaceVariant,
+                                fontSize = 12.sp
+                            )
+                        }
+                    }
+                    OneUISwitch(state.isAlarmEnabled, onToggleAlarm)
+                }
+            }
+        }
+        item {
+            OneUICard(padding = PaddingValues(18.dp)) {
+                Text("طريقة تحديد الموقع", color = cs.onSurface, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(8.dp))
+                LocationOptionRow(
+                    selected = state.useCurrentLocation,
+                    icon = Icons.Outlined.GpsFixed,
+                    title = "الموقع الحالي",
+                    subtitle = "تحديث تلقائي لموعد الفجر حسب موقعك",
+                    onClick = onSelectGps
+                )
+                LocationOptionRow(
+                    selected = !state.useCurrentLocation,
+                    icon = Icons.Outlined.EditLocation,
+                    title = L10n.t(S.PickCountryCity),
+                    subtitle = "اختيار مدينتك يدوياً بدون الحاجة إلى تحديد الموقع",
+                    onClick = onSelectManualCity
+                )
+                Spacer(Modifier.height(10.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Outlined.LocationOn, null, tint = cs.primary)
+                        Spacer(Modifier.width(8.dp))
+                        Column {
+                            Text("المدينة الحالية", color = cs.onSurfaceVariant, fontSize = 11.sp)
+                            Text(state.cityName, color = cs.onSurface, fontSize = 15.sp, fontWeight = FontWeight.Bold)
                         }
                     }
                     if (!state.useCurrentLocation) {
@@ -271,187 +269,164 @@ fun FajrSettingsContent(
                         }
                     }
                 }
-
                 if (state.useCurrentLocation && (!state.hasLocationPermission || !state.isGpsAvailable)) {
-                    Spacer(Modifier.height(12.dp))
+                    Spacer(Modifier.height(8.dp))
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.Warning, contentDescription = null, tint = MaterialTheme.colorScheme.error)
-                        Spacer(Modifier.width(10.dp))
+                        Icon(Icons.Outlined.Warning, null, tint = cs.error)
+                        Spacer(Modifier.width(8.dp))
                         Text(
-                            text = if (!state.hasLocationPermission) "صلاحية الموقع غير ممنوحة. يرجى المتابعة لمنح الصلاحية."
+                            if (!state.hasLocationPermission) "صلاحية الموقع غير ممنوحة. يرجى المتابعة لمنح الصلاحية."
                             else "خدمة الموقع (GPS) غير مفعلة في الهاتف.",
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.error
+                            color = cs.error,
+                            fontSize = 12.sp
                         )
                     }
                 }
             }
         }
-
-        // Calculation method
         item {
             OneUICard(padding = PaddingValues(18.dp)) {
-                Text("طريقة الحساب", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.height(10.dp))
-
+                Text("طريقة الحساب", color = cs.onSurface, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(8.dp))
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(12.dp))
-                        .clickable(onClick = onChangeMethod)
-                        .padding(vertical = 6.dp),
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
-                        Icon(Icons.Default.Tune, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Spacer(Modifier.width(10.dp))
+                    Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Outlined.Tune, null, tint = cs.primary)
+                        Spacer(Modifier.width(8.dp))
                         Column {
-                            Text("طريقة الحساب المختارة", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text(state.calculationMethod.titleAr, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                            Text("طريقة الحساب المختارة", color = cs.onSurfaceVariant, fontSize = 11.sp)
+                            Text(
+                                state.calculationMethod.titleAr,
+                                color = cs.onSurface,
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
-                    Text("تغيير", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    TextButton(onClick = onChangeMethod) {
+                        Text("تغيير", color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                    }
                 }
-
-                Spacer(Modifier.height(12.dp))
-
+                Spacer(Modifier.height(8.dp))
                 OutlinedButton(
                     onClick = onRefresh,
-                    enabled = !state.isRefreshing,
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = !state.isRefreshing
                 ) {
                     if (state.isRefreshing) {
                         CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
                         Spacer(Modifier.width(8.dp))
                         Text("جاري تحديث الموعد...")
                     } else {
-                        Icon(Icons.Default.Refresh, contentDescription = null)
+                        Icon(Icons.Outlined.Refresh, null)
                         Spacer(Modifier.width(8.dp))
                         Text("تحديث موعد الفجر الآن", fontWeight = FontWeight.Bold)
                     }
                 }
             }
         }
-
-        // Sound & ringtone
         item {
             OneUICard(padding = PaddingValues(18.dp)) {
-                Text("نغمة المنبه والصوت", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.height(12.dp))
-
+                Text("نغمة المنبه والصوت", color = cs.onSurface, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(8.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
-                        Icon(Icons.Default.MusicNote, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Spacer(Modifier.width(10.dp))
+                    Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Outlined.MusicNote, null, tint = cs.primary)
+                        Spacer(Modifier.width(8.dp))
                         Column {
-                            Text("النغمة المختارة", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text(state.ringtoneTitle, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                            Text("النغمة المختارة", color = cs.onSurfaceVariant, fontSize = 11.sp)
+                            Text(
+                                state.ringtoneTitle,
+                                color = cs.onSurface,
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
                     IconButton(onClick = onTogglePreview) {
                         Icon(
-                            imageVector = if (isPlayingPreview) Icons.Default.Stop else Icons.Default.PlayArrow,
-                            contentDescription = "Preview",
-                            tint = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.size(28.dp)
+                            if (isPlayingPreview) Icons.Outlined.Stop else Icons.Outlined.PlayArrow,
+                            "Preview",
+                            modifier = Modifier.size(28.dp),
+                            tint = cs.primary
                         )
                     }
                 }
-
-                Spacer(Modifier.height(12.dp))
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
+                Spacer(Modifier.height(10.dp))
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     OutlinedButton(
                         onClick = onPickSystemRingtone,
-                        shape = RoundedCornerShape(14.dp),
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(14.dp)
                     ) {
-                        Icon(Icons.Default.MusicNote, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Icon(Icons.Outlined.MusicNote, null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
                         Text("نغمات النظام", fontSize = 12.sp)
                     }
                     OutlinedButton(
                         onClick = onPickAudioFile,
-                        shape = RoundedCornerShape(14.dp),
-                        modifier = Modifier.weight(1f)
+                        modifier = Modifier.weight(1f),
+                        shape = RoundedCornerShape(14.dp)
                     ) {
-                        Icon(Icons.Default.AudioFile, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Icon(Icons.Outlined.AudioFile, null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
                         Text("ملف صوتي", fontSize = 12.sp)
                     }
                 }
             }
         }
-
-        // Extra settings
         item {
             OneUICard(padding = PaddingValues(18.dp)) {
-                Text("إعدادات إضافية", fontSize = 15.sp, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.height(12.dp))
-
+                Text("إعدادات إضافية", color = cs.onSurface, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(8.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.Vibration, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Spacer(Modifier.width(10.dp))
-                        Text("الاهتزاز أثناء التنبيه", fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                        Icon(Icons.Outlined.Vibration, null, tint = cs.primary)
+                        Spacer(Modifier.width(8.dp))
+                        Text("الاهتزاز أثناء التنبيه", color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
                     }
-                    OneUISwitch(
-                        checked = state.isVibrationEnabled,
-                        onCheckedChange = onToggleVibration
-                    )
+                    OneUISwitch(state.isVibrationEnabled, onToggleVibration)
                 }
-
-                Spacer(Modifier.height(16.dp))
-
-                Column {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.VolumeUp, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                            Spacer(Modifier.width(10.dp))
-                            Text("مستوى صوت المنبه", fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
-                        }
-                        Text("${state.alarmVolume}%", fontSize = 14.sp, fontWeight = FontWeight.Bold)
-                    }
-                    Slider(
-                        value = state.alarmVolume.toFloat(),
-                        onValueChange = { onSetVolume(it.toInt()) },
-                        valueRange = 10f..100f
-                    )
-                }
-
                 Spacer(Modifier.height(12.dp))
-
-                Column {
-                    Text("مدة الغفوة", fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
-                    Spacer(Modifier.height(8.dp))
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        listOf(1, 3, 5, 10).forEach { mins ->
-                            FilterChip(
-                                selected = state.maxDurationMinutes == mins,
-                                onClick = { onSetMaxDuration(mins) },
-                                label = { Text("$mins (د)", modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center, maxLines = 1) },
-                                modifier = Modifier.weight(1f)
-                            )
-                        }
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Outlined.VolumeUp, null, tint = cs.primary)
+                        Spacer(Modifier.width(8.dp))
+                        Text("مستوى صوت المنبه", color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    }
+                    Text("${state.alarmVolume}%", color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                }
+                Slider(
+                    value = state.alarmVolume.toFloat(),
+                    onValueChange = { onSetVolume(it.toInt()) },
+                    valueRange = 10f..100f
+                )
+                Spacer(Modifier.height(8.dp))
+                Text("مدة الغفوة", color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                Spacer(Modifier.height(8.dp))
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(1, 3, 5, 10).forEach { mins ->
+                        FilterChip(
+                            selected = state.maxDurationMinutes == mins,
+                            onClick = { onSetMaxDuration(mins) },
+                            label = { Text(L10n.t(S.MinutesShortFmt).format(mins), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center, maxLines = 1) },
+                            modifier = Modifier.weight(1f)
+                        )
                     }
                 }
             }
@@ -467,72 +442,62 @@ private fun LocationOptionRow(
     subtitle: String,
     onClick: () -> Unit
 ) {
+    val cs = MaterialTheme.colorScheme
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
             .clickable(onClick = onClick)
-            .background(
-                if (selected) MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)
-                else Color.Transparent
-            )
+            .background(if (selected) cs.primary.copy(alpha = 0.12f) else Color.Transparent)
             .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         RadioButton(selected = selected, onClick = onClick)
         Spacer(Modifier.width(8.dp))
-        Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+        Icon(icon, null, tint = cs.primary)
         Spacer(Modifier.width(10.dp))
         Column {
-            Text(title, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
-            Text(subtitle, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(title, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+            Text(subtitle, color = cs.onSurfaceVariant, fontSize = 11.sp)
         }
     }
 }
 
 @Composable
-fun FajrHeader(
-    nextFajrTimeFormatted: String,
-    isAlarmEnabled: Boolean,
-    cityName: String
-) {
+fun FajrHeader(nextFajrTimeFormatted: String, isAlarmEnabled: Boolean, cityName: String) {
+    val cs = MaterialTheme.colorScheme
     Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp)) {
         Text(
-            text = "موعد صلاة الفجر القادم",
+            "موعد صلاة الفجر القادم",
+            color = cs.onSurfaceVariant,
             fontSize = 13.sp,
-            fontWeight = FontWeight.Medium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            fontWeight = FontWeight.Medium
         )
         Spacer(Modifier.height(4.dp))
         Row(
             modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = nextFajrTimeFormatted,
-                fontSize = 30.sp,
-                fontWeight = FontWeight.ExtraBold,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Surface(
-                shape = RoundedCornerShape(12.dp),
-                color = if (isAlarmEnabled) Color(0xFF10B981).copy(alpha = 0.15f) else Color.Gray.copy(alpha = 0.15f)
-            ) {
+            Column {
                 Text(
-                    text = if (isAlarmEnabled) "المنبه مفعّل ✓" else "المنبه معطّل",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = if (isAlarmEnabled) Color(0xFF10B981) else Color.Gray,
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                    nextFajrTimeFormatted,
+                    color = cs.primary,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.ExtraBold
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(cityName, color = cs.onSurfaceVariant, fontSize = 12.sp)
+            }
+            val accent = if (isAlarmEnabled) Color(0xFF10B981) else Color(0xFF999999)
+            Surface(shape = RoundedCornerShape(12.dp), color = accent.copy(alpha = 0.15f)) {
+                Icon(
+                    if (isAlarmEnabled) Icons.Outlined.AlarmOn else Icons.Outlined.AlarmOff,
+                    if (isAlarmEnabled) "المنبه مفعّل" else "المنبه معطّل",
+                    modifier = Modifier.padding(11.dp).size(24.dp),
+                    tint = accent
                 )
             }
         }
-        Spacer(Modifier.height(2.dp))
-        Text(
-            text = cityName,
-            fontSize = 12.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
     }
 }

@@ -1,6 +1,5 @@
 package com.example.widget;
 
-import com.example.utils.Str;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -18,22 +17,15 @@ import com.example.fajr.calculation.PrayerTimesCalculator;
 import com.example.fajr.data.FajrPreferences;
 import com.example.lockwidgets.HomeWidgets;
 import com.example.R;
-
 import com.example.ui.i18n.L10n;
-
-
-
-import com.example.utils.Str;
-
-
-
-
-
 import com.example.ui.i18n.S;
-
-
-
-
+import com.example.prayer.HijriDate;
+import kotlin.Pair;
+import kotlin.Triple;
+import kotlin.collections.MapsKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.ranges.RangesKt;
+import java.util.Objects;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,9 +42,47 @@ import java.util.Map;
 public final class WidgetUpdater {
     public static final int $stable = 8;
     public static final WidgetUpdater INSTANCE = new WidgetUpdater();
-    private static final Map<String, Integer> iqamaOffsets = Str.X(new java.util.AbstractMap.SimpleEntry("الفجر", 25), new java.util.AbstractMap.SimpleEntry("الظهر", 20), new java.util.AbstractMap.SimpleEntry("العصر", 20), new java.util.AbstractMap.SimpleEntry("المغرب", 10), new java.util.AbstractMap.SimpleEntry("العشاء", 20));
-    private static final Map<Integer, Map<String, Integer>> barVariants = Str.X(new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_hero), Str.X(new java.util.AbstractMap.SimpleEntry("amber", Integer.valueOf(R.layout.widget_hero_amber)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_hero_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_hero_green)))), new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_hero_compact), Str.X(new java.util.AbstractMap.SimpleEntry("amber", Integer.valueOf(R.layout.widget_hero_compact_amber)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_hero_compact_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_hero_compact_green)))), new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_iqama), Str.X(new java.util.AbstractMap.SimpleEntry("white", Integer.valueOf(R.layout.widget_iqama_white)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_iqama_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_iqama_green)))), new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_iqama_small), Str.X(new java.util.AbstractMap.SimpleEntry("white", Integer.valueOf(R.layout.widget_iqama_small_white)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_iqama_small_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_iqama_small_green)))), new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_prayer_bar), Str.X(new java.util.AbstractMap.SimpleEntry("amber", Integer.valueOf(R.layout.widget_prayer_bar_amber)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_prayer_bar_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_prayer_bar_green)))), new java.util.AbstractMap.SimpleEntry(Integer.valueOf(R.layout.widget_wide_bar), Str.X(new java.util.AbstractMap.SimpleEntry("amber", Integer.valueOf(R.layout.widget_wide_bar_amber)), new java.util.AbstractMap.SimpleEntry("blue", Integer.valueOf(R.layout.widget_wide_bar_blue)), new java.util.AbstractMap.SimpleEntry("green", Integer.valueOf(R.layout.widget_wide_bar_green)))));
+    private static final Map<String, Integer> iqamaOffsets = MapsKt.mapOf(new Pair<>("الفجر", 25), new Pair<>("الظهر", 20), new Pair<>("العصر", 20), new Pair<>("المغرب", 10), new Pair<>("العشاء", 20));
+    private static final Map<Integer, Map<String, Integer>> barVariants = MapsKt.mapOf(new Pair<>(Integer.valueOf(R.layout.widget_hero), MapsKt.mapOf(new Pair<>("amber", Integer.valueOf(R.layout.widget_hero_amber)), new Pair<>("blue", Integer.valueOf(R.layout.widget_hero_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_hero_green)))), new Pair<>(Integer.valueOf(R.layout.widget_hero_compact), MapsKt.mapOf(new Pair<>("amber", Integer.valueOf(R.layout.widget_hero_compact_amber)), new Pair<>("blue", Integer.valueOf(R.layout.widget_hero_compact_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_hero_compact_green)))), new Pair<>(Integer.valueOf(R.layout.widget_iqama), MapsKt.mapOf(new Pair<>("white", Integer.valueOf(R.layout.widget_iqama_white)), new Pair<>("blue", Integer.valueOf(R.layout.widget_iqama_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_iqama_green)))), new Pair<>(Integer.valueOf(R.layout.widget_iqama_small), MapsKt.mapOf(new Pair<>("white", Integer.valueOf(R.layout.widget_iqama_small_white)), new Pair<>("blue", Integer.valueOf(R.layout.widget_iqama_small_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_iqama_small_green)))), new Pair<>(Integer.valueOf(R.layout.widget_prayer_bar), MapsKt.mapOf(new Pair<>("amber", Integer.valueOf(R.layout.widget_prayer_bar_amber)), new Pair<>("blue", Integer.valueOf(R.layout.widget_prayer_bar_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_prayer_bar_green)))), new Pair<>(Integer.valueOf(R.layout.widget_wide_bar), MapsKt.mapOf(new Pair<>("amber", Integer.valueOf(R.layout.widget_wide_bar_amber)), new Pair<>("blue", Integer.valueOf(R.layout.widget_wide_bar_blue)), new Pair<>("green", Integer.valueOf(R.layout.widget_wide_bar_green)))));
 
+    public final void updateAll(Context context) {
+        HomeWidgets.updateAll(context);
+        try {
+            pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER);
+        } catch (Exception e) {
+        }
+    }
+
+    /** Face-widget push only - used by the minute pulse, which already updates home widgets itself. */
+    public final void updateFace(Context context) {
+        try {
+            pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER);
+        } catch (Exception e) {
+            android.util.Log.w("WathakkerHome", "face widget push failed", e);
+        }
+    }
+
+    private WidgetUpdater() {
+    }
+
+    private final String formatTime(long millis) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(millis);
+        com.example.ui.i18n.L10n lx0 = com.example.ui.i18n.L10n.INSTANCE;
+        String ampm = cal.get(9) == 0 ? lx0.t(com.example.ui.i18n.S.AmMarker) : lx0.t(com.example.ui.i18n.S.PmMarker);
+        return new SimpleDateFormat("h:mm", Locale.US).format(cal.getTime()) + " " + ampm;
+    }
+
+    private final String formatTimeShort(long millis) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm", Locale.US);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(millis);
+        String format = simpleDateFormat.format(calendar.getTime());
+        
+        return format;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
     public static final class IqamaState {
         private final long adhanMillis;
@@ -104,7 +134,7 @@ public final class WidgetUpdater {
                 return false;
             }
             IqamaState iqamaState = (IqamaState) obj;
-            return java.util.Objects.equals(this.prayerName, iqamaState.prayerName) && this.adhanMillis == iqamaState.adhanMillis && this.iqamaMillis == iqamaState.iqamaMillis && this.progressPct == iqamaState.progressPct && this.nextIqamaMillis == iqamaState.nextIqamaMillis;
+            return Objects.equals(this.prayerName, iqamaState.prayerName) && this.adhanMillis == iqamaState.adhanMillis && this.iqamaMillis == iqamaState.iqamaMillis && this.progressPct == iqamaState.progressPct && this.nextIqamaMillis == iqamaState.nextIqamaMillis;
         }
 
         public final long getAdhanMillis() {
@@ -220,7 +250,7 @@ public final class WidgetUpdater {
                 return false;
             }
             PrayerState prayerState = (PrayerState) obj;
-            return java.util.Objects.equals(this.names, prayerState.names) && java.util.Objects.equals(this.times, prayerState.times) && this.nextIndex == prayerState.nextIndex && java.util.Objects.equals(this.nextName, prayerState.nextName) && this.nextMillis == prayerState.nextMillis && java.util.Objects.equals(this.prevName, prayerState.prevName) && this.prevMillis == prayerState.prevMillis && java.util.Objects.equals(this.city, prayerState.city);
+            return Objects.equals(this.names, prayerState.names) && Objects.equals(this.times, prayerState.times) && this.nextIndex == prayerState.nextIndex && Objects.equals(this.nextName, prayerState.nextName) && this.nextMillis == prayerState.nextMillis && Objects.equals(this.prevName, prayerState.prevName) && this.prevMillis == prayerState.prevMillis && Objects.equals(this.city, prayerState.city);
         }
 
         public final String getCity() {
@@ -255,9 +285,7 @@ public final class WidgetUpdater {
             return this.times;
         }
 
-        public int hashCode() {
-            return this.city.hashCode() + ((Long.hashCode(this.prevMillis) + Str.hash((Long.hashCode(this.nextMillis) + Str.hash((((this.times.hashCode() + (this.names.hashCode() * 31)) * 31) + this.nextIndex) * 31, 31, this.nextName)) * 31, 31, this.prevName)) * 31);
-        }
+        public int hashCode() { return Objects.hash(names,times,nextIndex,nextName,nextMillis,prevName,prevMillis,city); }
 
         public String toString() {
             StringBuilder sb = new StringBuilder("PrayerState(names=");
@@ -275,12 +303,19 @@ public final class WidgetUpdater {
             sb.append(", prevMillis=");
             sb.append(this.prevMillis);
             sb.append(", city=");
-            return Str.O(sb, this.city, ")");
+            return sb.append(this.city).append(")").toString();
         }
     }
 
-    private WidgetUpdater() {
+    private static class W {
+      final String name; final long adhan, iqama;
+      W(String n,long a,long i){name=n;adhan=a;iqama=i;}
+      String getName(){return name;} long getAdhan(){return adhan;} long getIqama(){return iqama;}
     }
+    private static List<W> sortedEvents(W first, List<W> middle, W last, Comparator<W> comparator) {
+      List<W> all = new ArrayList<>(); all.add(first);all.addAll(middle);all.add(last);all.sort(comparator);return all;
+    }
+
 
     private final void applyToAll(Context context, AppWidgetManager appWidgetManager, Class<?> cls, RemoteViews remoteViews) {
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, cls));
@@ -294,7 +329,7 @@ public final class WidgetUpdater {
         Map<String, Integer> map;
         Integer num;
         String widgetBarColor = new FajrPreferences(context).getWidgetBarColor();
-        return (java.util.Objects.equals(widgetBarColor, "default") || (map = barVariants.get(Integer.valueOf(i))) == null || (num = map.get(widgetBarColor)) == null) ? i : num.intValue();
+        return (Objects.equals(widgetBarColor, "default") || (map = barVariants.get(Integer.valueOf(i))) == null || (num = map.get(widgetBarColor)) == null) ? i : num.intValue();
     }
 
     private static final String compactRemaining(long j, String str) {
@@ -352,19 +387,19 @@ public final class WidgetUpdater {
 
     private final IqamaState computeIqamaState(Context context, PrayerState prayerState, long j) {
         Object obj;
-        Object obj2;
-        Object obj3;
+        Object objPrevious;
+        Object next;
         W w = null;
         Integer num;
         Integer num2 = 1;
-        List asList = Arrays.asList("الفجر", "الظهر", "العصر", "المغرب", "العشاء");
+        List listAsList = Arrays.asList("الفجر", "الظهر", "العصر", "المغرب", "العشاء");
         ArrayList arrayList = new ArrayList();
         int size = prayerState.getNames().size();
         boolean z = Calendar.getInstance().get(7) == 6;
         int i = 0;
         while (i < size) {
             String str = prayerState.getNames().get(i);
-            if (!asList.contains(str) || (z && "الظهر".equals(str))) {
+            if (!listAsList.contains(str) || (z && "الظهر".equals(str))) {
                 num = num2;
             } else {
                 num = num2;
@@ -375,91 +410,88 @@ public final class WidgetUpdater {
         }
         Integer num3 = num2;
         FajrPreferences fajrPreferences = new FajrPreferences(context);
-        CalculationMethod fromId = CalculationMethod.INSTANCE.fromId(fajrPreferences.getCalculationMethodId());
+        CalculationMethod calculationMethodFromId = CalculationMethod.INSTANCE.fromId(fajrPreferences.getCalculationMethodId());
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(j);
         int i2 = PrayerTimesCalculator.$stable;
-        Object clone = calendar.clone();
-        clone.getClass();
-        Calendar calendar2 = (Calendar) clone;
+        Object objClone = calendar.clone();
+        objClone.getClass();
+        Calendar calendar2 = (Calendar) objClone;
         calendar2.add(6, -1);
         PrayerAdjustments prayerAdjustments = PrayerAdjustments.INSTANCE;
-        PrayerTimesCalculator.DayPrayerTimes calculateAll = prayerAdjustments.calculateAll(context, calendar2, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), fromId);
-        W w2 = new W("العشاء", calculateAll.getIsha(), computeIqamaState$iqamaOf("العشاء", calculateAll.getIsha()));
-        Object clone2 = calendar.clone();
-        clone2.getClass();
-        Calendar calendar3 = (Calendar) clone2;
+        PrayerTimesCalculator.DayPrayerTimes dayPrayerTimesCalculateAll = prayerAdjustments.calculateAll(context, calendar2, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), calculationMethodFromId);
+        W w2 = new W("العشاء", dayPrayerTimesCalculateAll.getIsha(), computeIqamaState$iqamaOf("العشاء", dayPrayerTimesCalculateAll.getIsha()));
+        Object objClone2 = calendar.clone();
+        objClone2.getClass();
+        Calendar calendar3 = (Calendar) objClone2;
         calendar3.add(6, 1);
-        PrayerTimesCalculator.DayPrayerTimes calculateAll2 = prayerAdjustments.calculateAll(context, calendar3, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), fromId);
-        List t0 = Str.sorted(Str.plus(Str.plus(Str.single(w2), arrayList), Str.single(new W("الفجر", calculateAll2.getFajr(), computeIqamaState$iqamaOf("الفجر", calculateAll2.getFajr())))), new Comparator() { // from class: com.example.widget.WidgetUpdater.1
+        PrayerTimesCalculator.DayPrayerTimes dayPrayerTimesCalculateAll2 = prayerAdjustments.calculateAll(context, calendar3, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), calculationMethodFromId);
+        List listT0 = sortedEvents(w2, arrayList, new W("الفجر", dayPrayerTimesCalculateAll2.getFajr(), computeIqamaState$iqamaOf("الفجر", dayPrayerTimesCalculateAll2.getFajr())), new Comparator() { // from class: com.example.widget.WidgetUpdater.1
             @Override // java.util.Comparator
-            public final int compare(Object obj4, Object obj5) {
-                return Long.compare(((W) obj4).getAdhan(), ((W) obj5).getAdhan());
+            public final int compare(Object obj2, Object obj3) {
+                return Long.compare(((W) obj2).getAdhan(), ((W) obj3).getAdhan());
             }
         });
-        ListIterator listIterator = t0.listIterator(t0.size());
+        ListIterator listIterator = listT0.listIterator(listT0.size());
         while (true) {
             obj = null;
             if (!listIterator.hasPrevious()) {
-                obj2 = null;
+                objPrevious = null;
                 break;
             }
-            obj2 = listIterator.previous();
-            if ((((W) obj2).getAdhan() <= j ? num3 : null) != null) {
+            objPrevious = listIterator.previous();
+            if ((((W) objPrevious).getAdhan() <= j ? num3 : null) != null) {
                 break;
             }
         }
-        W w3 = (W) obj2;
+        W w3 = (W) objPrevious;
         if (w3 != null) {
             if (j <= w3.getIqama()) {
-                Iterator it = t0.iterator();
+                Iterator it = listT0.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
                     }
-                    Object next = it.next();
-                    if ((((W) next).getAdhan() > w3.getAdhan() ? num3 : null) != null) {
-                        obj = next;
+                    Object next2 = it.next();
+                    if ((((W) next2).getAdhan() > w3.getAdhan() ? num3 : null) != null) {
+                        obj = next2;
                         break;
                     }
                 }
                 w = (W) obj;
             } else {
-                Iterator it2 = t0.iterator();
+                Iterator it2 = listT0.iterator();
                 while (true) {
                     if (!it2.hasNext()) {
-                        obj3 = null;
+                        next = null;
                         break;
                     }
-                    obj3 = it2.next();
-                    if ((((W) obj3).getAdhan() > j ? num3 : null) != null) {
+                    next = it2.next();
+                    if ((((W) next).getAdhan() > j ? num3 : null) != null) {
                         break;
                     }
                 }
-                w3 = (W) obj3;
+                w3 = (W) next;
                 if (w3 != null) {
-                    Iterator it3 = t0.iterator();
+                    Iterator it3 = listT0.iterator();
                     while (true) {
                         if (!it3.hasNext()) {
                             break;
                         }
-                        Object next2 = it3.next();
-                        if ((((W) next2).getAdhan() > w3.getAdhan() ? num3 : null) != null) {
-                            obj = next2;
+                        Object next3 = it3.next();
+                        if ((((W) next3).getAdhan() > w3.getAdhan() ? num3 : null) != null) {
+                            obj = next3;
                             break;
                         }
                     }
                     w = (W) obj;
                 }
             }
-            if (w3 == null) {
-                return null;
-            }
             long iqama = w3.getIqama() - w3.getAdhan();
             if (iqama < 1) {
                 iqama = 1;
             }
-            return new IqamaState(w3.getName(), w3.getAdhan(), w3.getIqama(), com.example.utils.Str.coerce((int) (((j - w3.getAdhan()) * 100) / iqama), 0, 100), w != null ? w.getIqama() : w3.getIqama());
+            return new IqamaState(w3.getName(), w3.getAdhan(), w3.getIqama(), RangesKt.coerceIn((int) (((j - w3.getAdhan()) * 100) / iqama), 0, 100), w != null ? w.getIqama() : w3.getIqama());
         }
         return null;
     }
@@ -472,83 +504,83 @@ public final class WidgetUpdater {
         String str;
         List list;
         int i;
-        long longValue;
+        long jLongValue;
         String str2;
         int i2;
-        int i3;
-        long longValue2;
+        int iNextIndex;
+        long jLongValue2;
         String str3;
         FajrPreferences fajrPreferences = new FajrPreferences(context);
-        CalculationMethod fromId = CalculationMethod.INSTANCE.fromId(fajrPreferences.getCalculationMethodId());
-        long currentTimeMillis = System.currentTimeMillis();
+        CalculationMethod calculationMethodFromId = CalculationMethod.INSTANCE.fromId(fajrPreferences.getCalculationMethodId());
+        long jCurrentTimeMillis = System.currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(currentTimeMillis);
-        int i4 = PrayerTimesCalculator.$stable;
-        PrayerTimesCalculator.DayPrayerTimes calculateAll = PrayerAdjustments.INSTANCE.calculateAll(context, calendar, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), fromId);
-        List asList = Arrays.asList(Long.valueOf(calculateAll.getFajr()), Long.valueOf(calculateAll.getSunrise()), Long.valueOf(calculateAll.getDhuhr()), Long.valueOf(calculateAll.getAsr()), Long.valueOf(calculateAll.getMaghrib()), Long.valueOf(calculateAll.getIsha()));
+        calendar.setTimeInMillis(jCurrentTimeMillis);
+        int i3 = PrayerTimesCalculator.$stable;
+        PrayerTimesCalculator.DayPrayerTimes dayPrayerTimesCalculateAll = PrayerAdjustments.INSTANCE.calculateAll(context, calendar, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), calculationMethodFromId);
+        List listAsList = Arrays.asList(Long.valueOf(dayPrayerTimesCalculateAll.getFajr()), Long.valueOf(dayPrayerTimesCalculateAll.getSunrise()), Long.valueOf(dayPrayerTimesCalculateAll.getDhuhr()), Long.valueOf(dayPrayerTimesCalculateAll.getAsr()), Long.valueOf(dayPrayerTimesCalculateAll.getMaghrib()), Long.valueOf(dayPrayerTimesCalculateAll.getIsha()));
         L10n.INSTANCE.init(context);
         String str4 = L10n.INSTANCE.getLang().getCode();
-        List asList2 = Arrays.asList(L10n.INSTANCE.t(S.PrayerFajr), L10n.INSTANCE.t(S.PrayerShuruq), L10n.INSTANCE.t(S.PrayerDhuhr), L10n.INSTANCE.t(S.PrayerAsr), L10n.INSTANCE.t(S.PrayerMaghrib), L10n.INSTANCE.t(S.PrayerIsha));
+        List listAsList2 = Arrays.asList(L10n.INSTANCE.t(S.PrayerFajr), L10n.INSTANCE.t(S.PrayerShuruq), L10n.INSTANCE.t(S.PrayerDhuhr), L10n.INSTANCE.t(S.PrayerAsr), L10n.INSTANCE.t(S.PrayerMaghrib), L10n.INSTANCE.t(S.PrayerIsha));
         if (calendar.get(7) == 6) {
-            asList2.set(2, L10n.INSTANCE.t(S.PrayerJumuah));
+            listAsList2.set(2, L10n.INSTANCE.t(S.PrayerJumuah));
         }
-        Iterator it = asList.iterator();
-        int i5 = 0;
+        Iterator it = listAsList.iterator();
+        int i4 = 0;
         while (true) {
             if (!it.hasNext()) {
-                i5 = -1;
+                i4 = -1;
                 break;
             }
-            if (((Number) it.next()).longValue() > currentTimeMillis) {
+            if (((Number) it.next()).longValue() > jCurrentTimeMillis) {
                 break;
             }
-            i5++;
+            i4++;
         }
-        if (i5 == -1) {
-            Object clone = calendar.clone();
-            clone.getClass();
-            Calendar calendar2 = (Calendar) clone;
+        if (i4 == -1) {
+            Object objClone = calendar.clone();
+            objClone.getClass();
+            Calendar calendar2 = (Calendar) objClone;
             calendar2.add(6, 1);
-            int i6 = PrayerTimesCalculator.$stable;
+            int i5 = PrayerTimesCalculator.$stable;
             i = -1;
-            list = asList2;
+            list = listAsList2;
             str = str4;
-            longValue = PrayerAdjustments.INSTANCE.calculateAll(context, calendar2, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), fromId).getFajr();
+            jLongValue = PrayerAdjustments.INSTANCE.calculateAll(context, calendar2, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), calculationMethodFromId).getFajr();
             str2 = (String) list.get(0);
             i2 = 0;
         } else {
             str = str4;
-            list = asList2;
+            list = listAsList2;
             i = -1;
-            longValue = ((Number) asList.get(i5)).longValue();
-            str2 = (String) list.get(i5);
-            i2 = i5;
+            jLongValue = ((Number) listAsList.get(i4)).longValue();
+            str2 = (String) list.get(i4);
+            i2 = i4;
         }
-        long j = longValue;
+        long j = jLongValue;
         String str5 = str2;
-        ListIterator listIterator = asList.listIterator(asList.size());
+        ListIterator listIterator = listAsList.listIterator(listAsList.size());
         while (true) {
             if (!listIterator.hasPrevious()) {
-                i3 = i;
+                iNextIndex = i;
                 break;
             }
-            if (((Number) listIterator.previous()).longValue() <= currentTimeMillis) {
-                i3 = listIterator.nextIndex();
+            if (((Number) listIterator.previous()).longValue() <= jCurrentTimeMillis) {
+                iNextIndex = listIterator.nextIndex();
                 break;
             }
         }
-        if (i3 == i) {
-            Object clone2 = calendar.clone();
-            clone2.getClass();
-            Calendar calendar3 = (Calendar) clone2;
+        if (iNextIndex == i) {
+            Object objClone2 = calendar.clone();
+            objClone2.getClass();
+            Calendar calendar3 = (Calendar) objClone2;
             calendar3.add(6, i);
-            longValue2 = PrayerAdjustments.INSTANCE.calculateAll(context, calendar3, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), fromId).getIsha();
+            jLongValue2 = PrayerAdjustments.INSTANCE.calculateAll(context, calendar3, fajrPreferences.getLatitude(), fajrPreferences.getLongitude(), calculationMethodFromId).getIsha();
             str3 = (String) list.get(5);
         } else {
-            longValue2 = ((Number) asList.get(i3)).longValue();
-            str3 = (String) list.get(i3);
+            jLongValue2 = ((Number) listAsList.get(iNextIndex)).longValue();
+            str3 = (String) list.get(iNextIndex);
         }
-        return new PrayerState(list, asList, i2, str5, j, str3, longValue2, fajrPreferences.getCityNameLocalized(str));
+        return new PrayerState(list, listAsList, i2, str5, j, str3, jLongValue2, fajrPreferences.getCityNameLocalized(str));
     }
 
     private static final String faceRemaining(String str, String str2, String str3) {
@@ -559,19 +591,19 @@ public final class WidgetUpdater {
             return "باقی " + str + " " + str2;
         }
         if (str3.startsWith("fr")) {
-            return Str.L(str, " dans ", str2);
+            return (str + " dans " + str2);
         }
         if (str3.startsWith("de")) {
-            return Str.L(str, " in ", str2);
+            return (str + " in " + str2);
         }
         if (str3.startsWith("es")) {
-            return Str.L(str, " en ", str2);
+            return (str + " en " + str2);
         }
         if (str3.startsWith("it")) {
-            return Str.L(str, " tra ", str2);
+            return (str + " tra " + str2);
         }
         if (!str3.startsWith("tr")) {
-            return str3.startsWith("id") ? Str.L(str, " dalam ", str2) : str3.startsWith("ru") ? Str.L(str, " через ", str2) : str3.startsWith("pt") ? Str.L(str, " em ", str2) : Str.L(str, " in ", str2);
+            return str3.startsWith("id") ? (str + " dalam " + str2) : str3.startsWith("ru") ? (str + " через " + str2) : str3.startsWith("pt") ? (str + " em " + str2) : (str + " in " + str2);
         }
         return str + ": " + str2 + " kaldı";
     }
@@ -586,16 +618,16 @@ public final class WidgetUpdater {
         if (i2 <= 0) {
             return formatRemaining$minutesText(i);
         }
-        String str = "ساعتان";
+        String strL = "ساعتان";
         if (i3 == 0) {
-            return i2 != 1 ? i2 != 2 ? i2 < 11 ? Str.cat(i2, " ساعات") : Str.cat(i2, " ساعة") : "ساعتان" : "ساعة واحدة";
+            return i2 != 1 ? i2 != 2 ? i2 < 11 ? (i2 + " ساعات") : (i2 + " ساعة") : "ساعتان" : "ساعة واحدة";
         }
         if (i2 == 1) {
-            str = "ساعة";
+            strL = "ساعة";
         } else if (i2 != 2) {
-            str = i2 < 11 ? Str.cat(i2, " ساعات") : Str.cat(i2, " ساعة");
+            strL = i2 < 11 ? (i2 + " ساعات") : (i2 + " ساعة");
         }
-        return str + " و " + formatRemaining$minutesText(i3);
+        return strL + " و " + formatRemaining$minutesText(i3);
     }
 
     private static final String formatRemaining$minutesText(int i) {
@@ -605,23 +637,12 @@ public final class WidgetUpdater {
         if (i == 2) {
             return "دقيقتان";
         }
-        return Str.cat(i, (3 > i || i >= 11) ? " دقيقة" : " دقائق");
+        return (i + ((3 > i || i >= 11) ? " دقيقة" : " دقائق"));
     }
 
-    private final String formatTime(long j) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(j);
-        return new SimpleDateFormat("h:mm", Locale.US).format(calendar.getTime()) + " " + L10n.INSTANCE.t(calendar.get(9) == 0 ? S.AmMarker : S.PmMarker);
-    }
 
-    private final String formatTimeShort(long j) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm", Locale.US);
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(j);
-        String format = simpleDateFormat.format(calendar.getTime());
-        format.getClass();
-        return format;
-    }
+
+
 
     private final PendingIntent launchIntent(Context context) {
         Intent intent = new Intent(context, (Class<?>) MainActivity.class);
@@ -636,9 +657,7 @@ public final class WidgetUpdater {
         remoteViews.setTextViewText(R.id.facewidget_prayer_name, prayerState.getNextName());
         WidgetUpdater widgetUpdater = INSTANCE;
         remoteViews.setTextViewText(R.id.facewidget_prayer_time, widgetUpdater.formatTime(prayerState.getNextMillis()));
-        remoteViews.setChronometerCountDown(R.id.facewidget_remaining, true);
-        remoteViews.setChronometer(R.id.facewidget_remaining,
-                SystemClock.elapsedRealtime() + prayerState.getNextMillis() - System.currentTimeMillis(), "%s", true);
+        remoteViews.setTextViewText(R.id.facewidget_remaining, str);
         remoteViews.setProgressBar(R.id.facewidget_progress, 100, i, false);
         remoteViews.setOnClickPendingIntent(R.id.facewidget_root, widgetUpdater.launchIntent(context));
         return remoteViews;
@@ -680,7 +699,7 @@ public final class WidgetUpdater {
         if (nextMillis < 1) {
             nextMillis = 1;
         }
-        int r = com.example.utils.Str.coerce((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100);
+        int iR = RangesKt.coerceIn((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(j);
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), barLayout(context, R.layout.widget_hero));
@@ -689,12 +708,12 @@ public final class WidgetUpdater {
         remoteViews.setTextViewText(R.id.widget_hero_prev_time, formatTimeShort(prayerState.getPrevMillis()));
         remoteViews.setTextViewText(R.id.widget_hero_next_time, formatTimeShort(prayerState.getNextMillis()));
         remoteViews.setTextViewText(R.id.widget_hero_remaining, faceRemaining(prayerState.getNextName(), compactRemaining(prayerState.getNextMillis() - j), L10n.INSTANCE.getLang().getCode()));
-        remoteViews.setProgressBar(R.id.widget_hero_progress, 100, r, false);
-        String a = com.example.prayer.HijriDate.INSTANCE.format(calendar, "ar");
-        if (a.endsWith(" هـ")) {
-            a = a.substring(0, a.length() - 3);
+        remoteViews.setProgressBar(R.id.widget_hero_progress, 100, iR, false);
+        String strA = HijriDate.INSTANCE.format(calendar);
+        if (strA.endsWith(" هـ")) {
+            strA = strA.substring(0, strA.length() - 3);
         }
-        remoteViews.setTextViewText(R.id.widget_hero_hijri, a);
+        remoteViews.setTextViewText(R.id.widget_hero_hijri, strA);
         remoteViews.setTextViewText(R.id.widget_hero_greg, new SimpleDateFormat("d MMMM yyyy", new Locale("ar", "EG")).format(calendar.getTime()));
         remoteViews.setOnClickPendingIntent(R.id.widget_hero_root, launchIntent(context));
         RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), barLayout(context, R.layout.widget_hero_compact));
@@ -702,51 +721,51 @@ public final class WidgetUpdater {
         StringBuilder sb = new StringBuilder("باقي ");
         sb.append(compactRemaining(prayerState.getNextMillis() - j));
         remoteViews2.setTextViewText(R.id.widget_hero_compact_remaining, sb.toString());
-        remoteViews2.setProgressBar(R.id.widget_hero_compact_progress, 100, r, false);
+        remoteViews2.setProgressBar(R.id.widget_hero_compact_progress, 100, iR, false);
         remoteViews2.setOnClickPendingIntent(R.id.widget_hero_compact_root, launchIntent(context));
         if (Build.VERSION.SDK_INT >= 31) {
-            remoteViews = new RemoteViews((java.util.Map<SizeF, RemoteViews>) Str.X(new java.util.AbstractMap.SimpleEntry(new SizeF(250.0f, 110.0f), remoteViews), new java.util.AbstractMap.SimpleEntry(new SizeF(250.0f, 40.0f), remoteViews2)));
+            remoteViews = new RemoteViews(MapsKt.mapOf(new Pair<>(new SizeF(250.0f, 110.0f), remoteViews), new Pair<>(new SizeF(250.0f, 40.0f), remoteViews2)));
         }
         applyToAll(context, appWidgetManager, HeroWidgetProvider.class, remoteViews);
     }
 
     private final void updateHijri(Context context, AppWidgetManager appWidgetManager, Calendar calendar) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_hijri);
-        kotlin.Triple c = com.example.prayer.HijriDate.INSTANCE.hijriYmd(calendar);
-        int intValue = ((Integer) c.getFirst()).intValue();
-        int intValue2 = ((Integer) c.getSecond()).intValue();
-        remoteViews.setTextViewText(R.id.widget_hijri_day, String.valueOf(((Integer) c.getThird()).intValue()));
-        remoteViews.setTextViewText(R.id.widget_hijri_month, com.example.prayer.HijriDate.INSTANCE.monthName(intValue2, "ar"));
-        remoteViews.setTextViewText(R.id.widget_hijri_year, intValue + " هـ");
+        Triple<Integer,Integer,Integer> v42VarC = HijriDate.INSTANCE.hijriYmd(calendar);
+        int iIntValue = ((Integer) v42VarC.getFirst()).intValue();
+        int iIntValue2 = ((Integer) v42VarC.getSecond()).intValue();
+        remoteViews.setTextViewText(R.id.widget_hijri_day, String.valueOf(((Integer) v42VarC.getThird()).intValue()));
+        remoteViews.setTextViewText(R.id.widget_hijri_month, HijriDate.INSTANCE.monthName(iIntValue2));
+        remoteViews.setTextViewText(R.id.widget_hijri_year, iIntValue + " هـ");
         remoteViews.setOnClickPendingIntent(R.id.widget_hijri_day, launchIntent(context));
         applyToAll(context, appWidgetManager, HijriWidgetProvider.class, remoteViews);
     }
 
     private final void updateIqama(Context context, AppWidgetManager appWidgetManager, PrayerState prayerState, long j) {
-        IqamaState computeIqamaState = computeIqamaState(context, prayerState, j);
-        if (computeIqamaState == null) {
+        IqamaState iqamaStateComputeIqamaState = computeIqamaState(context, prayerState, j);
+        if (iqamaStateComputeIqamaState == null) {
             return;
         }
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), barLayout(context, R.layout.widget_iqama));
-        remoteViews.setTextViewText(R.id.widget_iqama_countdown, HomeWidgets.mmss(computeIqamaState.getIqamaMillis() - j));
-        remoteViews.setTextViewText(R.id.widget_iqama_adhan, computeIqamaState.getPrayerName() + " " + formatTimeShort(computeIqamaState.getAdhanMillis()));
+        remoteViews.setTextViewText(R.id.widget_iqama_countdown, HomeWidgets.mmss(iqamaStateComputeIqamaState.getIqamaMillis() - j));
+        remoteViews.setTextViewText(R.id.widget_iqama_adhan, iqamaStateComputeIqamaState.getPrayerName() + " " + formatTimeShort(iqamaStateComputeIqamaState.getAdhanMillis()));
         StringBuilder sb = new StringBuilder("الإقامة ");
-        sb.append(formatTimeShort(computeIqamaState.getIqamaMillis()));
+        sb.append(formatTimeShort(iqamaStateComputeIqamaState.getIqamaMillis()));
         remoteViews.setTextViewText(R.id.widget_iqama_time, sb.toString());
-        remoteViews.setTextViewText(R.id.widget_iqama_next, "الإقامة " + formatTimeShort(computeIqamaState.getNextIqamaMillis()));
-        remoteViews.setProgressBar(R.id.widget_iqama_progress, 100, computeIqamaState.getProgressPct(), false);
+        remoteViews.setTextViewText(R.id.widget_iqama_next, "الإقامة " + formatTimeShort(iqamaStateComputeIqamaState.getNextIqamaMillis()));
+        remoteViews.setProgressBar(R.id.widget_iqama_progress, 100, iqamaStateComputeIqamaState.getProgressPct(), false);
         remoteViews.setOnClickPendingIntent(R.id.widget_iqama_countdown, launchIntent(context));
         applyToAll(context, appWidgetManager, IqamaWidgetProvider.class, remoteViews);
     }
 
     private final void updateIqamaSmall(Context context, AppWidgetManager appWidgetManager, PrayerState prayerState, long j) {
-        IqamaState computeIqamaState = computeIqamaState(context, prayerState, j);
-        if (computeIqamaState == null) {
+        IqamaState iqamaStateComputeIqamaState = computeIqamaState(context, prayerState, j);
+        if (iqamaStateComputeIqamaState == null) {
             return;
         }
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), barLayout(context, R.layout.widget_iqama_small));
-        remoteViews.setTextViewText(R.id.widget_iqama_small_time, formatTimeShort(computeIqamaState.getIqamaMillis()));
-        remoteViews.setProgressBar(R.id.widget_iqama_small_progress, 100, computeIqamaState.getProgressPct(), false);
+        remoteViews.setTextViewText(R.id.widget_iqama_small_time, formatTimeShort(iqamaStateComputeIqamaState.getIqamaMillis()));
+        remoteViews.setProgressBar(R.id.widget_iqama_small_progress, 100, iqamaStateComputeIqamaState.getProgressPct(), false);
         remoteViews.setOnClickPendingIntent(R.id.widget_iqama_small_time, launchIntent(context));
         applyToAll(context, appWidgetManager, IqamaSmallWidgetProvider.class, remoteViews);
     }
@@ -779,7 +798,7 @@ public final class WidgetUpdater {
         if (nextMillis < 1) {
             nextMillis = 1;
         }
-        remoteViews.setProgressBar(R.id.widget_bar_progress, 100, com.example.utils.Str.coerce((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100), false);
+        remoteViews.setProgressBar(R.id.widget_bar_progress, 100, RangesKt.coerceIn((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100), false);
         remoteViews.setOnClickPendingIntent(R.id.widget_bar_name, launchIntent(context));
         remoteViews.setOnClickPendingIntent(R.id.widget_bar_time, launchIntent(context));
         applyToAll(context, appWidgetManager, PrayerBarWidgetProvider.class, remoteViews);
@@ -788,18 +807,18 @@ public final class WidgetUpdater {
     private final void updateSchedule(Context context, AppWidgetManager appWidgetManager, PrayerState prayerState) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_schedule);
         int i = 0;
-        List asList = Arrays.asList(Integer.valueOf(R.id.widget_name_0), Integer.valueOf(R.id.widget_name_1), Integer.valueOf(R.id.widget_name_2), Integer.valueOf(R.id.widget_name_3), Integer.valueOf(R.id.widget_name_4), Integer.valueOf(R.id.widget_name_5));
-        List asList2 = Arrays.asList(Integer.valueOf(R.id.widget_time_0), Integer.valueOf(R.id.widget_time_1), Integer.valueOf(R.id.widget_time_2), Integer.valueOf(R.id.widget_time_3), Integer.valueOf(R.id.widget_time_4), Integer.valueOf(R.id.widget_time_5));
+        List listAsList = Arrays.asList(Integer.valueOf(R.id.widget_name_0), Integer.valueOf(R.id.widget_name_1), Integer.valueOf(R.id.widget_name_2), Integer.valueOf(R.id.widget_name_3), Integer.valueOf(R.id.widget_name_4), Integer.valueOf(R.id.widget_name_5));
+        List listAsList2 = Arrays.asList(Integer.valueOf(R.id.widget_time_0), Integer.valueOf(R.id.widget_time_1), Integer.valueOf(R.id.widget_time_2), Integer.valueOf(R.id.widget_time_3), Integer.valueOf(R.id.widget_time_4), Integer.valueOf(R.id.widget_time_5));
         while (i < 6) {
-            remoteViews.setTextViewText(((Number) asList.get(i)).intValue(), prayerState.getNames().get(i));
-            remoteViews.setTextViewText(((Number) asList2.get(i)).intValue(), formatTimeShort(prayerState.getTimes().get(i).longValue()));
+            remoteViews.setTextViewText(((Number) listAsList.get(i)).intValue(), prayerState.getNames().get(i));
+            remoteViews.setTextViewText(((Number) listAsList2.get(i)).intValue(), formatTimeShort(prayerState.getTimes().get(i).longValue()));
             int i2 = -12676609;
             int i3 = i == prayerState.getNextIndex() ? -12676609 : -1;
             if (i != prayerState.getNextIndex()) {
                 i2 = -5855578;
             }
-            remoteViews.setTextColor(((Number) asList2.get(i)).intValue(), i3);
-            remoteViews.setTextColor(((Number) asList.get(i)).intValue(), i2);
+            remoteViews.setTextColor(((Number) listAsList2.get(i)).intValue(), i3);
+            remoteViews.setTextColor(((Number) listAsList.get(i)).intValue(), i2);
             i++;
         }
         remoteViews.setOnClickPendingIntent(R.id.widget_name_0, launchIntent(context));
@@ -819,12 +838,12 @@ public final class WidgetUpdater {
         if (nextMillis < 1) {
             nextMillis = 1;
         }
-        remoteViews.setProgressBar(R.id.widget_wide_progress, 100, com.example.utils.Str.coerce((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100), false);
-        String a = com.example.prayer.HijriDate.INSTANCE.format(calendar, "ar");
-        if (a.endsWith(" هـ")) {
-            a = a.substring(0, a.length() - 3);
+        remoteViews.setProgressBar(R.id.widget_wide_progress, 100, RangesKt.coerceIn((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100), false);
+        String strA = HijriDate.INSTANCE.format(calendar);
+        if (strA.endsWith(" هـ")) {
+            strA = strA.substring(0, strA.length() - 3);
         }
-        remoteViews.setTextViewText(R.id.widget_wide_hijri, a);
+        remoteViews.setTextViewText(R.id.widget_wide_hijri, strA);
         remoteViews.setTextViewText(R.id.widget_wide_greg, new SimpleDateFormat("d MMMM yyyy", new Locale("ar", "EG")).format(calendar.getTime()));
         remoteViews.setOnClickPendingIntent(R.id.widget_wide_remaining, launchIntent(context));
         applyToAll(context, appWidgetManager, WideBarWidgetProvider.class, remoteViews);
@@ -834,40 +853,28 @@ public final class WidgetUpdater {
         context.getClass();
         str.getClass();
         if (str.equals(FaceWidgetReceiver.PAGE_ID_PRAYER)) {
-            PrayerState computeState = computeState(context);
-            long currentTimeMillis = System.currentTimeMillis();
-            long nextMillis = computeState.getNextMillis() - computeState.getPrevMillis();
+            PrayerState prayerStateComputeState = computeState(context);
+            long jCurrentTimeMillis = System.currentTimeMillis();
+            long nextMillis = prayerStateComputeState.getNextMillis() - prayerStateComputeState.getPrevMillis();
             if (nextMillis < 1) {
                 nextMillis = 1;
             }
-            int r = com.example.utils.Str.coerce((int) (((currentTimeMillis - computeState.getPrevMillis()) * 100) / nextMillis), 0, 100);
-            String faceRemaining = faceRemaining(computeState.getNextName(), compactRemaining(computeState.getNextMillis() - currentTimeMillis), L10n.INSTANCE.getLang().getCode());
+            int iR = RangesKt.coerceIn((int) (((jCurrentTimeMillis - prayerStateComputeState.getPrevMillis()) * 100) / nextMillis), 0, 100);
+            String strFaceRemaining = faceRemaining(prayerStateComputeState.getNextName(), compactRemaining(prayerStateComputeState.getNextMillis() - jCurrentTimeMillis), L10n.INSTANCE.getLang().getCode());
             Intent intent = new Intent(FaceWidgetReceiver.ACTION_RESPONSE);
             intent.setPackage("com.android.systemui");
             intent.putExtra("package", context.getPackageName());
             intent.putExtra("pageId", str);
             intent.putExtra("show", true);
-            intent.putExtra("origin", pushFaceWidget$build(context, computeState, faceRemaining, r, R.layout.facewidget_prayer));
-            intent.putExtra("aod", pushFaceWidget$build(context, computeState, faceRemaining, r, R.layout.facewidget_prayer_aod));
+            intent.putExtra("origin", pushFaceWidget$build(context, prayerStateComputeState, strFaceRemaining, iR, R.layout.facewidget_prayer));
+            intent.putExtra("aod", pushFaceWidget$build(context, prayerStateComputeState, strFaceRemaining, iR, R.layout.facewidget_prayer_aod));
             context.sendBroadcast(intent);
         }
     }
 
-    public final void updateAll(Context context) {
-        HomeWidgets.updateAll(context);
-        try {
-            pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER);
-        } catch (Exception unused) {
-        }
-    }
 
-    public final void updateFace(Context context) {
-        try {
-            pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER);
-        } catch (Exception e) {
-            Log.w("WathakkerHome", "face widget push failed", e);
-        }
-    }
+
+
 
     private final String compactRemaining(long j) {
         return compactRemaining(j, L10n.INSTANCE.getLang().getCode());

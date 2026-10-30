@@ -24,43 +24,24 @@ enum class Lang(val code: String, val nativeName: String, val rtl: Boolean) {
 
 /** String keys for every translatable UI literal. */
 enum class S {
-    PrayerTab, AzkarTab, HisnTab, FajrTab, TasbeehTab, Favorites, Reminders, Stats,
-    Tags, Settings, About, More, Menu, AddDhikr, SearchAzkar, All,
-    NoAzkar, NoAzkarUnderTag, NoResultsQuery, Options, EditDhikrTags, ReminderTimes, Delete, NoActiveReminders,
-    Today, ThisWeek, DayStreak, CurrentReminder, NextReminder, NoActiveAzkar, Shortcuts, TasbeehCounter,
-    HisnSubtitle, FavSubtitle, ReadDone, TotalSuffix, NoReadsYet, DhikrIdFmt, Periods, Week,
-    Month, KeepGoing, TotalReads, SinceStart, RecentReads, RemindersSubtitle, StatsSubtitle, TagsSubtitle,
-    FajrAlarm, ByLocation, SettingsSubtitle, AboutSubtitle, DeleteTag, DeleteTagMsg, AddTag, NoTags,
-    Edit, NewTag, EditTag, TagName, Color, TasbeehaFmt, TapToCount, ResetCounter,
-    ActiveOfTotalFmt, NoReminders, NoFavorites, Light, Dark, SystemAuto, LockWidgets, LockWidgetsToast,
-    OpenEditor, Close, LockWidgetsDesc, LockWidgetsSteps, LockWidgetsHint, ChangeLocation, LocationSubtitle, FajrAlarmSubtitle,
-    LockScreenSection, LockWidgetsRowSub, Notifications, NotifSound, Default, Vibration, Appearance, AppFont,
-    Language, NewDhikr, EditDhikr, TitleLabel, DhikrText, Cancel, Add, AddReminderTime,
-    RepeatReminder, ReminderTime, Save, Apply, ChaptersFmt, SearchHisn, NoFavChapters, NoResults,
-    ReadTodaySuffix, AddToMyAzkar, AddedToMyAzkar, Done, Tagline, Version, Developer, DevName,
-    HisnCredit, InstinctCredit, Dua, Font, FontLight, FontBold, FontSystem, FontCairo,
-    FontNaskh, FontAmiri, FontRuqaa, PrayerFajr, PrayerShuruq, PrayerDhuhr, PrayerJumuah, PrayerAsr,
-    PrayerMaghrib, PrayerIsha, PrayerTimes, NextPrayer, AmMarker, PmMarker, PickCountryCity, SearchCityHint,
-    NoSearchResults, FajrPrayer, FajrNow, Snooze, StopAlarm, ChooseSnooze, MinutesShortFmt, ColorWhite,
-    Auto, ColorBlack, ColorPurple, BgGlass, BgWallBlur, ColorGray, ColorBlue, ColorGreen,
-    ColorAmber, ColorBlueDark, ColorGreenDark, WidgetSettings, BarColor, BgColor, WidgetPattern, NoPattern,
-    PickRingtone, LocationMethod, CurrentLocation, AutoUpdateFajr, PickCitySub, CurrentCity, ChangeCity, NoLocPermission,
-    GpsOff, CalcMethod, SelectedCalcMethod, Change, UpdatingTime, UpdateFajrNow, AlarmToneSection, SelectedTone,
-    SystemTones, AudioFile, ExtraSettings, VibrateDuringAlarm, NextFajrAt, AlarmOnDesc, AlarmOffDesc, PickCalcMethod,
-    NotifReminder, NotifReadDone, NotifRemindLater, NotifOpenApp, NotifChannelAzkar, NotifChannelFajr, TodayAt, TomorrowAt,
-    DefaultAlarmTone, LocCalcTitle, LocCalcSubtitle, QiblaTitle, QiblaNorthFmt, QiblaSetLocation, QiblaNoSensor, QiblaCalibrate,
-    QiblaAligned, QiblaCityFmt, DirN, DirNE, DirE, DirSE, DirS, DirSW,
-    DirW, DirNW, CalendarTab, CalEvents, CalNoEvents, CalMonthEvents, CalReminderOn, CalReminderOff,
-    WdSun, WdMon, WdTue, WdWed, WdThu, WdFri, WdSat, AutoDnd,
-    AutoDndSub, OptTimesTitle, OptTimesSub, Imsak, Duha, Midnight, Qiyam, LocSection,
-    CalcSection, AsrJuristic, AsrShafii, AsrHanafi, HighLatRule, HighLatNone, HighLatMiddle, HighLatSeventh,
-    HighLatAngle, AdjSection, AdjNote, AdjHijri, AdjMinShort, AdjDayShort, AlertTiming, AtAdhanTime,
-    MinBeforeFmt, AdhanReminder, IqamaReminder, IqamaReminderSub, PrayerNowFmt, PrayerApproachingFmt, ShuruqNow, ShuruqApproaching,
-    BgFrosted, NeedsFilesPerm, ColorYellow, ColorTurquoise, WidgetAccent, PermLocTitle, PermLocBody, PermFilesTitle,
-    PermFilesBody, PermAllow, PermNotNow, PermOpenSettings, IqamaNowFmt, SharedAlertSettings, HijriConvTitle, HijriConvSub,
-    GregToHijri, HijriToGreg, DayLabel, MonthLabel, YearLabel, Back, AtAdhanRow, AtAdhanRowSub,
-    BeforeAdhanRow, EditCityName, ResetCityNameAuto, CustomLocationNameHint, BeforeAdhanHelper, WidgetTapTitle, WidgetTapOpenApp, WidgetTapNothing,
-    WidgetTapRefresh
+    PrayerTab, AzkarTab, HisnTab, FajrTab, TasbeehTab, Favorites, Reminders, Stats, Tags, Settings, About, More, Menu,
+    AddDhikr, SearchAzkar, All, NoAzkar, NoAzkarUnderTag, NoResultsQuery, Options, EditDhikrTags, ReminderTimes, Delete,
+    NoActiveReminders, Today, ThisWeek, DayStreak, CurrentReminder, NextReminder, NoActiveAzkar, Shortcuts,
+    TasbeehCounter, HisnSubtitle, FavSubtitle, ReadDone,
+    TotalSuffix, NoReadsYet, DhikrIdFmt, Periods, Week, Month, KeepGoing, TotalReads, SinceStart, RecentReads,
+    RemindersSubtitle, StatsSubtitle, TagsSubtitle, FajrAlarm, ByLocation, SettingsSubtitle, AboutSubtitle,
+    DeleteTag, DeleteTagMsg, AddTag, NoTags, Edit, NewTag, EditTag, TagName, Color,
+    TasbeehaFmt, TapToCount, ResetCounter, ActiveOfTotalFmt, NoReminders, NoFavorites,
+    Light, Dark, SystemAuto, LockWidgets, LockWidgetsToast, OpenEditor, Close, LockWidgetsDesc, LockWidgetsSteps,
+    LockWidgetsHint, ChangeLocation, LocationSubtitle, FajrAlarmSubtitle, LockScreenSection, LockWidgetsRowSub,
+    Notifications, NotifSound, Default, Vibration, Appearance, AppFont, Language,
+    NewDhikr, EditDhikr, TitleLabel, DhikrText, Cancel, Add, AddReminderTime, RepeatReminder, ReminderTime, Save, Apply,
+    ChaptersFmt, SearchHisn, NoFavChapters, NoResults, ReadTodaySuffix, AddToMyAzkar, AddedToMyAzkar, Done,
+    Tagline, Version, Developer, DevName, HisnCredit, InstinctCredit, Dua,
+    Font, FontLight, FontBold, FontSystem, FontCairo, FontNaskh, FontAmiri, EditCityName, ResetCityNameAuto, FontRuqaa,
+    Back, LocCalcTitle, LocCalcSubtitle, LocSection, CalcSection, AsrJuristic, AsrShafii, AsrHanafi, HighLatRule, HighLatNone, HighLatMiddle, HighLatSeventh, HighLatAngle, AdjSection, AdjNote, AdjHijri, AdjMinShort, AdjDayShort,
+    WidgetTapTitle, WidgetTapOpenApp, WidgetTapNothing, WidgetTapRefresh, PrayerFajr, PrayerShuruq, PrayerDhuhr, PrayerJumuah, PrayerAsr, PrayerMaghrib, PrayerIsha, PrayerTimes, NextPrayer, AmMarker, PmMarker, PickCountryCity, SearchCityHint, NoSearchResults, FajrPrayer, FajrNow, Snooze, StopAlarm, ChooseSnooze, MinutesShortFmt, ColorWhite, Auto, ColorBlack, BgGlass, BgWallBlur, ColorGray, ColorBlue, ColorGreen, ColorPurple, ColorAmber, ColorBlueDark, ColorYellow, ColorTurquoise, WidgetAccent, ColorGreenDark, WidgetSettings, BarColor, BgColor, WidgetPattern, NoPattern, PickRingtone, LocationMethod, CurrentLocation, AutoUpdateFajr, PickCitySub, CurrentCity, CustomLocationNameHint, ChangeCity, NoLocPermission, GpsOff, CalcMethod, SelectedCalcMethod, Change, UpdatingTime, UpdateFajrNow, AlarmToneSection, SelectedTone, SystemTones, AudioFile, ExtraSettings, VibrateDuringAlarm, NextFajrAt, AlarmOnDesc, AlarmOffDesc, PickCalcMethod, NotifReminder, NotifReadDone, NotifRemindLater, NotifOpenApp, NotifChannelAzkar, NotifChannelFajr, TodayAt, TomorrowAt, DefaultAlarmTone, QiblaTitle, QiblaNorthFmt, QiblaSetLocation, QiblaNoSensor, QiblaCalibrate, QiblaAligned, QiblaCityFmt, DirN, DirNE, DirE, DirSE, DirS, DirSW, DirW, DirNW, CalendarTab, CalEvents, CalNoEvents, CalMonthEvents, CalReminderOn, CalReminderOff, WdSun, WdMon, WdTue, WdWed, WdThu, WdFri, WdSat, AutoDnd, AutoDndSub, OptTimesTitle, OptTimesSub, Imsak, Duha, Midnight, Qiyam, HijriConvTitle, HijriConvSub, GregToHijri, HijriToGreg, DayLabel, MonthLabel, YearLabel, AlertTiming, AtAdhanTime, AtAdhanRow, AtAdhanRowSub, BeforeAdhanRow, BeforeAdhanHelper, MinBeforeFmt, AdhanReminder, IqamaReminder, IqamaReminderSub, PrayerNowFmt, PrayerApproachingFmt, ShuruqNow, ShuruqApproaching, BgFrosted, NeedsFilesPerm, PermLocTitle, PermLocBody, PermFilesTitle, PermFilesBody, PermAllow, PermNotNow, PermOpenSettings, IqamaNowFmt, SharedAlertSettings, FajrAlarmOn, AlarmEnabledSub, AlarmDisabledSub, AlarmVolume, SnoozeDuration, AlertMode, AlertModeNotif, AlertModeAlarm,
+    AdhanAlertType, AlertTypeNotification, AlertTypeFullScreen
 }
 
 object L10n {
@@ -115,18 +96,6 @@ object L10n {
         Lang.PT -> if (n == 1) "1 leitura" else "$n leituras"
     }
 
-    fun minutesCount(n: Int): String = when (_lang.value) {
-        Lang.AR -> if (n == 1) "دقيقة واحدة" else if (n == 2) "دقيقتان" else if (n in 3..10) "$n دقائق" else "$n دقيقة"
-        Lang.EN, Lang.FR -> if (n == 1) "1 minute" else "$n minutes"
-        Lang.DE -> if (n == 1) "1 Minute" else "$n Minuten"
-        Lang.ES, Lang.PT -> if (n == 1) "1 minuto" else "$n minutos"
-        Lang.IT -> if (n == 1) "1 minuto" else "$n minuti"
-        Lang.TR -> "$n dakika"
-        Lang.UR -> "$n منٹ"
-        Lang.ID -> "$n menit"
-        Lang.RU -> { val a = n % 10; val b = n % 100; if (a == 1 && b != 11) "$n минута" else if (a in 2..4 && b !in 12..14) "$n минуты" else "$n минут" }
-    }
-
     fun daysCount(n: Int): String = when (_lang.value) {
         Lang.AR -> when { n == 0 -> "لا أيام"; n == 1 -> "يوم واحد"; n == 2 -> "يومان"; n in 3..10 -> "$n أيام"; else -> "$n يومًا" }
         Lang.EN -> if (n == 1) "1 day" else "$n days"
@@ -158,5 +127,32 @@ object L10n {
     fun tagsCount(n: Int): String = when (_lang.value) {
         Lang.AR -> if (n in 3..10) "$n تصنيفات" else "$n تصنيف"
         else -> "$n " + t(S.Tags).lowercase()
+    }
+
+    fun tasbeehCount(n: Int): String = when (_lang.value) {
+        Lang.AR -> when { n == 2 -> "تسبيحتان"; n in 3..10 -> "$n تسبيحات"; else -> "$n تسبيحة" }
+        Lang.EN -> "$n tasbeeh"
+        Lang.FR -> "$n tasbeeh"
+        Lang.DE -> "$n Tasbeeh"
+        Lang.ES -> "$n tasbeeh"
+        Lang.IT -> "$n tasbeeh"
+        Lang.TR -> "$n tesbih"
+        Lang.UR -> "$n تسبیح"
+        Lang.ID -> "$n tasbih"
+        Lang.RU -> "$n тасбих"
+        Lang.PT -> "$n tasbeeh"
+    }
+    fun minutesCount(n: Int): String = when (_lang.value) {
+        Lang.AR -> when { n == 1 -> "دقيقة واحدة"; n == 2 -> "دقيقتان"; n in 3..10 -> "$n دقائق"; else -> "$n دقيقة" }
+        Lang.RU -> when { n % 10 == 1 && n % 100 != 11 -> "$n минута"; n % 10 in 2..4 && n % 100 !in 12..14 -> "$n минуты"; else -> "$n минут" }
+        Lang.EN -> if (n == 1) "1 minute" else "$n minutes"
+        Lang.FR -> if (n == 1) "1 minute" else "$n minutes"
+        Lang.DE -> if (n == 1) "1 Minute" else "$n Minuten"
+        Lang.ES -> if (n == 1) "1 minuto" else "$n minutos"
+        Lang.IT -> if (n == 1) "1 minuto" else "$n minuti"
+        Lang.TR -> "$n dakika"
+        Lang.UR -> "$n منٹ"
+        Lang.ID -> "$n menit"
+        Lang.PT -> if (n == 1) "1 minuto" else "$n minutos"
     }
 }

@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxSize
+import com.example.utils.plainClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -32,6 +33,7 @@ import androidx.compose.material.icons.outlined.WbTwilight
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -65,12 +67,12 @@ import com.example.prayer.alerts.PrayerAlertStore
 import com.example.fajr.calculation.PrayerAdjustments
 import com.example.fajr.calculation.PrayerTimesCalculator
 import com.example.fajr.ui.CitySearchDialog
-import com.example.ui.oneui.oneUIGlass
-import dev.chrisbanes.haze.hazeSource
-import androidx.compose.material.icons.outlined.Settings
+import com.example.ui.oneui.OneUICard
 import com.example.ui.oneui.OneUIDivider
 import com.example.ui.oneui.OneUIProgressBar
 import com.example.ui.oneui.OneUIIconAction
+import com.example.ui.oneui.FrostSpec
+import com.example.ui.oneui.LocalHazeState
 import com.example.ui.oneui.OneUIScreen
 import com.example.ThemeSettings
 import com.example.ui.theme.OneUIActiveGreen
@@ -135,49 +137,48 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
     val cal = remember(dayKey) { Calendar.getInstance() }
     val days = remember(dayKey, latitude, longitude, method, resumeTick) {
         val todayCal = Calendar.getInstance()
-        val t = PrayerAdjustments.INSTANCE.calculateAll(context, todayCal, latitude, longitude, method)
+        val t = PrayerAdjustments.calculateAll(context, todayCal, latitude, longitude, method)
         val tomorrowCal = todayCal.clone() as Calendar
         tomorrowCal.add(Calendar.DAY_OF_YEAR, 1)
-        val tm = PrayerAdjustments.INSTANCE.calculateAll(context, tomorrowCal, latitude, longitude, method)
+        val tm = PrayerAdjustments.calculateAll(context, tomorrowCal, latitude, longitude, method)
         val yesterdayCal = todayCal.clone() as Calendar
         yesterdayCal.add(Calendar.DAY_OF_YEAR, -1)
-        val y = PrayerAdjustments.INSTANCE.calculateAll(context, yesterdayCal, latitude, longitude, method)
+        val y = PrayerAdjustments.calculateAll(context, yesterdayCal, latitude, longitude, method)
         Triple(t, tm, y)
     }
     val today = days.first
     val nightLen = (days.second.fajr - today.maghrib).coerceAtLeast(1L)
+    val dhuhrName = if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) L10n.t(S.PrayerJumuah) else L10n.t(S.PrayerDhuhr)
     val ordered: List<Triple<String, Long, ImageVector>> = listOf(
         Triple(L10n.t(S.PrayerFajr), today.fajr, Icons.Outlined.WbTwilight),
         Triple(L10n.t(S.PrayerShuruq), today.sunrise, Icons.Outlined.WbSunny),
-        Triple(L10n.t(S.PrayerDhuhr), today.dhuhr, Icons.Outlined.LightMode),
+        Triple(dhuhrName, today.dhuhr, Icons.Outlined.LightMode),
         Triple(L10n.t(S.PrayerAsr), today.asr, Icons.Outlined.FilterDrama),
         Triple(L10n.t(S.PrayerMaghrib), today.maghrib, Icons.Outlined.NightsStay),
         Triple(L10n.t(S.PrayerIsha), today.isha, Icons.Outlined.DarkMode)
     )
-    val isFriday = remember(dayKey) { Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY }
-    fun arr(t: PrayerTimesCalculator.DayPrayerTimes) = longArrayOf(t.fajr, t.sunrise, t.dhuhr, t.asr, t.maghrib, t.isha)
-    val tsToday = remember(days) { arr(days.first) }
-    val tsTomorrow = remember(days) { arr(days.second) }
-    val tsYesterday = remember(days) { arr(days.third) }
-    val phase by remember(days, isFriday) {
+    val nextPrev by remember(days, L10n.lang) {
         androidx.compose.runtime.derivedStateOf {
-            com.example.lockwidgets.PrayerPhase.resolve(tsToday, tsYesterday, tsTomorrow, nowState.longValue, isFriday, true)
+            val n = nowState.longValue
+            fun arr(t: com.example.fajr.calculation.PrayerTimesCalculator.DayPrayerTimes) = longArrayOf(t.fajr, t.sunrise, t.dhuhr, t.asr, t.maghrib, t.isha)
+            val phase = com.example.lockwidgets.PrayerPhase.resolve(arr(days.first), arr(days.third), arr(days.second), n,
+                cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY, true)
+            val nx = Triple(phase.label(ordered.map { it.first }.toTypedArray(), L10n.lang.code), phase.target, ordered[phase.targetIndex].third)
+            val pv = Triple(ordered[phase.previousIndex].first, phase.start, ordered[phase.previousIndex].third)
+            Triple(nx, pv, phase.iqama)
         }
     }
-    val prayerNames = remember(L10n.lang) {
-        arrayOf(L10n.t(S.PrayerFajr), L10n.t(S.PrayerShuruq), L10n.t(S.PrayerDhuhr), L10n.t(S.PrayerAsr), L10n.t(S.PrayerMaghrib), L10n.t(S.PrayerIsha))
-    }
-    val phaseLabel = phase.label(prayerNames, L10n.lang.code)
-    val next = Triple(phaseLabel, phase.target, Icons.Outlined.WbTwilight)
-    val gregorian = remember(dayKey, L10n.lang) { if (L10n.lang == Lang.AR) SimpleDateFormat("EEEE، d MMMM yyyy", Locale.forLanguageTag("ar-u-nu-latn")).format(cal.time) else SimpleDateFormat("EEEE, d MMMM yyyy", Locale.forLanguageTag(L10n.lang.code)).format(cal.time) }
+    val next = nextPrev.first
+    val prev = nextPrev.second
+    val gregorian = remember(dayKey, L10n.lang) { if (L10n.lang == Lang.AR) SimpleDateFormat("EEEE، d MMMM yyyy", Locale("ar", "EG")).format(cal.time) else SimpleDateFormat("EEEE, d MMMM yyyy", Locale.forLanguageTag(L10n.lang.code)).format(cal.time) }
     val hijri = remember(dayKey, L10n.lang, resumeTick) {
-        val off = PrayerAdjustments.INSTANCE.hijriOffsetDays(context)
+        val off = PrayerAdjustments.hijriOffsetDays(context)
         val hcal = if (off != 0) (cal.clone() as Calendar).apply { add(Calendar.DATE, off) } else cal
-        HijriDate.format(hcal, L10n.lang.code)
+        HijriDate.INSTANCE.format(hcal, L10n.lang.code)
     }
 
     val optionalOn = remember(resumeTick) {
-        listOf("imsak", "duha", "midnight", "qiyam").map { PrayerAdjustments.INSTANCE.optionalRow(context, it) }
+        listOf("imsak", "duha", "midnight", "qiyam").map { PrayerAdjustments.optionalRow(context, it) }
     }
     val displayRows = mutableListOf<Triple<String, Long, ImageVector>>()
     val rowBells = mutableListOf<Int?>()
@@ -197,30 +198,39 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
         displayRows.add(Triple(L10n.t(S.Qiyam), today.maghrib + nightLen * 2 / 3, Icons.Outlined.Brightness3)); rowBells.add(null)
     }
 
+    // Time-of-day sky (v3.2.0): period flips at each prayer-time boundary; the
+    // background crossfades between the six bundled skies. Keyed on `days` so a
+    // day/location/method change re-reads the right prayer times.
+    val period by remember(days) {
+        androidx.compose.runtime.derivedStateOf {
+            val t = days.first
+            DayPeriod.forTime(nowState.longValue, t.fajr, t.sunrise, t.dhuhr, t.asr, t.maghrib, t.isha)
+        }
+    }
+
     PrayerTimesContent(
+        period = period,
         city = city,
         country = country,
         hijriText = hijri,
         gregorianText = gregorian,
         nextPrayerName = next.first,
+        isIqama = nextPrev.third,
         nextPrayerTime = formatPrayerTime(next.second),
-        prevMillis = phase.start,
-        nextMillis = phase.target,
+        prevMillis = prev.second,
+        nextMillis = next.second,
         nowState = nowState,
-        iqama = phase.iqama,
-        skyIndex = phase.previousIndex,
-        highlightIndex = if (phase.iqama) -1 else phase.targetIndex,
         rows = displayRows.map { (name, time, icon) ->
-            PrayerRowDisplay(name, formatPrayerTime(time), false, icon)
+            PrayerRowDisplay(name, formatPrayerTime(time), name == next.first && time == next.second, icon)
         },
         rowBells = rowBells,
-        onChangeCity = { showCitySearch = true },
+        onChangeCity = { if (onLocation != null) onLocation() else showCitySearch = true },
         onMenu = onMenu,
         onQibla = onQibla,
-        bellStates = remember(bellTick, resumeTick, L10n.lang) { (0..5).map { PrayerAlertStore.INSTANCE.isEnabled(context, it) } },
+        bellStates = remember(bellTick, resumeTick, L10n.lang) { (0..5).map { PrayerAlertStore.isEnabled(context, it) } },
         onBellClick = { idx ->
-            PrayerAlertStore.INSTANCE.setEnabled(context, idx, !PrayerAlertStore.INSTANCE.isEnabled(context, idx))
-            PrayerAlertScheduler.INSTANCE.scheduleAll(context)
+            PrayerAlertStore.setEnabled(context, idx, !PrayerAlertStore.isEnabled(context, idx))
+            PrayerAlertScheduler.scheduleAll(context)
             bellTick++
         },
         onBellLongClick = { idx -> alertDialogPrayer = idx }
@@ -231,7 +241,7 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
         val names = listOf(S.PrayerFajr, S.PrayerShuruq, S.PrayerDhuhr, S.PrayerAsr, S.PrayerMaghrib, S.PrayerIsha)
         PrayerAlertDialog(
             prayer = idx,
-            prayerName = L10n.t(names[idx]),
+            prayerName = L10n.t(if (idx == 2 && cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) S.PrayerJumuah else names[idx]),
             onDismiss = { alertDialogPrayer = null; bellTick++ }
         )
     }
@@ -242,13 +252,13 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
             onCitySelected = { item ->
                 prefs.latitude = item.latitude
                 prefs.longitude = item.longitude
-                prefs.cityName = item.nameAr
-                prefs.countryName = item.countryAr
+                prefs.cityName = item.cityNameAr
+                prefs.countryName = item.countryNameAr
                 prefs.setUseCurrentLocation(false)
                 latitude = item.latitude
                 longitude = item.longitude
-                city = item.nameAr
-                country = item.countryAr
+                city = item.cityNameAr
+                country = item.countryNameAr
                 showCitySearch = false
             }
         )
@@ -262,52 +272,31 @@ private fun formatPrayerTime(millis: Long): String {
     return SimpleDateFormat("hh:mm", Locale.US).format(cal.time) + " " + ampm
 }
 
-private fun formatCountdown(millis: Long): String {
+private fun formatCountdown(millis: Long, minutesOnly: Boolean = false): String {
     val totalSeconds = millis / 1000
+    if (minutesOnly) return String.format("%02d:%02d", totalSeconds / 60, totalSeconds % 60)
     val h = totalSeconds / 3600
     val m = (totalSeconds % 3600) / 60
     val s = totalSeconds % 60
     return String.format("%d:%02d:%02d", h, m, s)
 }
 
-private val skyRes = intArrayOf(
-    com.example.R.drawable.sky_fajr, com.example.R.drawable.sky_shuruq, com.example.R.drawable.sky_dhuhr,
-    com.example.R.drawable.sky_asr, com.example.R.drawable.sky_maghrib, com.example.R.drawable.sky_isha
-)
-
-private val GlassBase = Color(0xFF17171B)
-private val HighlightBg = Color(0xFFC2E8CE)
-private val HighlightInk = Color(0xFF0D4A21)
-private val HighlightCircle = Color(0xFFA4D5B2)
-private val IqamaGold = Color(0xFFE5B455)
-private val BarTrack = Color(0xFF38383E)
-private val CountdownCyan = Color(0xFF59C8DC)
-
-@Composable
-private fun GlassCard(modifier: Modifier = Modifier, light: Boolean = false, content: @Composable androidx.compose.foundation.layout.ColumnScope.() -> Unit) {
-    Column(
-        modifier.fillMaxWidth().oneUIGlass(RoundedCornerShape(28.dp), if (light) Color.White else GlassBase, alpha = if (light) 0.55f else 0.46f, blurRadius = 24),
-        content = content
-    )
-}
-
 @OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
 @Composable
 fun PrayerTimesContent(
+    period: DayPeriod,
     city: String,
     country: String,
     hijriText: String,
     gregorianText: String,
     nextPrayerName: String,
+    isIqama: Boolean,
     nextPrayerTime: String,
     prevMillis: Long,
     nextMillis: Long,
     nowState: androidx.compose.runtime.State<Long>,
     rows: List<PrayerRowDisplay>,
     onChangeCity: () -> Unit,
-    iqama: Boolean = false,
-    skyIndex: Int = 5,
-    highlightIndex: Int = -1,
     onMenu: (() -> Unit)? = null,
     onQibla: (() -> Unit)? = null,
     bellStates: List<Boolean> = List(6) { false },
@@ -315,135 +304,180 @@ fun PrayerTimesContent(
     onBellClick: (Int) -> Unit = {},
     onBellLongClick: (Int) -> Unit = {}
 ) {
-    // The prayer tab is always drawn on the dark sky scene, whatever the app theme is.
-    // Original palette per sky phase: Fajr, Maghrib and Isha skies use light-on-dark; Shuruq, Dhuhr and Asr use dark ink on light glass.
-    val lightSky = skyIndex.coerceIn(0, 5) in 1..3
-    val outerHaze = com.example.ui.oneui.LocalHazeState.current
+    // Per-scene content colors keep text legible over bright and dark skies.
+    // Header buttons/icons and the bottom bar are intentionally untouched (user scope):
+    // they keep their theme-driven tints. Only the big title follows the scene.
+    val sc = sceneColors(period.darkScene)
     val skyHaze = dev.chrisbanes.haze.rememberHazeState()
-    androidx.compose.runtime.CompositionLocalProvider(com.example.ui.oneui.LocalHazeState provides skyHaze) {
-    MaterialTheme(colorScheme = if (lightSky) com.example.ui.theme.ForcedLightScheme else com.example.ui.theme.ForcedDarkScheme, typography = MaterialTheme.typography, shapes = MaterialTheme.shapes) {
-    val cs0 = MaterialTheme.colorScheme
-    val cs = if (lightSky) cs0.copy(onSurface = Color(0xFF111114), onSurfaceVariant = Color(0xA81E1E22), primary = Color(0xFF0381FE)) else cs0
-    val circleBg = if (lightSky) Color(0x6BFFFFFF) else Color.White.copy(alpha = 0.18f)
-    val ovCircleBg = if (lightSky) Color(0x6BFFFFFF) else Color.White.copy(alpha = 0.12f)
-    val dividerCol = if (lightSky) Color(0x1A000000) else Color.White.copy(alpha = 0.14f)
-    val cdColor = if (lightSky) Color(0xFF1E8FA8) else CountdownCyan
-    val trackCol = if (lightSky) Color(0xFFC4C4CD) else BarTrack
-    val iconTint = cs.onSurfaceVariant
-    val bellOffTint = if (lightSky) Color(0xFF111114).copy(alpha = 0.5f) else Color.White.copy(alpha = 0.5f)
-    androidx.compose.runtime.SideEffect { com.example.ui.oneui.PrayerSky.mode = if (lightSky) 2 else 1 }
-    androidx.compose.runtime.DisposableEffect(Unit) { onDispose { com.example.ui.oneui.PrayerSky.mode = 0 } }
-    val twoCol = com.example.ui.oneui.isTwoPane()
-    OneUIScreen(
-        title = L10n.t(S.PrayerTimes),
-        onMenu = onMenu,
-        actions = {
-            if (onQibla != null) OneUIIconAction(Icons.Outlined.Explore, L10n.t(S.QiblaTitle), onQibla)
-            OneUIIconAction(Icons.Outlined.Settings, L10n.t(S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") })
-        },
-        background = {
-            androidx.compose.animation.Crossfade(
-                targetState = skyIndex.coerceIn(0, 5),
-                animationSpec = androidx.compose.animation.core.tween(1400),
-                label = "sky"
-            ) { i ->
-                androidx.compose.foundation.Image(
-                    painter = androidx.compose.ui.res.painterResource(skyRes[i]),
-                    contentDescription = null,
-                    contentScale = androidx.compose.ui.layout.ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize().hazeSource(skyHaze)
-                        .then(if (outerHaze != null) Modifier.hazeSource(outerHaze) else Modifier)
+    Box(Modifier.fillMaxSize()) {
+        TimeOfDayBackground(period, skyHaze, LocalHazeState.current)
+        SkyStatusBarEffect(period.darkScene)
+        // v3.2.0 glass system: the prayer screen's frost material (theme tint +
+        // scene alpha/border), shared with the bottom bar and drawer while this
+        // tab is visible so every surface over the sky is the same glass.
+        // Border-free glass (his call): bottom bar + header pills share this spec.
+        val frost = FrostSpec(
+            base = MaterialTheme.colorScheme.surfaceContainerHigh,
+            alpha = sc.glassAlpha,
+            border = Color.Transparent
+        )
+        DisposableEffect(frost.base, frost.alpha, frost.border) {
+            PrayerSkyGlass.set(frost)
+            onDispose { PrayerSkyGlass.set(null) }
+        }
+        val wide = com.example.ui.oneui.isTwoPane()
+        val overviewCard: @Composable () -> Unit = {
+            // One card: date and location, a divider, then the next-prayer block.
+            OneUICard(
+                modifier = Modifier.skyGlass(RoundedCornerShape(OneUIDimens.CardRadius), skyHaze, sc),
+                padding = PaddingValues(20.dp),
+                color = Color.Transparent
+            ) {
+                Text(
+                    hijriText,
+                    color = sc.textPrimary,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Spacer(Modifier.height(4.dp))
+                Text(gregorianText, color = sc.textSecondary, style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.height(12.dp))
+                Row(
+                    modifier = Modifier.clip(RoundedCornerShape(12.dp)).plainClickable(onClick = onChangeCity).padding(vertical = 6.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Outlined.LocationOn,
+                        null,
+                        modifier = Modifier.size(40.dp).padding(11.dp),
+                        tint = sc.textSecondary
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text(SavedCity(), color = sc.textSecondary, style = MaterialTheme.typography.labelLarge)
+                }
+                // Divider spans the full content width so its ends line up with the icon
+                // circles above/below; the row gets real vertical padding (the circle must not
+                // touch the divider) and the label is centered with the circle, no offset hack.
+                OneUIDivider(0.dp, color = sc.divider)
+                Row(modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier.size(40.dp).clip(CircleShape).background(sc.chip),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(Icons.Outlined.Mosque, null, modifier = Modifier.size(22.dp), tint = OneUIActiveGreen)
+                    }
+                    Spacer(Modifier.width(12.dp))
+                    Text(
+                        if (isIqama) com.example.lockwidgets.PrayerPhase.iqamaLabel(L10n.lang.code) else L10n.t(S.NextPrayer),
+                        color = sc.textSecondary,
+                        style = MaterialTheme.typography.titleSmall
+                    )
+                }
+                Spacer(Modifier.height(18.dp))
+                // Reads nowState here, inside this card: the 1 Hz tick recomposes only this block.
+                val now = nowState.value
+                val interval = (nextMillis - prevMillis).coerceAtLeast(1L)
+                val progressNow = ((now - prevMillis).toFloat() / interval.toFloat()).coerceIn(0f, 1f)
+                val countdown = formatCountdown((nextMillis - now).coerceAtLeast(0L), isIqama)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Text(
+                        countdown,
+                        color = sc.countdown,
+                        fontSize = 32.sp,
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                    Column(horizontalAlignment = Alignment.End) {
+                        Text(
+                            nextPrayerName,
+                            color = sc.textPrimary,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.titleLarge
+                        )
+                        Text(nextPrayerTime, color = sc.textSecondary, style = MaterialTheme.typography.bodyMedium)
+                    }
+                }
+                Spacer(Modifier.height(14.dp))
+                OneUIProgressBar(
+                    progressNow,
+                    color = if (isIqama) Color(0xFFE5B455) else OneUIActiveGreen,
+                    trackColor = sc.track,
+                    gradient = if (isIqama) listOf(Color(0xFFE5B455), Color(0xFFE5B455)) else listOf(Color(0xFF5BC950), Color(0xFF24C55E))
                 )
             }
         }
-    ) {
-        val overviewCard: @Composable () -> Unit = {
-            GlassCard(light = lightSky) {
-                Column(Modifier.padding(20.dp)) {
-                    Text(hijriText, color = cs.onSurface, fontWeight = FontWeight.Bold, fontSize = 20.sp, lineHeight = 22.sp)
-                    Spacer(Modifier.height(4.dp))
-                    Text(gregorianText, color = cs.onSurfaceVariant, fontSize = 15.sp, lineHeight = 16.sp)
-                    Spacer(Modifier.height(12.dp))
-                    Row(
-                        modifier = Modifier.clip(RoundedCornerShape(12.dp)).clickable(onClick = onChangeCity).padding(vertical = 6.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(Icons.Outlined.LocationOn, null, modifier = Modifier.size(40.dp).padding(11.dp), tint = cs.onSurfaceVariant)
-                        Spacer(Modifier.width(6.dp))
-                        Text(SavedCity(), color = cs.onSurfaceVariant, style = MaterialTheme.typography.labelLarge)
-                    }
-                    OneUIDivider(0.dp)
-                    Row(modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            modifier = Modifier.size(40.dp).clip(CircleShape).background(ovCircleBg),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(Icons.Outlined.Mosque, null, modifier = Modifier.size(22.dp), tint = OneUIActiveGreen)
-                        }
-                        Spacer(Modifier.width(12.dp))
-                        Text(
-                            if (iqama) com.example.lockwidgets.PrayerPhase.iqamaLabel(L10n.lang.code) else L10n.t(S.NextPrayer),
-                            color = cs.onSurfaceVariant, style = MaterialTheme.typography.titleSmall
-                        )
-                    }
-                    Spacer(Modifier.height(18.dp))
-                    val now = nowState.value
-                    val interval = (nextMillis - prevMillis).coerceAtLeast(1L)
-                    val progressNow = ((now - prevMillis).toFloat() / interval.toFloat()).coerceIn(0f, 1f)
-                    val remain = (nextMillis - now).coerceAtLeast(0L)
-                    val countdown = if (iqama) formatMinSec(remain) else formatCountdown(remain)
-                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.Bottom) {
-                        com.example.ui.NativeCountdown(nextMillis, cdColor, 32f, bold = true)
-                        Column(horizontalAlignment = Alignment.End) {
-                            Text(nextPrayerName, color = cs.onSurface, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleLarge)
-                            Text(nextPrayerTime, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
-                        }
-                    }
-                    Spacer(Modifier.height(14.dp))
-                    OneUIProgressBar(
-                        progressNow,
-                        color = if (iqama) IqamaGold else OneUIActiveGreen,
-                        trackColor = trackCol,
-                        gradient = if (iqama) listOf(IqamaGold, IqamaGold) else listOf(Color(0xFF5BC950), Color(0xFF24C55E))
-                    )
-                }
-            }
-                }
         val listCard: @Composable () -> Unit = {
-            GlassCard(light = lightSky) {
+            // Next-prayer row: solid green pill with high-contrast content in both themes.
+            val nextDark = false // prayer page always sits on the wallpaper: one pale-green look in both themes
+            val nextRowBg = if (nextDark) Color(0xFF24533A) else Color(0xFFC2E8CE)
+            val nextChipBg = if (nextDark) Color(0xFF7DDC9A).copy(alpha = 0.22f) else Color(0xFF1E7E34).copy(alpha = 0.18f)
+            val nextText = if (nextDark) Color(0xFFE3F7E9) else Color(0xFF0D4A21)
+            val nextChipIcon = nextText
+            OneUICard(
+                modifier = Modifier.skyGlass(RoundedCornerShape(OneUIDimens.CardRadius), skyHaze, sc),
+                color = Color.Transparent
+            ) {
                 rows.forEachIndexed { index, row ->
-                    val bellIndex = rowBells.getOrNull(index)
-                    val hl = bellIndex != null && bellIndex == highlightIndex
-                    val prevHl = index > 0 && rowBells.getOrNull(index - 1).let { it != null && it == highlightIndex }
-                    if (index > 0 && !hl && !prevHl) {
-                        Box(Modifier.fillMaxWidth().height(0.5.dp).background(dividerCol))
-                    }
+                    if (index > 0 && !row.isNext && !rows[index - 1].isNext) OneUIDivider(color = sc.divider)
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 8.dp, vertical = 4.35.dp)
-                            .clip(RoundedCornerShape(29.dp))
-                            .background(if (hl) HighlightBg else Color.Transparent)
-                            .padding(start = 12.dp, end = 6.dp, top = 5.dp, bottom = 5.dp),
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                            .clip(RoundedCornerShape(OneUIDimens.CardRadius))
+                            .background(if (row.isNext) nextRowBg else Color.Transparent)
+                            .padding(horizontal = 12.dp, vertical = 10.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Box(
-                            modifier = Modifier.size(38.dp).clip(CircleShape)
-                                .background(if (hl) HighlightCircle else circleBg),
+                            modifier = Modifier
+                                .size(38.dp)
+                                .clip(CircleShape)
+                                .background(if (row.isNext) nextChipBg else sc.chip),
                             contentAlignment = Alignment.Center
                         ) {
-                            Icon(row.icon, null, modifier = Modifier.size(20.dp), tint = if (hl) HighlightInk else iconTint)
+                            Icon(
+                                row.icon,
+                                null,
+                                modifier = Modifier.size(20.dp),
+                                tint = if (row.isNext) nextChipIcon else sc.textSecondary
+                            )
                         }
                         Spacer(Modifier.width(14.dp))
-                        Text(row.name, color = if (hl) HighlightInk else cs.onSurface, fontWeight = if (hl) FontWeight.ExtraBold else FontWeight.Normal, style = MaterialTheme.typography.bodyLarge)
+                        Text(
+                            row.name,
+                            color = if (row.isNext) nextText else sc.textPrimary,
+                            fontWeight = if (row.isNext) FontWeight.ExtraBold else FontWeight.Normal,
+                            style = MaterialTheme.typography.bodyLarge
+                        )
                         Spacer(Modifier.weight(1f))
+                        val bellIndex = rowBells.getOrNull(index)
                         val bellOn = bellIndex != null && bellStates.getOrElse(bellIndex) { false }
-                        Text(row.timeText, color = if (hl) HighlightInk else cs.onSurface, fontWeight = if (hl) FontWeight.ExtraBold else FontWeight.Normal, style = MaterialTheme.typography.bodyLarge)
-                        Spacer(Modifier.width(2.dp))
+                        val bellView = androidx.compose.ui.platform.LocalView.current
+                        Text(
+                            row.timeText,
+                            color = if (row.isNext) nextText else sc.textPrimary,
+                            fontWeight = if (row.isNext) FontWeight.ExtraBold else FontWeight.Normal,
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                        Spacer(Modifier.width(8.dp))
+                        // Fixed-size slot at the row's trailing edge: bells form one straight
+                        // column, and bell-less optional rows keep their times aligned.
                         Box(
-                            modifier = Modifier.size(48.dp).clip(CircleShape).then(
-                                if (bellIndex != null) Modifier.combinedClickable(onClick = { onBellClick(bellIndex) }, onLongClick = { onBellLongClick(bellIndex) }) else Modifier
-                            ),
+                            modifier = Modifier
+                                .size(36.dp)
+                                .clip(CircleShape)
+                                .then(
+                                    if (bellIndex != null) {
+                                        Modifier.combinedClickable(
+                                            onClick = { com.example.utils.AppHaptics.tick(bellView); onBellClick(bellIndex) },
+                                            onLongClick = { com.example.utils.AppHaptics.tick(bellView); onBellLongClick(bellIndex) }
+                                        )
+                                    } else Modifier
+                                ),
                             contentAlignment = Alignment.Center
                         ) {
                             if (bellIndex != null) {
@@ -451,18 +485,31 @@ fun PrayerTimesContent(
                                     if (bellOn) Icons.Outlined.NotificationsActive else Icons.Outlined.NotificationsOff,
                                     contentDescription = "bell_" + bellIndex,
                                     modifier = Modifier.size(19.dp),
-                                    tint = if (bellOn) cs.primary else if (hl) HighlightInk.copy(alpha = 0.5f) else bellOffTint
+                                    tint = if (bellOn) sc.accent else if (row.isNext) nextText.copy(alpha = 0.75f) else sc.textSecondary.copy(alpha = 0.45f)
                                 )
                             }
                         }
                     }
                 }
             }
-                }
-        if (twoCol) {
-            // Large screens: overview on one side, prayer list on the other, equal widths.
+        }
+        Box(Modifier.fillMaxSize().padding(start = com.example.ui.oneui.LocalRailInset.current)) {
+        OneUIScreen(
+        title = L10n.t(S.PrayerTimes),
+        onMenu = onMenu,
+        containerColor = Color.Transparent,
+        titleColor = sc.textPrimary,
+        alwaysShowHeaderTiles = true,
+        titleTopExtra = 1.5.dp,
+        titleBottomTrim = 0.dp,
+        frost = frost,
+        actions = if (onQibla != null) {
+            { OneUIIconAction(Icons.Outlined.Explore, L10n.t(S.QiblaTitle), onQibla) }
+        } else null
+    ) {
+        if (wide) {
             item(key = "prayer-wide") {
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp), verticalAlignment = Alignment.Top) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                     Box(Modifier.weight(1f)) { overviewCard() }
                     Box(Modifier.weight(1f)) { listCard() }
                 }
@@ -471,20 +518,7 @@ fun PrayerTimesContent(
             item(key = "prayer-overview") { overviewCard() }
             item(key = "prayer-list") { listCard() }
         }
+        }
+        }
     }
-    }
 }
-
-}
-
-private fun formatMinSec(millis: Long): String {
-    val t = millis / 1000
-    return String.format("%02d:%02d", t / 60, t % 60)
-}
-
-data class PrayerRowDisplay(
-    val name: String,
-    val timeText: String,
-    val isNext: Boolean,
-    val icon: androidx.compose.ui.graphics.vector.ImageVector
-)

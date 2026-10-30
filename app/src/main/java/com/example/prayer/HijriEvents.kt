@@ -52,9 +52,9 @@ object HijriEvents {
 
     /** Occasions for a Gregorian calendar day, after applying the user's Hijri offset. */
     fun forDay(context: Context, cal: Calendar): List<Occasion> {
-        val off = PrayerAdjustments.INSTANCE.hijriOffsetDays(context)
+        val off = PrayerAdjustments.hijriOffsetDays(context)
         val hcal = if (off != 0) (cal.clone() as Calendar).apply { add(Calendar.DATE, off) } else cal
-        val h = HijriDate.hijriYmd(hcal)
+        val h = HijriDate.INSTANCE.hijriYmd(hcal)
         val hm = h.component2()
         val hd = h.component3()
         val out = FIXED.filter { it.hijriMonth == hm && it.hijriDay == hd }.toMutableList()
@@ -122,5 +122,23 @@ object HijriEvents {
             context, 7000 + Math.abs(o.id.hashCode() % 500), i,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
+    }
+}
+
+class EventReminderReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val name = intent.getStringExtra("event_name") ?: return
+        val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val chId = com.example.utils.NotifPrefs.configureChannel(context, nm, NotificationChannel("event_reminders_channel", "مناسبات هجرية", NotificationManager.IMPORTANCE_DEFAULT))
+        nm.notify(
+            (System.currentTimeMillis() % 100000).toInt(),
+            NotificationCompat.Builder(context, chId)
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setContentTitle(context.getString(context.applicationInfo.labelRes))
+                .setContentText(name)
+                .setAutoCancel(true)
+                .build()
+        )
+        HijriEvents.scheduleAll(context) // roll forward
     }
 }

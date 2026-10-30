@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static widget-picker preview (API 31+): small square widgets, theme-aware.
+     The dark PNG previewImage remains the pre-31 fallback. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center"
+    android:background="@drawable/widget_preview_card_bg"
+    android:layoutDirection="rtl"
+    android:padding="12dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="الفجر" android:textSize="14sp" android:textStyle="bold"
+        android:textColor="@color/widget_preview_sub" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="ص 5:28" android:textSize="18sp" android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/widget_preview_text" />
+</LinearLayout>
