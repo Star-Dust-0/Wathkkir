@@ -4,7 +4,7 @@ import com.example.ui.i18n.L10n
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -79,7 +79,7 @@ fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset
                         .size(268.dp)
                         .oneUIFrosted(CircleShape, FrostSpec(cs.surface, if (ThemeSettings.isDark()) 0.50f else 0.62f, oneUIBorderColor()), 24)
                         .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {
-                            if (com.example.utils.AppHaptics.enabled) haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                            if (false) haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                             onTap()
                         },
                     contentAlignment = Alignment.Center

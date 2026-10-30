@@ -1,4 +1,5 @@
 package com.example.ui.oneui
+import androidx.compose.ui.layout.layout
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.mutableStateOf
@@ -403,7 +404,12 @@ fun OneUIRow(
         Column(modifier = Modifier.weight(1f)) {
             Text(title, color = resolvedTitleColor, style = MaterialTheme.typography.bodyLarge)
             if (summary != null) {
-                Text(summary, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall.copy(lineHeight = androidx.compose.ui.unit.TextUnit.Unspecified))
+                Text(summary,
+                    modifier = Modifier.padding(top = 2.dp),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 4,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 14.sp, lineHeight = 20.sp))
             }
         }
         if (trailing != null) {
@@ -782,7 +788,7 @@ fun OneUIBottomBar(
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = null
-                    ) { com.example.utils.AppHaptics.tick(tabView); onSelect(tab) },
+                    ) { onSelect(tab) },
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -884,6 +890,8 @@ fun DottedDivider() {
     }
 }
 
+val DrawerMaxWidth = 360.dp
+
 @Composable
 fun OneUIDrawer(
     open: Boolean,
@@ -923,8 +931,12 @@ fun OneUIDrawer(
                     .offset { IntOffset((slideSign * (1f - drawerProgress) * drawerSlidePx).toInt(), 0) }
                     .alpha(drawerProgress)
                     .padding(start = 11.dp, top = statusTop + 14.dp, bottom = 40.dp)
-                    .fillMaxWidth(0.78f)
-                    .wrapContentHeight()
+                    .layout { measurable, constraints ->
+                        val w = minOf((constraints.maxWidth * 0.78f).toInt(), DrawerMaxWidth.roundToPx())
+                        val p = measurable.measure(constraints.copy(minWidth = w, maxWidth = w))
+                        layout(p.width, p.height) { p.place(0, 0) }
+                    }
+                    .fillMaxHeight()
                     .then(Modifier.oneUIFrosted(RoundedCornerShape(26.dp), drawerFrost, 48))
                     .then(Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState()))
                     .padding(vertical = 18.dp)

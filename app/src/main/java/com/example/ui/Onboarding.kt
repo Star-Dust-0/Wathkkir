@@ -10,7 +10,7 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -172,7 +172,7 @@ object Onboarding {
                                     Title(t("جاري تحديد موقعك...", "Getting current location..."))
                                     CircularProgressIndicator(color = cs.primary)
                                     Spacer(Modifier.height(32.dp))
-                                    TextButton(onClick = com.example.utils.AppHaptics.tap { go(P_METHOD) }) { Text(t("إلغاء", "Cancel"), color = cs.onBackground, fontSize = 18.sp) }
+                                    TextButton(onClick = { go(P_METHOD) }) { Text(t("إلغاء", "Cancel"), color = cs.onBackground, fontSize = 18.sp) }
                                     LaunchedEffect(Unit) {
                                         val lat0 = state.latitude
                                         vm.updateLocationFromGps()
@@ -284,7 +284,7 @@ object Onboarding {
         val cs = MaterialTheme.colorScheme
         Box(
             Modifier.fillMaxWidth().padding(vertical = 5.dp).height(56.dp).clip(capsule)
-                .background(cs.surface).border(BorderStroke(1.dp, cs.outline), capsule).clickable(onClick = onClick),
+                .background(cs.surface).border(BorderStroke(1.dp, cs.outline), capsule).plainClickable(onClick = onClick),
             contentAlignment = Alignment.Center
         ) { Text(label, color = cs.primary, fontSize = 18.sp, fontWeight = FontWeight.Medium) }
     }
@@ -305,7 +305,7 @@ object Onboarding {
 
     @Composable
     private fun NavText(label: String, onClick: () -> Unit) {
-        TextButton(onClick = com.example.utils.AppHaptics.tap(onClick)) { Text(label, color = MaterialTheme.colorScheme.primary, fontSize = 20.sp, fontWeight = FontWeight.Bold) }
+        TextButton(onClick = onClick) { Text(label, color = MaterialTheme.colorScheme.primary, fontSize = 20.sp, fontWeight = FontWeight.Bold) }
     }
 
     /** One UI style page indicator: small dots, the current page is a longer pill in the accent colour. */

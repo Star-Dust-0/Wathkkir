@@ -8,7 +8,7 @@ import com.example.ui.i18n.S
 import com.example.ThemeSettings
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -265,7 +265,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
                     .clip(CircleShape)
                     .background(chipBg)
                     .semantics { contentDescription = "عداد الذكر" }
-                    .clickable {
+                    .plainClickable {
                         if (com.example.utils.AppHaptics.enabled) haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                         remaining = if (remaining > 0) remaining - 1 else item.count
                     }
