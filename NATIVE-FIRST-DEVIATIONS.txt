@@ -1,0 +1,5 @@
+Explicit current user changes beyond Oct26 historical parity:
+Authenticated WhatsApp Oct30 01:50:16: native Android/watch mechanisms before prayer too; Oct30 01:53:24: DynamicFloat because watch runs WearOS6. The user's original source request still makes recovered source the base.
+This labeled extension restores prior authored clock-expression implementation onto the recovered source: native dynamic ranged complication, static fallback, cancel legacy minute pulse, v34 zero periodic provider update/default300seconds, debug AndroidX reference host. minSdk30/target36 unchanged; protolayout dependencies1.3.0 needed. Preview defaults now match production STOPWATCH unless explicitly overridden. Full boundary refresh includes main provider.
+Local wear debug compile passes; actual reference-host/emulator evaluation not yet run on this source base. Does not prove Samsung watchface support or physical haptics.
+Native-first conversion of phone pre-prayer widgets and tile remains outstanding. Three stale manifest services were removed following literal Oct21 15:03 source removal; six real providers remain.

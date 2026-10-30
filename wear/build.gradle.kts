@@ -45,6 +45,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 dependencies {
+  debugImplementation("androidx.wear.protolayout:protolayout-expression-pipeline:1.3.0")
   implementation(platform("androidx.compose:compose-bom:${providers.gradleProperty("composeBom").getOrElse("2025.10.01")}"))
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.activity.compose)
@@ -53,8 +54,8 @@ dependencies {
   implementation("androidx.wear.compose:compose-foundation:1.5.0")
   implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:1.2.1")
   implementation("androidx.wear.tiles:tiles:1.4.1")
-  implementation("androidx.wear.protolayout:protolayout:1.2.1")
-  implementation("androidx.wear.protolayout:protolayout-expression:1.2.1")
+  implementation("androidx.wear.protolayout:protolayout:1.3.0")
+  implementation("androidx.wear.protolayout:protolayout-expression:1.3.0")
   implementation("androidx.wear:wear-remote-interactions:1.1.0")
   implementation("com.google.guava:guava:33.3.1-android")
   implementation("com.google.android.gms:play-services-wearable:19.0.0")
