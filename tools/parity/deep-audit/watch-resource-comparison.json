@@ -1,0 +1,346 @@
+[
+  {
+    "file": "wear/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "original_byte_matches": [
+      "res/yn.png"
+    ],
+    "sha256": "fb56cff630ee66e863d1c97ed61878b511e1e301227f17054d644af1d6de9a87",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-hdpi/ic_launcher_background.png",
+    "original_byte_matches": [],
+    "sha256": "296480d7d53d436403e59b7b8de116ec7ac85c29dd6c273657eff10ac9f85a72",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-hdpi/ic_launcher_monochrome.png",
+    "original_byte_matches": [],
+    "sha256": "42738fd7cfe9b25fc1c9786523b2952bb925c9cd89e808bf0e73256bbb770dab",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+    "original_byte_matches": [],
+    "sha256": "287feee3282680031dc42d5b535f5c06a67c849c3dc9a554bbf17aa41cf334ca",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+    "original_byte_matches": [
+      "res/8c.png"
+    ],
+    "sha256": "da80b2961c7acb27808056f2df8ed0b03f181311c9f7b0ea0aa59a9ead5eca2d",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "original_byte_matches": [
+      "res/RJ.png"
+    ],
+    "sha256": "c8a3686a5845d634f2af4ccb5100142f264a81a40d8bbb14ef8369e50fd6b165",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxhdpi/ic_launcher_background.png",
+    "original_byte_matches": [],
+    "sha256": "fb2b1a20c2761b66f53d41989c24b53679809d281b16087c21da9067f0a1d7ed",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxhdpi/ic_launcher_monochrome.png",
+    "original_byte_matches": [],
+    "sha256": "0cc26ac01392ceb1810630f1c71956cecd92536dce9bda64fd170d2fff182049",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+    "original_byte_matches": [],
+    "sha256": "d9eb84640f1747c367ae837945a14e3328fcec6d708135b46858be183cf9fcd8",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+    "original_byte_matches": [
+      "res/fO.png"
+    ],
+    "sha256": "843a18ad445e68ca6593e6c889169c88ede15ca17f3ec2f77f8e85ebdf58b402",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "original_byte_matches": [],
+    "sha256": "4bab3c59768636d72264d7db9321872f9325713beb66797b7dbfe41c11d90320",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "original_byte_matches": [],
+    "sha256": "4bab3c59768636d72264d7db9321872f9325713beb66797b7dbfe41c11d90320",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/values-en/strings.xml",
+    "original_byte_matches": [],
+    "sha256": "710677f00c3359431cf34e3f482b21a9b250e37ad905d442365b8093a40208b4",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/values-v34/complication_refresh.xml",
+    "original_byte_matches": [],
+    "sha256": "41723a96e5ee469da58733b295c254e447029239e3760cbc883da3663dfaa7a2",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/drawable-nodpi/ic_complication_mono.png",
+    "original_byte_matches": [],
+    "sha256": "cff14a41accabbbce84005314818512b2807570baf580ccafb47250fdaf60bc8",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "original_byte_matches": [
+      "res/FS.png"
+    ],
+    "sha256": "f0673bf0a7ffd3a090c1237264aa70f236f1846f1c7ffc172e56525407b01fea",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xhdpi/ic_launcher_background.png",
+    "original_byte_matches": [],
+    "sha256": "d54a40b56cf6cc1609ef0b3cf6f7f34cea15409577edca9fa634af3232f0e7cc",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xhdpi/ic_launcher_monochrome.png",
+    "original_byte_matches": [],
+    "sha256": "5aac558034235a2aef8d85e73db4033ac8cd7f102e157801009c4c31c995b04a",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+    "original_byte_matches": [],
+    "sha256": "19a748ca718e5f10fb6bb484d3771f311e3adbdf73bd6b4cdea76bb0cbe6f414",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+    "original_byte_matches": [
+      "res/wb.png"
+    ],
+    "sha256": "3b47fb481b79005f5116faf9beb7400af226dde8f3220e3d6abc4a592e530d3e",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "original_byte_matches": [
+      "res/o-.png"
+    ],
+    "sha256": "d6876598764d9cb017c9a9cf46db82ddab9a92b6e9f936e4ae1a9a77e10779d6",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png",
+    "original_byte_matches": [],
+    "sha256": "b9bfb466af065e78ddfdbae9e7047cb90d3a27c08357b48ee162b561ff4d5f1d",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxxhdpi/ic_launcher_monochrome.png",
+    "original_byte_matches": [],
+    "sha256": "97306e28c8ff30a898b067bdf5f8fa41d3d42043d52844f9a070050b59b148fe",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+    "original_byte_matches": [],
+    "sha256": "1285edef845b8fa4a054ce3e83e7aa57deb5e188a313052808c031aa4dab0a21",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+    "original_byte_matches": [
+      "res/Gc.png"
+    ],
+    "sha256": "0189b7e7bf72c5cec530cf382f0e518275bb8bbc432f3416a0f4bba2c39c8a26",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "original_byte_matches": [
+      "res/9w.png"
+    ],
+    "sha256": "4f32df052cc87cb09cd33d92481d3fd630cfb8d72b4d091541bae597cc02653c",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-mdpi/ic_launcher_background.png",
+    "original_byte_matches": [],
+    "sha256": "b5f56ee90be319d2a1280f7169a23350cd74f615aadd51324e31a2280deff504",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-mdpi/ic_launcher_monochrome.png",
+    "original_byte_matches": [],
+    "sha256": "fb6f59d532c7e366af7e8452450bf98abb3e181ae51458940d93decb5d31084b",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+    "original_byte_matches": [],
+    "sha256": "e46386d0582a2bd4d96cb0b2b4a3cce7866af09083481002d1c8c3605bc3e724",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+    "original_byte_matches": [
+      "res/zR.png"
+    ],
+    "sha256": "5f36b8a3f8708a4711978976376f20c5169bec5f666ba050bc6b24f782e01d66",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/values/styles.xml",
+    "original_byte_matches": [],
+    "sha256": "ee66666bb16204d064417a1bbc7004f1bc372a662de1872e3f307dc48c4266fd",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/values/strings.xml",
+    "original_byte_matches": [],
+    "sha256": "2998b16f2c48e6680956d5a9c909e29eaf7f2ce5ece6226421f5039559d9db3b",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/values/keep.xml",
+    "original_byte_matches": [],
+    "sha256": "342be5ad9df413f84b771d676023f1c8087aad286e1fd85a63b3a81d91b5f95e",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/values/complication_refresh.xml",
+    "original_byte_matches": [],
+    "sha256": "c492b25e92862e42f02d18ae410a88ced2f8c1bc4aff86f78f30850e19a19d4b",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/font/expoarabic_semibold.ttf",
+    "original_byte_matches": [
+      "res/PG.ttf",
+      "res/qk.ttf"
+    ],
+    "sha256": "a219dc2b02603582320073aaf709426561e80317dc8a069097f514bf6f3a0b02",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/aref_ruqaa_bold.ttf",
+    "original_byte_matches": [
+      "res/BE.ttf"
+    ],
+    "sha256": "247071015b7eefd63f94d6e47949c5d10294ed31bd432f809ba9a219d93f91bb",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/amiri.ttf",
+    "original_byte_matches": [
+      "res/HM.ttf"
+    ],
+    "sha256": "ab391c4147d054c48976e98322ad0eefe1427aa0e0502a12a4c75d80a70cfcd7",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/expoarabic_bold.ttf",
+    "original_byte_matches": [
+      "res/t-.ttf"
+    ],
+    "sha256": "65208d6733926042254e821a6649fe31ddf1ca040cc14d552c987920c0646abe",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/expoarabic_book.ttf",
+    "original_byte_matches": [],
+    "sha256": "188b427ecc3f3051d297f75f8dd5b2029053f4f97ddef67833fe07c83e5f8f04",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  },
+  {
+    "file": "wear/src/main/res/font/tajawal.ttf",
+    "original_byte_matches": [
+      "res/tF.ttf",
+      "res/wJ.ttf"
+    ],
+    "sha256": "9cc159153a6cf1f8210afba951cee271c2c278c6fe47ec0d21a59f4d38a14352",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/cairo.ttf",
+    "original_byte_matches": [
+      "res/gT.ttf"
+    ],
+    "sha256": "3a2dc5b7c8eed070e0e6593d6d8d06ec8c84b829834b93cad74e969320e95c4c",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/amiri_bold.ttf",
+    "original_byte_matches": [
+      "res/lf.ttf"
+    ],
+    "sha256": "cfccb794268e7d573d857e6d6a67f89cf8a053e8ffd85dfa0c8ec1bb36fc4827",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/aref_ruqaa.ttf",
+    "original_byte_matches": [
+      "res/Jy.ttf"
+    ],
+    "sha256": "ceb786d83ba92f35e96efcd8623c2858d288e0c543c8761ba35b1020989464f9",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/cairo_bold.ttf",
+    "original_byte_matches": [
+      "res/bg.ttf"
+    ],
+    "sha256": "d90750fbe3c01bf3e31fda20d66e96fbe3d2e6d27d443fe9b546991d57663ed9",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/tajawal_bold.ttf",
+    "original_byte_matches": [
+      "res/PG.ttf",
+      "res/qk.ttf"
+    ],
+    "sha256": "a219dc2b02603582320073aaf709426561e80317dc8a069097f514bf6f3a0b02",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/noto_naskh.ttf",
+    "original_byte_matches": [
+      "res/Ea.ttf"
+    ],
+    "sha256": "c441d8526fcc2de04925aae905d1cfa1a5b43696e151f9af924821f83d8fadbc",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/expoarabic_medium.ttf",
+    "original_byte_matches": [
+      "res/tF.ttf",
+      "res/wJ.ttf"
+    ],
+    "sha256": "9cc159153a6cf1f8210afba951cee271c2c278c6fe47ec0d21a59f4d38a14352",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/font/noto_naskh_bold.ttf",
+    "original_byte_matches": [
+      "res/dJ.ttf"
+    ],
+    "sha256": "592f64804fde8ac91967b66c74f840698c6ab8c9994b9b11d0d53eb51cc04653",
+    "interpretation": "Byte match"
+  },
+  {
+    "file": "wear/src/main/res/raw/keep.xml",
+    "original_byte_matches": [],
+    "sha256": "342be5ad9df413f84b771d676023f1c8087aad286e1fd85a63b3a81d91b5f95e",
+    "interpretation": "Unresolved: APK compiled/optimized resource names or encoding can differ; inspect decoded/visual evidence"
+  }
+]
