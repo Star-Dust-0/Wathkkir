@@ -49,7 +49,8 @@ import com.example.ui.oneui.oneUIFrosted
 import com.example.ThemeSettings
 import com.example.ui.oneui.FrostSpec
 import com.example.ui.oneui.OneUICard
-import com.example.ui.oneui.OneUIChip
+import com.example.ui.oneui.OneUIChipGroup
+import com.example.ui.oneui.OneUIChipItem
 import com.example.ui.oneui.OneUIEmptyState
 import com.example.ui.oneui.OneUIIconAction
 import com.example.ui.oneui.OneUIMenu
@@ -172,7 +173,7 @@ fun AzkarListContent(
     onMenu: (() -> Unit)? = null
 ) {
     OneUIScreen(
-        title = "الأذكار",
+        title = L10n.t(S.AzkarTab),
         subtitle = azkarCount(totalCount),
         onMenu = onMenu,
         actions = { OneUIIconAction(Icons.Outlined.Add, L10n.t(S.AddDhikr), onAdd) }
@@ -182,30 +183,27 @@ fun AzkarListContent(
         }
         if (allTags.isNotEmpty()) {
             item(key = "chips") {
-                LazyRow(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    item {
-                        OneUIChip(L10n.t(S.All), selectedTag == null, { onSelectTag(null) })
+                // 3.3.3: sliding-pill chip group (his spec: animation only, no joined container);
+                // tapping the selected tag still deselects back to All.
+                OneUIChipGroup(
+                    items = listOf(OneUIChipItem(L10n.t(S.All))) + allTags.map { OneUIChipItem(it.name, parseColorSafe(it.colorHex)) },
+                    selected = allTags.indexOfFirst { it.tagId == selectedTag?.tagId }.let { if (it < 0) 0 else it + 1 },
+                    onSelect = { i ->
+                        if (i == 0) onSelectTag(null)
+                        else {
+                            val tag = allTags[i - 1]
+                            onSelectTag(if (selectedTag?.tagId == tag.tagId) null else tag)
+                        }
                     }
-                    items(allTags, key = { it.tagId }) { tag ->
-                        val selected = selectedTag?.tagId == tag.tagId
-                        OneUIChip(
-                            tag.name, selected,
-                            { onSelectTag(if (selected) null else tag) },
-                            dot = parseColorSafe(tag.colorHex)
-                        )
-                    }
-                }
+                )
             }
         }
         if (dhikrs.isEmpty()) {
             item {
                 val text = when {
                     query.isBlank() && selectedTag == null -> L10n.t(S.NoAzkar)
-                    query.isBlank() -> "لا توجد أذكار تحت تصنيف \"${selectedTag?.name}\""
-                    else -> "لا توجد نتائج تطابق \"$query\""
+                    query.isBlank() -> L10n.t(S.NoAzkarUnderTag).format(selectedTag?.name ?: "")
+                    else -> L10n.t(S.NoResultsQuery).format(query)
                 }
                 OneUIEmptyState(text, Icons.Outlined.Search)
             }
