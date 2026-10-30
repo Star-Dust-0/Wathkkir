@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -73,6 +75,45 @@ fun HijriCalendarScreen(onMenu: (() -> Unit)? = null) {
 
     val locale = if (isAr) Locale("ar", "EG") else Locale.forLanguageTag(L10n.lang.code)
 
+    val twoPane = com.example.ui.oneui.isTwoPane()
+    if (twoPane) {
+        // 3.4 tablets: same split as Hisn al-Muslim. First pane (right in RTL) = month grid,
+        // second pane (left in RTL) = the selected day and the month's occasions.
+        Row(Modifier.fillMaxSize()) {
+            Box(Modifier.weight(0.5f).fillMaxSize()) {
+                OneUIScreen(title = L10n.t(S.CalendarTab), onMenu = onMenu) {
+                    item(key = "toggle") {
+                        Box(Modifier.padding(horizontal = 20.dp, vertical = 6.dp)) {
+                            com.example.ui.oneui.OneUISegmented(
+                                options = listOf(L10n.t(S.CalendarTab), L10n.t(S.CalEvents)),
+                                selected = if (showEvents) 1 else 0,
+                                onSelect = { showEvents = it == 1 }
+                            )
+                        }
+                    }
+                    if (showEvents) eventsViewItems(tick) else {
+                        item(key = "month") {
+                            MonthView(viewMonth, selected, today, locale,
+                                onPrev = { viewMonth = (viewMonth.clone() as Calendar).apply { add(Calendar.MONTH, -1) } },
+                                onNext = { viewMonth = (viewMonth.clone() as Calendar).apply { add(Calendar.MONTH, 1) } },
+                                onSelect = { selected = it })
+                        }
+                        item(key = "spacer") { Spacer(Modifier.height(90.dp)) }
+                    }
+                }
+            }
+            Box(Modifier.weight(0.5f).fillMaxSize().background(cs.background)) {
+                androidx.compose.foundation.lazy.LazyColumn(
+                    Modifier.fillMaxSize().windowInsetsPadding(androidx.compose.foundation.layout.WindowInsets.systemBars)
+                ) {
+                    item(key = "dayevents") { SelectedDayEvents(selected, locale, tick) { tick++ } }
+                    item(key = "monthevents") { MonthEventsList(viewMonth, locale, tick) { tick++ } }
+                    item(key = "spacer") { Spacer(Modifier.height(110.dp)) }
+                }
+            }
+        }
+        return
+    }
     OneUIScreen(title = L10n.t(S.CalendarTab), onMenu = onMenu) {
         item(key = "toggle") {
             // 3.3.3: shared One UI segmented control (joined container, sliding blue indicator).
