@@ -20,7 +20,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.RestartAlt
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.material.icons.outlined.Check
 import androidx.compose.material.icons.outlined.KeyboardArrowDown
 import androidx.compose.material3.DropdownMenu
@@ -181,6 +181,7 @@ private fun MonthField(
                 shadowElevation = 12.dp,
                 border = null
             ) {
+                com.example.ui.theme.AppFontScaled { Column {
                 names.forEachIndexed { i, name ->
                     val sel = selected == i + 1
                     DropdownMenuItem(
@@ -196,9 +197,10 @@ private fun MonthField(
                             { Icon(Icons.Outlined.Check, contentDescription = null, tint = blue) }
                         } else null,
                         contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 24.dp, vertical = 4.dp),
-                        onClick = com.example.utils.AppHaptics.tap { onPick(i + 1); open = false }
+                        onClick = { onPick(i + 1); open = false }
                     )
                 }
+                } }
             }
         }
     }

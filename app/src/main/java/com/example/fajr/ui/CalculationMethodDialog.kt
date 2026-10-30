@@ -5,7 +5,7 @@ import androidx.compose.runtime.setValue
 import com.example.ui.i18n.L10n
 import com.example.ui.i18n.S
 
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

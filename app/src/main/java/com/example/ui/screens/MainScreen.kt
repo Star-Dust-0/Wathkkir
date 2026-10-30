@@ -9,7 +9,8 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
+import com.example.utils.plainClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -309,7 +310,7 @@ fun MainScreen(viewModel: MainViewModel) {
                     val uri = LocalUriHandler.current
                     Text(
                         "brought to you by Instinct",
-                        modifier = Modifier.clickable { uri.openUri("https://instinct.com") },
+                        modifier = Modifier.plainClickable { uri.openUri("https://instinct.com") },
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodySmall
                     )

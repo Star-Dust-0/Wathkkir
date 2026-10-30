@@ -5,7 +5,8 @@ import com.example.ui.i18n.L10n
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
+import com.example.utils.plainClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -157,12 +158,12 @@ fun TagRow(tag: Tag, count: Int, onEdit: () -> Unit, onDelete: () -> Unit) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
                     Icons.Outlined.Edit, L10n.t(S.Edit),
-                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onEdit).padding(9.dp),
+                    modifier = Modifier.size(40.dp).clip(CircleShape).plainClickable(onClick = onEdit).padding(9.dp),
                     tint = cs.onSurfaceVariant
                 )
                 Icon(
                     Icons.Outlined.Delete, L10n.t(S.Delete),
-                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onDelete).padding(9.dp),
+                    modifier = Modifier.size(40.dp).clip(CircleShape).plainClickable(onClick = onDelete).padding(9.dp),
                     tint = cs.onSurfaceVariant
                 )
             }

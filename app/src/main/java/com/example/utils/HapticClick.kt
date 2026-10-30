@@ -1,5 +1,4 @@
 package com.example.utils
-import com.example.utils.plainClickable
 
 import androidx.compose.foundation.Indication
 import androidx.compose.foundation.clickable as foundationClickable

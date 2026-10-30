@@ -5,7 +5,8 @@ import com.example.ui.i18n.Lang
 import com.example.ui.i18n.S
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
+import com.example.utils.plainClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -51,6 +52,7 @@ fun CitySearchDialog(onDismiss: () -> Unit, onCitySelected: (CityItem) -> Unit) 
     val filteredCities = remember(searchQuery) { CitiesDatabase.searchCities(searchQuery) }
     val cs = MaterialTheme.colorScheme
     Dialog(onDismissRequest = onDismiss) {
+        com.example.ui.theme.AppFontScaled {
         Surface(
             modifier = Modifier.fillMaxWidth().fillMaxHeight(0.85f),
             shape = RoundedCornerShape(28.dp),
@@ -99,13 +101,14 @@ fun CitySearchDialog(onDismiss: () -> Unit, onCitySelected: (CityItem) -> Unit) 
                     }
                 }
                 Box(
-                    modifier = Modifier.fillMaxWidth().height(56.dp).clickable(onClick = onDismiss),
+                    modifier = Modifier.fillMaxWidth().height(56.dp).plainClickable(onClick = onDismiss),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(L10n.t(S.Back), color = cs.onSurface, fontSize = 17.sp, fontWeight = FontWeight.Bold)
                 }
             }
         }
+    }
     }
 }
 

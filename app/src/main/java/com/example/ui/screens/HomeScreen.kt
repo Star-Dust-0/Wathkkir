@@ -4,7 +4,7 @@ import com.example.ui.i18n.L10n
 import com.example.utils.plainClickable
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -334,7 +334,7 @@ fun DhikrItemCard(
                     L10n.t(S.Options),
                     modifier = Modifier
                         .clip(CircleShape)
-                        .clickable { menu = true }
+                        .plainClickable { menu = true }
                         .padding(10.dp),
                     tint = cs.onSurfaceVariant
                 )

@@ -154,6 +154,7 @@ fun OneUIDialog(
 ) {
     Dialog(onDismissRequest = onDismiss, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         BlurBehindDialogWindow()
+        com.example.ui.theme.AppFontScaled {
         OneUIDialogSurface(
             title = title,
             onDismiss = onDismiss,
@@ -164,5 +165,6 @@ fun OneUIDialog(
             confirmEnabled = confirmEnabled,
             content = content
         )
+        }
     }
 }

@@ -2,7 +2,7 @@ package com.example.ui.screens
 import com.example.utils.plainClickable
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.clickable
+import com.example.utils.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.ColumnScope
@@ -177,7 +177,7 @@ fun ColumnScope.TimesEditor(times: List<String>, onChange: (List<String>) -> Uni
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { onChange(times + "12:00") }
+            .plainClickable { onChange(times + "12:00") }
             .padding(horizontal = 16.dp, vertical = 14.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -229,7 +229,7 @@ fun TimeRow(timeStr: String, onTimeChange: (String) -> Unit, onDelete: () -> Uni
             modifier = Modifier
                 .size(36.dp)
                 .clip(MaterialTheme.shapes.large)
-                .clickable(onClick = onDelete)
+                .plainClickable(onClick = onDelete)
                 .padding(7.dp),
             tint = cs.onSurfaceVariant
         )
