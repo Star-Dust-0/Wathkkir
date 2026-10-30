@@ -49,10 +49,13 @@ open class PrayerTileService : TileService() {
         val sweep = 270f
         // During an iqama window the arc and center switch to the iqama countdown (owner feature, wear 1.1.0).
         val arcProgress = if (iq != null) ((s.now - iq.prayer.at).toFloat() / maxOf(1L, iq.at - iq.prayer.at).toFloat()).coerceIn(0.02f, 1f) else s.progress
-        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
-        val fill = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep * arcProgress)).setThickness(dp(16f)).setColor(argb(tc.main)).build()
-        fun arc(line: LayoutElementBuilders.ArcLine) = LayoutElementBuilders.Arc.Builder()
-            .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(line).build()
+        // One Arc with sequential contents: elapsed fill first from the anchor, then the remaining track.
+        // (Two sibling Arcs get concatenated by some renderers, which drew the fill after the track's end.)
+        val fillLen = sweep * arcProgress
+        val fill = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(16f)).setColor(argb(tc.main)).build()
+        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep - fillLen)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
+        val arc = LayoutElementBuilders.Arc.Builder()
+            .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(fill).addContent(track).build()
 
         fun gap(h: Float) = LayoutElementBuilders.Spacer.Builder().setHeight(dp(h)).build()
         // Layout measured against the reference gold widget ON THE REAL WATCH (Samsung font renders
@@ -82,7 +85,7 @@ open class PrayerTileService : TileService() {
         return LayoutElementBuilders.Box.Builder()
             .setWidth(expand()).setHeight(expand())
             .setModifiers(ModifiersBuilders.Modifiers.Builder().setClickable(click).build())
-            .addContent(arc(track)).addContent(arc(fill)).addContent(center)
+            .addContent(arc).addContent(center)
             .build()
     }
 
