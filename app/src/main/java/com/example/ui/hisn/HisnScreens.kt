@@ -1,55 +1,75 @@
 package com.example.ui.hisn
+import com.example.utils.plainClickable
+
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
+import com.example.ThemeSettings
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.MenuBook
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Check
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.NotificationAdd
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
+import kotlinx.coroutines.launch
+import com.example.ui.oneui.OneUIIconAction
 import androidx.compose.material.icons.outlined.StarBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.HisnChapter
 import com.example.data.HisnItem
-import com.example.ui.oneui.*
+import com.example.ui.oneui.OneUIButton
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIChip
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIEmptyState
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.OneUISearchField
+import com.example.ui.oneui.azkarCount
 
-data class HisnListState(
-    val chapters: List<HisnChapter>,
-    val itemCounts: Map<Int, Int>,
-    val favoriteChapterIds: Set<Int>,
-    val readTodayIds: Set<Int>,
-    val query: String,
-    val onlyFavorites: Boolean
-)
-
-fun filterChapters(
-    s: HisnListState,
-    items: List<HisnItem>
-): List<HisnChapter> {
+fun filterChapters(s: HisnListState, items: List<HisnItem>): List<HisnChapter> {
     val q = normalizeArabic(s.query.trim())
-    val list = s.chapters
-    if (q.isBlank()) return if (s.onlyFavorites) list.filter { it.id in s.favoriteChapterIds } else list
+    var list = s.chapters
+    if (s.onlyFavorites) list = list.filter { s.favoriteChapterIds.contains(it.id) }
+    if (q.isBlank()) return list
     val hitIds = items.filter { normalizeArabic(it.text).contains(q) }.map { it.chapterId }.toSet()
-    return list.filter { normalizeArabic(it.name).contains(q) || it.id in hitIds }
-        .sortedByDescending { it.id in s.favoriteChapterIds }
+    return list.filter { normalizeArabic(it.name).contains(q) || hitIds.contains(it.id) }
 }
 
 @Composable
@@ -63,40 +83,32 @@ fun HisnListContent(
     onMenu: (() -> Unit)? = null
 ) {
     val filtered = remember(state, items) { filterChapters(state, items) }
-    val searchFocus = remember { androidx.compose.ui.focus.FocusRequester() }
-    OneUIScreen(
-        onMenu = onMenu,
-        actions = {
-            OneUIIconAction(Icons.Default.Search, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SearchHisn), { try { searchFocus.requestFocus() } catch (_: Exception) {} })
-            OneUIIconAction(androidx.compose.material.icons.Icons.Default.Settings, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") })
-        },
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.HisnTab),
-        subtitle = if (state.chapters.isEmpty()) null else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ChaptersFmt).format(state.chapters.size)
-    ) {
-        item(key = "search") {
-            OneUISearchField(state.query, onQuery, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SearchHisn), focusRequester = searchFocus)
-        }
-        item(key = "chips") {
-            LazyRow(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                item { OneUIChip(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.All), !state.onlyFavorites, { onOnlyFavorites(false) }) }
-                item { OneUIChip(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites), state.onlyFavorites, { onOnlyFavorites(true) }) }
+    val subtitle = if (state.chapters.isEmpty()) null else "${state.chapters.size} بابًا من الأذكار والأدعية"
+    OneUIScreen(title = "حصن المسلم", subtitle = subtitle, onMenu = onMenu) {
+        item { OneUISearchField(state.query, onQuery, "ابحث في حصن المسلم") }
+        item {
+            LazyRow(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                item { OneUIChip("الكل", !state.onlyFavorites, { onOnlyFavorites(false) }) }
+                item { OneUIChip("المفضلة", state.onlyFavorites, { onOnlyFavorites(true) }) }
             }
         }
         if (filtered.isEmpty()) {
-            item { OneUIEmptyState(if (state.onlyFavorites) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoFavChapters) else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoResults), Icons.Default.Search) }
+            item {
+                OneUIEmptyState(
+                    if (state.onlyFavorites) "لا توجد أبواب مفضلة" else "لا توجد نتائج",
+                    Icons.Outlined.Search
+                )
+            }
         } else {
-            item(key = "group") {
+            item {
                 OneUICard {
                     filtered.forEachIndexed { index, chapter ->
-                        if (index > 0) OneUIDivider(inset = 16.dp)
+                        if (index > 0) OneUIDivider(16.dp)
                         ChapterRow(
                             chapter = chapter,
                             count = state.itemCounts[chapter.id] ?: 0,
-                            favorite = chapter.id in state.favoriteChapterIds,
-                            read = chapter.id in state.readTodayIds,
+                            favorite = state.favoriteChapterIds.contains(chapter.id),
+                            read = state.readTodayIds.contains(chapter.id),
                             onClick = { onOpen(chapter) },
                             onFavorite = { onToggleFavorite(chapter) }
                         )
@@ -118,37 +130,41 @@ private fun ChapterRow(
 ) {
     val cs = MaterialTheme.colorScheme
     Row(
-        Modifier
+        modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick)
+            .plainClickable(onClick = onClick)
             .heightIn(min = 64.dp)
             .padding(horizontal = 16.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(
-            Modifier.size(36.dp).clip(CircleShape).background(cs.surfaceVariant),
+            modifier = Modifier.size(36.dp).clip(CircleShape).background(cs.surfaceVariant),
             contentAlignment = Alignment.Center
         ) {
-            Text(
-                "${chapter.order}",
-                style = MaterialTheme.typography.labelMedium,
-                color = cs.onSurfaceVariant
-            )
+            Text(chapter.order.toString(), color = cs.onSurfaceVariant, style = MaterialTheme.typography.labelMedium)
         }
         Spacer(Modifier.width(14.dp))
-        Column(Modifier.weight(1f)) {
-            Text(chapter.name, style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, maxLines = 2)
+        Column(modifier = Modifier.weight(1f)) {
             Text(
-                if (read) azkarCount(count) + com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReadTodaySuffix) else azkarCount(count),
-                style = MaterialTheme.typography.bodySmall,
-                color = if (read) cs.primary else cs.onSurfaceVariant
+                chapter.name,
+                color = cs.onSurface,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+                style = MaterialTheme.typography.bodyLarge
+            )
+            var meta = azkarCount(count)
+            if (read) meta += " · تمت قراءته اليوم"
+            Text(
+                meta,
+                color = if (read) cs.primary else cs.onSurfaceVariant,
+                style = MaterialTheme.typography.bodySmall
             )
         }
         Icon(
-            if (favorite) Icons.Default.Star else Icons.Outlined.StarBorder,
-            contentDescription = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites),
-            tint = if (favorite) Color(0xFFFFC107) else cs.onSurfaceVariant,
-            modifier = Modifier.size(26.dp).clip(CircleShape).clickable(onClick = onFavorite)
+            if (favorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
+            "المفضلة",
+            modifier = Modifier.size(26.dp).clip(CircleShape).clickable(onClick = onFavorite),
+            tint = if (favorite) Color(0xFFFFC107) else cs.onSurfaceVariant
         )
     }
 }
@@ -174,19 +190,22 @@ fun HisnChapterContent(
         onBack = onBack,
         actions = {
             OneUIIconAction(
-                if (favoriteChapter) Icons.Default.Star else Icons.Outlined.StarBorder,
-                com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites),
+                if (favoriteChapter) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                "المفضلة",
                 onToggleChapterFavorite
             )
         }
     ) {
         items(items, key = { it.id }) { item ->
-            HisnItemCard(item, item.id in favoriteItemIds) { onToggleItemFavorite(item) }
+            HisnItemCard(item, favoriteItemIds.contains(item.id)) { onToggleItemFavorite(item) }
         }
-        item(key = "actions") {
-            Row(Modifier.fillMaxWidth().padding(top = 4.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                OneUIButton(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReadDone), onMarkRead, Modifier.weight(1f), filled = true, icon = Icons.Default.Check)
-                OneUIButton(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.AddToMyAzkar), onAddToMyAzkar, Modifier.weight(1f), icon = Icons.Default.NotificationAdd)
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                OneUIButton("تمت القراءة", onMarkRead, Modifier.weight(1f), true, Icons.Outlined.Check)
+                OneUIButton("أضف إلى أذكاري", onAddToMyAzkar, Modifier.weight(1f), false, Icons.Outlined.NotificationAdd)
             }
         }
     }
@@ -198,24 +217,33 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
     var remaining by rememberSaveable(item.id) { mutableIntStateOf(item.count) }
     var showFadl by rememberSaveable(item.id) { mutableStateOf(false) }
     val haptic = LocalHapticFeedback.current
-    OneUICard(padding = PaddingValues(16.dp)) {
+    val meta = listOf(item.source, item.hokm).filter { it.isNotBlank() }.joinToString(" · ")
+    val hasNotes = item.fadl.isNotBlank() || meta.isNotBlank()
+    OneUICard(padding = androidx.compose.foundation.layout.PaddingValues(16.dp)) {
         Text(
             item.text,
-            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.fillMaxWidth(),
+            color = cs.onSurface,
             fontSize = 20.sp,
             lineHeight = 36.sp,
-            color = cs.onSurface,
-            modifier = Modifier.fillMaxWidth()
+            style = MaterialTheme.typography.bodyLarge
         )
         Spacer(Modifier.height(14.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
-            // Counter pill: tap to count down
             val done = remaining == 0
+            // 3.3.0: counter is light One UI blue (same as the bottom bar), turning light green when finished.
+            val dk = com.example.ThemeSettings.isDark()
+            val blue = Color(0xFF3D96FD) // sampled from the One UI RAM bar the user sent
+            val greenBg = Color(0xFF24A890) // sampled from the One UI teal-green the user sent
+            val greenFg = Color.White
+            val chipBg by androidx.compose.animation.animateColorAsState(if (done) greenBg else blue, androidx.compose.animation.core.tween(350), label = "cntBg")
+            val chipFg by androidx.compose.animation.animateColorAsState(if (done) greenFg else Color.White, androidx.compose.animation.core.tween(350), label = "cntFg")
             Row(
-                Modifier
+                modifier = Modifier
                     .height(40.dp)
                     .clip(CircleShape)
-                    .background(if (done) cs.primary.copy(alpha = 0.16f) else cs.surfaceVariant)
+                    .background(chipBg)
+                    .semantics { contentDescription = "عداد الذكر" }
                     .clickable {
                         if (com.example.utils.AppHaptics.enabled) haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                         remaining = if (remaining > 0) remaining - 1 else item.count
@@ -223,48 +251,63 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
                     .padding(horizontal = 16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(
-                    if (done) Icons.Default.Check else Icons.Default.TouchApp,
-                    null,
-                    tint = if (done) cs.primary else cs.onSurfaceVariant,
-                    modifier = Modifier.size(18.dp)
-                )
-                Spacer(Modifier.width(8.dp))
+                if (done) {
+                    Icon(Icons.Outlined.Check, null, tint = chipFg, modifier = Modifier.size(18.dp))
+                    Spacer(Modifier.width(8.dp))
+                }
+                val label = when {
+                    done -> "تم"
+                    item.count > 1 -> "$remaining / ${item.count}"
+                    else -> "اضغط للعد"
+                }
                 Text(
-                    if (done) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Done) else if (item.count > 1) "$remaining / ${item.count}" else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TapToCount),
-                    style = MaterialTheme.typography.labelLarge,
-                    color = if (done) cs.primary else cs.onSurface
+                    label,
+                    color = chipFg,
+                    style = MaterialTheme.typography.labelLarge
                 )
             }
             Spacer(Modifier.weight(1f))
-            if (item.fadl.isNotBlank()) {
+            if (hasNotes) {
                 Icon(
-                    Icons.Default.Info,
-                    if (com.example.ui.i18n.L10n.lang == com.example.ui.i18n.Lang.AR) "معلومات الذكر" else "Info",
+                    Icons.Outlined.Info,
+                    if (L10n.t(S.Done) == "تم") "معلومات الذكر" else "Info",
                     tint = if (showFadl) cs.primary else cs.onSurfaceVariant,
-                    modifier = Modifier.size(40.dp).clip(CircleShape).clickable { showFadl = !showFadl }.padding(8.dp)
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(CircleShape)
+                        .clickable { showFadl = !showFadl }
+                        .padding(8.dp)
                 )
             }
             Icon(
-                if (favorite) Icons.Default.Star else Icons.Outlined.StarBorder,
-                com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites),
+                if (favorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                "المفضلة",
                 tint = if (favorite) Color(0xFFFFC107) else cs.onSurfaceVariant,
-                modifier = Modifier.size(40.dp).clip(CircleShape).clickable(onClick = onFavorite).padding(8.dp)
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape)
+                    .clickable(onClick = onFavorite)
+                    .padding(8.dp)
             )
         }
-        if (showFadl && item.fadl.isNotBlank()) {
-            Spacer(Modifier.height(10.dp))
-            Text(item.fadl, style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
-        }
-        val meta = listOf(item.source, item.hokm).filter { it.isNotBlank() }.joinToString(" · ")
-        if (meta.isNotBlank()) {
-            Spacer(Modifier.height(10.dp))
-            Text(meta, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+        androidx.compose.animation.AnimatedVisibility(
+            visible = showFadl && hasNotes,
+            enter = androidx.compose.animation.expandVertically(androidx.compose.animation.core.tween(260)) + androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(260)),
+            exit = androidx.compose.animation.shrinkVertically(androidx.compose.animation.core.tween(220)) + androidx.compose.animation.fadeOut(androidx.compose.animation.core.tween(180))
+        ) {
+            Column {
+                if (item.fadl.isNotBlank()) {
+                    Spacer(Modifier.height(10.dp))
+                    Text(item.fadl, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
+                }
+                if (meta.isNotBlank()) {
+                    Spacer(Modifier.height(10.dp))
+                    Text(meta, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
+                }
+            }
         }
     }
 }
-
-// ---- ViewModel wrappers ----
 
 @Composable
 fun HisnListScreen(
@@ -280,13 +323,18 @@ fun HisnListScreen(
     val query by viewModel.query.collectAsStateWithLifecycle()
     val only by viewModel.onlyFavorites.collectAsStateWithLifecycle()
     val state = HisnListState(
-        chapters, counts, favs.filter { it.itemId == 0 }.map { it.chapterId }.toSet(), read, query, only
+        chapters,
+        counts,
+        favs.filter { it.itemId == 0 }.map { it.chapterId }.toSet(),
+        read,
+        query,
+        only
     )
     HisnListContent(
         state = state,
         items = items,
-        onQuery = viewModel::setQuery,
-        onOnlyFavorites = viewModel::setOnlyFavorites,
+        onQuery = { viewModel.setQuery(it) },
+        onOnlyFavorites = { viewModel.setOnlyFavorites(it) },
         onOpen = onOpen,
         onToggleFavorite = { viewModel.toggleChapterFavorite(it.id) },
         onMenu = onMenu
@@ -299,18 +347,20 @@ fun HisnChapterScreen(
     viewModel: HisnViewModel,
     onBack: () -> Unit,
     onAddedTitles: Set<String> = emptySet(),
-    onAddToMyAzkar: (title: String, content: String) -> Unit
+    onAddToMyAzkar: (String, String) -> Unit
 ) {
     val chapters by viewModel.chapters.collectAsStateWithLifecycle()
     val all by viewModel.allItems.collectAsStateWithLifecycle()
     val favs by viewModel.favorites.collectAsStateWithLifecycle()
     val chapter = chapters.firstOrNull { it.id == chapterId } ?: return
     val items = remember(all, chapterId) { all.filter { it.chapterId == chapterId } }
+    val favoriteChapter = favs.any { it.chapterId == chapterId && it.itemId == 0 }
+    val favoriteItemIds = favs.filter { it.chapterId == chapterId && it.itemId != 0 }.map { it.itemId }.toSet()
     HisnChapterContent(
         chapter = chapter,
         items = items,
-        favoriteChapter = favs.any { it.chapterId == chapterId && it.itemId == 0 },
-        favoriteItemIds = favs.filter { it.chapterId == chapterId && it.itemId != 0 }.map { it.itemId }.toSet(),
+        favoriteChapter = favoriteChapter,
+        favoriteItemIds = favoriteItemIds,
         onBack = onBack,
         onToggleChapterFavorite = { viewModel.toggleChapterFavorite(chapterId) },
         onToggleItemFavorite = { viewModel.toggleItemFavorite(chapterId, it.id) },

@@ -101,7 +101,7 @@ class PrayerAlertActivity : ComponentActivity() {
     private fun startAlertEffects() {
         val prefs = FajrPreferences(this)
         try {
-            val tone = if (prayer in 0..5) PrayerAlertStore.INSTANCE.effectiveTone(this, prayer) else ""
+            val tone = if (prayer in 0..5) PrayerAlertStore.effectiveTone(this, prayer) else ""
             val uri = if (tone.isBlank()) RingtoneHelper(this).getValidRingtoneUri(prefs) else android.net.Uri.parse(tone)
             val volume = prefs.alarmVolume / 100.0f
             val mp = MediaPlayer()
@@ -115,7 +115,7 @@ class PrayerAlertActivity : ComponentActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        val vibrate = if (prayer in 0..5) PrayerAlertStore.INSTANCE.effectiveVibration(this, prayer) else prefs.isVibrationEnabled
+        val vibrate = if (prayer in 0..5) PrayerAlertStore.effectiveVibration(this, prayer) else prefs.isVibrationEnabled
         if (vibrate) {
             try {
                 vibrator = if (Build.VERSION.SDK_INT >= 31) {

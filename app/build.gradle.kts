@@ -1,72 +1,73 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.devtools.ksp)
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.compose)
+  alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
-    namespace = "com.example"
-    compileSdk = 36
+  namespace = "com.example"
+  compileSdk { version = release(36) { minorApiLevel = 1 } }
 
-    defaultConfig {
-        applicationId = "com.wathakker.app.compare"
-        minSdk = 23
-        targetSdk = 36
-        versionCode = 80
-        versionName = "3.4.2"
-    }
+  defaultConfig {
+    applicationId = "com.wathakker.app.compare"
+    minSdk = 23
+    targetSdk = 36
+    versionCode = 81
+    versionName = "3.4.2"
+  }
 
-    signingConfigs {
-        create("morphe") {
-            val ks = System.getenv("MORPHE_KEYSTORE_FILE")
-            if (ks != null) {
-                storeFile = file(ks)
-                storePassword = System.getenv("MORPHE_STORE_PASSWORD")
-                keyAlias = System.getenv("MORPHE_KEY_ALIAS")
-                keyPassword = System.getenv("MORPHE_KEY_PASSWORD")
-            }
-        }
+  signingConfigs {
+    create("debugConfig") {
+      storeFile = file("${System.getProperty("user.home")}/.android/debug.keystore")
+      storePassword = "android"
+      keyAlias = "androiddebugkey"
+      keyPassword = "android"
     }
+  }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            isShrinkResources = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            if (System.getenv("MORPHE_KEYSTORE_FILE") != null) signingConfig = signingConfigs.getByName("morphe")
-        }
+  buildTypes {
+    release {
+      isMinifyEnabled = false
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    buildFeatures { compose = true }
-    testOptions { unitTests.isIncludeAndroidResources = true }
+    debug { signingConfig = signingConfigs.getByName("debugConfig") }
+  }
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+  buildFeatures {
+    buildConfig = true
+  }
+  lint { abortOnError = false }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+  options.compilerArgs.addAll(listOf("-Xmaxerrs", "200000", "-Xmaxwarns", "50", "-Xlint:none"))
 }
 
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2025.10.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material:material-icons-core")
-    implementation("androidx.compose.material:material-icons-extended")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.compose.animation:animation")
-    implementation("androidx.core:core-ktx:1.18.0")
-    implementation("androidx.activity:activity-compose:1.10.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.4")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.9.4")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
-    implementation("androidx.navigation:navigation-compose:2.8.9")
-    implementation("androidx.room:room-runtime:2.7.0")
-    implementation("androidx.room:room-ktx:2.7.0")
-    ksp("androidx.room:room-compiler:2.7.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
-    implementation("dev.chrisbanes.haze:haze:1.7.0")
-    implementation("com.google.android.gms:play-services-wearable:19.0.0")
-    implementation("androidx.profileinstaller:profileinstaller:1.4.1")
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.robolectric:robolectric:4.15.1")
+  ksp(libs.androidx.room.compiler)
+  implementation(platform("androidx.compose:compose-bom:${providers.gradleProperty("composeBom").getOrElse("2025.09.00")}"))
+  implementation(libs.androidx.activity.compose)
+  implementation(libs.androidx.compose.material.icons.core)
+  implementation(libs.androidx.compose.material.icons.extended)
+  implementation(libs.androidx.compose.material3)
+  implementation(libs.androidx.compose.ui)
+  implementation(libs.androidx.compose.ui.graphics)
+  implementation(libs.androidx.compose.ui.tooling.preview)
+  implementation(libs.androidx.core.ktx)
+  implementation(libs.androidx.lifecycle.runtime.compose)
+  implementation(libs.androidx.lifecycle.runtime.ktx)
+  implementation(libs.androidx.lifecycle.viewmodel.compose)
+  implementation(libs.androidx.navigation.compose)
+  implementation(libs.androidx.room.ktx)
+  implementation(libs.androidx.room.runtime)
+  implementation(libs.kotlinx.coroutines.android)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(libs.okhttp)
+  implementation("androidx.autofill:autofill:1.1.0")
+  implementation("com.google.android.gms:play-services-wearable:19.0.0")
+  implementation("androidx.profileinstaller:profileinstaller:1.4.1")
+  implementation("dev.chrisbanes.haze:haze:1.6.0")
 }

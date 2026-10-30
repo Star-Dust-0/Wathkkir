@@ -1,39 +1,64 @@
 package com.example.ui.screens
+import com.example.utils.plainClickable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Edit
+import androidx.compose.material.icons.outlined.MoreVert
 import androidx.compose.material.icons.outlined.Schedule
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.StarBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.Dhikr
 import com.example.data.Tag
-import com.example.ui.oneui.*
+import com.example.ui.oneui.oneUIBorderColor
+import com.example.ui.oneui.oneUIFrosted
+import com.example.ThemeSettings
+import com.example.ui.oneui.FrostSpec
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIChip
+import com.example.ui.oneui.OneUIEmptyState
+import com.example.ui.oneui.OneUIIconAction
+import com.example.ui.oneui.OneUIMenu
+import com.example.ui.oneui.OneUIMenuItem
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.OneUISearchField
+import com.example.ui.oneui.OneUISwitch
+import com.example.ui.oneui.azkarCount
+import com.example.ui.oneui.parseColorSafe
 import com.example.ui.viewmodel.MainViewModel
-import com.example.utils.formatTimeStr12h
-
-class DhikrDialogState {
-    var times by mutableStateOf<Dhikr?>(null)
-    var edit by mutableStateOf<Dhikr?>(null)
-}
+import com.example.utils.DateTimeUtilsKt
 
 @Composable
 fun DhikrDialogsHost(
@@ -42,28 +67,30 @@ fun DhikrDialogsHost(
     allTags: List<Tag>,
     tagsMap: Map<Int, List<Tag>>
 ) {
-    state.times?.let { dhikr ->
+    val times = state.times
+    if (times != null) {
         DhikrMultipleTimesDialog(
-            dhikr = dhikr,
+            dhikr = times,
             onDismiss = { state.times = null },
             onConfirm = { newTimes ->
-                viewModel.updateTimes(dhikr, newTimes)
+                viewModel.updateTimes(times, newTimes)
                 state.times = null
             }
         )
     }
-    state.edit?.let { dhikr ->
-        val currentTagIds = (tagsMap[dhikr.id] ?: emptyList()).map { it.tagId }
+    val edit = state.edit
+    if (edit != null) {
+        val tagIds = (tagsMap[edit.id] ?: emptyList()).map { it.tagId }
         DhikrEditDialog(
-            dhikr = dhikr,
+            dhikr = edit,
             allTags = allTags,
-            initialTagIds = currentTagIds,
+            initialTagIds = tagIds,
             onDismiss = { state.edit = null },
-            onConfirm = { newTitle, newContent, tagIds ->
-                viewModel.updateDhikrWithTags(dhikr, newTitle, newContent, tagIds)
+            onConfirm = { newTitle, newContent, ids ->
+                viewModel.updateDhikrWithTags(edit, newTitle, newContent, ids)
                 state.edit = null
             },
-            onCreateTag = { viewModel.addTag(it, "#008080") }
+            onCreateTag = { viewModel.addTag(it, "#008080", null) }
         )
     }
 }
@@ -73,28 +100,37 @@ fun filterDhikr(
     query: String,
     selectedTag: Tag?,
     tagsMap: Map<Int, List<Tag>>
-): List<Dhikr> = all.filter { dhikr ->
-    val tags = tagsMap[dhikr.id] ?: emptyList()
-    val matchesTag = selectedTag == null || tags.any { it.tagId == selectedTag.tagId }
+): List<Dhikr> {
     val q = query.trim()
-    val matchesQuery = q.isBlank() ||
+    return all.filter { dhikr ->
+        val tags = tagsMap[dhikr.id] ?: emptyList()
+        val tagOk = selectedTag == null || tags.any { it.tagId == selectedTag.tagId }
+        val queryOk = q.isBlank() ||
             dhikr.title.contains(q, ignoreCase = true) ||
             dhikr.content.contains(q, ignoreCase = true) ||
             tags.any { it.name.contains(q, ignoreCase = true) }
-    matchesTag && matchesQuery
+        tagOk && queryOk
+    }
 }
 
 @Composable
-fun AzkarListScreen(viewModel: MainViewModel, onAdd: () -> Unit, onMenu: (() -> Unit)? = null) {
+fun AzkarListScreen(
+    viewModel: MainViewModel,
+    onAdd: () -> Unit,
+    onMenu: (() -> Unit)? = null
+) {
     val allDhikr by viewModel.allDhikr.collectAsStateWithLifecycle()
     val allTags by viewModel.allTags.collectAsStateWithLifecycle()
     val dhikrsWithTags by viewModel.dhikrsWithTags.collectAsStateWithLifecycle()
     val selectedTag by viewModel.selectedTag.collectAsStateWithLifecycle()
     val query by viewModel.searchQuery.collectAsStateWithLifecycle()
     val dialogs = remember { DhikrDialogState() }
-    val tagsMap = remember(dhikrsWithTags) { dhikrsWithTags.associate { it.dhikr.id to it.tags } }
-    val filtered = remember(allDhikr, query, selectedTag, tagsMap) { filterDhikr(allDhikr, query, selectedTag, tagsMap) }
-
+    val tagsMap = remember(dhikrsWithTags) {
+        dhikrsWithTags.associate { it.dhikr.id to it.tags }
+    }
+    val filtered = remember(allDhikr, query, selectedTag, tagsMap) {
+        filterDhikr(allDhikr, query, selectedTag, tagsMap)
+    }
     AzkarListContent(
         dhikrs = filtered,
         totalCount = allDhikr.size,
@@ -134,37 +170,48 @@ fun AzkarListContent(
     onMenu: (() -> Unit)? = null
 ) {
     OneUIScreen(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.AzkarTab),
+        title = "الأذكار",
         subtitle = azkarCount(totalCount),
         onMenu = onMenu,
-        actions = {
-            OneUIIconAction(Icons.Default.Add, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.AddDhikr), onAdd)
-            OneUIIconAction(Icons.Default.Settings, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") })
-        }
+        actions = { OneUIIconAction(Icons.Outlined.Add, "إضافة ذكر", onAdd) }
     ) {
-        item(key = "search") { OneUISearchField(query, onQuery, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SearchAzkar)) }
+        item(key = "search") {
+            OneUISearchField(query, onQuery, "ابحث عن ذكر أو تصنيف")
+        }
         if (allTags.isNotEmpty()) {
             item(key = "chips") {
-                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                    item { OneUIChip(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.All), selectedTag == null, { onSelectTag(null) }) }
+                LazyRow(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    item {
+                        OneUIChip("الكل", selectedTag == null, { onSelectTag(null) })
+                    }
                     items(allTags, key = { it.tagId }) { tag ->
-                        val sel = selectedTag?.tagId == tag.tagId
-                        OneUIChip(tag.name, sel, { onSelectTag(if (sel) null else tag) }, dot = parseColorSafe(tag.colorHex))
+                        val selected = selectedTag?.tagId == tag.tagId
+                        OneUIChip(
+                            tag.name, selected,
+                            { onSelectTag(if (selected) null else tag) },
+                            dot = parseColorSafe(tag.colorHex)
+                        )
                     }
                 }
             }
         }
         if (dhikrs.isEmpty()) {
             item {
-                OneUIEmptyState(
-                    if (query.isBlank() && selectedTag == null) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoAzkar)
-                    else if (query.isBlank()) "لا توجد أذكار تحت تصنيف \"${selectedTag?.name}\""
-                    else "لا توجد نتائج تطابق \"$query\"",
-                    Icons.Default.Search
-                )
+                val text = when {
+                    query.isBlank() && selectedTag == null -> "لا توجد أذكار"
+                    query.isBlank() -> "لا توجد أذكار تحت تصنيف \"${selectedTag?.name}\""
+                    else -> "لا توجد نتائج تطابق \"$query\""
+                }
+                OneUIEmptyState(text, Icons.Outlined.Search)
             }
         } else {
-            dhikrCards(dhikrs, tagsMap, onToggleEnabled, onToggleFavorite, onClickTimes, onEdit, onDelete, onSelectTag, selectedTag)
+            dhikrCards(
+                dhikrs, tagsMap, onToggleEnabled, onToggleFavorite, onClickTimes, onEdit, onDelete,
+                onSelectTag, selectedTag
+            )
         }
     }
 }
@@ -177,19 +224,20 @@ fun LazyListScope.dhikrCards(
     onClickTimes: (Dhikr) -> Unit,
     onEdit: (Dhikr) -> Unit,
     onDelete: (Dhikr) -> Unit,
-    onSelectTag: ((Tag?) -> Unit)? = null,
+    onTagClick: ((Tag?) -> Unit)? = null,
     selectedTag: Tag? = null
 ) {
-    items(dhikrs, key = { "d${it.id}" }) { dhikr ->
+    items(dhikrs, key = { it.id }) { dhikr ->
+        val tags = tagsMap[dhikr.id] ?: emptyList()
         DhikrItemCard(
             dhikr = dhikr,
-            tags = tagsMap[dhikr.id] ?: emptyList(),
+            tags = tags,
             onToggleEnabled = { onToggleEnabled(dhikr) },
             onToggleFavorite = { onToggleFavorite(dhikr) },
             onClickTimes = { onClickTimes(dhikr) },
             onEditClick = { onEdit(dhikr) },
             onDeleteClick = { onDelete(dhikr) },
-            onTagClick = onSelectTag?.let { f -> { tag: Tag -> f(if (selectedTag?.tagId == tag.tagId) null else tag) } }
+            onTagClick = if (onTagClick != null) { tag -> onTagClick(tag) } else null
         )
     }
 }
@@ -203,78 +251,97 @@ fun DhikrItemCard(
     onClickTimes: () -> Unit,
     onEditClick: () -> Unit,
     onDeleteClick: () -> Unit,
-    onTagClick: ((Tag) -> Unit)? = null,
+    onTagClick: ((Tag) -> Unit)? = null
 ) {
     val cs = MaterialTheme.colorScheme
     var menu by remember { mutableStateOf(false) }
-    OneUICard(padding = PaddingValues(start = 18.dp, end = 18.dp, top = 16.dp, bottom = 10.dp)) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                dhikr.title,
-                style = MaterialTheme.typography.titleMedium,
-                color = cs.onSurface,
-                modifier = Modifier.weight(1f)
-            )
-            Spacer(Modifier.width(12.dp))
-            OneUISwitch(dhikr.isEnabled, { onToggleEnabled() })
-        }
-        Spacer(Modifier.height(4.dp))
-        val times = dhikr.reminderTimes.joinToString("، ") { formatTimeStr12h(it) }
+    val enabled = dhikr.isEnabled
+    val favorite = dhikr.isFavorite
+    OneUICard(padding = PaddingValues(18.dp, 16.dp, 18.dp, 10.dp)) {
         Row(
-            Modifier.clip(RoundedCornerShape(8.dp)).clickable(onClick = onClickTimes).padding(vertical = 4.dp),
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                Icons.Outlined.Schedule, null,
-                tint = if (dhikr.isEnabled) cs.primary else cs.onSurfaceVariant,
-                modifier = Modifier.size(16.dp)
-            )
-            Spacer(Modifier.width(6.dp))
             Text(
-                times,
-                style = MaterialTheme.typography.bodySmall,
-                color = if (dhikr.isEnabled) cs.primary else cs.onSurfaceVariant
+                dhikr.title,
+                modifier = Modifier.weight(1f),
+                color = cs.onSurface,
+                style = MaterialTheme.typography.titleMedium
             )
+            Spacer(Modifier.width(12.dp))
+            OneUISwitch(enabled, { onToggleEnabled() })
+        }
+        Spacer(Modifier.height(4.dp))
+        val times = dhikr.reminderTimes.joinToString("، ") { DateTimeUtilsKt.formatTimeStr12h(it) }
+        Row(
+            modifier = Modifier
+                .clip(RoundedCornerShape(8.dp))
+                .plainClickable(onClick = onClickTimes)
+                .padding(vertical = 4.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            val tint = if (enabled) cs.primary else cs.onSurfaceVariant
+            Icon(Icons.Outlined.Schedule, null, modifier = Modifier.size(16.dp), tint = tint)
+            Spacer(Modifier.width(6.dp))
+            Text(times, color = tint, style = MaterialTheme.typography.bodySmall)
         }
         Spacer(Modifier.height(10.dp))
         Box(
-            Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(cs.surfaceVariant).padding(14.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .oneUIFrosted(RoundedCornerShape(16.dp), FrostSpec(cs.surfaceVariant, if (ThemeSettings.isDark()) 0.50f else 0.62f, oneUIBorderColor()), 16)
+                .padding(14.dp)
         ) {
-            Text(dhikr.content, style = MaterialTheme.typography.bodyLarge, color = cs.onSurface)
+            Text(dhikr.content, color = cs.onSurface, style = MaterialTheme.typography.bodyLarge)
         }
         Row(
-            Modifier.fillMaxWidth().padding(top = 6.dp),
+            modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Row(Modifier.weight(1f), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                tags.take(3).forEach { tag ->
+            Row(
+                modifier = Modifier.weight(1f),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                tags.forEach { tag ->
                     Row(
-                        Modifier.clip(CircleShape)
+                        modifier = Modifier
+                            .clip(CircleShape)
                             .then(if (onTagClick != null) Modifier.clickable { onTagClick(tag) } else Modifier)
                             .padding(vertical = 6.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Box(Modifier.size(8.dp).clip(CircleShape).background(parseColorSafe(tag.colorHex)))
+                        Box(
+                            Modifier.size(8.dp).clip(CircleShape).background(parseColorSafe(tag.colorHex))
+                        )
                         Spacer(Modifier.width(5.dp))
-                        Text(tag.name, style = MaterialTheme.typography.bodySmall, color = cs.onSurfaceVariant)
+                        Text(tag.name, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }
             Icon(
-                if (dhikr.isFavorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
-                com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites),
-                tint = if (dhikr.isFavorite) Color(0xFFFFC107) else cs.onSurfaceVariant,
-                modifier = Modifier.size(44.dp).clip(CircleShape).clickable(onClick = onToggleFavorite).padding(10.dp)
+                if (favorite) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                "المفضلة",
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .clickable(onClick = onToggleFavorite)
+                    .padding(10.dp),
+                tint = if (favorite) com.example.ui.theme.OneUIUpcomingAmber else cs.onSurfaceVariant
             )
             Box {
                 Icon(
-                    Icons.Default.MoreVert, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Options), tint = cs.onSurfaceVariant,
-                    modifier = Modifier.size(44.dp).clip(CircleShape).clickable { menu = true }.padding(10.dp)
+                    Icons.Outlined.MoreVert,
+                    "خيارات",
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .clickable { menu = true }
+                        .padding(10.dp),
+                    tint = cs.onSurfaceVariant
                 )
                 OneUIMenu(menu, { menu = false }) {
-                    OneUIMenuItem(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.EditDhikrTags), { menu = false; onEditClick() }, Icons.Outlined.Edit)
-                    OneUIMenuItem(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReminderTimes), { menu = false; onClickTimes() }, Icons.Outlined.Schedule)
-                    OneUIMenuItem(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Delete), { menu = false; onDeleteClick() }, Icons.Outlined.Delete, destructive = true)
+                    OneUIMenuItem("تعديل الذكر والتصنيفات", { menu = false; onEditClick() }, Icons.Outlined.Edit)
+                    OneUIMenuItem("أوقات التنبيه", { menu = false; onClickTimes() }, Icons.Outlined.Schedule)
+                    OneUIMenuItem("حذف", { menu = false; onDeleteClick() }, Icons.Outlined.Delete, true)
                 }
             }
         }

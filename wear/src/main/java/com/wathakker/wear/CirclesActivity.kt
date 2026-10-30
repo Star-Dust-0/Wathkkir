@@ -13,26 +13,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import kotlinx.coroutines.delay
 
-/** Complication tap target. Draws the original five animated circles over the watch face. */
+/** Standalone prayer circles screen, opened by the complication. 80% dark scrim over whatever is behind it. */
 class CirclesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         LocationSync.refresh(this)
-        Settings.load(this)
         setContent {
+            val ctx = LocalContext.current
             var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
-            LaunchedEffect(Unit) {
-                while (true) { now = System.currentTimeMillis(); delay(1000) }
-            }
-            val state = remember(now / 20000) { Prayer.compute(this@CirclesActivity, now) }
-            // The original entry point fixes the circle order to RTL regardless of language.
+            LaunchedEffect(Unit) { while (true) { now = System.currentTimeMillis(); delay(1000) } }
+            val state = remember(now / 20000) { Prayer.compute(ctx, now) }
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
                 BoxWithConstraints(Modifier.fillMaxSize()) {
-                    CirclesPage(state, now, maxWidth.value, true, Color.Black.copy(alpha = .8f))
+                    CirclesPage(state, now, maxWidth.value, true, Color.Black.copy(alpha = 0.8f))
                 }
             }
         }

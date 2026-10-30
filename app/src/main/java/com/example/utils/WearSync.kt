@@ -18,33 +18,33 @@ object WearSync {
     /** Time of the last successful hand-off to the Data Layer on this phone; 0 if never. */
     fun lastSyncMillis(c: Context): Long = c.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getLong("last_sync", 0L)
 
-    internal fun payload(app: Context): com.google.android.gms.wearable.DataMap {
-        val p = FajrPreferences(app)
-        return com.google.android.gms.wearable.DataMap().apply {
-            putDouble("lat", p.latitude)
-            putDouble("lon", p.longitude)
-            putString("city", p.cityName)
-            putBoolean("h24", is24h(app))
-            putString("lang", app.getSharedPreferences("app_prefs", Context.MODE_PRIVATE).getString("language", "ar") ?: "ar")
-            putLong("ts", System.currentTimeMillis())
-        }
-    }
-
-    internal fun signature(data: com.google.android.gms.wearable.DataMap): String =
-        "${data.getDouble("lat")}|${data.getDouble("lon")}|${data.getString("city")}|${data.getBoolean("h24")}|${data.getString("lang")}"
-
     fun push(context: Context, onDone: ((Boolean) -> Unit)? = null) {
         try {
             val app = context.applicationContext
-            val data = payload(app)
-            val sig = signature(data)
+            val p = FajrPreferences(app)
+            val lat = p.latitude
+            val lon = p.longitude
+            val city = p.cityName
+            val h24 = is24h(app)
+            val lang = app.getSharedPreferences("app_prefs", Context.MODE_PRIVATE).getString("language", "ar") ?: "ar"
+            // Skip the urgent Data Layer hand-off when nothing changed; the payload used to carry an
+            // ever-changing timestamp, which forced an urgent sync on every app open.
+            val signature = "$lat|$lon|$city|$h24|$lang"
             val prefs = app.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-            if (prefs.getString("last_sig", null) == sig) { onDone?.invoke(true); return }
+            if (prefs.getString("last_sig", null) == signature) {
+                onDone?.invoke(true)
+                return
+            }
             val req = PutDataMapRequest.create("/wathakker/location")
-            req.dataMap.putAll(data)
+            req.dataMap.putDouble("lat", lat)
+            req.dataMap.putDouble("lon", lon)
+            req.dataMap.putString("city", city)
+            req.dataMap.putBoolean("h24", h24)
+            req.dataMap.putString("lang", lang)
+            req.dataMap.putLong("ts", System.currentTimeMillis())
             Wearable.getDataClient(app).putDataItem(req.asPutDataRequest().setUrgent())
                 .addOnSuccessListener {
-                    app.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putLong("last_sync", System.currentTimeMillis()).putString("last_sig", sig).apply()
+                    prefs.edit().putLong("last_sync", System.currentTimeMillis()).putString("last_sig", signature).apply()
                     onDone?.invoke(true)
                 }
                 .addOnFailureListener { onDone?.invoke(false) }

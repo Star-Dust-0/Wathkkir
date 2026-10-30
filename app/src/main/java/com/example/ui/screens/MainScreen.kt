@@ -1,8 +1,10 @@
 package com.example.ui.screens
+import androidx.compose.material.icons.outlined.DateRange
+import androidx.compose.material.icons.outlined.Explore
+import androidx.compose.material.icons.outlined.AdsClick
+import androidx.compose.material.icons.outlined.CalendarMonth
+import androidx.compose.foundation.background
 
-import androidx.compose.animation.core.CubicBezierEasing
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
@@ -17,8 +19,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.Label
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Alarm
-import androidx.compose.material.icons.outlined.CalendarMonth
-import androidx.compose.material.icons.outlined.Explore
 import androidx.compose.material.icons.outlined.BarChart
 import androidx.compose.material.icons.outlined.FormatListBulleted
 import androidx.compose.material.icons.outlined.Info
@@ -56,33 +56,36 @@ import androidx.navigation.navArgument
 import com.example.R
 import com.example.fajr.ui.FajrViewModel
 import com.example.lockwidgets.HomeWidgets
+import com.example.prayer.PrayerSkyGlass
 import com.example.prayer.PrayerTimesScreen
 import com.example.ui.hisn.HisnChapterScreen
 import com.example.ui.hisn.HisnListScreen
 import com.example.ui.hisn.HisnViewModel
 import com.example.ui.oneui.BottomTab
 import com.example.ui.oneui.HeaderTools
-import androidx.compose.material.icons.outlined.TouchApp
-import com.example.fajr.ui.FajrSettingsScreen
 import com.example.ui.oneui.LocalHazeState
 import com.example.ui.oneui.OneUIBottomBar
 import com.example.ui.oneui.OneUIDrawer
 import com.example.ui.oneui.OneUIDrawerItem
 import com.example.ui.viewmodel.MainViewModel
 import dev.chrisbanes.haze.rememberHazeState
+import dev.chrisbanes.haze.hazeSource
 import kotlinx.coroutines.launch
 import com.example.ui.i18n.L10n
 import com.example.ui.i18n.S
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.core.CubicBezierEasing
 
 val oneUITabs: List<BottomTab> = listOf(
     BottomTab("prayer", L10n.t(S.PrayerTab)) { c ->
         Icon(Icons.Outlined.Mosque, null, Modifier.size(24.dp), tint = c)
     },
-    BottomTab("hisn", L10n.t(S.HisnTab)) { c ->
-        Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(24.dp), tint = c)
-    },
     BottomTab("azkar", L10n.t(S.AzkarTab)) { c ->
         Icon(Icons.Outlined.FormatListBulleted, null, Modifier.size(24.dp), tint = c)
+    },
+    BottomTab("hisn", L10n.t(S.HisnTab)) { c ->
+        Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(24.dp), tint = c)
     },
     BottomTab("calendar", L10n.t(S.CalendarTab)) { c ->
         Icon(Icons.Outlined.CalendarMonth, null, Modifier.size(24.dp), tint = c)
@@ -94,10 +97,10 @@ val oneUIDrawerItems: List<OneUIDrawerItem> = listOf(
     OneUIDrawerItem("reminders", L10n.t(S.Reminders), Icons.Outlined.Notifications, Color(4293243989L)),
     OneUIDrawerItem("statistics", L10n.t(S.Stats), Icons.Outlined.BarChart, Color(4283289796L)),
     OneUIDrawerItem("tags", L10n.t(S.Tags), Icons.AutoMirrored.Outlined.Label, Color(4290617322L)),
-    OneUIDrawerItem("date_converter", L10n.t(S.HijriConvTitle), Icons.Outlined.CalendarMonth, Color(0xFF5998DC)),
-    OneUIDrawerItem("qibla", L10n.t(S.QiblaTitle), Icons.Outlined.Explore, Color(0xFF2196F3)),
-    OneUIDrawerItem("tasbeeh", L10n.t(S.TasbeehTab), Icons.Outlined.TouchApp, Color(4290617322L)),
-    OneUIDrawerItem("fajr_settings", L10n.t(S.FajrAlarm), Icons.Outlined.Alarm, Color(4293243989L)),
+    OneUIDrawerItem("hijri_converter", L10n.t(S.HijriConvTitle), Icons.Outlined.DateRange, Color(4284061916L)),
+    OneUIDrawerItem("qibla", L10n.t(S.QiblaTitle), Icons.Outlined.Explore, Color(4280391411L)),
+    OneUIDrawerItem("fajr_alarm", L10n.t(S.FajrAlarm), Icons.Outlined.Alarm, Color(0xFFE5B455)),
+    OneUIDrawerItem("tasbeeh", L10n.t(S.TasbeehTab), Icons.Outlined.AdsClick, Color(4290617322L)),
     OneUIDrawerItem("settings", L10n.t(S.Settings), Icons.Outlined.Settings, Color(4287669422L)),
     OneUIDrawerItem("about", L10n.t(S.About), Icons.Outlined.Info, Color(4287532691L))
 )
@@ -107,6 +110,13 @@ val oneUIDrawerItems: List<OneUIDrawerItem> = listOf(
 fun MainScreen(viewModel: MainViewModel) {
     val navController = rememberNavController()
     HeaderTools.setNav(navController)
+    val shortcutRoute = com.example.ui.ShortcutNav.route
+    androidx.compose.runtime.LaunchedEffect(shortcutRoute) {
+        if (shortcutRoute != null) {
+            com.example.ui.ShortcutNav.route = null
+            navController.navigate(shortcutRoute)
+        }
+    }
     val hazeState = rememberHazeState()
     val selectedDhikrNotif by viewModel.selectedDhikrFromNotification.collectAsStateWithLifecycle()
     val allTags by viewModel.allTags.collectAsStateWithLifecycle()
@@ -122,33 +132,49 @@ fun MainScreen(viewModel: MainViewModel) {
 
     CompositionLocalProvider(LocalHazeState provides hazeState) {
         Box(Modifier.fillMaxSize()) {
-            val slideDirState = rememberUpdatedState(if (LocalLayoutDirection.current == LayoutDirection.Rtl) -1 else 1)
+            // One UI platform page transition, frame-measured from three 90/120fps
+            // screen recordings of Samsung Settings on the owner's device:
+            //  - incoming page slides the full width in ~345ms (measured 333-355ms
+            //    across three samples), easing cubic-bezier(0.15, 0.5, 0.1, 0.9),
+            //    least-squares fit against all three videos (MSE 7e-6). No fade on it.
+            //  - outgoing page parallaxes to 25% width on its own faster curve:
+            //    ~120ms (measured 100-133ms), easing cubic-bezier(0.15, 0.0, 0.3, 0.85)
+            //  - outgoing page dims to ~73% brightness over ~75ms and holds
+            //  - back is the exact mirror; Navigation 2.8 seeks these transitions for
+            //    predictive back automatically (enableOnBackInvokedCallback is set).
+            //  - mirrored for RTL like the platform does.
+            val oneUiEase = CubicBezierEasing(0.15f, 0.5f, 0.1f, 0.9f)
+            val oneUiParallaxEase = CubicBezierEasing(0.15f, 0.0f, 0.3f, 0.85f)
+            val dirSign = if (LocalLayoutDirection.current == LayoutDirection.Rtl) -1 else 1
+            // 3.4: one full-screen blur source under the pages. The frosted bottom bar used to blur only the list
+            // that sat under it, so on wide pages (centred frame, two-pane Hisn) and mid-swipe the bar had no
+            // background where no list was drawn. This source always covers the whole screen.
+            Box(Modifier.fillMaxSize().hazeSource(hazeState).background(MaterialTheme.colorScheme.background)) {
             NavHost(
                 navController = navController,
                 startDestination = "tabs",
-                modifier = Modifier.fillMaxSize(),
-                // Original hu0/ut0: directional full-width enter and quarter-width exit.
                 enterTransition = {
-                    slideInHorizontally(tween(345, easing = CubicBezierEasing(0.15f,0.5f,0.1f,0.9f))) { it * slideDirState.value }
+                    slideInHorizontally(tween(345, easing = oneUiEase)) { it * dirSign }
                 },
                 exitTransition = {
-                    slideOutHorizontally(tween(120, easing = CubicBezierEasing(0.15f,0f,0.3f,0.85f))) { -it / 4 * slideDirState.value } +
+                    slideOutHorizontally(tween(120, easing = oneUiParallaxEase)) { -(it / 4) * dirSign } +
                         fadeOut(tween(75), targetAlpha = 0.73f)
                 },
                 popEnterTransition = {
-                    slideInHorizontally(tween(120, easing = CubicBezierEasing(0.15f,0f,0.3f,0.85f))) { -it / 4 * slideDirState.value } +
+                    slideInHorizontally(tween(120, easing = oneUiParallaxEase)) { -(it / 4) * dirSign } +
                         fadeIn(tween(75), initialAlpha = 0.73f)
                 },
                 popExitTransition = {
-                    slideOutHorizontally(tween(345, easing = CubicBezierEasing(0.15f,0.5f,0.1f,0.9f))) { it * slideDirState.value }
-                }
+                    slideOutHorizontally(tween(345, easing = oneUiEase)) { it * dirSign }
+                },
+                modifier = Modifier.fillMaxSize()
             ) {
                 composable("tabs") {
-                    val wide = false // original 3.4.2 keeps the floating bottom bar and swipe pager on large screens
+                    val wide = com.example.ui.oneui.isWideScreen()
                     val tabsContent: @Composable () -> Unit = {
                         HorizontalPager(state = pagerState, userScrollEnabled = !wide, modifier = Modifier.fillMaxSize()) { page ->
                             when (oneUITabs[page].route) {
-                                "calendar" -> if (com.example.ui.oneui.isTwoPane()) HijriCalendarScreen { drawerOpen = true } else com.example.ui.oneui.WideContentFrame { HijriCalendarScreen { drawerOpen = true } }
+                                "calendar" -> com.example.ui.oneui.WideContentFrame { HijriCalendarScreen { drawerOpen = true } }
                                 "prayer" -> PrayerTimesScreen(onQibla = { navController.navigate("qibla") }, onMenu = { drawerOpen = true }, onLocation = { navController.navigate("location_calc") })
                                 "hisn" -> if (com.example.ui.oneui.isTwoPane()) HisnTwoPane(
                                     hisnViewModel, viewModel,
@@ -200,7 +226,7 @@ fun MainScreen(viewModel: MainViewModel) {
                 composable(
                     "hisn/{id}",
                     arguments = listOf(navArgument("id") { type = NavType.IntType })
-                ) { entry -> run {
+                ) { entry -> com.example.ui.oneui.WideContentFrame {
                     val id = entry.arguments?.getInt("id") ?: 0
                     val addedDhikr by viewModel.allDhikr.collectAsStateWithLifecycle()
                     HisnChapterScreen(
@@ -219,14 +245,12 @@ fun MainScreen(viewModel: MainViewModel) {
                     SettingsScreen(
                         viewModel,
                         { navController.popBackStack() },
-                        { navController.navigate("fajr_settings") },
-                        { navController.navigate("location_calc") },
-                        { navController.navigate("optional_times") }
+                        onNavigateToLocation = { navController.navigate("location_calc") },
+                        onNavigateToOptionalTimes = { navController.navigate("optional_times") },
+                        onNavigateToHijriConverter = { navController.navigate("hijri_converter") },
+                        onNavigateToAbout = { navController.navigate("about") },
+                        onNavigateToWatch = { navController.navigate("watch_settings") }
                     )
-                }
-                framed("fajr_settings") {
-                    val fajrViewModel: FajrViewModel = viewModel()
-                    FajrAlarmSettingsScreen(fajrViewModel) { navController.popBackStack() }
                 }
                 framed("optional_times") {
                     com.example.prayer.OptionalTimesScreen { navController.popBackStack() }
@@ -234,19 +258,31 @@ fun MainScreen(viewModel: MainViewModel) {
                 framed("qibla") {
                     com.example.prayer.QiblaScreen { navController.popBackStack() }
                 }
+                framed("hijri_converter") {
+                    com.example.prayer.HijriConverterScreen { navController.popBackStack() }
+                }
                 framed("location_calc") {
                     val fajrViewModel: FajrViewModel = viewModel()
                     com.example.prayer.LocationCalculationScreen(fajrViewModel) { navController.popBackStack() }
                 }
+                framed("fajr_alarm") {
+                    val fajrAlarmVm: FajrViewModel = viewModel()
+                    FajrAlarmSettingsScreen(fajrAlarmVm) { navController.popBackStack() }
+                }
                 framed("watch_settings") { WatchSettingsScreen { navController.popBackStack() } }
-                framed("date_converter") { com.example.prayer.HijriConverterScreen { navController.popBackStack() } }
-                framed("tasbeeh") { TasbeehScreen(viewModel) { drawerOpen = true } }
+                framed("tasbeeh") { TasbeehScreen(viewModel) { navController.popBackStack() } }
                 framed("about") { AboutScreen { navController.popBackStack() } }
             }
-            if (isTab) {
+            }
+            // v3.2.0 glass system: over the prayer sky the bottom bar and the drawer
+            // use the same frost material as the cards; everywhere else they keep
+            // their default look.
+            val skyFrost = if (isTab && currentTabRoute == "prayer") PrayerSkyGlass.spec.value else null
+            if (isTab && !com.example.ui.oneui.isWideScreen()) {
                 OneUIBottomBar(
                     tabs = oneUITabs,
                     selectedRoute = currentTabRoute,
+                    frost = skyFrost,
                     onSelect = { tab ->
                         val i = oneUITabs.indexOf(tab)
                         if (i >= 0) scope.launch {
@@ -268,6 +304,7 @@ fun MainScreen(viewModel: MainViewModel) {
                     if (route != it) navController.navigate(it) { launchSingleTop = true }
                 },
                 onDismiss = { drawerOpen = false },
+                frost = skyFrost,
                 footer = {
                     val uri = LocalUriHandler.current
                     Text(
@@ -302,9 +339,6 @@ fun MainScreen(viewModel: MainViewModel) {
 }
 
 
-
-
-
 /** 3.4 wide screens: Hisn al-Muslim chapter list on one side, the open chapter on the other. */
 @Composable
 fun HisnTwoPane(hisnViewModel: HisnViewModel, viewModel: MainViewModel, onMenu: () -> Unit) {
@@ -314,7 +348,7 @@ fun HisnTwoPane(hisnViewModel: HisnViewModel, viewModel: MainViewModel, onMenu: 
         Box(Modifier.weight(0.42f).fillMaxSize()) {
             HisnListScreen(hisnViewModel, { chapter -> selected = chapter.id }, onMenu)
         }
-        Box(Modifier.weight(0.58f).fillMaxSize()) {
+        Box(Modifier.weight(0.58f).fillMaxSize().background(MaterialTheme.colorScheme.background)) {
             val id = selected
             if (id != null) {
                 HisnChapterScreen(

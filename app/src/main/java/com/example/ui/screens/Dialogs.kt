@@ -1,43 +1,69 @@
 package com.example.ui.screens
+import com.example.utils.plainClickable
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.data.Dhikr
 import com.example.data.Tag
-import com.example.ui.oneui.*
-import com.example.utils.formatTimeStr12h
+import com.example.ui.components.WheelTimePicker
+import com.example.ui.oneui.OneUIButton
+import com.example.ui.oneui.OneUIChip
+import com.example.ui.oneui.OneUIDialog
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUITextField
+import com.example.ui.oneui.parseColorSafe
+import com.example.utils.DateTimeUtilsKt
+import java.util.Locale
 
 @Composable
 fun DhikrAddDialog(
     allTags: List<Tag> = emptyList(),
     onDismiss: () -> Unit,
-    onConfirm: (title: String, content: String, times: List<String>, tagIds: List<Long>) -> Unit,
+    onConfirm: (String, String, List<String>, List<Long>) -> Unit,
     onCreateTag: ((String) -> Unit)? = null
 ) {
     var title by remember { mutableStateOf("") }
     var content by remember { mutableStateOf("") }
     var times by remember { mutableStateOf(listOf("09:00")) }
     val selected = remember { mutableStateListOf<Long>() }
+    val valid = title.isNotBlank() && content.isNotBlank() && times.isNotEmpty()
     OneUIDialog(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NewDhikr), onDismiss = onDismiss,
-        onConfirm = { if (title.isNotBlank() && content.isNotBlank() && times.isNotEmpty()) onConfirm(title.trim(), content.trim(), times, selected.toList()) },
-        confirmEnabled = title.isNotBlank() && content.isNotBlank() && times.isNotEmpty()
+        title = "ذكر جديد",
+        onDismiss = onDismiss,
+        onConfirm = {
+            if (valid) onConfirm(title.trim(), content.trim(), times, selected.toList())
+        },
+        confirmEnabled = valid
     ) {
         DhikrAddForm(title, { title = it }, content, { content = it }, allTags, selected, onCreateTag)
         TimesEditor(times) { times = it }
@@ -50,16 +76,20 @@ fun DhikrEditDialog(
     allTags: List<Tag> = emptyList(),
     initialTagIds: List<Long> = emptyList(),
     onDismiss: () -> Unit,
-    onConfirm: (title: String, content: String, tagIds: List<Long>) -> Unit,
+    onConfirm: (String, String, List<Long>) -> Unit,
     onCreateTag: ((String) -> Unit)? = null
 ) {
     var title by remember { mutableStateOf(dhikr.title) }
     var content by remember { mutableStateOf(dhikr.content) }
-    val selected = remember { mutableStateListOf<Long>().apply { addAll(initialTagIds) } }
+    val selected = remember { mutableStateListOf<Long>().also { it.addAll(initialTagIds) } }
+    val valid = title.isNotBlank() && content.isNotBlank()
     OneUIDialog(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.EditDhikr), onDismiss = onDismiss,
-        onConfirm = { if (title.isNotBlank() && content.isNotBlank()) onConfirm(title.trim(), content.trim(), selected.toList()) },
-        confirmEnabled = title.isNotBlank() && content.isNotBlank()
+        title = "تعديل الذكر",
+        onDismiss = onDismiss,
+        onConfirm = {
+            if (valid) onConfirm(title.trim(), content.trim(), selected.toList())
+        },
+        confirmEnabled = valid
     ) {
         DhikrAddForm(title, { title = it }, content, { content = it }, allTags, selected, onCreateTag)
     }
@@ -68,39 +98,63 @@ fun DhikrEditDialog(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ColumnScope.DhikrAddForm(
-    title: String, onTitle: (String) -> Unit,
-    content: String, onContent: (String) -> Unit,
-    allTags: List<Tag>, selected: MutableList<Long>,
+    title: String,
+    onTitle: (String) -> Unit,
+    content: String,
+    onContent: (String) -> Unit,
+    allTags: List<Tag>,
+    selected: MutableList<Long>,
     onCreateTag: ((String) -> Unit)?
 ) {
     val cs = MaterialTheme.colorScheme
     var showNew by remember { mutableStateOf(false) }
     var newName by remember { mutableStateOf("") }
-    OneUITextField(title, onTitle, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TitleLabel))
-    Spacer(Modifier.height(9.dp))
-    OneUITextField(content, onContent, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DhikrText), singleLine = false)
-    Spacer(Modifier.height(18.dp))
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Tags), style = MaterialTheme.typography.titleSmall, color = cs.onSurfaceVariant, modifier = Modifier.weight(1f))
+    OneUITextField(title, onTitle, "العنوان")
+    Spacer(modifier = Modifier.height(10.dp))
+    OneUITextField(content, onContent, "نص الذكر أو الدعاء", singleLine = false)
+    Spacer(modifier = Modifier.height(18.dp))
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text(
+            "التصنيفات",
+            modifier = Modifier.weight(1f),
+            color = cs.onSurfaceVariant,
+            style = MaterialTheme.typography.titleSmall
+        )
         if (onCreateTag != null) {
             Text(
-                if (showNew) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Cancel) else com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NewTag), style = MaterialTheme.typography.labelLarge, color = cs.primary,
-                modifier = Modifier.clip(MaterialTheme.shapes.small).clickable { showNew = !showNew }.padding(8.dp)
+                if (showNew) "إلغاء" else "تصنيف جديد",
+                modifier = Modifier
+                    .clip(MaterialTheme.shapes.large)
+                    .clickable { showNew = !showNew }
+                    .padding(8.dp),
+                color = cs.primary,
+                style = MaterialTheme.typography.labelLarge
             )
         }
     }
     if (showNew && onCreateTag != null) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            OneUITextField(newName, { newName = it }, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TagName), modifier = Modifier.weight(1f))
-            Spacer(Modifier.width(8.dp))
-            OneUIButton(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Add), { if (newName.isNotBlank()) { onCreateTag(newName.trim()); newName = ""; showNew = false } }, filled = true)
+            OneUITextField(newName, { newName = it }, "اسم التصنيف", modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.width(8.dp))
+            OneUIButton("إضافة", {
+                if (newName.isNotBlank()) {
+                    onCreateTag(newName.trim())
+                    newName = ""
+                    showNew = false
+                }
+            })
         }
-        Spacer(Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(8.dp))
     }
     SimpleFlowRow(spacing = 8.dp) {
         allTags.forEach { tag ->
             val on = selected.contains(tag.tagId)
-            OneUIChip(tag.name, on, { if (on) selected.remove(tag.tagId) else selected.add(tag.tagId) }, dot = parseColorSafe(tag.colorHex))
+            OneUIChip(
+                label = tag.name,
+                selected = on,
+                onClick = { if (on) selected.remove(tag.tagId) else selected.add(tag.tagId) },
+                dot = parseColorSafe(tag.colorHex)
+            )
         }
     }
 }
@@ -108,23 +162,28 @@ fun ColumnScope.DhikrAddForm(
 @Composable
 fun ColumnScope.TimesEditor(times: List<String>, onChange: (List<String>) -> Unit) {
     val cs = MaterialTheme.colorScheme
-    Spacer(Modifier.height(18.dp))
-    Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReminderTimes), style = MaterialTheme.typography.titleSmall, color = cs.onSurfaceVariant)
-    Spacer(Modifier.height(6.dp))
-    Column(Modifier.fillMaxWidth()) {
-        times.forEachIndexed { i, t ->
-            if (i > 0) OneUIDivider(inset = 56.dp)
-            TimeRow(t, { n -> onChange(times.toMutableList().also { it[i] = n }) }, { onChange(times.toMutableList().also { it.removeAt(i) }) })
-        }
-        if (times.isNotEmpty()) OneUIDivider(inset = 0.dp)
-        Row(
-            Modifier.fillMaxWidth().clickable { onChange(times + "12:00") }.padding(horizontal = 16.dp, vertical = 14.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Icon(Icons.Default.Add, null, tint = cs.primary, modifier = Modifier.size(22.dp))
-            Spacer(Modifier.width(12.dp))
-            Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.AddReminderTime), style = MaterialTheme.typography.bodyLarge, color = cs.primary)
-        }
+    Spacer(modifier = Modifier.height(18.dp))
+    Text("أوقات التنبيه", color = cs.onSurfaceVariant, style = MaterialTheme.typography.titleSmall)
+    Spacer(modifier = Modifier.height(6.dp))
+    times.forEachIndexed { i, t ->
+        if (i > 0) OneUIDivider(56.dp)
+        TimeRow(
+            timeStr = t,
+            onTimeChange = { n -> onChange(times.toMutableList().also { it[i] = n }) },
+            onDelete = { onChange(times.toMutableList().also { it.removeAt(i) }) }
+        )
+    }
+    if (times.isNotEmpty()) OneUIDivider(0.dp)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onChange(times + "12:00") }
+            .padding(horizontal = 16.dp, vertical = 14.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(Icons.Outlined.Add, contentDescription = null, tint = cs.primary, modifier = Modifier.size(22.dp))
+        Spacer(modifier = Modifier.width(12.dp))
+        Text("إضافة وقت تنبيه", color = cs.primary, style = MaterialTheme.typography.bodyLarge)
     }
 }
 
@@ -132,9 +191,13 @@ fun ColumnScope.TimesEditor(times: List<String>, onChange: (List<String>) -> Uni
 fun DhikrMultipleTimesDialog(dhikr: Dhikr, onDismiss: () -> Unit, onConfirm: (List<String>) -> Unit) {
     var times by remember { mutableStateOf(dhikr.reminderTimes) }
     OneUIDialog(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.RepeatReminder), onDismiss = onDismiss,
-        onConfirm = { if (times.isNotEmpty()) onConfirm(times) }, confirmEnabled = times.isNotEmpty()
-    ) { TimesEditor(times) { times = it } }
+        title = "تكرار التنبيه",
+        onDismiss = onDismiss,
+        onConfirm = { if (times.isNotEmpty()) onConfirm(times) },
+        confirmEnabled = times.isNotEmpty()
+    ) {
+        TimesEditor(times) { times = it }
+    }
 }
 
 @Composable
@@ -144,27 +207,47 @@ fun TimeRow(timeStr: String, onTimeChange: (String) -> Unit, onDelete: () -> Uni
     val parts = timeStr.split(":")
     val hour = parts.getOrNull(0)?.toIntOrNull() ?: 12
     val minute = parts.getOrNull(1)?.toIntOrNull() ?: 0
+    var h by remember(timeStr) { mutableStateOf(hour) }
+    var m by remember(timeStr) { mutableStateOf(minute) }
     Row(
-        Modifier.fillMaxWidth().clickable { showPicker = true }.padding(horizontal = 16.dp, vertical = 10.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .plainClickable { showPicker = true }
+            .padding(horizontal = 16.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(Icons.Outlined.Notifications, null, tint = cs.onSurfaceVariant, modifier = Modifier.size(22.dp))
-        Spacer(Modifier.width(12.dp))
-        Text(formatTimeStr12h(timeStr), style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, modifier = Modifier.weight(1f))
+        Icon(Icons.Outlined.Notifications, contentDescription = null, tint = cs.onSurfaceVariant, modifier = Modifier.size(22.dp))
+        Spacer(modifier = Modifier.width(12.dp))
+        Text(
+            DateTimeUtilsKt.formatTimeStr12h(timeStr),
+            modifier = Modifier.weight(1f),
+            color = cs.onSurface,
+            style = MaterialTheme.typography.bodyLarge
+        )
         Icon(
-            Icons.Outlined.Delete, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Delete), tint = cs.onSurfaceVariant,
-            modifier = Modifier.size(36.dp).clip(MaterialTheme.shapes.large).clickable(onClick = onDelete).padding(7.dp)
+            Icons.Outlined.Delete, "حذف",
+            modifier = Modifier
+                .size(36.dp)
+                .clip(MaterialTheme.shapes.large)
+                .clickable(onClick = onDelete)
+                .padding(7.dp),
+            tint = cs.onSurfaceVariant
         )
     }
     if (showPicker) {
-        var h by remember { mutableStateOf(hour) }
-        var m by remember { mutableStateOf(minute) }
         OneUIDialog(
-            title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReminderTime), onDismiss = { showPicker = false },
-            onConfirm = { onTimeChange(String.format(java.util.Locale.US, "%02d:%02d", h, m)); showPicker = false }
+            title = "وقت التنبيه",
+            onDismiss = { showPicker = false },
+            onConfirm = {
+                onTimeChange(String.format(Locale.US, "%02d:%02d", h, m))
+                showPicker = false
+            }
         ) {
-            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                com.example.ui.components.WheelTimePicker(initialHour24 = hour, initialMinute = minute, onTimeSelected = { a, b -> h = a; m = b })
+            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                WheelTimePicker(hour, minute, { a, b ->
+                    h = a
+                    m = b
+                })
             }
         }
     }
@@ -172,50 +255,28 @@ fun TimeRow(timeStr: String, onTimeChange: (String) -> Unit, onDelete: () -> Uni
 
 @Composable
 fun DhikrDetailDialog(dhikr: Dhikr, onDismiss: () -> Unit, onMarkAsRead: (() -> Unit)? = null) {
-    val cs = MaterialTheme.colorScheme
     OneUIDialog(
-        title = dhikr.title, onDismiss = onDismiss,
-        onConfirm = onMarkAsRead?.let { { it(); onDismiss() } },
-        confirmText = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReadDone), dismissText = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Close)
+        title = dhikr.title,
+        onDismiss = onDismiss,
+        onConfirm = onMarkAsRead?.let { cb ->
+            {
+                cb()
+                onDismiss()
+            }
+        },
+        confirmText = "تمت القراءة",
+        dismissText = "إغلاق"
     ) {
-        OneUICard(color = cs.surface, padding = PaddingValues(16.dp)) {
-            Text(dhikr.content, style = MaterialTheme.typography.bodyLarge, color = cs.onSurface)
-        }
+        Text(dhikr.content, color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.bodyLarge)
     }
 }
 
-
-/**
- * Minimal wrapping row. Replaces androidx.compose.foundation.layout.FlowRow, whose
- * experimental API signature differs between the compile (1.7.x) and runtime (1.9.x)
- * compose versions on this project's classpath.
- */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SimpleFlowRow(spacing: androidx.compose.ui.unit.Dp, modifier: Modifier = Modifier, content: @Composable () -> Unit) {
-    androidx.compose.ui.layout.Layout(content = content, modifier = modifier) { measurables, constraints ->
-        val h = spacing.roundToPx()
-        val v = spacing.roundToPx()
-        val placeables = measurables.map { it.measure(constraints.copy(minWidth = 0, minHeight = 0)) }
-        val rows = mutableListOf<MutableList<androidx.compose.ui.layout.Placeable>>()
-        var cur = mutableListOf<androidx.compose.ui.layout.Placeable>()
-        var w = 0
-        for (pl in placeables) {
-            if (cur.isNotEmpty() && w + h + pl.width > constraints.maxWidth) {
-                rows.add(cur); cur = mutableListOf(); w = 0
-            }
-            if (cur.isNotEmpty()) w += h
-            cur.add(pl); w += pl.width
-        }
-        if (cur.isNotEmpty()) rows.add(cur)
-        val rowHeights = rows.map { r -> r.maxOf { it.height } }
-        val totalH = (rowHeights.sum() + v * (rows.size - 1).coerceAtLeast(0)).coerceIn(constraints.minHeight, constraints.maxHeight)
-        layout(constraints.maxWidth, totalH) {
-            var y = 0
-            rows.forEachIndexed { i, r ->
-                var x = 0
-                r.forEach { pl -> pl.placeRelative(x, y); x += pl.width + h }
-                y += rowHeights[i] + v
-            }
-        }
-    }
+fun SimpleFlowRow(spacing: Dp, modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+    FlowRow(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(spacing),
+        verticalArrangement = Arrangement.spacedBy(spacing)
+    ) { content() }
 }

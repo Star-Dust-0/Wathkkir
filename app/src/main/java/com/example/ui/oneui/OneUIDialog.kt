@@ -3,6 +3,7 @@ package com.example.ui.oneui
 import android.os.Build
 import android.view.View
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,7 +32,6 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.DialogWindowProvider
@@ -71,24 +71,12 @@ fun OneUIDialogSurface(
     content: @Composable ColumnScope.() -> Unit
 ) {
     val cs = MaterialTheme.colorScheme
-    // The original dialogs measure ~10.6% tighter line boxes than the app-wide scale (calibrated from captures).
-    val base = MaterialTheme.typography
-    fun TextStyle.tight() = if (lineHeight.isSp) copy(lineHeight = (lineHeight.value * 0.85f).sp) else this
-    val tight = base.copy(
-        displayLarge = base.displayLarge.tight(), displayMedium = base.displayMedium.tight(), displaySmall = base.displaySmall.tight(),
-        headlineLarge = base.headlineLarge.tight(), headlineMedium = base.headlineMedium.tight(), headlineSmall = base.headlineSmall.tight(),
-        titleLarge = base.titleLarge.tight(), titleMedium = base.titleMedium.tight(), titleSmall = base.titleSmall.tight(),
-        bodyLarge = base.bodyLarge.tight(), bodyMedium = base.bodyMedium.tight(), bodySmall = base.bodySmall.tight(),
-        labelLarge = base.labelLarge.tight(), labelMedium = base.labelMedium.tight(), labelSmall = base.labelSmall.tight()
-    )
-    MaterialTheme(colorScheme = cs, typography = tight, shapes = MaterialTheme.shapes) {
     CompositionLocalProvider(LocalContentColor provides cs.onSurface) {
         Column(modifier = modifier.fillMaxWidth()) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(28.dp))
-                    .background(oneUiMenuColor())
+                    .oneUIFrosted(RoundedCornerShape(30.dp), FrostSpec(cs.surface, 0.90f, oneUIBorderColor()), 24)
             ) {
                 Text(
                     title,
@@ -97,7 +85,6 @@ fun OneUIDialogSurface(
                     textAlign = TextAlign.Start,
                     fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                     fontSize = 20.sp,
-                    lineHeight = 20.sp,
                     style = MaterialTheme.typography.titleLarge
                 )
                 Column(
@@ -107,38 +94,51 @@ fun OneUIDialogSurface(
                         .padding(horizontal = 24.dp),
                     content = content
                 )
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(20.dp))
                 Row(
                     modifier = Modifier
+                        .padding(horizontal = 16.dp)
                         .fillMaxWidth()
-                        .height(56.dp),
+                        .height(56.dp)
+                        .clip(RoundedCornerShape(28.dp))
+                        .background(cs.surfaceContainerHighest.copy(alpha = 0.85f))
+                        .border(1.dp, oneUIBorderColor(), RoundedCornerShape(28.dp)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Box(
-                        modifier = Modifier.weight(1f).fillMaxHeight().clickable(onClick = onDismiss),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(dismissText, color = cs.onSurface, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 17.sp, lineHeight = 16.sp, style = MaterialTheme.typography.labelLarge)
-                    }
-                    if (onConfirm != null) {
-                        Box(modifier = Modifier.width(1.dp).height(24.dp).background(cs.onSurface.copy(alpha = 0.18f)))
+                    val dismissBtn: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit = {
                         Box(
-                            modifier = Modifier.weight(1f).fillMaxHeight().clickable(enabled = confirmEnabled, onClick = onConfirm),
+                            modifier = Modifier.weight(1f).fillMaxHeight().clickable(onClick = onDismiss),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(dismissText, color = cs.onSurface, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 17.sp, style = MaterialTheme.typography.labelLarge)
+                        }
+                    }
+                    val confirmBtn: @Composable androidx.compose.foundation.layout.RowScope.() -> Unit = {
+                        Box(
+                            modifier = Modifier.weight(1f).fillMaxHeight().clickable(enabled = confirmEnabled, onClick = onConfirm ?: {}),
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
                                 confirmText,
                                 color = if (confirmEnabled) cs.onSurface else cs.onSurface.copy(alpha = 0.38f),
-                                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 17.sp, lineHeight = 16.sp,
+                                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 17.sp,
                                 style = MaterialTheme.typography.labelLarge
                             )
                         }
+                    }
+                    // One child order everywhere: Cancel first, confirm second. Compose mirrors
+                    // rows automatically in RTL, so Arabic shows حفظ on the left / إلغاء on the
+                    // right (One UI convention); English keeps Cancel left / Save right.
+                    if (onConfirm == null) dismissBtn()
+                    else {
+                        dismissBtn()
+                        Box(modifier = Modifier.width(1.dp).height(24.dp).background(cs.onSurface.copy(alpha = 0.18f)))
+                        confirmBtn()
                     }
                 }
                 Spacer(modifier = Modifier.height(4.dp))
             }
         }
-    }
     }
 }
 
@@ -148,7 +148,7 @@ fun OneUIDialog(
     onDismiss: () -> Unit,
     onConfirm: (() -> Unit)? = null,
     confirmText: String = L10n.t(S.Save),
-    dismissText: String = L10n.t(S.Cancel),
+    dismissText: String? = null,
     confirmEnabled: Boolean = true,
     content: @Composable ColumnScope.() -> Unit
 ) {
@@ -158,13 +158,11 @@ fun OneUIDialog(
             title = title,
             onDismiss = onDismiss,
             onConfirm = onConfirm,
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+            modifier = Modifier.padding(horizontal = 24.dp),
             confirmText = confirmText,
-            dismissText = dismissText,
+            dismissText = dismissText ?: L10n.t(if (onConfirm == null) S.Back else S.Cancel),
             confirmEnabled = confirmEnabled,
             content = content
         )
     }
 }
-
-

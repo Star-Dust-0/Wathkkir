@@ -1,127 +1,84 @@
 package com.example.lockwidgets;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.*;
 
-/* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
-/* loaded from: classes.dex */
+/** Background patterns for the prayer widget card: 1 Rub el Hizb grid (default), 8 stars and diamonds, 9 hex lattice, 10 crossed octagram, 11 round arabesque. 0 = none. */
 public final class WidgetPatterns {
+    private WidgetPatterns() {}
+
     public static final int[] IDS = {1, 8, 9, 10, 11};
 
-    private WidgetPatterns() {
+    private static Path star(float cx, float cy, int n, float ro, float ri) {
+        Path p = new Path();
+        for (int i = 0; i < 2 * n; i++) {
+            double a = -Math.PI / 2 + i * Math.PI / n;
+            float rr = (i % 2 == 0) ? ro : ri;
+            float x = cx + (float) Math.cos(a) * rr, y = cy + (float) Math.sin(a) * rr;
+            if (i == 0) p.moveTo(x, y); else p.lineTo(x, y);
+        }
+        p.close();
+        return p;
     }
 
-    public static void draw(Canvas canvas, int i, float f, float f2, float f3, Paint paint) {
-        if (i <= 0) {
+    /** Draws the pattern from the bottom-left corner over a w x h area (pixels). [ro] is the star radius in pixels. */
+    public static void draw(Canvas cv, int pat, float w, float h, float ro, Paint p) {
+        if (pat <= 0) return;
+        if (pat == 1) {
+            float step = ro * 2f;
+            for (float cy = h; cy > -ro; cy -= step)
+                for (float cx = 0; cx < w + ro; cx += step)
+                    cv.drawPath(star(cx, cy, 8, ro, ro * 0.7654f), p);
             return;
         }
-        float f4 = 0.7654f;
-        int i2 = 8;
-        int i3 = 1;
-        float f5 = 2.0f;
-        if (i == 1) {
-            float f6 = f3 * 2.0f;
-            for (float f7 = f2; f7 > (-f3); f7 -= f6) {
-                for (float f8 = 0.0f; f8 < f + f3; f8 += f6) {
-                    canvas.drawPath(star(f8, f7, 8, f3, f3 * 0.7654f), paint);
-                }
-            }
-            return;
-        }
-        boolean z = i == 9;
-        float f9 = z ? 1.732f * f3 : f3 * 2.0f;
-        float f10 = z ? 1.5f * f3 : f3 * 2.0f;
-        int i4 = ((int) (f2 / f10)) + 3;
-        int i5 = ((int) (f / f9)) + 3;
-        int i6 = 0;
-        while (i6 <= i4) {
-            float f11 = f4;
-            int i7 = 0;
-            while (i7 <= i5) {
-                float f12 = f5;
-                float f13 = (i7 * f9) + (((z || i == 11) && i6 % 2 == i3) ? f9 / f12 : 0.0f);
-                float f14 = f2 - (i6 * f10);
-                switch (i) {
+        boolean hex = pat == 9;
+        float dx = hex ? ro * 1.732f : ro * 2f, dy = hex ? ro * 1.5f : ro * 2f;
+        int rows = (int) (h / dy) + 3, cols = (int) (w / dx) + 3;
+        for (int row = 0; row <= rows; row++) {
+            for (int col = 0; col <= cols; col++) {
+                float cx = col * dx + ((hex || pat == 11) && row % 2 == 1 ? dx / 2 : 0f);
+                float cy = h - row * dy;
+                switch (pat) {
                     case 8:
-                        canvas.drawPath(star(f13, f14, 8, f3, f3 * f11), paint);
-                        Path path = new Path();
-                        float f15 = (f9 / f12) + f13;
-                        float f16 = f14 - (f10 / f12);
-                        float f17 = 0.3f * f3;
-                        path.moveTo(f15, f16 - f17);
-                        path.lineTo(f15 + f17, f16);
-                        path.lineTo(f15, f16 + f17);
-                        path.lineTo(f15 - f17, f16);
-                        path.close();
-                        canvas.drawPath(path, paint);
+                        cv.drawPath(star(cx, cy, 8, ro, ro * 0.7654f), p);
+                        Path dm = new Path(); float qx = cx + dx / 2, qy = cy - dy / 2, q = ro * 0.30f;
+                        dm.moveTo(qx, qy - q); dm.lineTo(qx + q, qy); dm.lineTo(qx, qy + q); dm.lineTo(qx - q, qy); dm.close();
+                        cv.drawPath(dm, p);
                         break;
                     case 9:
-                        canvas.drawPath(star(f13, f14, 6, 0.98f * f3, 0.577f * f3), paint);
-                        canvas.drawCircle(f13, f14, 0.16f * f3, paint);
+                        cv.drawPath(star(cx, cy, 6, ro * 0.98f, ro * 0.577f), p);
+                        cv.drawCircle(cx, cy, ro * 0.16f, p);
                         break;
                     case 10:
-                        canvas.drawPath(star(f13, f14, i2, f3, 0.541f * f3), paint);
-                        canvas.drawPath(star(f13, f14, i2, 0.5f * f3, 0.27f * f3), paint);
+                        cv.drawPath(star(cx, cy, 8, ro, ro * 0.541f), p);
+                        cv.drawPath(star(cx, cy, 8, ro * 0.5f, ro * 0.27f), p);
                         break;
                     default:
-                        canvas.drawPath(star(f13, f14, 12, f3, f3 * 0.5176f), paint);
-                        canvas.drawCircle(f13, f14, 0.22f * f3, paint);
-                        canvas.drawCircle(f13, f14, 0.62f * f3, paint);
-                        break;
+                        cv.drawPath(star(cx, cy, 12, ro, ro * 0.5176f), p);
+                        cv.drawCircle(cx, cy, ro * 0.22f, p);
+                        cv.drawCircle(cx, cy, ro * 0.62f, p);
                 }
-                i7++;
-                f5 = f12;
-                i2 = 8;
-                i3 = 1;
             }
-            i6++;
-            f4 = f11;
-            i2 = 8;
-            i3 = 1;
         }
     }
 
-    public static int forWidget(Context context, int i) {
-        int i2 = i > 0 ? context.getSharedPreferences("fajr_prefs", 0).getInt("widget_pattern_" + i, 1) : 1;
-        for (int i3 : IDS) {
-            if (i3 == i2) {
-                return i2;
-            }
-        }
-        return i2 == 0 ? 0 : 1;
+    /** Small preview square for the settings screen. */
+    public static Bitmap thumb(int pat, int px, boolean night) {
+        Bitmap b = Bitmap.createBitmap(px, px, Bitmap.Config.ARGB_8888);
+        Canvas cv = new Canvas(b);
+        cv.drawColor(night ? 0xFF2B2C30 : 0xFFF1F2F5);
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        p.setStyle(Paint.Style.STROKE);
+        p.setStrokeWidth(Math.max(1f, px * 0.012f));
+        p.setColor(night ? 0xFFFFFFFF : 0xFF7C8396);
+        p.setAlpha(night ? 150 : 170);
+        draw(cv, pat, px, px, px * 0.2f, p);
+        return b;
     }
 
-    private static Path star(float f, float f2, int i, float f3, float f4) {
-        Path path = new Path();
-        for (int i2 = 0; i2 < i * 2; i2++) {
-            double d = ((i2 * 3.141592653589793d) / i) - 1.5707963267948966d;
-            float f5 = i2 % 2 == 0 ? f3 : f4;
-            float cos = (((float) Math.cos(d)) * f5) + f;
-            float sin = (((float) Math.sin(d)) * f5) + f2;
-            if (i2 == 0) {
-                path.moveTo(cos, sin);
-            } else {
-                path.lineTo(cos, sin);
-            }
-        }
-        path.close();
-        return path;
-    }
-
-    public static Bitmap thumb(int i, int i2, boolean z) {
-        Bitmap createBitmap = Bitmap.createBitmap(i2, i2, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        canvas.drawColor(z ? -13947856 : -920843);
-        Paint paint = new Paint(1);
-        paint.setStyle(Paint.Style.STROKE);
-        float f = i2;
-        paint.setStrokeWidth(Math.max(1.0f, 0.012f * f));
-        paint.setColor(z ? -1 : -8617066);
-        paint.setAlpha(z ? 150 : 170);
-        draw(canvas, i, f, f, f * 0.2f, paint);
-        return createBitmap;
+    public static int forWidget(android.content.Context c, int widgetId) {
+        android.content.SharedPreferences sp = c.getSharedPreferences("fajr_prefs", android.content.Context.MODE_PRIVATE);
+        int v = widgetId > 0 ? sp.getInt("widget_pattern_" + widgetId, 1) : 1;
+        for (int id : IDS) if (id == v) return v;
+        return v == 0 ? 0 : 1;
     }
 }

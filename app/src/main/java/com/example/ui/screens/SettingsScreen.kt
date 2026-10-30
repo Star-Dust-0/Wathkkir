@@ -1,148 +1,186 @@
 package com.example.ui.screens
+import androidx.compose.material.icons.outlined.Watch
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.foundation.layout.padding
 
-import com.example.ui.i18n.L10n
-import com.example.ui.i18n.S
 import com.example.ui.i18n.Lang
-import android.app.Activity
+
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
-import android.media.RingtoneManager
 import android.net.Uri
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.DarkMode
+import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.MoreTime
+import androidx.compose.material.icons.outlined.Place
+import androidx.compose.material.icons.outlined.TextFields
+import androidx.compose.material.icons.outlined.Vibration
+import androidx.compose.material.icons.outlined.TouchApp
+import androidx.compose.material.icons.outlined.Widgets
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.ui.oneui.*
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIDialog
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIIconBadge
+import com.example.ui.oneui.OneUIRow
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.OneUISwitch
+import com.example.ThemeSettings
+import com.example.ui.oneui.SectionLabel
 import com.example.ui.viewmodel.MainViewModel
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
+import androidx.compose.material.icons.outlined.Language
 
 @Composable
-fun SettingsScreen(viewModel: MainViewModel, onBack: () -> Unit, onNavigateToFajr: (() -> Unit)? = null, onLocation: (() -> Unit)? = null, onOptionalTimes: (() -> Unit)? = null) {
+fun SettingsScreen(
+    viewModel: MainViewModel,
+    onBack: () -> Unit,
+    onNavigateToFajr: (() -> Unit)? = null,
+    onNavigateToLocation: (() -> Unit)? = null,
+    onNavigateToOptionalTimes: (() -> Unit)? = null,
+    onNavigateToHijriConverter: (() -> Unit)? = null,
+    onNavigateToAbout: (() -> Unit)? = null,
+    onNavigateToWatch: (() -> Unit)? = null
+) {
+    val contextApp = LocalContext.current.applicationContext
     val vibration by viewModel.vibrationEnabled.collectAsState()
     val toneState by viewModel.notificationSound.collectAsState()
-    val settingsCtx = androidx.compose.ui.platform.LocalContext.current
-    val toneSummary = remember(toneState) { com.example.utils.NotifPrefs.toneTitle(settingsCtx) ?: L10n.t(S.Default) }
+    val toneSummary = remember(toneState) { com.example.utils.NotifPrefs.toneTitle(contextApp) ?: L10n.t(S.Default) }
     val appFont by viewModel.appFont.collectAsState()
     var showFontPicker by remember { mutableStateOf(false) }
-    var showLockWidgets by remember { mutableStateOf(false) }
-    var showTheme by remember { mutableStateOf(false) }
-    var showLanguage by remember { mutableStateOf(false) }
-    val themeMode by com.example.ThemeSettings.mode.collectAsState()
     val fontScale by com.example.FontScaleSettings.scale.collectAsState()
+    var showThemePicker by remember { mutableStateOf(false) }
+    var showLockWidgets by remember { mutableStateOf(false) }
+    var showLanguagePicker by remember { mutableStateOf(false) }
+    val themeMode by ThemeSettings.mode.collectAsState()
+    val themeTitle = when (themeMode) {
+        ThemeSettings.LIGHT -> L10n.t(S.Light)
+        ThemeSettings.DARK -> L10n.t(S.Dark)
+        else -> L10n.t(S.SystemAuto)
+    }
     val ringtoneLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val uri: Uri? = result.data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
+        if (result.resultCode == -1) {
+            @Suppress("DEPRECATION")
+            val uri: Uri? = result.data?.getParcelableExtra("android.intent.extra.ringtone.PICKED_URI")
             if (uri != null) viewModel.updateNotificationSound(uri.toString())
         }
     }
+
     SettingsContent(
         vibration = vibration,
-        fontTitle = com.example.ui.theme.FontChoice.fromId(appFont).title,
+        fontTitle = appFont.titleAr,
+        themeTitle = themeTitle,
         onBack = onBack,
-        onVibration = viewModel::updateVibrationEnabled,
-        onPickFont = { showFontPicker = true },
-        onPickSound = {
-            ringtoneLauncher.launch(Intent(RingtoneManager.ACTION_RINGTONE_PICKER).apply {
-                putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION)
-                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true)
-                putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, true)
-            })
-        },
+        onVibration = { viewModel.updateVibrationEnabled(it) },
         toneSummary = toneSummary,
-        onLocation = onLocation,
-        onOptionalTimes = onOptionalTimes,
-        onLockWidgets = { showLockWidgets = true },
-        themeTitle = L10n.t(when(themeMode){"light"->S.Light;"dark"->S.Dark;else->S.SystemAuto}),
-        onTheme = { showTheme = true },
-        onLanguage = { showLanguage = true },
+        onPickFont = { showFontPicker = true },
         fontScale = fontScale,
-        onFontScale = { com.example.FontScaleSettings.set(settingsCtx,it) },
-        onWatch = { HeaderTools.nav?.navigate("watch_settings") },
-        onAbout = { HeaderTools.nav?.navigate("about") }
+        onScaleChange = { com.example.FontScaleSettings.set(contextApp, it) },
+        onPickSound = {
+            val intent = Intent("android.intent.action.RINGTONE_PICKER")
+            intent.putExtra("android.intent.extra.ringtone.TYPE", 2)
+            intent.putExtra("android.intent.extra.ringtone.SHOW_DEFAULT", true)
+            intent.putExtra("android.intent.extra.ringtone.SHOW_SILENT", true)
+            ringtoneLauncher.launch(intent)
+        },
+        onFajr = onNavigateToFajr,
+        onLocation = onNavigateToLocation,
+        onOptionalTimes = onNavigateToOptionalTimes,
+        onHijriConverter = onNavigateToHijriConverter,
+        onPickTheme = { showThemePicker = true },
+        onLockWidgets = { showLockWidgets = true },
+        onPickLanguage = { showLanguagePicker = true },
+        onAbout = onNavigateToAbout,
+        onWatch = onNavigateToWatch
     )
 
-    if (showTheme) OneUIDialog(title=L10n.t(S.Appearance),onDismiss={showTheme=false},onConfirm=null,dismissText=L10n.t(S.Close)) {
-        listOf("auto" to S.SystemAuto,"light" to S.Light,"dark" to S.Dark).forEach { (key,label) ->
-            OneUIRow(L10n.t(label),onClick={
-                settingsCtx.getSharedPreferences("app_prefs",0).edit().putString("theme_mode",key).apply()
-                com.example.ThemeSettings.setMode(key);showTheme=false
-            },trailing={if(themeMode==key) ChevronIcon()})
-        }
-    }
-    if (showLanguage) OneUIDialog(title=L10n.t(S.Language),onDismiss={showLanguage=false},onConfirm=null,dismissText=L10n.t(S.Close)) {
-        androidx.compose.foundation.lazy.LazyColumn {
-            items(Lang.entries.size) { i -> val language=Lang.entries[i]
-                OneUIRow(language.nativeName,onClick={L10n.set(settingsCtx,language);showLanguage=false
-                    com.example.utils.WearSync.push(settingsCtx)
-                    com.example.widget.WidgetUpdater.INSTANCE.updateAll(settingsCtx)
-                },trailing={if(L10n.lang==language) ChevronIcon()})
-            }
-        }
-    }
     if (showFontPicker) {
         FontPickerDialog(
-            selected = com.example.ui.theme.FontChoice.fromId(appFont),
-            onSelect = { viewModel.updateAppFont(it.id) },
+            selected = appFont,
+            onSelect = { viewModel.updateAppFont(it) },
             onDismiss = { showFontPicker = false }
         )
     }
+    if (showThemePicker) {
+        ThemePickerDialog(
+            selected = themeMode,
+            onSelect = { ThemeSettings.set(contextApp, it) },
+            onDismiss = { showThemePicker = false }
+        )
+    }
     if (showLockWidgets) {
-        LockWidgetsDialog(onDismiss = { showLockWidgets = false })
+        LockWidgetsDialog { showLockWidgets = false }
+    }
+    if (showLanguagePicker) {
+        LanguagePickerDialog(
+            selected = L10n.lang,
+            onSelect = { L10n.set(contextApp, it) },
+            onDismiss = { showLanguagePicker = false }
+        )
     }
 }
 
-/** Explains + launches Samsung's native lock screen editor so the user can pin
- *  any Wathakker widget in the dedicated under-clock area (One UI 8 / Android 16 QPR). */
 @Composable
 fun LockWidgetsDialog(onDismiss: () -> Unit) {
-    val context = LocalContext.current
+    val context: Context = LocalContext.current
     val cs = MaterialTheme.colorScheme
-    val toast = L10n.t(S.LockWidgetsToast)
     OneUIDialog(
-        title = L10n.t(S.LockWidgets),
+        title = "ويدجت شاشة القفل",
         onDismiss = onDismiss,
         onConfirm = {
-            // Samsung "Wallpaper & style" (DressRoom) hosts the native lock screen editor on One UI 6+.
             val launch = context.packageManager.getLaunchIntentForPackage("com.samsung.android.app.dressroom")
             if (launch != null) {
-                try { context.startActivity(launch) } catch (_: ActivityNotFoundException) {
-                    Toast.makeText(context, toast, Toast.LENGTH_LONG).show()
+                try {
+                    context.startActivity(launch)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(context, "اضغط مطولًا على شاشة القفل لإضافة الويدجت", Toast.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(context, toast, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "اضغط مطولًا على شاشة القفل لإضافة الويدجت", Toast.LENGTH_LONG).show()
             }
             onDismiss()
         },
-        confirmText = L10n.t(S.OpenEditor),
-        dismissText = L10n.t(S.Close)
+        confirmText = "فتح المحرر",
+        dismissText = "إغلاق"
     ) {
         Text(
-            L10n.t(S.LockWidgetsDesc),
-            style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, fontSize = 16.sp
+            "كل ويدجتات وَذكِّر متاحة في المساحة المخصصة تحت الساعة على شاشة القفل (One UI 8 أو أحدث).",
+            color = cs.onSurface,
+            fontSize = 16.sp,
+            style = MaterialTheme.typography.bodyLarge
         )
-        Spacer(Modifier.height(14.dp))
+        Spacer(Modifier.height(12.dp))
         Text(
-            L10n.t(S.LockWidgetsSteps),
-            style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, fontSize = 16.sp
+            "١. على شاشة القفل اضغط مطولًا على مكان فارغ، ثم أكّد هويتك.\n٢. اضغط «إضافة ويدجت» واختار «وَذكِّر» من القائمة.\n٣. اختار الويدجت الذي يعجبك، مثل «الإقامة (مصغر)» أو «شريط الصلاة».\n٤. رتّبها بالسحب ثم اضغط «تم».",
+            color = cs.onSurface,
+            style = MaterialTheme.typography.bodyLarge
         )
-        Spacer(Modifier.height(14.dp))
+        Spacer(Modifier.height(12.dp))
         Text(
-            L10n.t(S.LockWidgetsHint),
-            style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant,
-            modifier = Modifier.fillMaxWidth()
+            "الضغط على الويدجت من شاشة القفل يفتح التطبيق مباشرة.",
+            modifier = Modifier.fillMaxWidth(),
+            color = cs.onSurfaceVariant,
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
@@ -151,94 +189,168 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
 fun SettingsContent(
     vibration: Boolean,
     fontTitle: String,
+    themeTitle: String,
     onBack: () -> Unit,
     onVibration: (Boolean) -> Unit,
     toneSummary: String,
     onPickFont: () -> Unit,
+    fontScale: Float = 1f,
+    onScaleChange: (Float) -> Unit = {},
     onPickSound: () -> Unit,
-    onLocation: (() -> Unit)?,
-    onOptionalTimes: (() -> Unit)?,
+    onFajr: (() -> Unit)? = null,
+    onLocation: (() -> Unit)? = null,
+    onOptionalTimes: (() -> Unit)? = null,
+    onHijriConverter: (() -> Unit)? = null,
+    onPickTheme: () -> Unit = {},
     onLockWidgets: () -> Unit = {},
-    themeTitle: String = "",
-    onTheme: () -> Unit = {},
-    onLanguage: () -> Unit = {},
-    fontScale: Float = com.example.FontScaleSettings.DEFAULT,
-    onFontScale: (Float) -> Unit = {},
-    onWatch: (() -> Unit)? = null,
-    onAbout: (() -> Unit)? = null
+    onPickLanguage: () -> Unit = {},
+    onAbout: (() -> Unit)? = null,
+    onWatch: (() -> Unit)? = null
 ) {
-    val ctx = LocalContext.current
-    LaunchedEffect(ctx) { com.example.utils.AppHaptics.load(ctx) }
-    val hapticView = androidx.compose.ui.platform.LocalView.current
-    val haptics = com.example.utils.AppHaptics.enabled
-    // Original: Arabic and English carry their own literals, other languages use the table.
-    val vibLabel = when (L10n.lang) { Lang.AR -> "الاهتزاز للإشعارات"; Lang.EN -> "Notification vibration"; else -> L10n.t(S.Vibration) }
-    val hapticLabel = when (L10n.lang) { Lang.AR -> "الاستجابة اللمسية"; else -> "Haptic feedback" }
     OneUIScreen(title = L10n.t(S.Settings), onBack = onBack) {
-        item(key = "loc-l") { SectionLabel(L10n.t(S.LocSection)) }
-        item(key = "loc") {
-            OneUICard {
-                OneUIRow(L10n.t(S.ChangeLocation), summary = L10n.t(S.LocCalcSubtitle), onClick = { onLocation?.invoke() },
-                    leading = { OneUIIconBadge(Icons.Outlined.LocationOn) }, trailing = { ChevronIcon() })
-                OneUIDivider(inset = 70.dp)
-                OneUIRow(L10n.t(S.OptTimesTitle), summary = L10n.t(S.OptTimesSub), onClick = { onOptionalTimes?.invoke() },
-                    leading = { OneUIIconBadge(Icons.Outlined.MoreTime) }, trailing = { ChevronIcon() })
+        if (onLocation != null || onFajr != null) {
+            item(key = "loc-l") { SectionLabel(L10n.t(S.LocSection)) }
+            item(key = "fajr") {
+                OneUICard {
+                    OneUIRow(
+                        title = L10n.t(S.ChangeLocation),
+                        summary = L10n.t(S.LocCalcSubtitle),
+                        leading = { OneUIIconBadge(Icons.Outlined.Place) },
+                        trailing = { ChevronIcon() },
+                        onClick = onLocation ?: onFajr
+                    )
+                    if (onOptionalTimes != null) {
+                        OneUIDivider(70.dp)
+                        OneUIRow(
+                            title = L10n.t(S.OptTimesTitle),
+                            summary = L10n.t(S.OptTimesSub),
+                            leading = { OneUIIconBadge(Icons.Outlined.MoreTime) },
+                            trailing = { ChevronIcon() },
+                            onClick = onOptionalTimes
+                        )
+                    }
+                }
             }
         }
         item(key = "lock-l") { SectionLabel(L10n.t(S.LockScreenSection)) }
         item(key = "lock") {
             OneUICard {
-                OneUIRow(L10n.t(S.LockWidgets), summary = L10n.t(S.LockWidgetsRowSub), onClick = onLockWidgets,
-                    leading = { OneUIIconBadge(Icons.Outlined.Widgets) }, trailing = { ChevronIcon() })
+                OneUIRow(
+                    title = L10n.t(S.LockWidgets),
+                    summary = L10n.t(S.LockWidgetsRowSub),
+                    leading = { OneUIIconBadge(Icons.Outlined.Widgets) },
+                    trailing = { ChevronIcon() },
+                    onClick = onLockWidgets
+                )
             }
         }
         item(key = "notif-l") { SectionLabel(L10n.t(S.Notifications)) }
         item(key = "notif") {
             OneUICard {
-                OneUIRow(L10n.t(S.NotifSound), summary = toneSummary, onClick = onPickSound,
-                    leading = { OneUIIconBadge(Icons.Outlined.MusicNote) }, trailing = { ChevronIcon() })
-                OneUIRow(vibLabel, leading = { OneUIIconBadge(Icons.Outlined.Vibration) },
-                    trailing = { OneUISwitch(vibration, onVibration) }, onClick = { com.example.utils.AppHaptics.tick(hapticView); onVibration(!vibration) })
-                OneUIRow(hapticLabel, leading = { OneUIIconBadge(Icons.Outlined.TouchApp) },
-                    trailing = { OneUISwitch(haptics, { com.example.utils.AppHaptics.set(ctx, it) }) },
-                    onClick = { com.example.utils.AppHaptics.tick(hapticView); com.example.utils.AppHaptics.set(ctx, !haptics) })
+                OneUIRow(
+                    title = L10n.t(S.NotifSound),
+                    summary = toneSummary,
+                    leading = { OneUIIconBadge(Icons.Outlined.MusicNote) },
+                    trailing = { ChevronIcon() },
+                    onClick = onPickSound
+                )
+                OneUIRow(
+                    title = when (L10n.lang) { com.example.ui.i18n.Lang.AR -> "الاهتزاز للإشعارات"; com.example.ui.i18n.Lang.EN -> "Notification vibration"; else -> L10n.t(S.Vibration) },
+                    leading = { OneUIIconBadge(Icons.Outlined.Vibration) },
+                    trailing = { OneUISwitch(vibration, onVibration) },
+                    onClick = com.example.utils.AppHaptics.tap { onVibration(!vibration) }
+                )
+                val hapticCtx = androidx.compose.ui.platform.LocalContext.current
+                androidx.compose.runtime.LaunchedEffect(Unit) { com.example.utils.AppHaptics.load(hapticCtx) }
+                val hapticOn = com.example.utils.AppHaptics.enabled
+                OneUIRow(
+                    title = if (L10n.lang == com.example.ui.i18n.Lang.AR) "الاستجابة اللمسية" else "Haptic feedback",
+                    leading = { OneUIIconBadge(Icons.Outlined.TouchApp) },
+                    trailing = { OneUISwitch(hapticOn, { com.example.utils.AppHaptics.set(hapticCtx, it) }) },
+                    onClick = com.example.utils.AppHaptics.tap { com.example.utils.AppHaptics.set(hapticCtx, !hapticOn) }
+                )
             }
         }
         item(key = "look-l") { SectionLabel(L10n.t(S.Appearance)) }
         item(key = "look") {
             OneUICard {
-                OneUIRow(L10n.t(S.AppFont), summary = fontTitle, onClick = onPickFont,
-                    leading = { OneUIIconBadge(Icons.Outlined.TextFields) }, trailing = { ChevronIcon() })
-                FontSizeSliderRow(fontScale,onFontScale)
+                OneUIRow(
+                    title = L10n.t(S.AppFont),
+                    summary = fontTitle,
+                    leading = { OneUIIconBadge(Icons.Outlined.TextFields) },
+                    trailing = { ChevronIcon() },
+                    onClick = onPickFont
+                )
+                FontSizeSliderRow(current = fontScale, onScale = onScaleChange)
                 OneUIDivider(70.dp)
-                OneUIRow(L10n.t(S.Appearance),summary=themeTitle,onClick=onTheme,leading={OneUIIconBadge(Icons.Outlined.DarkMode)},trailing={ChevronIcon()})
+                OneUIRow(
+                    title = L10n.t(S.Appearance),
+                    summary = themeTitle,
+                    leading = { OneUIIconBadge(Icons.Outlined.DarkMode) },
+                    trailing = { ChevronIcon() },
+                    onClick = onPickTheme
+                )
                 OneUIDivider(70.dp)
-                OneUIRow(L10n.t(S.Language),summary=L10n.lang.nativeName,onClick=onLanguage,leading={OneUIIconBadge(Icons.Outlined.Language)},trailing={ChevronIcon()})
-                if(L10n.lang==Lang.AR) {
+                OneUIRow(
+                    title = L10n.t(S.Language),
+                    summary = L10n.lang.nativeName,
+                    leading = { OneUIIconBadge(Icons.Outlined.Language) },
+                    trailing = { ChevronIcon() },
+                    onClick = onPickLanguage
+                )
+                if (L10n.lang == com.example.ui.i18n.Lang.AR) {
                     OneUIDivider(70.dp)
-                    Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp)) {
-                        Text("نوع الأرقام", style = MaterialTheme.typography.bodyLarge, fontSize = 16.sp)
-                        Spacer(Modifier.height(10.dp))
-                        OneUISegmented(options=listOf("أرقام هندية  ١٢٣","أرقام عربية  1234"),
-                            selected=if(com.example.utils.Digits.isHindiChoice)0 else 1,
-                            onSelect={com.example.utils.Digits.set(ctx,it==0);com.example.widget.WidgetUpdater.INSTANCE.updateAll(ctx)})
-                    }
+                    DigitsStyleRow()
                 }
             }
         }
-        // Original rh0.d/rc0: the phone settings links to watch settings and About.
-        onWatch?.let { open ->
-            item(key="watch-l") { SectionLabel(if(L10n.lang==Lang.AR) "الساعة الذكية" else "Smartwatch") }
-            item(key="watch") { OneUICard {
-                OneUIRow(if(L10n.lang==Lang.AR) "إعدادات الساعة الذكية" else "Smartwatch settings",
-                    summary=if(L10n.lang==Lang.AR) "الإعدادات الخاصة بتطبيق وذكّر للساعة" else "Settings for the Wathkkir watch app",
-                    onClick=open,leading={OneUIIconBadge(Icons.Outlined.Watch)},trailing={ChevronIcon()})
-            } }
+        if (onWatch != null) {
+            item(key = "watch-l") { SectionLabel(if (L10n.lang == com.example.ui.i18n.Lang.AR) "الساعة الذكية" else "Smartwatch") }
+            item(key = "watch") {
+                OneUICard {
+                    OneUIRow(
+                        title = if (L10n.lang == com.example.ui.i18n.Lang.AR) "إعدادات الساعة الذكية" else "Smartwatch settings",
+                        summary = if (L10n.lang == com.example.ui.i18n.Lang.AR) "الإعدادات الخاصة بتطبيق وَذكِّر للساعة" else "Settings for the Wathakker watch app",
+                        leading = { OneUIIconBadge(androidx.compose.material.icons.Icons.Outlined.Watch) },
+                        trailing = { ChevronIcon() },
+                        onClick = onWatch
+                    )
+                }
+            }
         }
-        onAbout?.let { open ->
-            item(key="about") { OneUICard {
-                OneUIRow(L10n.t(S.About),onClick=open,leading={OneUIIconBadge(Icons.Outlined.Info)},trailing={ChevronIcon()})
-            } }
+        if (onAbout != null) {
+            item(key = "about") {
+                OneUICard {
+                    OneUIRow(
+                        title = L10n.t(S.About),
+                        leading = { OneUIIconBadge(Icons.Outlined.Info) },
+                        trailing = { ChevronIcon() },
+                        onClick = onAbout
+                    )
+                }
+            }
         }
+    }
+}
+
+
+/** Numbers type (Arabic UI only): One UI segmented choice between Hindi-Indic and Latin digits. */
+@androidx.compose.runtime.Composable
+private fun DigitsStyleRow() {
+    val cs = androidx.compose.material3.MaterialTheme.colorScheme
+    val ctx = androidx.compose.ui.platform.LocalContext.current
+    val hindi = com.example.utils.Digits.isHindiChoice
+    androidx.compose.foundation.layout.Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp)) {
+        androidx.compose.material3.Text("نوع الأرقام", color = cs.onSurface, fontSize = 16.sp)
+        androidx.compose.foundation.layout.Spacer(Modifier.height(10.dp))
+        // 3.3.3: shared One UI segmented control (joined container, sliding blue indicator).
+        // rawLabels: these two example labels stay literal under BOTH numeral settings - this
+        // selector is the only place exempt from the global digits conversion (his spec).
+        com.example.ui.oneui.OneUISegmented(
+            options = listOf("أرقام هندية  ١٢٣", "أرقام عربية  1234"),
+            selected = if (hindi) 0 else 1,
+            onSelect = { com.example.utils.Digits.set(ctx, it == 0) },
+            rawLabels = true
+        )
     }
 }

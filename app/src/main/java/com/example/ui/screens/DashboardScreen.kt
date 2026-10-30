@@ -1,31 +1,59 @@
 package com.example.ui.screens
 
-import androidx.compose.material.icons.automirrored.outlined.MenuBook
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
+import androidx.compose.material.icons.filled.NotificationsActive
+import androidx.compose.material.icons.outlined.Check
+import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
+import androidx.compose.material.icons.outlined.NotificationsOff
+import androidx.compose.material.icons.outlined.Star
+import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.Dhikr
-import com.example.ui.oneui.*
+import com.example.ThemeSettings
+import com.example.ui.oneui.oneUIBorderColor
+import com.example.ui.oneui.oneUIFrosted
+import com.example.ui.oneui.FrostSpec
+import com.example.ui.oneui.OneUIButton
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIEmptyState
+import com.example.ui.oneui.OneUIIconBadge
+import com.example.ui.oneui.OneUIRow
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.SectionLabel
+import com.example.ui.theme.OneUIUpcomingAmber
 import com.example.ui.viewmodel.DhikrStats
 import com.example.ui.viewmodel.MainViewModel
 import com.example.utils.formatTimeStr12h
 import java.util.Calendar
 
-data class DhikrInstance(val dhikr: Dhikr, val hour: Int, val minute: Int)
-
-fun computeInstances(enabledDhikr: List<Dhikr>, now: Calendar = Calendar.getInstance()): Pair<DhikrInstance?, DhikrInstance?> {
+fun computeInstances(
+    enabledDhikr: List<Dhikr>,
+    now: Calendar = Calendar.getInstance()
+): Pair<DhikrInstance?, DhikrInstance?> {
     val currentHour = now.get(Calendar.HOUR_OF_DAY)
     val currentMinute = now.get(Calendar.MINUTE)
     var next: DhikrInstance? = null
@@ -58,7 +86,11 @@ fun computeInstances(enabledDhikr: List<Dhikr>, now: Calendar = Calendar.getInst
 }
 
 @Composable
-fun DashboardScreen(viewModel: MainViewModel, onNavigate: (String) -> Unit, onMenu: (() -> Unit)? = null) {
+fun DashboardScreen(
+    viewModel: MainViewModel,
+    onNavigate: (String) -> Unit,
+    onMenu: (() -> Unit)? = null
+) {
     val enabledDhikr by viewModel.enabledDhikr.collectAsStateWithLifecycle()
     val stats by viewModel.stats.collectAsStateWithLifecycle()
     val (current, next) = remember(enabledDhikr) { computeInstances(enabledDhikr) }
@@ -67,7 +99,7 @@ fun DashboardScreen(viewModel: MainViewModel, onNavigate: (String) -> Unit, onMe
         next = next,
         activeCount = enabledDhikr.size,
         stats = stats,
-        onMarkRead = { viewModel.markAsRead(it.id) },
+        onMarkRead = { viewModel.markAsRead(it) },
         onNavigate = onNavigate,
         onMenu = onMenu
     )
@@ -80,55 +112,73 @@ fun HomeContent(
     activeCount: Int,
     stats: DhikrStats,
     onMarkRead: (Dhikr) -> Unit,
-    onNavigate: (String) -> Unit,
+    onNavigate: ((String) -> Unit)? = null,
     onMenu: (() -> Unit)? = null
 ) {
-    OneUIScreen(
-        title = "وَذكِّر",
-        onMenu = onMenu,
-        subtitle = if (activeCount == 0) com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoActiveReminders) else "$activeCount ${if (activeCount in 3..10) "تنبيهات" else "تنبيهًا"} مفعلة"
-    ) {
+    val cs = MaterialTheme.colorScheme
+    val subtitle = if (activeCount == 0) {
+        "لا توجد تنبيهات مفعلة"
+    } else {
+        "$activeCount " + (if (activeCount in 3..10) "تنبيهات" else "تنبيهًا") + " مفعلة"
+    }
+    OneUIScreen(title = "وَذكِّر", subtitle = subtitle, onMenu = onMenu) {
         item(key = "summary") {
             OneUICard {
-                Row(Modifier.fillMaxWidth().padding(vertical = 18.dp)) {
-                    SummaryCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Today), stats.todayCount.toString(), Modifier.weight(1f))
-                    Box(Modifier.width(0.5.dp).height(44.dp).background(MaterialTheme.colorScheme.outline).align(Alignment.CenterVertically))
-                    SummaryCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ThisWeek), stats.weekCount.toString(), Modifier.weight(1f))
-                    Box(Modifier.width(0.5.dp).height(44.dp).background(MaterialTheme.colorScheme.outline).align(Alignment.CenterVertically))
-                    SummaryCell(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DayStreak), stats.streakDays.toString(), Modifier.weight(1f))
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 18.dp),
+                    horizontalArrangement = Arrangement.Start,
+                    verticalAlignment = Alignment.Top
+                ) {
+                    SummaryCell("اليوم", stats.todayCount.toString(), Modifier.weight(1f))
+                    Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
+                    SummaryCell("هذا الأسبوع", stats.weekCount.toString(), Modifier.weight(1f))
+                    Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
+                    SummaryCell("أيام متتالية", stats.streakDays.toString(), Modifier.weight(1f))
                 }
             }
         }
         if (current != null) {
-            item(key = "cur-l") { SectionLabel(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.CurrentReminder), accent = true) }
-            item(key = "cur") { DhikrHighlightCard(current) { onMarkRead(current.dhikr) } }
+            item(key = "cur-l") { SectionLabel("التذكير الحالي", accent = true) }
+            item(key = "cur") {
+                OneUICard { DhikrHighlightCard(current) { onMarkRead(current.dhikr) } }
+            }
         }
         if (next != null) {
-            item(key = "next-l") { SectionLabel(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NextReminder)) }
-            item(key = "next") { DhikrHighlightCard(next) { onMarkRead(next.dhikr) } }
+            item(key = "next-l") { SectionLabel("التذكير القادم") }
+            item(key = "next") {
+                OneUICard { DhikrHighlightCard(next) { onMarkRead(next.dhikr) } }
+            }
         }
         if (current == null && next == null) {
-            item { OneUIEmptyState("لا توجد أذكار مفعلة. فعّلها من قائمة الأذكار.", Icons.Default.NotificationsOff) }
+            item {
+                OneUIEmptyState("لا توجد أذكار مفعلة. فعّلها من قائمة الأذكار.", Icons.Outlined.NotificationsOff)
+            }
         }
-        item(key = "short-l") { SectionLabel(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Shortcuts)) }
+        item(key = "short-l") { SectionLabel("اختصارات") }
         item(key = "short") {
             OneUICard {
                 OneUIRow(
-                    com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TasbeehTab), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TasbeehCounter), onClick = { onNavigate("tasbeeh") },
-                    leading = { OneUIIconBadge(Icons.Outlined.TouchApp, tint = androidx.compose.ui.graphics.Color(0xFF4DD0C4)) },
-                    trailing = { ChevronIcon() }
+                    title = "السبحة",
+                    summary = "عداد التسبيح",
+                    leading = { OneUIIconBadge(Icons.Outlined.TouchApp, Color(4283289796L)) },
+                    trailing = { ChevronIcon() },
+                    onClick = { onNavigate?.invoke("tasbeeh") }
                 )
-                OneUIDivider(inset = 70.dp)
+                OneUIDivider(70.dp)
                 OneUIRow(
-                    com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.HisnTab), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.HisnSubtitle), onClick = { onNavigate("hisn") },
-                    leading = { OneUIIconBadge(Icons.AutoMirrored.Outlined.MenuBook, tint = androidx.compose.ui.graphics.Color(0xFF6FA8FF)) },
-                    trailing = { ChevronIcon() }
+                    title = "حصن المسلم",
+                    summary = "أذكار وأدعية من الكتاب والسنة",
+                    leading = { OneUIIconBadge(Icons.AutoMirrored.Outlined.MenuBook, Color(4285507839L)) },
+                    trailing = { ChevronIcon() },
+                    onClick = { onNavigate?.invoke("hisn") }
                 )
-                OneUIDivider(inset = 70.dp)
+                OneUIDivider(70.dp)
                 OneUIRow(
-                    com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.FavSubtitle), onClick = { onNavigate("favorites") },
-                    leading = { OneUIIconBadge(Icons.Outlined.Star, tint = androidx.compose.ui.graphics.Color(0xFFFFD54F)) },
-                    trailing = { ChevronIcon() }
+                    title = "المفضلة",
+                    summary = "الأذكار التي تحبها",
+                    leading = { OneUIIconBadge(Icons.Outlined.Star, Color(4294956367L)) },
+                    trailing = { ChevronIcon() },
+                    onClick = { onNavigate?.invoke("favorites") }
                 )
             }
         }
@@ -136,50 +186,58 @@ fun HomeContent(
 }
 
 @Composable
-private fun SummaryCell(label: String, value: String, modifier: Modifier) {
-    Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(value, style = MaterialTheme.typography.headlineMedium, color = MaterialTheme.colorScheme.onSurface)
-        Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+fun SummaryCell(label: String, value: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(value, color = MaterialTheme.colorScheme.onSurface, style = MaterialTheme.typography.headlineSmall)
+        Text(label, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
     }
 }
 
 @Composable
 fun ChevronIcon() {
-    // In RTL the "forward" chevron points left, matching Samsung's mirrored lists.
     Icon(
-        Icons.AutoMirrored.Filled.KeyboardArrowRight,
-        null,
+        Icons.AutoMirrored.Outlined.KeyboardArrowRight,
+        contentDescription = null,
         tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
     )
 }
 
 @Composable
 fun DhikrHighlightCard(instance: DhikrInstance, onMarkAsRead: () -> Unit) {
-    val dhikr = instance.dhikr
     val cs = MaterialTheme.colorScheme
-    OneUICard(padding = PaddingValues(18.dp)) {
-        Text(dhikr.title, style = MaterialTheme.typography.titleMedium, color = cs.onSurface)
+    val dhikr = instance.dhikr
+    Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+        Text(dhikr.title, color = cs.onSurface, style = MaterialTheme.typography.titleMedium)
         Spacer(Modifier.height(6.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(
-                Icons.Filled.NotificationsActive, null,
-                tint = cs.primary, modifier = Modifier.size(16.dp)
-            )
+            Icon(Icons.Filled.NotificationsActive, null, modifier = Modifier.size(16.dp), tint = OneUIUpcomingAmber)
             Spacer(Modifier.width(6.dp))
             Text(
                 formatTimeStr12h(String.format("%02d:%02d", instance.hour, instance.minute)),
-                style = MaterialTheme.typography.bodyMedium, color = cs.primary
+                color = OneUIUpcomingAmber,
+                style = MaterialTheme.typography.bodyMedium
             )
         }
         Spacer(Modifier.height(12.dp))
-        Box(
-            Modifier.fillMaxWidth()
-                .background(cs.surfaceVariant, androidx.compose.foundation.shape.RoundedCornerShape(16.dp))
+        Column(
+            modifier = Modifier.fillMaxWidth()
+                .oneUIFrosted(RoundedCornerShape(16.dp), FrostSpec(cs.surfaceVariant, if (ThemeSettings.isDark()) 0.50f else 0.62f, oneUIBorderColor()), 16)
                 .padding(14.dp)
         ) {
-            Text(dhikr.content, style = MaterialTheme.typography.bodyLarge, color = cs.onSurface, maxLines = 3)
+            Text(
+                dhikr.content,
+                color = cs.onSurface,
+                maxLines = 3,
+                style = MaterialTheme.typography.bodyLarge
+            )
+            Spacer(Modifier.height(14.dp))
+            OneUIButton(
+                text = "تمت القراءة",
+                onClick = onMarkAsRead,
+                modifier = Modifier.align(Alignment.End),
+                filled = false,
+                icon = Icons.Outlined.Check
+            )
         }
-        Spacer(Modifier.height(14.dp))
-        OneUIButton(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ReadDone), onMarkAsRead, Modifier.align(Alignment.End), icon = Icons.Default.Check)
     }
 }

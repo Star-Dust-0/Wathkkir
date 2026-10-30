@@ -1,4 +1,5 @@
 package com.wathakker.wear
+import androidx.compose.ui.unit.dp
 
 import android.app.AlarmManager
 import android.app.Notification
@@ -34,8 +35,6 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
 /** One alert at the exact adhan time for the five prayers (no sunrise). One on/off switch in Settings. */
@@ -44,6 +43,9 @@ object Adhan {
     const val SHOW_SECONDS = 5
     fun enabled(c: Context) = c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getBoolean("adhan", true)
     fun setEnabled(c: Context, v: Boolean) { c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putBoolean("adhan", v).apply(); schedule(c) }
+    /** Alert style: true = full-screen (current behavior, default), false = plain notification. */
+    fun fullScreen(c: Context) = c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getBoolean("adhan_fullscreen", true)
+    fun setFullScreen(c: Context, v: Boolean) { c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putBoolean("adhan_fullscreen", v).apply() }
 
     private fun pi(c: Context, id: Int, at: Long, flags: Int) = PendingIntent.getBroadcast(
         c, 7001, Intent(c, AdhanReceiver::class.java).putExtra("id", id).putExtra("at", at), flags or PendingIntent.FLAG_IMMUTABLE)
@@ -68,11 +70,7 @@ object Adhan {
         am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi(c, 4, at, PendingIntent.FLAG_UPDATE_CURRENT))
     }
 
-    fun fullScreen(c: Context): Boolean = c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getBoolean("adhan_fullscreen", true)
-    fun setFullScreen(c: Context, v: Boolean) { c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putBoolean("adhan_fullscreen", v).apply() }
-
     fun fire(c: Context, id: Int, at: Long) {
-        Loc.refresh(c)
         val nm = c.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         nm.createNotificationChannel(NotificationChannel(CHANNEL, T("تنبيه الأذان", "Adhan alert"), NotificationManager.IMPORTANCE_HIGH).apply {
             enableVibration(true); vibrationPattern = longArrayOf(0, 400, 200, 400); setSound(null, null)
@@ -80,10 +78,13 @@ object Adhan {
         val i = Intent(c, AdhanActivity::class.java).putExtra("id", id).putExtra("at", at).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         val full = PendingIntent.getActivity(c, 7002, i, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val name = Prayer.names[id.coerceIn(0, 5)]
-        val n = Notification.Builder(c, CHANNEL).setSmallIcon(R.mipmap.ic_launcher).setContentTitle(T("حان موعد أذان ", "Time for adhan: ") + name)
+        // The notification removes itself 5 minutes after it appears, in both styles, so it
+        // never lingers in the list.
+        val b = Notification.Builder(c, CHANNEL).setSmallIcon(R.mipmap.ic_launcher).setContentTitle(T("حان موعد أذان ", "Time for adhan: ") + name)
             .setCategory(Notification.CATEGORY_ALARM).setContentIntent(full).setAutoCancel(true)
-            .setTimeoutAfter(300_000).apply { if (fullScreen(c)) setFullScreenIntent(full, true) }.build()
-        nm.notify(7000 + id, n)
+            .setTimeoutAfter(300_000)
+        if (fullScreen(c)) b.setFullScreenIntent(full, true)
+        nm.notify(7000 + id, b.build())
         c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putLong("adhan_last_fire", System.currentTimeMillis()).apply()
         if (fullScreen(c)) { try { c.startActivity(i) } catch (_: Throwable) {} }
         (c.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator).vibrate(VibrationEffect.createWaveform(longArrayOf(0, 400, 200, 400, 200, 400), -1))
@@ -103,13 +104,13 @@ class AdhanReceiver : BroadcastReceiver() {
 }
 
 class BootReceiver : BroadcastReceiver() {
+    // BOOT_COMPLETED / MY_PACKAGE_REPLACED / TIME_SET / TIMEZONE_CHANGED (manifest). With
+    // UPDATE_PERIOD_SECONDS=0 the host never re-queries on its own, so time and timezone
+    // changes must push a refresh here; otherwise a baked countdown target could stay
+    // stale for hours after travel or a clock change.
     override fun onReceive(c: Context, i: Intent) {
-        // Alarms do not survive reboot (verified AOSP AlarmManagerService: PACKAGE_REMOVED
-        // with EXTRA_REPLACING keeps alarms, so app UPDATE must NOT clear this marker;
-        // force-stop/data-clear remove alarms - data-clear wipes the pref too, and after
-        // force-stop no requests arrive until the user relaunches; the stale marker then
-        // suppresses re-arm only until its own time passes, bounded and self-healing).
-        c.getSharedPreferences("cdb", 0).edit().remove("armed").apply()
+        android.util.Log.i("WathakkerCd", "bootreceiver action=" + i.action)
+        requestAllComplications(c)
         Adhan.schedule(c)
     }
 }
@@ -140,7 +141,7 @@ fun AdhanScreen(id: Int, at: Long, close: () -> Unit) {
                 drawArc(t.brush(), -90f, 360f, false, Offset(sw, sw), androidx.compose.ui.geometry.Size(m - 2 * sw, m - 2 * sw), style = Stroke(sw, cap = StrokeCap.Round))
             }
             Column(Modifier.align(Alignment.Center), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text1("حان موعد أذان", tx(w * 0.075f, Color(0xFFD0D0D4)))
+                Text1(T("حان موعد أذان", "Time for adhan"), tx(w * 0.075f, Color(0xFFD0D0D4)))
                 Spacer(Modifier.height((w * 0.02f).dp))
                 Text1(Prayer.names[id], tx(w * 0.2f, Color.White, true))
                 Spacer(Modifier.height((w * 0.03f).dp))

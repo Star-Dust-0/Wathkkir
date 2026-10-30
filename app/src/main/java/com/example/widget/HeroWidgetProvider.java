@@ -1,7 +1,10 @@
 package com.example.widget;
 
-/* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
-/* loaded from: classes.dex */
+import kotlin.Metadata;
+
+/* compiled from: WidgetProviders.kt */
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lcom/example/widget/HeroWidgetProvider;", "Lcom/example/widget/BaseWathakkerWidgetProvider;", "<init>", "()V", "app"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes10.dex */
 public final class HeroWidgetProvider extends BaseWathakkerWidgetProvider {
     public static final int $stable = 8;
 }

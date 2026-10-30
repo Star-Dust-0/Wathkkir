@@ -1,7 +1,10 @@
 package com.example.fajr.ui
-
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -21,9 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fajr.calculation.CalculationMethod
-import com.example.ui.i18n.L10n
 import com.example.ui.oneui.OneUIDialog
-import com.example.ui.i18n.S
 
 @Composable
 fun CalculationMethodDialog(

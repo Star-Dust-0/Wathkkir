@@ -1,5 +1,8 @@
 package com.example.utils
 
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.Lang
+
 import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

@@ -1,18 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Wathkkir Test</string>
-    <string name="lock_widget_description">ويدجت شاشة القفل</string>
-    <string name="widget_clock_desc">عداد الصلاة بين الصلاتين</string>
-    <string name="widget_day_prayer_desc">اليوم والصلاة القادمة</string>
-    <string name="widget_gregorian_desc">التاريخ الميلادي</string>
-    <string name="widget_hero_desc">العد التنازلي للصلاة القادمة</string>
-    <string name="widget_hijri_desc">التاريخ الهجري</string>
-    <string name="widget_iqama_desc">عد تنازلي حتى الإقامة مع شريط تقدم</string>
-    <string name="widget_iqama_small_desc">وقت الإقامة القادم بشكل مصغر</string>
-    <string name="widget_next_prayer_desc">الصلاة القادمة مع العد التنازلي</string>
-    <string name="widget_oneui_desc">تقدم الصلاة والتاريخ بتصميم مزخرف</string>
-    <string name="widget_pill_desc">تنبيه الأذان القادم</string>
-    <string name="widget_prayer_bar_desc">شريط الصلاة مع التقدم</string>
-    <string name="widget_schedule_desc">جدول مواعيد الصلاة</string>
-    <string name="widget_wide_bar_desc">شريط الصلاة العريض بالتاريخ</string>
-</resources>
+<?xml version='1.0' encoding='utf-8'?>
+<resources><string name="app_name">وذكّر</string></resources>

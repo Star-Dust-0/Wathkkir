@@ -28,64 +28,49 @@ open class PrayerTileService : TileService() {
         return TC(m, androidx.core.graphics.ColorUtils.blendARGB(0xFF000000.toInt(), m, 0.22f))
     }
 
-    // Custom typefaces are not allowed inside tiles (platform restriction), so the font choice reaches
-    // the tile as size scale + bold weight only; the typeface stays the system font.
+    // Custom typefaces are not allowed inside tiles (platform restriction): the typeface stays the
+    // system font. The tile also ignores the in-app font-SIZE setting on purpose (his 19:43-19:45
+    // review): a tile is fixed real estate, and scaling its text pushed the Hijri date off screen.
+    // Same for the SYSTEM font scale: his watch rendered the tile content ~1.35x after a system
+    // font change, which overflowed the layout. Dividing by the system fontScale keeps the tile's
+    // designed geometry identical on every watch (glanceable fixed layout, like a watch face).
+    private val fontScale: Float get() = resources.configuration.fontScale
     private fun text(t: String, size: Float, color: Int, bold: Boolean) =
         LayoutElementBuilders.Text.Builder()
             .setText(t)
             .setFontStyle(
                 LayoutElementBuilders.FontStyle.Builder()
-                    .setSize(sp(size * WFonts.scale)).setColor(argb(color))
-                    .setWeight(if (bold || WFonts.bold) LayoutElementBuilders.FONT_WEIGHT_BOLD else LayoutElementBuilders.FONT_WEIGHT_NORMAL)
+                    .setSize(sp(size / fontScale)).setColor(argb(color))
+                    .setWeight(if (bold) LayoutElementBuilders.FONT_WEIGHT_BOLD else LayoutElementBuilders.FONT_WEIGHT_NORMAL)
                     .build()
             ).build()
 
-    /** Platform-time expression, evaluated by the tile host without provider minute ticks. */
-    private fun nativeCounter(s: PrayerState, dynamic: Boolean): LayoutElementBuilders.Text {
-        val D = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
-            .durationUntil(androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(s.next.at))).toIntSeconds()
-        val seconds = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInt32.onCondition(D.lt(0)).use(0).elseUse(D)
-        val two = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInt32.IntFormatter.Builder().setMinIntegerDigits(2).setGroupingUsed(false).build()
-        val value = androidx.wear.protolayout.expression.DynamicBuilders.DynamicString.constant(T("المتبقي ", "Left "))
-            .concat(seconds.div(3600).format()).concat(androidx.wear.protolayout.expression.DynamicBuilders.DynamicString.constant(":"))
-            .concat(seconds.div(60).rem(60).format(two))
-        val fallback = T("المتبقي ", "Left ") + Prayer.remainingText(s.next.at-s.now)
-        return LayoutElementBuilders.Text.Builder()
-            .setText(androidx.wear.protolayout.TypeBuilders.StringProp.Builder(fallback).apply { if(dynamic)setDynamicValue(value) }.build())
-            .setLayoutConstraintsForDynamicText(androidx.wear.protolayout.TypeBuilders.StringLayoutConstraint.Builder(T("المتبقي ", "Left ")+"00:00").build())
-            .setFontStyle(LayoutElementBuilders.FontStyle.Builder().setSize(sp(12f*WFonts.scale)).setColor(argb(tc.main)).setWeight(if(WFonts.bold)LayoutElementBuilders.FONT_WEIGHT_BOLD else LayoutElementBuilders.FONT_WEIGHT_NORMAL).build()).build()
-    }
-
-    /** Same 2% minimum/100% maximum as PrayerState.progress, evaluated by the tile host. */
-    internal fun nativeArc(s: PrayerState): androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat {
-        val elapsed=androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(s.prev.at))
-            .durationUntil(androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()).toIntSeconds().asFloat()
-        val raw=elapsed.div(((s.next.at-s.prev.at).coerceAtLeast(1000L)/1000f)).times(270f)
-        return androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(raw.lt(5.4f)).use(5.4f)
-            .elseUse(androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(raw.gt(270f)).use(270f).elseUse(raw))
-    }
-
-    fun layout(s: PrayerState, dynamic: Boolean = true): LayoutElementBuilders.LayoutElement {
+    fun layout(s: PrayerState, iq: Prayer.Iqama? = null): LayoutElementBuilders.LayoutElement {
         val sweep = 270f
-        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(13f)).setColor(argb(tc.dark)).build()
-        val length=androidx.wear.protolayout.DimensionBuilders.DegreesProp.Builder(sweep*s.progress).apply {if(dynamic)setDynamicValue(nativeArc(s))}.build()
-        val fill = LayoutElementBuilders.ArcLine.Builder().setLength(length)
-            .setLayoutConstraintsForDynamicLength(androidx.wear.protolayout.DimensionBuilders.AngularLayoutConstraint.Builder(sweep).build())
-            .setThickness(dp(13f)).setColor(argb(tc.main)).build()
+        // During an iqama window the arc and center switch to the iqama countdown (owner feature, wear 1.1.0).
+        val arcProgress = if (iq != null) ((s.now - iq.prayer.at).toFloat() / maxOf(1L, iq.at - iq.prayer.at).toFloat()).coerceIn(0.02f, 1f) else s.progress
+        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
+        val fill = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep * arcProgress)).setThickness(dp(16f)).setColor(argb(tc.main)).build()
         fun arc(line: LayoutElementBuilders.ArcLine) = LayoutElementBuilders.Arc.Builder()
             .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(line).build()
 
         fun gap(h: Float) = LayoutElementBuilders.Spacer.Builder().setHeight(dp(h)).build()
+        // Layout measured against the reference gold widget ON THE REAL WATCH (Samsung font renders
+        // ~1.4x taller than the emulator, so constants are scaled ~1.16x (0.776 * 1.30 * 1.15, i.e. +49.5% over installed build) to land on the reference
+        // spacing on the actual device; the 454px emulator shows it proportionally smaller).
         val center = LayoutElementBuilders.Column.Builder()
             .setHorizontalAlignment(LayoutElementBuilders.HORIZONTAL_ALIGN_CENTER)
-            .addContent(text(Prayer.time12(s.next.at), 24f, 0xFFFFFFFF.toInt(), false))
-            .addContent(gap(2f))
-            .addContent(text(s.next.name, 19f, 0xFFFFFFFF.toInt(), true))
+            .setModifiers(ModifiersBuilders.Modifiers.Builder()
+                .setPadding(ModifiersBuilders.Padding.Builder().setTop(dp(16.5f)).build()).build())
+            .addContent(text(Prayer.time12(iq?.at ?: s.next.at), 25.5f, 0xFFFFFFFF.toInt(), false))
             .addContent(gap(5f))
-            .addContent(nativeCounter(s,dynamic))
-            .addContent(gap(7f))
-            .addContent(text(Prayer.hijriDay(s.now), 26f, 0xFFFFFFFF.toInt(), true))
-            .addContent(text(Prayer.hijriMonth(s.now), 12f, 0xFF9D9DA2.toInt(), false))
+            .addContent(text(if (iq != null) T("إقامة ", "Iqama ") + iq.prayer.name else s.next.name, 19.5f, 0xFFFFFFFF.toInt(), false))
+            .addContent(gap(9.7f))
+            .addContent(text(T("المتبقي ", "Left ") + Prayer.remainingText((iq?.at ?: s.next.at) - s.now), 14.5f, tc.main, true))
+            .addContent(gap(8f))
+            .addContent(text(Prayer.hijriDay(s.now), 30f, 0xFFFFFFFF.toInt(), true))
+            .addContent(gap(3.3f))
+            .addContent(text(Prayer.hijriMonth(s.now), 14.5f, 0xFF9D9DA2.toInt(), false))
             .build()
 
         val click = ModifiersBuilders.Clickable.Builder()
@@ -96,25 +81,19 @@ open class PrayerTileService : TileService() {
 
         return LayoutElementBuilders.Box.Builder()
             .setWidth(expand()).setHeight(expand())
-            .setModifiers(ModifiersBuilders.Modifiers.Builder().setPadding(ModifiersBuilders.Padding.Builder().setAll(dp(6f)).build()).setClickable(click).build())
             .setModifiers(ModifiersBuilders.Modifiers.Builder().setClickable(click).build())
             .addContent(arc(track)).addContent(arc(fill)).addContent(center)
             .build()
     }
 
-    public override fun onTileRequest(requestParams: RequestBuilders.TileRequest): ListenableFuture<TileBuilders.Tile> {
+    override fun onTileRequest(requestParams: RequestBuilders.TileRequest): ListenableFuture<TileBuilders.Tile> {
         WFonts.load(this)
         val s = Prayer.compute(this)
-        val version=requestParams.deviceConfiguration.rendererSchemaVersion
-        val dynamic=version.major>1 || (version.major==1 && version.minor>=2)
-        // Native expressions own the interval. Refresh only when the next prayer/date changes.
-        // Older tile hosts keep the original one-minute snapshot refresh.
-        val midnight=java.util.Calendar.getInstance().apply {timeInMillis=s.now;add(java.util.Calendar.DAY_OF_YEAR,1);set(java.util.Calendar.HOUR_OF_DAY,0);set(java.util.Calendar.MINUTE,0);set(java.util.Calendar.SECOND,0);set(java.util.Calendar.MILLISECOND,0)}.timeInMillis
-        val freshness=if(dynamic) (minOf(s.next.at,midnight)-s.now).coerceAtLeast(1_000L) else 60_000L
+        val iq = Prayer.iqamaNow(this)
         val tile = TileBuilders.Tile.Builder()
             .setResourcesVersion("1")
-            .setFreshnessIntervalMillis(freshness)
-            .setTileTimeline(TimelineBuilders.Timeline.fromLayoutElement(layout(s,dynamic)))
+            .setFreshnessIntervalMillis(60_000)
+            .setTileTimeline(TimelineBuilders.Timeline.fromLayoutElement(layout(s, iq)))
             .build()
         return Futures.immediateFuture(tile)
     }

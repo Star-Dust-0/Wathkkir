@@ -1,88 +1,52 @@
 package com.example.lockwidgets;
 
-/* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
-/* loaded from: classes.dex */
+/** Shared, clock-injected countdown state. Fixed iqama delays are unchanged. */
 public final class PrayerPhase {
     private static final int[] MINUTES = {25, 0, 20, 20, 10, 20};
+    public static int iqamaMinutes(int prayer) { return MINUTES[prayer]; }
+    public final int targetIndex, previousIndex;
+    public final long start, target;
     public final boolean iqama;
-    public final int previousIndex;
-    public final long start;
-    public final long target;
-    public final int targetIndex;
-
-    private PrayerPhase(int i, int i2, long j, long j2, boolean z) {
-        this.targetIndex = i;
-        this.previousIndex = i2;
-        this.start = j;
-        this.target = j2;
-        this.iqama = z;
+    private PrayerPhase(int i, int previous, long start, long target, boolean iqama) {
+        this.targetIndex=i; this.previousIndex=previous; this.start=start; this.target=target; this.iqama=iqama;
     }
-
-    public static String iqamaFor(String str, String str2) {
-        if (str.startsWith("ar")) {
-            if (str2 == null) {
-                str2 = "";
-            }
-            return "الإقامة ".concat(str2.startsWith("ال") ? "لل".concat(str2.substring(2)) : "ل".concat(str2));
+    public static long[] window(long[] today, long[] yesterday, long now, boolean friday) {
+        for(int i=5;i>=0;i--) {
+            long end=today[i]+MINUTES[i]*60000L;
+            if(MINUTES[i]>0 && !(friday && i==2) && today[i]<=now && now<end)
+                return new long[]{i,today[i],end};
         }
-        return iqamaLabel(str) + " " + str2;
-    }
-
-    public static String iqamaLabel(String str) {
-        return str.startsWith("ar") ? "الإقامة" : (str.startsWith("fr") || str.startsWith("de")) ? "Iqama" : str.startsWith("tr") ? "Kamet" : str.startsWith("ur") ? "اقامت" : str.startsWith("id") ? "Iqamah" : str.startsWith("ru") ? "Икама" : "Iqama";
-    }
-
-    public static int iqamaMinutes(int i) {
-        return MINUTES[i];
-    }
-
-    public static PrayerPhase resolve(long[] jArr, long[] jArr2, long[] jArr3, long j, boolean z, boolean z2) {
-        long[] window = window(jArr, jArr2, j, z);
-        if (window != null) {
-            long j2 = window[0];
-            return new PrayerPhase((int) j2, (int) j2, window[1], window[2], true);
-        }
-        int i = 5;
-        long j3 = jArr2[5];
-        for (int i2 = 0; i2 < 6; i2++) {
-            if (i2 != 1 || z2) {
-                long j4 = jArr[i2];
-                if (j4 > j) {
-                    return new PrayerPhase(i2, i, j3, j4, false);
-                }
-                i = i2;
-                j3 = j4;
-            }
-        }
-        return new PrayerPhase(0, 5, jArr[5], jArr3[0], false);
-    }
-
-    public static long[] window(long[] jArr, long[] jArr2, long j, boolean z) {
-        for (int i = 5; i >= 0; i--) {
-            long j2 = jArr[i];
-            int i2 = MINUTES[i];
-            long j3 = (i2 * 60000) + j2;
-            if (i2 > 0 && ((!z || i != 2) && j2 <= j && j < j3)) {
-                return new long[]{i, j2, j3};
-            }
-        }
-        if (jArr2 == null) {
-            return null;
-        }
-        long j4 = jArr2[5];
-        if (j4 > j) {
-            return null;
-        }
-        int i3 = MINUTES[5];
-        if (j < (i3 * 60000) + j4) {
-            return new long[]{5, j4, (i3 * 60000) + j4};
-        }
+        if(yesterday!=null && yesterday[5]<=now && now<yesterday[5]+MINUTES[5]*60000L)
+            return new long[]{5,yesterday[5],yesterday[5]+MINUTES[5]*60000L};
         return null;
     }
-
-    public String label(String[] strArr, String str) {
-        boolean z = this.iqama;
-        int i = this.targetIndex;
-        return z ? iqamaFor(str, strArr[i]) : strArr[i];
+    public static PrayerPhase resolve(long[] today,long[] yesterday,long[] tomorrow,long now,boolean friday,boolean includeSunrise) {
+        long[] w=window(today,yesterday,now,friday);
+        if(w!=null)return new PrayerPhase((int)w[0],(int)w[0],w[1],w[2],true);
+        int previous=5; long start=yesterday[5];
+        for(int i=0;i<6;i++) {
+            if(i==1 && !includeSunrise)continue;
+            if(today[i]>now)return new PrayerPhase(i,previous,start,today[i],false);
+            previous=i; start=today[i];
+        }
+        return new PrayerPhase(0,5,today[5],tomorrow[0],false);
+    }
+    public static String iqamaLabel(String code) {
+        if(code.startsWith("ar"))return "الإقامة";
+        if(code.startsWith("fr"))return "Iqama";
+        if(code.startsWith("de"))return "Iqama";
+        if(code.startsWith("tr"))return "Kamet";
+        if(code.startsWith("ur"))return "اقامت";
+        if(code.startsWith("id"))return "Iqamah";
+        if(code.startsWith("ru"))return "Икама";
+        return "Iqama";
+    }
+    /** "Iqama Dhuhr" in other languages; Arabic needs the preposition: الإقامة للظهر (ل + الظهر = للظهر). */
+    public static String iqamaFor(String code,String name) {
+        if(code.startsWith("ar")){String n=name==null?"":name;return "الإقامة "+(n.startsWith("ال")?"لل"+n.substring(2):"ل"+n);}
+        return iqamaLabel(code)+" "+name;
+    }
+    public String label(String[] names,String code) {
+        return iqama ? iqamaFor(code,names[targetIndex]) : names[targetIndex];
     }
 }

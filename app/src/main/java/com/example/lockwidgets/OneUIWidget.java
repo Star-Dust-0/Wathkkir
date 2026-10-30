@@ -1,297 +1,202 @@
 package com.example.lockwidgets;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BlurMaskFilter;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.Typeface;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.StaticLayout;
-import android.text.TextDirectionHeuristics;
-import android.text.TextPaint;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.MetricAffectingSpan;
-import com.example.lockwidgets.HomeWidgets;
-import com.example.utils.Digits;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import android.content.res.Configuration;
+import android.graphics.*;
+import android.text.*;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
-/* loaded from: classes.dex */
+/** One UI style prayer progress card with a yellow date tile (mockup v4). Drawn like the other home widgets. */
 final class OneUIWidget {
-    private static final int[] ACCENT_MAIN = {-10148, -12268352, -12673026, -9842621};
-    private static final int[] ACCENT_DEEP = {-1333248, -15297384, -13270792, -16268444};
+    private OneUIWidget() {}
 
-    /* compiled from: r8-map-id-fecc35cc6047ab9fdb22996bf50955d9790c9a22fb2ab87174fa2e6474f3808e */
-    public static final class CustomTypefaceSpan extends MetricAffectingSpan {
-        private final Typeface tf;
+    private static float lerp(float a, float b, float t) { return a + (b - a) * t; }
 
-        public CustomTypefaceSpan(Typeface typeface) {
-            this.tf = typeface;
-        }
-
-        @Override // android.text.style.CharacterStyle
-        public void updateDrawState(TextPaint textPaint) {
-            textPaint.setTypeface(this.tf);
-        }
-
-        @Override // android.text.style.MetricAffectingSpan
-        public void updateMeasureState(TextPaint textPaint) {
-            textPaint.setTypeface(this.tf);
-        }
+    /** Per-channel ARGB blend: t=0 keeps a, t=1 gives b. */
+    private static int blend(int a, int b, float t) {
+        int r = (int) (((a >> 16) & 0xFF) + ((((b >> 16) & 0xFF) - ((a >> 16) & 0xFF)) * t));
+        int g = (int) (((a >> 8) & 0xFF) + ((((b >> 8) & 0xFF) - ((a >> 8) & 0xFF)) * t));
+        int bl = (int) ((a & 0xFF) + (((b & 0xFF) - (a & 0xFF)) * t));
+        return 0xFF000000 | (r << 16) | (g << 8) | bl;
     }
 
-    private OneUIWidget() {
+    // Accent themes (3.3.3, his call 22.10.2026): 0 = the classic yellow (default, values
+    // unchanged); 1-3 reuse the watch app palette pairs (wear/Settings.kt WTheme.defs:
+    // main, deep) so the widget matches the watch app colours exactly.
+    private static final int[] ACCENT_MAIN = {0xFFFFD85C, 0xFF44CCC0, 0xFF3E9FFE, 0xFF69D043};
+    private static final int[] ACCENT_DEEP = {0xFFEBA800, 0xFF169498, 0xFF3580F8, 0xFF07C364};
+
+    /** Selected accent for a widget instance: fajr_prefs widget_oneui_color_<id>, default 0 (yellow). */
+    static int accentForWidget(android.content.Context c, int widgetId) {
+        if (widgetId <= 0) return 0;
+        int v = c.getSharedPreferences("fajr_prefs", android.content.Context.MODE_PRIVATE)
+                .getInt("widget_oneui_color_" + widgetId, 0);
+        return v >= 1 && v <= 3 ? v : 0;
     }
 
-    public static int accentForWidget(Context context, int i) {
-        if (i <= 0) {
-            return 0;
-        }
-        int i2 = context.getSharedPreferences("fajr_prefs", 0).getInt("widget_oneui_color_" + i, 0);
-        if (i2 < 1 || i2 > 3) {
-            return 0;
-        }
-        return i2;
-    }
+    static Bitmap render(Context c, HomeWidgets.State s, int wd, int ht, int widgetId) {
+        float d = c.getResources().getDisplayMetrics().density;
+        float os = HomeWidgets.oversample(c, wd, ht, d);
+        Bitmap bmp = Bitmap.createBitmap(Math.max(1, (int) (wd * d * os)), Math.max(1, (int) (ht * d * os)), Bitmap.Config.ARGB_8888);
+        Canvas cv = new Canvas(bmp);
+        cv.scale(os, os);
+        boolean night = (c.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        float W = wd, H = ht;
+        float t = Math.max(0f, Math.min(1f, (H - 80f) / 100f)); // 0 = 4x1, 1 = 4x2
+        float gap = Math.max(6f, W * 0.02f);
+        float tileW = Math.min(H * 0.93f, W * 0.225f);
+        // Large screens only: keep the date tile's shape (width/height = 0.93, the full-width look) when the card is width-limited, instead of letting it turn into a tall sliver; it is centred vertically.
+        android.content.SharedPreferences dbg = c.getSharedPreferences("fajr_prefs", 0);
+        boolean tileFix = HomeWidgets.large(c) && dbg.getBoolean("dbg_tilefix", true), textFix = HomeWidgets.large(c) && dbg.getBoolean("dbg_textfix", true);
+        float tileH = tileFix ? Math.min(H, tileW / 0.8095f) : H; // 0.8095 = 68/84, the observed known-good 302x84 tile
+        float tileTop = (H - tileH) / 2f;
+        float cardW = W - tileW - gap;
+        float corner = Math.min(H * 0.30f, 34f);
+        RectF card = new RectF(0, 0, cardW, H);
+        RectF tile = new RectF(cardW + gap, tileTop, W, tileTop + tileH);
+        Typeface reg = HomeWidgets.face(c, false, s.rtl), bold = HomeWidgets.face(c, true, s.rtl);
 
-    private static int blend(int i, int i2, float f) {
-        int i3 = (i >> 16) & 255;
-        int i4 = (i >> 8) & 255;
-        return ((int) ((((i2 & 255) - (i & 255)) * f) + (i & 255))) | (-16777216) | (((int) (((((i2 >> 16) & 255) - i3) * f) + i3)) << 16) | (((int) (((((i2 >> 8) & 255) - i4) * f) + i4)) << 8);
-    }
-
-    private static float lerp(float f, float f2, float f3) {
-        return ((f2 - f) * f3) + f;
-    }
-
-    private static void line(Canvas canvas, String str, float f, float f2, float f3, float f4, Typeface typeface, int i, Layout.Alignment alignment, float f5) {
-        HomeWidgets.heroText(canvas, str, f, f2, f3, f4, typeface, i, alignment, f5);
-    }
-
-    private static void remaining(Canvas canvas, String str, String str2, float f, float f2, float f3, float f4, Typeface typeface, Typeface typeface2, int i, int i2, float f5) {
-        Typeface typeface3;
-        float f6;
-        String str3 = str + str2;
-        ThreadLocal<String> threadLocal = HomeWidgets.ovToken;
-        if (threadLocal.get() == null || !str3.contains(threadLocal.get())) {
-            typeface3 = typeface2;
+        int cardTop = night ? 0xFF2B2C30 : 0xFFFFFFFF, cardBot = night ? 0xFF222326 : 0xFFF1F2F5;
+        int ink = night ? 0xFFFFFFFF : 0xFF1C1C1E;
+        int soft = night ? 0xFFB4B4BA : 0xFF6C6C74;
+        int track = night ? 0xFF4A4A4F : 0xFFDEDEE2;
+        int accent = accentForWidget(c, widgetId);
+        int barA, barB, tA, tB, tInk;
+        if (accent == 0) {
+            // Classic yellow: the exact shipped values, including the blue day bar.
+            barA = night ? 0xFFFFD85C : 0xFF55A0FF; barB = night ? 0xFFF5B800 : 0xFF2A6BF0;
+            tA = night ? 0xFFFFD85C : 0xFFFFE58F; tB = night ? 0xFFEBA800 : 0xFFFFC93A;
+            tInk = night ? 0xFF2A2200 : 0xFF3A2E00;
         } else {
-            typeface3 = typeface2;
-            if (HomeWidgets.capture(str3, ((f3 / 2.0f) + f) * f5, f2 * f5, f3 * f5, HomeWidgets.fitSize(str3, typeface3, f4, f3, f5, 2), i2, 1)) {
-                return;
-            }
+            int m = ACCENT_MAIN[accent], deep = ACCENT_DEEP[accent];
+            barA = m; barB = deep;
+            // Day tile derived like the yellow one: lighter top, mid-toned bottom; ink is a
+            // dark shade of the accent so the date stays readable on the coloured tile.
+            tA = night ? m : blend(m, 0xFFFFFFFF, 0.38f);
+            tB = night ? deep : blend(m, deep, 0.55f);
+            tInk = blend(deep, 0xFF000000, night ? 0.78f : 0.68f);
         }
-        String b = Digits.forWidget(str3);
-        SpannableString spannableString = new SpannableString(b);
-        spannableString.setSpan(new ForegroundColorSpan(i), 0, str.length(), 33);
-        spannableString.setSpan(new ForegroundColorSpan(i2), str.length(), b.length(), 33);
-        spannableString.setSpan(new CustomTypefaceSpan(typeface3), 0, b.length(), 33);
-        TextPaint textPaint = new TextPaint(1);
-        textPaint.setTypeface(typeface3);
-        textPaint.setTextSize(f4 * f5);
-        textPaint.setColor(i);
-        while (true) {
-            f6 = f3 * f5;
-            if (textPaint.measureText(b) <= f6 || textPaint.getTextSize() <= 8.0f * f5) {
-                break;
-            } else {
-                textPaint.setTextSize(textPaint.getTextSize() - (0.5f * f5));
-            }
-        }
-        StaticLayout build = StaticLayout.Builder.obtain(spannableString, 0, spannableString.length(), textPaint, Math.max(1, (int) f6)).setAlignment(Layout.Alignment.ALIGN_CENTER).setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR).setIncludePad(false).setMaxLines(1).build();
-        canvas.save();
-        canvas.translate(f * f5, (f2 * f5) - (build.getHeight() / 2.0f));
-        build.draw(canvas);
-        canvas.restore();
-    }
+        // Iqama countdown: the bar takes the selected theme like everything else (his call
+        // 22.10.2026 20:30). The flat amber override stays for the default yellow theme only,
+        // where it is part of the shipped look.
+        if (s.iqama && accent == 0) { barA = 0xFFE5B455; barB = 0xFFE5B455; }
 
-    public static Bitmap render(Context context, HomeWidgets.State state, int i, int i2, int i3) {
-        Typeface typeface;
-        float f;
-        boolean z;
-        int blend;
-        int blend2;
-        int blend3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        String durText;
-        float f2 = context.getResources().getDisplayMetrics().density;
-        float oversample = HomeWidgets.oversample(context, i, i2, f2);
-        float f3 = i;
-        float f4 = i2;
-        float f5 = f4 * f2;
-        Bitmap createBitmap = Bitmap.createBitmap(Math.max(1, (int) (f3 * f2 * oversample)), Math.max(1, (int) (f5 * oversample)), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        canvas.scale(oversample, oversample);
-        boolean z2 = (context.getResources().getConfiguration().uiMode & 48) == 32;
-        float max = Math.max(0.0f, Math.min(1.0f, (f4 - 80.0f) / 100.0f));
-        float max2 = Math.max(6.0f, f3 * 0.02f);
-        float min = Math.min(f4 * 0.93f, f3 * 0.225f);
-        float f6 = (f3 - min) - max2;
-        float min2 = Math.min(f4 * 0.3f, 34.0f);
-        RectF rectF = new RectF(0.0f, 0.0f, f6, f4);
-        RectF rectF2 = new RectF(f6 + max2, 0.0f, f3, f4);
-        Typeface face = HomeWidgets.face(context, false, state.rtl);
-        Typeface face2 = HomeWidgets.face(context, true, state.rtl);
-        int i8 = z2 ? -13947856 : -1;
-        int i9 = z2 ? -14539994 : -920843;
-        int i10 = z2 ? -1 : -14935010;
-        int i11 = z2 ? -4934470 : -9671564;
-        int i12 = z2 ? -11908529 : -2171166;
-        int accentForWidget = accentForWidget(context, i3);
-        if (accentForWidget == 0) {
-            i5 = z2 ? -10148 : -11165441;
-            i4 = z2 ? -673792 : -13997072;
-            blend = z2 ? -10148 : -6769;
-            blend2 = z2 ? -1333248 : -14022;
-            blend3 = z2 ? -14016000 : -12964352;
-            typeface = face;
-            f = f4;
-            z = z2;
-        } else {
-            int i13 = ACCENT_MAIN[accentForWidget];
-            typeface = face;
-            int i14 = ACCENT_DEEP[accentForWidget];
-            f = f4;
-            if (z2) {
-                z = z2;
-                blend = i13;
-            } else {
-                z = z2;
-                blend = blend(i13, -1, 0.38f);
-            }
-            blend2 = z ? i14 : blend(i13, i14, 0.55f);
-            blend3 = blend(i14, -16777216, z ? 0.78f : 0.68f);
-            i4 = i14;
-            i5 = i13;
-        }
-        int i15 = blend;
-        int i16 = blend2;
-        int i17 = blend3;
-        if (state.iqama && accentForWidget == 0) {
-            i6 = -1723307;
-            i7 = -1723307;
-        } else {
-            i6 = i5;
-            i7 = i4;
-        }
-        Paint paint = new Paint(1);
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, f5, i8, i9, tileMode));
-        float f7 = min2 * f2;
-        canvas.drawRoundRect(new RectF(rectF.left * f2, rectF.top * f2, rectF.right * f2, rectF.bottom * f2), f7, f7, paint);
-        paint.setShader(null);
-        float f8 = f6 * f2;
-        int i18 = i12;
-        canvas.saveLayer(0.0f, 0.0f, f8, f5, null);
-        Path path = new Path();
-        path.addRoundRect(new RectF(0.0f, 0.0f, f8, f5), f7, f7, Path.Direction.CW);
-        canvas.clipPath(path);
-        Paint paint2 = new Paint(1);
-        paint2.setStyle(Paint.Style.STROKE);
-        paint2.setStrokeWidth(Math.max(0.8f, f2 * 0.9f));
-        paint2.setColor(z ? -1 : -8617066);
-        paint2.setAlpha(z ? 48 : 70);
-        WidgetPatterns.draw(canvas, WidgetPatterns.forWidget(context, i3), f8, f5, lerp(0.115f, 0.092f, max) * f * f2, paint2);
-        Paint paint3 = new Paint();
-        paint3.setShader(new LinearGradient(0.0f, f5, f8 * 0.9f, 0.0f, -16777216, 0, tileMode));
-        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        canvas.drawRect(0.0f, 0.0f, f8, f5, paint3);
-        canvas.restore();
-        float lerp = lerp(0.21f, 0.2f, max) * f;
-        float lerp2 = f * lerp(0.385f, 0.43f, max);
-        float lerp3 = f * lerp(0.565f, 0.63f, max);
-        float lerp4 = f * lerp(0.795f, 0.84f, max);
-        float lerp5 = lerp(0.162f, 0.116f, max) * f;
-        float lerp6 = lerp(0.152f, 0.096f, max) * f;
-        float lerp7 = f * lerp(0.165f, 0.108f, max);
-        float min3 = Math.min(24.0f, 0.06f * f6);
-        float f9 = f6 - (min3 * 2.0f);
-        float f10 = f9 * 0.46f;
-        String str = state.targetName;
-        String str2 = state.names[state.previous];
-        String time = time(context, state, state.at);
-        String time2 = time(context, state, state.prev);
-        float f11 = min3 + f9;
-        float f12 = f11 - f10;
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_OPPOSITE;
-        Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-        int i19 = i10;
-        line(canvas, str, f12, lerp, f10, lerp5, face2, i19, alignment, f2);
-        line(canvas, str2, min3, lerp, f10, lerp5, face2, i19, alignment2, f2);
-        Typeface typeface2 = typeface;
-        line(canvas, time, f12, lerp3, f10, lerp6, typeface2, i19, alignment, f2);
-        line(canvas, time2, min3, lerp3, f10, lerp6, typeface2, i19, alignment2, f2);
-        float max3 = Math.max(6.0f, lerp(0.125f, 0.1f, max) * f);
-        long j = state.now;
-        long j2 = state.prev;
-        float max4 = Math.max(0.02f, Math.min(1.0f, (j - j2) / Math.max(1L, state.at - j2)));
-        float f13 = min3 * f2;
-        float f14 = max3 / 2.0f;
-        RectF rectF3 = new RectF(f13, (lerp2 - f14) * f2, f11 * f2, (lerp2 + f14) * f2);
-        paint.setColor(i18);
-        float f15 = max3 * f2;
-        float f16 = f15 / 2.0f;
-        canvas.drawRoundRect(rectF3, f16, f16, paint);
-        RectF rectF4 = new RectF(f13, rectF3.top, (min3 + (max4 * f9)) * f2, rectF3.bottom);
-        Paint paint4 = new Paint(1);
-        int i20 = i7;
-        paint4.setColor(i20);
-        paint4.setAlpha(z ? 70 : 60);
-        paint4.setMaskFilter(new BlurMaskFilter(f15 * 0.9f, BlurMaskFilter.Blur.NORMAL));
-        canvas.drawRoundRect(rectF4, f16, f16, paint4);
-        paint.setShader(new LinearGradient(rectF4.left, 0.0f, rectF4.right, 0.0f, i6, i20, tileMode));
-        canvas.drawRoundRect(rectF4, f16, f16, paint);
-        paint.setShader(null);
-        long max5 = Math.max(0L, (state.at - state.now) / 60000);
-        String remPrefix = HomeWidgets.remPrefix(state.code, ": ");
-        if (state.iqama) {
-            durText = "\u2066" + HomeWidgets.mmss(state.at - state.now) + "\u2069";
-        } else {
-            durText = HomeWidgets.durText(max5, state.code);
-        }
-        String str3 = durText;
+        Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        // card
+        p.setShader(new LinearGradient(0, 0, 0, H * d, cardTop, cardBot, Shader.TileMode.CLAMP));
+        cv.drawRoundRect(new RectF(card.left * d, card.top * d, card.right * d, card.bottom * d), corner * d, corner * d, p);
+        p.setShader(null);
+        // pattern (default Rub el Hizb, per-widget setting), fading from the bottom-left corner
+        cv.saveLayer(0, 0, cardW * d, H * d, null);
+        Path clip = new Path();
+        clip.addRoundRect(new RectF(0, 0, cardW * d, H * d), corner * d, corner * d, Path.Direction.CW);
+        cv.clipPath(clip);
+        Paint sp = new Paint(Paint.ANTI_ALIAS_FLAG);
+        sp.setStyle(Paint.Style.STROKE);
+        sp.setStrokeWidth(Math.max(0.8f, 0.9f * d));
+        sp.setColor(night ? 0xFFFFFFFF : 0xFF7C8396);
+        sp.setAlpha(night ? 48 : 70);
+        float R = H * lerp(0.115f, 0.092f, t);
+        WidgetPatterns.draw(cv, WidgetPatterns.forWidget(c, widgetId), cardW * d, H * d, R * d, sp);
+        Paint fade = new Paint();
+        fade.setShader(new LinearGradient(0, H * d, cardW * d * 0.9f, 0, 0xFF000000, 0x00000000, Shader.TileMode.CLAMP));
+        fade.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        cv.drawRect(0, 0, cardW * d, H * d, fade);
+        cv.restore();
+
+        // text rows (fractions of card height, interpolated between 4x1 and 4x2)
+        float nameY = H * lerp(0.21f, 0.20f, t), barY = H * lerp(0.385f, 0.43f, t), timeY = H * lerp(0.565f, 0.63f, t), remY = H * lerp(0.795f, 0.84f, t);
+        float nameSz = H * lerp(0.162f, 0.116f, t), timeSz = H * lerp(0.152f, 0.096f, t), remSz = H * lerp(0.165f, 0.108f, t);
+        // Large screens only: when the card is narrower than the full-width one (resized down), scale the text with the card width so the rows keep their air. Full width (ratio >= 2.71) and phones are unchanged.
+        if (textFix) { float nf = Math.max(0.78f, Math.min(1f, (cardW / H) / 2.71f)); nameSz *= nf; timeSz *= nf; remSz *= nf; }
+        float padX = Math.min(24f, cardW * 0.06f), inner = cardW - 2 * padX, side = inner * 0.46f;
+        boolean rtl = s.rtl;
+        String nextName = s.targetName, prevName = s.names[s.previous];
+        String nextTime = time(c, s, s.at), prevTime = time(c, s, s.prev);
+        float xNext = padX + inner - side, xPrev = padX; // previous prayer on the left, next on the right, as in the mockup
+        Layout.Alignment nextA = Layout.Alignment.ALIGN_OPPOSITE;
+        Layout.Alignment prevA = Layout.Alignment.ALIGN_NORMAL;
+        line(cv, nextName, xNext, nameY, side, nameSz, bold, ink, nextA, d);
+        line(cv, prevName, xPrev, nameY, side, nameSz, bold, ink, prevA, d);
+        line(cv, nextTime, xNext, timeY, side, timeSz, reg, ink, nextA, d);
+        line(cv, prevTime, xPrev, timeY, side, timeSz, reg, ink, prevA, d);
+
+        // progress bar
+        float bh = Math.max(6f, H * lerp(0.125f, 0.10f, t));
+        float progress = Math.max(0.02f, Math.min(1f, (s.now - s.prev) / (float) Math.max(1, s.at - s.prev)));
+        RectF tr = new RectF(padX * d, (barY - bh / 2) * d, (padX + inner) * d, (barY + bh / 2) * d);
+        p.setColor(track);
+        cv.drawRoundRect(tr, bh * d / 2, bh * d / 2, p);
+        float fw = inner * progress;
+        RectF fr = new RectF(padX * d, tr.top, (padX + fw) * d, tr.bottom); // fills left to right
+        Paint glow = new Paint(Paint.ANTI_ALIAS_FLAG);
+        glow.setColor(barB);
+        glow.setAlpha(night ? 70 : 60);
+        glow.setMaskFilter(new BlurMaskFilter(bh * d * 0.9f, BlurMaskFilter.Blur.NORMAL));
+        cv.drawRoundRect(fr, bh * d / 2, bh * d / 2, glow);
+        p.setShader(new LinearGradient(fr.left, 0, fr.right, 0, barA, barB, Shader.TileMode.CLAMP));
+        cv.drawRoundRect(fr, bh * d / 2, bh * d / 2, p);
+        p.setShader(null);
+
+        // remaining line: gray label + bold value (iqama: native ticking countdown replaces the value)
+        long mins = Math.max(0, (s.at - s.now) / 60000);
+        String prefix = HomeWidgets.remPrefix(s.code, ": ");
+        String value = s.iqama ? "\u2066" + HomeWidgets.mmss(s.at - s.now) + "\u2069" : HomeWidgets.durText(mins, s.code);
         HomeWidgets.ovSemi.set(Boolean.TRUE);
-        remaining(canvas, remPrefix, str3, min3, lerp4, f9, lerp7, typeface2, face2, i11, i19, f2);
-        RectF rectF5 = new RectF(rectF2.left * f2, 0.0f, rectF2.right * f2, f5);
-        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, f5, i15, i16, tileMode));
-        float f17 = 1.05f * f7;
-        canvas.drawRoundRect(rectF5, f17, f17, paint);
-        paint.setShader(null);
-        float lerp8 = f * lerp(0.127f, 0.07f, max);
-        float lerp9 = f * lerp(0.42f, 0.245f, max);
-        float lerp10 = lerp(0.118f, 0.065f, max) * f;
-        String str4 = state.day;
-        float f18 = rectF2.left + 4.0f;
-        float lerp11 = lerp(0.2f, 0.3f, max) * f;
-        float f19 = min - 8.0f;
-        Layout.Alignment alignment3 = Layout.Alignment.ALIGN_CENTER;
-        line(canvas, str4, f18, lerp11, f19, lerp8, typeface2, i17, alignment3, f2);
-        line(canvas, state.hday, rectF2.left + 4.0f, lerp(0.5f, 0.5f, max) * f, f19, lerp9, face2, i17, alignment3, f2);
-        line(canvas, state.hmonth, rectF2.left + 4.0f, f * lerp(0.8f, 0.7f, max), f19, lerp10, typeface2, i17, alignment3, f2);
-        return createBitmap;
+        remaining(cv, prefix, value, padX, remY, inner, remSz, reg, bold, soft, ink, d);
+
+        // date tile (accent colours resolved above)
+        RectF tp = new RectF(tile.left * d, tile.top * d, tile.right * d, tile.bottom * d);
+        p.setShader(new LinearGradient(0, tile.top * d, 0, tile.bottom * d, tA, tB, Shader.TileMode.CLAMP));
+        cv.drawRoundRect(tp, corner * d * 1.05f, corner * d * 1.05f, p);
+        p.setShader(null);
+        float tcx = tile.left + tileW / 2;
+        float wdSz = tileH * lerp(0.127f, 0.07f, t), numSz = tileH * lerp(0.42f, 0.245f, t), mSz = tileH * lerp(0.118f, 0.065f, t);
+        line(cv, s.day, tile.left + 4, tileTop + tileH * lerp(0.20f, 0.30f, t), tileW - 8, wdSz, reg, tInk, Layout.Alignment.ALIGN_CENTER, d);
+        line(cv, s.hday, tile.left + 4, tileTop + tileH * lerp(0.50f, 0.50f, t), tileW - 8, numSz, bold, tInk, Layout.Alignment.ALIGN_CENTER, d);
+        line(cv, s.hmonth, tile.left + 4, tileTop + tileH * lerp(0.80f, 0.70f, t), tileW - 8, mSz, reg, tInk, Layout.Alignment.ALIGN_CENTER, d);
+        return bmp;
     }
 
-    private static String time(Context context, HomeWidgets.State state, long j) {
-        if (!state.code.startsWith("ar")) {
-            return HomeWidgets.tm(j, state.code);
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(j);
-        String str = calendar.get(9) == 0 ? "ص" : "م";
-        return "\u2066" + new SimpleDateFormat("hh:mm", Locale.ENGLISH).format(new Date(j)) + "\u2069 " + str;
+    private static String time(Context c, HomeWidgets.State s, long at) {
+        if (!s.code.startsWith("ar")) return HomeWidgets.tm(at, s.code);
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.setTimeInMillis(at);
+        String m = cal.get(java.util.Calendar.AM_PM) == 0 ? "ص" : "م";
+        String hm = new java.text.SimpleDateFormat("hh:mm", Locale.ENGLISH).format(new java.util.Date(at));
+        return "\u2066" + hm + "\u2069 " + m;
+    }
+
+    private static void line(Canvas cv, String s, float x, float cy, float w, float size, Typeface f, int color, Layout.Alignment a, float d) {
+        HomeWidgets.heroText(cv, s, x, cy, w, size, f, color, a, d);
+    }
+
+    private static void remaining(Canvas cv, String prefix, String value, float x, float cy, float w, float size, Typeface reg, Typeface bold, int soft, int ink, float d) {
+        String full = prefix + value;
+        if (HomeWidgets.ovToken.get() != null && full.contains(HomeWidgets.ovToken.get()) && HomeWidgets.capture(full, (x + w / 2) * d, cy * d, w * d, HomeWidgets.fitSize(full, bold, size, w, d, 2), ink, 1)) return;
+        full = com.example.utils.Digits.forWidget(full);
+        SpannableString sp = new SpannableString(full);
+        sp.setSpan(new android.text.style.ForegroundColorSpan(soft), 0, prefix.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sp.setSpan(new android.text.style.ForegroundColorSpan(ink), prefix.length(), full.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sp.setSpan(new CustomTypefaceSpan(bold), 0, full.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        TextPaint tp = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+        tp.setTypeface(bold);
+        tp.setTextSize(size * d);
+        tp.setColor(soft);
+        while (tp.measureText(full) > w * d && tp.getTextSize() > 8 * d) tp.setTextSize(tp.getTextSize() - 0.5f * d);
+        StaticLayout l = StaticLayout.Builder.obtain(sp, 0, sp.length(), tp, Math.max(1, (int) (w * d)))
+                .setAlignment(Layout.Alignment.ALIGN_CENTER).setTextDirection(TextDirectionHeuristics.FIRSTSTRONG_LTR)
+                .setIncludePad(false).setMaxLines(1).build();
+        cv.save();
+        cv.translate(x * d, cy * d - l.getHeight() / 2f);
+        l.draw(cv);
+        cv.restore();
+    }
+
+    private static final class CustomTypefaceSpan extends android.text.style.MetricAffectingSpan {
+        private final Typeface tf;
+        CustomTypefaceSpan(Typeface tf) { this.tf = tf; }
+        @Override public void updateDrawState(TextPaint p) { p.setTypeface(tf); }
+        @Override public void updateMeasureState(TextPaint p) { p.setTypeface(tf); }
     }
 }

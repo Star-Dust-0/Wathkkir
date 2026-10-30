@@ -64,13 +64,13 @@ fun OptionalTimesScreen(onBack: (() -> Unit)? = null) {
 @Composable
 private fun OptRow(key: String, title: String, icon: ImageVector, tick: Int, onChanged: () -> Unit) {
     val context = LocalContext.current
-    val on = remember(key, tick) { PrayerAdjustments.INSTANCE.optionalRow(context, key) }
+    val on = remember(key, tick) { PrayerAdjustments.optionalRow(context, key) }
     OneUIRow(
         title = title,
         leading = { OneUIIconBadge(icon) },
         trailing = {
             OneUISwitch(on, {
-                PrayerAdjustments.INSTANCE.setOptionalRow(context, key, it)
+                PrayerAdjustments.setOptionalRow(context, key, it)
                 onChanged()
             })
         }

@@ -1,3209 +1,3139 @@
 package com.example.ui.i18n
 
-// Generated from the original 3.4.2 string tables (bm0/sk1). Do not edit by hand.
-
 internal fun table(l: Lang): Map<S, String> = when (l) {
     Lang.AR -> AR; Lang.EN -> EN; Lang.FR -> FR; Lang.DE -> DE; Lang.ES -> ES
     Lang.IT -> IT; Lang.TR -> TR; Lang.UR -> UR; Lang.ID -> ID; Lang.RU -> RU; Lang.PT -> PT
 }
 
-internal val AR: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    arPart0(m)
-    arPart1(m)
-    arPart2(m)
-    arPart3(m)
-    arPart4(m)
-    m
-}
-private fun arPart0(m: HashMap<S, String>) {
-    m[S.WidgetTapTitle] = "عند الضغط على الويدجت"
-    m[S.WidgetTapOpenApp] = "فتح التطبيق"
-    m[S.WidgetTapNothing] = "لا شيء"
-    m[S.WidgetTapRefresh] = "تحديث العرض"
-    m[S.PrayerTab] = "الصلاة"
-    m[S.AzkarTab] = "التذكيرات"
-    m[S.HisnTab] = "حصن المسلم"
-    m[S.FajrTab] = "الفجر"
-    m[S.TasbeehTab] = "السبحة"
-    m[S.Favorites] = "المفضلة"
-    m[S.Reminders] = "التنبيهات"
-    m[S.Stats] = "الإحصائيات"
-    m[S.Tags] = "التصنيفات"
-    m[S.Settings] = "الإعدادات"
-    m[S.About] = "حول التطبيق"
-    m[S.More] = "المزيد"
-    m[S.Menu] = "القائمة"
-    m[S.AddDhikr] = "إضافة ذكر"
-    m[S.SearchAzkar] = "ابحث عن ذكر أو تصنيف"
-    m[S.All] = "الكل"
-    m[S.NoAzkar] = "لا توجد أذكار"
-    m[S.NoAzkarUnderTag] = "لا توجد أذكار تحت تصنيف \"%1\$s\""
-    m[S.NoResultsQuery] = "لا توجد نتائج تطابق \"%1\$s\""
-    m[S.Options] = "خيارات"
-    m[S.EditDhikrTags] = "تعديل الذكر والتصنيفات"
-    m[S.ReminderTimes] = "أوقات التنبيه"
-    m[S.Delete] = "حذف"
-    m[S.NoActiveReminders] = "لا توجد تنبيهات مفعلة"
-    m[S.Today] = "اليوم"
-    m[S.ThisWeek] = "هذا الأسبوع"
-    m[S.DayStreak] = "أيام متتالية"
-    m[S.CurrentReminder] = "التذكير الحالي"
-    m[S.NextReminder] = "التذكير القادم"
-    m[S.NoActiveAzkar] = "لا توجد أذكار مفعلة. فعّلها من قائمة التذكيرات."
-    m[S.Shortcuts] = "اختصارات"
-    m[S.TasbeehCounter] = "عداد التسبيح"
-    m[S.HisnSubtitle] = "أذكار وأدعية من الكتاب والسنة"
-    m[S.FavSubtitle] = "الأذكار التي تحبها"
-    m[S.ReadDone] = "تمت القراءة"
-    m[S.TotalSuffix] = " إجمالًا"
-    m[S.NoReadsYet] = "لا توجد قراءات بعد"
-    m[S.DhikrIdFmt] = "ذكر #%1\$d"
-    m[S.Periods] = "الفترات الزمنية"
-    m[S.Week] = "الأسبوع"
-    m[S.Month] = "الشهر"
-    m[S.KeepGoing] = "استمر في المحافظة على أذكارك اليومية"
-    m[S.TotalReads] = "إجمالي القراءات"
-    m[S.SinceStart] = "منذ بداية الاستخدام"
-    m[S.RecentReads] = "آخر القراءات"
-    m[S.RemindersSubtitle] = "جميع أوقات التذكير"
-    m[S.StatsSubtitle] = "السجل والأيام المتتالية"
-    m[S.TagsSubtitle] = "تنظيم الأذكار بالألوان"
-    m[S.FajrAlarm] = "منبه صلاة الفجر"
-    m[S.ByLocation] = "حسب موقعك الجغرافي"
-    m[S.SettingsSubtitle] = "الاهتزاز والخط والنغمة"
-    m[S.AboutSubtitle] = "الإصدار والمطوّر"
-    m[S.DeleteTag] = "حذف التصنيف"
-    m[S.DeleteTagMsg] = "سيتم حذف التصنيف \"%1\$s\" من جميع الأذكار. لن تُحذف الأذكار نفسها."
-    m[S.AddTag] = "إضافة تصنيف"
-    m[S.NoTags] = "لا توجد تصنيفات حاليًا"
-}
-private fun arPart1(m: HashMap<S, String>) {
-    m[S.Edit] = "تعديل"
-    m[S.NewTag] = "تصنيف جديد"
-    m[S.EditTag] = "تعديل التصنيف"
-    m[S.TagName] = "اسم التصنيف"
-    m[S.Color] = "اللون"
-    m[S.TasbeehaFmt] = "%1\$d تسبيحة"
-    m[S.TapToCount] = "اضغط للتسبيح"
-    m[S.ResetCounter] = "تصفير العداد"
-    m[S.ActiveOfTotalFmt] = "%1\$d من %2\$d مفعّلة"
-    m[S.NoReminders] = "لا توجد تنبيهات"
-    m[S.NoFavorites] = "لا توجد أذكار مفضلة"
-    m[S.Light] = "فاتح"
-    m[S.Dark] = "داكن"
-    m[S.SystemAuto] = "تلقائي (النظام)"
-    m[S.LockWidgets] = "ويدجت شاشة القفل"
-    m[S.LockWidgetsToast] = "اضغط مطولًا على شاشة القفل لإضافة الويدجت"
-    m[S.OpenEditor] = "فتح المحرر"
-    m[S.Close] = "إغلاق"
-    m[S.Back] = "رجوع"
-    m[S.LockWidgetsDesc] = "كل ويدجتات وذكّر متاحة في المساحة المخصصة تحت الساعة على شاشة القفل (One UI 8 أو أحدث)."
-    m[S.LockWidgetsSteps] = "١. على شاشة القفل اضغط مطولًا على مكان فارغ، ثم أكّد هويتك.\n٢. اضغط «إضافة ويدجت» واختار «وذكّر» من القائمة.\n٣. اختار الويدجت الذي يعجبك، مثل «الإقامة (مصغر)» أو «شريط الصلاة».\n٤. رتّبها بالسحب ثم اضغط «تم»."
-    m[S.LockWidgetsHint] = "الضغط على الويدجت من شاشة القفل يفتح التطبيق مباشرة."
-    m[S.ChangeLocation] = "تغيير الموقع"
-    m[S.LocationSubtitle] = "المدينة وطريقة الحساب وإعدادات منبه الفجر"
-    m[S.FajrAlarmSubtitle] = "تفعيل المنبه والنغمة"
-    m[S.LockScreenSection] = "شاشة القفل"
-    m[S.LockWidgetsRowSub] = "أضف ويدجت وذكّر لشاشة القفل"
-    m[S.Notifications] = "الإشعارات"
-    m[S.NotifSound] = "نغمة الإشعار"
-    m[S.Default] = "الافتراضي"
-    m[S.Vibration] = "الاهتزاز"
-    m[S.Appearance] = "المظهر"
-    m[S.AppFont] = "خط التطبيق"
-    m[S.Language] = "اللغة"
-    m[S.NewDhikr] = "ذكر جديد"
-    m[S.EditDhikr] = "تعديل الذكر"
-    m[S.TitleLabel] = "العنوان"
-    m[S.DhikrText] = "نص الذكر أو الدعاء"
-    m[S.Cancel] = "إلغاء"
-    m[S.Add] = "إضافة"
-    m[S.AddReminderTime] = "إضافة وقت تنبيه"
-    m[S.RepeatReminder] = "تكرار التنبيه"
-    m[S.ReminderTime] = "وقت التنبيه"
-    m[S.Save] = "حفظ"
-    m[S.Apply] = "تطبيق"
-    m[S.ChaptersFmt] = "%1\$d بابًا من الأذكار والأدعية"
-    m[S.SearchHisn] = "ابحث في حصن المسلم"
-    m[S.NoFavChapters] = "لا توجد أبواب مفضلة"
-    m[S.NoResults] = "لا توجد نتائج"
-    m[S.ReadTodaySuffix] = " · تمت قراءته اليوم"
-    m[S.AddToMyAzkar] = "أضف إلى أذكاري"
-    m[S.AddedToMyAzkar] = "تمت الإضافة"
-    m[S.Done] = "تم"
-    m[S.Tagline] = "تطبيق يساعدك على المحافظة على أذكارك في يومك وليلتك"
-    m[S.Version] = "الإصدار"
-    m[S.Developer] = "المطوّر"
-    m[S.DevName] = "محمد النجار"
-    m[S.HisnCredit] = "المحتوى من مشروع HisnElmoslem (مرخّص بـ ⁦GPL v3⁩)"
-    m[S.InstinctCredit] = "بُني بالتعاون مع Instinct"
-    m[S.Dua] = "لا تنسونا من صالح دعائكم"
-}
-private fun arPart2(m: HashMap<S, String>) {
-    m[S.Font] = "الخط"
-    m[S.FontLight] = "خط التطبيق الخفيف"
-    m[S.FontBold] = "خط التطبيق العريض"
-    m[S.FontSystem] = "خط النظام"
-    m[S.FontCairo] = "خط القاهرة"
-    m[S.FontNaskh] = "خط النسخ"
-    m[S.FontAmiri] = "خط أميري"
-    m[S.FontRuqaa] = "خط الرقعة (للمناسبات)"
-    m[S.PrayerFajr] = "الفجر"
-    m[S.PrayerShuruq] = "الشروق"
-    m[S.PrayerDhuhr] = "الظهر"
-    m[S.PrayerJumuah] = "الجمعة"
-    m[S.PrayerAsr] = "العصر"
-    m[S.PrayerMaghrib] = "المغرب"
-    m[S.PrayerIsha] = "العشاء"
-    m[S.PrayerTimes] = "مواعيد الصلاة"
-    m[S.NextPrayer] = "المتبقي للصلاة القادمة:"
-    m[S.AmMarker] = "ص"
-    m[S.PmMarker] = "م"
-    m[S.PickCountryCity] = "اختر الدولة والمدينة"
-    m[S.SearchCityHint] = "بحث عن مدينة أو دولة..."
-    m[S.NoSearchResults] = "لم يتم العثور على نتائج للبحث"
-    m[S.FajrPrayer] = "صلاة الفجر"
-    m[S.FajrNow] = "حان الآن وقت أذان الفجر"
-    m[S.Snooze] = "غفوة"
-    m[S.StopAlarm] = "إيقاف المنبه"
-    m[S.ChooseSnooze] = "اختر مدة الغفوة:"
-    m[S.MinutesShortFmt] = "%1\$d (د)"
-    m[S.ColorWhite] = "أبيض"
-    m[S.Auto] = "تلقائي"
-    m[S.ColorBlack] = "أسود"
-    m[S.BgGlass] = "زجاج"
-    m[S.BgWallBlur] = "الخلفية الضبابية"
-    m[S.ColorGray] = "رمادي"
-    m[S.ColorBlue] = "أزرق"
-    m[S.ColorGreen] = "أخضر"
-    m[S.ColorPurple] = "بنفسجي"
-    m[S.ColorAmber] = "كهرماني"
-    m[S.ColorBlueDark] = "أزرق داكن"
-    m[S.ColorYellow] = "أصفر"
-    m[S.ColorTurquoise] = "فيروزي"
-    m[S.WidgetAccent] = "لون الويدجت"
-    m[S.ColorGreenDark] = "أخضر داكن"
-    m[S.WidgetSettings] = "إعدادات الويدجت"
-    m[S.BarColor] = "لون شريط التقدم"
-    m[S.BgColor] = "لون الخلفية"
-    m[S.WidgetPattern] = "الزخرفة"
-    m[S.NoPattern] = "بدون"
-    m[S.PickRingtone] = "اختر نغمة المنبه"
-    m[S.LocationMethod] = "طريقة تحديد الموقع"
-    m[S.CurrentLocation] = "الموقع الحالي"
-    m[S.AutoUpdateFajr] = "تحديث تلقائي لمواقيت الصلاة حسب موقعك"
-    m[S.PickCitySub] = "اختيار مدينتك يدوياً بدون الحاجة إلى تحديد الموقع"
-    m[S.CurrentCity] = "المدينة الحالية"
-    m[S.EditCityName] = "تعديل اسم المدينة"
-    m[S.ResetCityNameAuto] = "استعادة الاسم التلقائي"
-    m[S.CustomLocationNameHint] = "ادخل اسم مخصص لموقعك لعرضه بدل الافتراضي :"
-    m[S.ChangeCity] = "تغيير المدينة"
-    m[S.NoLocPermission] = "صلاحية الموقع غير ممنوحة. يرجى المتابعة لمنح الصلاحية."
-    m[S.GpsOff] = "خدمة الموقع (GPS) غير مفعلة في الهاتف."
-}
-private fun arPart3(m: HashMap<S, String>) {
-    m[S.CalcMethod] = "طريقة الحساب"
-    m[S.SelectedCalcMethod] = "طريقة الحساب المختارة"
-    m[S.Change] = "تغيير"
-    m[S.UpdatingTime] = "جاري تحديث الموعد..."
-    m[S.UpdateFajrNow] = "تحديث موعد الفجر الآن"
-    m[S.AlarmToneSection] = "نغمة المنبه والصوت"
-    m[S.SelectedTone] = "النغمة المختارة"
-    m[S.SystemTones] = "نغمات النظام"
-    m[S.AudioFile] = "ملف صوتي"
-    m[S.ExtraSettings] = "إعدادات إضافية"
-    m[S.VibrateDuringAlarm] = "الاهتزاز أثناء التنبيه"
-    m[S.NextFajrAt] = "موعد صلاة الفجر القادم"
-    m[S.AlarmOnDesc] = "المنبه مفعّل"
-    m[S.AlarmOffDesc] = "المنبه معطّل"
-    m[S.PickCalcMethod] = "اختر طريقة الحساب"
-    m[S.NotifReminder] = "تذكير"
-    m[S.NotifReadDone] = "تم القراءة"
-    m[S.NotifRemindLater] = "ذكرني بعد 10 دقائق"
-    m[S.NotifOpenApp] = "فتح التطبيق"
-    m[S.NotifChannelAzkar] = "إشعارات التذكيرات"
-    m[S.NotifChannelFajr] = "قناة تنبيهات صلاة الفجر"
-    m[S.TodayAt] = "اليوم في"
-    m[S.TomorrowAt] = "غداً في"
-    m[S.DefaultAlarmTone] = "نغمة المنبه الافتراضية"
-    m[S.LocCalcTitle] = "الموقع والحساب"
-    m[S.LocCalcSubtitle] = "المدينة وطريقة الحساب والتعديلات"
-    m[S.QiblaTitle] = "القبلة"
-    m[S.QiblaNorthFmt] = "القبلة %1\$d° من الشمال"
-    m[S.QiblaSetLocation] = "حدّد موقعك أولًا من شاشة الموقع والحساب"
-    m[S.QiblaNoSensor] = "لا يوجد مستشعر بوصلة على هذا الجهاز"
-    m[S.QiblaCalibrate] = "حرّك الهاتف على شكل 8 لمعايرة البوصلة"
-    m[S.QiblaAligned] = "أنت الآن باتجاه القبلة"
-    m[S.QiblaCityFmt] = "الموقع: %1\$s"
-    m[S.DirN] = "شمال"
-    m[S.DirNE] = "شمال شرق"
-    m[S.DirE] = "شرق"
-    m[S.DirSE] = "جنوب شرق"
-    m[S.DirS] = "جنوب"
-    m[S.DirSW] = "جنوب غرب"
-    m[S.DirW] = "غرب"
-    m[S.DirNW] = "شمال غرب"
-    m[S.CalendarTab] = "التقويم"
-    m[S.CalEvents] = "المناسبات"
-    m[S.CalNoEvents] = "لا مناسبات في هذا اليوم"
-    m[S.CalMonthEvents] = "مناسبات الشهر"
-    m[S.CalReminderOn] = "التذكير مفعّل"
-    m[S.CalReminderOff] = "تفعيل التذكير"
-    m[S.WdSun] = "ح"
-    m[S.WdMon] = "ن"
-    m[S.WdTue] = "ث"
-    m[S.WdWed] = "ر"
-    m[S.WdThu] = "خ"
-    m[S.WdFri] = "ج"
-    m[S.WdSat] = "س"
-    m[S.AutoDnd] = "صامت تلقائي أثناء الصلاة"
-    m[S.AutoDndSub] = "صامت من الأذان حتى الإقامة (يحتاج إذن عدم الإزعاج)"
-    m[S.OptTimesTitle] = "مواقيت إضافية"
-    m[S.OptTimesSub] = "الإمساك والضحى ومنتصف الليل وقيام الليل"
-    m[S.Imsak] = "الإمساك"
-    m[S.Duha] = "الضحى"
-}
-private fun arPart4(m: HashMap<S, String>) {
-    m[S.Midnight] = "منتصف الليل"
-    m[S.Qiyam] = "قيام الليل"
-    m[S.HijriConvTitle] = "محول التاريخ"
-    m[S.HijriConvSub] = "تحويل بين التاريخ الهجري والميلادي"
-    m[S.GregToHijri] = "من ميلادي إلى هجري"
-    m[S.HijriToGreg] = "من هجري إلى ميلادي"
-    m[S.DayLabel] = "اليوم"
-    m[S.MonthLabel] = "الشهر"
-    m[S.YearLabel] = "السنة"
-    m[S.LocSection] = "الموقع"
-    m[S.CalcSection] = "الحساب"
-    m[S.AsrJuristic] = "حساب وقت العصر"
-    m[S.AsrShafii] = "شافعي ومالكي وحنبلي"
-    m[S.AsrHanafi] = "حنفي"
-    m[S.HighLatRule] = "قاعدة خطوط العرض العالية"
-    m[S.HighLatNone] = "بلا"
-    m[S.HighLatMiddle] = "منتصف الليل"
-    m[S.HighLatSeventh] = "سبع الليل"
-    m[S.HighLatAngle] = "نسبة الزاوية"
-    m[S.AdjSection] = "تعديلات المواقيت"
-    m[S.AdjNote] = "دقائق تُضاف أو تُخصم من كل وقت محسوب. تُطبَّق فورًا على المواقيت والويدجتس والتنبيهات."
-    m[S.AdjHijri] = "تعديل التاريخ الهجري"
-    m[S.AdjMinShort] = "د"
-    m[S.AdjDayShort] = "يوم"
-    m[S.AlertTiming] = "وقت التنبيه"
-    m[S.AtAdhanTime] = "وقت الأذان"
-    m[S.AtAdhanRow] = "عند الأذان"
-    m[S.AtAdhanRowSub] = "الإشعار الأساسي عند حلول وقت الصلاة"
-    m[S.BeforeAdhanRow] = "تنبيه قبل الأذان"
-    m[S.BeforeAdhanHelper] = "تنبيه إضافي — إشعار وقت الأذان يصل دائمًا"
-    m[S.MinBeforeFmt] = "قبل الأذان بـ %1\$d دقيقة"
-    m[S.AdhanReminder] = "تنبيه الأذان"
-    m[S.IqamaReminder] = "تنبيه الإقامة"
-    m[S.IqamaReminderSub] = "إشعار عند وقت الإقامة"
-    m[S.PrayerNowFmt] = "حان الآن وقت أذان %1\$s"
-    m[S.PrayerApproachingFmt] = "اقترب أذان %1\$s"
-    m[S.ShuruqNow] = "حان الآن وقت الشروق"
-    m[S.ShuruqApproaching] = "اقترب وقت الشروق"
-    m[S.BgFrosted] = "زجاج ضبابي"
-    m[S.NeedsFilesPerm] = "تتطلب صلاحية للملفات"
-    m[S.PermLocTitle] = "الإذن بالوصول إلى الموقع"
-    m[S.PermLocBody] = "يحتاج التطبيق إلى موقعك الجغرافي لحساب مواقيت الصلاة بدقة بحسب مدينتك. يمكنك رفض الإذن وإدخال مدينتك يدويًا في أي وقت من شاشة الموقع والحساب."
-    m[S.PermFilesTitle] = "الإذن بالوصول إلى الملفات"
-    m[S.PermFilesBody] = "يتيح هذا الإذن للتطبيق قراءة خلفية هاتفك لإظهار تأثير الضبابية الحقيقي في خلفية الويدجت. الإذن اختياري، وإن رفضته يظل خيار Frosted متاحًا دون الحاجة إليه."
-    m[S.PermAllow] = "السماح"
-    m[S.PermNotNow] = "ليس الآن"
-    m[S.PermOpenSettings] = "فتح الإعدادات"
-    m[S.IqamaNowFmt] = "حانت الآن إقامة %1\$s"
-    m[S.SharedAlertSettings] = "إعدادات مشتركة لكل التنبيهات"
-}
+internal val AR = mapOf(
+    S.PrayerTab to "الصلاة",
+    S.AzkarTab to "الأذكار",
+    S.HisnTab to "حصن المسلم",
+    S.FajrTab to "الفجر",
+    S.TasbeehTab to "السبحة",
+    S.Favorites to "المفضلة",
+    S.Reminders to "التنبيهات",
+    S.Stats to "الإحصائيات",
+    S.Tags to "التصنيفات",
+    S.Settings to "الإعدادات",
+    S.About to "حول التطبيق",
+    S.More to "المزيد",
+    S.Menu to "القائمة",
+    S.AddDhikr to "إضافة ذكر",
+    S.SearchAzkar to "ابحث عن ذكر أو تصنيف",
+    S.All to "الكل",
+    S.NoAzkar to "لا توجد أذكار",
+    S.NoAzkarUnderTag to "لا توجد أذكار تحت تصنيف \"%1\$s\"",
+    S.NoResultsQuery to "لا توجد نتائج تطابق \"%1\$s\"",
+    S.Options to "خيارات",
+    S.EditDhikrTags to "تعديل الذكر والتصنيفات",
+    S.ReminderTimes to "أوقات التنبيه",
+    S.Delete to "حذف",
+    S.NoActiveReminders to "لا توجد تنبيهات مفعلة",
+    S.Today to "اليوم",
+    S.ThisWeek to "هذا الأسبوع",
+    S.DayStreak to "أيام متتالية",
+    S.CurrentReminder to "التذكير الحالي",
+    S.NextReminder to "التذكير القادم",
+    S.NoActiveAzkar to "لا توجد أذكار مفعلة. فعّلها من قائمة الأذكار.",
+    S.Shortcuts to "اختصارات",
+    S.TasbeehCounter to "عداد التسبيح",
+    S.HisnSubtitle to "أذكار وأدعية من الكتاب والسنة",
+    S.FavSubtitle to "الأذكار التي تحبها",
+    S.ReadDone to "تمت القراءة",
+    S.TotalSuffix to " إجمالًا",
+    S.NoReadsYet to "لا توجد قراءات بعد",
+    S.DhikrIdFmt to "ذكر #%1\$d",
+    S.Periods to "الفترات الزمنية",
+    S.Week to "الأسبوع",
+    S.Month to "الشهر",
+    S.KeepGoing to "استمر في المحافظة على أذكارك اليومية",
+    S.TotalReads to "إجمالي القراءات",
+    S.SinceStart to "منذ بداية الاستخدام",
+    S.RecentReads to "آخر القراءات",
+    S.RemindersSubtitle to "جميع أوقات التذكير",
+    S.StatsSubtitle to "السجل والأيام المتتالية",
+    S.TagsSubtitle to "تنظيم الأذكار بالألوان",
+    S.FajrAlarm to "منبه صلاة الفجر",
+    S.ByLocation to "حسب موقعك الجغرافي",
+    S.SettingsSubtitle to "الاهتزاز والخط والنغمة",
+    S.AboutSubtitle to "الإصدار والمطوّر",
+    S.DeleteTag to "حذف التصنيف",
+    S.DeleteTagMsg to "سيتم حذف التصنيف \"%1\$s\" من جميع الأذكار. لن تُحذف الأذكار نفسها.",
+    S.AddTag to "إضافة تصنيف",
+    S.NoTags to "لا توجد تصنيفات حاليًا",
+    S.Edit to "تعديل",
+    S.NewTag to "تصنيف جديد",
+    S.EditTag to "تعديل التصنيف",
+    S.TagName to "اسم التصنيف",
+    S.Color to "اللون",
+    S.TasbeehaFmt to "%1\$d تسبيحة",
+    S.TapToCount to "اضغط للتسبيح",
+    S.ResetCounter to "تصفير العداد",
+    S.ActiveOfTotalFmt to "%1\$d من %2\$d مفعّلة",
+    S.NoReminders to "لا توجد تنبيهات",
+    S.NoFavorites to "لا توجد أذكار مفضلة",
+    S.Light to "فاتح",
+    S.Dark to "داكن",
+    S.SystemAuto to "تلقائي (النظام)",
+    S.LockWidgets to "ويدجت شاشة القفل",
+    S.LockWidgetsToast to "اضغط مطولًا على شاشة القفل لإضافة الويدجت",
+    S.OpenEditor to "فتح المحرر",
+    S.Close to "إغلاق",
+    S.Back to "رجوع",
+    S.LockWidgetsDesc to "كل ويدجتات وَذكِّر متاحة في المساحة المخصصة تحت الساعة على شاشة القفل (One UI 8 أو أحدث).",
+    S.LockWidgetsSteps to "١. على شاشة القفل اضغط مطولًا على مكان فارغ، ثم أكّد هويتك.\n٢. اضغط «إضافة ويدجت» واختار «وَذكِّر» من القائمة.\n٣. اختار الويدجت الذي يعجبك، مثل «الإقامة (مصغر)» أو «شريط الصلاة».\n٤. رتّبها بالسحب ثم اضغط «تم».",
+    S.LockWidgetsHint to "الضغط على الويدجت من شاشة القفل يفتح التطبيق مباشرة.",
+    S.ChangeLocation to "تغيير الموقع",
+    S.LocationSubtitle to "المدينة وطريقة الحساب وإعدادات منبه الفجر",
+    S.FajrAlarmSubtitle to "تفعيل المنبه والنغمة",
+    S.LockScreenSection to "شاشة القفل",
+    S.LockWidgetsRowSub to "أضف ويدجت وَذكِّر لشاشة القفل",
+    S.Notifications to "الإشعارات",
+    S.NotifSound to "نغمة الإشعار",
+    S.Default to "الافتراضي",
+    S.Vibration to "الاهتزاز",
+    S.Appearance to "المظهر",
+    S.AppFont to "خط التطبيق",
+    S.Language to "اللغة",
+    S.NewDhikr to "ذكر جديد",
+    S.EditDhikr to "تعديل الذكر",
+    S.TitleLabel to "العنوان",
+    S.DhikrText to "نص الذكر أو الدعاء",
+    S.Cancel to "إلغاء",
+    S.Add to "إضافة",
+    S.AddReminderTime to "إضافة وقت تنبيه",
+    S.RepeatReminder to "تكرار التنبيه",
+    S.ReminderTime to "وقت التنبيه",
+    S.Save to "حفظ",
+    S.Apply to "تطبيق",
+    S.ChaptersFmt to "%1\$d بابًا من الأذكار والأدعية",
+    S.SearchHisn to "ابحث في حصن المسلم",
+    S.NoFavChapters to "لا توجد أبواب مفضلة",
+    S.NoResults to "لا توجد نتائج",
+    S.ReadTodaySuffix to " · تمت قراءته اليوم",
+    S.AddToMyAzkar to "أضف إلى أذكاري",
+    S.AddedToMyAzkar to "تمت الإضافة",
+    S.Done to "تم",
+    S.Tagline to "تطبيق يساعدك على المحافظة على أذكارك في يومك وليلتك",
+    S.Version to "الإصدار",
+    S.Developer to "المطوّر",
+    S.DevName to "محمد النجار",
+    S.HisnCredit to "المحتوى من مشروع HisnElmoslem (مرخّص بـ \u2066GPL\u00A0v3\u2069)",
+    S.InstinctCredit to "بُني بالتعاون مع Instinct",
+    S.Dua to "لا تنسونا من صالح دعائكم",
+    S.Font to "الخط",
+    S.FontLight to "خط التطبيق الخفيف",
+    S.FontBold to "خط التطبيق العريض",
+    S.FontSystem to "خط النظام",
+    S.FontCairo to "خط القاهرة",
+    S.FontNaskh to "خط النسخ",
+    S.FontAmiri to "خط أميري",
+    S.FontRuqaa to "خط الرقعة (للمناسبات)",
+    S.LocCalcTitle to "الموقع والحساب",
+    S.LocCalcSubtitle to "المدينة وطريقة الحساب والتعديلات",
+    S.LocSection to "الموقع",
+    S.CalcSection to "الحساب",
+    S.AsrJuristic to "حساب وقت العصر",
+    S.AsrShafii to "شافعي ومالكي وحنبلي",
+    S.AsrHanafi to "حنفي",
+    S.HighLatRule to "قاعدة خطوط العرض العالية",
+    S.HighLatNone to "بلا",
+    S.HighLatMiddle to "منتصف الليل",
+    S.HighLatSeventh to "سبع الليل",
+    S.HighLatAngle to "نسبة الزاوية",
+    S.AdjSection to "تعديلات المواقيت",
+    S.AdjNote to "دقائق تُضاف أو تُخصم من كل وقت محسوب. تُطبَّق فورًا على المواقيت والويدجتس والتنبيهات.",
+    S.AdjHijri to "تعديل التاريخ الهجري",
+    S.AdjMinShort to "د",
+    S.AdjDayShort to "يوم",
+    S.WidgetTapTitle to "عند الضغط على الويدجت",
+    S.WidgetTapOpenApp to "فتح التطبيق",
+    S.WidgetTapNothing to "لا شيء",
+    S.WidgetTapRefresh to "تحديث العرض",
+    S.PrayerFajr to "الفجر",
+    S.PrayerShuruq to "الشروق",
+    S.PrayerDhuhr to "الظهر",
+    S.PrayerJumuah to "الجمعة",
+    S.PrayerAsr to "العصر",
+    S.PrayerMaghrib to "المغرب",
+    S.PrayerIsha to "العشاء",
+    S.PrayerTimes to "مواعيد الصلاة",
+    S.NextPrayer to "الصلاة القادمة",
+    S.AmMarker to "ص",
+    S.PmMarker to "م",
+    S.PickCountryCity to "اختر الدولة والمدينة",
+    S.SearchCityHint to "بحث عن مدينة أو دولة...",
+    S.NoSearchResults to "لم يتم العثور على نتائج للبحث",
+    S.FajrPrayer to "صلاة الفجر",
+    S.FajrNow to "حان الآن موعد صلاة الفجر",
+    S.Snooze to "غفوة",
+    S.StopAlarm to "إيقاف المنبه",
+    S.ChooseSnooze to "اختر مدة الغفوة:",
+    S.MinutesShortFmt to "%1\\\$d (د)",
+    S.ColorWhite to "أبيض",
+    S.Auto to "تلقائي",
+    S.ColorBlack to "أسود",
+    S.BgGlass to "زجاج",
+    S.BgWallBlur to "الخلفية الضبابية",
+    S.ColorGray to "رمادي",
+    S.ColorBlue to "أزرق",
+    S.ColorGreen to "أخضر",
+    S.ColorPurple to "بنفسجي",
+    S.ColorAmber to "كهرماني",
+    S.ColorBlueDark to "أزرق داكن",
+    S.ColorYellow to "أصفر",
+    S.ColorTurquoise to "فيروزي",
+    S.WidgetAccent to "لون الويدجت",
+    S.ColorGreenDark to "أخضر داكن",
+    S.WidgetSettings to "إعدادات الويدجت",
+    S.BarColor to "لون شريط التقدم",
+    S.BgColor to "لون الخلفية",
+    S.WidgetPattern to "الزخرفة",
+    S.NoPattern to "بدون",
+    S.PickRingtone to "اختر نغمة المنبه",
+    S.LocationMethod to "طريقة تحديد الموقع",
+    S.CurrentLocation to "الموقع الحالي",
+    S.AutoUpdateFajr to "تحديث تلقائي لموعد الفجر حسب موقعك",
+    S.PickCitySub to "اختيار مدينتك يدوياً بدون الحاجة إلى تحديد الموقع",
+    S.CurrentCity to "المدينة الحالية",
+    S.EditCityName to "تعديل اسم المدينة",
+    S.ResetCityNameAuto to "استعادة الاسم التلقائي",
+    S.CustomLocationNameHint to "ادخل اسم مخصص لموقعك لعرضه بدل الافتراضي :",
+    S.ChangeCity to "تغيير المدينة",
+    S.NoLocPermission to "صلاحية الموقع غير ممنوحة. يرجى المتابعة لمنح الصلاحية.",
+    S.GpsOff to "خدمة الموقع (GPS) غير مفعلة في الهاتف.",
+    S.CalcMethod to "طريقة الحساب",
+    S.SelectedCalcMethod to "طريقة الحساب المختارة",
+    S.Change to "تغيير",
+    S.UpdatingTime to "جاري تحديث الموعد...",
+    S.UpdateFajrNow to "تحديث موعد الفجر الآن",
+    S.AlarmToneSection to "نغمة المنبه والصوت",
+    S.SelectedTone to "النغمة المختارة",
+    S.SystemTones to "نغمات النظام",
+    S.AudioFile to "ملف صوتي",
+    S.ExtraSettings to "إعدادات إضافية",
+    S.VibrateDuringAlarm to "الاهتزاز أثناء التنبيه",
+    S.NextFajrAt to "موعد صلاة الفجر القادم",
+    S.AlarmOnDesc to "المنبه مفعّل",
+    S.AlarmOffDesc to "المنبه معطّل",
+    S.PickCalcMethod to "اختر طريقة الحساب",
+    S.NotifReminder to "تذكير",
+    S.NotifReadDone to "تم القراءة",
+    S.NotifRemindLater to "ذكرني بعد 10 دقائق",
+    S.NotifOpenApp to "فتح التطبيق",
+    S.NotifChannelAzkar to "إشعارات تذكير الأذكار",
+    S.NotifChannelFajr to "قناة تنبيهات صلاة الفجر",
+    S.TodayAt to "اليوم في",
+    S.TomorrowAt to "غداً في",
+    S.DefaultAlarmTone to "نغمة المنبه الافتراضية",
+    S.QiblaTitle to "القبلة",
+    S.QiblaNorthFmt to "القبلة %1\$d° من الشمال",
+    S.QiblaSetLocation to "حدّد موقعك أولًا من شاشة الموقع والحساب",
+    S.QiblaNoSensor to "لا يوجد مستشعر بوصلة على هذا الجهاز",
+    S.QiblaCalibrate to "حرّك الهاتف على شكل 8 لمعايرة البوصلة",
+    S.QiblaAligned to "أنت الآن باتجاه القبلة",
+    S.QiblaCityFmt to "الموقع: %1\$s",
+    S.DirN to "شمال",
+    S.DirNE to "شمال شرق",
+    S.DirE to "شرق",
+    S.DirSE to "جنوب شرق",
+    S.DirS to "جنوب",
+    S.DirSW to "جنوب غرب",
+    S.DirW to "غرب",
+    S.DirNW to "شمال غرب",
+    S.CalendarTab to "التقويم",
+    S.CalEvents to "المناسبات",
+    S.CalNoEvents to "لا مناسبات في هذا اليوم",
+    S.CalMonthEvents to "مناسبات الشهر",
+    S.CalReminderOn to "التذكير مفعّل",
+    S.CalReminderOff to "تفعيل التذكير",
+    S.WdSun to "ح",
+    S.WdMon to "ن",
+    S.WdTue to "ث",
+    S.WdWed to "ر",
+    S.WdThu to "خ",
+    S.WdFri to "ج",
+    S.WdSat to "س",
+    S.AutoDnd to "صامت تلقائي أثناء الصلاة",
+    S.AutoDndSub to "صامت من الأذان حتى الإقامة (يحتاج إذن عدم الإزعاج)",
+    S.OptTimesTitle to "مواقيت إضافية",
+    S.OptTimesSub to "الإمساك والضحى ومنتصف الليل وقيام الليل",
+    S.Imsak to "الإمساك",
+    S.Duha to "الضحى",
+    S.Midnight to "منتصف الليل",
+    S.Qiyam to "قيام الليل",
+    S.HijriConvTitle to "محول التاريخ",
+    S.HijriConvSub to "تحويل بين التاريخ الهجري والميلادي",
+    S.GregToHijri to "من ميلادي إلى هجري",
+    S.HijriToGreg to "من هجري إلى ميلادي",
+    S.DayLabel to "اليوم",
+    S.MonthLabel to "الشهر",
+    S.YearLabel to "السنة",
+    S.AlertTiming to "وقت التنبيه",
+    S.AtAdhanTime to "وقت الأذان",
+    S.AtAdhanRow to "عند الأذان",
+    S.AtAdhanRowSub to "الإشعار الأساسي عند حلول وقت الصلاة",
+    S.BeforeAdhanRow to "تنبيه قبل الأذان",
+    S.BeforeAdhanHelper to "تنبيه إضافي — إشعار وقت الأذان يصل دائمًا",
+    S.MinBeforeFmt to "قبل الأذان بـ %1\$d دقيقة",
+    S.AdhanReminder to "تنبيه الأذان",
+    S.IqamaReminder to "تنبيه الإقامة",
+    S.IqamaReminderSub to "يرن عند وقت الإقامة",
+    S.PrayerNowFmt to "حان الآن وقت %1\$s",
+    S.PrayerApproachingFmt to "تقترب %1\$s (بعد %2\$d دقيقة)",
+    S.ShuruqNow to "حان الآن وقت الشروق",
+    S.ShuruqApproaching to "اقترب وقت الشروق",
+    S.BgFrosted to "زجاج ضبابي",
+    S.NeedsFilesPerm to "تتطلب صلاحية للملفات",
+    S.PermLocTitle to "الإذن بالوصول إلى الموقع",
+    S.PermLocBody to "يحتاج التطبيق إلى موقعك الجغرافي لحساب مواقيت الصلاة بدقة بحسب مدينتك. يمكنك رفض الإذن وإدخال مدينتك يدويًا في أي وقت من شاشة الموقع والحساب.",
+    S.PermFilesTitle to "الإذن بالوصول إلى الملفات",
+    S.PermFilesBody to "يتيح هذا الإذن للتطبيق قراءة خلفية هاتفك لإظهار تأثير الضبابية الحقيقي في خلفية الويدجت. الإذن اختياري، وإن رفضته يظل خيار Frosted متاحًا دون الحاجة إليه.",
+    S.PermAllow to "السماح",
+    S.PermNotNow to "ليس الآن",
+    S.PermOpenSettings to "فتح الإعدادات",
+    S.IqamaNowFmt to "إقامة %1\$s الآن",
+    S.SharedAlertSettings to "إعدادات مشتركة لكل التنبيهات",
+    S.FajrAlarmOn to "تفعيل منبه صلاة الفجر",
+    S.AlarmEnabledSub to "المنبه يعطي تنبيهاً وقت الفجر",
+    S.AlarmDisabledSub to "المنبه متوقف حالياً",
+    S.AlarmVolume to "مستوى صوت المنبه",
+    S.SnoozeDuration to "مدة الغفوة",
+    S.AlertMode to "نوع التنبيه",
+    S.AlertModeNotif to "إشعار",
+    S.AlertModeAlarm to "منبه كامل",
+    S.AdhanAlertType to "نوع تنبيه الأذان",
+    S.AlertTypeNotification to "تنبيه إشعار",
+    S.AlertTypeFullScreen to "تنبيه إشعار بملء الشاشة",
+)
 
-internal val EN: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    enPart0(m)
-    enPart1(m)
-    enPart2(m)
-    enPart3(m)
-    enPart4(m)
-    m
-}
-private fun enPart0(m: HashMap<S, String>) {
-    m[S.WidgetTapTitle] = "When tapped"
-    m[S.WidgetTapOpenApp] = "Open the app"
-    m[S.WidgetTapNothing] = "Nothing"
-    m[S.WidgetTapRefresh] = "Refresh display"
-    m[S.PrayerTab] = "Prayer"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Favorites"
-    m[S.Reminders] = "Reminders"
-    m[S.Stats] = "Statistics"
-    m[S.Tags] = "Tags"
-    m[S.Settings] = "Settings"
-    m[S.About] = "About"
-    m[S.More] = "More"
-    m[S.Menu] = "Menu"
-    m[S.AddDhikr] = "Add dhikr"
-    m[S.SearchAzkar] = "Search azkar or tags"
-    m[S.All] = "All"
-    m[S.NoAzkar] = "No azkar"
-    m[S.NoAzkarUnderTag] = "No azkar under \"%1\$s\""
-    m[S.NoResultsQuery] = "No results match \"%1\$s\""
-    m[S.Options] = "Options"
-    m[S.EditDhikrTags] = "Edit dhikr and tags"
-    m[S.ReminderTimes] = "Reminder times"
-    m[S.Delete] = "Delete"
-    m[S.NoActiveReminders] = "No active reminders"
-    m[S.Today] = "Today"
-    m[S.ThisWeek] = "This week"
-    m[S.DayStreak] = "Day streak"
-    m[S.CurrentReminder] = "Current reminder"
-    m[S.NextReminder] = "Next reminder"
-    m[S.NoActiveAzkar] = "No active azkar. Enable them from the azkar list."
-    m[S.Shortcuts] = "Shortcuts"
-    m[S.TasbeehCounter] = "Tasbeeh counter"
-    m[S.HisnSubtitle] = "Azkar and duas from the Quran and Sunnah"
-    m[S.FavSubtitle] = "The azkar you love"
-    m[S.ReadDone] = "Read"
-    m[S.TotalSuffix] = " total"
-    m[S.NoReadsYet] = "No reads yet"
-    m[S.DhikrIdFmt] = "Dhikr #%1\$d"
-    m[S.Periods] = "Time periods"
-    m[S.Week] = "Week"
-    m[S.Month] = "Month"
-    m[S.KeepGoing] = "Keep up your daily azkar"
-    m[S.TotalReads] = "Total reads"
-    m[S.SinceStart] = "Since you started"
-    m[S.RecentReads] = "Recent reads"
-    m[S.RemindersSubtitle] = "All reminder times"
-    m[S.StatsSubtitle] = "History and streaks"
-    m[S.TagsSubtitle] = "Organize azkar by color"
-    m[S.FajrAlarm] = "Fajr alarm"
-    m[S.ByLocation] = "Based on your location"
-    m[S.SettingsSubtitle] = "Vibration, font and sound"
-    m[S.AboutSubtitle] = "Version and developer"
-    m[S.DeleteTag] = "Delete tag"
-    m[S.DeleteTagMsg] = "The tag \"%1\$s\" will be removed from all azkar. The azkar themselves will not be deleted."
-    m[S.AddTag] = "Add tag"
-    m[S.NoTags] = "No tags yet"
-}
-private fun enPart1(m: HashMap<S, String>) {
-    m[S.Edit] = "Edit"
-    m[S.NewTag] = "New tag"
-    m[S.EditTag] = "Edit tag"
-    m[S.TagName] = "Tag name"
-    m[S.Color] = "Color"
-    m[S.TasbeehaFmt] = "%1\$d tasbeeh"
-    m[S.TapToCount] = "Tap to count"
-    m[S.ResetCounter] = "Reset counter"
-    m[S.ActiveOfTotalFmt] = "%1\$d of %2\$d active"
-    m[S.NoReminders] = "No reminders"
-    m[S.NoFavorites] = "No favorite azkar"
-    m[S.Light] = "Light"
-    m[S.Dark] = "Dark"
-    m[S.SystemAuto] = "System default"
-    m[S.LockWidgets] = "Lock screen widgets"
-    m[S.LockWidgetsToast] = "Long-press the lock screen to add a widget"
-    m[S.OpenEditor] = "Open editor"
-    m[S.Close] = "Close"
-    m[S.Back] = "Back"
-    m[S.LockWidgetsDesc] = "All Wathkkir widgets fit in the dedicated area under the clock on the lock screen (One UI 8 or later)."
-    m[S.LockWidgetsSteps] = "1. On the lock screen, long-press an empty spot and confirm your identity.\n2. Tap \"Add widget\" and choose \"Wathkkir\".\n3. Drag the widget into the area under the clock."
-    m[S.LockWidgetsHint] = "Tapping the widget from the lock screen opens the app directly."
-    m[S.ChangeLocation] = "Change location"
-    m[S.LocationSubtitle] = "City, calculation method and Fajr alarm settings"
-    m[S.FajrAlarmSubtitle] = "Enable alarm and sound"
-    m[S.LockScreenSection] = "Lock screen"
-    m[S.LockWidgetsRowSub] = "Add a Wathkkir widget under the lock screen clock"
-    m[S.Notifications] = "Notifications"
-    m[S.NotifSound] = "Notification sound"
-    m[S.Default] = "Default"
-    m[S.Vibration] = "Vibration"
-    m[S.Appearance] = "Appearance"
-    m[S.AppFont] = "App font"
-    m[S.Language] = "Language"
-    m[S.NewDhikr] = "New dhikr"
-    m[S.EditDhikr] = "Edit dhikr"
-    m[S.TitleLabel] = "Title"
-    m[S.DhikrText] = "Dhikr or dua text"
-    m[S.Cancel] = "Cancel"
-    m[S.Add] = "Add"
-    m[S.AddReminderTime] = "Add reminder time"
-    m[S.RepeatReminder] = "Repeat reminder"
-    m[S.ReminderTime] = "Reminder time"
-    m[S.Save] = "Save"
-    m[S.Apply] = "Apply"
-    m[S.ChaptersFmt] = "%1\$d chapters of azkar and duas"
-    m[S.SearchHisn] = "Search Hisn Al-Muslim"
-    m[S.NoFavChapters] = "No favorite chapters"
-    m[S.NoResults] = "No results"
-    m[S.ReadTodaySuffix] = " · Read today"
-    m[S.AddToMyAzkar] = "Add to my azkar"
-    m[S.AddedToMyAzkar] = "Added"
-    m[S.Done] = "Done"
-    m[S.Tagline] = "An app that helps you keep up your azkar day and night"
-    m[S.Version] = "Version"
-    m[S.Developer] = "Developer"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Content from the HisnElmoslem project (GPL v3 licensed)"
-    m[S.InstinctCredit] = "Built in collaboration with Instinct"
-    m[S.Dua] = "Keep us in your prayers"
-}
-private fun enPart2(m: HashMap<S, String>) {
-    m[S.Font] = "Font"
-    m[S.FontLight] = "App font light"
-    m[S.FontBold] = "App font bold"
-    m[S.FontSystem] = "System font"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-    m[S.FontRuqaa] = "Ruqaa (occasions)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Sunrise"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Prayer times"
-    m[S.NextPrayer] = "Next prayer"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Choose country and city"
-    m[S.SearchCityHint] = "Search for a city or country..."
-    m[S.NoSearchResults] = "No results found"
-    m[S.FajrPrayer] = "Fajr prayer"
-    m[S.FajrNow] = "It is now time for Fajr adhan"
-    m[S.Snooze] = "Snooze"
-    m[S.StopAlarm] = "Stop alarm"
-    m[S.ChooseSnooze] = "Choose snooze duration:"
-    m[S.MinutesShortFmt] = "%1\$d (m)"
-    m[S.ColorWhite] = "White"
-    m[S.Auto] = "Auto"
-    m[S.ColorBlack] = "Black"
-    m[S.BgGlass] = "Glass"
-    m[S.BgWallBlur] = "Blurred wallpaper"
-    m[S.ColorGray] = "Gray"
-    m[S.ColorBlue] = "Blue"
-    m[S.ColorGreen] = "Green"
-    m[S.ColorPurple] = "Purple"
-    m[S.ColorAmber] = "Amber"
-    m[S.ColorBlueDark] = "Dark blue"
-    m[S.ColorYellow] = "Yellow"
-    m[S.ColorTurquoise] = "Turquoise"
-    m[S.WidgetAccent] = "Widget colour"
-    m[S.ColorGreenDark] = "Dark green"
-    m[S.WidgetSettings] = "Widget settings"
-    m[S.BarColor] = "Progress bar color"
-    m[S.BgColor] = "Background color"
-    m[S.WidgetPattern] = "Pattern"
-    m[S.NoPattern] = "None"
-    m[S.PickRingtone] = "Choose alarm tone"
-    m[S.LocationMethod] = "Location method"
-    m[S.CurrentLocation] = "Current location"
-    m[S.AutoUpdateFajr] = "Automatically updates prayer times based on your location"
-    m[S.PickCitySub] = "Pick your city manually without location access"
-    m[S.CurrentCity] = "Current city"
-    m[S.EditCityName] = "Edit city name"
-    m[S.ResetCityNameAuto] = "Reset to automatic name"
-    m[S.CustomLocationNameHint] = "Enter a custom name for your location to show instead of the default :"
-    m[S.ChangeCity] = "Change city"
-    m[S.NoLocPermission] = "Location permission not granted. Continue to grant it."
-    m[S.GpsOff] = "Location service (GPS) is off on this phone."
-}
-private fun enPart3(m: HashMap<S, String>) {
-    m[S.CalcMethod] = "Calculation method"
-    m[S.SelectedCalcMethod] = "Selected calculation method"
-    m[S.Change] = "Change"
-    m[S.UpdatingTime] = "Updating the time..."
-    m[S.UpdateFajrNow] = "Update Fajr time now"
-    m[S.AlarmToneSection] = "Alarm tone and sound"
-    m[S.SelectedTone] = "Selected tone"
-    m[S.SystemTones] = "System tones"
-    m[S.AudioFile] = "Audio file"
-    m[S.ExtraSettings] = "Additional settings"
-    m[S.VibrateDuringAlarm] = "Vibrate during alarm"
-    m[S.NextFajrAt] = "Next Fajr prayer time"
-    m[S.AlarmOnDesc] = "Alarm on"
-    m[S.AlarmOffDesc] = "Alarm off"
-    m[S.PickCalcMethod] = "Choose calculation method"
-    m[S.NotifReminder] = "Reminder"
-    m[S.NotifReadDone] = "Mark as read"
-    m[S.NotifRemindLater] = "Remind me in 10 minutes"
-    m[S.NotifOpenApp] = "Open app"
-    m[S.NotifChannelAzkar] = "Azkar reminder notifications"
-    m[S.NotifChannelFajr] = "Fajr prayer alerts"
-    m[S.TodayAt] = "Today at"
-    m[S.TomorrowAt] = "Tomorrow at"
-    m[S.DefaultAlarmTone] = "Default alarm tone"
-    m[S.LocCalcTitle] = "Location & calculation"
-    m[S.LocCalcSubtitle] = "City, method and time adjustments"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla %1\$d° from north"
-    m[S.QiblaSetLocation] = "Set your location first in Location & calculation"
-    m[S.QiblaNoSensor] = "This device has no compass sensor"
-    m[S.QiblaCalibrate] = "Move the phone in a figure-8 to calibrate the compass"
-    m[S.QiblaAligned] = "You are facing the Qibla"
-    m[S.QiblaCityFmt] = "Location: %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NE"
-    m[S.DirE] = "E"
-    m[S.DirSE] = "SE"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SW"
-    m[S.DirW] = "W"
-    m[S.DirNW] = "NW"
-    m[S.CalendarTab] = "Calendar"
-    m[S.CalEvents] = "Events"
-    m[S.CalNoEvents] = "No events on this day"
-    m[S.CalMonthEvents] = "This month's events"
-    m[S.CalReminderOn] = "Reminder on"
-    m[S.CalReminderOff] = "Turn reminder on"
-    m[S.WdSun] = "S"
-    m[S.WdMon] = "M"
-    m[S.WdTue] = "T"
-    m[S.WdWed] = "W"
-    m[S.WdThu] = "T"
-    m[S.WdFri] = "F"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Auto silence during prayer"
-    m[S.AutoDndSub] = "Silent from adhan to iqama (needs DND permission)"
-    m[S.OptTimesTitle] = "Optional times"
-    m[S.OptTimesSub] = "Extra prayer-screen rows: Imsak, Duha, Midnight and Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-}
-private fun enPart4(m: HashMap<S, String>) {
-    m[S.Midnight] = "Midnight"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Date converter"
-    m[S.HijriConvSub] = "Convert between Hijri and Gregorian dates"
-    m[S.GregToHijri] = "Gregorian to Hijri"
-    m[S.HijriToGreg] = "Hijri to Gregorian"
-    m[S.DayLabel] = "Day"
-    m[S.MonthLabel] = "Month"
-    m[S.YearLabel] = "Year"
-    m[S.LocSection] = "Location"
-    m[S.CalcSection] = "Calculation"
-    m[S.AsrJuristic] = "Asr calculation"
-    m[S.AsrShafii] = "Shafi'i, Maliki, Hanbali"
-    m[S.AsrHanafi] = "Hanafi"
-    m[S.HighLatRule] = "High-latitude rule"
-    m[S.HighLatNone] = "None"
-    m[S.HighLatMiddle] = "Middle of the night"
-    m[S.HighLatSeventh] = "One-seventh of the night"
-    m[S.HighLatAngle] = "Angle-based"
-    m[S.AdjSection] = "Time adjustments"
-    m[S.AdjNote] = "Minutes added to or subtracted from each calculated time. Applies instantly to prayer times, widgets and alerts."
-    m[S.AdjHijri] = "Hijri date adjustment"
-    m[S.AdjMinShort] = "min"
-    m[S.AdjDayShort] = "days"
-    m[S.AlertTiming] = "Alert timing"
-    m[S.AtAdhanTime] = "At adhan"
-    m[S.AtAdhanRow] = "At adhan time"
-    m[S.AtAdhanRowSub] = "The base notification when the prayer time arrives"
-    m[S.BeforeAdhanRow] = "Early reminder"
-    m[S.BeforeAdhanHelper] = "An extra reminder - the adhan-time notification still arrives"
-    m[S.MinBeforeFmt] = "%1\$d min before adhan"
-    m[S.AdhanReminder] = "Adhan reminder"
-    m[S.IqamaReminder] = "Iqama reminder"
-    m[S.IqamaReminderSub] = "Notification at iqama time"
-    m[S.PrayerNowFmt] = "It's now time for %1\$s adhan"
-    m[S.PrayerApproachingFmt] = "%1\$s adhan is approaching"
-    m[S.ShuruqNow] = "It's now sunrise"
-    m[S.ShuruqApproaching] = "Sunrise is approaching"
-    m[S.BgFrosted] = "Frosted"
-    m[S.NeedsFilesPerm] = "Requires files permission"
-    m[S.PermLocTitle] = "Location permission"
-    m[S.PermLocBody] = "The app uses your location to calculate accurate prayer times for your city. You can decline and enter your city manually at any time."
-    m[S.PermFilesTitle] = "Files access"
-    m[S.PermFilesBody] = "This lets the app read your wallpaper to show a true blur behind the widget. It is optional; the Frosted option works without it."
-    m[S.PermAllow] = "Allow"
-    m[S.PermNotNow] = "Not now"
-    m[S.PermOpenSettings] = "Open settings"
-    m[S.IqamaNowFmt] = "It's now time for %1\$s iqama"
-    m[S.SharedAlertSettings] = "Shared settings for all alerts"
-}
+internal val EN = mapOf(
+    S.PrayerTab to "Prayer",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Favorites",
+    S.Reminders to "Reminders",
+    S.Stats to "Statistics",
+    S.Tags to "Tags",
+    S.Settings to "Settings",
+    S.About to "About",
+    S.More to "More",
+    S.Menu to "Menu",
+    S.AddDhikr to "Add dhikr",
+    S.SearchAzkar to "Search azkar or tags",
+    S.All to "All",
+    S.NoAzkar to "No azkar",
+    S.NoAzkarUnderTag to "No azkar under \"%1\$s\"",
+    S.NoResultsQuery to "No results match \"%1\$s\"",
+    S.Options to "Options",
+    S.EditDhikrTags to "Edit dhikr and tags",
+    S.ReminderTimes to "Reminder times",
+    S.Delete to "Delete",
+    S.NoActiveReminders to "No active reminders",
+    S.Today to "Today",
+    S.ThisWeek to "This week",
+    S.DayStreak to "Day streak",
+    S.CurrentReminder to "Current reminder",
+    S.NextReminder to "Next reminder",
+    S.NoActiveAzkar to "No active azkar. Enable them from the azkar list.",
+    S.Shortcuts to "Shortcuts",
+    S.TasbeehCounter to "Tasbeeh counter",
+    S.HisnSubtitle to "Azkar and duas from the Quran and Sunnah",
+    S.FavSubtitle to "The azkar you love",
+    S.ReadDone to "Read",
+    S.TotalSuffix to " total",
+    S.NoReadsYet to "No reads yet",
+    S.DhikrIdFmt to "Dhikr #%1\$d",
+    S.Periods to "Time periods",
+    S.Week to "Week",
+    S.Month to "Month",
+    S.KeepGoing to "Keep up your daily azkar",
+    S.TotalReads to "Total reads",
+    S.SinceStart to "Since you started",
+    S.RecentReads to "Recent reads",
+    S.RemindersSubtitle to "All reminder times",
+    S.StatsSubtitle to "History and streaks",
+    S.TagsSubtitle to "Organize azkar by color",
+    S.FajrAlarm to "Fajr alarm",
+    S.ByLocation to "Based on your location",
+    S.SettingsSubtitle to "Vibration, font and sound",
+    S.AboutSubtitle to "Version and developer",
+    S.DeleteTag to "Delete tag",
+    S.DeleteTagMsg to "The tag \"%1\$s\" will be removed from all azkar. The azkar themselves will not be deleted.",
+    S.AddTag to "Add tag",
+    S.NoTags to "No tags yet",
+    S.Edit to "Edit",
+    S.NewTag to "New tag",
+    S.EditTag to "Edit tag",
+    S.TagName to "Tag name",
+    S.Color to "Color",
+    S.TasbeehaFmt to "%1\$d tasbeeh",
+    S.TapToCount to "Tap to count",
+    S.ResetCounter to "Reset counter",
+    S.ActiveOfTotalFmt to "%1\$d of %2\$d active",
+    S.NoReminders to "No reminders",
+    S.NoFavorites to "No favorite azkar",
+    S.Light to "Light",
+    S.Dark to "Dark",
+    S.SystemAuto to "System default",
+    S.LockWidgets to "Lock screen widgets",
+    S.LockWidgetsToast to "Long-press the lock screen to add a widget",
+    S.OpenEditor to "Open editor",
+    S.Close to "Close",
+    S.Back to "Back",
+    S.LockWidgetsDesc to "All Wathakker widgets fit in the dedicated area under the clock on the lock screen (One UI 8 or later).",
+    S.LockWidgetsSteps to "1. On the lock screen, long-press an empty spot and confirm your identity.\n2. Tap \"Add widget\" and choose \"Wathakker\".\n3. Drag the widget into the area under the clock.",
+    S.LockWidgetsHint to "Tapping the widget from the lock screen opens the app directly.",
+    S.ChangeLocation to "Change location",
+    S.LocationSubtitle to "City, calculation method and Fajr alarm settings",
+    S.FajrAlarmSubtitle to "Enable alarm and sound",
+    S.LockScreenSection to "Lock screen",
+    S.LockWidgetsRowSub to "Add a Wathakker widget under the lock screen clock",
+    S.Notifications to "Notifications",
+    S.NotifSound to "Notification sound",
+    S.Default to "Default",
+    S.Vibration to "Vibration",
+    S.Appearance to "Appearance",
+    S.AppFont to "App font",
+    S.Language to "Language",
+    S.NewDhikr to "New dhikr",
+    S.EditDhikr to "Edit dhikr",
+    S.TitleLabel to "Title",
+    S.DhikrText to "Dhikr or dua text",
+    S.Cancel to "Cancel",
+    S.Add to "Add",
+    S.AddReminderTime to "Add reminder time",
+    S.RepeatReminder to "Repeat reminder",
+    S.ReminderTime to "Reminder time",
+    S.Save to "Save",
+    S.Apply to "Apply",
+    S.ChaptersFmt to "%1\$d chapters of azkar and duas",
+    S.SearchHisn to "Search Hisn Al-Muslim",
+    S.NoFavChapters to "No favorite chapters",
+    S.NoResults to "No results",
+    S.ReadTodaySuffix to " · Read today",
+    S.AddToMyAzkar to "Add to my azkar",
+    S.AddedToMyAzkar to "Added",
+    S.Done to "Done",
+    S.Tagline to "An app that helps you keep up your azkar day and night",
+    S.Version to "Version",
+    S.Developer to "Developer",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Content from the HisnElmoslem project (GPL v3 licensed)",
+    S.InstinctCredit to "Built in collaboration with Instinct",
+    S.Dua to "Keep us in your prayers",
+    S.Font to "Font",
+    S.FontLight to "App font light",
+    S.FontBold to "App font bold",
+    S.FontSystem to "System font",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (occasions)",
+    S.LocCalcTitle to "Location & calculation",
+    S.LocCalcSubtitle to "City, method and time adjustments",
+    S.LocSection to "Location",
+    S.CalcSection to "Calculation",
+    S.AsrJuristic to "Asr calculation",
+    S.AsrShafii to "Shafi'i, Maliki, Hanbali",
+    S.AsrHanafi to "Hanafi",
+    S.HighLatRule to "High-latitude rule",
+    S.HighLatNone to "None",
+    S.HighLatMiddle to "Middle of the night",
+    S.HighLatSeventh to "One-seventh of the night",
+    S.HighLatAngle to "Angle-based",
+    S.AdjSection to "Time adjustments",
+    S.AdjNote to "Minutes added to or subtracted from each calculated time. Applies instantly to prayer times, widgets and alerts.",
+    S.AdjHijri to "Hijri date adjustment",
+    S.AdjMinShort to "min",
+    S.AdjDayShort to "days",
+    S.WidgetTapTitle to "When tapped",
+    S.WidgetTapOpenApp to "Open the app",
+    S.WidgetTapNothing to "Nothing",
+    S.WidgetTapRefresh to "Refresh display",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Sunrise",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Prayer times",
+    S.NextPrayer to "Next prayer",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Choose country and city",
+    S.SearchCityHint to "Search for a city or country...",
+    S.NoSearchResults to "No results found",
+    S.FajrPrayer to "Fajr prayer",
+    S.FajrNow to "It is now time for Fajr prayer",
+    S.Snooze to "Snooze",
+    S.StopAlarm to "Stop alarm",
+    S.ChooseSnooze to "Choose snooze duration:",
+    S.MinutesShortFmt to "%1\\\$d (m)",
+    S.ColorWhite to "White",
+    S.Auto to "Auto",
+    S.ColorBlack to "Black",
+    S.BgGlass to "Glass",
+    S.BgWallBlur to "Blurred wallpaper",
+    S.ColorGray to "Gray",
+    S.ColorBlue to "Blue",
+    S.ColorGreen to "Green",
+    S.ColorPurple to "Purple",
+    S.ColorAmber to "Amber",
+    S.ColorBlueDark to "Dark blue",
+    S.ColorYellow to "Yellow",
+    S.ColorTurquoise to "Turquoise",
+    S.WidgetAccent to "Widget colour",
+    S.ColorGreenDark to "Dark green",
+    S.WidgetSettings to "Widget settings",
+    S.BarColor to "Progress bar color",
+    S.BgColor to "Background color",
+    S.WidgetPattern to "Pattern",
+    S.NoPattern to "None",
+    S.PickRingtone to "Choose alarm tone",
+    S.LocationMethod to "Location method",
+    S.CurrentLocation to "Current location",
+    S.AutoUpdateFajr to "Automatically updates Fajr time by your location",
+    S.PickCitySub to "Pick your city manually without location access",
+    S.CurrentCity to "Current city",
+    S.EditCityName to "Edit city name",
+    S.ResetCityNameAuto to "Reset to automatic name",
+    S.CustomLocationNameHint to "Enter a custom name for your location to show instead of the default :",
+    S.ChangeCity to "Change city",
+    S.NoLocPermission to "Location permission not granted. Continue to grant it.",
+    S.GpsOff to "Location service (GPS) is off on this phone.",
+    S.CalcMethod to "Calculation method",
+    S.SelectedCalcMethod to "Selected calculation method",
+    S.Change to "Change",
+    S.UpdatingTime to "Updating the time...",
+    S.UpdateFajrNow to "Update Fajr time now",
+    S.AlarmToneSection to "Alarm tone and sound",
+    S.SelectedTone to "Selected tone",
+    S.SystemTones to "System tones",
+    S.AudioFile to "Audio file",
+    S.ExtraSettings to "Additional settings",
+    S.VibrateDuringAlarm to "Vibrate during alarm",
+    S.NextFajrAt to "Next Fajr prayer time",
+    S.AlarmOnDesc to "Alarm on",
+    S.AlarmOffDesc to "Alarm off",
+    S.PickCalcMethod to "Choose calculation method",
+    S.NotifReminder to "Reminder",
+    S.NotifReadDone to "Mark as read",
+    S.NotifRemindLater to "Remind me in 10 minutes",
+    S.NotifOpenApp to "Open app",
+    S.NotifChannelAzkar to "Azkar reminder notifications",
+    S.NotifChannelFajr to "Fajr prayer alerts",
+    S.TodayAt to "Today at",
+    S.TomorrowAt to "Tomorrow at",
+    S.DefaultAlarmTone to "Default alarm tone",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla %1\$d° from north",
+    S.QiblaSetLocation to "Set your location first in Location & calculation",
+    S.QiblaNoSensor to "This device has no compass sensor",
+    S.QiblaCalibrate to "Move the phone in a figure-8 to calibrate the compass",
+    S.QiblaAligned to "You are facing the Qibla",
+    S.QiblaCityFmt to "Location: %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NE",
+    S.DirE to "E",
+    S.DirSE to "SE",
+    S.DirS to "S",
+    S.DirSW to "SW",
+    S.DirW to "W",
+    S.DirNW to "NW",
+    S.CalendarTab to "Calendar",
+    S.CalEvents to "Events",
+    S.CalNoEvents to "No events on this day",
+    S.CalMonthEvents to "This month's events",
+    S.CalReminderOn to "Reminder on",
+    S.CalReminderOff to "Turn reminder on",
+    S.WdSun to "S",
+    S.WdMon to "M",
+    S.WdTue to "T",
+    S.WdWed to "W",
+    S.WdThu to "T",
+    S.WdFri to "F",
+    S.WdSat to "S",
+    S.AutoDnd to "Auto silence during prayer",
+    S.AutoDndSub to "Silent from adhan to iqama (needs DND permission)",
+    S.OptTimesTitle to "Optional times",
+    S.OptTimesSub to "Extra prayer-screen rows: Imsak, Duha, Midnight and Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Midnight",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Date converter",
+    S.HijriConvSub to "Convert between Hijri and Gregorian dates",
+    S.GregToHijri to "Gregorian to Hijri",
+    S.HijriToGreg to "Hijri to Gregorian",
+    S.DayLabel to "Day",
+    S.MonthLabel to "Month",
+    S.YearLabel to "Year",
+    S.AlertTiming to "Alert timing",
+    S.AtAdhanTime to "At adhan",
+    S.AtAdhanRow to "At adhan time",
+    S.AtAdhanRowSub to "The base notification when the prayer time arrives",
+    S.BeforeAdhanRow to "Early reminder",
+    S.BeforeAdhanHelper to "An extra reminder - the adhan-time notification still arrives",
+    S.MinBeforeFmt to "%1\$d min before adhan",
+    S.AdhanReminder to "Adhan reminder",
+    S.IqamaReminder to "Iqama reminder",
+    S.IqamaReminderSub to "Rings at iqama time",
+    S.PrayerNowFmt to "It's now time for %1\$s",
+    S.PrayerApproachingFmt to "%1\$s in %2\$d min",
+    S.ShuruqNow to "It's now sunrise",
+    S.ShuruqApproaching to "Sunrise is approaching",
+    S.BgFrosted to "Frosted",
+    S.NeedsFilesPerm to "Requires files permission",
+    S.PermLocTitle to "Location permission",
+    S.PermLocBody to "The app uses your location to calculate accurate prayer times for your city. You can decline and enter your city manually at any time.",
+    S.PermFilesTitle to "Files access",
+    S.PermFilesBody to "This lets the app read your wallpaper to show a true blur behind the widget. It is optional; the Frosted option works without it.",
+    S.PermAllow to "Allow",
+    S.PermNotNow to "Not now",
+    S.PermOpenSettings to "Open settings",
+    S.IqamaNowFmt to "%1\$s iqama now",
+    S.SharedAlertSettings to "Shared settings for all alerts",
+    S.FajrAlarmOn to "Enable Fajr alarm",
+    S.AlarmEnabledSub to "The alarm alerts at Fajr time",
+    S.AlarmDisabledSub to "The alarm is currently off",
+    S.AlarmVolume to "Alarm volume",
+    S.SnoozeDuration to "Snooze duration",
+    S.AlertMode to "Alert type",
+    S.AlertModeNotif to "Notification",
+    S.AlertModeAlarm to "Full alarm",
+    S.AdhanAlertType to "Adhan alert type",
+    S.AlertTypeNotification to "Notification alert",
+    S.AlertTypeFullScreen to "Full-screen notification alert",
+)
 
-internal val FR: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    frPart0(m)
-    frPart1(m)
-    frPart2(m)
-    frPart3(m)
-    frPart4(m)
-    m
-}
-private fun frPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Prière"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Favoris"
-    m[S.Reminders] = "Rappels"
-    m[S.Stats] = "Statistiques"
-    m[S.Tags] = "Catégories"
-    m[S.Settings] = "Paramètres"
-    m[S.About] = "À propos"
-    m[S.More] = "Plus"
-    m[S.Menu] = "Menu"
-    m[S.AddDhikr] = "Ajouter un dhikr"
-    m[S.SearchAzkar] = "Rechercher un dhikr ou une catégorie"
-    m[S.All] = "Tous"
-    m[S.NoAzkar] = "Aucun dhikr"
-    m[S.NoAzkarUnderTag] = "Aucun dhikr sous \"%1\$s\""
-    m[S.NoResultsQuery] = "Aucun résultat pour \"%1\$s\""
-    m[S.Options] = "Options"
-    m[S.EditDhikrTags] = "Modifier le dhikr et les catégories"
-    m[S.ReminderTimes] = "Heures de rappel"
-    m[S.Delete] = "Supprimer"
-    m[S.NoActiveReminders] = "Aucun rappel actif"
-    m[S.Today] = "Aujourd'hui"
-    m[S.ThisWeek] = "Cette semaine"
-    m[S.DayStreak] = "Jours consécutifs"
-    m[S.CurrentReminder] = "Rappel actuel"
-    m[S.NextReminder] = "Prochain rappel"
-    m[S.NoActiveAzkar] = "Aucun dhikr actif. Activez-les depuis la liste."
-    m[S.Shortcuts] = "Raccourcis"
-    m[S.TasbeehCounter] = "Compteur de tasbeeh"
-    m[S.HisnSubtitle] = "Azkar et invocations du Coran et de la Sunna"
-    m[S.FavSubtitle] = "Vos azkar préférés"
-    m[S.ReadDone] = "Lu"
-    m[S.TotalSuffix] = " au total"
-    m[S.NoReadsYet] = "Aucune lecture"
-    m[S.DhikrIdFmt] = "Dhikr n°%1\$d"
-    m[S.Periods] = "Périodes"
-    m[S.Week] = "Semaine"
-    m[S.Month] = "Mois"
-    m[S.KeepGoing] = "Continuez vos azkar quotidiens"
-    m[S.TotalReads] = "Lectures totales"
-    m[S.SinceStart] = "Depuis le début"
-    m[S.RecentReads] = "Lectures récentes"
-    m[S.RemindersSubtitle] = "Toutes les heures de rappel"
-    m[S.StatsSubtitle] = "Historique et jours consécutifs"
-    m[S.TagsSubtitle] = "Organiser les azkar par couleur"
-    m[S.FajrAlarm] = "Alarme de Fajr"
-    m[S.ByLocation] = "Selon votre position"
-    m[S.SettingsSubtitle] = "Vibration, police et sonnerie"
-    m[S.AboutSubtitle] = "Version et développeur"
-    m[S.DeleteTag] = "Supprimer la catégorie"
-    m[S.DeleteTagMsg] = "La catégorie \"%1\$s\" sera retirée de tous les azkar. Les azkar ne seront pas supprimés."
-    m[S.AddTag] = "Ajouter une catégorie"
-    m[S.NoTags] = "Aucune catégorie"
-    m[S.Edit] = "Modifier"
-    m[S.NewTag] = "Nouvelle catégorie"
-    m[S.EditTag] = "Modifier la catégorie"
-    m[S.TagName] = "Nom de la catégorie"
-}
-private fun frPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Couleur"
-    m[S.TasbeehaFmt] = "%1\$d tasbeeh"
-    m[S.TapToCount] = "Touchez pour compter"
-    m[S.ResetCounter] = "Réinitialiser"
-    m[S.ActiveOfTotalFmt] = "%1\$d sur %2\$d actifs"
-    m[S.NoReminders] = "Aucun rappel"
-    m[S.NoFavorites] = "Aucun favori"
-    m[S.Light] = "Clair"
-    m[S.Dark] = "Sombre"
-    m[S.SystemAuto] = "Automatique (système)"
-    m[S.LockWidgets] = "Widgets d'écran de verrouillage"
-    m[S.LockWidgetsToast] = "Appuyez longuement sur l'écran de verrouillage pour ajouter un widget"
-    m[S.OpenEditor] = "Ouvrir l'éditeur"
-    m[S.Close] = "Fermer"
-    m[S.LockWidgetsDesc] = "Tous les widgets Wathkkir sont disponibles dans la zone prévue sous l'horloge de l'écran de verrouillage (One UI 8 ou plus récent)."
-    m[S.LockWidgetsSteps] = "1. Sur l'écran de verrouillage, appuyez longuement sur un espace vide, puis confirmez votre identité.\n2. Touchez « Ajouter un widget » et choisissez « Wathkkir ».\n3. Faites glisser le widget sous l'horloge."
-    m[S.LockWidgetsHint] = "Un appui sur le widget depuis l'écran de verrouillage ouvre directement l'application."
-    m[S.ChangeLocation] = "Changer de lieu"
-    m[S.LocationSubtitle] = "Ville, méthode de calcul et réglages de l'alarme de Fajr"
-    m[S.FajrAlarmSubtitle] = "Activer l'alarme et la sonnerie"
-    m[S.LockScreenSection] = "Écran de verrouillage"
-    m[S.LockWidgetsRowSub] = "Ajoutez un widget Wathkkir sous l'horloge de l'écran de verrouillage"
-    m[S.Notifications] = "Notifications"
-    m[S.NotifSound] = "Son de notification"
-    m[S.Default] = "Par défaut"
-    m[S.Vibration] = "Vibration"
-    m[S.Appearance] = "Apparence"
-    m[S.AppFont] = "Police de l'application"
-    m[S.Language] = "Langue"
-    m[S.NewDhikr] = "Nouveau dhikr"
-    m[S.EditDhikr] = "Modifier le dhikr"
-    m[S.TitleLabel] = "Titre"
-    m[S.DhikrText] = "Texte du dhikr ou de l'invocation"
-    m[S.Cancel] = "Annuler"
-    m[S.Add] = "Ajouter"
-    m[S.AddReminderTime] = "Ajouter une heure de rappel"
-    m[S.RepeatReminder] = "Répéter le rappel"
-    m[S.ReminderTime] = "Heure du rappel"
-    m[S.Save] = "Enregistrer"
-    m[S.ChaptersFmt] = "%1\$d chapitres d'azkar et d'invocations"
-    m[S.SearchHisn] = "Rechercher dans Hisn Al-Muslim"
-    m[S.NoFavChapters] = "Aucun chapitre favori"
-    m[S.NoResults] = "Aucun résultat"
-    m[S.ReadTodaySuffix] = " · Lu aujourd'hui"
-    m[S.AddToMyAzkar] = "Ajouter à mes azkar"
-    m[S.Done] = "OK"
-    m[S.Tagline] = "Une application qui vous aide à garder vos azkar le jour et la nuit"
-    m[S.Version] = "Version"
-    m[S.Developer] = "Développeur"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Contenu du projet HisnElmoslem (sous licence GPL v3)"
-    m[S.InstinctCredit] = "Réalisé en collaboration avec Instinct"
-    m[S.Dua] = "Gardez-nous dans vos invocations"
-    m[S.Font] = "Police"
-    m[S.FontLight] = "Police de l'application légère"
-    m[S.FontBold] = "Police de l'application grasse"
-    m[S.FontSystem] = "Police système"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun frPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (occasions)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Lever du soleil"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Horaires de prière"
-    m[S.NextPrayer] = "Prochaine prière"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Choisir le pays et la ville"
-    m[S.SearchCityHint] = "Rechercher une ville ou un pays..."
-    m[S.NoSearchResults] = "Aucun résultat trouvé"
-    m[S.FajrPrayer] = "Prière du Fajr"
-    m[S.FajrNow] = "C'est l'heure de la prière du Fajr"
-    m[S.Snooze] = "Répéter"
-    m[S.StopAlarm] = "Arrêter l'alarme"
-    m[S.ChooseSnooze] = "Choisir la durée de répétition :"
-    m[S.MinutesShortFmt] = "%1\$d (min)"
-    m[S.ColorWhite] = "Blanc"
-    m[S.Auto] = "Auto"
-    m[S.ColorBlack] = "Noir"
-    m[S.ColorGray] = "Gris"
-    m[S.ColorBlue] = "Bleu"
-    m[S.ColorGreen] = "Vert"
-    m[S.ColorPurple] = "Violet"
-    m[S.ColorAmber] = "Ambre"
-    m[S.ColorBlueDark] = "Bleu foncé"
-    m[S.ColorGreenDark] = "Vert foncé"
-    m[S.WidgetSettings] = "Réglages du widget"
-    m[S.ColorYellow] = "Jaune"
-    m[S.ColorTurquoise] = "Turquoise"
-    m[S.WidgetAccent] = "Couleur du widget"
-    m[S.BarColor] = "Couleur de la barre de progression"
-    m[S.BgColor] = "Couleur d'arrière-plan"
-    m[S.PickRingtone] = "Choisir la sonnerie d'alarme"
-    m[S.LocationMethod] = "Méthode de localisation"
-    m[S.CurrentLocation] = "Position actuelle"
-    m[S.AutoUpdateFajr] = "Met à jour automatiquement les horaires de prière selon votre position"
-    m[S.PickCitySub] = "Choisissez votre ville manuellement sans localisation"
-    m[S.CurrentCity] = "Ville actuelle"
-    m[S.EditCityName] = "Modifier le nom de la ville"
-    m[S.ResetCityNameAuto] = "Rétablir le nom automatique"
-    m[S.CustomLocationNameHint] = "Entrez un nom personnalisé pour votre lieu à afficher à la place du nom par défaut :"
-    m[S.ChangeCity] = "Changer de ville"
-    m[S.NoLocPermission] = "Autorisation de localisation non accordée. Continuez pour l'accorder."
-    m[S.GpsOff] = "Le service de localisation (GPS) est désactivé."
-    m[S.CalcMethod] = "Méthode de calcul"
-    m[S.SelectedCalcMethod] = "Méthode de calcul choisie"
-    m[S.Change] = "Modifier"
-    m[S.UpdatingTime] = "Mise à jour de l'heure..."
-    m[S.UpdateFajrNow] = "Mettre à jour l'heure du Fajr"
-    m[S.AlarmToneSection] = "Sonnerie et son de l'alarme"
-    m[S.SelectedTone] = "Sonnerie choisie"
-    m[S.SystemTones] = "Sons système"
-    m[S.AudioFile] = "Fichier audio"
-    m[S.ExtraSettings] = "Réglages supplémentaires"
-    m[S.VibrateDuringAlarm] = "Vibrer pendant l'alarme"
-}
-private fun frPart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "Prochaine prière du Fajr"
-    m[S.AlarmOnDesc] = "Alarme activée"
-    m[S.AlarmOffDesc] = "Alarme désactivée"
-    m[S.PickCalcMethod] = "Choisir la méthode de calcul"
-    m[S.NotifReminder] = "Rappel"
-    m[S.NotifReadDone] = "Marquer comme lu"
-    m[S.NotifRemindLater] = "Me le rappeler dans 10 minutes"
-    m[S.NotifOpenApp] = "Ouvrir l'app"
-    m[S.NotifChannelAzkar] = "Notifications de rappel des azkar"
-    m[S.NotifChannelFajr] = "Alertes de la prière du Fajr"
-    m[S.TodayAt] = "Aujourd'hui à"
-    m[S.TomorrowAt] = "Demain à"
-    m[S.DefaultAlarmTone] = "Sonnerie par défaut"
-    m[S.LocCalcTitle] = "Lieu et calcul"
-    m[S.LocCalcSubtitle] = "Ville, méthode et ajustements"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla à %1\$d° du nord"
-    m[S.QiblaSetLocation] = "Définissez d’abord votre position"
-    m[S.QiblaNoSensor] = "Pas de capteur de boussole sur cet appareil"
-    m[S.QiblaCalibrate] = "Bougez le téléphone en forme de 8 pour calibrer"
-    m[S.QiblaAligned] = "Vous faites face à la Qibla"
-    m[S.QiblaCityFmt] = "Lieu : %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NE"
-    m[S.DirE] = "E"
-    m[S.DirSE] = "SE"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SO"
-    m[S.DirW] = "O"
-    m[S.DirNW] = "NO"
-    m[S.CalendarTab] = "Calendrier"
-    m[S.CalEvents] = "Événements"
-    m[S.CalNoEvents] = "Aucun événement ce jour"
-    m[S.CalMonthEvents] = "Événements du mois"
-    m[S.CalReminderOn] = "Rappel activé"
-    m[S.CalReminderOff] = "Activer le rappel"
-    m[S.WdSun] = "D"
-    m[S.WdMon] = "L"
-    m[S.WdTue] = "M"
-    m[S.WdWed] = "M"
-    m[S.WdThu] = "J"
-    m[S.WdFri] = "V"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Silence auto pendant la prière"
-    m[S.AutoDndSub] = "Silencieux de l’adhan à l’iqama (autorisation requise)"
-    m[S.OptTimesTitle] = "Horaires optionnels"
-    m[S.OptTimesSub] = "Lignes supplémentaires : Imsak, Duha, Minuit et Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Minuit"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Convertisseur de date"
-    m[S.HijriConvSub] = "Convertir entre dates hégiriennes et grégoriennes"
-    m[S.GregToHijri] = "Grégorien vers Hégirien"
-    m[S.HijriToGreg] = "Hégirien vers Grégorien"
-    m[S.DayLabel] = "Jour"
-    m[S.MonthLabel] = "Mois"
-    m[S.YearLabel] = "Année"
-    m[S.LocSection] = "Lieu"
-    m[S.CalcSection] = "Calcul"
-}
-private fun frPart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "Calcul de l'Asr"
-    m[S.AsrShafii] = "Chaféite, malikite, hanbalite"
-    m[S.AsrHanafi] = "Hanéfite"
-    m[S.HighLatRule] = "Règle des hautes latitudes"
-    m[S.HighLatNone] = "Aucune"
-    m[S.HighLatMiddle] = "Milieu de la nuit"
-    m[S.HighLatSeventh] = "Un septième de la nuit"
-    m[S.HighLatAngle] = "Basée sur l'angle"
-    m[S.AdjSection] = "Ajustements des horaires"
-    m[S.AdjNote] = "Minutes ajoutées ou retirées de chaque horaire calculé. Application immédiate aux horaires, aux widgets et aux alertes."
-    m[S.AdjHijri] = "Ajustement de la date hégirienne"
-    m[S.AdjMinShort] = "min"
-    m[S.AdjDayShort] = "j"
-    m[S.AlertTiming] = "Moment de l'alerte"
-    m[S.AtAdhanTime] = "À l'adhan"
-    m[S.AtAdhanRow] = "À l'adhan"
-    m[S.AtAdhanRowSub] = "La notification de base à l'heure de la prière"
-    m[S.BeforeAdhanRow] = "Rappel anticipé"
-    m[S.BeforeAdhanHelper] = "Un rappel supplémentaire - la notification de l'adhan arrive toujours"
-    m[S.MinBeforeFmt] = "%1\$d min avant l'adhan"
-    m[S.AdhanReminder] = "Rappel de l'adhan"
-    m[S.IqamaReminder] = "Rappel de l'iqama"
-    m[S.IqamaReminderSub] = "Notification à l'heure de l'iqama"
-    m[S.PrayerNowFmt] = "C'est l'heure de %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s dans %2\$d min"
-    m[S.IqamaNowFmt] = "Iqama de %1\$s maintenant"
-    m[S.SharedAlertSettings] = "Réglages partagés pour toutes les alertes"
-}
+internal val FR = mapOf(
+    S.PrayerTab to "Prière",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Favoris",
+    S.Reminders to "Rappels",
+    S.Stats to "Statistiques",
+    S.Tags to "Catégories",
+    S.Settings to "Paramètres",
+    S.About to "À propos",
+    S.More to "Plus",
+    S.Menu to "Menu",
+    S.AddDhikr to "Ajouter un dhikr",
+    S.SearchAzkar to "Rechercher un dhikr ou une catégorie",
+    S.All to "Tous",
+    S.NoAzkar to "Aucun dhikr",
+    S.NoAzkarUnderTag to "Aucun dhikr sous \"%1\$s\"",
+    S.NoResultsQuery to "Aucun résultat pour \"%1\$s\"",
+    S.Options to "Options",
+    S.EditDhikrTags to "Modifier le dhikr et les catégories",
+    S.ReminderTimes to "Heures de rappel",
+    S.Delete to "Supprimer",
+    S.NoActiveReminders to "Aucun rappel actif",
+    S.Today to "Aujourd'hui",
+    S.ThisWeek to "Cette semaine",
+    S.DayStreak to "Jours consécutifs",
+    S.CurrentReminder to "Rappel actuel",
+    S.NextReminder to "Prochain rappel",
+    S.NoActiveAzkar to "Aucun dhikr actif. Activez-les depuis la liste.",
+    S.Shortcuts to "Raccourcis",
+    S.TasbeehCounter to "Compteur de tasbeeh",
+    S.HisnSubtitle to "Azkar et invocations du Coran et de la Sunna",
+    S.FavSubtitle to "Vos azkar préférés",
+    S.ReadDone to "Lu",
+    S.TotalSuffix to " au total",
+    S.NoReadsYet to "Aucune lecture",
+    S.DhikrIdFmt to "Dhikr n°%1\$d",
+    S.Periods to "Périodes",
+    S.Week to "Semaine",
+    S.Month to "Mois",
+    S.KeepGoing to "Continuez vos azkar quotidiens",
+    S.TotalReads to "Lectures totales",
+    S.SinceStart to "Depuis le début",
+    S.RecentReads to "Lectures récentes",
+    S.RemindersSubtitle to "Toutes les heures de rappel",
+    S.StatsSubtitle to "Historique et jours consécutifs",
+    S.TagsSubtitle to "Organiser les azkar par couleur",
+    S.FajrAlarm to "Alarme de Fajr",
+    S.ByLocation to "Selon votre position",
+    S.SettingsSubtitle to "Vibration, police et sonnerie",
+    S.AboutSubtitle to "Version et développeur",
+    S.DeleteTag to "Supprimer la catégorie",
+    S.DeleteTagMsg to "La catégorie \"%1\$s\" sera retirée de tous les azkar. Les azkar ne seront pas supprimés.",
+    S.AddTag to "Ajouter une catégorie",
+    S.NoTags to "Aucune catégorie",
+    S.Edit to "Modifier",
+    S.NewTag to "Nouvelle catégorie",
+    S.EditTag to "Modifier la catégorie",
+    S.TagName to "Nom de la catégorie",
+    S.Color to "Couleur",
+    S.TasbeehaFmt to "%1\$d tasbeeh",
+    S.TapToCount to "Touchez pour compter",
+    S.ResetCounter to "Réinitialiser",
+    S.ActiveOfTotalFmt to "%1\$d sur %2\$d actifs",
+    S.NoReminders to "Aucun rappel",
+    S.NoFavorites to "Aucun favori",
+    S.Light to "Clair",
+    S.Dark to "Sombre",
+    S.SystemAuto to "Automatique (système)",
+    S.LockWidgets to "Widgets d'écran de verrouillage",
+    S.LockWidgetsToast to "Appuyez longuement sur l'écran de verrouillage pour ajouter un widget",
+    S.OpenEditor to "Ouvrir l'éditeur",
+    S.Close to "Fermer",
+    S.LockWidgetsDesc to "Tous les widgets Wathakker sont disponibles dans la zone prévue sous l'horloge de l'écran de verrouillage (One UI 8 ou plus récent).",
+    S.LockWidgetsSteps to "1. Sur l'écran de verrouillage, appuyez longuement sur un espace vide, puis confirmez votre identité.\n2. Touchez « Ajouter un widget » et choisissez « Wathakker ».\n3. Faites glisser le widget sous l'horloge.",
+    S.LockWidgetsHint to "Un appui sur le widget depuis l'écran de verrouillage ouvre directement l'application.",
+    S.ChangeLocation to "Changer de lieu",
+    S.LocationSubtitle to "Ville, méthode de calcul et réglages de l'alarme de Fajr",
+    S.FajrAlarmSubtitle to "Activer l'alarme et la sonnerie",
+    S.LockScreenSection to "Écran de verrouillage",
+    S.LockWidgetsRowSub to "Ajoutez un widget Wathakker sous l'horloge de l'écran de verrouillage",
+    S.Notifications to "Notifications",
+    S.NotifSound to "Son de notification",
+    S.Default to "Par défaut",
+    S.Vibration to "Vibration",
+    S.Appearance to "Apparence",
+    S.AppFont to "Police de l'application",
+    S.Language to "Langue",
+    S.NewDhikr to "Nouveau dhikr",
+    S.EditDhikr to "Modifier le dhikr",
+    S.TitleLabel to "Titre",
+    S.DhikrText to "Texte du dhikr ou de l'invocation",
+    S.Cancel to "Annuler",
+    S.Add to "Ajouter",
+    S.AddReminderTime to "Ajouter une heure de rappel",
+    S.RepeatReminder to "Répéter le rappel",
+    S.ReminderTime to "Heure du rappel",
+    S.Save to "Enregistrer",
+    S.ChaptersFmt to "%1\$d chapitres d'azkar et d'invocations",
+    S.SearchHisn to "Rechercher dans Hisn Al-Muslim",
+    S.NoFavChapters to "Aucun chapitre favori",
+    S.NoResults to "Aucun résultat",
+    S.ReadTodaySuffix to " · Lu aujourd'hui",
+    S.AddToMyAzkar to "Ajouter à mes azkar",
+    S.Done to "OK",
+    S.Tagline to "Une application qui vous aide à garder vos azkar le jour et la nuit",
+    S.Version to "Version",
+    S.Developer to "Développeur",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Contenu du projet HisnElmoslem (sous licence GPL v3)",
+    S.InstinctCredit to "Réalisé en collaboration avec Instinct",
+    S.Dua to "Gardez-nous dans vos invocations",
+    S.Font to "Police",
+    S.FontLight to "Police de l'application légère",
+    S.FontBold to "Police de l'application grasse",
+    S.FontSystem to "Police système",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (occasions)",
+    S.LocCalcTitle to "Lieu et calcul",
+    S.LocCalcSubtitle to "Ville, méthode et ajustements",
+    S.LocSection to "Lieu",
+    S.CalcSection to "Calcul",
+    S.AsrJuristic to "Calcul de l'Asr",
+    S.AsrShafii to "Chaféite, malikite, hanbalite",
+    S.AsrHanafi to "Hanéfite",
+    S.HighLatRule to "Règle des hautes latitudes",
+    S.HighLatNone to "Aucune",
+    S.HighLatMiddle to "Milieu de la nuit",
+    S.HighLatSeventh to "Un septième de la nuit",
+    S.HighLatAngle to "Basée sur l'angle",
+    S.AdjSection to "Ajustements des horaires",
+    S.AdjNote to "Minutes ajoutées ou retirées de chaque horaire calculé. Application immédiate aux horaires, aux widgets et aux alertes.",
+    S.AdjHijri to "Ajustement de la date hégirienne",
+    S.AdjMinShort to "min",
+    S.AdjDayShort to "j",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Lever du soleil",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Horaires de prière",
+    S.NextPrayer to "Prochaine prière",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Choisir le pays et la ville",
+    S.SearchCityHint to "Rechercher une ville ou un pays...",
+    S.NoSearchResults to "Aucun résultat trouvé",
+    S.FajrPrayer to "Prière du Fajr",
+    S.FajrNow to "C'est l'heure de la prière du Fajr",
+    S.Snooze to "Répéter",
+    S.StopAlarm to "Arrêter l'alarme",
+    S.ChooseSnooze to "Choisir la durée de répétition :",
+    S.MinutesShortFmt to "%1\\\$d (min)",
+    S.ColorWhite to "Blanc",
+    S.Auto to "Auto",
+    S.ColorBlack to "Noir",
+    S.ColorGray to "Gris",
+    S.ColorBlue to "Bleu",
+    S.ColorGreen to "Vert",
+    S.ColorPurple to "Violet",
+    S.ColorAmber to "Ambre",
+    S.ColorBlueDark to "Bleu foncé",
+    S.ColorGreenDark to "Vert foncé",
+    S.WidgetSettings to "Réglages du widget",
+    S.ColorYellow to "Jaune",
+    S.ColorTurquoise to "Turquoise",
+    S.WidgetAccent to "Couleur du widget",
+    S.BarColor to "Couleur de la barre de progression",
+    S.BgColor to "Couleur d'arrière-plan",
+    S.PickRingtone to "Choisir la sonnerie d'alarme",
+    S.LocationMethod to "Méthode de localisation",
+    S.CurrentLocation to "Position actuelle",
+    S.AutoUpdateFajr to "Met à jour l'heure du Fajr selon votre position",
+    S.PickCitySub to "Choisissez votre ville manuellement sans localisation",
+    S.CurrentCity to "Ville actuelle",
+    S.EditCityName to "Modifier le nom de la ville",
+    S.ResetCityNameAuto to "Rétablir le nom automatique",
+    S.CustomLocationNameHint to "Entrez un nom personnalisé pour votre lieu à afficher à la place du nom par défaut :",
+    S.ChangeCity to "Changer de ville",
+    S.NoLocPermission to "Autorisation de localisation non accordée. Continuez pour l'accorder.",
+    S.GpsOff to "Le service de localisation (GPS) est désactivé.",
+    S.CalcMethod to "Méthode de calcul",
+    S.SelectedCalcMethod to "Méthode de calcul choisie",
+    S.Change to "Modifier",
+    S.UpdatingTime to "Mise à jour de l'heure...",
+    S.UpdateFajrNow to "Mettre à jour l'heure du Fajr",
+    S.AlarmToneSection to "Sonnerie et son de l'alarme",
+    S.SelectedTone to "Sonnerie choisie",
+    S.SystemTones to "Sons système",
+    S.AudioFile to "Fichier audio",
+    S.ExtraSettings to "Réglages supplémentaires",
+    S.VibrateDuringAlarm to "Vibrer pendant l'alarme",
+    S.NextFajrAt to "Prochaine prière du Fajr",
+    S.AlarmOnDesc to "Alarme activée",
+    S.AlarmOffDesc to "Alarme désactivée",
+    S.PickCalcMethod to "Choisir la méthode de calcul",
+    S.NotifReminder to "Rappel",
+    S.NotifReadDone to "Marquer comme lu",
+    S.NotifRemindLater to "Me le rappeler dans 10 minutes",
+    S.NotifOpenApp to "Ouvrir l'app",
+    S.NotifChannelAzkar to "Notifications de rappel des azkar",
+    S.NotifChannelFajr to "Alertes de la prière du Fajr",
+    S.TodayAt to "Aujourd'hui à",
+    S.TomorrowAt to "Demain à",
+    S.DefaultAlarmTone to "Sonnerie par défaut",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla à %1\$d° du nord",
+    S.QiblaSetLocation to "Définissez d’abord votre position",
+    S.QiblaNoSensor to "Pas de capteur de boussole sur cet appareil",
+    S.QiblaCalibrate to "Bougez le téléphone en forme de 8 pour calibrer",
+    S.QiblaAligned to "Vous faites face à la Qibla",
+    S.QiblaCityFmt to "Lieu : %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NE",
+    S.DirE to "E",
+    S.DirSE to "SE",
+    S.DirS to "S",
+    S.DirSW to "SO",
+    S.DirW to "O",
+    S.DirNW to "NO",
+    S.CalendarTab to "Calendrier",
+    S.CalEvents to "Événements",
+    S.CalNoEvents to "Aucun événement ce jour",
+    S.CalMonthEvents to "Événements du mois",
+    S.CalReminderOn to "Rappel activé",
+    S.CalReminderOff to "Activer le rappel",
+    S.WdSun to "D",
+    S.WdMon to "L",
+    S.WdTue to "M",
+    S.WdWed to "M",
+    S.WdThu to "J",
+    S.WdFri to "V",
+    S.WdSat to "S",
+    S.AutoDnd to "Silence auto pendant la prière",
+    S.AutoDndSub to "Silencieux de l’adhan à l’iqama (autorisation requise)",
+    S.OptTimesTitle to "Horaires optionnels",
+    S.OptTimesSub to "Lignes supplémentaires : Imsak, Duha, Minuit et Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Minuit",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Convertisseur de date",
+    S.HijriConvSub to "Convertir entre dates hégiriennes et grégoriennes",
+    S.GregToHijri to "Grégorien vers Hégirien",
+    S.HijriToGreg to "Hégirien vers Grégorien",
+    S.DayLabel to "Jour",
+    S.MonthLabel to "Mois",
+    S.YearLabel to "Année",
+    S.AlertTiming to "Moment de l'alerte",
+    S.AtAdhanTime to "À l'adhan",
+    S.AtAdhanRow to "À l'adhan",
+    S.AtAdhanRowSub to "La notification de base à l'heure de la prière",
+    S.BeforeAdhanRow to "Rappel anticipé",
+    S.BeforeAdhanHelper to "Un rappel supplémentaire - la notification de l'adhan arrive toujours",
+    S.MinBeforeFmt to "%1\$d min avant l'adhan",
+    S.AdhanReminder to "Rappel de l'adhan",
+    S.IqamaReminder to "Rappel de l'iqama",
+    S.IqamaReminderSub to "Sonner à l'heure de l'iqama",
+    S.PrayerNowFmt to "C'est l'heure de %1\$s",
+    S.PrayerApproachingFmt to "%1\$s dans %2\$d min",
+    S.IqamaNowFmt to "Iqama de %1\$s maintenant",
+    S.SharedAlertSettings to "Réglages partagés pour toutes les alertes",
+    S.FajrAlarmOn to "Activer l'alarme du Fajr",
+    S.AlarmEnabledSub to "L'alarme sonne à l'heure du Fajr",
+    S.AlarmDisabledSub to "L'alarme est désactivée",
+    S.AlarmVolume to "Volume de l'alarme",
+    S.SnoozeDuration to "Durée de répétition",
+    S.AlertMode to "Type d'alerte",
+    S.AlertModeNotif to "Notification",
+    S.AlertModeAlarm to "Alarme complète",
+    S.AdhanAlertType to "Type d'alerte de l'adhan",
+    S.AlertTypeNotification to "Alerte notification",
+    S.AlertTypeFullScreen to "Alerte notification plein écran",
+)
 
-internal val DE: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    dePart0(m)
-    dePart1(m)
-    dePart2(m)
-    dePart3(m)
-    dePart4(m)
-    m
-}
-private fun dePart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Gebet"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Favoriten"
-    m[S.Reminders] = "Erinnerungen"
-    m[S.Stats] = "Statistiken"
-    m[S.Tags] = "Kategorien"
-    m[S.Settings] = "Einstellungen"
-    m[S.About] = "Über die App"
-    m[S.More] = "Mehr"
-    m[S.Menu] = "Menü"
-    m[S.AddDhikr] = "Dhikr hinzufügen"
-    m[S.SearchAzkar] = "Azkar oder Kategorie suchen"
-    m[S.All] = "Alle"
-    m[S.NoAzkar] = "Keine Azkar"
-    m[S.NoAzkarUnderTag] = "Keine Azkar unter \"%1\$s\""
-    m[S.NoResultsQuery] = "Keine Ergebnisse für \"%1\$s\""
-    m[S.Options] = "Optionen"
-    m[S.EditDhikrTags] = "Dhikr und Kategorien bearbeiten"
-    m[S.ReminderTimes] = "Erinnerungszeiten"
-    m[S.Delete] = "Löschen"
-    m[S.NoActiveReminders] = "Keine aktiven Erinnerungen"
-    m[S.Today] = "Heute"
-    m[S.ThisWeek] = "Diese Woche"
-    m[S.DayStreak] = "Tage in Folge"
-    m[S.CurrentReminder] = "Aktuelle Erinnerung"
-    m[S.NextReminder] = "Nächste Erinnerung"
-    m[S.NoActiveAzkar] = "Keine aktiven Azkar. Aktiviere sie in der Azkar-Liste."
-    m[S.Shortcuts] = "Verknüpfungen"
-    m[S.TasbeehCounter] = "Tasbeeh-Zähler"
-    m[S.HisnSubtitle] = "Azkar und Bittgebete aus Quran und Sunna"
-    m[S.FavSubtitle] = "Deine Lieblings-Azkar"
-    m[S.ReadDone] = "Gelesen"
-    m[S.TotalSuffix] = " insgesamt"
-    m[S.NoReadsYet] = "Noch keine Lesungen"
-    m[S.DhikrIdFmt] = "Dhikr Nr. %1\$d"
-    m[S.Periods] = "Zeiträume"
-    m[S.Week] = "Woche"
-    m[S.Month] = "Monat"
-    m[S.KeepGoing] = "Bleib bei deinen täglichen Azkar"
-    m[S.TotalReads] = "Lesungen insgesamt"
-    m[S.SinceStart] = "Seit Nutzungsbeginn"
-    m[S.RecentReads] = "Letzte Lesungen"
-    m[S.RemindersSubtitle] = "Alle Erinnerungszeiten"
-    m[S.StatsSubtitle] = "Verlauf und Serien"
-    m[S.TagsSubtitle] = "Azkar mit Farben organisieren"
-    m[S.FajrAlarm] = "Fajr-Wecker"
-    m[S.ByLocation] = "Nach deinem Standort"
-    m[S.SettingsSubtitle] = "Vibration, Schrift und Ton"
-    m[S.AboutSubtitle] = "Version und Entwickler"
-    m[S.DeleteTag] = "Kategorie löschen"
-    m[S.DeleteTagMsg] = "Die Kategorie \"%1\$s\" wird aus allen Azkar entfernt. Die Azkar selbst bleiben erhalten."
-    m[S.AddTag] = "Kategorie hinzufügen"
-    m[S.NoTags] = "Noch keine Kategorien"
-    m[S.Edit] = "Bearbeiten"
-    m[S.NewTag] = "Neue Kategorie"
-    m[S.EditTag] = "Kategorie bearbeiten"
-    m[S.TagName] = "Name der Kategorie"
-}
-private fun dePart1(m: HashMap<S, String>) {
-    m[S.Color] = "Farbe"
-    m[S.TasbeehaFmt] = "%1\$d Tasbeeh"
-    m[S.TapToCount] = "Tippen zum Zählen"
-    m[S.ResetCounter] = "Zähler zurücksetzen"
-    m[S.ActiveOfTotalFmt] = "%1\$d von %2\$d aktiv"
-    m[S.NoReminders] = "Keine Erinnerungen"
-    m[S.NoFavorites] = "Keine Favoriten"
-    m[S.Light] = "Hell"
-    m[S.Dark] = "Dunkel"
-    m[S.SystemAuto] = "Automatisch (System)"
-    m[S.LockWidgets] = "Sperrbildschirm-Widgets"
-    m[S.LockWidgetsToast] = "Sperrbildschirm lange drücken, um ein Widget hinzuzufügen"
-    m[S.OpenEditor] = "Editor öffnen"
-    m[S.Close] = "Schließen"
-    m[S.LockWidgetsDesc] = "Alle Wathkkir-Widgets passen in den vorgesehenen Bereich unter der Uhr auf dem Sperrbildschirm (One UI 8 oder neuer)."
-    m[S.LockWidgetsSteps] = "1. Auf dem Sperrbildschirm eine freie Stelle lange drücken und Identität bestätigen.\n2. „Widget hinzufügen“ tippen und „Wathkkir“ wählen.\n3. Das Widget in den Bereich unter der Uhr ziehen."
-    m[S.LockWidgetsHint] = "Ein Tippen auf das Widget öffnet die App direkt vom Sperrbildschirm."
-    m[S.ChangeLocation] = "Standort ändern"
-    m[S.LocationSubtitle] = "Stadt, Berechnungsmethode und Fajr-Wecker-Einstellungen"
-    m[S.FajrAlarmSubtitle] = "Wecker und Ton aktivieren"
-    m[S.LockScreenSection] = "Sperrbildschirm"
-    m[S.LockWidgetsRowSub] = "Wathkkir-Widget unter die Uhr auf dem Sperrbildschirm setzen"
-    m[S.Notifications] = "Benachrichtigungen"
-    m[S.NotifSound] = "Benachrichtigungston"
-    m[S.Default] = "Standard"
-    m[S.Vibration] = "Vibration"
-    m[S.Appearance] = "Darstellung"
-    m[S.AppFont] = "App-Schriftart"
-    m[S.Language] = "Sprache"
-    m[S.NewDhikr] = "Neuer Dhikr"
-    m[S.EditDhikr] = "Dhikr bearbeiten"
-    m[S.TitleLabel] = "Titel"
-    m[S.DhikrText] = "Text des Dhikr oder Bittgebets"
-    m[S.Cancel] = "Abbrechen"
-    m[S.Add] = "Hinzufügen"
-    m[S.AddReminderTime] = "Erinnerungszeit hinzufügen"
-    m[S.RepeatReminder] = "Erinnerung wiederholen"
-    m[S.ReminderTime] = "Erinnerungszeit"
-    m[S.Save] = "Speichern"
-    m[S.ChaptersFmt] = "%1\$d Kapitel mit Azkar und Bittgebeten"
-    m[S.SearchHisn] = "In Hisn Al-Muslim suchen"
-    m[S.NoFavChapters] = "Keine Lieblingskapitel"
-    m[S.NoResults] = "Keine Ergebnisse"
-    m[S.ReadTodaySuffix] = " · Heute gelesen"
-    m[S.AddToMyAzkar] = "Zu meinen Azkar hinzufügen"
-    m[S.Done] = "Fertig"
-    m[S.Tagline] = "Eine App, die dir hilft, deine Azkar bei Tag und Nacht beizubehalten"
-    m[S.Version] = "Version"
-    m[S.Developer] = "Entwickler"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Inhalte aus dem HisnElmoslem-Projekt (GPL-v3-lizenziert)"
-    m[S.InstinctCredit] = "Erstellt in Zusammenarbeit mit Instinct"
-    m[S.Dua] = "Behalt uns in deinen Gebeten"
-    m[S.Font] = "Schriftart"
-    m[S.FontLight] = "App-Schrift light"
-    m[S.FontBold] = "App-Schrift fett"
-    m[S.FontSystem] = "Systemschrift"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun dePart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (Anlässe)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Sonnenaufgang"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Gebetszeiten"
-    m[S.NextPrayer] = "Nächstes Gebet"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Land und Stadt wählen"
-    m[S.SearchCityHint] = "Stadt oder Land suchen..."
-    m[S.NoSearchResults] = "Keine Ergebnisse gefunden"
-    m[S.FajrPrayer] = "Fajr-Gebet"
-    m[S.FajrNow] = "Es ist Zeit für das Fajr-Gebet"
-    m[S.Snooze] = "Schlummern"
-    m[S.StopAlarm] = "Alarm stoppen"
-    m[S.ChooseSnooze] = "Schlummerdauer wählen:"
-    m[S.MinutesShortFmt] = "%1\$d (Min.)"
-    m[S.ColorWhite] = "Weiß"
-    m[S.Auto] = "Auto"
-    m[S.ColorBlack] = "Schwarz"
-    m[S.ColorGray] = "Grau"
-    m[S.ColorBlue] = "Blau"
-    m[S.ColorGreen] = "Grün"
-    m[S.ColorPurple] = "Lila"
-    m[S.ColorAmber] = "Bernstein"
-    m[S.ColorBlueDark] = "Dunkelblau"
-    m[S.ColorGreenDark] = "Dunkelgrün"
-    m[S.WidgetSettings] = "Widget-Einstellungen"
-    m[S.ColorYellow] = "Gelb"
-    m[S.ColorTurquoise] = "Türkis"
-    m[S.WidgetAccent] = "Widget-Farbe"
-    m[S.BarColor] = "Farbe des Fortschrittsbalkens"
-    m[S.BgColor] = "Hintergrundfarbe"
-    m[S.PickRingtone] = "Alarmton wählen"
-    m[S.LocationMethod] = "Standortmethode"
-    m[S.CurrentLocation] = "Aktueller Standort"
-    m[S.AutoUpdateFajr] = "Aktualisiert die Gebetszeiten automatisch nach Standort"
-    m[S.PickCitySub] = "Stadt manuell ohne Standortzugriff wählen"
-    m[S.CurrentCity] = "Aktuelle Stadt"
-    m[S.EditCityName] = "Stadtname bearbeiten"
-    m[S.ResetCityNameAuto] = "Automatischen Namen wiederherstellen"
-    m[S.CustomLocationNameHint] = "Benutzerdefinierten Namen für Ihren Standort eingeben, der anstelle des Standards angezeigt wird :"
-    m[S.ChangeCity] = "Stadt ändern"
-    m[S.NoLocPermission] = "Standortberechtigung nicht erteilt. Fortfahren, um sie zu erteilen."
-    m[S.GpsOff] = "Der Standortdienst (GPS) ist deaktiviert."
-    m[S.CalcMethod] = "Berechnungsmethode"
-    m[S.SelectedCalcMethod] = "Gewählte Berechnungsmethode"
-    m[S.Change] = "Ändern"
-    m[S.UpdatingTime] = "Zeit wird aktualisiert..."
-    m[S.UpdateFajrNow] = "Fajr-Zeit jetzt aktualisieren"
-    m[S.AlarmToneSection] = "Alarmton und Klang"
-    m[S.SelectedTone] = "Gewählter Ton"
-    m[S.SystemTones] = "Systemtöne"
-    m[S.AudioFile] = "Audiodatei"
-    m[S.ExtraSettings] = "Weitere Einstellungen"
-    m[S.VibrateDuringAlarm] = "Während des Alarms vibrieren"
-}
-private fun dePart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "Nächste Fajr-Gebetszeit"
-    m[S.AlarmOnDesc] = "Alarm an"
-    m[S.AlarmOffDesc] = "Alarm aus"
-    m[S.PickCalcMethod] = "Berechnungsmethode wählen"
-    m[S.NotifReminder] = "Erinnerung"
-    m[S.NotifReadDone] = "Als gelesen markieren"
-    m[S.NotifRemindLater] = "In 10 Minuten erinnern"
-    m[S.NotifOpenApp] = "App öffnen"
-    m[S.NotifChannelAzkar] = "Azkar-Erinnerungen"
-    m[S.NotifChannelFajr] = "Fajr-Gebetsbenachrichtigungen"
-    m[S.TodayAt] = "Heute um"
-    m[S.TomorrowAt] = "Morgen um"
-    m[S.DefaultAlarmTone] = "Standard-Alarmton"
-    m[S.LocCalcTitle] = "Standort & Berechnung"
-    m[S.LocCalcSubtitle] = "Stadt, Methode und Anpassungen"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla %1\$d° ab Norden"
-    m[S.QiblaSetLocation] = "Zuerst den Standort festlegen"
-    m[S.QiblaNoSensor] = "Kein Kompass-Sensor auf diesem Gerät"
-    m[S.QiblaCalibrate] = "Zum Kalibrieren das Telefon in einer 8 bewegen"
-    m[S.QiblaAligned] = "Sie schauen zur Qibla"
-    m[S.QiblaCityFmt] = "Ort: %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NO"
-    m[S.DirE] = "O"
-    m[S.DirSE] = "SO"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SW"
-    m[S.DirW] = "W"
-    m[S.DirNW] = "NW"
-    m[S.CalendarTab] = "Kalender"
-    m[S.CalEvents] = "Anlässe"
-    m[S.CalNoEvents] = "Keine Ereignisse an diesem Tag"
-    m[S.CalMonthEvents] = "Ereignisse dieses Monats"
-    m[S.CalReminderOn] = "Erinnerung an"
-    m[S.CalReminderOff] = "Erinnerung aktivieren"
-    m[S.WdSun] = "S"
-    m[S.WdMon] = "M"
-    m[S.WdTue] = "D"
-    m[S.WdWed] = "M"
-    m[S.WdThu] = "D"
-    m[S.WdFri] = "F"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Automatisch stumm im Gebet"
-    m[S.AutoDndSub] = "Stumm von Adhan bis Iqama (benötigt DND-Berechtigung)"
-    m[S.OptTimesTitle] = "Optionale Zeiten"
-    m[S.OptTimesSub] = "Zusätzliche Zeilen: Imsak, Duha, Mitternacht und Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Mitternacht"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Datumsumrechner"
-    m[S.HijriConvSub] = "Zwischen Hijri- und gregorianischem Datum umrechnen"
-    m[S.GregToHijri] = "Gregorianisch zu Hijri"
-    m[S.HijriToGreg] = "Hijri zu Gregorianisch"
-    m[S.DayLabel] = "Tag"
-    m[S.MonthLabel] = "Monat"
-    m[S.YearLabel] = "Jahr"
-    m[S.LocSection] = "Standort"
-    m[S.CalcSection] = "Berechnung"
-}
-private fun dePart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "Asr-Berechnung"
-    m[S.AsrShafii] = "Schafiitisch, malikitisch, hanbalitisch"
-    m[S.AsrHanafi] = "Hanafitisch"
-    m[S.HighLatRule] = "Regel für hohe Breitengrade"
-    m[S.HighLatNone] = "Keine"
-    m[S.HighLatMiddle] = "Mitte der Nacht"
-    m[S.HighLatSeventh] = "Ein Siebtel der Nacht"
-    m[S.HighLatAngle] = "Winkelbasiert"
-    m[S.AdjSection] = "Zeitanpassungen"
-    m[S.AdjNote] = "Minuten, die zu jeder berechneten Zeit addiert oder von ihr subtrahiert werden. Wirkt sofort auf Zeiten, Widgets und Benachrichtigungen."
-    m[S.AdjHijri] = "Hijri-Datumsanpassung"
-    m[S.AdjMinShort] = "Min."
-    m[S.AdjDayShort] = "Tage"
-    m[S.AlertTiming] = "Benachrichtigungszeit"
-    m[S.AtAdhanTime] = "Zum Gebetsruf"
-    m[S.AtAdhanRow] = "Zum Adhan"
-    m[S.AtAdhanRowSub] = "Die Basis-Benachrichtigung zum Gebetszeitpunkt"
-    m[S.BeforeAdhanRow] = "Frühe Erinnerung"
-    m[S.BeforeAdhanHelper] = "Eine zusätzliche Erinnerung - die Adhan-Benachrichtigung kommt weiterhin"
-    m[S.MinBeforeFmt] = "%1\$d Min. vor dem Gebetsruf"
-    m[S.AdhanReminder] = "Adhan-Erinnerung"
-    m[S.IqamaReminder] = "Iqama-Erinnerung"
-    m[S.IqamaReminderSub] = "Benachrichtigung zur Iqama-Zeit"
-    m[S.PrayerNowFmt] = "Es ist jetzt Zeit für %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s in %2\$d Min."
-    m[S.IqamaNowFmt] = "Iqama von %1\$s jetzt"
-    m[S.SharedAlertSettings] = "Gemeinsame Einstellungen für alle Benachrichtigungen"
-}
+internal val DE = mapOf(
+    S.PrayerTab to "Gebet",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Favoriten",
+    S.Reminders to "Erinnerungen",
+    S.Stats to "Statistiken",
+    S.Tags to "Kategorien",
+    S.Settings to "Einstellungen",
+    S.About to "Über die App",
+    S.More to "Mehr",
+    S.Menu to "Menü",
+    S.AddDhikr to "Dhikr hinzufügen",
+    S.SearchAzkar to "Azkar oder Kategorie suchen",
+    S.All to "Alle",
+    S.NoAzkar to "Keine Azkar",
+    S.NoAzkarUnderTag to "Keine Azkar unter \"%1\$s\"",
+    S.NoResultsQuery to "Keine Ergebnisse für \"%1\$s\"",
+    S.Options to "Optionen",
+    S.EditDhikrTags to "Dhikr und Kategorien bearbeiten",
+    S.ReminderTimes to "Erinnerungszeiten",
+    S.Delete to "Löschen",
+    S.NoActiveReminders to "Keine aktiven Erinnerungen",
+    S.Today to "Heute",
+    S.ThisWeek to "Diese Woche",
+    S.DayStreak to "Tage in Folge",
+    S.CurrentReminder to "Aktuelle Erinnerung",
+    S.NextReminder to "Nächste Erinnerung",
+    S.NoActiveAzkar to "Keine aktiven Azkar. Aktiviere sie in der Azkar-Liste.",
+    S.Shortcuts to "Verknüpfungen",
+    S.TasbeehCounter to "Tasbeeh-Zähler",
+    S.HisnSubtitle to "Azkar und Bittgebete aus Quran und Sunna",
+    S.FavSubtitle to "Deine Lieblings-Azkar",
+    S.ReadDone to "Gelesen",
+    S.TotalSuffix to " insgesamt",
+    S.NoReadsYet to "Noch keine Lesungen",
+    S.DhikrIdFmt to "Dhikr Nr. %1\$d",
+    S.Periods to "Zeiträume",
+    S.Week to "Woche",
+    S.Month to "Monat",
+    S.KeepGoing to "Bleib bei deinen täglichen Azkar",
+    S.TotalReads to "Lesungen insgesamt",
+    S.SinceStart to "Seit Nutzungsbeginn",
+    S.RecentReads to "Letzte Lesungen",
+    S.RemindersSubtitle to "Alle Erinnerungszeiten",
+    S.StatsSubtitle to "Verlauf und Serien",
+    S.TagsSubtitle to "Azkar mit Farben organisieren",
+    S.FajrAlarm to "Fajr-Wecker",
+    S.ByLocation to "Nach deinem Standort",
+    S.SettingsSubtitle to "Vibration, Schrift und Ton",
+    S.AboutSubtitle to "Version und Entwickler",
+    S.DeleteTag to "Kategorie löschen",
+    S.DeleteTagMsg to "Die Kategorie \"%1\$s\" wird aus allen Azkar entfernt. Die Azkar selbst bleiben erhalten.",
+    S.AddTag to "Kategorie hinzufügen",
+    S.NoTags to "Noch keine Kategorien",
+    S.Edit to "Bearbeiten",
+    S.NewTag to "Neue Kategorie",
+    S.EditTag to "Kategorie bearbeiten",
+    S.TagName to "Name der Kategorie",
+    S.Color to "Farbe",
+    S.TasbeehaFmt to "%1\$d Tasbeeh",
+    S.TapToCount to "Tippen zum Zählen",
+    S.ResetCounter to "Zähler zurücksetzen",
+    S.ActiveOfTotalFmt to "%1\$d von %2\$d aktiv",
+    S.NoReminders to "Keine Erinnerungen",
+    S.NoFavorites to "Keine Favoriten",
+    S.Light to "Hell",
+    S.Dark to "Dunkel",
+    S.SystemAuto to "Automatisch (System)",
+    S.LockWidgets to "Sperrbildschirm-Widgets",
+    S.LockWidgetsToast to "Sperrbildschirm lange drücken, um ein Widget hinzuzufügen",
+    S.OpenEditor to "Editor öffnen",
+    S.Close to "Schließen",
+    S.LockWidgetsDesc to "Alle Wathakker-Widgets passen in den vorgesehenen Bereich unter der Uhr auf dem Sperrbildschirm (One UI 8 oder neuer).",
+    S.LockWidgetsSteps to "1. Auf dem Sperrbildschirm eine freie Stelle lange drücken und Identität bestätigen.\n2. „Widget hinzufügen“ tippen und „Wathakker“ wählen.\n3. Das Widget in den Bereich unter der Uhr ziehen.",
+    S.LockWidgetsHint to "Ein Tippen auf das Widget öffnet die App direkt vom Sperrbildschirm.",
+    S.ChangeLocation to "Standort ändern",
+    S.LocationSubtitle to "Stadt, Berechnungsmethode und Fajr-Wecker-Einstellungen",
+    S.FajrAlarmSubtitle to "Wecker und Ton aktivieren",
+    S.LockScreenSection to "Sperrbildschirm",
+    S.LockWidgetsRowSub to "Wathakker-Widget unter die Uhr auf dem Sperrbildschirm setzen",
+    S.Notifications to "Benachrichtigungen",
+    S.NotifSound to "Benachrichtigungston",
+    S.Default to "Standard",
+    S.Vibration to "Vibration",
+    S.Appearance to "Darstellung",
+    S.AppFont to "App-Schriftart",
+    S.Language to "Sprache",
+    S.NewDhikr to "Neuer Dhikr",
+    S.EditDhikr to "Dhikr bearbeiten",
+    S.TitleLabel to "Titel",
+    S.DhikrText to "Text des Dhikr oder Bittgebets",
+    S.Cancel to "Abbrechen",
+    S.Add to "Hinzufügen",
+    S.AddReminderTime to "Erinnerungszeit hinzufügen",
+    S.RepeatReminder to "Erinnerung wiederholen",
+    S.ReminderTime to "Erinnerungszeit",
+    S.Save to "Speichern",
+    S.ChaptersFmt to "%1\$d Kapitel mit Azkar und Bittgebeten",
+    S.SearchHisn to "In Hisn Al-Muslim suchen",
+    S.NoFavChapters to "Keine Lieblingskapitel",
+    S.NoResults to "Keine Ergebnisse",
+    S.ReadTodaySuffix to " · Heute gelesen",
+    S.AddToMyAzkar to "Zu meinen Azkar hinzufügen",
+    S.Done to "Fertig",
+    S.Tagline to "Eine App, die dir hilft, deine Azkar bei Tag und Nacht beizubehalten",
+    S.Version to "Version",
+    S.Developer to "Entwickler",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Inhalte aus dem HisnElmoslem-Projekt (GPL-v3-lizenziert)",
+    S.InstinctCredit to "Erstellt in Zusammenarbeit mit Instinct",
+    S.Dua to "Behalt uns in deinen Gebeten",
+    S.Font to "Schriftart",
+    S.FontLight to "App-Schrift light",
+    S.FontBold to "App-Schrift fett",
+    S.FontSystem to "Systemschrift",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (Anlässe)",
+    S.LocCalcTitle to "Standort & Berechnung",
+    S.LocCalcSubtitle to "Stadt, Methode und Anpassungen",
+    S.LocSection to "Standort",
+    S.CalcSection to "Berechnung",
+    S.AsrJuristic to "Asr-Berechnung",
+    S.AsrShafii to "Schafiitisch, malikitisch, hanbalitisch",
+    S.AsrHanafi to "Hanafitisch",
+    S.HighLatRule to "Regel für hohe Breitengrade",
+    S.HighLatNone to "Keine",
+    S.HighLatMiddle to "Mitte der Nacht",
+    S.HighLatSeventh to "Ein Siebtel der Nacht",
+    S.HighLatAngle to "Winkelbasiert",
+    S.AdjSection to "Zeitanpassungen",
+    S.AdjNote to "Minuten, die zu jeder berechneten Zeit addiert oder von ihr subtrahiert werden. Wirkt sofort auf Zeiten, Widgets und Benachrichtigungen.",
+    S.AdjHijri to "Hijri-Datumsanpassung",
+    S.AdjMinShort to "Min.",
+    S.AdjDayShort to "Tage",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Sonnenaufgang",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Gebetszeiten",
+    S.NextPrayer to "Nächstes Gebet",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Land und Stadt wählen",
+    S.SearchCityHint to "Stadt oder Land suchen...",
+    S.NoSearchResults to "Keine Ergebnisse gefunden",
+    S.FajrPrayer to "Fajr-Gebet",
+    S.FajrNow to "Es ist Zeit für das Fajr-Gebet",
+    S.Snooze to "Schlummern",
+    S.StopAlarm to "Alarm stoppen",
+    S.ChooseSnooze to "Schlummerdauer wählen:",
+    S.MinutesShortFmt to "%1\\\$d (Min.)",
+    S.ColorWhite to "Weiß",
+    S.Auto to "Auto",
+    S.ColorBlack to "Schwarz",
+    S.ColorGray to "Grau",
+    S.ColorBlue to "Blau",
+    S.ColorGreen to "Grün",
+    S.ColorPurple to "Lila",
+    S.ColorAmber to "Bernstein",
+    S.ColorBlueDark to "Dunkelblau",
+    S.ColorGreenDark to "Dunkelgrün",
+    S.WidgetSettings to "Widget-Einstellungen",
+    S.ColorYellow to "Gelb",
+    S.ColorTurquoise to "Türkis",
+    S.WidgetAccent to "Widget-Farbe",
+    S.BarColor to "Farbe des Fortschrittsbalkens",
+    S.BgColor to "Hintergrundfarbe",
+    S.PickRingtone to "Alarmton wählen",
+    S.LocationMethod to "Standortmethode",
+    S.CurrentLocation to "Aktueller Standort",
+    S.AutoUpdateFajr to "Aktualisiert die Fajr-Zeit automatisch nach Standort",
+    S.PickCitySub to "Stadt manuell ohne Standortzugriff wählen",
+    S.CurrentCity to "Aktuelle Stadt",
+    S.EditCityName to "Stadtname bearbeiten",
+    S.ResetCityNameAuto to "Automatischen Namen wiederherstellen",
+    S.CustomLocationNameHint to "Benutzerdefinierten Namen für Ihren Standort eingeben, der anstelle des Standards angezeigt wird :",
+    S.ChangeCity to "Stadt ändern",
+    S.NoLocPermission to "Standortberechtigung nicht erteilt. Fortfahren, um sie zu erteilen.",
+    S.GpsOff to "Der Standortdienst (GPS) ist deaktiviert.",
+    S.CalcMethod to "Berechnungsmethode",
+    S.SelectedCalcMethod to "Gewählte Berechnungsmethode",
+    S.Change to "Ändern",
+    S.UpdatingTime to "Zeit wird aktualisiert...",
+    S.UpdateFajrNow to "Fajr-Zeit jetzt aktualisieren",
+    S.AlarmToneSection to "Alarmton und Klang",
+    S.SelectedTone to "Gewählter Ton",
+    S.SystemTones to "Systemtöne",
+    S.AudioFile to "Audiodatei",
+    S.ExtraSettings to "Weitere Einstellungen",
+    S.VibrateDuringAlarm to "Während des Alarms vibrieren",
+    S.NextFajrAt to "Nächste Fajr-Gebetszeit",
+    S.AlarmOnDesc to "Alarm an",
+    S.AlarmOffDesc to "Alarm aus",
+    S.PickCalcMethod to "Berechnungsmethode wählen",
+    S.NotifReminder to "Erinnerung",
+    S.NotifReadDone to "Als gelesen markieren",
+    S.NotifRemindLater to "In 10 Minuten erinnern",
+    S.NotifOpenApp to "App öffnen",
+    S.NotifChannelAzkar to "Azkar-Erinnerungen",
+    S.NotifChannelFajr to "Fajr-Gebetsbenachrichtigungen",
+    S.TodayAt to "Heute um",
+    S.TomorrowAt to "Morgen um",
+    S.DefaultAlarmTone to "Standard-Alarmton",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla %1\$d° ab Norden",
+    S.QiblaSetLocation to "Zuerst den Standort festlegen",
+    S.QiblaNoSensor to "Kein Kompass-Sensor auf diesem Gerät",
+    S.QiblaCalibrate to "Zum Kalibrieren das Telefon in einer 8 bewegen",
+    S.QiblaAligned to "Sie schauen zur Qibla",
+    S.QiblaCityFmt to "Ort: %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NO",
+    S.DirE to "O",
+    S.DirSE to "SO",
+    S.DirS to "S",
+    S.DirSW to "SW",
+    S.DirW to "W",
+    S.DirNW to "NW",
+    S.CalendarTab to "Kalender",
+    S.CalEvents to "Anlässe",
+    S.CalNoEvents to "Keine Ereignisse an diesem Tag",
+    S.CalMonthEvents to "Ereignisse dieses Monats",
+    S.CalReminderOn to "Erinnerung an",
+    S.CalReminderOff to "Erinnerung aktivieren",
+    S.WdSun to "S",
+    S.WdMon to "M",
+    S.WdTue to "D",
+    S.WdWed to "M",
+    S.WdThu to "D",
+    S.WdFri to "F",
+    S.WdSat to "S",
+    S.AutoDnd to "Automatisch stumm im Gebet",
+    S.AutoDndSub to "Stumm von Adhan bis Iqama (benötigt DND-Berechtigung)",
+    S.OptTimesTitle to "Optionale Zeiten",
+    S.OptTimesSub to "Zusätzliche Zeilen: Imsak, Duha, Mitternacht und Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Mitternacht",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Datumsumrechner",
+    S.HijriConvSub to "Zwischen Hijri- und gregorianischem Datum umrechnen",
+    S.GregToHijri to "Gregorianisch zu Hijri",
+    S.HijriToGreg to "Hijri zu Gregorianisch",
+    S.DayLabel to "Tag",
+    S.MonthLabel to "Monat",
+    S.YearLabel to "Jahr",
+    S.AlertTiming to "Benachrichtigungszeit",
+    S.AtAdhanTime to "Zum Gebetsruf",
+    S.AtAdhanRow to "Zum Adhan",
+    S.AtAdhanRowSub to "Die Basis-Benachrichtigung zum Gebetszeitpunkt",
+    S.BeforeAdhanRow to "Frühe Erinnerung",
+    S.BeforeAdhanHelper to "Eine zusätzliche Erinnerung - die Adhan-Benachrichtigung kommt weiterhin",
+    S.MinBeforeFmt to "%1\$d Min. vor dem Gebetsruf",
+    S.AdhanReminder to "Adhan-Erinnerung",
+    S.IqamaReminder to "Iqama-Erinnerung",
+    S.IqamaReminderSub to "Zur Iqama-Zeit klingeln",
+    S.PrayerNowFmt to "Es ist jetzt Zeit für %1\$s",
+    S.PrayerApproachingFmt to "%1\$s in %2\$d Min.",
+    S.IqamaNowFmt to "Iqama von %1\$s jetzt",
+    S.SharedAlertSettings to "Gemeinsame Einstellungen für alle Benachrichtigungen",
+    S.FajrAlarmOn to "Fajr-Alarm aktivieren",
+    S.AlarmEnabledSub to "Der Alarm klingelt zur Fajr-Zeit",
+    S.AlarmDisabledSub to "Der Alarm ist derzeit aus",
+    S.AlarmVolume to "Alarmlautstärke",
+    S.SnoozeDuration to "Schlummerdauer",
+    S.AlertMode to "Benachrichtigungsart",
+    S.AlertModeNotif to "Benachrichtigung",
+    S.AlertModeAlarm to "Voller Alarm",
+    S.AdhanAlertType to "Adhan-Hinweistyp",
+    S.AlertTypeNotification to "Benachrichtigung",
+    S.AlertTypeFullScreen to "Vollbild-Benachrichtigung",
+)
 
-internal val ES: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    esPart0(m)
-    esPart1(m)
-    esPart2(m)
-    esPart3(m)
-    esPart4(m)
-    m
-}
-private fun esPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Oración"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Favoritos"
-    m[S.Reminders] = "Recordatorios"
-    m[S.Stats] = "Estadísticas"
-    m[S.Tags] = "Categorías"
-    m[S.Settings] = "Ajustes"
-    m[S.About] = "Acerca de"
-    m[S.More] = "Más"
-    m[S.Menu] = "Menú"
-    m[S.AddDhikr] = "Añadir dhikr"
-    m[S.SearchAzkar] = "Buscar azkar o categoría"
-    m[S.All] = "Todos"
-    m[S.NoAzkar] = "No hay azkar"
-    m[S.NoAzkarUnderTag] = "No hay azkar en \"%1\$s\""
-    m[S.NoResultsQuery] = "Sin resultados para \"%1\$s\""
-    m[S.Options] = "Opciones"
-    m[S.EditDhikrTags] = "Editar dhikr y categorías"
-    m[S.ReminderTimes] = "Horas de recordatorio"
-    m[S.Delete] = "Eliminar"
-    m[S.NoActiveReminders] = "No hay recordatorios activos"
-    m[S.Today] = "Hoy"
-    m[S.ThisWeek] = "Esta semana"
-    m[S.DayStreak] = "Días consecutivos"
-    m[S.CurrentReminder] = "Recordatorio actual"
-    m[S.NextReminder] = "Próximo recordatorio"
-    m[S.NoActiveAzkar] = "No hay azkar activos. Actívalos desde la lista."
-    m[S.Shortcuts] = "Atajos"
-    m[S.TasbeehCounter] = "Contador de tasbeeh"
-    m[S.HisnSubtitle] = "Azkar y súplicas del Corán y la Sunna"
-    m[S.FavSubtitle] = "Tus azkar favoritos"
-    m[S.ReadDone] = "Leído"
-    m[S.TotalSuffix] = " en total"
-    m[S.NoReadsYet] = "Aún no hay lecturas"
-    m[S.DhikrIdFmt] = "Dhikr n.º %1\$d"
-    m[S.Periods] = "Períodos"
-    m[S.Week] = "Semana"
-    m[S.Month] = "Mes"
-    m[S.KeepGoing] = "Sigue con tus azkar diarios"
-    m[S.TotalReads] = "Lecturas totales"
-    m[S.SinceStart] = "Desde el primer uso"
-    m[S.RecentReads] = "Últimas lecturas"
-    m[S.RemindersSubtitle] = "Todas las horas de recordatorio"
-    m[S.StatsSubtitle] = "Historial y rachas"
-    m[S.TagsSubtitle] = "Organiza azkar por colores"
-    m[S.FajrAlarm] = "Alarma de Fajr"
-    m[S.ByLocation] = "Según tu ubicación"
-    m[S.SettingsSubtitle] = "Vibración, fuente y tono"
-    m[S.AboutSubtitle] = "Versión y desarrollador"
-    m[S.DeleteTag] = "Eliminar categoría"
-    m[S.DeleteTagMsg] = "La categoría \"%1\$s\" se quitará de todos los azkar. Los azkar no se eliminarán."
-    m[S.AddTag] = "Añadir categoría"
-    m[S.NoTags] = "Aún no hay categorías"
-    m[S.Edit] = "Editar"
-    m[S.NewTag] = "Nueva categoría"
-    m[S.EditTag] = "Editar categoría"
-    m[S.TagName] = "Nombre de la categoría"
-}
-private fun esPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Color"
-    m[S.TasbeehaFmt] = "%1\$d tasbeeh"
-    m[S.TapToCount] = "Toca para contar"
-    m[S.ResetCounter] = "Reiniciar contador"
-    m[S.ActiveOfTotalFmt] = "%1\$d de %2\$d activos"
-    m[S.NoReminders] = "No hay recordatorios"
-    m[S.NoFavorites] = "No hay azkar favoritos"
-    m[S.Light] = "Claro"
-    m[S.Dark] = "Oscuro"
-    m[S.SystemAuto] = "Automático (sistema)"
-    m[S.LockWidgets] = "Widgets de pantalla de bloqueo"
-    m[S.LockWidgetsToast] = "Mantén pulsada la pantalla de bloqueo para añadir un widget"
-    m[S.OpenEditor] = "Abrir editor"
-    m[S.Close] = "Cerrar"
-    m[S.LockWidgetsDesc] = "Todos los widgets de Wathkkir están disponibles en el área bajo el reloj de la pantalla de bloqueo (One UI 8 o posterior)."
-    m[S.LockWidgetsSteps] = "1. En la pantalla de bloqueo, mantén pulsado un espacio vacío y confirma tu identidad.\n2. Toca «Añadir widget» y elige «Wathkkir».\n3. Arrastra el widget al área bajo el reloj."
-    m[S.LockWidgetsHint] = "Al tocar el widget desde la pantalla de bloqueo, la app se abre directamente."
-    m[S.ChangeLocation] = "Cambiar ubicación"
-    m[S.LocationSubtitle] = "Ciudad, método de cálculo y ajustes de la alarma de Fajr"
-    m[S.FajrAlarmSubtitle] = "Activar alarma y tono"
-    m[S.LockScreenSection] = "Pantalla de bloqueo"
-    m[S.LockWidgetsRowSub] = "Añade un widget de Wathkkir bajo el reloj de la pantalla de bloqueo"
-    m[S.Notifications] = "Notificaciones"
-    m[S.NotifSound] = "Tono de notificación"
-    m[S.Default] = "Predeterminado"
-    m[S.Vibration] = "Vibración"
-    m[S.Appearance] = "Apariencia"
-    m[S.AppFont] = "Fuente de la app"
-    m[S.Language] = "Idioma"
-    m[S.NewDhikr] = "Nuevo dhikr"
-    m[S.EditDhikr] = "Editar dhikr"
-    m[S.TitleLabel] = "Título"
-    m[S.DhikrText] = "Texto del dhikr o súplica"
-    m[S.Cancel] = "Cancelar"
-    m[S.Add] = "Añadir"
-    m[S.AddReminderTime] = "Añadir hora de recordatorio"
-    m[S.RepeatReminder] = "Repetir recordatorio"
-    m[S.ReminderTime] = "Hora del recordatorio"
-    m[S.Save] = "Guardar"
-    m[S.ChaptersFmt] = "%1\$d capítulos de azkar y súplicas"
-    m[S.SearchHisn] = "Buscar en Hisn Al-Muslim"
-    m[S.NoFavChapters] = "No hay capítulos favoritos"
-    m[S.NoResults] = "Sin resultados"
-    m[S.ReadTodaySuffix] = " · Leído hoy"
-    m[S.AddToMyAzkar] = "Añadir a mis azkar"
-    m[S.Done] = "Listo"
-    m[S.Tagline] = "Una app que te ayuda a mantener tus azkar de día y de noche"
-    m[S.Version] = "Versión"
-    m[S.Developer] = "Desarrollador"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Contenido del proyecto HisnElmoslem (licencia GPL v3)"
-    m[S.InstinctCredit] = "Creado en colaboración con Instinct"
-    m[S.Dua] = "Ténnos en tus súplicas"
-    m[S.Font] = "Fuente"
-    m[S.FontLight] = "Fuente de la app ligera"
-    m[S.FontBold] = "Fuente de la app gruesa"
-    m[S.FontSystem] = "Fuente del sistema"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun esPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (ocasiones)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Amanecer"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Horarios de oración"
-    m[S.NextPrayer] = "Próxima oración"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Elegir país y ciudad"
-    m[S.SearchCityHint] = "Buscar ciudad o país..."
-    m[S.NoSearchResults] = "Sin resultados"
-    m[S.FajrPrayer] = "Oración del Fajr"
-    m[S.FajrNow] = "Es la hora de la oración del Fajr"
-    m[S.Snooze] = "Posponer"
-    m[S.StopAlarm] = "Detener alarma"
-    m[S.ChooseSnooze] = "Elegir duración de posposición:"
-    m[S.MinutesShortFmt] = "%1\$d (min)"
-    m[S.ColorWhite] = "Blanco"
-    m[S.Auto] = "Automático"
-    m[S.ColorBlack] = "Negro"
-    m[S.ColorGray] = "Gris"
-    m[S.ColorBlue] = "Azul"
-    m[S.ColorGreen] = "Verde"
-    m[S.ColorPurple] = "Roxo"
-    m[S.ColorPurple] = "Viola"
-    m[S.ColorPurple] = "Púrpura"
-    m[S.ColorAmber] = "Ámbar"
-    m[S.ColorBlueDark] = "Azul oscuro"
-    m[S.ColorGreenDark] = "Verde oscuro"
-    m[S.WidgetSettings] = "Ajustes del widget"
-    m[S.ColorYellow] = "Amarillo"
-    m[S.ColorTurquoise] = "Turquesa"
-    m[S.WidgetAccent] = "Color del widget"
-    m[S.BarColor] = "Color de la barra de progreso"
-    m[S.BgColor] = "Color de fondo"
-    m[S.PickRingtone] = "Elegir tono de alarma"
-    m[S.LocationMethod] = "Método de ubicación"
-    m[S.CurrentLocation] = "Ubicación actual"
-    m[S.AutoUpdateFajr] = "Actualiza automáticamente los horarios de oración según tu ubicación"
-    m[S.PickCitySub] = "Elige tu ciudad manualmente sin ubicación"
-    m[S.CurrentCity] = "Ciudad actual"
-    m[S.EditCityName] = "Editar nombre de la ciudad"
-    m[S.ResetCityNameAuto] = "Restaurar nombre automático"
-    m[S.CustomLocationNameHint] = "Introduce un nombre personalizado para tu ubicación para mostrarlo en lugar del predeterminado :"
-    m[S.ChangeCity] = "Cambiar ciudad"
-    m[S.NoLocPermission] = "Permiso de ubicación no concedido. Continúa para concederlo."
-    m[S.GpsOff] = "El servicio de ubicación (GPS) está desactivado."
-    m[S.CalcMethod] = "Método de cálculo"
-    m[S.SelectedCalcMethod] = "Método de cálculo seleccionado"
-    m[S.Change] = "Cambiar"
-    m[S.UpdatingTime] = "Actualizando la hora..."
-    m[S.UpdateFajrNow] = "Actualizar la hora del Fajr ahora"
-    m[S.AlarmToneSection] = "Tono y sonido de la alarma"
-    m[S.SelectedTone] = "Tono seleccionado"
-    m[S.SystemTones] = "Tonos del sistema"
-    m[S.AudioFile] = "Archivo de audio"
-}
-private fun esPart3(m: HashMap<S, String>) {
-    m[S.ExtraSettings] = "Ajustes adicionales"
-    m[S.VibrateDuringAlarm] = "Vibrar durante la alarma"
-    m[S.NextFajrAt] = "Próxima oración del Fajr"
-    m[S.AlarmOnDesc] = "Alarma activada"
-    m[S.AlarmOffDesc] = "Alarma desactivada"
-    m[S.PickCalcMethod] = "Elegir método de cálculo"
-    m[S.NotifReminder] = "Recordatorio"
-    m[S.NotifReadDone] = "Marcar como leído"
-    m[S.NotifRemindLater] = "Recordármelo en 10 minutos"
-    m[S.NotifOpenApp] = "Abrir la app"
-    m[S.NotifChannelAzkar] = "Notificaciones de recordatorio de azkar"
-    m[S.NotifChannelFajr] = "Alertas de la oración del Fajr"
-    m[S.TodayAt] = "Hoy a las"
-    m[S.TomorrowAt] = "Mañana a las"
-    m[S.DefaultAlarmTone] = "Tono de alarma predeterminado"
-    m[S.LocCalcTitle] = "Ubicación y cálculo"
-    m[S.LocCalcSubtitle] = "Ciudad, método y ajustes"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla a %1\$d° del norte"
-    m[S.QiblaSetLocation] = "Define tu ubicación primero"
-    m[S.QiblaNoSensor] = "Este dispositivo no tiene sensor de brújula"
-    m[S.QiblaCalibrate] = "Mueve el teléfono en forma de 8 para calibrar"
-    m[S.QiblaAligned] = "Estás mirando a la Qibla"
-    m[S.QiblaCityFmt] = "Ubicación: %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NE"
-    m[S.DirE] = "E"
-    m[S.DirSE] = "SE"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SO"
-    m[S.DirW] = "O"
-    m[S.DirNW] = "NO"
-    m[S.CalendarTab] = "Calendario"
-    m[S.CalEvents] = "Eventos"
-    m[S.CalNoEvents] = "Sin eventos este día"
-    m[S.CalMonthEvents] = "Eventos del mes"
-    m[S.CalReminderOn] = "Recordatorio activado"
-    m[S.CalReminderOff] = "Activar recordatorio"
-    m[S.WdSun] = "D"
-    m[S.WdMon] = "L"
-    m[S.WdTue] = "M"
-    m[S.WdWed] = "X"
-    m[S.WdThu] = "J"
-    m[S.WdFri] = "V"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Silencio auto en la oración"
-    m[S.AutoDndSub] = "Silencio del adhan a la iqama (requiere permiso DND)"
-    m[S.OptTimesTitle] = "Horarios opcionales"
-    m[S.OptTimesSub] = "Filas extra: Imsak, Duha, Medianoche y Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Medianoche"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Conversor de fecha"
-    m[S.HijriConvSub] = "Convierte entre fechas hiyri y gregorianas"
-    m[S.GregToHijri] = "Gregoriano a Hiyri"
-    m[S.HijriToGreg] = "Hiyri a Gregoriano"
-    m[S.DayLabel] = "Día"
-    m[S.MonthLabel] = "Mes"
-    m[S.YearLabel] = "Año"
-}
-private fun esPart4(m: HashMap<S, String>) {
-    m[S.LocSection] = "Ubicación"
-    m[S.CalcSection] = "Cálculo"
-    m[S.AsrJuristic] = "Cálculo del Asr"
-    m[S.AsrShafii] = "Shafi'i, malikí, hanbalí"
-    m[S.AsrHanafi] = "Hanafí"
-    m[S.HighLatRule] = "Regla de latitudes altas"
-    m[S.HighLatNone] = "Ninguna"
-    m[S.HighLatMiddle] = "Mitad de la noche"
-    m[S.HighLatSeventh] = "Un séptimo de la noche"
-    m[S.HighLatAngle] = "Basada en el ángulo"
-    m[S.AdjSection] = "Ajustes de horarios"
-    m[S.AdjNote] = "Minutos que se suman o restan a cada horario calculado. Se aplica al instante a horarios, widgets y alertas."
-    m[S.AdjHijri] = "Ajuste de la fecha hiyri"
-    m[S.AdjMinShort] = "min"
-    m[S.AdjDayShort] = "días"
-    m[S.AlertTiming] = "Momento de la alerta"
-    m[S.AtAdhanTime] = "A la llamada"
-    m[S.AtAdhanRow] = "A la hora del adhan"
-    m[S.AtAdhanRowSub] = "La notificación base cuando llega la hora de la oración"
-    m[S.BeforeAdhanRow] = "Recordatorio anticipado"
-    m[S.BeforeAdhanHelper] = "Un recordatorio extra - la notificación del adhan sigue llegando"
-    m[S.MinBeforeFmt] = "%1\$d min antes"
-    m[S.AdhanReminder] = "Recordatorio de adhan"
-    m[S.IqamaReminder] = "Recordatorio de iqama"
-    m[S.IqamaReminderSub] = "Notificación a la hora del iqama"
-    m[S.PrayerNowFmt] = "Ya es hora de %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s en %2\$d min"
-    m[S.IqamaNowFmt] = "Iqama de %1\$s ahora"
-    m[S.SharedAlertSettings] = "Ajustes compartidos para todas las alertas"
-}
+internal val ES = mapOf(
+    S.PrayerTab to "Oración",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Favoritos",
+    S.Reminders to "Recordatorios",
+    S.Stats to "Estadísticas",
+    S.Tags to "Categorías",
+    S.Settings to "Ajustes",
+    S.About to "Acerca de",
+    S.More to "Más",
+    S.Menu to "Menú",
+    S.AddDhikr to "Añadir dhikr",
+    S.SearchAzkar to "Buscar azkar o categoría",
+    S.All to "Todos",
+    S.NoAzkar to "No hay azkar",
+    S.NoAzkarUnderTag to "No hay azkar en \"%1\$s\"",
+    S.NoResultsQuery to "Sin resultados para \"%1\$s\"",
+    S.Options to "Opciones",
+    S.EditDhikrTags to "Editar dhikr y categorías",
+    S.ReminderTimes to "Horas de recordatorio",
+    S.Delete to "Eliminar",
+    S.NoActiveReminders to "No hay recordatorios activos",
+    S.Today to "Hoy",
+    S.ThisWeek to "Esta semana",
+    S.DayStreak to "Días consecutivos",
+    S.CurrentReminder to "Recordatorio actual",
+    S.NextReminder to "Próximo recordatorio",
+    S.NoActiveAzkar to "No hay azkar activos. Actívalos desde la lista.",
+    S.Shortcuts to "Atajos",
+    S.TasbeehCounter to "Contador de tasbeeh",
+    S.HisnSubtitle to "Azkar y súplicas del Corán y la Sunna",
+    S.FavSubtitle to "Tus azkar favoritos",
+    S.ReadDone to "Leído",
+    S.TotalSuffix to " en total",
+    S.NoReadsYet to "Aún no hay lecturas",
+    S.DhikrIdFmt to "Dhikr n.º %1\$d",
+    S.Periods to "Períodos",
+    S.Week to "Semana",
+    S.Month to "Mes",
+    S.KeepGoing to "Sigue con tus azkar diarios",
+    S.TotalReads to "Lecturas totales",
+    S.SinceStart to "Desde el primer uso",
+    S.RecentReads to "Últimas lecturas",
+    S.RemindersSubtitle to "Todas las horas de recordatorio",
+    S.StatsSubtitle to "Historial y rachas",
+    S.TagsSubtitle to "Organiza azkar por colores",
+    S.FajrAlarm to "Alarma de Fajr",
+    S.ByLocation to "Según tu ubicación",
+    S.SettingsSubtitle to "Vibración, fuente y tono",
+    S.AboutSubtitle to "Versión y desarrollador",
+    S.DeleteTag to "Eliminar categoría",
+    S.DeleteTagMsg to "La categoría \"%1\$s\" se quitará de todos los azkar. Los azkar no se eliminarán.",
+    S.AddTag to "Añadir categoría",
+    S.NoTags to "Aún no hay categorías",
+    S.Edit to "Editar",
+    S.NewTag to "Nueva categoría",
+    S.EditTag to "Editar categoría",
+    S.TagName to "Nombre de la categoría",
+    S.Color to "Color",
+    S.TasbeehaFmt to "%1\$d tasbeeh",
+    S.TapToCount to "Toca para contar",
+    S.ResetCounter to "Reiniciar contador",
+    S.ActiveOfTotalFmt to "%1\$d de %2\$d activos",
+    S.NoReminders to "No hay recordatorios",
+    S.NoFavorites to "No hay azkar favoritos",
+    S.Light to "Claro",
+    S.Dark to "Oscuro",
+    S.SystemAuto to "Automático (sistema)",
+    S.LockWidgets to "Widgets de pantalla de bloqueo",
+    S.LockWidgetsToast to "Mantén pulsada la pantalla de bloqueo para añadir un widget",
+    S.OpenEditor to "Abrir editor",
+    S.Close to "Cerrar",
+    S.LockWidgetsDesc to "Todos los widgets de Wathakker están disponibles en el área bajo el reloj de la pantalla de bloqueo (One UI 8 o posterior).",
+    S.LockWidgetsSteps to "1. En la pantalla de bloqueo, mantén pulsado un espacio vacío y confirma tu identidad.\n2. Toca «Añadir widget» y elige «Wathakker».\n3. Arrastra el widget al área bajo el reloj.",
+    S.LockWidgetsHint to "Al tocar el widget desde la pantalla de bloqueo, la app se abre directamente.",
+    S.ChangeLocation to "Cambiar ubicación",
+    S.LocationSubtitle to "Ciudad, método de cálculo y ajustes de la alarma de Fajr",
+    S.FajrAlarmSubtitle to "Activar alarma y tono",
+    S.LockScreenSection to "Pantalla de bloqueo",
+    S.LockWidgetsRowSub to "Añade un widget de Wathakker bajo el reloj de la pantalla de bloqueo",
+    S.Notifications to "Notificaciones",
+    S.NotifSound to "Tono de notificación",
+    S.Default to "Predeterminado",
+    S.Vibration to "Vibración",
+    S.Appearance to "Apariencia",
+    S.AppFont to "Fuente de la app",
+    S.Language to "Idioma",
+    S.NewDhikr to "Nuevo dhikr",
+    S.EditDhikr to "Editar dhikr",
+    S.TitleLabel to "Título",
+    S.DhikrText to "Texto del dhikr o súplica",
+    S.Cancel to "Cancelar",
+    S.Add to "Añadir",
+    S.AddReminderTime to "Añadir hora de recordatorio",
+    S.RepeatReminder to "Repetir recordatorio",
+    S.ReminderTime to "Hora del recordatorio",
+    S.Save to "Guardar",
+    S.ChaptersFmt to "%1\$d capítulos de azkar y súplicas",
+    S.SearchHisn to "Buscar en Hisn Al-Muslim",
+    S.NoFavChapters to "No hay capítulos favoritos",
+    S.NoResults to "Sin resultados",
+    S.ReadTodaySuffix to " · Leído hoy",
+    S.AddToMyAzkar to "Añadir a mis azkar",
+    S.Done to "Listo",
+    S.Tagline to "Una app que te ayuda a mantener tus azkar de día y de noche",
+    S.Version to "Versión",
+    S.Developer to "Desarrollador",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Contenido del proyecto HisnElmoslem (licencia GPL v3)",
+    S.InstinctCredit to "Creado en colaboración con Instinct",
+    S.Dua to "Ténnos en tus súplicas",
+    S.Font to "Fuente",
+    S.FontLight to "Fuente de la app ligera",
+    S.FontBold to "Fuente de la app gruesa",
+    S.FontSystem to "Fuente del sistema",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (ocasiones)",
+    S.LocCalcTitle to "Ubicación y cálculo",
+    S.LocCalcSubtitle to "Ciudad, método y ajustes",
+    S.LocSection to "Ubicación",
+    S.CalcSection to "Cálculo",
+    S.AsrJuristic to "Cálculo del Asr",
+    S.AsrShafii to "Shafi'i, malikí, hanbalí",
+    S.AsrHanafi to "Hanafí",
+    S.HighLatRule to "Regla de latitudes altas",
+    S.HighLatNone to "Ninguna",
+    S.HighLatMiddle to "Mitad de la noche",
+    S.HighLatSeventh to "Un séptimo de la noche",
+    S.HighLatAngle to "Basada en el ángulo",
+    S.AdjSection to "Ajustes de horarios",
+    S.AdjNote to "Minutos que se suman o restan a cada horario calculado. Se aplica al instante a horarios, widgets y alertas.",
+    S.AdjHijri to "Ajuste de la fecha hiyri",
+    S.AdjMinShort to "min",
+    S.AdjDayShort to "días",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Amanecer",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Horarios de oración",
+    S.NextPrayer to "Próxima oración",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Elegir país y ciudad",
+    S.SearchCityHint to "Buscar ciudad o país...",
+    S.NoSearchResults to "Sin resultados",
+    S.FajrPrayer to "Oración del Fajr",
+    S.FajrNow to "Es la hora de la oración del Fajr",
+    S.Snooze to "Posponer",
+    S.StopAlarm to "Detener alarma",
+    S.ChooseSnooze to "Elegir duración de posposición:",
+    S.MinutesShortFmt to "%1\\\$d (min)",
+    S.ColorWhite to "Blanco",
+    S.Auto to "Automático",
+    S.ColorBlack to "Negro",
+    S.ColorGray to "Gris",
+    S.ColorBlue to "Azul",
+    S.ColorGreen to "Verde",
+    S.ColorPurple to "Púrpura",
+    S.ColorAmber to "Ámbar",
+    S.ColorBlueDark to "Azul oscuro",
+    S.ColorGreenDark to "Verde oscuro",
+    S.WidgetSettings to "Ajustes del widget",
+    S.ColorYellow to "Amarillo",
+    S.ColorTurquoise to "Turquesa",
+    S.WidgetAccent to "Color del widget",
+    S.BarColor to "Color de la barra de progreso",
+    S.BgColor to "Color de fondo",
+    S.PickRingtone to "Elegir tono de alarma",
+    S.LocationMethod to "Método de ubicación",
+    S.CurrentLocation to "Ubicación actual",
+    S.AutoUpdateFajr to "Actualiza la hora del Fajr según tu ubicación",
+    S.PickCitySub to "Elige tu ciudad manualmente sin ubicación",
+    S.CurrentCity to "Ciudad actual",
+    S.EditCityName to "Editar nombre de la ciudad",
+    S.ResetCityNameAuto to "Restaurar nombre automático",
+    S.CustomLocationNameHint to "Introduce un nombre personalizado para tu ubicación para mostrarlo en lugar del predeterminado :",
+    S.ChangeCity to "Cambiar ciudad",
+    S.NoLocPermission to "Permiso de ubicación no concedido. Continúa para concederlo.",
+    S.GpsOff to "El servicio de ubicación (GPS) está desactivado.",
+    S.CalcMethod to "Método de cálculo",
+    S.SelectedCalcMethod to "Método de cálculo seleccionado",
+    S.Change to "Cambiar",
+    S.UpdatingTime to "Actualizando la hora...",
+    S.UpdateFajrNow to "Actualizar la hora del Fajr ahora",
+    S.AlarmToneSection to "Tono y sonido de la alarma",
+    S.SelectedTone to "Tono seleccionado",
+    S.SystemTones to "Tonos del sistema",
+    S.AudioFile to "Archivo de audio",
+    S.ExtraSettings to "Ajustes adicionales",
+    S.VibrateDuringAlarm to "Vibrar durante la alarma",
+    S.NextFajrAt to "Próxima oración del Fajr",
+    S.AlarmOnDesc to "Alarma activada",
+    S.AlarmOffDesc to "Alarma desactivada",
+    S.PickCalcMethod to "Elegir método de cálculo",
+    S.NotifReminder to "Recordatorio",
+    S.NotifReadDone to "Marcar como leído",
+    S.NotifRemindLater to "Recordármelo en 10 minutos",
+    S.NotifOpenApp to "Abrir la app",
+    S.NotifChannelAzkar to "Notificaciones de recordatorio de azkar",
+    S.NotifChannelFajr to "Alertas de la oración del Fajr",
+    S.TodayAt to "Hoy a las",
+    S.TomorrowAt to "Mañana a las",
+    S.DefaultAlarmTone to "Tono de alarma predeterminado",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla a %1\$d° del norte",
+    S.QiblaSetLocation to "Define tu ubicación primero",
+    S.QiblaNoSensor to "Este dispositivo no tiene sensor de brújula",
+    S.QiblaCalibrate to "Mueve el teléfono en forma de 8 para calibrar",
+    S.QiblaAligned to "Estás mirando a la Qibla",
+    S.QiblaCityFmt to "Ubicación: %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NE",
+    S.DirE to "E",
+    S.DirSE to "SE",
+    S.DirS to "S",
+    S.DirSW to "SO",
+    S.DirW to "O",
+    S.DirNW to "NO",
+    S.CalendarTab to "Calendario",
+    S.CalEvents to "Eventos",
+    S.CalNoEvents to "Sin eventos este día",
+    S.CalMonthEvents to "Eventos del mes",
+    S.CalReminderOn to "Recordatorio activado",
+    S.CalReminderOff to "Activar recordatorio",
+    S.WdSun to "D",
+    S.WdMon to "L",
+    S.WdTue to "M",
+    S.WdWed to "X",
+    S.WdThu to "J",
+    S.WdFri to "V",
+    S.WdSat to "S",
+    S.AutoDnd to "Silencio auto en la oración",
+    S.AutoDndSub to "Silencio del adhan a la iqama (requiere permiso DND)",
+    S.OptTimesTitle to "Horarios opcionales",
+    S.OptTimesSub to "Filas extra: Imsak, Duha, Medianoche y Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Medianoche",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Conversor de fecha",
+    S.HijriConvSub to "Convierte entre fechas hiyri y gregorianas",
+    S.GregToHijri to "Gregoriano a Hiyri",
+    S.HijriToGreg to "Hiyri a Gregoriano",
+    S.DayLabel to "Día",
+    S.MonthLabel to "Mes",
+    S.YearLabel to "Año",
+    S.AlertTiming to "Momento de la alerta",
+    S.AtAdhanTime to "A la llamada",
+    S.AtAdhanRow to "A la hora del adhan",
+    S.AtAdhanRowSub to "La notificación base cuando llega la hora de la oración",
+    S.BeforeAdhanRow to "Recordatorio anticipado",
+    S.BeforeAdhanHelper to "Un recordatorio extra - la notificación del adhan sigue llegando",
+    S.MinBeforeFmt to "%1\$d min antes",
+    S.AdhanReminder to "Recordatorio de adhan",
+    S.IqamaReminder to "Recordatorio de iqama",
+    S.IqamaReminderSub to "Sonar a la hora del iqama",
+    S.PrayerNowFmt to "Ya es hora de %1\$s",
+    S.PrayerApproachingFmt to "%1\$s en %2\$d min",
+    S.IqamaNowFmt to "Iqama de %1\$s ahora",
+    S.SharedAlertSettings to "Ajustes compartidos para todas las alertas",
+    S.FajrAlarmOn to "Activar alarma del Fajr",
+    S.AlarmEnabledSub to "La alarma suena a la hora del Fajr",
+    S.AlarmDisabledSub to "La alarma está desactivada",
+    S.AlarmVolume to "Volumen de la alarma",
+    S.SnoozeDuration to "Duración de posposición",
+    S.AlertMode to "Tipo de alerta",
+    S.AlertModeNotif to "Notificación",
+    S.AlertModeAlarm to "Alarma completa",
+    S.AdhanAlertType to "Tipo de alerta del adhan",
+    S.AlertTypeNotification to "Alerta de notificación",
+    S.AlertTypeFullScreen to "Alerta de notificación a pantalla completa",
+)
 
-internal val IT: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    itPart0(m)
-    itPart1(m)
-    itPart2(m)
-    itPart3(m)
-    itPart4(m)
-    m
-}
-private fun itPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Preghiera"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Preferiti"
-    m[S.Reminders] = "Promemoria"
-    m[S.Stats] = "Statistiche"
-    m[S.Tags] = "Categorie"
-    m[S.Settings] = "Impostazioni"
-    m[S.About] = "Informazioni"
-    m[S.More] = "Altro"
-    m[S.Menu] = "Menu"
-    m[S.AddDhikr] = "Aggiungi dhikr"
-    m[S.SearchAzkar] = "Cerca azkar o categoria"
-    m[S.All] = "Tutti"
-    m[S.NoAzkar] = "Nessun dhikr"
-    m[S.NoAzkarUnderTag] = "Nessun dhikr in \"%1\$s\""
-    m[S.NoResultsQuery] = "Nessun risultato per \"%1\$s\""
-    m[S.Options] = "Opzioni"
-    m[S.EditDhikrTags] = "Modifica dhikr e categorie"
-    m[S.ReminderTimes] = "Orari dei promemoria"
-    m[S.Delete] = "Elimina"
-    m[S.NoActiveReminders] = "Nessun promemoria attivo"
-    m[S.Today] = "Oggi"
-    m[S.ThisWeek] = "Questa settimana"
-    m[S.DayStreak] = "Giorni consecutivi"
-    m[S.CurrentReminder] = "Promemoria attuale"
-    m[S.NextReminder] = "Prossimo promemoria"
-    m[S.NoActiveAzkar] = "Nessun dhikr attivo. Attivali dall'elenco."
-    m[S.Shortcuts] = "Scorciatoie"
-    m[S.TasbeehCounter] = "Contatore tasbeeh"
-    m[S.HisnSubtitle] = "Azkar e invocazioni dal Corano e dalla Sunna"
-    m[S.FavSubtitle] = "I tuoi azkar preferiti"
-    m[S.ReadDone] = "Letto"
-    m[S.TotalSuffix] = " in totale"
-    m[S.NoReadsYet] = "Ancora nessuna lettura"
-    m[S.DhikrIdFmt] = "Dhikr n. %1\$d"
-    m[S.Periods] = "Periodi"
-    m[S.Week] = "Settimana"
-    m[S.Month] = "Mese"
-    m[S.KeepGoing] = "Continua con i tuoi azkar quotidiani"
-    m[S.TotalReads] = "Letture totali"
-    m[S.SinceStart] = "Dall'inizio dell'uso"
-    m[S.RecentReads] = "Letture recenti"
-    m[S.RemindersSubtitle] = "Tutti gli orari dei promemoria"
-    m[S.StatsSubtitle] = "Cronologia e serie"
-    m[S.TagsSubtitle] = "Organizza gli azkar per colore"
-    m[S.FajrAlarm] = "Sveglia di Fajr"
-    m[S.ByLocation] = "In base alla tua posizione"
-    m[S.SettingsSubtitle] = "Vibrazione, carattere e suoneria"
-    m[S.AboutSubtitle] = "Versione e sviluppatore"
-    m[S.DeleteTag] = "Elimina categoria"
-    m[S.DeleteTagMsg] = "La categoria \"%1\$s\" verrà rimossa da tutti gli azkar. Gli azkar non verranno eliminati."
-    m[S.AddTag] = "Aggiungi categoria"
-    m[S.NoTags] = "Nessuna categoria"
-    m[S.Edit] = "Modifica"
-    m[S.NewTag] = "Nuova categoria"
-    m[S.EditTag] = "Modifica categoria"
-    m[S.TagName] = "Nome della categoria"
-}
-private fun itPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Colore"
-    m[S.TasbeehaFmt] = "%1\$d tasbeeh"
-    m[S.TapToCount] = "Tocca per contare"
-    m[S.ResetCounter] = "Azzera contatore"
-    m[S.ActiveOfTotalFmt] = "%1\$d di %2\$d attivi"
-    m[S.NoReminders] = "Nessun promemoria"
-    m[S.NoFavorites] = "Nessun azkar preferito"
-    m[S.Light] = "Chiaro"
-    m[S.Dark] = "Scuro"
-    m[S.SystemAuto] = "Automatico (sistema)"
-    m[S.LockWidgets] = "Widget della schermata di blocco"
-    m[S.LockWidgetsToast] = "Tieni premuta la schermata di blocco per aggiungere un widget"
-    m[S.OpenEditor] = "Apri editor"
-    m[S.Close] = "Chiudi"
-    m[S.LockWidgetsDesc] = "Tutti i widget di Wathkkir sono disponibili nell'area dedicata sotto l'orologio della schermata di blocco (One UI 8 o successiva)."
-    m[S.LockWidgetsSteps] = "1. Nella schermata di blocco, tieni premuto un punto vuoto e conferma la tua identità.\n2. Tocca «Aggiungi widget» e scegli «Wathkkir».\n3. Trascina il widget nell'area sotto l'orologio."
-    m[S.LockWidgetsHint] = "Toccando il widget dalla schermata di blocco, l'app si apre direttamente."
-    m[S.ChangeLocation] = "Cambia posizione"
-    m[S.LocationSubtitle] = "Città, metodo di calcolo e impostazioni della sveglia di Fajr"
-    m[S.FajrAlarmSubtitle] = "Attiva sveglia e suoneria"
-    m[S.LockScreenSection] = "Schermata di blocco"
-    m[S.LockWidgetsRowSub] = "Aggiungi un widget Wathkkir sotto l'orologio della schermata di blocco"
-    m[S.Notifications] = "Notifiche"
-    m[S.NotifSound] = "Suono di notifica"
-    m[S.Default] = "Predefinito"
-    m[S.Vibration] = "Vibrazione"
-    m[S.Appearance] = "Aspetto"
-    m[S.AppFont] = "Carattere dell'app"
-    m[S.Language] = "Lingua"
-    m[S.NewDhikr] = "Nuovo dhikr"
-    m[S.EditDhikr] = "Modifica dhikr"
-    m[S.TitleLabel] = "Titolo"
-    m[S.DhikrText] = "Testo del dhikr o dell'invocazione"
-    m[S.Cancel] = "Annulla"
-    m[S.Add] = "Aggiungi"
-    m[S.AddReminderTime] = "Aggiungi orario promemoria"
-    m[S.RepeatReminder] = "Ripeti promemoria"
-    m[S.ReminderTime] = "Orario del promemoria"
-    m[S.Save] = "Salva"
-    m[S.ChaptersFmt] = "%1\$d capitoli di azkar e invocazioni"
-    m[S.SearchHisn] = "Cerca in Hisn Al-Muslim"
-    m[S.NoFavChapters] = "Nessun capitolo preferito"
-    m[S.NoResults] = "Nessun risultato"
-    m[S.ReadTodaySuffix] = " · Letto oggi"
-    m[S.AddToMyAzkar] = "Aggiungi ai miei azkar"
-    m[S.Done] = "Fatto"
-    m[S.Tagline] = "Un'app che ti aiuta a mantenere i tuoi azkar giorno e notte"
-    m[S.Version] = "Versione"
-    m[S.Developer] = "Sviluppatore"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Contenuti dal progetto HisnElmoslem (licenza GPL v3)"
-    m[S.InstinctCredit] = "Realizzato in collaborazione con Instinct"
-    m[S.Dua] = "Ricordaci nelle tue invocazioni"
-    m[S.Font] = "Carattere"
-    m[S.FontLight] = "Carattere dell'app leggero"
-    m[S.FontBold] = "Carattere dell'app grassetto"
-    m[S.FontSystem] = "Carattere di sistema"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun itPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (occasioni)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Alba"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Orari di preghiera"
-    m[S.NextPrayer] = "Prossima preghiera"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Scegli paese e città"
-    m[S.SearchCityHint] = "Cerca città o paese..."
-    m[S.NoSearchResults] = "Nessun risultato trovato"
-    m[S.FajrPrayer] = "Preghiera del Fajr"
-    m[S.FajrNow] = "È l'ora della preghiera del Fajr"
-    m[S.Snooze] = "Posticipa"
-    m[S.StopAlarm] = "Ferma sveglia"
-    m[S.ChooseSnooze] = "Scegli durata posticipo:"
-    m[S.MinutesShortFmt] = "%1\$d (min)"
-    m[S.ColorWhite] = "Bianco"
-    m[S.Auto] = "Automatico"
-    m[S.ColorBlack] = "Nero"
-    m[S.ColorGray] = "Grigio"
-    m[S.ColorBlue] = "Blu"
-    m[S.ColorGreen] = "Verde"
-    m[S.ColorAmber] = "Ambra"
-    m[S.ColorBlueDark] = "Blu scuro"
-    m[S.ColorGreenDark] = "Verde scuro"
-    m[S.WidgetSettings] = "Impostazioni widget"
-    m[S.ColorYellow] = "Giallo"
-    m[S.ColorTurquoise] = "Turchese"
-    m[S.WidgetAccent] = "Colore del widget"
-    m[S.BarColor] = "Colore della barra di avanzamento"
-    m[S.BgColor] = "Colore di sfondo"
-    m[S.PickRingtone] = "Scegli suoneria sveglia"
-    m[S.LocationMethod] = "Metodo di localizzazione"
-    m[S.CurrentLocation] = "Posizione attuale"
-    m[S.AutoUpdateFajr] = "Aggiorna automaticamente gli orari di preghiera in base alla posizione"
-    m[S.PickCitySub] = "Scegli manualmente la città senza posizione"
-    m[S.CurrentCity] = "Città attuale"
-    m[S.EditCityName] = "Modifica nome città"
-    m[S.ResetCityNameAuto] = "Ripristina nome automatico"
-    m[S.CustomLocationNameHint] = "Inserisci un nome personalizzato per la tua posizione da mostrare al posto di quello predefinito :"
-    m[S.ChangeCity] = "Cambia città"
-    m[S.NoLocPermission] = "Autorizzazione posizione non concessa. Continua per concederla."
-    m[S.GpsOff] = "Il servizio di localizzazione (GPS) è disattivato."
-    m[S.CalcMethod] = "Metodo di calcolo"
-    m[S.SelectedCalcMethod] = "Metodo di calcolo selezionato"
-    m[S.Change] = "Modifica"
-    m[S.UpdatingTime] = "Aggiornamento dell'orario..."
-    m[S.UpdateFajrNow] = "Aggiorna ora l'orario del Fajr"
-    m[S.AlarmToneSection] = "Suoneria e audio della sveglia"
-    m[S.SelectedTone] = "Suoneria selezionata"
-    m[S.SystemTones] = "Suoni di sistema"
-    m[S.AudioFile] = "File audio"
-    m[S.ExtraSettings] = "Impostazioni aggiuntive"
-    m[S.VibrateDuringAlarm] = "Vibra durante la sveglia"
-    m[S.NextFajrAt] = "Prossima preghiera del Fajr"
-}
-private fun itPart3(m: HashMap<S, String>) {
-    m[S.AlarmOnDesc] = "Sveglia attiva"
-    m[S.AlarmOffDesc] = "Sveglia disattivata"
-    m[S.PickCalcMethod] = "Scegli il metodo di calcolo"
-    m[S.NotifReminder] = "Promemoria"
-    m[S.NotifReadDone] = "Segna come letto"
-    m[S.NotifRemindLater] = "Ricordamelo tra 10 minuti"
-    m[S.NotifOpenApp] = "Apri l'app"
-    m[S.NotifChannelAzkar] = "Notifiche promemoria azkar"
-    m[S.NotifChannelFajr] = "Avvisi preghiera del Fajr"
-    m[S.TodayAt] = "Oggi alle"
-    m[S.TomorrowAt] = "Domani alle"
-    m[S.DefaultAlarmTone] = "Suoneria predefinita"
-    m[S.LocCalcTitle] = "Posizione e calcolo"
-    m[S.LocCalcSubtitle] = "Città, metodo e regolazioni"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla a %1\$d° dal nord"
-    m[S.QiblaSetLocation] = "Imposta prima la posizione"
-    m[S.QiblaNoSensor] = "Nessun sensore bussola su questo dispositivo"
-    m[S.QiblaCalibrate] = "Muovi il telefono a forma di 8 per calibrare"
-    m[S.QiblaAligned] = "Sei rivolto verso la Qibla"
-    m[S.QiblaCityFmt] = "Posizione: %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NE"
-    m[S.DirE] = "E"
-    m[S.DirSE] = "SE"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SO"
-    m[S.DirW] = "O"
-    m[S.DirNW] = "NO"
-    m[S.CalendarTab] = "Calendario"
-    m[S.CalEvents] = "Eventi"
-    m[S.CalNoEvents] = "Nessun evento in questo giorno"
-    m[S.CalMonthEvents] = "Eventi del mese"
-    m[S.CalReminderOn] = "Promemoria attivo"
-    m[S.CalReminderOff] = "Attiva promemoria"
-    m[S.WdSun] = "D"
-    m[S.WdMon] = "L"
-    m[S.WdTue] = "M"
-    m[S.WdWed] = "M"
-    m[S.WdThu] = "G"
-    m[S.WdFri] = "V"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Silenzio auto in preghiera"
-    m[S.AutoDndSub] = "Silenzioso da adhan a iqama (serve il permesso DND)"
-    m[S.OptTimesTitle] = "Orari opzionali"
-    m[S.OptTimesSub] = "Righe extra: Imsak, Duha, Mezzanotte e Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Mezzanotte"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Convertitore di date"
-    m[S.HijriConvSub] = "Converti tra date Hijri e gregoriane"
-    m[S.GregToHijri] = "Gregoriano a Hijri"
-    m[S.HijriToGreg] = "Hijri a Gregoriano"
-    m[S.DayLabel] = "Giorno"
-    m[S.MonthLabel] = "Mese"
-    m[S.YearLabel] = "Anno"
-    m[S.LocSection] = "Posizione"
-    m[S.CalcSection] = "Calcolo"
-    m[S.AsrJuristic] = "Calcolo dell'Asr"
-}
-private fun itPart4(m: HashMap<S, String>) {
-    m[S.AsrShafii] = "Shafi'ita, malikita, hanbalita"
-    m[S.AsrHanafi] = "Hanafita"
-    m[S.HighLatRule] = "Regola per latitudini elevate"
-    m[S.HighLatNone] = "Nessuna"
-    m[S.HighLatMiddle] = "Metà della notte"
-    m[S.HighLatSeventh] = "Un settimo della notte"
-    m[S.HighLatAngle] = "Basata sull'angolo"
-    m[S.AdjSection] = "Regolazioni degli orari"
-    m[S.AdjNote] = "Minuti aggiunti o sottratti da ogni orario calcolato. Si applica subito a orari, widget e avvisi."
-    m[S.AdjHijri] = "Regolazione della data Hijri"
-    m[S.AdjMinShort] = "min"
-    m[S.AdjDayShort] = "g"
-    m[S.AlertTiming] = "Momento dell'avviso"
-    m[S.AtAdhanTime] = "All'adhan"
-    m[S.AtAdhanRow] = "All'adhan"
-    m[S.AtAdhanRowSub] = "La notifica di base all'orario della preghiera"
-    m[S.BeforeAdhanRow] = "Promemoria anticipato"
-    m[S.BeforeAdhanHelper] = "Un promemoria extra - la notifica dell'adhan arriva comunque"
-    m[S.MinBeforeFmt] = "%1\$d min prima"
-    m[S.AdhanReminder] = "Promemoria adhan"
-    m[S.IqamaReminder] = "Promemoria iqama"
-    m[S.IqamaReminderSub] = "Notifica all'ora dell'iqama"
-    m[S.PrayerNowFmt] = "È ora di %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s tra %2\$d min"
-    m[S.IqamaNowFmt] = "Iqama di %1\$s ora"
-    m[S.SharedAlertSettings] = "Impostazioni condivise per tutti gli avvisi"
-}
+internal val IT = mapOf(
+    S.PrayerTab to "Preghiera",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Preferiti",
+    S.Reminders to "Promemoria",
+    S.Stats to "Statistiche",
+    S.Tags to "Categorie",
+    S.Settings to "Impostazioni",
+    S.About to "Informazioni",
+    S.More to "Altro",
+    S.Menu to "Menu",
+    S.AddDhikr to "Aggiungi dhikr",
+    S.SearchAzkar to "Cerca azkar o categoria",
+    S.All to "Tutti",
+    S.NoAzkar to "Nessun dhikr",
+    S.NoAzkarUnderTag to "Nessun dhikr in \"%1\$s\"",
+    S.NoResultsQuery to "Nessun risultato per \"%1\$s\"",
+    S.Options to "Opzioni",
+    S.EditDhikrTags to "Modifica dhikr e categorie",
+    S.ReminderTimes to "Orari dei promemoria",
+    S.Delete to "Elimina",
+    S.NoActiveReminders to "Nessun promemoria attivo",
+    S.Today to "Oggi",
+    S.ThisWeek to "Questa settimana",
+    S.DayStreak to "Giorni consecutivi",
+    S.CurrentReminder to "Promemoria attuale",
+    S.NextReminder to "Prossimo promemoria",
+    S.NoActiveAzkar to "Nessun dhikr attivo. Attivali dall'elenco.",
+    S.Shortcuts to "Scorciatoie",
+    S.TasbeehCounter to "Contatore tasbeeh",
+    S.HisnSubtitle to "Azkar e invocazioni dal Corano e dalla Sunna",
+    S.FavSubtitle to "I tuoi azkar preferiti",
+    S.ReadDone to "Letto",
+    S.TotalSuffix to " in totale",
+    S.NoReadsYet to "Ancora nessuna lettura",
+    S.DhikrIdFmt to "Dhikr n. %1\$d",
+    S.Periods to "Periodi",
+    S.Week to "Settimana",
+    S.Month to "Mese",
+    S.KeepGoing to "Continua con i tuoi azkar quotidiani",
+    S.TotalReads to "Letture totali",
+    S.SinceStart to "Dall'inizio dell'uso",
+    S.RecentReads to "Letture recenti",
+    S.RemindersSubtitle to "Tutti gli orari dei promemoria",
+    S.StatsSubtitle to "Cronologia e serie",
+    S.TagsSubtitle to "Organizza gli azkar per colore",
+    S.FajrAlarm to "Sveglia di Fajr",
+    S.ByLocation to "In base alla tua posizione",
+    S.SettingsSubtitle to "Vibrazione, carattere e suoneria",
+    S.AboutSubtitle to "Versione e sviluppatore",
+    S.DeleteTag to "Elimina categoria",
+    S.DeleteTagMsg to "La categoria \"%1\$s\" verrà rimossa da tutti gli azkar. Gli azkar non verranno eliminati.",
+    S.AddTag to "Aggiungi categoria",
+    S.NoTags to "Nessuna categoria",
+    S.Edit to "Modifica",
+    S.NewTag to "Nuova categoria",
+    S.EditTag to "Modifica categoria",
+    S.TagName to "Nome della categoria",
+    S.Color to "Colore",
+    S.TasbeehaFmt to "%1\$d tasbeeh",
+    S.TapToCount to "Tocca per contare",
+    S.ResetCounter to "Azzera contatore",
+    S.ActiveOfTotalFmt to "%1\$d di %2\$d attivi",
+    S.NoReminders to "Nessun promemoria",
+    S.NoFavorites to "Nessun azkar preferito",
+    S.Light to "Chiaro",
+    S.Dark to "Scuro",
+    S.SystemAuto to "Automatico (sistema)",
+    S.LockWidgets to "Widget della schermata di blocco",
+    S.LockWidgetsToast to "Tieni premuta la schermata di blocco per aggiungere un widget",
+    S.OpenEditor to "Apri editor",
+    S.Close to "Chiudi",
+    S.LockWidgetsDesc to "Tutti i widget di Wathakker sono disponibili nell'area dedicata sotto l'orologio della schermata di blocco (One UI 8 o successiva).",
+    S.LockWidgetsSteps to "1. Nella schermata di blocco, tieni premuto un punto vuoto e conferma la tua identità.\n2. Tocca «Aggiungi widget» e scegli «Wathakker».\n3. Trascina il widget nell'area sotto l'orologio.",
+    S.LockWidgetsHint to "Toccando il widget dalla schermata di blocco, l'app si apre direttamente.",
+    S.ChangeLocation to "Cambia posizione",
+    S.LocationSubtitle to "Città, metodo di calcolo e impostazioni della sveglia di Fajr",
+    S.FajrAlarmSubtitle to "Attiva sveglia e suoneria",
+    S.LockScreenSection to "Schermata di blocco",
+    S.LockWidgetsRowSub to "Aggiungi un widget Wathakker sotto l'orologio della schermata di blocco",
+    S.Notifications to "Notifiche",
+    S.NotifSound to "Suono di notifica",
+    S.Default to "Predefinito",
+    S.Vibration to "Vibrazione",
+    S.Appearance to "Aspetto",
+    S.AppFont to "Carattere dell'app",
+    S.Language to "Lingua",
+    S.NewDhikr to "Nuovo dhikr",
+    S.EditDhikr to "Modifica dhikr",
+    S.TitleLabel to "Titolo",
+    S.DhikrText to "Testo del dhikr o dell'invocazione",
+    S.Cancel to "Annulla",
+    S.Add to "Aggiungi",
+    S.AddReminderTime to "Aggiungi orario promemoria",
+    S.RepeatReminder to "Ripeti promemoria",
+    S.ReminderTime to "Orario del promemoria",
+    S.Save to "Salva",
+    S.ChaptersFmt to "%1\$d capitoli di azkar e invocazioni",
+    S.SearchHisn to "Cerca in Hisn Al-Muslim",
+    S.NoFavChapters to "Nessun capitolo preferito",
+    S.NoResults to "Nessun risultato",
+    S.ReadTodaySuffix to " · Letto oggi",
+    S.AddToMyAzkar to "Aggiungi ai miei azkar",
+    S.Done to "Fatto",
+    S.Tagline to "Un'app che ti aiuta a mantenere i tuoi azkar giorno e notte",
+    S.Version to "Versione",
+    S.Developer to "Sviluppatore",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Contenuti dal progetto HisnElmoslem (licenza GPL v3)",
+    S.InstinctCredit to "Realizzato in collaborazione con Instinct",
+    S.Dua to "Ricordaci nelle tue invocazioni",
+    S.Font to "Carattere",
+    S.FontLight to "Carattere dell'app leggero",
+    S.FontBold to "Carattere dell'app grassetto",
+    S.FontSystem to "Carattere di sistema",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (occasioni)",
+    S.LocCalcTitle to "Posizione e calcolo",
+    S.LocCalcSubtitle to "Città, metodo e regolazioni",
+    S.LocSection to "Posizione",
+    S.CalcSection to "Calcolo",
+    S.AsrJuristic to "Calcolo dell'Asr",
+    S.AsrShafii to "Shafi'ita, malikita, hanbalita",
+    S.AsrHanafi to "Hanafita",
+    S.HighLatRule to "Regola per latitudini elevate",
+    S.HighLatNone to "Nessuna",
+    S.HighLatMiddle to "Metà della notte",
+    S.HighLatSeventh to "Un settimo della notte",
+    S.HighLatAngle to "Basata sull'angolo",
+    S.AdjSection to "Regolazioni degli orari",
+    S.AdjNote to "Minuti aggiunti o sottratti da ogni orario calcolato. Si applica subito a orari, widget e avvisi.",
+    S.AdjHijri to "Regolazione della data Hijri",
+    S.AdjMinShort to "min",
+    S.AdjDayShort to "g",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Alba",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Orari di preghiera",
+    S.NextPrayer to "Prossima preghiera",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Scegli paese e città",
+    S.SearchCityHint to "Cerca città o paese...",
+    S.NoSearchResults to "Nessun risultato trovato",
+    S.FajrPrayer to "Preghiera del Fajr",
+    S.FajrNow to "È l'ora della preghiera del Fajr",
+    S.Snooze to "Posticipa",
+    S.StopAlarm to "Ferma sveglia",
+    S.ChooseSnooze to "Scegli durata posticipo:",
+    S.MinutesShortFmt to "%1\\\$d (min)",
+    S.ColorWhite to "Bianco",
+    S.Auto to "Automatico",
+    S.ColorBlack to "Nero",
+    S.ColorGray to "Grigio",
+    S.ColorBlue to "Blu",
+    S.ColorGreen to "Verde",
+    S.ColorAmber to "Ambra",
+    S.ColorBlueDark to "Blu scuro",
+    S.ColorGreenDark to "Verde scuro",
+    S.WidgetSettings to "Impostazioni widget",
+    S.ColorYellow to "Giallo",
+    S.ColorTurquoise to "Turchese",
+    S.WidgetAccent to "Colore del widget",
+    S.BarColor to "Colore della barra di avanzamento",
+    S.BgColor to "Colore di sfondo",
+    S.PickRingtone to "Scegli suoneria sveglia",
+    S.LocationMethod to "Metodo di localizzazione",
+    S.CurrentLocation to "Posizione attuale",
+    S.AutoUpdateFajr to "Aggiorna l'orario del Fajr in base alla posizione",
+    S.PickCitySub to "Scegli manualmente la città senza posizione",
+    S.CurrentCity to "Città attuale",
+    S.EditCityName to "Modifica nome città",
+    S.ResetCityNameAuto to "Ripristina nome automatico",
+    S.CustomLocationNameHint to "Inserisci un nome personalizzato per la tua posizione da mostrare al posto di quello predefinito :",
+    S.ChangeCity to "Cambia città",
+    S.NoLocPermission to "Autorizzazione posizione non concessa. Continua per concederla.",
+    S.GpsOff to "Il servizio di localizzazione (GPS) è disattivato.",
+    S.CalcMethod to "Metodo di calcolo",
+    S.SelectedCalcMethod to "Metodo di calcolo selezionato",
+    S.Change to "Modifica",
+    S.UpdatingTime to "Aggiornamento dell'orario...",
+    S.UpdateFajrNow to "Aggiorna ora l'orario del Fajr",
+    S.AlarmToneSection to "Suoneria e audio della sveglia",
+    S.SelectedTone to "Suoneria selezionata",
+    S.SystemTones to "Suoni di sistema",
+    S.AudioFile to "File audio",
+    S.ExtraSettings to "Impostazioni aggiuntive",
+    S.VibrateDuringAlarm to "Vibra durante la sveglia",
+    S.NextFajrAt to "Prossima preghiera del Fajr",
+    S.AlarmOnDesc to "Sveglia attiva",
+    S.AlarmOffDesc to "Sveglia disattivata",
+    S.PickCalcMethod to "Scegli il metodo di calcolo",
+    S.NotifReminder to "Promemoria",
+    S.NotifReadDone to "Segna come letto",
+    S.NotifRemindLater to "Ricordamelo tra 10 minuti",
+    S.NotifOpenApp to "Apri l'app",
+    S.NotifChannelAzkar to "Notifiche promemoria azkar",
+    S.NotifChannelFajr to "Avvisi preghiera del Fajr",
+    S.TodayAt to "Oggi alle",
+    S.TomorrowAt to "Domani alle",
+    S.DefaultAlarmTone to "Suoneria predefinita",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla a %1\$d° dal nord",
+    S.QiblaSetLocation to "Imposta prima la posizione",
+    S.QiblaNoSensor to "Nessun sensore bussola su questo dispositivo",
+    S.QiblaCalibrate to "Muovi il telefono a forma di 8 per calibrare",
+    S.QiblaAligned to "Sei rivolto verso la Qibla",
+    S.QiblaCityFmt to "Posizione: %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NE",
+    S.DirE to "E",
+    S.DirSE to "SE",
+    S.DirS to "S",
+    S.DirSW to "SO",
+    S.DirW to "O",
+    S.DirNW to "NO",
+    S.CalendarTab to "Calendario",
+    S.CalEvents to "Eventi",
+    S.CalNoEvents to "Nessun evento in questo giorno",
+    S.CalMonthEvents to "Eventi del mese",
+    S.CalReminderOn to "Promemoria attivo",
+    S.CalReminderOff to "Attiva promemoria",
+    S.WdSun to "D",
+    S.WdMon to "L",
+    S.WdTue to "M",
+    S.WdWed to "M",
+    S.WdThu to "G",
+    S.WdFri to "V",
+    S.WdSat to "S",
+    S.AutoDnd to "Silenzio auto in preghiera",
+    S.AutoDndSub to "Silenzioso da adhan a iqama (serve il permesso DND)",
+    S.OptTimesTitle to "Orari opzionali",
+    S.OptTimesSub to "Righe extra: Imsak, Duha, Mezzanotte e Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Mezzanotte",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Convertitore di date",
+    S.HijriConvSub to "Converti tra date Hijri e gregoriane",
+    S.GregToHijri to "Gregoriano a Hijri",
+    S.HijriToGreg to "Hijri a Gregoriano",
+    S.DayLabel to "Giorno",
+    S.MonthLabel to "Mese",
+    S.YearLabel to "Anno",
+    S.AlertTiming to "Momento dell'avviso",
+    S.AtAdhanTime to "All'adhan",
+    S.AtAdhanRow to "All'adhan",
+    S.AtAdhanRowSub to "La notifica di base all'orario della preghiera",
+    S.BeforeAdhanRow to "Promemoria anticipato",
+    S.BeforeAdhanHelper to "Un promemoria extra - la notifica dell'adhan arriva comunque",
+    S.MinBeforeFmt to "%1\$d min prima",
+    S.AdhanReminder to "Promemoria adhan",
+    S.IqamaReminder to "Promemoria iqama",
+    S.IqamaReminderSub to "Suona all'ora dell'iqama",
+    S.PrayerNowFmt to "È ora di %1\$s",
+    S.PrayerApproachingFmt to "%1\$s tra %2\$d min",
+    S.IqamaNowFmt to "Iqama di %1\$s ora",
+    S.SharedAlertSettings to "Impostazioni condivise per tutti gli avvisi",
+    S.FajrAlarmOn to "Attiva sveglia del Fajr",
+    S.AlarmEnabledSub to "La sveglia suona all'ora del Fajr",
+    S.AlarmDisabledSub to "La sveglia è disattivata",
+    S.AlarmVolume to "Volume della sveglia",
+    S.SnoozeDuration to "Durata posticipo",
+    S.AlertMode to "Tipo di avviso",
+    S.AlertModeNotif to "Notifica",
+    S.AlertModeAlarm to "Sveglia completa",
+    S.AdhanAlertType to "Tipo di avviso adhan",
+    S.AlertTypeNotification to "Avviso notifica",
+    S.AlertTypeFullScreen to "Avviso notifica a schermo intero",
+)
 
-internal val TR: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    trPart0(m)
-    trPart1(m)
-    trPart2(m)
-    trPart3(m)
-    trPart4(m)
-    m
-}
-private fun trPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Namaz"
-    m[S.AzkarTab] = "Zikirler"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Sabah"
-    m[S.TasbeehTab] = "Tesbih"
-    m[S.Favorites] = "Favoriler"
-    m[S.Reminders] = "Hatırlatıcılar"
-    m[S.Stats] = "İstatistikler"
-    m[S.Tags] = "Kategoriler"
-    m[S.Settings] = "Ayarlar"
-    m[S.About] = "Hakkında"
-    m[S.More] = "Daha fazla"
-    m[S.Menu] = "Menü"
-    m[S.AddDhikr] = "Zikir ekle"
-    m[S.SearchAzkar] = "Zikir veya kategori ara"
-    m[S.All] = "Tümü"
-    m[S.NoAzkar] = "Zikir yok"
-    m[S.NoAzkarUnderTag] = "\"%1\$s\" altında zikir yok"
-    m[S.NoResultsQuery] = "\"%1\$s\" ile eşleşen sonuç yok"
-    m[S.Options] = "Seçenekler"
-    m[S.EditDhikrTags] = "Zikri ve kategorileri düzenle"
-    m[S.ReminderTimes] = "Hatırlatıcı saatleri"
-    m[S.Delete] = "Sil"
-    m[S.NoActiveReminders] = "Etkin hatırlatıcı yok"
-    m[S.Today] = "Bugün"
-    m[S.ThisWeek] = "Bu hafta"
-    m[S.DayStreak] = "Üst üste günler"
-    m[S.CurrentReminder] = "Geçerli hatırlatıcı"
-    m[S.NextReminder] = "Sonraki hatırlatıcı"
-    m[S.NoActiveAzkar] = "Etkin zikir yok. Zikir listesinden etkinleştirin."
-    m[S.Shortcuts] = "Kısayollar"
-    m[S.TasbeehCounter] = "Tesbih sayacı"
-    m[S.HisnSubtitle] = "Kur'an ve Sünnet'ten zikir ve dualar"
-    m[S.FavSubtitle] = "Sevdiğiniz zikirler"
-    m[S.ReadDone] = "Okundu"
-    m[S.TotalSuffix] = " toplam"
-    m[S.NoReadsYet] = "Henüz okuma yok"
-    m[S.DhikrIdFmt] = "Zikir #%1\$d"
-    m[S.Periods] = "Dönemler"
-    m[S.Week] = "Hafta"
-    m[S.Month] = "Ay"
-    m[S.KeepGoing] = "Günlük zikirlerinizi sürdürün"
-    m[S.TotalReads] = "Toplam okuma"
-    m[S.SinceStart] = "Kullanım başlangıcından beri"
-    m[S.RecentReads] = "Son okumalar"
-    m[S.RemindersSubtitle] = "Tüm hatırlatıcı saatleri"
-    m[S.StatsSubtitle] = "Geçmiş ve seriler"
-    m[S.TagsSubtitle] = "Zikirleri renklerle düzenleyin"
-    m[S.FajrAlarm] = "Sabah namazı alarmı"
-    m[S.ByLocation] = "Konumunuza göre"
-    m[S.SettingsSubtitle] = "Titreşim, yazı tipi ve zil sesi"
-    m[S.AboutSubtitle] = "Sürüm ve geliştirici"
-    m[S.DeleteTag] = "Kategoriyi sil"
-    m[S.DeleteTagMsg] = "\"%1\$s\" kategorisi tüm zikirlerden kaldırılacak. Zikirler silinmeyecek."
-    m[S.AddTag] = "Kategori ekle"
-    m[S.NoTags] = "Henüz kategori yok"
-    m[S.Edit] = "Düzenle"
-    m[S.NewTag] = "Yeni kategori"
-    m[S.EditTag] = "Kategoriyi düzenle"
-    m[S.TagName] = "Kategori adı"
-}
-private fun trPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Renk"
-    m[S.TasbeehaFmt] = "%1\$d tesbih"
-    m[S.TapToCount] = "Saymak için dokunun"
-    m[S.ResetCounter] = "Sayacı sıfırla"
-    m[S.ActiveOfTotalFmt] = "%1\$d/%2\$d etkin"
-    m[S.NoReminders] = "Hatırlatıcı yok"
-    m[S.NoFavorites] = "Favori zikir yok"
-    m[S.Light] = "Açık"
-    m[S.Dark] = "Koyu"
-    m[S.SystemAuto] = "Otomatik (sistem)"
-    m[S.LockWidgets] = "Kilit ekranı widget'ları"
-    m[S.LockWidgetsToast] = "Widget eklemek için kilit ekranına uzun basın"
-    m[S.OpenEditor] = "Düzenleyiciyi aç"
-    m[S.Close] = "Kapat"
-    m[S.LockWidgetsDesc] = "Tüm Wathkkir widget'ları, kilit ekranında saatin altındaki özel alana eklenebilir (One UI 8 veya üzeri)."
-    m[S.LockWidgetsSteps] = "1. Kilit ekranında boş bir alana uzun basın ve kimliğinizi doğrulayın.\n2. \"Widget ekle\"ye dokunun ve \"Wathkkir\"ı seçin.\n3. Widget'ı saatin altındaki alana sürükleyin."
-    m[S.LockWidgetsHint] = "Kilit ekranından widget'a dokunmak uygulamayı doğrudan açar."
-    m[S.ChangeLocation] = "Konumu değiştir"
-    m[S.LocationSubtitle] = "Şehir, hesaplama yöntemi ve sabah alarmı ayarları"
-    m[S.FajrAlarmSubtitle] = "Alarmı ve zil sesini etkinleştir"
-    m[S.LockScreenSection] = "Kilit ekranı"
-    m[S.LockWidgetsRowSub] = "Kilit ekranı saatinin altına Wathkkir widget'ı ekleyin"
-    m[S.Notifications] = "Bildirimler"
-    m[S.NotifSound] = "Bildirim sesi"
-    m[S.Default] = "Varsayılan"
-    m[S.Vibration] = "Titreşim"
-    m[S.Appearance] = "Görünüm"
-    m[S.AppFont] = "Uygulama yazı tipi"
-    m[S.Language] = "Dil"
-    m[S.NewDhikr] = "Yeni zikir"
-    m[S.EditDhikr] = "Zikri düzenle"
-    m[S.TitleLabel] = "Başlık"
-    m[S.DhikrText] = "Zikir veya dua metni"
-    m[S.Cancel] = "İptal"
-    m[S.Add] = "Ekle"
-    m[S.AddReminderTime] = "Hatırlatıcı saati ekle"
-    m[S.RepeatReminder] = "Hatırlatıcıyı tekrarla"
-    m[S.ReminderTime] = "Hatırlatıcı saati"
-    m[S.Save] = "Kaydet"
-    m[S.ChaptersFmt] = "%1\$d zikir ve dua bölümü"
-    m[S.SearchHisn] = "Hisn Al-Muslim'de ara"
-    m[S.NoFavChapters] = "Favori bölüm yok"
-    m[S.NoResults] = "Sonuç yok"
-    m[S.ReadTodaySuffix] = " · Bugün okundu"
-    m[S.AddToMyAzkar] = "Zikirlerime ekle"
-    m[S.Done] = "Tamam"
-    m[S.Tagline] = "Gece gündüz zikirlerinizi sürdürmenize yardımcı olan bir uygulama"
-    m[S.Version] = "Sürüm"
-    m[S.Developer] = "Geliştirici"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "İçerik HisnElmoslem projesinden (GPL v3 lisanslı)"
-    m[S.InstinctCredit] = "Instinct iş birliğiyle geliştirildi"
-    m[S.Dua] = "Bizi dualarınızda unutmayın"
-    m[S.Font] = "Yazı tipi"
-    m[S.FontLight] = "Uygulama yazı tipi ince"
-    m[S.FontBold] = "Uygulama yazı tipi kalın"
-    m[S.FontSystem] = "Sistem yazı tipi"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun trPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (özel günler)"
-    m[S.PrayerFajr] = "Sabah"
-    m[S.PrayerShuruq] = "Güneş"
-    m[S.PrayerDhuhr] = "Öğle"
-    m[S.PrayerJumuah] = "Cuma"
-    m[S.PrayerAsr] = "İkindi"
-    m[S.PrayerMaghrib] = "Akşam"
-    m[S.PrayerIsha] = "Yatsı"
-    m[S.PrayerTimes] = "Namaz vakitleri"
-    m[S.NextPrayer] = "Sonraki namaz"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Ülke ve şehir seçin"
-    m[S.SearchCityHint] = "Şehir veya ülke ara..."
-    m[S.NoSearchResults] = "Sonuç bulunamadı"
-    m[S.FajrPrayer] = "Sabah namazı"
-    m[S.FajrNow] = "Sabah namazı vakti geldi"
-    m[S.Snooze] = "Ertele"
-    m[S.StopAlarm] = "Alarmı durdur"
-    m[S.ChooseSnooze] = "Erteleme süresi seçin:"
-    m[S.MinutesShortFmt] = "%1\$d (dak)"
-    m[S.ColorWhite] = "Beyaz"
-    m[S.Auto] = "Otomatik"
-    m[S.ColorBlack] = "Siyah"
-    m[S.ColorGray] = "Gri"
-    m[S.ColorBlue] = "Mavi"
-    m[S.ColorGreen] = "Yeşil"
-    m[S.ColorPurple] = "Mor"
-    m[S.ColorAmber] = "Kehribar"
-    m[S.ColorBlueDark] = "Koyu mavi"
-    m[S.ColorGreenDark] = "Koyu yeşil"
-    m[S.WidgetSettings] = "Widget ayarları"
-    m[S.ColorYellow] = "Sarı"
-    m[S.ColorTurquoise] = "Turkuaz"
-    m[S.WidgetAccent] = "Widget rengi"
-    m[S.BarColor] = "İlerleme çubuğu rengi"
-    m[S.BgColor] = "Arka plan rengi"
-    m[S.PickRingtone] = "Alarm sesi seçin"
-    m[S.LocationMethod] = "Konum yöntemi"
-    m[S.CurrentLocation] = "Mevcut konum"
-    m[S.AutoUpdateFajr] = "Namaz vakitlerini konumunuza göre otomatik olarak günceller"
-    m[S.PickCitySub] = "Konum olmadan şehrinizi elle seçin"
-    m[S.CurrentCity] = "Mevcut şehir"
-    m[S.EditCityName] = "Şehir adını düzenle"
-    m[S.ResetCityNameAuto] = "Otomatik ada geri dön"
-    m[S.CustomLocationNameHint] = "Varsayılan yerine gösterilecek özel bir konum adı girin :"
-    m[S.ChangeCity] = "Şehri değiştir"
-    m[S.NoLocPermission] = "Konum izni verilmedi. Vermek için devam edin."
-    m[S.GpsOff] = "Konum servisi (GPS) kapalı."
-    m[S.CalcMethod] = "Hesaplama yöntemi"
-    m[S.SelectedCalcMethod] = "Seçili hesaplama yöntemi"
-    m[S.Change] = "Değiştir"
-    m[S.UpdatingTime] = "Vakit güncelleniyor..."
-    m[S.UpdateFajrNow] = "Sabah vaktini şimdi güncelle"
-    m[S.AlarmToneSection] = "Alarm sesi"
-    m[S.SelectedTone] = "Seçili ses"
-    m[S.SystemTones] = "Sistem sesleri"
-    m[S.AudioFile] = "Ses dosyası"
-    m[S.ExtraSettings] = "Ek ayarlar"
-    m[S.VibrateDuringAlarm] = "Alarm sırasında titre"
-}
-private fun trPart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "Sonraki sabah namazı vakti"
-    m[S.AlarmOnDesc] = "Alarm açık"
-    m[S.AlarmOffDesc] = "Alarm kapalı"
-    m[S.PickCalcMethod] = "Hesaplama yöntemi seçin"
-    m[S.NotifReminder] = "Hatırlatma"
-    m[S.NotifReadDone] = "Okundu işaretle"
-    m[S.NotifRemindLater] = "10 dakika sonra hatırlat"
-    m[S.NotifOpenApp] = "Uygulamayı aç"
-    m[S.NotifChannelAzkar] = "Zikir hatırlatma bildirimleri"
-    m[S.NotifChannelFajr] = "Sabah namazı bildirimleri"
-    m[S.TodayAt] = "Bugün"
-    m[S.TomorrowAt] = "Yarın"
-    m[S.DefaultAlarmTone] = "Varsayılan alarm sesi"
-    m[S.LocCalcTitle] = "Konum ve hesaplama"
-    m[S.LocCalcSubtitle] = "Şehir, yöntem ve ayarlamalar"
-    m[S.QiblaTitle] = "Kıble"
-    m[S.QiblaNorthFmt] = "Kıble kuzeyden %1\$d°"
-    m[S.QiblaSetLocation] = "Önce konumunuzu ayarlayın"
-    m[S.QiblaNoSensor] = "Bu cihazda pusula sensörü yok"
-    m[S.QiblaCalibrate] = "Kalibre etmek için telefonu 8 şeklinde hareket ettirin"
-    m[S.QiblaAligned] = "Kıbleye dönüksünüz"
-    m[S.QiblaCityFmt] = "Konum: %1\$s"
-    m[S.DirN] = "K"
-    m[S.DirNE] = "KD"
-    m[S.DirE] = "D"
-    m[S.DirSE] = "GD"
-    m[S.DirS] = "G"
-    m[S.DirSW] = "GB"
-    m[S.DirW] = "B"
-    m[S.DirNW] = "KB"
-    m[S.CalendarTab] = "Takvim"
-    m[S.CalEvents] = "Önemli Günler"
-    m[S.CalNoEvents] = "Bu günde önemli gün yok"
-    m[S.CalMonthEvents] = "Ayın önemli günleri"
-    m[S.CalReminderOn] = "Hatırlatıcı açık"
-    m[S.CalReminderOff] = "Hatırlatıcıyı aç"
-    m[S.WdSun] = "P"
-    m[S.WdMon] = "P"
-    m[S.WdTue] = "S"
-    m[S.WdWed] = "Ç"
-    m[S.WdThu] = "P"
-    m[S.WdFri] = "C"
-    m[S.WdSat] = "C"
-    m[S.AutoDnd] = "Namazda otomatik sessiz"
-    m[S.AutoDndSub] = "Ezandan kamete kadar sessiz (DND izni gerekir)"
-    m[S.OptTimesTitle] = "Ek vakitler"
-    m[S.OptTimesSub] = "Ek satırlar: İmsak, Kuşluk, Gece yarısı ve Kıyam"
-    m[S.Imsak] = "İmsak"
-    m[S.Duha] = "Kuşluk"
-    m[S.Midnight] = "Gece yarısı"
-    m[S.Qiyam] = "Kıyam"
-    m[S.HijriConvTitle] = "Tarih çevirici"
-    m[S.HijriConvSub] = "Hicri ve Miladi tarihler arasında çevir"
-    m[S.GregToHijri] = "Miladi > Hicri"
-    m[S.HijriToGreg] = "Hicri > Miladi"
-    m[S.DayLabel] = "Gün"
-    m[S.MonthLabel] = "Ay"
-    m[S.YearLabel] = "Yıl"
-    m[S.LocSection] = "Konum"
-    m[S.CalcSection] = "Hesaplama"
-}
-private fun trPart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "İkindi hesabı"
-    m[S.AsrShafii] = "Şafii, Maliki, Hanbeli"
-    m[S.AsrHanafi] = "Hanefi"
-    m[S.HighLatRule] = "Yüksek enlem kuralı"
-    m[S.HighLatNone] = "Yok"
-    m[S.HighLatMiddle] = "Gecenin ortası"
-    m[S.HighLatSeventh] = "Gecenin yedide biri"
-    m[S.HighLatAngle] = "Açıya dayalı"
-    m[S.AdjSection] = "Vakit ayarlamaları"
-    m[S.AdjNote] = "Hesaplanan her vakte eklenen veya çıkarılan dakikalar. Vakitlere, widget'lara ve uyarılara anında uygulanır."
-    m[S.AdjHijri] = "Hicri tarih ayarı"
-    m[S.AdjMinShort] = "dk"
-    m[S.AdjDayShort] = "gün"
-    m[S.AlertTiming] = "Uyarı zamanı"
-    m[S.AtAdhanTime] = "Ezan vaktinde"
-    m[S.AtAdhanRow] = "Ezan vaktinde"
-    m[S.AtAdhanRowSub] = "Namaz vakti geldiğinde temel bildirim"
-    m[S.BeforeAdhanRow] = "Erken hatırlatma"
-    m[S.BeforeAdhanHelper] = "Ek bir hatırlatma - ezan bildirimi yine de gelir"
-    m[S.MinBeforeFmt] = "Ezandan %1\$d dk önce"
-    m[S.AdhanReminder] = "Ezan hatırlatıcı"
-    m[S.IqamaReminder] = "Kamet hatırlatıcı"
-    m[S.IqamaReminderSub] = "Kamet vaktinde bildirim"
-    m[S.PrayerNowFmt] = "%1\$s vakti geldi"
-    m[S.PrayerApproachingFmt] = "%1\$s %2\$d dk sonra"
-    m[S.IqamaNowFmt] = "%1\$s kameti şimdi"
-    m[S.SharedAlertSettings] = "Tüm uyarılar için ortak ayarlar"
-}
+internal val TR = mapOf(
+    S.PrayerTab to "Namaz",
+    S.AzkarTab to "Zikirler",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Sabah",
+    S.TasbeehTab to "Tesbih",
+    S.Favorites to "Favoriler",
+    S.Reminders to "Hatırlatıcılar",
+    S.Stats to "İstatistikler",
+    S.Tags to "Kategoriler",
+    S.Settings to "Ayarlar",
+    S.About to "Hakkında",
+    S.More to "Daha fazla",
+    S.Menu to "Menü",
+    S.AddDhikr to "Zikir ekle",
+    S.SearchAzkar to "Zikir veya kategori ara",
+    S.All to "Tümü",
+    S.NoAzkar to "Zikir yok",
+    S.NoAzkarUnderTag to "\"%1\$s\" altında zikir yok",
+    S.NoResultsQuery to "\"%1\$s\" ile eşleşen sonuç yok",
+    S.Options to "Seçenekler",
+    S.EditDhikrTags to "Zikri ve kategorileri düzenle",
+    S.ReminderTimes to "Hatırlatıcı saatleri",
+    S.Delete to "Sil",
+    S.NoActiveReminders to "Etkin hatırlatıcı yok",
+    S.Today to "Bugün",
+    S.ThisWeek to "Bu hafta",
+    S.DayStreak to "Üst üste günler",
+    S.CurrentReminder to "Geçerli hatırlatıcı",
+    S.NextReminder to "Sonraki hatırlatıcı",
+    S.NoActiveAzkar to "Etkin zikir yok. Zikir listesinden etkinleştirin.",
+    S.Shortcuts to "Kısayollar",
+    S.TasbeehCounter to "Tesbih sayacı",
+    S.HisnSubtitle to "Kur'an ve Sünnet'ten zikir ve dualar",
+    S.FavSubtitle to "Sevdiğiniz zikirler",
+    S.ReadDone to "Okundu",
+    S.TotalSuffix to " toplam",
+    S.NoReadsYet to "Henüz okuma yok",
+    S.DhikrIdFmt to "Zikir #%1\$d",
+    S.Periods to "Dönemler",
+    S.Week to "Hafta",
+    S.Month to "Ay",
+    S.KeepGoing to "Günlük zikirlerinizi sürdürün",
+    S.TotalReads to "Toplam okuma",
+    S.SinceStart to "Kullanım başlangıcından beri",
+    S.RecentReads to "Son okumalar",
+    S.RemindersSubtitle to "Tüm hatırlatıcı saatleri",
+    S.StatsSubtitle to "Geçmiş ve seriler",
+    S.TagsSubtitle to "Zikirleri renklerle düzenleyin",
+    S.FajrAlarm to "Sabah namazı alarmı",
+    S.ByLocation to "Konumunuza göre",
+    S.SettingsSubtitle to "Titreşim, yazı tipi ve zil sesi",
+    S.AboutSubtitle to "Sürüm ve geliştirici",
+    S.DeleteTag to "Kategoriyi sil",
+    S.DeleteTagMsg to "\"%1\$s\" kategorisi tüm zikirlerden kaldırılacak. Zikirler silinmeyecek.",
+    S.AddTag to "Kategori ekle",
+    S.NoTags to "Henüz kategori yok",
+    S.Edit to "Düzenle",
+    S.NewTag to "Yeni kategori",
+    S.EditTag to "Kategoriyi düzenle",
+    S.TagName to "Kategori adı",
+    S.Color to "Renk",
+    S.TasbeehaFmt to "%1\$d tesbih",
+    S.TapToCount to "Saymak için dokunun",
+    S.ResetCounter to "Sayacı sıfırla",
+    S.ActiveOfTotalFmt to "%1\$d/%2\$d etkin",
+    S.NoReminders to "Hatırlatıcı yok",
+    S.NoFavorites to "Favori zikir yok",
+    S.Light to "Açık",
+    S.Dark to "Koyu",
+    S.SystemAuto to "Otomatik (sistem)",
+    S.LockWidgets to "Kilit ekranı widget'ları",
+    S.LockWidgetsToast to "Widget eklemek için kilit ekranına uzun basın",
+    S.OpenEditor to "Düzenleyiciyi aç",
+    S.Close to "Kapat",
+    S.LockWidgetsDesc to "Tüm Wathakker widget'ları, kilit ekranında saatin altındaki özel alana eklenebilir (One UI 8 veya üzeri).",
+    S.LockWidgetsSteps to "1. Kilit ekranında boş bir alana uzun basın ve kimliğinizi doğrulayın.\n2. \"Widget ekle\"ye dokunun ve \"Wathakker\"ı seçin.\n3. Widget'ı saatin altındaki alana sürükleyin.",
+    S.LockWidgetsHint to "Kilit ekranından widget'a dokunmak uygulamayı doğrudan açar.",
+    S.ChangeLocation to "Konumu değiştir",
+    S.LocationSubtitle to "Şehir, hesaplama yöntemi ve sabah alarmı ayarları",
+    S.FajrAlarmSubtitle to "Alarmı ve zil sesini etkinleştir",
+    S.LockScreenSection to "Kilit ekranı",
+    S.LockWidgetsRowSub to "Kilit ekranı saatinin altına Wathakker widget'ı ekleyin",
+    S.Notifications to "Bildirimler",
+    S.NotifSound to "Bildirim sesi",
+    S.Default to "Varsayılan",
+    S.Vibration to "Titreşim",
+    S.Appearance to "Görünüm",
+    S.AppFont to "Uygulama yazı tipi",
+    S.Language to "Dil",
+    S.NewDhikr to "Yeni zikir",
+    S.EditDhikr to "Zikri düzenle",
+    S.TitleLabel to "Başlık",
+    S.DhikrText to "Zikir veya dua metni",
+    S.Cancel to "İptal",
+    S.Add to "Ekle",
+    S.AddReminderTime to "Hatırlatıcı saati ekle",
+    S.RepeatReminder to "Hatırlatıcıyı tekrarla",
+    S.ReminderTime to "Hatırlatıcı saati",
+    S.Save to "Kaydet",
+    S.ChaptersFmt to "%1\$d zikir ve dua bölümü",
+    S.SearchHisn to "Hisn Al-Muslim'de ara",
+    S.NoFavChapters to "Favori bölüm yok",
+    S.NoResults to "Sonuç yok",
+    S.ReadTodaySuffix to " · Bugün okundu",
+    S.AddToMyAzkar to "Zikirlerime ekle",
+    S.Done to "Tamam",
+    S.Tagline to "Gece gündüz zikirlerinizi sürdürmenize yardımcı olan bir uygulama",
+    S.Version to "Sürüm",
+    S.Developer to "Geliştirici",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "İçerik HisnElmoslem projesinden (GPL v3 lisanslı)",
+    S.InstinctCredit to "Instinct iş birliğiyle geliştirildi",
+    S.Dua to "Bizi dualarınızda unutmayın",
+    S.Font to "Yazı tipi",
+    S.FontLight to "Uygulama yazı tipi ince",
+    S.FontBold to "Uygulama yazı tipi kalın",
+    S.FontSystem to "Sistem yazı tipi",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (özel günler)",
+    S.LocCalcTitle to "Konum ve hesaplama",
+    S.LocCalcSubtitle to "Şehir, yöntem ve ayarlamalar",
+    S.LocSection to "Konum",
+    S.CalcSection to "Hesaplama",
+    S.AsrJuristic to "İkindi hesabı",
+    S.AsrShafii to "Şafii, Maliki, Hanbeli",
+    S.AsrHanafi to "Hanefi",
+    S.HighLatRule to "Yüksek enlem kuralı",
+    S.HighLatNone to "Yok",
+    S.HighLatMiddle to "Gecenin ortası",
+    S.HighLatSeventh to "Gecenin yedide biri",
+    S.HighLatAngle to "Açıya dayalı",
+    S.AdjSection to "Vakit ayarlamaları",
+    S.AdjNote to "Hesaplanan her vakte eklenen veya çıkarılan dakikalar. Vakitlere, widget'lara ve uyarılara anında uygulanır.",
+    S.AdjHijri to "Hicri tarih ayarı",
+    S.AdjMinShort to "dk",
+    S.AdjDayShort to "gün",
+    S.PrayerFajr to "Sabah",
+    S.PrayerShuruq to "Güneş",
+    S.PrayerDhuhr to "Öğle",
+    S.PrayerJumuah to "Cuma",
+    S.PrayerAsr to "İkindi",
+    S.PrayerMaghrib to "Akşam",
+    S.PrayerIsha to "Yatsı",
+    S.PrayerTimes to "Namaz vakitleri",
+    S.NextPrayer to "Sonraki namaz",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Ülke ve şehir seçin",
+    S.SearchCityHint to "Şehir veya ülke ara...",
+    S.NoSearchResults to "Sonuç bulunamadı",
+    S.FajrPrayer to "Sabah namazı",
+    S.FajrNow to "Sabah namazı vakti geldi",
+    S.Snooze to "Ertele",
+    S.StopAlarm to "Alarmı durdur",
+    S.ChooseSnooze to "Erteleme süresi seçin:",
+    S.MinutesShortFmt to "%1\\\$d (dak)",
+    S.ColorWhite to "Beyaz",
+    S.Auto to "Otomatik",
+    S.ColorBlack to "Siyah",
+    S.ColorGray to "Gri",
+    S.ColorBlue to "Mavi",
+    S.ColorGreen to "Yeşil",
+    S.ColorPurple to "Mor",
+    S.ColorAmber to "Kehribar",
+    S.ColorBlueDark to "Koyu mavi",
+    S.ColorGreenDark to "Koyu yeşil",
+    S.WidgetSettings to "Widget ayarları",
+    S.ColorYellow to "Sarı",
+    S.ColorTurquoise to "Turkuaz",
+    S.WidgetAccent to "Widget rengi",
+    S.BarColor to "İlerleme çubuğu rengi",
+    S.BgColor to "Arka plan rengi",
+    S.PickRingtone to "Alarm sesi seçin",
+    S.LocationMethod to "Konum yöntemi",
+    S.CurrentLocation to "Mevcut konum",
+    S.AutoUpdateFajr to "Sabah vaktini konumunuza göre otomatik günceller",
+    S.PickCitySub to "Konum olmadan şehrinizi elle seçin",
+    S.CurrentCity to "Mevcut şehir",
+    S.EditCityName to "Şehir adını düzenle",
+    S.ResetCityNameAuto to "Otomatik ada geri dön",
+    S.CustomLocationNameHint to "Varsayılan yerine gösterilecek özel bir konum adı girin :",
+    S.ChangeCity to "Şehri değiştir",
+    S.NoLocPermission to "Konum izni verilmedi. Vermek için devam edin.",
+    S.GpsOff to "Konum servisi (GPS) kapalı.",
+    S.CalcMethod to "Hesaplama yöntemi",
+    S.SelectedCalcMethod to "Seçili hesaplama yöntemi",
+    S.Change to "Değiştir",
+    S.UpdatingTime to "Vakit güncelleniyor...",
+    S.UpdateFajrNow to "Sabah vaktini şimdi güncelle",
+    S.AlarmToneSection to "Alarm sesi",
+    S.SelectedTone to "Seçili ses",
+    S.SystemTones to "Sistem sesleri",
+    S.AudioFile to "Ses dosyası",
+    S.ExtraSettings to "Ek ayarlar",
+    S.VibrateDuringAlarm to "Alarm sırasında titre",
+    S.NextFajrAt to "Sonraki sabah namazı vakti",
+    S.AlarmOnDesc to "Alarm açık",
+    S.AlarmOffDesc to "Alarm kapalı",
+    S.PickCalcMethod to "Hesaplama yöntemi seçin",
+    S.NotifReminder to "Hatırlatma",
+    S.NotifReadDone to "Okundu işaretle",
+    S.NotifRemindLater to "10 dakika sonra hatırlat",
+    S.NotifOpenApp to "Uygulamayı aç",
+    S.NotifChannelAzkar to "Zikir hatırlatma bildirimleri",
+    S.NotifChannelFajr to "Sabah namazı bildirimleri",
+    S.TodayAt to "Bugün",
+    S.TomorrowAt to "Yarın",
+    S.DefaultAlarmTone to "Varsayılan alarm sesi",
+    S.QiblaTitle to "Kıble",
+    S.QiblaNorthFmt to "Kıble kuzeyden %1\$d°",
+    S.QiblaSetLocation to "Önce konumunuzu ayarlayın",
+    S.QiblaNoSensor to "Bu cihazda pusula sensörü yok",
+    S.QiblaCalibrate to "Kalibre etmek için telefonu 8 şeklinde hareket ettirin",
+    S.QiblaAligned to "Kıbleye dönüksünüz",
+    S.QiblaCityFmt to "Konum: %1\$s",
+    S.DirN to "K",
+    S.DirNE to "KD",
+    S.DirE to "D",
+    S.DirSE to "GD",
+    S.DirS to "G",
+    S.DirSW to "GB",
+    S.DirW to "B",
+    S.DirNW to "KB",
+    S.CalendarTab to "Takvim",
+    S.CalEvents to "Önemli Günler",
+    S.CalNoEvents to "Bu günde önemli gün yok",
+    S.CalMonthEvents to "Ayın önemli günleri",
+    S.CalReminderOn to "Hatırlatıcı açık",
+    S.CalReminderOff to "Hatırlatıcıyı aç",
+    S.WdSun to "P",
+    S.WdMon to "P",
+    S.WdTue to "S",
+    S.WdWed to "Ç",
+    S.WdThu to "P",
+    S.WdFri to "C",
+    S.WdSat to "C",
+    S.AutoDnd to "Namazda otomatik sessiz",
+    S.AutoDndSub to "Ezandan kamete kadar sessiz (DND izni gerekir)",
+    S.OptTimesTitle to "Ek vakitler",
+    S.OptTimesSub to "Ek satırlar: İmsak, Kuşluk, Gece yarısı ve Kıyam",
+    S.Imsak to "İmsak",
+    S.Duha to "Kuşluk",
+    S.Midnight to "Gece yarısı",
+    S.Qiyam to "Kıyam",
+    S.HijriConvTitle to "Tarih çevirici",
+    S.HijriConvSub to "Hicri ve Miladi tarihler arasında çevir",
+    S.GregToHijri to "Miladi > Hicri",
+    S.HijriToGreg to "Hicri > Miladi",
+    S.DayLabel to "Gün",
+    S.MonthLabel to "Ay",
+    S.YearLabel to "Yıl",
+    S.AlertTiming to "Uyarı zamanı",
+    S.AtAdhanTime to "Ezan vaktinde",
+    S.AtAdhanRow to "Ezan vaktinde",
+    S.AtAdhanRowSub to "Namaz vakti geldiğinde temel bildirim",
+    S.BeforeAdhanRow to "Erken hatırlatma",
+    S.BeforeAdhanHelper to "Ek bir hatırlatma - ezan bildirimi yine de gelir",
+    S.MinBeforeFmt to "Ezandan %1\$d dk önce",
+    S.AdhanReminder to "Ezan hatırlatıcı",
+    S.IqamaReminder to "Kamet hatırlatıcı",
+    S.IqamaReminderSub to "Kamet vaktinde çal",
+    S.PrayerNowFmt to "%1\$s vakti geldi",
+    S.PrayerApproachingFmt to "%1\$s %2\$d dk sonra",
+    S.IqamaNowFmt to "%1\$s kameti şimdi",
+    S.SharedAlertSettings to "Tüm uyarılar için ortak ayarlar",
+    S.FajrAlarmOn to "Sabah alarmını etkinleştir",
+    S.AlarmEnabledSub to "Alarm sabah vaktinde çalar",
+    S.AlarmDisabledSub to "Alarm şu an kapalı",
+    S.AlarmVolume to "Alarm ses seviyesi",
+    S.SnoozeDuration to "Erteleme süresi",
+    S.AlertMode to "Uyarı türü",
+    S.AlertModeNotif to "Bildirim",
+    S.AlertModeAlarm to "Tam alarm",
+    S.AdhanAlertType to "Ezan uyarı türü",
+    S.AlertTypeNotification to "Bildirim uyarısı",
+    S.AlertTypeFullScreen to "Tam ekran bildirim uyarısı",
+)
 
-internal val UR: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    urPart0(m)
-    urPart1(m)
-    urPart2(m)
-    urPart3(m)
-    urPart4(m)
-    m
-}
-private fun urPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "نماز"
-    m[S.AzkarTab] = "اذکار"
-    m[S.HisnTab] = "حصن المسلم"
-    m[S.FajrTab] = "فجر"
-    m[S.TasbeehTab] = "تسبیح"
-    m[S.Favorites] = "پسندیدہ"
-    m[S.Reminders] = "یاد دہانیاں"
-    m[S.Stats] = "اعداد و شمار"
-    m[S.Tags] = "زمرے"
-    m[S.Settings] = "ترتیبات"
-    m[S.About] = "ایپ کے بارے میں"
-    m[S.More] = "مزید"
-    m[S.Menu] = "مینو"
-    m[S.AddDhikr] = "ذکر شامل کریں"
-    m[S.SearchAzkar] = "ذکر یا زمرہ تلاش کریں"
-    m[S.All] = "تمام"
-    m[S.NoAzkar] = "کوئی اذکار نہیں"
-    m[S.NoAzkarUnderTag] = "زمرہ \"%1\$s\" میں کوئی اذکار نہیں"
-    m[S.NoResultsQuery] = "\"%1\$s\" سے کوئی نتیجہ نہیں ملا"
-    m[S.Options] = "اختیارات"
-    m[S.EditDhikrTags] = "ذکر اور زمرے میں ترمیم کریں"
-    m[S.ReminderTimes] = "یاد دہانی کے اوقات"
-    m[S.Delete] = "حذف کریں"
-    m[S.NoActiveReminders] = "کوئی یاد دہانی فعال نہیں"
-    m[S.Today] = "آج"
-    m[S.ThisWeek] = "اس ہفتے"
-    m[S.DayStreak] = "مسلسل دن"
-    m[S.CurrentReminder] = "موجودہ یاد دہانی"
-    m[S.NextReminder] = "اگلی یاد دہانی"
-    m[S.NoActiveAzkar] = "کوئی اذکار فعال نہیں۔ فہرست سے فعال کریں۔"
-    m[S.Shortcuts] = "شارٹ کٹ"
-    m[S.TasbeehCounter] = "تسبیح کاؤنٹر"
-    m[S.HisnSubtitle] = "قرآن و سنت سے اذکار و دعائیں"
-    m[S.FavSubtitle] = "آپ کے پسندیدہ اذکار"
-    m[S.ReadDone] = "پڑھ لیا"
-    m[S.TotalSuffix] = " کل"
-    m[S.NoReadsYet] = "ابھی کوئی قراءت نہیں"
-    m[S.DhikrIdFmt] = "ذکر #%1\$d"
-    m[S.Periods] = "مدتیں"
-    m[S.Week] = "ہفتہ"
-    m[S.Month] = "مہینہ"
-    m[S.KeepGoing] = "روزانہ کے اذکار جاری رکھیں"
-    m[S.TotalReads] = "کل قراءتیں"
-    m[S.SinceStart] = "استعمال کے آغاز سے"
-    m[S.RecentReads] = "حالیہ قراءتیں"
-    m[S.RemindersSubtitle] = "یاد دہانی کے تمام اوقات"
-    m[S.StatsSubtitle] = "ریکارڈ اور مسلسل دن"
-    m[S.TagsSubtitle] = "اذکار کو رنگوں سے ترتیب دیں"
-    m[S.FajrAlarm] = "فجر کا الارم"
-    m[S.ByLocation] = "آپ کے مقام کے مطابق"
-    m[S.SettingsSubtitle] = "کمپن، فونٹ اور آواز"
-    m[S.AboutSubtitle] = "ورژن اور ڈویلپر"
-    m[S.DeleteTag] = "زمرہ حذف کریں"
-    m[S.DeleteTagMsg] = "زمرہ \"%1\$s\" تمام اذکار سے ہٹا دیا جائے گا۔ اذکار حذف نہیں ہوں گے۔"
-    m[S.AddTag] = "زمرہ شامل کریں"
-    m[S.NoTags] = "فی الحال کوئی زمرہ نہیں"
-    m[S.Edit] = "ترمیم"
-    m[S.NewTag] = "نیا زمرہ"
-    m[S.EditTag] = "زمرہ میں ترمیم"
-    m[S.TagName] = "زمرے کا نام"
-}
-private fun urPart1(m: HashMap<S, String>) {
-    m[S.Color] = "رنگ"
-    m[S.TasbeehaFmt] = "%1\$d تسبیح"
-    m[S.TapToCount] = "گنتی کے لیے دبائیں"
-    m[S.ResetCounter] = "کاؤنٹر صفر کریں"
-    m[S.ActiveOfTotalFmt] = "%2\$d میں سے %1\$d فعال"
-    m[S.NoReminders] = "کوئی یاد دہانی نہیں"
-    m[S.NoFavorites] = "کوئی پسندیدہ اذکار نہیں"
-    m[S.Light] = "روشن"
-    m[S.Dark] = "گہرا"
-    m[S.SystemAuto] = "خودکار (سسٹم)"
-    m[S.LockWidgets] = "لاک اسکرین ویجٹس"
-    m[S.LockWidgetsToast] = "ویجٹ شامل کرنے کے لیے لاک اسکرین کو دیر تک دبائیں"
-    m[S.OpenEditor] = "ایڈیٹر کھولیں"
-    m[S.Close] = "بند کریں"
-    m[S.LockWidgetsDesc] = "وَذکِّر کے تمام ویجٹس لاک اسکرین پر گھڑی کے نیچے مختص جگہ میں دستیاب ہیں (One UI 8 یا جدید)۔"
-    m[S.LockWidgetsSteps] = "۱۔ لاک اسکرین پر خالی جگہ کو دیر تک دبائیں اور شناخت کی تصدیق کریں۔\n۲۔ «ویجٹ شامل کریں» دبائیں اور «وَذکِّر» منتخب کریں۔\n۳۔ ویجٹ کو گھڑی کے نیچے کی جگہ میں گھسیٹیں۔"
-    m[S.LockWidgetsHint] = "لاک اسکرین سے ویجٹ دبانے پر ایپ براہ راست کھلتی ہے۔"
-    m[S.ChangeLocation] = "مقام تبدیل کریں"
-    m[S.LocationSubtitle] = "شہر، حساب کا طریقہ اور فجر الارم کی ترتیبات"
-    m[S.FajrAlarmSubtitle] = "الارم اور آواز فعال کریں"
-    m[S.LockScreenSection] = "لاک اسکرین"
-    m[S.LockWidgetsRowSub] = "لاک اسکرین کی گھڑی کے نیچے وَذکِّر ویجٹ شامل کریں"
-    m[S.Notifications] = "اطلاعات"
-    m[S.NotifSound] = "اطلاع کی آواز"
-    m[S.Default] = "پہلے سے طے شدہ"
-    m[S.Vibration] = "کمپن"
-    m[S.Appearance] = "ظاہری شکل"
-    m[S.AppFont] = "ایپ کا فونٹ"
-    m[S.Language] = "زبان"
-    m[S.NewDhikr] = "نیا ذکر"
-    m[S.EditDhikr] = "ذکر میں ترمیم"
-    m[S.TitleLabel] = "عنوان"
-    m[S.DhikrText] = "ذکر یا دعا کا متن"
-    m[S.Cancel] = "منسوخ"
-    m[S.Add] = "شامل کریں"
-    m[S.AddReminderTime] = "یاد دہانی کا وقت شامل کریں"
-    m[S.RepeatReminder] = "یاد دہانی دہرائیں"
-    m[S.ReminderTime] = "یاد دہانی کا وقت"
-    m[S.Save] = "محفوظ کریں"
-    m[S.ChaptersFmt] = "اذکار و دعاؤں کے %1\$d ابواب"
-    m[S.SearchHisn] = "حصن المسلم میں تلاش کریں"
-    m[S.NoFavChapters] = "کوئی پسندیدہ باب نہیں"
-    m[S.NoResults] = "کوئی نتائج نہیں"
-    m[S.ReadTodaySuffix] = " · آج پڑھا گیا"
-    m[S.AddToMyAzkar] = "میرے اذکار میں شامل کریں"
-    m[S.Done] = "ہو گیا"
-    m[S.Tagline] = "ایک ایپ جو دن رات اذکار کی پابندی میں آپ کی مدد کرتی ہے"
-    m[S.Version] = "ورژن"
-    m[S.Developer] = "ڈویلپر"
-    m[S.DevName] = "محمد النجار"
-    m[S.HisnCredit] = "مواد HisnElmoslem پراجیکٹ سے (GPL v3 لائسنس)"
-    m[S.InstinctCredit] = "Instinct کے تعاون سے تیار"
-    m[S.Dua] = "ہمیں اپنی دعاؤں میں یاد رکھیں"
-    m[S.Font] = "فونٹ"
-    m[S.FontLight] = "ایپ فونٹ ہلکا"
-    m[S.FontBold] = "ایپ فونٹ موٹا"
-    m[S.FontSystem] = "سسٹم فونٹ"
-    m[S.FontCairo] = "قاہرہ"
-    m[S.FontNaskh] = "نسخ"
-    m[S.FontAmiri] = "امیری"
-}
-private fun urPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "رقعہ (تقریبات)"
-    m[S.PrayerFajr] = "فجر"
-    m[S.PrayerShuruq] = "طلوع آفتاب"
-    m[S.PrayerDhuhr] = "ظہر"
-    m[S.PrayerJumuah] = "جمعہ"
-    m[S.PrayerAsr] = "عصر"
-    m[S.PrayerMaghrib] = "مغرب"
-    m[S.PrayerIsha] = "عشاء"
-    m[S.PrayerTimes] = "اوقات نماز"
-    m[S.NextPrayer] = "اگلی نماز"
-    m[S.AmMarker] = "ص"
-    m[S.PmMarker] = "م"
-    m[S.PickCountryCity] = "ملک اور شہر منتخب کریں"
-    m[S.SearchCityHint] = "شہر یا ملک تلاش کریں..."
-    m[S.NoSearchResults] = "کوئی نتیجہ نہیں ملا"
-    m[S.FajrPrayer] = "نمازِ فجر"
-    m[S.FajrNow] = "اب فجر کی نماز کا وقت ہو گیا ہے"
-    m[S.Snooze] = "غفوہ"
-    m[S.StopAlarm] = "الارم بند کریں"
-    m[S.ChooseSnooze] = "غفوے کی مدت منتخب کریں:"
-    m[S.MinutesShortFmt] = "%1\$d (منٹ)"
-    m[S.ColorWhite] = "سفید"
-    m[S.Auto] = "خودکار"
-    m[S.ColorBlack] = "سیاہ"
-    m[S.ColorGray] = "سرمئی"
-    m[S.ColorBlue] = "نیلا"
-    m[S.ColorGreen] = "سبز"
-    m[S.ColorPurple] = "جامنی"
-    m[S.ColorAmber] = "کہربائی"
-    m[S.ColorBlueDark] = "گہرا نیلا"
-    m[S.ColorGreenDark] = "گہرا سبز"
-    m[S.WidgetSettings] = "ویجٹ ترتیبات"
-    m[S.ColorYellow] = "پیلا"
-    m[S.ColorTurquoise] = "فیروزی"
-    m[S.WidgetAccent] = "ویجٹ کا رنگ"
-    m[S.BarColor] = "پروگریس بار کا رنگ"
-    m[S.BgColor] = "پس منظر کا رنگ"
-    m[S.PickRingtone] = "الارم کی آواز منتخب کریں"
-    m[S.LocationMethod] = "مقام کا طریقہ"
-    m[S.CurrentLocation] = "موجودہ مقام"
-    m[S.AutoUpdateFajr] = "آپ کے مقام کے مطابق نماز کے اوقات خودکار طور پر اپڈیٹ کرتا ہے"
-    m[S.PickCitySub] = "مقام کی اجازت کے بغیر شہر دستی طور پر منتخب کریں"
-    m[S.CurrentCity] = "موجودہ شہر"
-    m[S.EditCityName] = "شہر کا نام میں ترمیم کریں"
-    m[S.ResetCityNameAuto] = "خودکار نام بحال کریں"
-    m[S.CustomLocationNameHint] = "اپنے مقام کے لیے حسبِ منشا نام درج کریں جو طے شدہ کے بجائے دکھایا جائے :"
-    m[S.ChangeCity] = "شہر تبدیل کریں"
-    m[S.NoLocPermission] = "مقام کی اجازت نہیں دی گئی۔ اجازت دینے کے لیے جاری رکھیں۔"
-    m[S.GpsOff] = "فون میں لوکیشن سروس (GPS) بند ہے۔"
-    m[S.CalcMethod] = "حساب کا طریقہ"
-    m[S.SelectedCalcMethod] = "منتخب حساب کا طریقہ"
-    m[S.Change] = "تبدیل"
-    m[S.UpdatingTime] = "وقت اپڈیٹ ہو رہا ہے..."
-    m[S.UpdateFajrNow] = "فجر کا وقت ابھی اپڈیٹ کریں"
-    m[S.AlarmToneSection] = "الارم کی آواز"
-    m[S.SelectedTone] = "منتخب آواز"
-    m[S.SystemTones] = "سسٹم کی آوازیں"
-    m[S.AudioFile] = "آڈیو فائل"
-    m[S.ExtraSettings] = "اضافی ترتیبات"
-    m[S.VibrateDuringAlarm] = "الارم کے دوران کمپن"
-}
-private fun urPart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "اگلی نمازِ فجر کا وقت"
-    m[S.AlarmOnDesc] = "الارم فعال"
-    m[S.AlarmOffDesc] = "الارم غیر فعال"
-    m[S.PickCalcMethod] = "حساب کا طریقہ منتخب کریں"
-    m[S.NotifReminder] = "یاد دہانی"
-    m[S.NotifReadDone] = "پڑھ لیا"
-    m[S.NotifRemindLater] = "10 منٹ بعد یاد دلائیں"
-    m[S.NotifOpenApp] = "ایپ کھولیں"
-    m[S.NotifChannelAzkar] = "اذکار کی یاد دہانی کی اطلاعات"
-    m[S.NotifChannelFajr] = "نمازِ فجر کی اطلاعات"
-    m[S.TodayAt] = "آج"
-    m[S.TomorrowAt] = "کل"
-    m[S.DefaultAlarmTone] = "الارم کی ڈیفالٹ آواز"
-    m[S.LocCalcTitle] = "مقام اور حساب"
-    m[S.LocCalcSubtitle] = "شہر، طریقہ اور ترامیم"
-    m[S.QiblaTitle] = "قبلہ"
-    m[S.QiblaNorthFmt] = "قبلہ شمال سے %1\$d°"
-    m[S.QiblaSetLocation] = "پہلے اپنا مقام متعین کریں"
-    m[S.QiblaNoSensor] = "اس آلہ میں کمپاس سینسر نہیں ہے"
-    m[S.QiblaCalibrate] = "کیلیبریٹ کرنے کے لیے فون کو 8 کی شکل میں حرکت دیں"
-    m[S.QiblaAligned] = "آپ قبلہ کی طرف ہیں"
-    m[S.QiblaCityFmt] = "مقام: %1\$s"
-    m[S.DirN] = "شمال"
-    m[S.DirNE] = "شمال مشرق"
-    m[S.DirE] = "مشرق"
-    m[S.DirSE] = "جنوب مشرق"
-    m[S.DirS] = "جنوب"
-    m[S.DirSW] = "جنوب مغرب"
-    m[S.DirW] = "مغرب"
-    m[S.DirNW] = "شمال مغرب"
-    m[S.CalendarTab] = "کیلنڈر"
-    m[S.CalEvents] = "تقریبات"
-    m[S.CalNoEvents] = "اس دن کوئی تقریب نہیں"
-    m[S.CalMonthEvents] = "مہینے کی تقریبات"
-    m[S.CalReminderOn] = "یاد دہانی فعال"
-    m[S.CalReminderOff] = "یاد دہانی فعال کریں"
-    m[S.WdSun] = "اتوار"
-    m[S.WdMon] = "پیر"
-    m[S.WdTue] = "منگل"
-    m[S.WdWed] = "بدھ"
-    m[S.WdThu] = "جمعرات"
-    m[S.WdFri] = "جمعہ"
-    m[S.WdSat] = "ہفتہ"
-    m[S.AutoDnd] = "نماز کے دوران خودکار خاموشی"
-    m[S.AutoDndSub] = "اذان سے اقامت تک خاموش (DND اجازت درکار)"
-    m[S.OptTimesTitle] = "اضافی اوقات"
-    m[S.OptTimesSub] = "اضافی قطاریں: امساک، ضحی، آدھی رات اور قیام"
-    m[S.Imsak] = "امساک"
-    m[S.Duha] = "ضحی"
-    m[S.Midnight] = "آدھی رات"
-    m[S.Qiyam] = "قیام اللیل"
-    m[S.HijriConvTitle] = "تاریخ کنورٹر"
-    m[S.HijriConvSub] = "ہجری اور عیسوی تاریخ کے درمیان تبدیلی"
-    m[S.GregToHijri] = "عیسوی سے ہجری"
-    m[S.HijriToGreg] = "ہجری سے عیسوی"
-    m[S.DayLabel] = "دن"
-    m[S.MonthLabel] = "مہینہ"
-    m[S.YearLabel] = "سال"
-    m[S.LocSection] = "مقام"
-    m[S.CalcSection] = "حساب"
-}
-private fun urPart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "عصر کا حساب"
-    m[S.AsrShafii] = "شافعی، مالکی، حنبلی"
-    m[S.AsrHanafi] = "حنفی"
-    m[S.HighLatRule] = "بلند عرض البلد کا اصول"
-    m[S.HighLatNone] = "کوئی نہیں"
-    m[S.HighLatMiddle] = "آدھی رات"
-    m[S.HighLatSeventh] = "رات کا ساتواں حصہ"
-    m[S.HighLatAngle] = "زاویے کی بنیاد پر"
-    m[S.AdjSection] = "اوقات کی ترامیم"
-    m[S.AdjNote] = "ہر حساب شدہ وقت میں شامل یا کم کیے گئے منٹ۔ اوقات، ویجٹس اور الرٹس پر فوری لاگو ہوتے ہیں۔"
-    m[S.AdjHijri] = "ہجری تاریخ کی ترمیم"
-    m[S.AdjMinShort] = "منٹ"
-    m[S.AdjDayShort] = "دن"
-    m[S.AlertTiming] = "الرٹ کا وقت"
-    m[S.AtAdhanTime] = "اذان کے وقت"
-    m[S.AtAdhanRow] = "اذان کے وقت"
-    m[S.AtAdhanRowSub] = "نماز کے وقت کی بنیادی اطلاع"
-    m[S.BeforeAdhanRow] = "ابتدائی یاد دہانی"
-    m[S.BeforeAdhanHelper] = "اضافی یاد دہانی - اذان کی اطلاع بھی آتی رہے گی"
-    m[S.MinBeforeFmt] = "اذان سے %1\$d منٹ پہلے"
-    m[S.AdhanReminder] = "اذان کی یاد دہانی"
-    m[S.IqamaReminder] = "اقامت کی یاد دہانی"
-    m[S.IqamaReminderSub] = "اقامت کے وقت اطلاع"
-    m[S.PrayerNowFmt] = "اب %1\$s کا وقت ہے"
-    m[S.PrayerApproachingFmt] = "%1\$s میں %2\$d منٹ"
-    m[S.IqamaNowFmt] = "%1\$s کی اقامت ابھی"
-    m[S.SharedAlertSettings] = "تمام الرٹس کی مشترکہ ترتیبات"
-}
+internal val UR = mapOf(
+    S.PrayerTab to "نماز",
+    S.AzkarTab to "اذکار",
+    S.HisnTab to "حصن المسلم",
+    S.FajrTab to "فجر",
+    S.TasbeehTab to "تسبیح",
+    S.Favorites to "پسندیدہ",
+    S.Reminders to "یاد دہانیاں",
+    S.Stats to "اعداد و شمار",
+    S.Tags to "زمرے",
+    S.Settings to "ترتیبات",
+    S.About to "ایپ کے بارے میں",
+    S.More to "مزید",
+    S.Menu to "مینو",
+    S.AddDhikr to "ذکر شامل کریں",
+    S.SearchAzkar to "ذکر یا زمرہ تلاش کریں",
+    S.All to "تمام",
+    S.NoAzkar to "کوئی اذکار نہیں",
+    S.NoAzkarUnderTag to "زمرہ \"%1\$s\" میں کوئی اذکار نہیں",
+    S.NoResultsQuery to "\"%1\$s\" سے کوئی نتیجہ نہیں ملا",
+    S.Options to "اختیارات",
+    S.EditDhikrTags to "ذکر اور زمرے میں ترمیم کریں",
+    S.ReminderTimes to "یاد دہانی کے اوقات",
+    S.Delete to "حذف کریں",
+    S.NoActiveReminders to "کوئی یاد دہانی فعال نہیں",
+    S.Today to "آج",
+    S.ThisWeek to "اس ہفتے",
+    S.DayStreak to "مسلسل دن",
+    S.CurrentReminder to "موجودہ یاد دہانی",
+    S.NextReminder to "اگلی یاد دہانی",
+    S.NoActiveAzkar to "کوئی اذکار فعال نہیں۔ فہرست سے فعال کریں۔",
+    S.Shortcuts to "شارٹ کٹ",
+    S.TasbeehCounter to "تسبیح کاؤنٹر",
+    S.HisnSubtitle to "قرآن و سنت سے اذکار و دعائیں",
+    S.FavSubtitle to "آپ کے پسندیدہ اذکار",
+    S.ReadDone to "پڑھ لیا",
+    S.TotalSuffix to " کل",
+    S.NoReadsYet to "ابھی کوئی قراءت نہیں",
+    S.DhikrIdFmt to "ذکر #%1\$d",
+    S.Periods to "مدتیں",
+    S.Week to "ہفتہ",
+    S.Month to "مہینہ",
+    S.KeepGoing to "روزانہ کے اذکار جاری رکھیں",
+    S.TotalReads to "کل قراءتیں",
+    S.SinceStart to "استعمال کے آغاز سے",
+    S.RecentReads to "حالیہ قراءتیں",
+    S.RemindersSubtitle to "یاد دہانی کے تمام اوقات",
+    S.StatsSubtitle to "ریکارڈ اور مسلسل دن",
+    S.TagsSubtitle to "اذکار کو رنگوں سے ترتیب دیں",
+    S.FajrAlarm to "فجر کا الارم",
+    S.ByLocation to "آپ کے مقام کے مطابق",
+    S.SettingsSubtitle to "کمپن، فونٹ اور آواز",
+    S.AboutSubtitle to "ورژن اور ڈویلپر",
+    S.DeleteTag to "زمرہ حذف کریں",
+    S.DeleteTagMsg to "زمرہ \"%1\$s\" تمام اذکار سے ہٹا دیا جائے گا۔ اذکار حذف نہیں ہوں گے۔",
+    S.AddTag to "زمرہ شامل کریں",
+    S.NoTags to "فی الحال کوئی زمرہ نہیں",
+    S.Edit to "ترمیم",
+    S.NewTag to "نیا زمرہ",
+    S.EditTag to "زمرہ میں ترمیم",
+    S.TagName to "زمرے کا نام",
+    S.Color to "رنگ",
+    S.TasbeehaFmt to "%1\$d تسبیح",
+    S.TapToCount to "گنتی کے لیے دبائیں",
+    S.ResetCounter to "کاؤنٹر صفر کریں",
+    S.ActiveOfTotalFmt to "%2\$d میں سے %1\$d فعال",
+    S.NoReminders to "کوئی یاد دہانی نہیں",
+    S.NoFavorites to "کوئی پسندیدہ اذکار نہیں",
+    S.Light to "روشن",
+    S.Dark to "گہرا",
+    S.SystemAuto to "خودکار (سسٹم)",
+    S.LockWidgets to "لاک اسکرین ویجٹس",
+    S.LockWidgetsToast to "ویجٹ شامل کرنے کے لیے لاک اسکرین کو دیر تک دبائیں",
+    S.OpenEditor to "ایڈیٹر کھولیں",
+    S.Close to "بند کریں",
+    S.LockWidgetsDesc to "وَذکِّر کے تمام ویجٹس لاک اسکرین پر گھڑی کے نیچے مختص جگہ میں دستیاب ہیں (One UI 8 یا جدید)۔",
+    S.LockWidgetsSteps to "۱۔ لاک اسکرین پر خالی جگہ کو دیر تک دبائیں اور شناخت کی تصدیق کریں۔\n۲۔ «ویجٹ شامل کریں» دبائیں اور «وَذکِّر» منتخب کریں۔\n۳۔ ویجٹ کو گھڑی کے نیچے کی جگہ میں گھسیٹیں۔",
+    S.LockWidgetsHint to "لاک اسکرین سے ویجٹ دبانے پر ایپ براہ راست کھلتی ہے۔",
+    S.ChangeLocation to "مقام تبدیل کریں",
+    S.LocationSubtitle to "شہر، حساب کا طریقہ اور فجر الارم کی ترتیبات",
+    S.FajrAlarmSubtitle to "الارم اور آواز فعال کریں",
+    S.LockScreenSection to "لاک اسکرین",
+    S.LockWidgetsRowSub to "لاک اسکرین کی گھڑی کے نیچے وَذکِّر ویجٹ شامل کریں",
+    S.Notifications to "اطلاعات",
+    S.NotifSound to "اطلاع کی آواز",
+    S.Default to "پہلے سے طے شدہ",
+    S.Vibration to "کمپن",
+    S.Appearance to "ظاہری شکل",
+    S.AppFont to "ایپ کا فونٹ",
+    S.Language to "زبان",
+    S.NewDhikr to "نیا ذکر",
+    S.EditDhikr to "ذکر میں ترمیم",
+    S.TitleLabel to "عنوان",
+    S.DhikrText to "ذکر یا دعا کا متن",
+    S.Cancel to "منسوخ",
+    S.Add to "شامل کریں",
+    S.AddReminderTime to "یاد دہانی کا وقت شامل کریں",
+    S.RepeatReminder to "یاد دہانی دہرائیں",
+    S.ReminderTime to "یاد دہانی کا وقت",
+    S.Save to "محفوظ کریں",
+    S.ChaptersFmt to "اذکار و دعاؤں کے %1\$d ابواب",
+    S.SearchHisn to "حصن المسلم میں تلاش کریں",
+    S.NoFavChapters to "کوئی پسندیدہ باب نہیں",
+    S.NoResults to "کوئی نتائج نہیں",
+    S.ReadTodaySuffix to " · آج پڑھا گیا",
+    S.AddToMyAzkar to "میرے اذکار میں شامل کریں",
+    S.Done to "ہو گیا",
+    S.Tagline to "ایک ایپ جو دن رات اذکار کی پابندی میں آپ کی مدد کرتی ہے",
+    S.Version to "ورژن",
+    S.Developer to "ڈویلپر",
+    S.DevName to "محمد النجار",
+    S.HisnCredit to "مواد HisnElmoslem پراجیکٹ سے (GPL v3 لائسنس)",
+    S.InstinctCredit to "Instinct کے تعاون سے تیار",
+    S.Dua to "ہمیں اپنی دعاؤں میں یاد رکھیں",
+    S.Font to "فونٹ",
+    S.FontLight to "ایپ فونٹ ہلکا",
+    S.FontBold to "ایپ فونٹ موٹا",
+    S.FontSystem to "سسٹم فونٹ",
+    S.FontCairo to "قاہرہ",
+    S.FontNaskh to "نسخ",
+    S.FontAmiri to "امیری",
+    S.FontRuqaa to "رقعہ (تقریبات)",
+    S.LocCalcTitle to "مقام اور حساب",
+    S.LocCalcSubtitle to "شہر، طریقہ اور ترامیم",
+    S.LocSection to "مقام",
+    S.CalcSection to "حساب",
+    S.AsrJuristic to "عصر کا حساب",
+    S.AsrShafii to "شافعی، مالکی، حنبلی",
+    S.AsrHanafi to "حنفی",
+    S.HighLatRule to "بلند عرض البلد کا اصول",
+    S.HighLatNone to "کوئی نہیں",
+    S.HighLatMiddle to "آدھی رات",
+    S.HighLatSeventh to "رات کا ساتواں حصہ",
+    S.HighLatAngle to "زاویے کی بنیاد پر",
+    S.AdjSection to "اوقات کی ترامیم",
+    S.AdjNote to "ہر حساب شدہ وقت میں شامل یا کم کیے گئے منٹ۔ اوقات، ویجٹس اور الرٹس پر فوری لاگو ہوتے ہیں۔",
+    S.AdjHijri to "ہجری تاریخ کی ترمیم",
+    S.AdjMinShort to "منٹ",
+    S.AdjDayShort to "دن",
+    S.PrayerFajr to "فجر",
+    S.PrayerShuruq to "طلوع آفتاب",
+    S.PrayerDhuhr to "ظہر",
+    S.PrayerJumuah to "جمعہ",
+    S.PrayerAsr to "عصر",
+    S.PrayerMaghrib to "مغرب",
+    S.PrayerIsha to "عشاء",
+    S.PrayerTimes to "اوقات نماز",
+    S.NextPrayer to "اگلی نماز",
+    S.AmMarker to "ص",
+    S.PmMarker to "م",
+    S.PickCountryCity to "ملک اور شہر منتخب کریں",
+    S.SearchCityHint to "شہر یا ملک تلاش کریں...",
+    S.NoSearchResults to "کوئی نتیجہ نہیں ملا",
+    S.FajrPrayer to "نمازِ فجر",
+    S.FajrNow to "اب فجر کی نماز کا وقت ہو گیا ہے",
+    S.Snooze to "غفوہ",
+    S.StopAlarm to "الارم بند کریں",
+    S.ChooseSnooze to "غفوے کی مدت منتخب کریں:",
+    S.MinutesShortFmt to "%1\\\$d (منٹ)",
+    S.ColorWhite to "سفید",
+    S.Auto to "خودکار",
+    S.ColorBlack to "سیاہ",
+    S.ColorGray to "سرمئی",
+    S.ColorBlue to "نیلا",
+    S.ColorGreen to "سبز",
+    S.ColorPurple to "جامنی",
+    S.ColorAmber to "کہربائی",
+    S.ColorBlueDark to "گہرا نیلا",
+    S.ColorGreenDark to "گہرا سبز",
+    S.WidgetSettings to "ویجٹ ترتیبات",
+    S.ColorYellow to "پیلا",
+    S.ColorTurquoise to "فیروزی",
+    S.WidgetAccent to "ویجٹ کا رنگ",
+    S.BarColor to "پروگریس بار کا رنگ",
+    S.BgColor to "پس منظر کا رنگ",
+    S.PickRingtone to "الارم کی آواز منتخب کریں",
+    S.LocationMethod to "مقام کا طریقہ",
+    S.CurrentLocation to "موجودہ مقام",
+    S.AutoUpdateFajr to "آپ کے مقام کے مطابق فجر کا وقت خودکار اپڈیٹ",
+    S.PickCitySub to "مقام کی اجازت کے بغیر شہر دستی طور پر منتخب کریں",
+    S.CurrentCity to "موجودہ شہر",
+    S.EditCityName to "شہر کا نام میں ترمیم کریں",
+    S.ResetCityNameAuto to "خودکار نام بحال کریں",
+    S.CustomLocationNameHint to "اپنے مقام کے لیے حسبِ منشا نام درج کریں جو طے شدہ کے بجائے دکھایا جائے :",
+    S.ChangeCity to "شہر تبدیل کریں",
+    S.NoLocPermission to "مقام کی اجازت نہیں دی گئی۔ اجازت دینے کے لیے جاری رکھیں۔",
+    S.GpsOff to "فون میں لوکیشن سروس (GPS) بند ہے۔",
+    S.CalcMethod to "حساب کا طریقہ",
+    S.SelectedCalcMethod to "منتخب حساب کا طریقہ",
+    S.Change to "تبدیل",
+    S.UpdatingTime to "وقت اپڈیٹ ہو رہا ہے...",
+    S.UpdateFajrNow to "فجر کا وقت ابھی اپڈیٹ کریں",
+    S.AlarmToneSection to "الارم کی آواز",
+    S.SelectedTone to "منتخب آواز",
+    S.SystemTones to "سسٹم کی آوازیں",
+    S.AudioFile to "آڈیو فائل",
+    S.ExtraSettings to "اضافی ترتیبات",
+    S.VibrateDuringAlarm to "الارم کے دوران کمپن",
+    S.NextFajrAt to "اگلی نمازِ فجر کا وقت",
+    S.AlarmOnDesc to "الارم فعال",
+    S.AlarmOffDesc to "الارم غیر فعال",
+    S.PickCalcMethod to "حساب کا طریقہ منتخب کریں",
+    S.NotifReminder to "یاد دہانی",
+    S.NotifReadDone to "پڑھ لیا",
+    S.NotifRemindLater to "10 منٹ بعد یاد دلائیں",
+    S.NotifOpenApp to "ایپ کھولیں",
+    S.NotifChannelAzkar to "اذکار کی یاد دہانی کی اطلاعات",
+    S.NotifChannelFajr to "نمازِ فجر کی اطلاعات",
+    S.TodayAt to "آج",
+    S.TomorrowAt to "کل",
+    S.DefaultAlarmTone to "الارم کی ڈیفالٹ آواز",
+    S.QiblaTitle to "قبلہ",
+    S.QiblaNorthFmt to "قبلہ شمال سے %1\$d°",
+    S.QiblaSetLocation to "پہلے اپنا مقام متعین کریں",
+    S.QiblaNoSensor to "اس آلہ میں کمپاس سینسر نہیں ہے",
+    S.QiblaCalibrate to "کیلیبریٹ کرنے کے لیے فون کو 8 کی شکل میں حرکت دیں",
+    S.QiblaAligned to "آپ قبلہ کی طرف ہیں",
+    S.QiblaCityFmt to "مقام: %1\$s",
+    S.DirN to "شمال",
+    S.DirNE to "شمال مشرق",
+    S.DirE to "مشرق",
+    S.DirSE to "جنوب مشرق",
+    S.DirS to "جنوب",
+    S.DirSW to "جنوب مغرب",
+    S.DirW to "مغرب",
+    S.DirNW to "شمال مغرب",
+    S.CalendarTab to "کیلنڈر",
+    S.CalEvents to "تقریبات",
+    S.CalNoEvents to "اس دن کوئی تقریب نہیں",
+    S.CalMonthEvents to "مہینے کی تقریبات",
+    S.CalReminderOn to "یاد دہانی فعال",
+    S.CalReminderOff to "یاد دہانی فعال کریں",
+    S.WdSun to "اتوار",
+    S.WdMon to "پیر",
+    S.WdTue to "منگل",
+    S.WdWed to "بدھ",
+    S.WdThu to "جمعرات",
+    S.WdFri to "جمعہ",
+    S.WdSat to "ہفتہ",
+    S.AutoDnd to "نماز کے دوران خودکار خاموشی",
+    S.AutoDndSub to "اذان سے اقامت تک خاموش (DND اجازت درکار)",
+    S.OptTimesTitle to "اضافی اوقات",
+    S.OptTimesSub to "اضافی قطاریں: امساک، ضحی، آدھی رات اور قیام",
+    S.Imsak to "امساک",
+    S.Duha to "ضحی",
+    S.Midnight to "آدھی رات",
+    S.Qiyam to "قیام اللیل",
+    S.HijriConvTitle to "تاریخ کنورٹر",
+    S.HijriConvSub to "ہجری اور عیسوی تاریخ کے درمیان تبدیلی",
+    S.GregToHijri to "عیسوی سے ہجری",
+    S.HijriToGreg to "ہجری سے عیسوی",
+    S.DayLabel to "دن",
+    S.MonthLabel to "مہینہ",
+    S.YearLabel to "سال",
+    S.AlertTiming to "الرٹ کا وقت",
+    S.AtAdhanTime to "اذان کے وقت",
+    S.AtAdhanRow to "اذان کے وقت",
+    S.AtAdhanRowSub to "نماز کے وقت کی بنیادی اطلاع",
+    S.BeforeAdhanRow to "ابتدائی یاد دہانی",
+    S.BeforeAdhanHelper to "اضافی یاد دہانی - اذان کی اطلاع بھی آتی رہے گی",
+    S.MinBeforeFmt to "اذان سے %1\$d منٹ پہلے",
+    S.AdhanReminder to "اذان کی یاد دہانی",
+    S.IqamaReminder to "اقامت کی یاد دہانی",
+    S.IqamaReminderSub to "اقامت کے وقت بجائیں",
+    S.PrayerNowFmt to "اب %1\$s کا وقت ہے",
+    S.PrayerApproachingFmt to "%1\$s میں %2\$d منٹ",
+    S.IqamaNowFmt to "%1\$s کی اقامت ابھی",
+    S.SharedAlertSettings to "تمام الرٹس کی مشترکہ ترتیبات",
+    S.FajrAlarmOn to "فجر کا الارم فعال کریں",
+    S.AlarmEnabledSub to "الارم فجر کے وقت آواز دیتا ہے",
+    S.AlarmDisabledSub to "الارم فی الحال بند ہے",
+    S.AlarmVolume to "الارم کی آواز کی سطح",
+    S.SnoozeDuration to "غفوے کی مدت",
+    S.AlertMode to "الرٹ کی قسم",
+    S.AlertModeNotif to "اطلاع",
+    S.AlertModeAlarm to "مکمل الارم",
+    S.AdhanAlertType to "اذان کی تنبیہ کی قسم",
+    S.AlertTypeNotification to "اطلاع کی تنبیہ",
+    S.AlertTypeFullScreen to "پوری اسکرین اطلاع کی تنبیہ",
+)
 
-internal val ID: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    idPart0(m)
-    idPart1(m)
-    idPart2(m)
-    idPart3(m)
-    idPart4(m)
-    m
-}
-private fun idPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Salat"
-    m[S.AzkarTab] = "Dzikir"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Subuh"
-    m[S.TasbeehTab] = "Tasbih"
-    m[S.Favorites] = "Favorit"
-    m[S.Reminders] = "Pengingat"
-    m[S.Stats] = "Statistik"
-    m[S.Tags] = "Kategori"
-    m[S.Settings] = "Pengaturan"
-    m[S.About] = "Tentang"
-    m[S.More] = "Lainnya"
-    m[S.Menu] = "Menu"
-    m[S.AddDhikr] = "Tambah dzikir"
-    m[S.SearchAzkar] = "Cari dzikir atau kategori"
-    m[S.All] = "Semua"
-    m[S.NoAzkar] = "Tidak ada dzikir"
-    m[S.NoAzkarUnderTag] = "Tidak ada dzikir di \"%1\$s\""
-    m[S.NoResultsQuery] = "Tidak ada hasil untuk \"%1\$s\""
-    m[S.Options] = "Opsi"
-    m[S.EditDhikrTags] = "Edit dzikir dan kategori"
-    m[S.ReminderTimes] = "Waktu pengingat"
-    m[S.Delete] = "Hapus"
-    m[S.NoActiveReminders] = "Tidak ada pengingat aktif"
-    m[S.Today] = "Hari ini"
-    m[S.ThisWeek] = "Minggu ini"
-    m[S.DayStreak] = "Hari beruntun"
-    m[S.CurrentReminder] = "Pengingat saat ini"
-    m[S.NextReminder] = "Pengingat berikutnya"
-    m[S.NoActiveAzkar] = "Tidak ada dzikir aktif. Aktifkan dari daftar dzikir."
-    m[S.Shortcuts] = "Pintasan"
-    m[S.TasbeehCounter] = "Penghitung tasbih"
-    m[S.HisnSubtitle] = "Dzikir dan doa dari Al-Qur'an dan Sunnah"
-    m[S.FavSubtitle] = "Dzikir yang Anda sukai"
-    m[S.ReadDone] = "Sudah dibaca"
-    m[S.TotalSuffix] = " total"
-    m[S.NoReadsYet] = "Belum ada bacaan"
-    m[S.DhikrIdFmt] = "Dzikir #%1\$d"
-    m[S.Periods] = "Periode"
-    m[S.Week] = "Minggu"
-    m[S.Month] = "Bulan"
-    m[S.KeepGoing] = "Pertahankan dzikir harian Anda"
-    m[S.TotalReads] = "Total bacaan"
-    m[S.SinceStart] = "Sejak mulai digunakan"
-    m[S.RecentReads] = "Bacaan terakhir"
-    m[S.RemindersSubtitle] = "Semua waktu pengingat"
-    m[S.StatsSubtitle] = "Riwayat dan rentetan"
-    m[S.TagsSubtitle] = "Atur dzikir dengan warna"
-    m[S.FajrAlarm] = "Alarm Subuh"
-    m[S.ByLocation] = "Berdasarkan lokasi Anda"
-    m[S.SettingsSubtitle] = "Getar, font, dan nada"
-    m[S.AboutSubtitle] = "Versi dan pengembang"
-    m[S.DeleteTag] = "Hapus kategori"
-    m[S.DeleteTagMsg] = "Kategori \"%1\$s\" akan dihapus dari semua dzikir. Dzikir tidak akan dihapus."
-    m[S.AddTag] = "Tambah kategori"
-    m[S.NoTags] = "Belum ada kategori"
-    m[S.Edit] = "Edit"
-    m[S.NewTag] = "Kategori baru"
-    m[S.EditTag] = "Edit kategori"
-    m[S.TagName] = "Nama kategori"
-}
-private fun idPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Warna"
-    m[S.TasbeehaFmt] = "%1\$d tasbih"
-    m[S.TapToCount] = "Ketuk untuk menghitung"
-    m[S.ResetCounter] = "Atur ulang penghitung"
-    m[S.ActiveOfTotalFmt] = "%1\$d dari %2\$d aktif"
-    m[S.NoReminders] = "Tidak ada pengingat"
-    m[S.NoFavorites] = "Tidak ada dzikir favorit"
-    m[S.Light] = "Terang"
-    m[S.Dark] = "Gelap"
-    m[S.SystemAuto] = "Otomatis (sistem)"
-    m[S.LockWidgets] = "Widget layar kunci"
-    m[S.LockWidgetsToast] = "Tekan lama layar kunci untuk menambah widget"
-    m[S.OpenEditor] = "Buka editor"
-    m[S.Close] = "Tutup"
-    m[S.LockWidgetsDesc] = "Semua widget Wathkkir tersedia di area khusus di bawah jam pada layar kunci (One UI 8 atau lebih baru)."
-    m[S.LockWidgetsSteps] = "1. Di layar kunci, tekan lama area kosong lalu konfirmasi identitas Anda.\n2. Ketuk \"Tambah widget\" dan pilih \"Wathkkir\".\n3. Seret widget ke area di bawah jam."
-    m[S.LockWidgetsHint] = "Mengetuk widget dari layar kunci langsung membuka aplikasi."
-    m[S.ChangeLocation] = "Ubah lokasi"
-    m[S.LocationSubtitle] = "Kota, metode perhitungan, dan pengaturan alarm Subuh"
-    m[S.FajrAlarmSubtitle] = "Aktifkan alarm dan nada"
-    m[S.LockScreenSection] = "Layar kunci"
-    m[S.LockWidgetsRowSub] = "Tambahkan widget Wathkkir di bawah jam layar kunci"
-    m[S.Notifications] = "Notifikasi"
-    m[S.NotifSound] = "Suara notifikasi"
-    m[S.Default] = "Bawaan"
-    m[S.Vibration] = "Getar"
-    m[S.Appearance] = "Tampilan"
-    m[S.AppFont] = "Font aplikasi"
-    m[S.Language] = "Bahasa"
-    m[S.NewDhikr] = "Dzikir baru"
-    m[S.EditDhikr] = "Edit dzikir"
-    m[S.TitleLabel] = "Judul"
-    m[S.DhikrText] = "Teks dzikir atau doa"
-    m[S.Cancel] = "Batal"
-    m[S.Add] = "Tambah"
-    m[S.AddReminderTime] = "Tambah waktu pengingat"
-    m[S.RepeatReminder] = "Ulangi pengingat"
-    m[S.ReminderTime] = "Waktu pengingat"
-    m[S.Save] = "Simpan"
-    m[S.ChaptersFmt] = "%1\$d bab dzikir dan doa"
-    m[S.SearchHisn] = "Cari di Hisn Al-Muslim"
-    m[S.NoFavChapters] = "Tidak ada bab favorit"
-    m[S.NoResults] = "Tidak ada hasil"
-    m[S.ReadTodaySuffix] = " · Dibaca hari ini"
-    m[S.AddToMyAzkar] = "Tambah ke dzikir saya"
-    m[S.Done] = "Selesai"
-    m[S.Tagline] = "Aplikasi yang membantu Anda menjaga dzikir siang dan malam"
-    m[S.Version] = "Versi"
-    m[S.Developer] = "Pengembang"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Konten dari proyek HisnElmoslem (lisensi GPL v3)"
-    m[S.InstinctCredit] = "Dibangun dengan kolaborasi Instinct"
-    m[S.Dua] = "Ingat kami dalam doa Anda"
-    m[S.Font] = "Font"
-    m[S.FontLight] = "Font aplikasi tipis"
-    m[S.FontBold] = "Font aplikasi tebal"
-    m[S.FontSystem] = "Font sistem"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun idPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (acara khusus)"
-    m[S.PrayerFajr] = "Subuh"
-    m[S.PrayerShuruq] = "Terbit matahari"
-    m[S.PrayerDhuhr] = "Dzuhur"
-    m[S.PrayerJumuah] = "Jumat"
-    m[S.PrayerAsr] = "Ashar"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isya"
-    m[S.PrayerTimes] = "Waktu salat"
-    m[S.NextPrayer] = "Salat berikutnya"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Pilih negara dan kota"
-    m[S.SearchCityHint] = "Cari kota atau negara..."
-    m[S.NoSearchResults] = "Tidak ada hasil"
-    m[S.FajrPrayer] = "Salat Subuh"
-    m[S.FajrNow] = "Sudah waktunya salat Subuh"
-    m[S.Snooze] = "Tunda"
-    m[S.StopAlarm] = "Hentikan alarm"
-    m[S.ChooseSnooze] = "Pilih durasi tunda:"
-    m[S.MinutesShortFmt] = "%1\$d (mnt)"
-    m[S.ColorWhite] = "Putih"
-    m[S.Auto] = "Otomatis"
-    m[S.ColorBlack] = "Hitam"
-    m[S.ColorGray] = "Abu-abu"
-    m[S.ColorBlue] = "Biru"
-    m[S.ColorGreen] = "Hijau"
-    m[S.ColorPurple] = "Ungu"
-    m[S.ColorAmber] = "Amber"
-    m[S.ColorBlueDark] = "Biru gelap"
-    m[S.ColorGreenDark] = "Hijau gelap"
-    m[S.WidgetSettings] = "Pengaturan widget"
-    m[S.ColorYellow] = "Kuning"
-    m[S.ColorTurquoise] = "Toska"
-    m[S.WidgetAccent] = "Warna widget"
-    m[S.BarColor] = "Warna bilah kemajuan"
-    m[S.BgColor] = "Warna latar"
-    m[S.PickRingtone] = "Pilih nada alarm"
-    m[S.LocationMethod] = "Metode lokasi"
-    m[S.CurrentLocation] = "Lokasi saat ini"
-    m[S.AutoUpdateFajr] = "Memperbarui waktu salat secara otomatis sesuai lokasi Anda"
-    m[S.PickCitySub] = "Pilih kota secara manual tanpa lokasi"
-    m[S.CurrentCity] = "Kota saat ini"
-    m[S.EditCityName] = "Ubah nama kota"
-    m[S.ResetCityNameAuto] = "Kembalikan nama otomatis"
-    m[S.CustomLocationNameHint] = "Masukkan nama khusus untuk lokasi Anda untuk ditampilkan sebagai pengganti bawaan :"
-    m[S.ChangeCity] = "Ubah kota"
-    m[S.NoLocPermission] = "Izin lokasi belum diberikan. Lanjutkan untuk memberikannya."
-    m[S.GpsOff] = "Layanan lokasi (GPS) nonaktif di ponsel."
-    m[S.CalcMethod] = "Metode perhitungan"
-    m[S.SelectedCalcMethod] = "Metode perhitungan terpilih"
-    m[S.Change] = "Ubah"
-    m[S.UpdatingTime] = "Memperbarui waktu..."
-    m[S.UpdateFajrNow] = "Perbarui waktu Subuh sekarang"
-    m[S.AlarmToneSection] = "Nada dan suara alarm"
-    m[S.SelectedTone] = "Nada terpilih"
-    m[S.SystemTones] = "Nada sistem"
-    m[S.AudioFile] = "File audio"
-    m[S.ExtraSettings] = "Pengaturan tambahan"
-    m[S.VibrateDuringAlarm] = "Bergetar saat alarm"
-}
-private fun idPart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "Waktu Subuh berikutnya"
-    m[S.AlarmOnDesc] = "Alarm aktif"
-    m[S.AlarmOffDesc] = "Alarm nonaktif"
-    m[S.PickCalcMethod] = "Pilih metode perhitungan"
-    m[S.NotifReminder] = "Pengingat"
-    m[S.NotifReadDone] = "Tandai dibaca"
-    m[S.NotifRemindLater] = "Ingatkan 10 menit lagi"
-    m[S.NotifOpenApp] = "Buka aplikasi"
-    m[S.NotifChannelAzkar] = "Notifikasi pengingat dzikir"
-    m[S.NotifChannelFajr] = "Notifikasi salat Subuh"
-    m[S.TodayAt] = "Hari ini pukul"
-    m[S.TomorrowAt] = "Besok pukul"
-    m[S.DefaultAlarmTone] = "Nada alarm bawaan"
-    m[S.LocCalcTitle] = "Lokasi & perhitungan"
-    m[S.LocCalcSubtitle] = "Kota, metode, dan penyesuaian"
-    m[S.QiblaTitle] = "Kiblat"
-    m[S.QiblaNorthFmt] = "Kiblat %1\$d° dari utara"
-    m[S.QiblaSetLocation] = "Atur lokasi Anda terlebih dahulu"
-    m[S.QiblaNoSensor] = "Perangkat ini tidak punya sensor kompas"
-    m[S.QiblaCalibrate] = "Gerakkan ponsel membentuk angka 8 untuk kalibrasi"
-    m[S.QiblaAligned] = "Anda menghadap kiblat"
-    m[S.QiblaCityFmt] = "Lokasi: %1\$s"
-    m[S.DirN] = "U"
-    m[S.DirNE] = "TL"
-    m[S.DirE] = "T"
-    m[S.DirSE] = "TG"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "BD"
-    m[S.DirW] = "B"
-    m[S.DirNW] = "BL"
-    m[S.CalendarTab] = "Kalender"
-    m[S.CalEvents] = "Acara"
-    m[S.CalNoEvents] = "Tidak ada acara hari ini"
-    m[S.CalMonthEvents] = "Acara bulan ini"
-    m[S.CalReminderOn] = "Pengingat aktif"
-    m[S.CalReminderOff] = "Aktifkan pengingat"
-    m[S.WdSun] = "M"
-    m[S.WdMon] = "S"
-    m[S.WdTue] = "S"
-    m[S.WdWed] = "R"
-    m[S.WdThu] = "K"
-    m[S.WdFri] = "J"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Senyap otomatis saat salat"
-    m[S.AutoDndSub] = "Senyap dari azan sampai iqamah (perlu izin DND)"
-    m[S.OptTimesTitle] = "Waktu tambahan"
-    m[S.OptTimesSub] = "Baris tambahan: Imsak, Duha, Tengah malam dan Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Tengah malam"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Konverter tanggal"
-    m[S.HijriConvSub] = "Konversi antara tanggal Hijriah dan Masehi"
-    m[S.GregToHijri] = "Masehi ke Hijriah"
-    m[S.HijriToGreg] = "Hijriah ke Masehi"
-    m[S.DayLabel] = "Hari"
-    m[S.MonthLabel] = "Bulan"
-    m[S.YearLabel] = "Tahun"
-    m[S.LocSection] = "Lokasi"
-    m[S.CalcSection] = "Perhitungan"
-}
-private fun idPart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "Perhitungan Ashar"
-    m[S.AsrShafii] = "Syafi'i, Maliki, Hanbali"
-    m[S.AsrHanafi] = "Hanafi"
-    m[S.HighLatRule] = "Aturan lintang tinggi"
-    m[S.HighLatNone] = "Tidak ada"
-    m[S.HighLatMiddle] = "Pertengahan malam"
-    m[S.HighLatSeventh] = "Seper tujuh malam"
-    m[S.HighLatAngle] = "Berdasarkan sudut"
-    m[S.AdjSection] = "Penyesuaian waktu"
-    m[S.AdjNote] = "Menit yang ditambahkan atau dikurangi dari setiap waktu terhitung. Langsung berlaku untuk waktu, widget, dan pengingat."
-    m[S.AdjHijri] = "Penyesuaian tanggal Hijriah"
-    m[S.AdjMinShort] = "mnt"
-    m[S.AdjDayShort] = "hari"
-    m[S.AlertTiming] = "Waktu peringatan"
-    m[S.AtAdhanTime] = "Saat azan"
-    m[S.AtAdhanRow] = "Saat azan"
-    m[S.AtAdhanRowSub] = "Notifikasi dasar saat waktu salat tiba"
-    m[S.BeforeAdhanRow] = "Pengingat awal"
-    m[S.BeforeAdhanHelper] = "Pengingat tambahan - notifikasi waktu azan tetap tiba"
-    m[S.MinBeforeFmt] = "%1\$d mnt sebelum azan"
-    m[S.AdhanReminder] = "Pengingat azan"
-    m[S.IqamaReminder] = "Pengingat iqamah"
-    m[S.IqamaReminderSub] = "Notifikasi saat iqamah"
-    m[S.PrayerNowFmt] = "Sekarang waktu %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s dalam %2\$d mnt"
-    m[S.IqamaNowFmt] = "Iqamah %1\$s sekarang"
-    m[S.SharedAlertSettings] = "Pengaturan bersama untuk semua peringatan"
-}
+internal val ID = mapOf(
+    S.PrayerTab to "Salat",
+    S.AzkarTab to "Dzikir",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Subuh",
+    S.TasbeehTab to "Tasbih",
+    S.Favorites to "Favorit",
+    S.Reminders to "Pengingat",
+    S.Stats to "Statistik",
+    S.Tags to "Kategori",
+    S.Settings to "Pengaturan",
+    S.About to "Tentang",
+    S.More to "Lainnya",
+    S.Menu to "Menu",
+    S.AddDhikr to "Tambah dzikir",
+    S.SearchAzkar to "Cari dzikir atau kategori",
+    S.All to "Semua",
+    S.NoAzkar to "Tidak ada dzikir",
+    S.NoAzkarUnderTag to "Tidak ada dzikir di \"%1\$s\"",
+    S.NoResultsQuery to "Tidak ada hasil untuk \"%1\$s\"",
+    S.Options to "Opsi",
+    S.EditDhikrTags to "Edit dzikir dan kategori",
+    S.ReminderTimes to "Waktu pengingat",
+    S.Delete to "Hapus",
+    S.NoActiveReminders to "Tidak ada pengingat aktif",
+    S.Today to "Hari ini",
+    S.ThisWeek to "Minggu ini",
+    S.DayStreak to "Hari beruntun",
+    S.CurrentReminder to "Pengingat saat ini",
+    S.NextReminder to "Pengingat berikutnya",
+    S.NoActiveAzkar to "Tidak ada dzikir aktif. Aktifkan dari daftar dzikir.",
+    S.Shortcuts to "Pintasan",
+    S.TasbeehCounter to "Penghitung tasbih",
+    S.HisnSubtitle to "Dzikir dan doa dari Al-Qur'an dan Sunnah",
+    S.FavSubtitle to "Dzikir yang Anda sukai",
+    S.ReadDone to "Sudah dibaca",
+    S.TotalSuffix to " total",
+    S.NoReadsYet to "Belum ada bacaan",
+    S.DhikrIdFmt to "Dzikir #%1\$d",
+    S.Periods to "Periode",
+    S.Week to "Minggu",
+    S.Month to "Bulan",
+    S.KeepGoing to "Pertahankan dzikir harian Anda",
+    S.TotalReads to "Total bacaan",
+    S.SinceStart to "Sejak mulai digunakan",
+    S.RecentReads to "Bacaan terakhir",
+    S.RemindersSubtitle to "Semua waktu pengingat",
+    S.StatsSubtitle to "Riwayat dan rentetan",
+    S.TagsSubtitle to "Atur dzikir dengan warna",
+    S.FajrAlarm to "Alarm Subuh",
+    S.ByLocation to "Berdasarkan lokasi Anda",
+    S.SettingsSubtitle to "Getar, font, dan nada",
+    S.AboutSubtitle to "Versi dan pengembang",
+    S.DeleteTag to "Hapus kategori",
+    S.DeleteTagMsg to "Kategori \"%1\$s\" akan dihapus dari semua dzikir. Dzikir tidak akan dihapus.",
+    S.AddTag to "Tambah kategori",
+    S.NoTags to "Belum ada kategori",
+    S.Edit to "Edit",
+    S.NewTag to "Kategori baru",
+    S.EditTag to "Edit kategori",
+    S.TagName to "Nama kategori",
+    S.Color to "Warna",
+    S.TasbeehaFmt to "%1\$d tasbih",
+    S.TapToCount to "Ketuk untuk menghitung",
+    S.ResetCounter to "Atur ulang penghitung",
+    S.ActiveOfTotalFmt to "%1\$d dari %2\$d aktif",
+    S.NoReminders to "Tidak ada pengingat",
+    S.NoFavorites to "Tidak ada dzikir favorit",
+    S.Light to "Terang",
+    S.Dark to "Gelap",
+    S.SystemAuto to "Otomatis (sistem)",
+    S.LockWidgets to "Widget layar kunci",
+    S.LockWidgetsToast to "Tekan lama layar kunci untuk menambah widget",
+    S.OpenEditor to "Buka editor",
+    S.Close to "Tutup",
+    S.LockWidgetsDesc to "Semua widget Wathakker tersedia di area khusus di bawah jam pada layar kunci (One UI 8 atau lebih baru).",
+    S.LockWidgetsSteps to "1. Di layar kunci, tekan lama area kosong lalu konfirmasi identitas Anda.\n2. Ketuk \"Tambah widget\" dan pilih \"Wathakker\".\n3. Seret widget ke area di bawah jam.",
+    S.LockWidgetsHint to "Mengetuk widget dari layar kunci langsung membuka aplikasi.",
+    S.ChangeLocation to "Ubah lokasi",
+    S.LocationSubtitle to "Kota, metode perhitungan, dan pengaturan alarm Subuh",
+    S.FajrAlarmSubtitle to "Aktifkan alarm dan nada",
+    S.LockScreenSection to "Layar kunci",
+    S.LockWidgetsRowSub to "Tambahkan widget Wathakker di bawah jam layar kunci",
+    S.Notifications to "Notifikasi",
+    S.NotifSound to "Suara notifikasi",
+    S.Default to "Bawaan",
+    S.Vibration to "Getar",
+    S.Appearance to "Tampilan",
+    S.AppFont to "Font aplikasi",
+    S.Language to "Bahasa",
+    S.NewDhikr to "Dzikir baru",
+    S.EditDhikr to "Edit dzikir",
+    S.TitleLabel to "Judul",
+    S.DhikrText to "Teks dzikir atau doa",
+    S.Cancel to "Batal",
+    S.Add to "Tambah",
+    S.AddReminderTime to "Tambah waktu pengingat",
+    S.RepeatReminder to "Ulangi pengingat",
+    S.ReminderTime to "Waktu pengingat",
+    S.Save to "Simpan",
+    S.ChaptersFmt to "%1\$d bab dzikir dan doa",
+    S.SearchHisn to "Cari di Hisn Al-Muslim",
+    S.NoFavChapters to "Tidak ada bab favorit",
+    S.NoResults to "Tidak ada hasil",
+    S.ReadTodaySuffix to " · Dibaca hari ini",
+    S.AddToMyAzkar to "Tambah ke dzikir saya",
+    S.Done to "Selesai",
+    S.Tagline to "Aplikasi yang membantu Anda menjaga dzikir siang dan malam",
+    S.Version to "Versi",
+    S.Developer to "Pengembang",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Konten dari proyek HisnElmoslem (lisensi GPL v3)",
+    S.InstinctCredit to "Dibangun dengan kolaborasi Instinct",
+    S.Dua to "Ingat kami dalam doa Anda",
+    S.Font to "Font",
+    S.FontLight to "Font aplikasi tipis",
+    S.FontBold to "Font aplikasi tebal",
+    S.FontSystem to "Font sistem",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (acara khusus)",
+    S.LocCalcTitle to "Lokasi & perhitungan",
+    S.LocCalcSubtitle to "Kota, metode, dan penyesuaian",
+    S.LocSection to "Lokasi",
+    S.CalcSection to "Perhitungan",
+    S.AsrJuristic to "Perhitungan Ashar",
+    S.AsrShafii to "Syafi'i, Maliki, Hanbali",
+    S.AsrHanafi to "Hanafi",
+    S.HighLatRule to "Aturan lintang tinggi",
+    S.HighLatNone to "Tidak ada",
+    S.HighLatMiddle to "Pertengahan malam",
+    S.HighLatSeventh to "Seper tujuh malam",
+    S.HighLatAngle to "Berdasarkan sudut",
+    S.AdjSection to "Penyesuaian waktu",
+    S.AdjNote to "Menit yang ditambahkan atau dikurangi dari setiap waktu terhitung. Langsung berlaku untuk waktu, widget, dan pengingat.",
+    S.AdjHijri to "Penyesuaian tanggal Hijriah",
+    S.AdjMinShort to "mnt",
+    S.AdjDayShort to "hari",
+    S.PrayerFajr to "Subuh",
+    S.PrayerShuruq to "Terbit matahari",
+    S.PrayerDhuhr to "Dzuhur",
+    S.PrayerJumuah to "Jumat",
+    S.PrayerAsr to "Ashar",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isya",
+    S.PrayerTimes to "Waktu salat",
+    S.NextPrayer to "Salat berikutnya",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Pilih negara dan kota",
+    S.SearchCityHint to "Cari kota atau negara...",
+    S.NoSearchResults to "Tidak ada hasil",
+    S.FajrPrayer to "Salat Subuh",
+    S.FajrNow to "Sudah waktunya salat Subuh",
+    S.Snooze to "Tunda",
+    S.StopAlarm to "Hentikan alarm",
+    S.ChooseSnooze to "Pilih durasi tunda:",
+    S.MinutesShortFmt to "%1\\\$d (mnt)",
+    S.ColorWhite to "Putih",
+    S.Auto to "Otomatis",
+    S.ColorBlack to "Hitam",
+    S.ColorGray to "Abu-abu",
+    S.ColorBlue to "Biru",
+    S.ColorGreen to "Hijau",
+    S.ColorPurple to "Ungu",
+    S.ColorAmber to "Amber",
+    S.ColorBlueDark to "Biru gelap",
+    S.ColorGreenDark to "Hijau gelap",
+    S.WidgetSettings to "Pengaturan widget",
+    S.ColorYellow to "Kuning",
+    S.ColorTurquoise to "Toska",
+    S.WidgetAccent to "Warna widget",
+    S.BarColor to "Warna bilah kemajuan",
+    S.BgColor to "Warna latar",
+    S.PickRingtone to "Pilih nada alarm",
+    S.LocationMethod to "Metode lokasi",
+    S.CurrentLocation to "Lokasi saat ini",
+    S.AutoUpdateFajr to "Memperbarui waktu Subuh otomatis sesuai lokasi",
+    S.PickCitySub to "Pilih kota secara manual tanpa lokasi",
+    S.CurrentCity to "Kota saat ini",
+    S.EditCityName to "Ubah nama kota",
+    S.ResetCityNameAuto to "Kembalikan nama otomatis",
+    S.CustomLocationNameHint to "Masukkan nama khusus untuk lokasi Anda untuk ditampilkan sebagai pengganti bawaan :",
+    S.ChangeCity to "Ubah kota",
+    S.NoLocPermission to "Izin lokasi belum diberikan. Lanjutkan untuk memberikannya.",
+    S.GpsOff to "Layanan lokasi (GPS) nonaktif di ponsel.",
+    S.CalcMethod to "Metode perhitungan",
+    S.SelectedCalcMethod to "Metode perhitungan terpilih",
+    S.Change to "Ubah",
+    S.UpdatingTime to "Memperbarui waktu...",
+    S.UpdateFajrNow to "Perbarui waktu Subuh sekarang",
+    S.AlarmToneSection to "Nada dan suara alarm",
+    S.SelectedTone to "Nada terpilih",
+    S.SystemTones to "Nada sistem",
+    S.AudioFile to "File audio",
+    S.ExtraSettings to "Pengaturan tambahan",
+    S.VibrateDuringAlarm to "Bergetar saat alarm",
+    S.NextFajrAt to "Waktu Subuh berikutnya",
+    S.AlarmOnDesc to "Alarm aktif",
+    S.AlarmOffDesc to "Alarm nonaktif",
+    S.PickCalcMethod to "Pilih metode perhitungan",
+    S.NotifReminder to "Pengingat",
+    S.NotifReadDone to "Tandai dibaca",
+    S.NotifRemindLater to "Ingatkan 10 menit lagi",
+    S.NotifOpenApp to "Buka aplikasi",
+    S.NotifChannelAzkar to "Notifikasi pengingat dzikir",
+    S.NotifChannelFajr to "Notifikasi salat Subuh",
+    S.TodayAt to "Hari ini pukul",
+    S.TomorrowAt to "Besok pukul",
+    S.DefaultAlarmTone to "Nada alarm bawaan",
+    S.QiblaTitle to "Kiblat",
+    S.QiblaNorthFmt to "Kiblat %1\$d° dari utara",
+    S.QiblaSetLocation to "Atur lokasi Anda terlebih dahulu",
+    S.QiblaNoSensor to "Perangkat ini tidak punya sensor kompas",
+    S.QiblaCalibrate to "Gerakkan ponsel membentuk angka 8 untuk kalibrasi",
+    S.QiblaAligned to "Anda menghadap kiblat",
+    S.QiblaCityFmt to "Lokasi: %1\$s",
+    S.DirN to "U",
+    S.DirNE to "TL",
+    S.DirE to "T",
+    S.DirSE to "TG",
+    S.DirS to "S",
+    S.DirSW to "BD",
+    S.DirW to "B",
+    S.DirNW to "BL",
+    S.CalendarTab to "Kalender",
+    S.CalEvents to "Acara",
+    S.CalNoEvents to "Tidak ada acara hari ini",
+    S.CalMonthEvents to "Acara bulan ini",
+    S.CalReminderOn to "Pengingat aktif",
+    S.CalReminderOff to "Aktifkan pengingat",
+    S.WdSun to "M",
+    S.WdMon to "S",
+    S.WdTue to "S",
+    S.WdWed to "R",
+    S.WdThu to "K",
+    S.WdFri to "J",
+    S.WdSat to "S",
+    S.AutoDnd to "Senyap otomatis saat salat",
+    S.AutoDndSub to "Senyap dari azan sampai iqamah (perlu izin DND)",
+    S.OptTimesTitle to "Waktu tambahan",
+    S.OptTimesSub to "Baris tambahan: Imsak, Duha, Tengah malam dan Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Tengah malam",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Konverter tanggal",
+    S.HijriConvSub to "Konversi antara tanggal Hijriah dan Masehi",
+    S.GregToHijri to "Masehi ke Hijriah",
+    S.HijriToGreg to "Hijriah ke Masehi",
+    S.DayLabel to "Hari",
+    S.MonthLabel to "Bulan",
+    S.YearLabel to "Tahun",
+    S.AlertTiming to "Waktu peringatan",
+    S.AtAdhanTime to "Saat azan",
+    S.AtAdhanRow to "Saat azan",
+    S.AtAdhanRowSub to "Notifikasi dasar saat waktu salat tiba",
+    S.BeforeAdhanRow to "Pengingat awal",
+    S.BeforeAdhanHelper to "Pengingat tambahan - notifikasi waktu azan tetap tiba",
+    S.MinBeforeFmt to "%1\$d mnt sebelum azan",
+    S.AdhanReminder to "Pengingat azan",
+    S.IqamaReminder to "Pengingat iqamah",
+    S.IqamaReminderSub to "Berbunyi saat iqamah",
+    S.PrayerNowFmt to "Sekarang waktu %1\$s",
+    S.PrayerApproachingFmt to "%1\$s dalam %2\$d mnt",
+    S.IqamaNowFmt to "Iqamah %1\$s sekarang",
+    S.SharedAlertSettings to "Pengaturan bersama untuk semua peringatan",
+    S.FajrAlarmOn to "Aktifkan alarm Subuh",
+    S.AlarmEnabledSub to "Alarm berbunyi saat waktu Subuh",
+    S.AlarmDisabledSub to "Alarm sedang nonaktif",
+    S.AlarmVolume to "Volume alarm",
+    S.SnoozeDuration to "Durasi tunda",
+    S.AlertMode to "Jenis peringatan",
+    S.AlertModeNotif to "Notifikasi",
+    S.AlertModeAlarm to "Alarm penuh",
+    S.AdhanAlertType to "Jenis pengingat azan",
+    S.AlertTypeNotification to "Pengingat notifikasi",
+    S.AlertTypeFullScreen to "Pengingat notifikasi layar penuh",
+)
 
-internal val RU: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    ruPart0(m)
-    ruPart1(m)
-    ruPart2(m)
-    ruPart3(m)
-    ruPart4(m)
-    m
-}
-private fun ruPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Намаз"
-    m[S.AzkarTab] = "Зикры"
-    m[S.HisnTab] = "Хисн"
-    m[S.FajrTab] = "Фаджр"
-    m[S.TasbeehTab] = "Тасбих"
-    m[S.Favorites] = "Избранное"
-    m[S.Reminders] = "Напоминания"
-    m[S.Stats] = "Статистика"
-    m[S.Tags] = "Категории"
-    m[S.Settings] = "Настройки"
-    m[S.About] = "О приложении"
-    m[S.More] = "Ещё"
-    m[S.Menu] = "Меню"
-    m[S.AddDhikr] = "Добавить зикр"
-    m[S.SearchAzkar] = "Поиск зикра или категории"
-    m[S.All] = "Все"
-    m[S.NoAzkar] = "Нет зикров"
-    m[S.NoAzkarUnderTag] = "Нет зикров в категории \"%1\$s\""
-    m[S.NoResultsQuery] = "Нет результатов для \"%1\$s\""
-    m[S.Options] = "Опции"
-    m[S.EditDhikrTags] = "Изменить зикр и категории"
-    m[S.ReminderTimes] = "Время напоминаний"
-    m[S.Delete] = "Удалить"
-    m[S.NoActiveReminders] = "Нет активных напоминаний"
-    m[S.Today] = "Сегодня"
-    m[S.ThisWeek] = "На этой неделе"
-    m[S.DayStreak] = "Дней подряд"
-    m[S.CurrentReminder] = "Текущее напоминание"
-    m[S.NextReminder] = "Следующее напоминание"
-    m[S.NoActiveAzkar] = "Нет активных зикров. Включите их в списке зикров."
-    m[S.Shortcuts] = "Ярлыки"
-    m[S.TasbeehCounter] = "Счётчик тасбиха"
-    m[S.HisnSubtitle] = "Зикры и мольбы из Корана и Сунны"
-    m[S.FavSubtitle] = "Ваши любимые зикры"
-    m[S.ReadDone] = "Прочитано"
-    m[S.TotalSuffix] = " всего"
-    m[S.NoReadsYet] = "Пока нет чтений"
-    m[S.DhikrIdFmt] = "Зикр №%1\$d"
-    m[S.Periods] = "Периоды"
-    m[S.Week] = "Неделя"
-    m[S.Month] = "Месяц"
-    m[S.KeepGoing] = "Продолжайте ежедневные зикры"
-    m[S.TotalReads] = "Всего чтений"
-    m[S.SinceStart] = "С начала использования"
-    m[S.RecentReads] = "Последние чтения"
-    m[S.RemindersSubtitle] = "Все время напоминаний"
-    m[S.StatsSubtitle] = "История и серии"
-    m[S.TagsSubtitle] = "Организация зикров по цветам"
-    m[S.FajrAlarm] = "Будильник на фаджр"
-    m[S.ByLocation] = "По вашему местоположению"
-    m[S.SettingsSubtitle] = "Вибрация, шрифт и мелодия"
-    m[S.AboutSubtitle] = "Версия и разработчик"
-    m[S.DeleteTag] = "Удалить категорию"
-    m[S.DeleteTagMsg] = "Категория \"%1\$s\" будет удалена из всех зикров. Сами зикры не будут удалены."
-    m[S.AddTag] = "Добавить категорию"
-    m[S.NoTags] = "Пока нет категорий"
-    m[S.Edit] = "Изменить"
-    m[S.NewTag] = "Новая категория"
-    m[S.EditTag] = "Изменить категорию"
-    m[S.TagName] = "Название категории"
-}
-private fun ruPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Цвет"
-    m[S.TasbeehaFmt] = "%1\$d тасбих"
-    m[S.TapToCount] = "Нажмите для счёта"
-    m[S.ResetCounter] = "Сбросить счётчик"
-    m[S.ActiveOfTotalFmt] = "%1\$d из %2\$d активны"
-    m[S.NoReminders] = "Нет напоминаний"
-    m[S.NoFavorites] = "Нет избранных зикров"
-    m[S.Light] = "Светлая"
-    m[S.Dark] = "Тёмная"
-    m[S.SystemAuto] = "Авто (система)"
-    m[S.LockWidgets] = "Виджеты экрана блокировки"
-    m[S.LockWidgetsToast] = "Удерживайте экран блокировки, чтобы добавить виджет"
-    m[S.OpenEditor] = "Открыть редактор"
-    m[S.Close] = "Закрыть"
-    m[S.LockWidgetsDesc] = "Все виджеты Wathkkir доступны в специальной области под часами на экране блокировки (One UI 8 или новее)."
-    m[S.LockWidgetsSteps] = "1. На экране блокировки удерживайте пустое место и подтвердите личность.\n2. Нажмите «Добавить виджет» и выберите «Wathkkir».\n3. Перетащите виджет в область под часами."
-    m[S.LockWidgetsHint] = "Нажатие на виджет с экрана блокировки сразу открывает приложение."
-    m[S.ChangeLocation] = "Изменить местоположение"
-    m[S.LocationSubtitle] = "Город, метод расчёта и настройки будильника фаджра"
-    m[S.FajrAlarmSubtitle] = "Включить будильник и мелодию"
-    m[S.LockScreenSection] = "Экран блокировки"
-    m[S.LockWidgetsRowSub] = "Добавьте виджет Wathkkir под часы на экране блокировки"
-    m[S.Notifications] = "Уведомления"
-    m[S.NotifSound] = "Звук уведомления"
-    m[S.Default] = "По умолчанию"
-    m[S.Vibration] = "Вибрация"
-    m[S.Appearance] = "Оформление"
-    m[S.AppFont] = "Шрифт приложения"
-    m[S.Language] = "Язык"
-    m[S.NewDhikr] = "Новый зикр"
-    m[S.EditDhikr] = "Изменить зикр"
-    m[S.TitleLabel] = "Название"
-    m[S.DhikrText] = "Текст зикра или мольбы"
-    m[S.Cancel] = "Отмена"
-    m[S.Add] = "Добавить"
-    m[S.AddReminderTime] = "Добавить время напоминания"
-    m[S.RepeatReminder] = "Повтор напоминания"
-    m[S.ReminderTime] = "Время напоминания"
-    m[S.Save] = "Сохранить"
-    m[S.ChaptersFmt] = "%1\$d глав зикров и мольб"
-    m[S.SearchHisn] = "Поиск в Хисн аль-Муслим"
-    m[S.NoFavChapters] = "Нет избранных глав"
-    m[S.NoResults] = "Нет результатов"
-    m[S.ReadTodaySuffix] = " · Прочитано сегодня"
-    m[S.AddToMyAzkar] = "Добавить в мои зикры"
-    m[S.Done] = "Готово"
-    m[S.Tagline] = "Приложение, которое помогает сохранять зикры днём и ночью"
-    m[S.Version] = "Версия"
-    m[S.Developer] = "Разработчик"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Содержимое проекта HisnElmoslem (лицензия GPL v3)"
-    m[S.InstinctCredit] = "Создано в сотрудничестве с Instinct"
-    m[S.Dua] = "Не забудьте нас в своих мольбах"
-    m[S.Font] = "Шрифт"
-    m[S.FontLight] = "Шрифт приложения light"
-    m[S.FontBold] = "Шрифт приложения bold"
-    m[S.FontSystem] = "Системный шрифт"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun ruPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (особые случаи)"
-    m[S.PrayerFajr] = "Фаджр"
-    m[S.PrayerShuruq] = "Восход"
-    m[S.PrayerDhuhr] = "Зухр"
-    m[S.PrayerJumuah] = "Джума"
-    m[S.PrayerAsr] = "Аср"
-    m[S.PrayerMaghrib] = "Магриб"
-    m[S.PrayerIsha] = "Иша"
-    m[S.PrayerTimes] = "Время намаза"
-    m[S.NextPrayer] = "Следующий намаз"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Выберите страну и город"
-    m[S.SearchCityHint] = "Поиск города или страны..."
-    m[S.NoSearchResults] = "Ничего не найдено"
-    m[S.FajrPrayer] = "Намаз фаджр"
-    m[S.FajrNow] = "Время намаза фаджр наступило"
-    m[S.Snooze] = "Отложить"
-    m[S.StopAlarm] = "Остановить будильник"
-    m[S.ChooseSnooze] = "Выберите длительность отсрочки:"
-    m[S.MinutesShortFmt] = "%1\$d (мин)"
-    m[S.ColorWhite] = "Белый"
-    m[S.Auto] = "Авто"
-    m[S.ColorBlack] = "Чёрный"
-    m[S.ColorGray] = "Серый"
-    m[S.ColorBlue] = "Синий"
-    m[S.ColorGreen] = "Зелёный"
-    m[S.ColorPurple] = "Фиолетовый"
-    m[S.ColorAmber] = "Янтарный"
-    m[S.ColorBlueDark] = "Тёмно-синий"
-    m[S.ColorGreenDark] = "Тёмно-зелёный"
-    m[S.WidgetSettings] = "Настройки виджета"
-    m[S.ColorYellow] = "Жёлтый"
-    m[S.ColorTurquoise] = "Бирюзовый"
-    m[S.WidgetAccent] = "Цвет виджета"
-    m[S.BarColor] = "Цвет полосы прогресса"
-    m[S.BgColor] = "Цвет фона"
-    m[S.PickRingtone] = "Выберите мелодию будильника"
-    m[S.LocationMethod] = "Способ определения местоположения"
-    m[S.CurrentLocation] = "Текущее местоположение"
-    m[S.AutoUpdateFajr] = "Автоматически обновляет время молитв по вашему местоположению"
-    m[S.PickCitySub] = "Выбор города вручную без геолокации"
-    m[S.CurrentCity] = "Текущий город"
-    m[S.EditCityName] = "Изменить название города"
-    m[S.ResetCityNameAuto] = "Вернуть автоматическое название"
-    m[S.CustomLocationNameHint] = "Введите своё название для местоположения вместо стандартного :"
-    m[S.ChangeCity] = "Сменить город"
-    m[S.NoLocPermission] = "Разрешение на геолокацию не выдано. Продолжите, чтобы выдать."
-    m[S.GpsOff] = "Служба геолокации (GPS) отключена на телефоне."
-    m[S.CalcMethod] = "Метод расчёта"
-    m[S.SelectedCalcMethod] = "Выбранный метод расчёта"
-    m[S.Change] = "Изменить"
-    m[S.UpdatingTime] = "Обновление времени..."
-    m[S.UpdateFajrNow] = "Обновить время фаджра сейчас"
-    m[S.AlarmToneSection] = "Мелодия и звук будильника"
-    m[S.SelectedTone] = "Выбранная мелодия"
-    m[S.SystemTones] = "Системные звуки"
-    m[S.AudioFile] = "Аудиофайл"
-    m[S.ExtraSettings] = "Дополнительные настройки"
-    m[S.VibrateDuringAlarm] = "Вибрация во время будильника"
-}
-private fun ruPart3(m: HashMap<S, String>) {
-    m[S.NextFajrAt] = "Время следующего фаджра"
-    m[S.AlarmOnDesc] = "Будильник включён"
-    m[S.AlarmOffDesc] = "Будильник выключен"
-    m[S.PickCalcMethod] = "Выберите метод расчёта"
-    m[S.NotifReminder] = "Напоминание"
-    m[S.NotifReadDone] = "Прочитано"
-    m[S.NotifRemindLater] = "Напомнить через 10 минут"
-    m[S.NotifOpenApp] = "Открыть приложение"
-    m[S.NotifChannelAzkar] = "Уведомления-напоминания зикров"
-    m[S.NotifChannelFajr] = "Уведомления намаза фаджр"
-    m[S.TodayAt] = "Сегодня в"
-    m[S.TomorrowAt] = "Завтра в"
-    m[S.DefaultAlarmTone] = "Мелодия будильника по умолчанию"
-    m[S.LocCalcTitle] = "Местоположение и расчёт"
-    m[S.LocCalcSubtitle] = "Город, метод и поправки"
-    m[S.QiblaTitle] = "Кибла"
-    m[S.QiblaNorthFmt] = "Кибла %1\$d° от севера"
-    m[S.QiblaSetLocation] = "Сначала укажите местоположение"
-    m[S.QiblaNoSensor] = "На этом устройстве нет датчика компаса"
-    m[S.QiblaCalibrate] = "Двигайте телефон в виде восьмёрки для калибровки"
-    m[S.QiblaAligned] = "Вы смотрите в сторону Киблы"
-    m[S.QiblaCityFmt] = "Место: %1\$s"
-    m[S.DirN] = "С"
-    m[S.DirNE] = "СВ"
-    m[S.DirE] = "В"
-    m[S.DirSE] = "ЮВ"
-    m[S.DirS] = "Ю"
-    m[S.DirSW] = "ЮЗ"
-    m[S.DirW] = "З"
-    m[S.DirNW] = "СЗ"
-    m[S.CalendarTab] = "Календарь"
-    m[S.CalEvents] = "События"
-    m[S.CalNoEvents] = "Нет событий в этот день"
-    m[S.CalMonthEvents] = "События месяца"
-    m[S.CalReminderOn] = "Напоминание вкл."
-    m[S.CalReminderOff] = "Включить напоминание"
-    m[S.WdSun] = "Вс"
-    m[S.WdMon] = "Пн"
-    m[S.WdTue] = "Вт"
-    m[S.WdWed] = "Ср"
-    m[S.WdThu] = "Чт"
-    m[S.WdFri] = "Пт"
-    m[S.WdSat] = "Сб"
-    m[S.AutoDnd] = "Авто-тихий режим в намазе"
-    m[S.AutoDndSub] = "Тихо от азана до икамы (нужно разрешение DND)"
-    m[S.OptTimesTitle] = "Доп. время"
-    m[S.OptTimesSub] = "Доп. строки: Имсак, Духа, Полуночь и Кыям"
-    m[S.Imsak] = "Имсак"
-    m[S.Duha] = "Духа"
-    m[S.Midnight] = "Полуночь"
-    m[S.Qiyam] = "Кыям"
-    m[S.HijriConvTitle] = "Конвертер дат"
-    m[S.HijriConvSub] = "Перевод между хиджрой и григорианским календарём"
-    m[S.GregToHijri] = "Григорианская в хиджру"
-    m[S.HijriToGreg] = "Хиджра в григорианскую"
-    m[S.DayLabel] = "День"
-    m[S.MonthLabel] = "Месяц"
-    m[S.YearLabel] = "Год"
-    m[S.LocSection] = "Местоположение"
-    m[S.CalcSection] = "Расчёт"
-}
-private fun ruPart4(m: HashMap<S, String>) {
-    m[S.AsrJuristic] = "Расчёт Асра"
-    m[S.AsrShafii] = "Шафиитский, маликитский, ханбалитский"
-    m[S.AsrHanafi] = "Ханафитский"
-    m[S.HighLatRule] = "Правило высоких широт"
-    m[S.HighLatNone] = "Нет"
-    m[S.HighLatMiddle] = "Середина ночи"
-    m[S.HighLatSeventh] = "Седьмая часть ночи"
-    m[S.HighLatAngle] = "По углу"
-    m[S.AdjSection] = "Поправки времени"
-    m[S.AdjNote] = "Минуты, добавляемые или вычитаемые из каждого рассчитанного времени. Применяется мгновенно к временам, виджетам и оповещениям."
-    m[S.AdjHijri] = "Поправка даты хиджры"
-    m[S.AdjMinShort] = "мин"
-    m[S.AdjDayShort] = "дн."
-    m[S.AlertTiming] = "Время оповещения"
-    m[S.AtAdhanTime] = "Во время азана"
-    m[S.AtAdhanRow] = "Во время азана"
-    m[S.AtAdhanRowSub] = "Основное уведомление при наступлении времени молитвы"
-    m[S.BeforeAdhanRow] = "Раннее напоминание"
-    m[S.BeforeAdhanHelper] = "Дополнительное напоминание - уведомление об азане всё равно придёт"
-    m[S.MinBeforeFmt] = "За %1\$d мин до азана"
-    m[S.AdhanReminder] = "Напоминание об азане"
-    m[S.IqamaReminder] = "Напоминание об икаме"
-    m[S.IqamaReminderSub] = "Уведомление во время икама"
-    m[S.PrayerNowFmt] = "Сейчас время: %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s через %2\$d мин"
-    m[S.IqamaNowFmt] = "Икам %1\$s сейчас"
-    m[S.SharedAlertSettings] = "Общие настройки для всех оповещений"
-}
+internal val RU = mapOf(
+    S.PrayerTab to "Намаз",
+    S.AzkarTab to "Зикры",
+    S.HisnTab to "Хисн",
+    S.FajrTab to "Фаджр",
+    S.TasbeehTab to "Тасбих",
+    S.Favorites to "Избранное",
+    S.Reminders to "Напоминания",
+    S.Stats to "Статистика",
+    S.Tags to "Категории",
+    S.Settings to "Настройки",
+    S.About to "О приложении",
+    S.More to "Ещё",
+    S.Menu to "Меню",
+    S.AddDhikr to "Добавить зикр",
+    S.SearchAzkar to "Поиск зикра или категории",
+    S.All to "Все",
+    S.NoAzkar to "Нет зикров",
+    S.NoAzkarUnderTag to "Нет зикров в категории \"%1\$s\"",
+    S.NoResultsQuery to "Нет результатов для \"%1\$s\"",
+    S.Options to "Опции",
+    S.EditDhikrTags to "Изменить зикр и категории",
+    S.ReminderTimes to "Время напоминаний",
+    S.Delete to "Удалить",
+    S.NoActiveReminders to "Нет активных напоминаний",
+    S.Today to "Сегодня",
+    S.ThisWeek to "На этой неделе",
+    S.DayStreak to "Дней подряд",
+    S.CurrentReminder to "Текущее напоминание",
+    S.NextReminder to "Следующее напоминание",
+    S.NoActiveAzkar to "Нет активных зикров. Включите их в списке зикров.",
+    S.Shortcuts to "Ярлыки",
+    S.TasbeehCounter to "Счётчик тасбиха",
+    S.HisnSubtitle to "Зикры и мольбы из Корана и Сунны",
+    S.FavSubtitle to "Ваши любимые зикры",
+    S.ReadDone to "Прочитано",
+    S.TotalSuffix to " всего",
+    S.NoReadsYet to "Пока нет чтений",
+    S.DhikrIdFmt to "Зикр №%1\$d",
+    S.Periods to "Периоды",
+    S.Week to "Неделя",
+    S.Month to "Месяц",
+    S.KeepGoing to "Продолжайте ежедневные зикры",
+    S.TotalReads to "Всего чтений",
+    S.SinceStart to "С начала использования",
+    S.RecentReads to "Последние чтения",
+    S.RemindersSubtitle to "Все время напоминаний",
+    S.StatsSubtitle to "История и серии",
+    S.TagsSubtitle to "Организация зикров по цветам",
+    S.FajrAlarm to "Будильник на фаджр",
+    S.ByLocation to "По вашему местоположению",
+    S.SettingsSubtitle to "Вибрация, шрифт и мелодия",
+    S.AboutSubtitle to "Версия и разработчик",
+    S.DeleteTag to "Удалить категорию",
+    S.DeleteTagMsg to "Категория \"%1\$s\" будет удалена из всех зикров. Сами зикры не будут удалены.",
+    S.AddTag to "Добавить категорию",
+    S.NoTags to "Пока нет категорий",
+    S.Edit to "Изменить",
+    S.NewTag to "Новая категория",
+    S.EditTag to "Изменить категорию",
+    S.TagName to "Название категории",
+    S.Color to "Цвет",
+    S.TasbeehaFmt to "%1\$d тасбих",
+    S.TapToCount to "Нажмите для счёта",
+    S.ResetCounter to "Сбросить счётчик",
+    S.ActiveOfTotalFmt to "%1\$d из %2\$d активны",
+    S.NoReminders to "Нет напоминаний",
+    S.NoFavorites to "Нет избранных зикров",
+    S.Light to "Светлая",
+    S.Dark to "Тёмная",
+    S.SystemAuto to "Авто (система)",
+    S.LockWidgets to "Виджеты экрана блокировки",
+    S.LockWidgetsToast to "Удерживайте экран блокировки, чтобы добавить виджет",
+    S.OpenEditor to "Открыть редактор",
+    S.Close to "Закрыть",
+    S.LockWidgetsDesc to "Все виджеты Wathakker доступны в специальной области под часами на экране блокировки (One UI 8 или новее).",
+    S.LockWidgetsSteps to "1. На экране блокировки удерживайте пустое место и подтвердите личность.\n2. Нажмите «Добавить виджет» и выберите «Wathakker».\n3. Перетащите виджет в область под часами.",
+    S.LockWidgetsHint to "Нажатие на виджет с экрана блокировки сразу открывает приложение.",
+    S.ChangeLocation to "Изменить местоположение",
+    S.LocationSubtitle to "Город, метод расчёта и настройки будильника фаджра",
+    S.FajrAlarmSubtitle to "Включить будильник и мелодию",
+    S.LockScreenSection to "Экран блокировки",
+    S.LockWidgetsRowSub to "Добавьте виджет Wathakker под часы на экране блокировки",
+    S.Notifications to "Уведомления",
+    S.NotifSound to "Звук уведомления",
+    S.Default to "По умолчанию",
+    S.Vibration to "Вибрация",
+    S.Appearance to "Оформление",
+    S.AppFont to "Шрифт приложения",
+    S.Language to "Язык",
+    S.NewDhikr to "Новый зикр",
+    S.EditDhikr to "Изменить зикр",
+    S.TitleLabel to "Название",
+    S.DhikrText to "Текст зикра или мольбы",
+    S.Cancel to "Отмена",
+    S.Add to "Добавить",
+    S.AddReminderTime to "Добавить время напоминания",
+    S.RepeatReminder to "Повтор напоминания",
+    S.ReminderTime to "Время напоминания",
+    S.Save to "Сохранить",
+    S.ChaptersFmt to "%1\$d глав зикров и мольб",
+    S.SearchHisn to "Поиск в Хисн аль-Муслим",
+    S.NoFavChapters to "Нет избранных глав",
+    S.NoResults to "Нет результатов",
+    S.ReadTodaySuffix to " · Прочитано сегодня",
+    S.AddToMyAzkar to "Добавить в мои зикры",
+    S.Done to "Готово",
+    S.Tagline to "Приложение, которое помогает сохранять зикры днём и ночью",
+    S.Version to "Версия",
+    S.Developer to "Разработчик",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Содержимое проекта HisnElmoslem (лицензия GPL v3)",
+    S.InstinctCredit to "Создано в сотрудничестве с Instinct",
+    S.Dua to "Не забудьте нас в своих мольбах",
+    S.Font to "Шрифт",
+    S.FontLight to "Шрифт приложения light",
+    S.FontBold to "Шрифт приложения bold",
+    S.FontSystem to "Системный шрифт",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (особые случаи)",
+    S.LocCalcTitle to "Местоположение и расчёт",
+    S.LocCalcSubtitle to "Город, метод и поправки",
+    S.LocSection to "Местоположение",
+    S.CalcSection to "Расчёт",
+    S.AsrJuristic to "Расчёт Асра",
+    S.AsrShafii to "Шафиитский, маликитский, ханбалитский",
+    S.AsrHanafi to "Ханафитский",
+    S.HighLatRule to "Правило высоких широт",
+    S.HighLatNone to "Нет",
+    S.HighLatMiddle to "Середина ночи",
+    S.HighLatSeventh to "Седьмая часть ночи",
+    S.HighLatAngle to "По углу",
+    S.AdjSection to "Поправки времени",
+    S.AdjNote to "Минуты, добавляемые или вычитаемые из каждого рассчитанного времени. Применяется мгновенно к временам, виджетам и оповещениям.",
+    S.AdjHijri to "Поправка даты хиджры",
+    S.AdjMinShort to "мин",
+    S.AdjDayShort to "дн.",
+    S.PrayerFajr to "Фаджр",
+    S.PrayerShuruq to "Восход",
+    S.PrayerDhuhr to "Зухр",
+    S.PrayerJumuah to "Джума",
+    S.PrayerAsr to "Аср",
+    S.PrayerMaghrib to "Магриб",
+    S.PrayerIsha to "Иша",
+    S.PrayerTimes to "Время намаза",
+    S.NextPrayer to "Следующий намаз",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Выберите страну и город",
+    S.SearchCityHint to "Поиск города или страны...",
+    S.NoSearchResults to "Ничего не найдено",
+    S.FajrPrayer to "Намаз фаджр",
+    S.FajrNow to "Время намаза фаджр наступило",
+    S.Snooze to "Отложить",
+    S.StopAlarm to "Остановить будильник",
+    S.ChooseSnooze to "Выберите длительность отсрочки:",
+    S.MinutesShortFmt to "%1\\\$d (мин)",
+    S.ColorWhite to "Белый",
+    S.Auto to "Авто",
+    S.ColorBlack to "Чёрный",
+    S.ColorGray to "Серый",
+    S.ColorBlue to "Синий",
+    S.ColorGreen to "Зелёный",
+    S.ColorPurple to "Фиолетовый",
+    S.ColorAmber to "Янтарный",
+    S.ColorBlueDark to "Тёмно-синий",
+    S.ColorGreenDark to "Тёмно-зелёный",
+    S.WidgetSettings to "Настройки виджета",
+    S.ColorYellow to "Жёлтый",
+    S.ColorTurquoise to "Бирюзовый",
+    S.WidgetAccent to "Цвет виджета",
+    S.BarColor to "Цвет полосы прогресса",
+    S.BgColor to "Цвет фона",
+    S.PickRingtone to "Выберите мелодию будильника",
+    S.LocationMethod to "Способ определения местоположения",
+    S.CurrentLocation to "Текущее местоположение",
+    S.AutoUpdateFajr to "Автообновление времени фаджра по местоположению",
+    S.PickCitySub to "Выбор города вручную без геолокации",
+    S.CurrentCity to "Текущий город",
+    S.EditCityName to "Изменить название города",
+    S.ResetCityNameAuto to "Вернуть автоматическое название",
+    S.CustomLocationNameHint to "Введите своё название для местоположения вместо стандартного :",
+    S.ChangeCity to "Сменить город",
+    S.NoLocPermission to "Разрешение на геолокацию не выдано. Продолжите, чтобы выдать.",
+    S.GpsOff to "Служба геолокации (GPS) отключена на телефоне.",
+    S.CalcMethod to "Метод расчёта",
+    S.SelectedCalcMethod to "Выбранный метод расчёта",
+    S.Change to "Изменить",
+    S.UpdatingTime to "Обновление времени...",
+    S.UpdateFajrNow to "Обновить время фаджра сейчас",
+    S.AlarmToneSection to "Мелодия и звук будильника",
+    S.SelectedTone to "Выбранная мелодия",
+    S.SystemTones to "Системные звуки",
+    S.AudioFile to "Аудиофайл",
+    S.ExtraSettings to "Дополнительные настройки",
+    S.VibrateDuringAlarm to "Вибрация во время будильника",
+    S.NextFajrAt to "Время следующего фаджра",
+    S.AlarmOnDesc to "Будильник включён",
+    S.AlarmOffDesc to "Будильник выключен",
+    S.PickCalcMethod to "Выберите метод расчёта",
+    S.NotifReminder to "Напоминание",
+    S.NotifReadDone to "Прочитано",
+    S.NotifRemindLater to "Напомнить через 10 минут",
+    S.NotifOpenApp to "Открыть приложение",
+    S.NotifChannelAzkar to "Уведомления-напоминания зикров",
+    S.NotifChannelFajr to "Уведомления намаза фаджр",
+    S.TodayAt to "Сегодня в",
+    S.TomorrowAt to "Завтра в",
+    S.DefaultAlarmTone to "Мелодия будильника по умолчанию",
+    S.QiblaTitle to "Кибла",
+    S.QiblaNorthFmt to "Кибла %1\$d° от севера",
+    S.QiblaSetLocation to "Сначала укажите местоположение",
+    S.QiblaNoSensor to "На этом устройстве нет датчика компаса",
+    S.QiblaCalibrate to "Двигайте телефон в виде восьмёрки для калибровки",
+    S.QiblaAligned to "Вы смотрите в сторону Киблы",
+    S.QiblaCityFmt to "Место: %1\$s",
+    S.DirN to "С",
+    S.DirNE to "СВ",
+    S.DirE to "В",
+    S.DirSE to "ЮВ",
+    S.DirS to "Ю",
+    S.DirSW to "ЮЗ",
+    S.DirW to "З",
+    S.DirNW to "СЗ",
+    S.CalendarTab to "Календарь",
+    S.CalEvents to "События",
+    S.CalNoEvents to "Нет событий в этот день",
+    S.CalMonthEvents to "События месяца",
+    S.CalReminderOn to "Напоминание вкл.",
+    S.CalReminderOff to "Включить напоминание",
+    S.WdSun to "Вс",
+    S.WdMon to "Пн",
+    S.WdTue to "Вт",
+    S.WdWed to "Ср",
+    S.WdThu to "Чт",
+    S.WdFri to "Пт",
+    S.WdSat to "Сб",
+    S.AutoDnd to "Авто-тихий режим в намазе",
+    S.AutoDndSub to "Тихо от азана до икамы (нужно разрешение DND)",
+    S.OptTimesTitle to "Доп. время",
+    S.OptTimesSub to "Доп. строки: Имсак, Духа, Полуночь и Кыям",
+    S.Imsak to "Имсак",
+    S.Duha to "Духа",
+    S.Midnight to "Полуночь",
+    S.Qiyam to "Кыям",
+    S.HijriConvTitle to "Конвертер дат",
+    S.HijriConvSub to "Перевод между хиджрой и григорианским календарём",
+    S.GregToHijri to "Григорианская в хиджру",
+    S.HijriToGreg to "Хиджра в григорианскую",
+    S.DayLabel to "День",
+    S.MonthLabel to "Месяц",
+    S.YearLabel to "Год",
+    S.AlertTiming to "Время оповещения",
+    S.AtAdhanTime to "Во время азана",
+    S.AtAdhanRow to "Во время азана",
+    S.AtAdhanRowSub to "Основное уведомление при наступлении времени молитвы",
+    S.BeforeAdhanRow to "Раннее напоминание",
+    S.BeforeAdhanHelper to "Дополнительное напоминание - уведомление об азане всё равно придёт",
+    S.MinBeforeFmt to "За %1\$d мин до азана",
+    S.AdhanReminder to "Напоминание об азане",
+    S.IqamaReminder to "Напоминание об икаме",
+    S.IqamaReminderSub to "Звонить во время икама",
+    S.PrayerNowFmt to "Сейчас время: %1\$s",
+    S.PrayerApproachingFmt to "%1\$s через %2\$d мин",
+    S.IqamaNowFmt to "Икам %1\$s сейчас",
+    S.SharedAlertSettings to "Общие настройки для всех оповещений",
+    S.FajrAlarmOn to "Включить будильник фаджра",
+    S.AlarmEnabledSub to "Будильник сработает во время фаджра",
+    S.AlarmDisabledSub to "Будильник сейчас выключен",
+    S.AlarmVolume to "Громкость будильника",
+    S.SnoozeDuration to "Длительность отсрочки",
+    S.AlertMode to "Тип оповещения",
+    S.AlertModeNotif to "Уведомление",
+    S.AlertModeAlarm to "Полный будильник",
+    S.AdhanAlertType to "Тип оповещения об азане",
+    S.AlertTypeNotification to "Уведомление",
+    S.AlertTypeFullScreen to "Полноэкранное уведомление",
+)
 
-internal val PT: Map<S, String> by lazy {
-    val m = HashMap<S, String>(512)
-    ptPart0(m)
-    ptPart1(m)
-    ptPart2(m)
-    ptPart3(m)
-    ptPart4(m)
-    m
-}
-private fun ptPart0(m: HashMap<S, String>) {
-    m[S.PrayerTab] = "Oração"
-    m[S.AzkarTab] = "Azkar"
-    m[S.HisnTab] = "Hisn"
-    m[S.FajrTab] = "Fajr"
-    m[S.TasbeehTab] = "Tasbeeh"
-    m[S.Favorites] = "Favoritos"
-    m[S.Reminders] = "Lembretes"
-    m[S.Stats] = "Estatísticas"
-    m[S.Tags] = "Categorias"
-    m[S.Settings] = "Configurações"
-    m[S.About] = "Sobre"
-    m[S.More] = "Mais"
-    m[S.Menu] = "Menu"
-    m[S.AddDhikr] = "Adicionar dhikr"
-    m[S.SearchAzkar] = "Pesquisar azkar ou categoria"
-    m[S.All] = "Todos"
-    m[S.NoAzkar] = "Sem azkar"
-    m[S.NoAzkarUnderTag] = "Sem azkar em \"%1\$s\""
-    m[S.NoResultsQuery] = "Sem resultados para \"%1\$s\""
-    m[S.Options] = "Opções"
-    m[S.EditDhikrTags] = "Editar dhikr e categorias"
-    m[S.ReminderTimes] = "Horários de lembrete"
-    m[S.Delete] = "Excluir"
-    m[S.NoActiveReminders] = "Nenhum lembrete ativo"
-    m[S.Today] = "Hoje"
-    m[S.ThisWeek] = "Esta semana"
-    m[S.DayStreak] = "Dias seguidos"
-    m[S.CurrentReminder] = "Lembrete atual"
-    m[S.NextReminder] = "Próximo lembrete"
-    m[S.NoActiveAzkar] = "Nenhum dhikr ativo. Ative-os na lista de azkar."
-    m[S.Shortcuts] = "Atalhos"
-    m[S.TasbeehCounter] = "Contador de tasbeeh"
-    m[S.HisnSubtitle] = "Azkar e súplicas do Alcorão e da Sunna"
-    m[S.FavSubtitle] = "Os azkar que você ama"
-    m[S.ReadDone] = "Lido"
-    m[S.TotalSuffix] = " no total"
-    m[S.NoReadsYet] = "Ainda sem leituras"
-    m[S.DhikrIdFmt] = "Dhikr n.º %1\$d"
-    m[S.Periods] = "Períodos"
-    m[S.Week] = "Semana"
-    m[S.Month] = "Mês"
-    m[S.KeepGoing] = "Continue com seus azkar diários"
-    m[S.TotalReads] = "Leituras totais"
-    m[S.SinceStart] = "Desde o início do uso"
-    m[S.RecentReads] = "Leituras recentes"
-    m[S.RemindersSubtitle] = "Todos os horários de lembrete"
-    m[S.StatsSubtitle] = "Histórico e sequências"
-    m[S.TagsSubtitle] = "Organize azkar por cores"
-    m[S.FajrAlarm] = "Alarme do Fajr"
-    m[S.ByLocation] = "Com base na sua localização"
-    m[S.SettingsSubtitle] = "Vibração, fonte e som"
-    m[S.AboutSubtitle] = "Versão e desenvolvedor"
-    m[S.DeleteTag] = "Excluir categoria"
-    m[S.DeleteTagMsg] = "A categoria \"%1\$s\" será removida de todos os azkar. Os azkar não serão excluídos."
-    m[S.AddTag] = "Adicionar categoria"
-    m[S.NoTags] = "Ainda sem categorias"
-    m[S.Edit] = "Editar"
-    m[S.NewTag] = "Nova categoria"
-    m[S.EditTag] = "Editar categoria"
-    m[S.TagName] = "Nome da categoria"
-}
-private fun ptPart1(m: HashMap<S, String>) {
-    m[S.Color] = "Cor"
-    m[S.TasbeehaFmt] = "%1\$d tasbeeh"
-    m[S.TapToCount] = "Toque para contar"
-    m[S.ResetCounter] = "Zerar contador"
-    m[S.ActiveOfTotalFmt] = "%1\$d de %2\$d ativos"
-    m[S.NoReminders] = "Sem lembretes"
-    m[S.NoFavorites] = "Sem azkar favoritos"
-    m[S.Light] = "Claro"
-    m[S.Dark] = "Escuro"
-    m[S.SystemAuto] = "Automático (sistema)"
-    m[S.LockWidgets] = "Widgets da tela de bloqueio"
-    m[S.LockWidgetsToast] = "Pressione a tela de bloqueio para adicionar um widget"
-    m[S.OpenEditor] = "Abrir editor"
-    m[S.Close] = "Fechar"
-    m[S.LockWidgetsDesc] = "Todos os widgets do Wathkkir estão disponíveis na área dedicada abaixo do relógio na tela de bloqueio (One UI 8 ou superior)."
-    m[S.LockWidgetsSteps] = "1. Na tela de bloqueio, pressione um espaço vazio e confirme sua identidade.\n2. Toque em \"Adicionar widget\" e escolha \"Wathkkir\".\n3. Arraste o widget para a área abaixo do relógio."
-    m[S.LockWidgetsHint] = "Tocar no widget na tela de bloqueio abre o app diretamente."
-    m[S.ChangeLocation] = "Alterar localização"
-    m[S.LocationSubtitle] = "Cidade, método de cálculo e ajustes do alarme do Fajr"
-    m[S.FajrAlarmSubtitle] = "Ativar alarme e som"
-    m[S.LockScreenSection] = "Tela de bloqueio"
-    m[S.LockWidgetsRowSub] = "Adicione um widget do Wathkkir abaixo do relógio da tela de bloqueio"
-    m[S.Notifications] = "Notificações"
-    m[S.NotifSound] = "Som de notificação"
-    m[S.Default] = "Padrão"
-    m[S.Vibration] = "Vibração"
-    m[S.Appearance] = "Aparência"
-    m[S.AppFont] = "Fonte do app"
-    m[S.Language] = "Idioma"
-    m[S.NewDhikr] = "Novo dhikr"
-    m[S.EditDhikr] = "Editar dhikr"
-    m[S.TitleLabel] = "Título"
-    m[S.DhikrText] = "Texto do dhikr ou súplica"
-    m[S.Cancel] = "Cancelar"
-    m[S.Add] = "Adicionar"
-    m[S.AddReminderTime] = "Adicionar horário de lembrete"
-    m[S.RepeatReminder] = "Repetir lembrete"
-    m[S.ReminderTime] = "Horário do lembrete"
-    m[S.Save] = "Salvar"
-    m[S.ChaptersFmt] = "%1\$d capítulos de azkar e súplicas"
-    m[S.SearchHisn] = "Pesquisar em Hisn Al-Muslim"
-    m[S.NoFavChapters] = "Nenhum capítulo favorito"
-    m[S.NoResults] = "Sem resultados"
-    m[S.ReadTodaySuffix] = " · Lido hoje"
-    m[S.AddToMyAzkar] = "Adicionar aos meus azkar"
-    m[S.Done] = "Concluído"
-    m[S.Tagline] = "Um app que ajuda você a manter seus azkar de dia e de noite"
-    m[S.Version] = "Versão"
-    m[S.Developer] = "Desenvolvedor"
-    m[S.DevName] = "Mohamed Elnaggar"
-    m[S.HisnCredit] = "Conteúdo do projeto HisnElmoslem (licença GPL v3)"
-    m[S.InstinctCredit] = "Criado em colaboração com a Instinct"
-    m[S.Dua] = "Lembre-se de nós em suas súplicas"
-    m[S.Font] = "Fonte"
-    m[S.FontLight] = "Fonte do app leve"
-    m[S.FontBold] = "Fonte do app em negrito"
-    m[S.FontSystem] = "Fonte do sistema"
-    m[S.FontCairo] = "Cairo"
-    m[S.FontNaskh] = "Naskh"
-    m[S.FontAmiri] = "Amiri"
-}
-private fun ptPart2(m: HashMap<S, String>) {
-    m[S.FontRuqaa] = "Ruqaa (ocasiões)"
-    m[S.PrayerFajr] = "Fajr"
-    m[S.PrayerShuruq] = "Nascer do sol"
-    m[S.PrayerDhuhr] = "Dhuhr"
-    m[S.PrayerJumuah] = "Jumuah"
-    m[S.PrayerAsr] = "Asr"
-    m[S.PrayerMaghrib] = "Maghrib"
-    m[S.PrayerIsha] = "Isha"
-    m[S.PrayerTimes] = "Horários de oração"
-    m[S.NextPrayer] = "Próxima oração"
-    m[S.AmMarker] = "AM"
-    m[S.PmMarker] = "PM"
-    m[S.PickCountryCity] = "Escolha o país e a cidade"
-    m[S.SearchCityHint] = "Pesquisar cidade ou país..."
-    m[S.NoSearchResults] = "Nenhum resultado encontrado"
-    m[S.FajrPrayer] = "Oração do Fajr"
-    m[S.FajrNow] = "Chegou a hora da oração do Fajr"
-    m[S.Snooze] = "Soneca"
-    m[S.StopAlarm] = "Parar alarme"
-    m[S.ChooseSnooze] = "Escolha a duração da soneca:"
-    m[S.MinutesShortFmt] = "%1\$d (min)"
-    m[S.ColorWhite] = "Branco"
-    m[S.Auto] = "Automático"
-    m[S.ColorBlack] = "Preto"
-    m[S.ColorGray] = "Cinza"
-    m[S.ColorBlue] = "Azul"
-    m[S.ColorGreen] = "Verde"
-    m[S.ColorAmber] = "Âmbar"
-    m[S.ColorBlueDark] = "Azul-escuro"
-    m[S.ColorGreenDark] = "Verde-escuro"
-    m[S.WidgetSettings] = "Configurações do widget"
-    m[S.ColorYellow] = "Amarelo"
-    m[S.ColorTurquoise] = "Turquesa"
-    m[S.WidgetAccent] = "Cor do widget"
-    m[S.BarColor] = "Cor da barra de progresso"
-    m[S.BgColor] = "Cor de fundo"
-    m[S.PickRingtone] = "Escolher toque do alarme"
-    m[S.LocationMethod] = "Método de localização"
-    m[S.CurrentLocation] = "Localização atual"
-    m[S.AutoUpdateFajr] = "Atualiza automaticamente os horários de oração conforme sua localização"
-    m[S.PickCitySub] = "Escolha sua cidade manualmente sem localização"
-    m[S.CurrentCity] = "Cidade atual"
-    m[S.EditCityName] = "Editar nome da cidade"
-    m[S.ResetCityNameAuto] = "Restaurar nome automático"
-    m[S.CustomLocationNameHint] = "Digite um nome personalizado para a sua localização para mostrar em vez do padrão :"
-    m[S.ChangeCity] = "Mudar cidade"
-    m[S.NoLocPermission] = "Permissão de localização não concedida. Continue para concedê-la."
-    m[S.GpsOff] = "O serviço de localização (GPS) está desativado no telefone."
-    m[S.CalcMethod] = "Método de cálculo"
-    m[S.SelectedCalcMethod] = "Método de cálculo selecionado"
-    m[S.Change] = "Alterar"
-    m[S.UpdatingTime] = "Atualizando o horário..."
-    m[S.UpdateFajrNow] = "Atualizar o horário do Fajr agora"
-    m[S.AlarmToneSection] = "Toque e som do alarme"
-    m[S.SelectedTone] = "Toque selecionado"
-    m[S.SystemTones] = "Toques do sistema"
-    m[S.AudioFile] = "Arquivo de áudio"
-    m[S.ExtraSettings] = "Configurações adicionais"
-    m[S.VibrateDuringAlarm] = "Vibrar durante o alarme"
-    m[S.NextFajrAt] = "Próximo horário do Fajr"
-}
-private fun ptPart3(m: HashMap<S, String>) {
-    m[S.AlarmOnDesc] = "Alarme ativado"
-    m[S.AlarmOffDesc] = "Alarme desativado"
-    m[S.PickCalcMethod] = "Escolha o método de cálculo"
-    m[S.NotifReminder] = "Lembrete"
-    m[S.NotifReadDone] = "Marcar como lido"
-    m[S.NotifRemindLater] = "Lembrar em 10 minutos"
-    m[S.NotifOpenApp] = "Abrir app"
-    m[S.NotifChannelAzkar] = "Notificações de lembrete de azkar"
-    m[S.NotifChannelFajr] = "Alertas da oração do Fajr"
-    m[S.TodayAt] = "Hoje às"
-    m[S.TomorrowAt] = "Amanhã às"
-    m[S.DefaultAlarmTone] = "Toque de alarme padrão"
-    m[S.LocCalcTitle] = "Local e cálculo"
-    m[S.LocCalcSubtitle] = "Cidade, método e ajustes"
-    m[S.QiblaTitle] = "Qibla"
-    m[S.QiblaNorthFmt] = "Qibla a %1\$d° do norte"
-    m[S.QiblaSetLocation] = "Defina sua localização primeiro"
-    m[S.QiblaNoSensor] = "Este dispositivo não tem sensor de bússola"
-    m[S.QiblaCalibrate] = "Mova o telefone em forma de 8 para calibrar"
-    m[S.QiblaAligned] = "Você está voltado para a Qibla"
-    m[S.QiblaCityFmt] = "Local: %1\$s"
-    m[S.DirN] = "N"
-    m[S.DirNE] = "NE"
-    m[S.DirE] = "E"
-    m[S.DirSE] = "SE"
-    m[S.DirS] = "S"
-    m[S.DirSW] = "SO"
-    m[S.DirW] = "O"
-    m[S.DirNW] = "NO"
-    m[S.CalendarTab] = "Calendário"
-    m[S.CalEvents] = "Eventos"
-    m[S.CalNoEvents] = "Sem eventos neste dia"
-    m[S.CalMonthEvents] = "Eventos do mês"
-    m[S.CalReminderOn] = "Lembrete ativado"
-    m[S.CalReminderOff] = "Ativar lembrete"
-    m[S.WdSun] = "D"
-    m[S.WdMon] = "S"
-    m[S.WdTue] = "T"
-    m[S.WdWed] = "Q"
-    m[S.WdThu] = "Q"
-    m[S.WdFri] = "S"
-    m[S.WdSat] = "S"
-    m[S.AutoDnd] = "Silêncio auto na oração"
-    m[S.AutoDndSub] = "Silencioso do adhan ao iqama (precisa de permissão DND)"
-    m[S.OptTimesTitle] = "Horários opcionais"
-    m[S.OptTimesSub] = "Linhas extras: Imsak, Duha, Meia-noite e Qiyam"
-    m[S.Imsak] = "Imsak"
-    m[S.Duha] = "Duha"
-    m[S.Midnight] = "Meia-noite"
-    m[S.Qiyam] = "Qiyam"
-    m[S.HijriConvTitle] = "Conversor de data"
-    m[S.HijriConvSub] = "Converter entre datas Hijri e gregorianas"
-    m[S.GregToHijri] = "Gregoriana para Hijri"
-    m[S.HijriToGreg] = "Hijri para Gregoriana"
-    m[S.DayLabel] = "Dia"
-    m[S.MonthLabel] = "Mês"
-    m[S.YearLabel] = "Ano"
-    m[S.LocSection] = "Local"
-    m[S.CalcSection] = "Cálculo"
-    m[S.AsrJuristic] = "Cálculo do Asr"
-}
-private fun ptPart4(m: HashMap<S, String>) {
-    m[S.AsrShafii] = "Shafi'i, maliqui, hanbali"
-    m[S.AsrHanafi] = "Hanafi"
-    m[S.HighLatRule] = "Regra de altas latitudes"
-    m[S.HighLatNone] = "Nenhuma"
-    m[S.HighLatMiddle] = "Meio da noite"
-    m[S.HighLatSeventh] = "Um sétimo da noite"
-    m[S.HighLatAngle] = "Baseada no ângulo"
-    m[S.AdjSection] = "Ajustes de horários"
-    m[S.AdjNote] = "Minutos adicionados ou subtraídos de cada horário calculado. Aplica-se de imediato a horários, widgets e alertas."
-    m[S.AdjHijri] = "Ajuste da data hégira"
-    m[S.AdjMinShort] = "min"
-    m[S.AdjDayShort] = "dias"
-    m[S.AlertTiming] = "Momento do alerta"
-    m[S.AtAdhanTime] = "No adhan"
-    m[S.AtAdhanRow] = "No adhan"
-    m[S.AtAdhanRowSub] = "A notificação base quando chega a hora da oração"
-    m[S.BeforeAdhanRow] = "Lembrete antecipado"
-    m[S.BeforeAdhanHelper] = "Um lembrete extra - a notificação do adhan continua a chegar"
-    m[S.MinBeforeFmt] = "%1\$d min antes"
-    m[S.AdhanReminder] = "Lembrete de adhan"
-    m[S.IqamaReminder] = "Lembrete de iqama"
-    m[S.IqamaReminderSub] = "Notificação na hora do iqama"
-    m[S.PrayerNowFmt] = "Agora é hora de %1\$s"
-    m[S.PrayerApproachingFmt] = "%1\$s em %2\$d min"
-    m[S.IqamaNowFmt] = "Iqama de %1\$s agora"
-    m[S.SharedAlertSettings] = "Configurações partilhadas para todos os alertas"
-}
+internal val PT = mapOf(
+    S.PrayerTab to "Oração",
+    S.AzkarTab to "Azkar",
+    S.HisnTab to "Hisn",
+    S.FajrTab to "Fajr",
+    S.TasbeehTab to "Tasbeeh",
+    S.Favorites to "Favoritos",
+    S.Reminders to "Lembretes",
+    S.Stats to "Estatísticas",
+    S.Tags to "Categorias",
+    S.Settings to "Configurações",
+    S.About to "Sobre",
+    S.More to "Mais",
+    S.Menu to "Menu",
+    S.AddDhikr to "Adicionar dhikr",
+    S.SearchAzkar to "Pesquisar azkar ou categoria",
+    S.All to "Todos",
+    S.NoAzkar to "Sem azkar",
+    S.NoAzkarUnderTag to "Sem azkar em \"%1\$s\"",
+    S.NoResultsQuery to "Sem resultados para \"%1\$s\"",
+    S.Options to "Opções",
+    S.EditDhikrTags to "Editar dhikr e categorias",
+    S.ReminderTimes to "Horários de lembrete",
+    S.Delete to "Excluir",
+    S.NoActiveReminders to "Nenhum lembrete ativo",
+    S.Today to "Hoje",
+    S.ThisWeek to "Esta semana",
+    S.DayStreak to "Dias seguidos",
+    S.CurrentReminder to "Lembrete atual",
+    S.NextReminder to "Próximo lembrete",
+    S.NoActiveAzkar to "Nenhum dhikr ativo. Ative-os na lista de azkar.",
+    S.Shortcuts to "Atalhos",
+    S.TasbeehCounter to "Contador de tasbeeh",
+    S.HisnSubtitle to "Azkar e súplicas do Alcorão e da Sunna",
+    S.FavSubtitle to "Os azkar que você ama",
+    S.ReadDone to "Lido",
+    S.TotalSuffix to " no total",
+    S.NoReadsYet to "Ainda sem leituras",
+    S.DhikrIdFmt to "Dhikr n.º %1\$d",
+    S.Periods to "Períodos",
+    S.Week to "Semana",
+    S.Month to "Mês",
+    S.KeepGoing to "Continue com seus azkar diários",
+    S.TotalReads to "Leituras totais",
+    S.SinceStart to "Desde o início do uso",
+    S.RecentReads to "Leituras recentes",
+    S.RemindersSubtitle to "Todos os horários de lembrete",
+    S.StatsSubtitle to "Histórico e sequências",
+    S.TagsSubtitle to "Organize azkar por cores",
+    S.FajrAlarm to "Alarme do Fajr",
+    S.ByLocation to "Com base na sua localização",
+    S.SettingsSubtitle to "Vibração, fonte e som",
+    S.AboutSubtitle to "Versão e desenvolvedor",
+    S.DeleteTag to "Excluir categoria",
+    S.DeleteTagMsg to "A categoria \"%1\$s\" será removida de todos os azkar. Os azkar não serão excluídos.",
+    S.AddTag to "Adicionar categoria",
+    S.NoTags to "Ainda sem categorias",
+    S.Edit to "Editar",
+    S.NewTag to "Nova categoria",
+    S.EditTag to "Editar categoria",
+    S.TagName to "Nome da categoria",
+    S.Color to "Cor",
+    S.TasbeehaFmt to "%1\$d tasbeeh",
+    S.TapToCount to "Toque para contar",
+    S.ResetCounter to "Zerar contador",
+    S.ActiveOfTotalFmt to "%1\$d de %2\$d ativos",
+    S.NoReminders to "Sem lembretes",
+    S.NoFavorites to "Sem azkar favoritos",
+    S.Light to "Claro",
+    S.Dark to "Escuro",
+    S.SystemAuto to "Automático (sistema)",
+    S.LockWidgets to "Widgets da tela de bloqueio",
+    S.LockWidgetsToast to "Pressione a tela de bloqueio para adicionar um widget",
+    S.OpenEditor to "Abrir editor",
+    S.Close to "Fechar",
+    S.LockWidgetsDesc to "Todos os widgets do Wathakker estão disponíveis na área dedicada abaixo do relógio na tela de bloqueio (One UI 8 ou superior).",
+    S.LockWidgetsSteps to "1. Na tela de bloqueio, pressione um espaço vazio e confirme sua identidade.\n2. Toque em \"Adicionar widget\" e escolha \"Wathakker\".\n3. Arraste o widget para a área abaixo do relógio.",
+    S.LockWidgetsHint to "Tocar no widget na tela de bloqueio abre o app diretamente.",
+    S.ChangeLocation to "Alterar localização",
+    S.LocationSubtitle to "Cidade, método de cálculo e ajustes do alarme do Fajr",
+    S.FajrAlarmSubtitle to "Ativar alarme e som",
+    S.LockScreenSection to "Tela de bloqueio",
+    S.LockWidgetsRowSub to "Adicione um widget do Wathakker abaixo do relógio da tela de bloqueio",
+    S.Notifications to "Notificações",
+    S.NotifSound to "Som de notificação",
+    S.Default to "Padrão",
+    S.Vibration to "Vibração",
+    S.Appearance to "Aparência",
+    S.AppFont to "Fonte do app",
+    S.Language to "Idioma",
+    S.NewDhikr to "Novo dhikr",
+    S.EditDhikr to "Editar dhikr",
+    S.TitleLabel to "Título",
+    S.DhikrText to "Texto do dhikr ou súplica",
+    S.Cancel to "Cancelar",
+    S.Add to "Adicionar",
+    S.AddReminderTime to "Adicionar horário de lembrete",
+    S.RepeatReminder to "Repetir lembrete",
+    S.ReminderTime to "Horário do lembrete",
+    S.Save to "Salvar",
+    S.ChaptersFmt to "%1\$d capítulos de azkar e súplicas",
+    S.SearchHisn to "Pesquisar em Hisn Al-Muslim",
+    S.NoFavChapters to "Nenhum capítulo favorito",
+    S.NoResults to "Sem resultados",
+    S.ReadTodaySuffix to " · Lido hoje",
+    S.AddToMyAzkar to "Adicionar aos meus azkar",
+    S.Done to "Concluído",
+    S.Tagline to "Um app que ajuda você a manter seus azkar de dia e de noite",
+    S.Version to "Versão",
+    S.Developer to "Desenvolvedor",
+    S.DevName to "Mohamed Elnaggar",
+    S.HisnCredit to "Conteúdo do projeto HisnElmoslem (licença GPL v3)",
+    S.InstinctCredit to "Criado em colaboração com a Instinct",
+    S.Dua to "Lembre-se de nós em suas súplicas",
+    S.Font to "Fonte",
+    S.FontLight to "Fonte do app leve",
+    S.FontBold to "Fonte do app em negrito",
+    S.FontSystem to "Fonte do sistema",
+    S.FontCairo to "Cairo",
+    S.FontNaskh to "Naskh",
+    S.FontAmiri to "Amiri",
+    S.FontRuqaa to "Ruqaa (ocasiões)",
+    S.LocCalcTitle to "Local e cálculo",
+    S.LocCalcSubtitle to "Cidade, método e ajustes",
+    S.LocSection to "Local",
+    S.CalcSection to "Cálculo",
+    S.AsrJuristic to "Cálculo do Asr",
+    S.AsrShafii to "Shafi'i, maliqui, hanbali",
+    S.AsrHanafi to "Hanafi",
+    S.HighLatRule to "Regra de altas latitudes",
+    S.HighLatNone to "Nenhuma",
+    S.HighLatMiddle to "Meio da noite",
+    S.HighLatSeventh to "Um sétimo da noite",
+    S.HighLatAngle to "Baseada no ângulo",
+    S.AdjSection to "Ajustes de horários",
+    S.AdjNote to "Minutos adicionados ou subtraídos de cada horário calculado. Aplica-se de imediato a horários, widgets e alertas.",
+    S.AdjHijri to "Ajuste da data hégira",
+    S.AdjMinShort to "min",
+    S.AdjDayShort to "dias",
+    S.PrayerFajr to "Fajr",
+    S.PrayerShuruq to "Nascer do sol",
+    S.PrayerDhuhr to "Dhuhr",
+    S.PrayerJumuah to "Jumuah",
+    S.PrayerAsr to "Asr",
+    S.PrayerMaghrib to "Maghrib",
+    S.PrayerIsha to "Isha",
+    S.PrayerTimes to "Horários de oração",
+    S.NextPrayer to "Próxima oração",
+    S.AmMarker to "AM",
+    S.PmMarker to "PM",
+    S.PickCountryCity to "Escolha o país e a cidade",
+    S.SearchCityHint to "Pesquisar cidade ou país...",
+    S.NoSearchResults to "Nenhum resultado encontrado",
+    S.FajrPrayer to "Oração do Fajr",
+    S.FajrNow to "Chegou a hora da oração do Fajr",
+    S.Snooze to "Soneca",
+    S.StopAlarm to "Parar alarme",
+    S.ChooseSnooze to "Escolha a duração da soneca:",
+    S.MinutesShortFmt to "%1\\\$d (min)",
+    S.ColorWhite to "Branco",
+    S.Auto to "Automático",
+    S.ColorBlack to "Preto",
+    S.ColorGray to "Cinza",
+    S.ColorBlue to "Azul",
+    S.ColorGreen to "Verde",
+    S.ColorAmber to "Âmbar",
+    S.ColorBlueDark to "Azul-escuro",
+    S.ColorGreenDark to "Verde-escuro",
+    S.WidgetSettings to "Configurações do widget",
+    S.ColorYellow to "Amarelo",
+    S.ColorTurquoise to "Turquesa",
+    S.WidgetAccent to "Cor do widget",
+    S.BarColor to "Cor da barra de progresso",
+    S.BgColor to "Cor de fundo",
+    S.PickRingtone to "Escolher toque do alarme",
+    S.LocationMethod to "Método de localização",
+    S.CurrentLocation to "Localização atual",
+    S.AutoUpdateFajr to "Atualiza o horário do Fajr conforme sua localização",
+    S.PickCitySub to "Escolha sua cidade manualmente sem localização",
+    S.CurrentCity to "Cidade atual",
+    S.EditCityName to "Editar nome da cidade",
+    S.ResetCityNameAuto to "Restaurar nome automático",
+    S.CustomLocationNameHint to "Digite um nome personalizado para a sua localização para mostrar em vez do padrão :",
+    S.ChangeCity to "Mudar cidade",
+    S.NoLocPermission to "Permissão de localização não concedida. Continue para concedê-la.",
+    S.GpsOff to "O serviço de localização (GPS) está desativado no telefone.",
+    S.CalcMethod to "Método de cálculo",
+    S.SelectedCalcMethod to "Método de cálculo selecionado",
+    S.Change to "Alterar",
+    S.UpdatingTime to "Atualizando o horário...",
+    S.UpdateFajrNow to "Atualizar o horário do Fajr agora",
+    S.AlarmToneSection to "Toque e som do alarme",
+    S.SelectedTone to "Toque selecionado",
+    S.SystemTones to "Toques do sistema",
+    S.AudioFile to "Arquivo de áudio",
+    S.ExtraSettings to "Configurações adicionais",
+    S.VibrateDuringAlarm to "Vibrar durante o alarme",
+    S.NextFajrAt to "Próximo horário do Fajr",
+    S.AlarmOnDesc to "Alarme ativado",
+    S.AlarmOffDesc to "Alarme desativado",
+    S.PickCalcMethod to "Escolha o método de cálculo",
+    S.NotifReminder to "Lembrete",
+    S.NotifReadDone to "Marcar como lido",
+    S.NotifRemindLater to "Lembrar em 10 minutos",
+    S.NotifOpenApp to "Abrir app",
+    S.NotifChannelAzkar to "Notificações de lembrete de azkar",
+    S.NotifChannelFajr to "Alertas da oração do Fajr",
+    S.TodayAt to "Hoje às",
+    S.TomorrowAt to "Amanhã às",
+    S.DefaultAlarmTone to "Toque de alarme padrão",
+    S.QiblaTitle to "Qibla",
+    S.QiblaNorthFmt to "Qibla a %1\$d° do norte",
+    S.QiblaSetLocation to "Defina sua localização primeiro",
+    S.QiblaNoSensor to "Este dispositivo não tem sensor de bússola",
+    S.QiblaCalibrate to "Mova o telefone em forma de 8 para calibrar",
+    S.QiblaAligned to "Você está voltado para a Qibla",
+    S.QiblaCityFmt to "Local: %1\$s",
+    S.DirN to "N",
+    S.DirNE to "NE",
+    S.DirE to "E",
+    S.DirSE to "SE",
+    S.DirS to "S",
+    S.DirSW to "SO",
+    S.DirW to "O",
+    S.DirNW to "NO",
+    S.CalendarTab to "Calendário",
+    S.CalEvents to "Eventos",
+    S.CalNoEvents to "Sem eventos neste dia",
+    S.CalMonthEvents to "Eventos do mês",
+    S.CalReminderOn to "Lembrete ativado",
+    S.CalReminderOff to "Ativar lembrete",
+    S.WdSun to "D",
+    S.WdMon to "S",
+    S.WdTue to "T",
+    S.WdWed to "Q",
+    S.WdThu to "Q",
+    S.WdFri to "S",
+    S.WdSat to "S",
+    S.AutoDnd to "Silêncio auto na oração",
+    S.AutoDndSub to "Silencioso do adhan ao iqama (precisa de permissão DND)",
+    S.OptTimesTitle to "Horários opcionais",
+    S.OptTimesSub to "Linhas extras: Imsak, Duha, Meia-noite e Qiyam",
+    S.Imsak to "Imsak",
+    S.Duha to "Duha",
+    S.Midnight to "Meia-noite",
+    S.Qiyam to "Qiyam",
+    S.HijriConvTitle to "Conversor de data",
+    S.HijriConvSub to "Converter entre datas Hijri e gregorianas",
+    S.GregToHijri to "Gregoriana para Hijri",
+    S.HijriToGreg to "Hijri para Gregoriana",
+    S.DayLabel to "Dia",
+    S.MonthLabel to "Mês",
+    S.YearLabel to "Ano",
+    S.AlertTiming to "Momento do alerta",
+    S.AtAdhanTime to "No adhan",
+    S.AtAdhanRow to "No adhan",
+    S.AtAdhanRowSub to "A notificação base quando chega a hora da oração",
+    S.BeforeAdhanRow to "Lembrete antecipado",
+    S.BeforeAdhanHelper to "Um lembrete extra - a notificação do adhan continua a chegar",
+    S.MinBeforeFmt to "%1\$d min antes",
+    S.AdhanReminder to "Lembrete de adhan",
+    S.IqamaReminder to "Lembrete de iqama",
+    S.IqamaReminderSub to "Tocar na hora do iqama",
+    S.PrayerNowFmt to "Agora é hora de %1\$s",
+    S.PrayerApproachingFmt to "%1\$s em %2\$d min",
+    S.IqamaNowFmt to "Iqama de %1\$s agora",
+    S.SharedAlertSettings to "Configurações partilhadas para todos os alertas",
+    S.FajrAlarmOn to "Ativar alarme do Fajr",
+    S.AlarmEnabledSub to "O alarme toca na hora do Fajr",
+    S.AlarmDisabledSub to "O alarme está desativado",
+    S.AlarmVolume to "Volume do alarme",
+    S.SnoozeDuration to "Duração da soneca",
+    S.AlertMode to "Tipo de alerta",
+    S.AlertModeNotif to "Notificação",
+    S.AlertModeAlarm to "Alarme completo",
+    S.AdhanAlertType to "Tipo de alerta de adhan",
+    S.AlertTypeNotification to "Alerta de notificação",
+    S.AlertTypeFullScreen to "Alerta de notificação em ecrã inteiro",
+)

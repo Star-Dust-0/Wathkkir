@@ -29,10 +29,11 @@ object WTheme {
 object Settings {
     private const val P = "wear_prefs"
     /** Names of the background patterns shown in the Appearance list, with their internal ids. */
-    val patterns = listOf(1 to "ربع الحزب", 8 to "نجوم ومعينات", 9 to "شبكة سداسية", 10 to "نجمة ثمانية متقاطعة", 11 to "أرابيسك دائري")
+    val patterns = listOf(1 to "ربع الحزب", 3 to "نجمة ثمانية في معين", 8 to "نجوم ومعينات", 9 to "شبكة سداسية", 10 to "نجمة ثمانية متقاطعة", 11 to "أرابيسك دائري")
 
     fun load(c: Context) {
         val p = c.getSharedPreferences(P, Context.MODE_PRIVATE)
+        Loc.refresh(c)
         starPattern = p.getInt("pat", 1)
         WTheme.idx = p.getInt("theme", 0)
         WFonts.load(c)
@@ -43,6 +44,23 @@ object Settings {
     /** 0 = sync from the phone, 1 = automatic (GPS on the watch). */
     fun locMode(c: Context) = c.getSharedPreferences(P, Context.MODE_PRIVATE).getInt("locmode", 0)
     fun saveLocMode(c: Context, v: Int) = c.getSharedPreferences(P, Context.MODE_PRIVATE).edit().putInt("locmode", v).apply()
-    fun saveGps(c: Context, lat: Double, lon: Double) = c.getSharedPreferences(P, Context.MODE_PRIVATE).edit()
-        .putLong("gps_lat", java.lang.Double.doubleToLongBits(lat)).putLong("gps_lon", java.lang.Double.doubleToLongBits(lon)).apply()
+    fun saveGps(c: Context, lat: Double, lon: Double) {
+        c.getSharedPreferences(P, Context.MODE_PRIVATE).edit()
+            .putLong("gps_lat", java.lang.Double.doubleToLongBits(lat)).putLong("gps_lon", java.lang.Double.doubleToLongBits(lon)).apply()
+        try { Adhan.schedule(c) } catch (_: Throwable) {}
+        try { requestAllComplications(c) } catch (_: Throwable) {}
+    }
 }
+
+/** Watch UI language: 0 = sync (phone language; Arabic until the phone sends one), 1 = Arabic, 2 = English. */
+object Loc {
+    @Volatile var en = false
+    fun refresh(c: Context) {
+        val m = c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getInt("lang", 0)
+        en = when (m) { 1 -> false; 2 -> true; else -> c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getString("phone_lang", "ar") == "en" }
+    }
+    fun mode(c: Context) = c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).getInt("lang", 0)
+    fun save(c: Context, v: Int) { c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putInt("lang", v).apply(); refresh(c); langTick++; try { requestAllComplications(c) } catch (_: Throwable) {} }
+}
+var langTick by mutableIntStateOf(0)
+fun T(ar: String, en: String) = if (Loc.en) en else ar

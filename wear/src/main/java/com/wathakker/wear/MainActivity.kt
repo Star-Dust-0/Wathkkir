@@ -1,4 +1,5 @@
 package com.wathakker.wear
+import androidx.compose.runtime.mutableIntStateOf
 
 import android.content.Context
 import android.content.Intent
@@ -10,9 +11,17 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -34,6 +43,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -44,7 +54,6 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,6 +66,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate as rotateScope
@@ -73,9 +83,15 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import androidx.wear.compose.foundation.BasicSwipeToDismissBox
+import androidx.wear.compose.foundation.ExperimentalWearFoundationApi
+import androidx.wear.compose.foundation.SwipeToDismissValue
+import androidx.wear.compose.foundation.edgeSwipeToDismiss
+import androidx.wear.compose.foundation.rememberSwipeToDismissBoxState
 import androidx.wear.remote.interactions.RemoteActivityHelper
 import kotlinx.coroutines.delay
 import java.util.concurrent.Executors
+import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.max
@@ -88,7 +104,7 @@ val Ink = Color(0xFF0B0B0C)
 val Pill = Color(0xFF1B1B1D)
 val SoftGrey = Color(0xFF9D9DA2)
 fun tx(size: Float, color: Color = Color.White, bold: Boolean = false, align: TextAlign = TextAlign.Center) =
-    TextStyle(fontFamily = WFonts.cur.family, fontSize = (size * WFonts.scale).sp, color = color, fontWeight = if (bold || WFonts.bold) FontWeight.Bold else FontWeight.Normal, textAlign = align)
+    TextStyle(fontFamily = WFonts.cur.family, fontSize = (size * WFonts.scale).sp, color = color, fontWeight = if (bold) FontWeight.Bold else FontWeight.Normal, textAlign = align)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,37 +134,108 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalWearFoundationApi::class)
 @Composable
 fun WearApp(startPage: Int, startSub: Int = 0) {
     val ctx = LocalContext.current
     var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
     LaunchedEffect(Unit) { while (true) { now = System.currentTimeMillis(); delay(1000) } }
     val state = remember(now / 20000) { Prayer.compute(ctx, now) }
-    CompositionLocalProvider(LocalLayoutDirection provides (if (langTick >= 0 && Loc.en) LayoutDirection.Ltr else LayoutDirection.Rtl)) {
+    val appDir = if (langTick >= 0 && Loc.en) LayoutDirection.Ltr else LayoutDirection.Rtl
+    CompositionLocalProvider(LocalLayoutDirection provides appDir) {
         BoxWithConstraints(Modifier.fillMaxSize().background(Color.Black)) {
             val w = maxWidth.value
             val pager = rememberPagerState(initialPage = startPage) { 4 }
-            HorizontalPager(pager, Modifier.fillMaxSize()) { page ->
-                when (page) {
-                    0 -> MainPage(state, now, w)
-                    1 -> ListPage(state, w)
-                    2 -> QiblaPage(w)
-                    else -> SettingsPage(w, startSub, {})
+            val act = ctx as? android.app.Activity
+            var settingsSub by remember { mutableIntStateOf(startSub) }
+            val settingsListState = rememberScalingLazyListState(initialCenterItemIndex = 0, initialCenterItemScrollOffset = 0)
+            // Fresh entry to the settings page opens at the top (19:44); returning from a
+            // sub-screen restores the exact position (21:30) because the state survives above
+            // the AnimatedContent that swaps sub-screens.
+            var prevPagerPage by remember { mutableIntStateOf(pager.currentPage) }
+            LaunchedEffect(pager.currentPage) {
+                if (pager.currentPage == 3 && prevPagerPage != 3) settingsListState.scrollToItem(0, 0)
+                prevPagerPage = pager.currentPage
+            }
+            // One swipe-to-dismiss level for the whole navigation hierarchy (like SwipeDismissableNavHost):
+            // on a settings sub-screen the edge swipe dismisses it back to the settings root with the root
+            // visible underneath; on the first pager page it exits the app. On other pages the pager itself
+            // consumes right swipes to page back one page at a time.
+            val subOpen = pager.currentPage == 3 && settingsSub != 0
+            val dismissState = rememberSwipeToDismissBoxState()
+            // True while the sub-screen is closing via the edge swipe-back gesture: the box has already
+            // animated that visually, so the content swap back to the root must be instant (no double).
+            var returnViaSwipe by remember { mutableStateOf(false) }
+            LaunchedEffect(dismissState.currentValue) {
+                if (dismissState.currentValue == SwipeToDismissValue.Dismissed) {
+                    dismissState.snapTo(SwipeToDismissValue.Default)
+                    if (subOpen) { returnViaSwipe = true; settingsSub = 0 } else act?.finish()
                 }
             }
-            Row(
-                Modifier.align(Alignment.BottomCenter).padding(bottom = (w * 0.045f).dp),
-                horizontalArrangement = Arrangement.spacedBy((w * 0.018f).dp)
-            ) {
-                val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-                for (k in 0 until 4) {
-                    val i = if (rtl) 3 - k else k
-                    val on = i == pager.currentPage
-                    Box(
-                        Modifier.width(((if (on) 0.07f else 0.022f) * w).dp).height((w * 0.022f).dp)
-                            .clip(CircleShape).background(if (on) Color.White else Color(0xFF5A5A5E))
-                    )
+            // Constant content (root-cause fix for his 19:44 report): keying the box content per
+            // sub-screen made the box dispose and recreate it, so the enter transition never ran.
+            // Now the box only owns the swipe-back gesture (background = settings root revealed under
+            // the finger) and the forward/return transitions run in the AnimatedContent below.
+            BasicSwipeToDismissBox(
+                state = dismissState,
+                modifier = Modifier.fillMaxSize().edgeSwipeToDismiss(dismissState),
+                userSwipeEnabled = subOpen || pager.currentPage == 0
+            ) { isBackground ->
+                if (isBackground) {
+                    if (subOpen) SettingsContent(0, w, {}, settingsListState) else Box(Modifier.fillMaxSize().background(Color.Black))
+                } else {
+                    // The pager direction is fixed to LTR: the Wear back gesture is always a right swipe (it does not
+                    // mirror in RTL), so the next page must always come from a left swipe, in every language.
+                    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+                        // While a settings sub-screen is open, the pager must not consume horizontal drags:
+                        // a right swipe then only dismisses the sub-screen back to the settings root.
+                        HorizontalPager(pager, Modifier.fillMaxSize(), userScrollEnabled = settingsSub == 0) { page ->
+                            CompositionLocalProvider(LocalLayoutDirection provides appDir) {
+                                when (page) {
+                                    0 -> MainPage(state, now, w)
+                                    1 -> ListPage(state, w)
+                                    2 -> QiblaPage(w)
+                                    else -> {
+                                        // One UI Watch navigation: the sub-screen slides in from the right
+                                        // while the root slides out left; returning mirrors it. The
+                                        // swipe-back gesture animates itself, so that path stays instant.
+                                        AnimatedContent(
+                                            targetState = settingsSub,
+                                            transitionSpec = {
+                                                when {
+                                                    returnViaSwipe && targetState == 0 -> EnterTransition.None togetherWith ExitTransition.None
+                                                    targetState != 0 -> (slideInHorizontally { it } + fadeIn()) togetherWith (slideOutHorizontally { -it } + fadeOut())
+                                                    else -> (slideInHorizontally { -it } + fadeIn()) togetherWith (slideOutHorizontally { it } + fadeOut())
+                                                }
+                                            },
+                                            label = "settingsSub"
+                                        ) { sub ->
+                                            SettingsPage(w, sub, { settingsSub = it }, settingsListState)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            LaunchedEffect(settingsSub) { returnViaSwipe = false }
+            // Dots mirror the physical page order (page 0 at the left, advancing moves the pill right),
+            // matching the fixed LTR pager direction in every language.
+            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+                Row(
+                    Modifier.align(Alignment.BottomCenter).padding(bottom = (w * 0.045f).dp),
+                    horizontalArrangement = Arrangement.spacedBy((w * 0.018f).dp)
+                ) {
+                    // The active pill flows with the swipe (One UI style) instead of jumping page to page.
+                    val pos = pager.currentPage + pager.currentPageOffsetFraction
+                    for (i in 0 until 4) {
+                        val dist = abs(pos - i).coerceIn(0f, 1f)
+                        Box(
+                            Modifier.width(((0.022f + (0.07f - 0.022f) * (1f - dist)) * w).dp).height((w * 0.022f).dp)
+                                .clip(CircleShape).background(lerp(Color(0xFF5A5A5E), Color.White, 1f - dist))
+                        )
+                    }
                 }
             }
         }
@@ -238,7 +325,7 @@ fun MainPage(s: PrayerState, now: Long, w: Float) {
             Text1(s.next.name, tx(w * 0.15f, Color.White, true))
             Text1(Prayer.time12(s.next.at), tx(w * 0.095f, Color.White))
             Spacer(Modifier.height((w * 0.035f).dp))
-            NativeCountdown(s.next.at, Gold, w * 0.062f * WFonts.scale, prefix = T("متبقي ", "Time left "))
+            Text1(T("متبقي ", "Time left ") + Prayer.remainingText(s.next.at - now), tx(w * 0.062f, Gold))
         }
     }
 }
@@ -375,8 +462,7 @@ fun CirclesPage(s: PrayerState, now: Long, w: Float, visible: Boolean, bg: Color
                 val c = if (isNext) Ink else if (past) Color(0xFFC9C9CE) else Color.White
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text1(slot.name, tx(w * 0.05f, c, true))
-                    if (past) Text1(Prayer.time24(slot.at), tx(w * 0.078f, c))
-                    else NativeCountdown(slot.at, c, w * 0.078f * WFonts.scale)
+                    Text1(if (past) Prayer.time24(slot.at) else Prayer.hhmm(slot.at - now), tx(w * 0.078f, c))
                     Text1(if (past) T("مضت", "Passed") else T("متبقية", "Left"), tx(w * 0.042f, if (isNext) Ink else SoftGrey))
                 }
             }
@@ -385,33 +471,6 @@ fun CirclesPage(s: PrayerState, now: Long, w: Float, visible: Boolean, bg: Color
 }
 
 private val density: Float get() = android.content.res.Resources.getSystem().displayMetrics.density
-
-@Composable
-fun PhonePage(w: Float) {
-    val ctx = LocalContext.current
-    var status by remember { mutableStateOf("") }
-    var busy by remember { mutableStateOf(false) }
-    LaunchedEffect(busy) { if (busy) { delay(3000); busy = false } }
-    Box(Modifier.fillMaxSize().background(Color.Black).clickable(enabled = !busy) { busy = true; openOnPhone(ctx) { status = it } }, contentAlignment = Alignment.Center) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Box(Modifier.size((w * 0.56f).dp).clip(CircleShape).background(Color(0xFFBFA03A)), contentAlignment = Alignment.Center) {
-                Canvas(Modifier.fillMaxSize()) {
-                    val m = size.minDimension; val sw = m * 0.065f; val dark = Color(0xFF333333)
-                    val cx = m / 2
-                    // bracket on the right and an arrow going in
-                    val br = Path().apply { moveTo(cx + m * 0.02f, m * 0.30f); lineTo(cx + m * 0.20f, m * 0.30f); lineTo(cx + m * 0.20f, m * 0.70f); lineTo(cx + m * 0.02f, m * 0.70f) }
-                    drawPath(br, dark, style = Stroke(width = sw, cap = StrokeCap.Round))
-                    drawLine(dark, Offset(m * 0.18f, m * 0.5f), Offset(cx + m * 0.12f, m * 0.5f), strokeWidth = sw, cap = StrokeCap.Round)
-                    val ah = Path().apply { moveTo(cx + m * 0.02f, m * 0.40f); lineTo(cx + m * 0.12f, m * 0.5f); lineTo(cx + m * 0.02f, m * 0.60f) }
-                    drawPath(ah, dark, style = Stroke(width = sw, cap = StrokeCap.Round))
-                }
-            }
-            Spacer(Modifier.height((w * 0.045f).dp))
-            Text1(T("فتح في الجهاز", "Open on phone"), tx(w * 0.075f, Color.White))
-            if (status.isNotEmpty()) Text1(status, tx(w * 0.05f, SoftGrey))
-        }
-    }
-}
 
 fun openOnPhone(ctx: Context, report: (String) -> Unit) {
     try {
@@ -425,4 +484,3 @@ fun openOnPhone(ctx: Context, report: (String) -> Unit) {
         report(T("الهاتف غير متصل", "Phone not connected"))
     }
 }
-

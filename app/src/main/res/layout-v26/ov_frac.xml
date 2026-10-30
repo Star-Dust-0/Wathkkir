@@ -1,362 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:id="@+id/ov_frac_root"
-    android:visibility="gone"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <FrameLayout
-        android:id="@+id/ov_vt0"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <FrameLayout
-        android:id="@+id/ov_vt1"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
-    <FrameLayout
-        android:id="@+id/ov_vt2"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"/>
-    <FrameLayout
-        android:id="@+id/ov_vt3"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"/>
-    <FrameLayout
-        android:id="@+id/ov_vt4"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="16"/>
-    <FrameLayout
-        android:id="@+id/ov_vt5"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="32"/>
-    <FrameLayout
-        android:id="@+id/ov_vt6"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="64"/>
-    <FrameLayout
-        android:id="@+id/ov_vt7"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="128"/>
-    <FrameLayout
-        android:id="@+id/ov_vt8"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="256"/>
-    <FrameLayout
-        android:id="@+id/ov_vt9"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="512"/>
-    <FrameLayout
-        android:id="@+id/ov_vt10"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1024"/>
-    <FrameLayout
-        android:id="@+id/ov_vt11"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2048"/>
-    <FrameLayout
-        android:id="@+id/ov_vt12"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4096"/>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="256">
-        <FrameLayout
-            android:id="@+id/ov_hl0"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        <FrameLayout
-            android:id="@+id/ov_hl1"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"/>
-        <FrameLayout
-            android:id="@+id/ov_hl2"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4"/>
-        <FrameLayout
-            android:id="@+id/ov_hl3"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="8"/>
-        <FrameLayout
-            android:id="@+id/ov_hl4"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="16"/>
-        <FrameLayout
-            android:id="@+id/ov_hl5"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="32"/>
-        <FrameLayout
-            android:id="@+id/ov_hl6"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="64"/>
-        <FrameLayout
-            android:id="@+id/ov_hl7"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="128"/>
-        <FrameLayout
-            android:id="@+id/ov_hl8"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="256"/>
-        <FrameLayout
-            android:id="@+id/ov_hl9"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="512"/>
-        <FrameLayout
-            android:id="@+id/ov_hl10"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1024"/>
-        <FrameLayout
-            android:id="@+id/ov_hl11"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2048"/>
-        <FrameLayout
-            android:id="@+id/ov_hl12"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4096"/>
-        <Chronometer
-            android:textSize="12sp"
-            android:textColor="#ffffffff"
-            android:gravity="center"
-            android:id="@+id/ov_f_semi"
-            android:padding="0dp"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:maxLines="1"
-            android:includeFontPadding="false"
-            android:layout_weight="256"
-            android:fontFamily="@font/expoarabic_semibold"
-            android:layoutDirection="ltr"
-            android:autoSizeTextType="uniform"
-            android:autoSizeStepGranularity="1px"
-            android:autoSizeMinTextSize="4px"
-            android:autoSizeMaxTextSize="800px"/>
-        <Chronometer
-            android:textSize="12sp"
-            android:textColor="#ffffffff"
-            android:gravity="center"
-            android:id="@+id/ov_f_med"
-            android:padding="0dp"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:maxLines="1"
-            android:includeFontPadding="false"
-            android:layout_weight="256"
-            android:fontFamily="@font/expoarabic_medium"
-            android:layoutDirection="ltr"
-            android:autoSizeTextType="uniform"
-            android:autoSizeStepGranularity="1px"
-            android:autoSizeMinTextSize="4px"
-            android:autoSizeMaxTextSize="800px"/>
-        <FrameLayout
-            android:id="@+id/ov_hr0"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        <FrameLayout
-            android:id="@+id/ov_hr1"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"/>
-        <FrameLayout
-            android:id="@+id/ov_hr2"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4"/>
-        <FrameLayout
-            android:id="@+id/ov_hr3"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="8"/>
-        <FrameLayout
-            android:id="@+id/ov_hr4"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="16"/>
-        <FrameLayout
-            android:id="@+id/ov_hr5"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="32"/>
-        <FrameLayout
-            android:id="@+id/ov_hr6"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="64"/>
-        <FrameLayout
-            android:id="@+id/ov_hr7"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="128"/>
-        <FrameLayout
-            android:id="@+id/ov_hr8"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="256"/>
-        <FrameLayout
-            android:id="@+id/ov_hr9"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="512"/>
-        <FrameLayout
-            android:id="@+id/ov_hr10"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1024"/>
-        <FrameLayout
-            android:id="@+id/ov_hr11"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2048"/>
-        <FrameLayout
-            android:id="@+id/ov_hr12"
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4096"/>
-    </LinearLayout>
-    <FrameLayout
-        android:id="@+id/ov_vb0"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <FrameLayout
-        android:id="@+id/ov_vb1"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
-    <FrameLayout
-        android:id="@+id/ov_vb2"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"/>
-    <FrameLayout
-        android:id="@+id/ov_vb3"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"/>
-    <FrameLayout
-        android:id="@+id/ov_vb4"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="16"/>
-    <FrameLayout
-        android:id="@+id/ov_vb5"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="32"/>
-    <FrameLayout
-        android:id="@+id/ov_vb6"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="64"/>
-    <FrameLayout
-        android:id="@+id/ov_vb7"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="128"/>
-    <FrameLayout
-        android:id="@+id/ov_vb8"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="256"/>
-    <FrameLayout
-        android:id="@+id/ov_vb9"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="512"/>
-    <FrameLayout
-        android:id="@+id/ov_vb10"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1024"/>
-    <FrameLayout
-        android:id="@+id/ov_vb11"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2048"/>
-    <FrameLayout
-        android:id="@+id/ov_vb12"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4096"/>
+<!-- Scale-free iqama countdown overlay (API 26+). Position and size are fractions of the displayed widget:
+     the spacer views carry binary weights that the app switches on/off, the Chronometer box keeps weight 256,
+     and autosize fits the text to the box height (= the bitmap text line height), so it follows however the launcher scales the image. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/ov_frac_root" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+        <FrameLayout android:id="@+id/ov_vt0" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt1" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt2" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="4" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt3" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="8" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt4" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="16" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt5" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="32" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt6" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="64" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt7" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="128" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt8" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="256" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt9" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="512" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt10" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1024" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt11" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2048" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vt12" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="4096" android:visibility="gone" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="256" android:orientation="horizontal">
+            <FrameLayout android:id="@+id/ov_hl0" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="4" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="8" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="16" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="32" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="64" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl7" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="128" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl8" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="256" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl9" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="512" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl10" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1024" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl11" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2048" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hl12" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="4096" android:visibility="gone" />
+            <Chronometer android:id="@+id/ov_f_semi" android:visibility="gone" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="256" android:gravity="center" android:padding="0dp" android:includeFontPadding="false" android:fontFamily="@font/expoarabic_semibold" android:textColor="#ffffffff" android:textSize="12sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="4px" android:autoSizeMaxTextSize="800px" android:autoSizeStepGranularity="1px" android:maxLines="1" android:layoutDirection="ltr" />
+            <Chronometer android:id="@+id/ov_f_med" android:visibility="gone" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="256" android:gravity="center" android:padding="0dp" android:includeFontPadding="false" android:fontFamily="@font/expoarabic_medium" android:textColor="#ffffffff" android:textSize="12sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="4px" android:autoSizeMaxTextSize="800px" android:autoSizeStepGranularity="1px" android:maxLines="1" android:layoutDirection="ltr" />
+            <FrameLayout android:id="@+id/ov_hr0" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="4" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="8" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="16" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr5" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="32" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr6" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="64" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr7" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="128" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr8" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="256" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr9" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="512" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr10" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1024" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr11" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2048" android:visibility="gone" />
+            <FrameLayout android:id="@+id/ov_hr12" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="4096" android:visibility="gone" />
+        </LinearLayout>
+        <FrameLayout android:id="@+id/ov_vb0" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb1" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb2" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="4" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb3" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="8" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb4" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="16" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb5" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="32" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb6" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="64" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb7" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="128" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb8" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="256" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb9" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="512" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb10" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1024" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb11" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2048" android:visibility="gone" />
+        <FrameLayout android:id="@+id/ov_vb12" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="4096" android:visibility="gone" />
 </LinearLayout>

@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/widget_bg"
-    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:background="@drawable/widget_bg">
+
     <TextView
-        android:textSize="15sp"
-        android:textColor="#ffffffff"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="الإقامة"
-        android:includeFontPadding="false"
-        android:fontFamily="@font/expoarabic_medium"
-        android:textDirection="rtl"/>
+        android:textColor="#FFFFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textDirection="locale" />
+
     <ProgressBar
         android:id="@+id/widget_iqama_small_progress"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="6dp"
         android:layout_marginTop="8dp"
-        android:maxHeight="10dp"
         android:max="100"
         android:progress="50"
-        android:progressDrawable="@drawable/widget_progress_iqama"
-        android:minHeight="0dp"
-        android:layoutDirection="ltr"
-        style="?android:attr/progressBarStyleHorizontal"/>
+        android:progressDrawable="@drawable/widget_progress_iqama" />
+
     <TextView
-        android:textSize="14sp"
-        android:textColor="#ffc9c9ce"
-        android:gravity="center"
         android:id="@+id/widget_iqama_small_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:gravity="center"
         android:text="5:59"
-        android:includeFontPadding="false"
-        android:fontFamily="@font/expoarabic_semibold"
-        android:textDirection="rtl"/>
+        android:textColor="#FFA6A6A6"
+        android:textSize="13sp"
+        android:textDirection="locale" />
 </LinearLayout>

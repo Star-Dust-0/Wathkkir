@@ -1,19 +1,28 @@
 package com.example.ui.screens
 
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
@@ -25,64 +34,105 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.ui.oneui.*
+import com.example.ui.oneui.OneUIButton
+import com.example.ui.oneui.OneUIChip
+import com.example.ThemeSettings
+import com.example.ui.oneui.FrostSpec
+import com.example.ui.oneui.oneUIFrosted
+import com.example.ui.oneui.oneUIBorderColor
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.theme.OneUIActiveGreen
 import com.example.ui.viewmodel.MainViewModel
 
 @Composable
 fun TasbeehScreen(viewModel: MainViewModel, onMenu: (() -> Unit)? = null) {
     val count by viewModel.tasbeehCount.collectAsStateWithLifecycle()
-    TasbeehContent(count, onMenu, viewModel::incrementTasbeeh, viewModel::resetTasbeeh)
+    TasbeehContent(
+        count = count,
+        onMenu = onMenu,
+        onTap = viewModel::incrementTasbeeh,
+        onReset = viewModel::resetTasbeeh
+    )
 }
 
 @Composable
-fun TasbeehContent(count: Int, onBack: (() -> Unit)?, onTap: () -> Unit, onReset: () -> Unit) {
+fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset: () -> Unit) {
     val cs = MaterialTheme.colorScheme
     val haptic = LocalHapticFeedback.current
     val targets = listOf(33, 99, 100)
     var target by remember { mutableIntStateOf(33) }
-    val progress = ((count % target).toFloat() / target).let { if (count > 0 && count % target == 0) 1f else it }
-    OneUIScreen(title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TasbeehTab), subtitle = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TasbeehaFmt).format(count), onMenu = onBack, actions = { com.example.ui.oneui.OneUIIconAction(androidx.compose.material.icons.Icons.Default.Settings, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") }) }) {
+    var progress = (count % target).toFloat() / target
+    if (count > 0 && count % target == 0) progress = 1f
+    val finalProgress = progress
+    val track = cs.surfaceVariant
+
+    OneUIScreen(title = "السبحة", subtitle = "$count تسبيحة", onMenu = onMenu) {
         item(key = "ring") {
-            Box(Modifier.fillMaxWidth().padding(top = 12.dp), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
+                contentAlignment = Alignment.Center
+            ) {
                 Box(
-                    Modifier
+                    modifier = Modifier
                         .size(268.dp)
-                        .clip(CircleShape)
-                        .background(cs.surface)
-                        .clickable(
-                            interactionSource = remember { MutableInteractionSource() },
-                            indication = null
-                        ) {
+                        .oneUIFrosted(CircleShape, FrostSpec(cs.surface, if (ThemeSettings.isDark()) 0.50f else 0.62f, oneUIBorderColor()), 24)
+                        .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {
                             if (com.example.utils.AppHaptics.enabled) haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                             onTap()
                         },
                     contentAlignment = Alignment.Center
                 ) {
-                    val track = cs.surfaceVariant
-                    val arc = Color(0xFF62D484) // Original sh0.m uses jl.s, independent of theme primary.
-                    Canvas(Modifier.fillMaxSize().padding(14.dp)) {
+                    Canvas(modifier = Modifier.fillMaxSize().padding(14.dp)) {
                         val stroke = 12.dp.toPx()
-                        val inset = stroke / 2
-                        val sz = Size(size.width - stroke, size.height - stroke)
-                        drawArc(track, 0f, 360f, false, Offset(inset, inset), sz, style = Stroke(stroke, cap = StrokeCap.Round))
-                        // RTL feel: progress runs counter-clockwise, starting at the top
-                        drawArc(arc, -90f, -360f * progress, false, Offset(inset, inset), sz, style = Stroke(stroke, cap = StrokeCap.Round))
+                        val inset = stroke / 2f
+                        val arcSize = Size(size.width - stroke, size.height - stroke)
+                        drawArc(
+                            color = track, startAngle = 0f, sweepAngle = 360f, useCenter = false,
+                            topLeft = Offset(inset, inset), size = arcSize,
+                            style = Stroke(stroke, cap = StrokeCap.Round)
+                        )
+                        drawArc(
+                            color = OneUIActiveGreen, startAngle = -90f, sweepAngle = finalProgress * -360f, useCenter = false,
+                            topLeft = Offset(inset, inset), size = arcSize,
+                            style = Stroke(stroke, cap = StrokeCap.Round)
+                        )
                     }
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(count.toString(), style = MaterialTheme.typography.displayLarge, fontSize = 72.sp, lineHeight = 80.sp, color = cs.onSurface)
-                        Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TapToCount), style = MaterialTheme.typography.bodyMedium, color = cs.onSurfaceVariant)
+                    Column(
+                        modifier = Modifier.fillMaxSize().padding(14.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            count.toString(),
+                            color = cs.onSurface,
+                            fontSize = 72.sp,
+                            lineHeight = 80.sp,
+                            style = MaterialTheme.typography.displayLarge
+                        )
+                        Text("اضغط للتسبيح", color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
                     }
                 }
             }
         }
         item(key = "targets") {
-            Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)) {
-                targets.forEach { t -> OneUIChip("$t", target == t, { target = t }) }
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
+            ) {
+                targets.forEach { t ->
+                    OneUIChip(label = t.toString(), selected = t == target, onClick = { target = t })
+                }
             }
         }
         item(key = "reset") {
-            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                OneUIButton(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ResetCounter), onReset, icon = Icons.Default.Refresh, destructive = true)
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                OneUIButton(
+                    text = "تصفير العداد",
+                    onClick = onReset,
+                    filled = false,
+                    icon = Icons.Outlined.Refresh,
+                    destructive = true
+                )
             }
         }
     }

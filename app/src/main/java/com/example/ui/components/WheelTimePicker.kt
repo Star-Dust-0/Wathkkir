@@ -1,10 +1,13 @@
 package com.example.ui.components
+import com.example.ui.oneui.oneUIBorderColor
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -91,7 +94,7 @@ fun WheelTimePicker(
             WheelPickerColumn(minutes, selectedMinuteIndex, { selectedMinuteIndex = it }, Modifier.width(76.dp))
             if (!is24) {
                 Spacer(modifier = Modifier.width(12.dp))
-                WheelPickerColumn(amPmList, selectedAmPmIndex, { selectedAmPmIndex = it }, Modifier.width(60.dp))
+                WheelPickerColumn(amPmList, selectedAmPmIndex, { selectedAmPmIndex = it }, Modifier.width(60.dp), loop = false)
             }
         }
     }
@@ -105,24 +108,40 @@ private fun WheelPickerColumn(
     onItemSelected: (Int) -> Unit,
     modifier: Modifier = Modifier,
     visibleItemsCount: Int = 5,
-    itemHeight: Dp = 52.dp
+    itemHeight: Dp = 52.dp,
+    loop: Boolean = true
 ) {
     val cs = MaterialTheme.colorScheme
     val count = items.size
-    val startIndex = remember(count, initialIndex) {
-        val max = (1 shl 30) - 1
-        (max - (max % count)) + initialIndex
+    val half = visibleItemsCount / 2
+    val itemPx = with(androidx.compose.ui.platform.LocalDensity.current) { itemHeight.toPx() }
+    // The band sits on the middle row, so the row that counts as selected is the one
+    // `half` rows below the first visible row (a looping wheel) or the first row at the
+    // snap position (a finite wheel padded with `half` empty rows above and below).
+    val startIndex = remember(count, initialIndex, loop) {
+        if (loop) {
+            val max = (1 shl 30) - 1
+            (max - (max % count)) + initialIndex
+        } else initialIndex
     }
-    val listState = rememberLazyListState(initialFirstVisibleItemIndex = startIndex - 1)
+    val listState = rememberLazyListState(initialFirstVisibleItemIndex = if (loop) startIndex - half else startIndex)
     val flingBehavior = rememberSnapFlingBehavior(lazyListState = listState)
     val selectedIndex by remember {
         derivedStateOf {
-            val centerIndex = listState.firstVisibleItemIndex + 1
-            ((centerIndex % count) + count) % count
+            if (loop) {
+                val centerIndex = listState.firstVisibleItemIndex + half
+                ((centerIndex % count) + count) % count
+            } else {
+                val round = if (listState.firstVisibleItemScrollOffset > itemPx / 2f) 1 else 0
+                (listState.firstVisibleItemIndex + round).coerceIn(0, count - 1)
+            }
         }
     }
 
+    val wheelView = androidx.compose.ui.platform.LocalView.current
+    val lastTick = remember { androidx.compose.runtime.mutableIntStateOf(selectedIndex) }
     LaunchedEffect(selectedIndex) {
+        if (selectedIndex != lastTick.intValue) { lastTick.intValue = selectedIndex; com.example.utils.AppHaptics.tick(wheelView) }
         onItemSelected(selectedIndex)
     }
 
@@ -136,15 +155,17 @@ private fun WheelPickerColumn(
                 .fillMaxWidth()
                 .height(itemHeight)
                 .clip(RoundedCornerShape(14.dp))
-                .background(cs.surfaceVariant)
+                .background(cs.surfaceVariant.copy(alpha = 0.55f))
+                .border(1.dp, oneUIBorderColor(), RoundedCornerShape(14.dp))
         )
         LazyColumn(
             state = listState,
             flingBehavior = flingBehavior,
+            contentPadding = if (loop) PaddingValues(0.dp) else PaddingValues(vertical = itemHeight * half),
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxWidth().height(itemHeight * visibleItemsCount)
         ) {
-            items(Int.MAX_VALUE) { index ->
+            items(if (loop) Int.MAX_VALUE else count) { index ->
                 val actualIndex = ((index % count) + count) % count
                 val itemText = items[actualIndex]
                 val isSelected = actualIndex == selectedIndex

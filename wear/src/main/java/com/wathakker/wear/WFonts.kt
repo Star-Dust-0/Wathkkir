@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -41,7 +40,6 @@ object WFonts {
 
     var idx by mutableIntStateOf(0)
     var scale by mutableFloatStateOf(1f)
-    var bold by mutableStateOf(false)
     val cur get() = choices[idx.coerceIn(0, choices.size - 1)]
     val stepIdx get() = STEPS.indices.minByOrNull { kotlin.math.abs(STEPS[it] - scale) } ?: 2
 
@@ -51,12 +49,10 @@ object WFonts {
         // shipping with Expo Arabic selected, under the same name the phone uses for Expo Arabic.
         idx = p.getInt("font_choice", 1)
         scale = p.getFloat("font_scale", 1f)
-        bold = p.getBoolean("font_bold", false)
     }
 
     fun saveChoice(c: Context, i: Int) { idx = i; c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putInt("font_choice", i).apply() }
     fun saveScale(c: Context, v: Float) { scale = v; c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putFloat("font_scale", v).apply() }
-    fun saveBold(c: Context, v: Boolean) { bold = v; c.getSharedPreferences("wear_prefs", Context.MODE_PRIVATE).edit().putBoolean("font_bold", v).apply() }
 
     /** Same labels as the phone. */
     fun scaleLabel(v: Float) = when {

@@ -1,4 +1,5 @@
 package com.example.ui
+import com.example.utils.plainClickable
 
 import android.Manifest
 import android.content.Context
@@ -109,7 +110,7 @@ object Onboarding {
         var showCity by remember { mutableStateOf(false) }
         var showMethod by remember { mutableStateOf(false) }
         var viaGps by remember { mutableStateOf(false) }
-        var hanafi by remember { mutableStateOf(PrayerAdjustments.INSTANCE.asrHanafi(ctx)) }
+        var hanafi by remember { mutableStateOf(PrayerAdjustments.asrHanafi(ctx)) }
         var reminder by remember { mutableIntStateOf(0) }
         var deviceSel by remember { mutableStateOf(!hadLang) }
         val alerts = remember { mutableStateListOf(true, true, true, true, true) }
@@ -121,9 +122,9 @@ object Onboarding {
             onFinished()
         }
         fun finish() {
-            for (i in prayerIdx.indices) PrayerAlertStore.INSTANCE.setEnabled(ctx, prayerIdx[i], alerts[i])
+            for (i in prayerIdx.indices) PrayerAlertStore.setEnabled(ctx, prayerIdx[i], alerts[i])
             com.example.utils.NotifPrefs.setVibration(ctx, reminder == 0)
-            try { PrayerAlertScheduler.INSTANCE.scheduleAll(ctx) } catch (_: Throwable) {}
+            try { PrayerAlertScheduler.scheduleAll(ctx) } catch (_: Throwable) {}
             // the location step was handled here, so the old flow starts at the files step
             sp.edit().putInt("perm_stage", 2).apply()
             if (Build.VERSION.SDK_INT >= 33) {
@@ -171,7 +172,7 @@ object Onboarding {
                                     Title(t("جاري تحديد موقعك...", "Getting current location..."))
                                     CircularProgressIndicator(color = cs.primary)
                                     Spacer(Modifier.height(32.dp))
-                                    TextButton(onClick = { go(P_METHOD) }) { Text(t("إلغاء", "Cancel"), color = cs.onBackground, fontSize = 18.sp) }
+                                    TextButton(onClick = com.example.utils.AppHaptics.tap { go(P_METHOD) }) { Text(t("إلغاء", "Cancel"), color = cs.onBackground, fontSize = 18.sp) }
                                     LaunchedEffect(Unit) {
                                         val lat0 = state.latitude
                                         vm.updateLocationFromGps()
@@ -186,8 +187,8 @@ object Onboarding {
                                     Field(t("طريقة الحساب", "Calculation method"), if (L10n.lang == Lang.AR) state.calculationMethod.titleAr else state.calculationMethod.titleEn) { showMethod = true }
                                     Spacer(Modifier.height(8.dp))
                                     Text(t("حساب وقت العصر", "Asr calculation"), color = cs.onSurfaceVariant, fontSize = 15.sp, modifier = Modifier.fillMaxWidth().padding(start = 8.dp, bottom = 6.dp))
-                                    Choice(t("شافعي ومالكي وحنبلي", "Shafi'i, Maliki, Hanbali"), !hanafi) { hanafi = false; PrayerAdjustments.INSTANCE.setAsrHanafi(ctx, false) }
-                                    Choice(t("حنفي", "Hanafi"), hanafi) { hanafi = true; PrayerAdjustments.INSTANCE.setAsrHanafi(ctx, true) }
+                                    Choice(t("شافعي ومالكي وحنبلي", "Shafi'i, Maliki, Hanbali"), !hanafi) { hanafi = false; PrayerAdjustments.setAsrHanafi(ctx, false) }
+                                    Choice(t("حنفي", "Hanafi"), hanafi) { hanafi = true; PrayerAdjustments.setAsrHanafi(ctx, true) }
                                 }
                                 P_CONFIRM -> {
                                     Title(t("تأكد من ضبط موقعك", "Make sure your location is set correctly"))
@@ -270,11 +271,11 @@ object Onboarding {
         Row(
             Modifier.fillMaxWidth().padding(vertical = 5.dp).height(56.dp).clip(capsule)
                 .background(cs.surface).border(BorderStroke(1.dp, cs.outline), capsule)
-                .clickable { onChange(!checked) }.padding(horizontal = 20.dp),
+                .padding(horizontal = 20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(label, color = cs.onSurface, fontSize = 18.sp, modifier = Modifier.weight(1f))
-            OneUISwitch(checked = checked, onCheckedChange = null)
+            OneUISwitch(checked = checked, onCheckedChange = onChange)
         }
     }
 
@@ -294,7 +295,7 @@ object Onboarding {
         Column(
             Modifier.fillMaxWidth().padding(vertical = 4.dp).clip(RoundedCornerShape(20.dp))
                 .background(cs.surface).border(BorderStroke(1.dp, cs.outline), RoundedCornerShape(20.dp))
-                .let { if (onClick != null) it.clickable(onClick = onClick) else it }
+                .let { if (onClick != null) it.plainClickable(onClick = onClick) else it }
                 .padding(horizontal = 16.dp, vertical = 12.dp)
         ) {
             Text(label, color = cs.onSurfaceVariant, fontSize = 13.sp)
@@ -304,7 +305,7 @@ object Onboarding {
 
     @Composable
     private fun NavText(label: String, onClick: () -> Unit) {
-        TextButton(onClick = onClick) { Text(label, color = MaterialTheme.colorScheme.primary, fontSize = 20.sp, fontWeight = FontWeight.Bold) }
+        TextButton(onClick = com.example.utils.AppHaptics.tap(onClick)) { Text(label, color = MaterialTheme.colorScheme.primary, fontSize = 20.sp, fontWeight = FontWeight.Bold) }
     }
 
     /** One UI style page indicator: small dots, the current page is a longer pill in the accent colour. */

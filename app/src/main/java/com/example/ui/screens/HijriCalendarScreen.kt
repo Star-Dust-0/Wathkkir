@@ -1,13 +1,10 @@
 package com.example.ui.screens
 
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -49,6 +46,7 @@ import com.example.prayer.HijriDate
 import com.example.prayer.HijriEvents
 import com.example.ui.i18n.L10n
 import com.example.ui.i18n.S
+import com.example.ui.oneui.oneUIBorderColor
 import com.example.ui.oneui.OneUIScreen
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -74,46 +72,7 @@ fun HijriCalendarScreen(onMenu: (() -> Unit)? = null) {
 
     val locale = if (isAr) Locale("ar", "EG") else Locale.forLanguageTag(L10n.lang.code)
 
-    val twoPane = com.example.ui.oneui.isTwoPane()
-    if (twoPane) {
-        // 3.4 tablets: same split as Hisn al-Muslim. First pane (right in RTL) = month grid,
-        // second pane (left in RTL) = the selected day and the month's occasions.
-        Row(Modifier.fillMaxSize()) {
-            Box(Modifier.weight(0.5f).fillMaxSize()) {
-            OneUIScreen(title = L10n.t(S.CalendarTab), onMenu = onMenu, actions = { com.example.ui.oneui.OneUIIconAction(androidx.compose.material.icons.Icons.Default.Settings, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") }) }) {
-                    item(key = "toggle") {
-                        Box(Modifier.padding(horizontal = 20.dp, vertical = 6.dp)) {
-                            com.example.ui.oneui.OneUISegmented(
-                                options = listOf(L10n.t(S.CalendarTab), L10n.t(S.CalEvents)),
-                                selected = if (showEvents) 1 else 0,
-                                onSelect = { showEvents = it == 1 }
-                            )
-                        }
-                    }
-                    if (showEvents) eventsViewItems(tick) else {
-                        item(key = "month") {
-                            MonthView(viewMonth, selected, today, locale,
-                                onPrev = { viewMonth = (viewMonth.clone() as Calendar).apply { add(Calendar.MONTH, -1) } },
-                                onNext = { viewMonth = (viewMonth.clone() as Calendar).apply { add(Calendar.MONTH, 1) } },
-                                onSelect = { selected = it })
-                        }
-                        item(key = "spacer") { Spacer(Modifier.height(90.dp)) }
-                    }
-                }
-            }
-            Box(Modifier.weight(0.5f).fillMaxSize().background(cs.background)) {
-                androidx.compose.foundation.lazy.LazyColumn(
-                    Modifier.fillMaxSize().windowInsetsPadding(androidx.compose.foundation.layout.WindowInsets.systemBars)
-                ) {
-                    item(key = "dayevents") { SelectedDayEvents(selected, locale, tick) { tick++ } }
-                    item(key = "monthevents") { MonthEventsList(viewMonth, locale, tick) { tick++ } }
-                    item(key = "spacer") { Spacer(Modifier.height(110.dp)) }
-                }
-            }
-        }
-        return
-    }
-    OneUIScreen(title = L10n.t(S.CalendarTab), onMenu = onMenu, actions = { com.example.ui.oneui.OneUIIconAction(androidx.compose.material.icons.Icons.Default.Settings, com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Settings), { com.example.ui.oneui.HeaderTools.nav?.navigate("settings") }) }) {
+    OneUIScreen(title = L10n.t(S.CalendarTab), onMenu = onMenu) {
         item(key = "toggle") {
             // 3.3.3: shared One UI segmented control (joined container, sliding blue indicator).
             Box(Modifier.padding(horizontal = 20.dp, vertical = 6.dp)) {
@@ -159,19 +118,19 @@ private fun MonthView(
     val isAr = L10n.lang.code == "ar"
 
     // header: Hijri month of the 1st + Gregorian month range
-    val off = PrayerAdjustments.INSTANCE.hijriOffsetDays(context)
+    val off = PrayerAdjustments.hijriOffsetDays(context)
     val firstH = remember(viewMonth) {
         val c = if (off != 0) (viewMonth.clone() as Calendar).apply { add(Calendar.DATE, off) } else viewMonth
-        HijriDate.hijriYmd(c as Calendar)
+        HijriDate.INSTANCE.hijriYmd(c as Calendar)
     }
     val lastDay = (viewMonth.clone() as Calendar).apply { set(Calendar.DAY_OF_MONTH, getActualMaximum(Calendar.DAY_OF_MONTH)) }
     val lastH = remember(viewMonth) {
         val c = if (off != 0) (lastDay.clone() as Calendar).apply { add(Calendar.DATE, off) } else lastDay
-        HijriDate.hijriYmd(c as Calendar)
+        HijriDate.INSTANCE.hijriYmd(c as Calendar)
     }
     val hijriTitle = remember(viewMonth, L10n.lang) {
-        val m1 = HijriDate.monthName(firstH.component2(), L10n.lang.code)
-        val m2 = HijriDate.monthName(lastH.component2(), L10n.lang.code)
+        val m1 = HijriDate.INSTANCE.monthName(firstH.component2(), L10n.lang.code)
+        val m2 = HijriDate.INSTANCE.monthName(lastH.component2(), L10n.lang.code)
         if (firstH.component2() == lastH.component2()) "$m1 ${firstH.component1()}" + (if (isAr) " هـ" else " AH")
         else "$m1 – $m2 ${lastH.component1()}" + (if (isAr) " هـ" else " AH")
     }
@@ -251,10 +210,10 @@ private fun DayCell(
 ) {
     val context = LocalContext.current
     val cs = MaterialTheme.colorScheme
-    val off = PrayerAdjustments.INSTANCE.hijriOffsetDays(context)
+    val off = PrayerAdjustments.hijriOffsetDays(context)
     val hDay = remember(day) {
         val c = if (off != 0) (day.clone() as Calendar).apply { add(Calendar.DATE, off) } else day
-        HijriDate.hijriYmd(c as Calendar).component3()
+        HijriDate.INSTANCE.hijriYmd(c as Calendar).component3()
     }
     val bg = when {
         isSelected -> cs.primary.copy(alpha = 0.28f)
@@ -321,9 +280,9 @@ private fun EventRow(o: HijriEvents.Occasion, day: Calendar, locale: Locale, tic
     val cs = MaterialTheme.colorScheme
     val on = HijriEvents.isReminderOn(context, o.id)
     val gDate = SimpleDateFormat("d MMM", locale).format(day.time)
-    val off = PrayerAdjustments.INSTANCE.hijriOffsetDays(context)
+    val off = PrayerAdjustments.hijriOffsetDays(context)
     val hcal = if (off != 0) (day.clone() as Calendar).apply { add(Calendar.DATE, off) } else day
-    val hDate = HijriDate.format(hcal as Calendar, L10n.lang.code)
+    val hDate = HijriDate.INSTANCE.format(hcal as Calendar, L10n.lang.code)
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -344,7 +303,7 @@ private fun EventRow(o: HijriEvents.Occasion, day: Calendar, locale: Locale, tic
             Text(HijriEvents.name(o, L10n.lang.code), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
             Text("$hDate · $gDate", color = cs.onSurfaceVariant, fontSize = 11.sp)
         }
-        IconButton(onClick = {
+        IconButton(onClick = com.example.utils.AppHaptics.tap {
             HijriEvents.setReminder(context, o.id, !on)
             onToggle()
         }) {

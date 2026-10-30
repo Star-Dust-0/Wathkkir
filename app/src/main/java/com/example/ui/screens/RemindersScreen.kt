@@ -1,41 +1,45 @@
 package com.example.ui.screens
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.NotificationsOff
+import androidx.compose.material.icons.outlined.NotificationsOff
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.data.Dhikr
-import com.example.ui.oneui.*
-import com.example.ui.viewmodel.MainViewModel
-import com.example.utils.formatTimeStr12h
+import com.example.ui.oneui.OneUICard
+import com.example.ui.oneui.OneUIDivider
+import com.example.ui.oneui.OneUIEmptyState
+import com.example.ui.oneui.OneUIRow
+import com.example.ui.oneui.OneUIScreen
+import com.example.ui.oneui.OneUISwitch
+import com.example.utils.DateTimeUtilsKt
 
 @Composable
-fun RemindersScreen(viewModel: MainViewModel, onBack: () -> Unit) {
-    val allDhikr by viewModel.allDhikr.collectAsStateWithLifecycle()
-    RemindersContent(allDhikr, onBack, viewModel::toggleEnabled)
+fun RemindersScreen(viewModel: com.example.ui.viewmodel.MainViewModel, onBack: () -> Unit) {
+    val all by viewModel.allDhikr.collectAsStateWithLifecycle()
+    RemindersContent(all = all, onBack = onBack, onToggle = viewModel::toggleEnabled)
 }
 
 @Composable
 fun RemindersContent(all: List<Dhikr>, onBack: () -> Unit, onToggle: (Dhikr) -> Unit) {
     val active = all.count { it.isEnabled }
-    OneUIScreen(
-        title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Reminders),
-        subtitle = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.ActiveOfTotalFmt).format(active, all.size),
-        onBack = onBack
-    ) {
+    OneUIScreen(title = "التنبيهات", subtitle = "$active من ${all.size} مفعّلة", onBack = onBack) {
         if (all.isEmpty()) {
-            item { OneUIEmptyState(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoReminders), Icons.Default.NotificationsOff) }
+            item { OneUIEmptyState("لا توجد تنبيهات", Icons.Outlined.NotificationsOff) }
         } else {
+            val sorted = all.sortedBy { it.reminderTimes.firstOrNull() ?: "" }
             item(key = "group") {
                 OneUICard {
-                    all.sortedBy { it.reminderTimes.firstOrNull() ?: "99:99" }.forEachIndexed { i, dhikr ->
-                        if (i > 0) OneUIDivider()
+                    sorted.forEachIndexed { index, dhikr ->
+                        if (index > 0) OneUIDivider()
                         ReminderRow(dhikr) { onToggle(dhikr) }
                     }
                 }
@@ -47,26 +51,25 @@ fun RemindersContent(all: List<Dhikr>, onBack: () -> Unit, onToggle: (Dhikr) -> 
 @Composable
 fun ReminderRow(dhikr: Dhikr, onToggle: () -> Unit) {
     val cs = MaterialTheme.colorScheme
-    val first = dhikr.reminderTimes.firstOrNull()?.let { formatTimeStr12h(it) } ?: "--"
+    val first = dhikr.reminderTimes.firstOrNull()?.let { DateTimeUtilsKt.formatTimeStr12h(it) } ?: "--"
     val extra = if (dhikr.reminderTimes.size > 1) " +${dhikr.reminderTimes.size - 1}" else ""
     OneUIRow(
         title = dhikr.title,
-        summary = dhikr.reminderTimes.joinToString("، ") { formatTimeStr12h(it) },
+        summary = dhikr.reminderTimes.joinToString(" · ") { DateTimeUtilsKt.formatTimeStr12h(it) },
         leading = {
-            Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.width(72.dp)) {
+            Column(modifier = Modifier.width(72.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     first.substringBefore(' '),
-                    style = MaterialTheme.typography.titleMedium,
-                    color = if (dhikr.isEnabled) cs.onSurface else cs.onSurfaceVariant
+                    color = if (dhikr.isEnabled) cs.onSurface else cs.onSurfaceVariant,
+                    style = MaterialTheme.typography.titleMedium
                 )
                 Text(
                     first.substringAfter(' ', "") + extra,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = cs.onSurfaceVariant
+                    color = cs.onSurfaceVariant,
+                    style = MaterialTheme.typography.bodySmall
                 )
             }
         },
-        trailing = { OneUISwitch(dhikr.isEnabled, { onToggle() }) },
-        onClick = onToggle
+        trailing = { OneUISwitch(dhikr.isEnabled, { onToggle() }) }
     )
 }
