@@ -1,3 +1,5 @@
+CURRENT SCOPE CORRECTION, Oct30 18:44: native countdown changes are WATCH ONLY. Phone before-prayer overlay extension has been removed; exact recovered prose / original HH:MM layouts and iqama-only overlay restored. Phone screens contain no NativeCountdown composable or helper. Earlier phone extension text below is superseded, retained only as change history.
+
 Explicit current user changes beyond Oct26 historical parity:
 Authenticated WhatsApp Oct30 01:50:16: native Android/watch mechanisms before prayer too; Oct30 01:53:24: DynamicFloat because watch runs WearOS6. The user's original source request still makes recovered source the base.
 This labeled extension restores prior authored clock-expression implementation onto the recovered source: native dynamic ranged complication, static fallback, cancel legacy minute pulse, v34 zero periodic provider update/default300seconds, debug AndroidX reference host. minSdk30/target36 unchanged; protolayout dependencies1.3.0 needed. Preview defaults now match production STOPWATCH unless explicitly overridden. Full boundary refresh includes main provider.

@@ -42,3 +42,5 @@ is shared by the original, not silently redesigned. Toast remains the recovered
 prose form while later native widget countdown is numeric; this intentional
 historical refresh/native display difference is explicit, not exact-text parity.
 Watch source changes audited, but no new watch runtime pass in this task.
+
+18:46 owner correction: phone must match original exactly; native change is WATCH ONLY. Restored recovered HomeWidgets overlay/Clock and LockWidgets countdown source, retaining original iqama-only native overlay, Oct26 cadence and tap refresh. Phone+host compile PASS. Paired rerun pending; prior numeric-deviation captures are superseded. Current phone UI has no NativeCountdown helper/call. Watch unchanged.
