@@ -97,10 +97,6 @@ open class PrayerTileService : TileService() {
             .addContent(text(Prayer.hijriMonth(s.now), 14.5f, 0xFF9D9DA2.toInt(), false))
             .build()
 
-        val originalArc = LayoutElementBuilders.Arc.Builder().setAnchorAngle(degrees(-135f))
-            .setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START)
-            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(13f)).setColor(argb(tc.main)).build())
-            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep-fillLen)).setThickness(dp(13f)).setColor(argb(tc.dark)).build()).build()
         val click = ModifiersBuilders.Clickable.Builder()
             .setId("open")
             .setOnClick(ActionBuilders.LaunchAction.Builder().setAndroidActivity(
@@ -109,8 +105,8 @@ open class PrayerTileService : TileService() {
 
         return LayoutElementBuilders.Box.Builder()
             .setWidth(expand()).setHeight(expand())
-            .setModifiers(ModifiersBuilders.Modifiers.Builder().setClickable(click).build())
-            .apply { if(native) { addContent(arc(track)); addContent(arc(fill)) } else addContent(originalArc) }.addContent(center)
+            .setModifiers(ModifiersBuilders.Modifiers.Builder().setPadding(ModifiersBuilders.Padding.Builder().setAll(dp(6f)).build()).setClickable(click).build())
+            .addContent(arc(track)).addContent(arc(fill)).addContent(center)
             .build()
     }
 
