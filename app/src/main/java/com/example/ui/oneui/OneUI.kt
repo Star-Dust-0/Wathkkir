@@ -175,7 +175,8 @@ fun OneUIScreen(
         ) {
             Box(Modifier.weight(1f, fill = false)) {
                 Box(Modifier.matchParentSize().alpha(tileAlpha)
-                    .oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28))
+                    .then(if (background != null) Modifier.oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28)
+                        else Modifier.clip(RoundedCornerShape(26.dp)).background(cs.surfaceContainerHighest)))
                 Row(Modifier.height(52.dp).padding(start = 6.dp, end = 18.dp),
                     verticalAlignment = Alignment.CenterVertically) {
                     val leading = onBack ?: onMenu
@@ -194,7 +195,8 @@ fun OneUIScreen(
             }
             if (actions != null) Box {
                 Box(Modifier.matchParentSize().alpha(tileAlpha)
-                    .oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28))
+                    .then(if (background != null) Modifier.oneUIGlass(RoundedCornerShape(26.dp), cs.surfaceContainerHigh, 0.85f, 28)
+                        else Modifier.clip(RoundedCornerShape(26.dp)).background(cs.surfaceContainerHighest)))
                 Row(Modifier.height(52.dp).padding(horizontal = 6.dp),
                     verticalAlignment = Alignment.CenterVertically) { actions() }
             }
