@@ -35,3 +35,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 - Original real provider uses STOPWATCH per c()=1. Original PreviewComp helper s21 defaults to SHORT_DUAL_UNIT unless cd_style=stopwatch, whereas recovered helper defaults to real provider. Thus preview ranged2m vs0:02 is a harness mismatch, not an original provider text difference. Pass stopwatch explicitly in paired rerun.
 - Added class attribute to hierarchy reader, required for stateful EditText selection. Host build passes. Existing phone stateful harness would otherwise have recorded field failures, now fixed before launch.
 - behavior.yml dispatch returned404 because workflow is not registered on main. No run created. Use existing registered checkpoint.yml on comparison branch only, as with previous focused batches; no main registration change.
+
+## 2026-10-30 21:35 phone harness startup
+- Run41114230864 failed before emulator: missing ephemeral debug.keystore. Application Kotlin/Java compilation finished, signing validation stopped packaging. No runtime checks or parity evidence were produced.
+- Restored test-only keystore generation in the phone workflow, matching the previously successful checkpoint. This is the standard disposable Android debug identity, not the owner's signing key. Also set headless JVM to avoid irrelevant KSP AWT event-thread errors. One corrected run only after failed run completion.
