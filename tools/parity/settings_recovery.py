@@ -7,9 +7,9 @@ def hierarchy():
  return next((s.split('=',1)[1] for s in x.splitlines() if s.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
 def tap(label,switch=False):
  for n in ET.fromstring(hierarchy()).iter('node'):
-  if n.get('text')==label:
+  if label in [n.get('text'), n.get('content-desc')]:
    b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
-   if len(b)==4:adb('shell','input','tap',str(970 if switch else (b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(1);return True
+   if len(b)==4:adb('shell','input','tap',str((110 if lang=='ar' else 970) if switch else (b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(1);return True
  return False
 def shot(n):
  (out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']));(out/(n+'.xml')).write_text(hierarchy())
@@ -35,13 +35,19 @@ try:
    xml=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
    adb('shell',f"echo '{xml}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
    adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(8)
-   check(slug+'-settings',tap('Settings' if lang=='en' else 'الإعدادات'));shot(slug+'-settings-top')
+   shot(slug+'-before-settings')
+   opened=False
+   for retry in range(4):
+    opened=tap('Settings' if lang=='en' else 'الإعدادات')
+    if opened:break
+    time.sleep(3)
+   check(slug+'-settings',opened);shot(slug+'-settings-top')
    proc=recording(slug+'-settings-motion')
    for i in range(4):swipe();shot(slug+'-scroll-'+str(i))
    for i in range(4):swipe(False)
    label='Haptic feedback' if lang=='en' else 'الاستجابة اللمسية'
    for i in range(6):
-    if label in hierarchy():break
+    if any(n.get('text')==label and 100<int(re.findall(r'\d+',n.get('bounds','[0,0][0,0]'))[1])<2200 for n in ET.fromstring(hierarchy()).iter('node')):break
     swipe()
    check(slug+'-haptic-visible',label in hierarchy());shot(slug+'-haptic-before')
    # Explicitly exercise row touch, then separate switch touch. Persisted state is the assertion.
