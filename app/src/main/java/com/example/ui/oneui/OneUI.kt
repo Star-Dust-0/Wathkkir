@@ -1,4 +1,6 @@
 package com.example.ui.oneui
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.ui.draw.drawBehind
@@ -93,7 +95,6 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import com.example.ui.theme.OneUIPillDark
 import dev.chrisbanes.haze.hazeSource
 
 object OneUIDimens {
@@ -402,7 +403,7 @@ fun OneUIRow(
         Column(modifier = Modifier.weight(1f)) {
             Text(title, color = resolvedTitleColor, style = MaterialTheme.typography.bodyLarge)
             if (summary != null) {
-                Text(summary, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
+                Text(summary, color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodySmall.copy(lineHeight = androidx.compose.ui.unit.TextUnit.Unspecified))
             }
         }
         if (trailing != null) {
@@ -776,7 +777,7 @@ fun OneUIBottomBar(
             .fillMaxWidth()
             .padding(horizontal = 20.dp)
             .padding(bottom = navInset + 12.dp)
-            .oneUIGlass(RoundedCornerShape(32.dp), OneUIPillDark, 0.85f, 28)
+            .then(if (frost != null) Modifier.oneUIFrosted(RoundedCornerShape(32.dp), frost, 28) else Modifier.oneUIGlass(RoundedCornerShape(32.dp), cs.surfaceContainerHigh, 0.85f, 28))
             .height(64.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -807,7 +808,16 @@ fun OneUIBottomBar(
                 ) {
                     tab.icon(tint)
                 }
-                Text(tab.label, color = tint, fontSize = 11.sp, maxLines = 1, style = MaterialTheme.typography.labelSmall)
+                Text(
+                    text = tab.label,
+                    color = tint,
+                    fontSize = 11.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 2.dp),
+                    style = MaterialTheme.typography.labelSmall
+                )
             }
         }
     }
@@ -867,11 +877,23 @@ class OneUIDrawerItem(
 fun DrawerHeader() {
     Text(
         "وَذكّر",
-        color = Color(4293783021L),
+        color = MaterialTheme.colorScheme.onSurface,
         modifier = Modifier.padding(horizontal = 48.dp),
         style = MaterialTheme.typography.headlineMedium
     )
     Spacer(modifier = Modifier.height(32.dp))
+}
+
+@Composable
+fun DottedDivider() {
+    val c = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.28f)
+    androidx.compose.foundation.Canvas(Modifier.fillMaxWidth().padding(horizontal = 22.dp, vertical = 8.dp).height(2.dp)) {
+        drawLine(
+            c, androidx.compose.ui.geometry.Offset(0f, 1f), androidx.compose.ui.geometry.Offset(size.width, 1f),
+            strokeWidth = 2.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round,
+            pathEffect = androidx.compose.ui.graphics.PathEffect.dashPathEffect(floatArrayOf(0.1f, 6.dp.toPx()), 0f)
+        )
+    }
 }
 
 @Composable
@@ -885,6 +907,10 @@ fun OneUIDrawer(
     frost: FrostSpec? = null
 ) {
     val cs = MaterialTheme.colorScheme
+    val drawerDark = com.example.ThemeSettings.isDark()
+    val drawerFrost = if (drawerDark) FrostSpec(Color(0xFF2E2E2E), 0.90f, Color.White.copy(alpha = 0.06f))
+    else FrostSpec(Color(0xFFF3F3F4), 0.90f, Color.Black.copy(alpha = 0.05f))
+    val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     Box(modifier = Modifier.fillMaxSize()) {
         AnimatedVisibility(visible = open, enter = fadeIn(tween(220)), exit = fadeOut(tween(220))) {
             Box(
@@ -905,25 +931,26 @@ fun OneUIDrawer(
             val slideSign = if (isRtl) 1f else -1f
             Column(
                 modifier = Modifier
-                    .align(Alignment.CenterStart)
+                    .align(Alignment.TopStart)
                     .offset { IntOffset((slideSign * (1f - drawerProgress) * drawerSlidePx).toInt(), 0) }
                     .alpha(drawerProgress)
-                    .padding(start = 12.dp, top = 28.dp, bottom = 28.dp)
-                    .width(300.dp)
-                    .fillMaxHeight()
-                    .then(if (frost != null) Modifier.oneUIFrosted(RoundedCornerShape(28.dp), frost, 30) else Modifier.oneUIGlass(RoundedCornerShape(28.dp), cs.surfaceVariant, 0.92f, 30))
+                    .padding(start = 11.dp, top = statusTop + 14.dp, bottom = 40.dp)
+                    .fillMaxWidth(0.78f)
+                    .wrapContentHeight()
+                    .then(Modifier.oneUIFrosted(RoundedCornerShape(26.dp), drawerFrost, 48))
+                    .then(Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState()))
                     .padding(vertical = 18.dp)
             ) {
                 DrawerHeader()
                 items.forEach { item ->
-                    if (item.route == "settings") OneUIDivider(16.dp)
+                    if (item.route == "settings") DottedDivider()
                     val selected = item.route == currentRoute
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp, vertical = 2.dp)
                             .clip(RoundedCornerShape(16.dp))
-                            .background(if (selected) cs.primary.copy(alpha = 0.12f) else Color.Transparent)
+                            .background(if (selected) (if (drawerDark) Color(0xFF424242) else Color(0xFFE2E2E5)) else Color.Transparent)
                             .clickable { onSelect(item.route) }
                             .padding(horizontal = 14.dp, vertical = 13.dp),
                         verticalAlignment = Alignment.CenterVertically
@@ -933,7 +960,7 @@ fun OneUIDrawer(
                         Text(item.label, color = cs.onSurface, style = MaterialTheme.typography.bodyLarge)
                     }
                 }
-                Spacer(modifier = Modifier.weight(1f))
+                Spacer(modifier = Modifier.height(56.dp))
                 if (footer != null) {
                     Box(
                         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
