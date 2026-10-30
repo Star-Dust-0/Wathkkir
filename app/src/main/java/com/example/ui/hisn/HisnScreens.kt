@@ -1,4 +1,6 @@
 package com.example.ui.hisn
+import com.example.ui.oneui.OneUIChipItem
+import com.example.ui.oneui.OneUIChipGroup
 import com.example.utils.plainClickable
 
 import com.example.ui.i18n.L10n
@@ -65,11 +67,15 @@ import com.example.ui.oneui.azkarCount
 
 fun filterChapters(s: HisnListState, items: List<HisnItem>): List<HisnChapter> {
     val q = normalizeArabic(s.query.trim())
-    var list = s.chapters
-    if (s.onlyFavorites) list = list.filter { s.favoriteChapterIds.contains(it.id) }
-    if (q.isBlank()) return list
+    if (q.isBlank()) {
+        return if (s.onlyFavorites) s.chapters.filter { s.favoriteChapterIds.contains(it.id) } else s.chapters
+    }
+    // His spec 3.3.3: search always spans the FULL Hisn collection, even while the Favorites
+    // filter is on; chapters whose items match count too. Matching favorites pin to the top
+    // (only favorites that match the query), then the rest - both groups in collection order.
     val hitIds = items.filter { normalizeArabic(it.text).contains(q) }.map { it.chapterId }.toSet()
-    return list.filter { normalizeArabic(it.name).contains(q) || hitIds.contains(it.id) }
+    val matches = s.chapters.filter { normalizeArabic(it.name).contains(q) || hitIds.contains(it.id) }
+    return matches.sortedByDescending { s.favoriteChapterIds.contains(it.id) }
 }
 
 @Composable
@@ -87,10 +93,11 @@ fun HisnListContent(
     OneUIScreen(title = "حصن المسلم", subtitle = subtitle, onMenu = onMenu) {
         item { OneUISearchField(state.query, onQuery, "ابحث في حصن المسلم") }
         item {
-            LazyRow(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                item { OneUIChip("الكل", !state.onlyFavorites, { onOnlyFavorites(false) }) }
-                item { OneUIChip("المفضلة", state.onlyFavorites, { onOnlyFavorites(true) }) }
-            }
+            OneUIChipGroup(
+                items = listOf(OneUIChipItem(L10n.t(S.All)), OneUIChipItem(L10n.t(S.Favorites))),
+                selected = if (state.onlyFavorites) 1 else 0,
+                onSelect = { onOnlyFavorites(it == 1) }
+            )
         }
         if (filtered.isEmpty()) {
             item {

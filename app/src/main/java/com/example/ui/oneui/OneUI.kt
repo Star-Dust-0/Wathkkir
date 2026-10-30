@@ -3,7 +3,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
@@ -1073,11 +1072,20 @@ fun OneUIChipGroup(
 ) {
     val cs = MaterialTheme.colorScheme
     val pillColor = cs.primary.copy(alpha = 0.16f)
-    val chipBounds = remember { mutableStateMapOf<Int, androidx.compose.ui.geometry.Rect>() }
+    // compose-ui 1.9 removed LayoutCoordinates.positionInParent/boundsInParent (compile break
+    // caught on CI): positions are now taken relative to the group Row via localBoundingBoxOf,
+    // computed lazily from the stored coordinates so first-layout ordering cannot drop them.
+    val chipCoords = remember { mutableStateMapOf<Int, androidx.compose.ui.layout.LayoutCoordinates>() }
+    var rowCoords by remember { mutableStateOf<androidx.compose.ui.layout.LayoutCoordinates?>(null) }
     val animX = remember { androidx.compose.animation.core.Animatable(0f) }
     val animW = remember { androidx.compose.animation.core.Animatable(0f) }
     var pillReady by remember { mutableStateOf(false) }
-    val target = chipBounds[selected]
+    val targetChip = chipCoords[selected]
+    val target = remember(targetChip, rowCoords) {
+        val rc = rowCoords
+        if (targetChip == null || rc == null || !targetChip.isAttached || !rc.isAttached) null
+        else try { rc.localBoundingBoxOf(targetChip) } catch (_: Exception) { null }
+    }
     androidx.compose.runtime.LaunchedEffect(selected, target) {
         val b = target
         if (selected < 0 || b == null) { pillReady = false; return@LaunchedEffect }
@@ -1093,6 +1101,7 @@ fun OneUIChipGroup(
         modifier = modifier
             .fillMaxWidth()
             .horizontalScroll(androidx.compose.foundation.rememberScrollState())
+            .onGloballyPositioned { rowCoords = it }
             .drawBehind {
                 if (pillReady) {
                     drawRoundRect(
@@ -1112,7 +1121,7 @@ fun OneUIChipGroup(
             val tapChip = com.example.utils.AppHaptics.tap { onSelect(i) }
             Row(
                 modifier = Modifier
-                    .onGloballyPositioned { chipBounds[i] = it.boundsInParent() }
+                    .onGloballyPositioned { chipCoords[i] = it }
                     .height(38.dp)
                     .clip(CircleShape)
                     .background(chipBg)
