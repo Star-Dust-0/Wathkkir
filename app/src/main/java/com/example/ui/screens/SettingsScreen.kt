@@ -207,7 +207,7 @@ fun SettingsContent(
                     leading = { OneUIIconBadge(Icons.Outlined.TextFields) }, trailing = { ChevronIcon() })
                 FontSizeSliderRow(fontScale,onFontScale)
                 OneUIDivider(70.dp)
-                OneUIRow(L10n.t(S.Appearance),summary=themeTitle,onClick=onTheme,leading={OneUIIconBadge(Icons.Outlined.Palette)},trailing={ChevronIcon()})
+                OneUIRow(L10n.t(S.Appearance),summary=themeTitle,onClick=onTheme,leading={OneUIIconBadge(Icons.Outlined.DarkMode)},trailing={ChevronIcon()})
                 OneUIDivider(70.dp)
                 OneUIRow(L10n.t(S.Language),summary=L10n.lang.nativeName,onClick=onLanguage,leading={OneUIIconBadge(Icons.Outlined.Language)},trailing={ChevronIcon()})
                 if(L10n.lang==Lang.AR) {

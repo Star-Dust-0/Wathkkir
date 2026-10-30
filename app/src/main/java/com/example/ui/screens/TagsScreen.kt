@@ -93,7 +93,6 @@ fun TagsContent(
 private fun TagRow(tag: Tag, count: Int, onEdit: () -> Unit, onDelete: () -> Unit) {
     val cs = MaterialTheme.colorScheme
     OneUIRow(
-        modifier = Modifier.padding(vertical = 1.9.dp),
         title = tag.name,
         summary = azkarCount(count),
         onClick = onEdit,

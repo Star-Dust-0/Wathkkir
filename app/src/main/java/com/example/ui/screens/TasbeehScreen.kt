@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
@@ -58,7 +59,7 @@ fun TasbeehContent(count: Int, onBack: (() -> Unit)?, onTap: () -> Unit, onReset
                     contentAlignment = Alignment.Center
                 ) {
                     val track = cs.surfaceVariant
-                    val arc = cs.primary
+                    val arc = Color(0xFF62D484) // Original sh0.m uses jl.s, independent of theme primary.
                     Canvas(Modifier.fillMaxSize().padding(14.dp)) {
                         val stroke = 12.dp.toPx()
                         val inset = stroke / 2
