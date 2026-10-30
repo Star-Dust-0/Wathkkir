@@ -48,3 +48,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## 2026-10-30 22:53 stateful phone
 - Corrected run41120585766 finished195checks,0failures. Runtime create/cancel/save/edit/favorite/reminder/tag and font/theme cancel/apply persistence exercised in EN/light and AR/dark, original vs rebuilt, with DB snapshots and actual images. This only proves the named finite cases, not all scenarios or visuals.
 - Move registered checkpoint to the prepared controlled watch rerun after phone completion. No parallel batch.
+
+## 2026-10-30 23:10 phone visual residuals
+- Stateful32pairs:11full PNGs exact. Other tiny residuals include status clock, input caret and navigation gesture animation, need precise classification. Appearance backgrounds differ from scrolling while title/button/text bounds match. Do not hide those differences with masking.
+- Actual EN/AR item-overflow popup images show a genuine offset error: recovered popup below anchor, original overlapping anchor and closer to screen edge. Exact Oct20 source operation adds DpOffset(14.dp, -44.dp), omitted in replay. Restored that exact operation; phone build passes, runtime recheck pending.

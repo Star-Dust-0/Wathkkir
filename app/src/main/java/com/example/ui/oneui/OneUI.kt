@@ -694,6 +694,7 @@ fun OneUIMenu(expanded: Boolean, onDismiss: () -> Unit, content: @Composable Col
         expanded = expanded,
         onDismissRequest = onDismiss,
         modifier = Modifier.widthIn(min = 190.dp),
+        offset = androidx.compose.ui.unit.DpOffset(14.dp, (-44).dp),
         shape = RoundedCornerShape(24.dp),
         containerColor = oneUiMenuColor(),
         tonalElevation = 0.dp,
