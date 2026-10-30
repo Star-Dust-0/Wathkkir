@@ -45,6 +45,7 @@ android {
 }
 
 dependencies {
+    debugImplementation("androidx.wear.protolayout:protolayout-expression-pipeline:1.3.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.wear.protolayout:protolayout-expression-pipeline:1.3.0")
     testImplementation("org.robolectric:robolectric:4.15.1")
