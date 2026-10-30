@@ -13,6 +13,21 @@ import org.robolectric.annotation.GraphicsMode;
 import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class) @Config(sdk=34) @GraphicsMode(GraphicsMode.Mode.NATIVE)
 public class NativeCountdownAuditTest {
+ @Test public void arabicHeroTextIsDrawnOnceWithMirroredAlignment() {
+  Context c=RuntimeEnvironment.getApplication();
+  android.graphics.Typeface face=HomeWidgets.face(c,false,true);
+  android.graphics.Bitmap actual=android.graphics.Bitmap.createBitmap(400,100,android.graphics.Bitmap.Config.ARGB_8888);
+  android.graphics.Bitmap expected=android.graphics.Bitmap.createBitmap(400,100,android.graphics.Bitmap.Config.ARGB_8888);
+  HomeWidgets.ovBegin();HomeWidgets.ovToken.remove();
+  HomeWidgets.heroText(new android.graphics.Canvas(actual),"القاهرة",10,50,360,20,face,0xff000000,android.text.Layout.Alignment.ALIGN_NORMAL,1);
+  android.text.TextPaint paint=new android.text.TextPaint(1);paint.setTypeface(face);paint.setTextSize(20);paint.setColor(0xff000000);
+  android.text.StaticLayout layout=android.text.StaticLayout.Builder.obtain("القاهرة",0,7,paint,360)
+   .setAlignment(android.text.Layout.Alignment.ALIGN_OPPOSITE).setTextDirection(android.text.TextDirectionHeuristics.FIRSTSTRONG_LTR)
+   .setIncludePad(false).setMaxLines(1).build();
+  android.graphics.Canvas canvas=new android.graphics.Canvas(expected);canvas.translate(10,50-layout.getHeight()/2f);layout.draw(canvas);
+  assertTrue("RTL text must not leave a second copy on the opposite side",actual.sameAs(expected));
+  HomeWidgets.ovWanted.remove();
+ }
  @Test public void lockNativeOverlayUsesSameFitCenterAsArtwork() {
   HomeWidgets.ovGeo.set(new float[]{123f,81f,100f,18f,0xff000000,0f});
   LockWidgets.fitNativeOverlay(246,108,214,76);

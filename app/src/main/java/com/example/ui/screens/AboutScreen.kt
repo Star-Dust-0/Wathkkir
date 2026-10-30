@@ -4,8 +4,8 @@ import androidx.compose.material.icons.filled.Star
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -33,10 +33,10 @@ fun AboutScreen(onBack: () -> Unit) {
         }
         item(key = "info") {
             OneUICard {
-                OneUIRow(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Version), leading = { OneUIIconBadge(Icons.Default.Info) },
+                OneUIRow(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Version), leading = { OneUIIconBadge(Icons.Outlined.Info) },
                     trailing = { Text(androidx.compose.ui.platform.LocalContext.current.let { c -> c.packageManager.getPackageInfo(c.packageName, 0).versionName ?: "" }, color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium) })
                 OneUIDivider(inset = 70.dp)
-                OneUIRow(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Developer), leading = { OneUIIconBadge(Icons.Default.Person) },
+                OneUIRow(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Developer), leading = { OneUIIconBadge(Icons.Outlined.Person) },
                     trailing = { Text(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DevName), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium) })
                 OneUIDivider(inset = 70.dp)
                 OneUIRow(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.HisnTab), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.HisnCredit),

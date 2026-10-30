@@ -582,6 +582,7 @@ public final class HomeWidgets {
             canvas.translate(f * f5, (f2 * f5) - (build.getHeight() / 2.0f));
             build.draw(canvas);
             canvas.restore();
+            return; // RTL already drawn with mirrored alignment, never draw it twice.
         }
         alignment2 = alignment;
         StaticLayout build2 = StaticLayout.Builder.obtain(b, 0, b.length(), textPaint, Math.max(1, (int) f6)).setAlignment(alignment2).setTextDirection(textDirectionHeuristic).setIncludePad(false).setMaxLines(1).build();

@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.outlined.LocalFireDepartment
+import androidx.compose.material.icons.outlined.EmojiEvents
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.MaterialTheme
@@ -90,13 +92,13 @@ fun StatsContent(stats: DhikrStats, titles: Map<Int, String>, history: List<Dhik
             OneUICard {
                 OneUIRow(
                     com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.DayStreak), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.KeepGoing),
-                    leading = { OneUIIconBadge(Icons.Default.LocalFireDepartment) },
+                    leading = { OneUIIconBadge(Icons.Outlined.LocalFireDepartment) },
                     trailing = { Text(dayCount(stats.streakDays), style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
                 )
                 OneUIDivider(inset = 70.dp)
                 OneUIRow(
                     com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.TotalReads), summary = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.SinceStart),
-                    leading = { OneUIIconBadge(Icons.Default.EmojiEvents) },
+                    leading = { OneUIIconBadge(Icons.Outlined.EmojiEvents) },
                     trailing = { Text("${stats.totalCount}", style = MaterialTheme.typography.titleSmall, color = Color(0xFFBD9FEA)) }
                 )
             }
