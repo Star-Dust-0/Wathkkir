@@ -67,7 +67,9 @@ fun SettingsScreen(viewModel: MainViewModel, onBack: () -> Unit, onNavigateToFaj
         onTheme = { showTheme = true },
         onLanguage = { showLanguage = true },
         fontScale = fontScale,
-        onFontScale = { com.example.FontScaleSettings.set(settingsCtx,it) }
+        onFontScale = { com.example.FontScaleSettings.set(settingsCtx,it) },
+        onWatch = { HeaderTools.nav?.navigate("watch_settings") },
+        onAbout = { HeaderTools.nav?.navigate("about") }
     )
 
     if (showTheme) OneUIDialog(title=L10n.t(S.Appearance),onDismiss={showTheme=false},onConfirm=null,dismissText=L10n.t(S.Close)) {
@@ -159,7 +161,9 @@ fun SettingsContent(
     onTheme: () -> Unit = {},
     onLanguage: () -> Unit = {},
     fontScale: Float = com.example.FontScaleSettings.DEFAULT,
-    onFontScale: (Float) -> Unit = {}
+    onFontScale: (Float) -> Unit = {},
+    onWatch: (() -> Unit)? = null,
+    onAbout: (() -> Unit)? = null
 ) {
     val ctx = LocalContext.current
     val haptics = com.example.utils.AppHaptics.enabled
@@ -202,13 +206,30 @@ fun SettingsContent(
                 OneUIRow(L10n.t(S.AppFont), summary = fontTitle, onClick = onPickFont,
                     leading = { OneUIIconBadge(Icons.Outlined.TextFields) }, trailing = { ChevronIcon() })
                 FontSizeSliderRow(fontScale,onFontScale)
+                OneUIDivider(70.dp)
                 OneUIRow(L10n.t(S.Appearance),summary=themeTitle,onClick=onTheme,leading={OneUIIconBadge(Icons.Outlined.Palette)},trailing={ChevronIcon()})
+                OneUIDivider(70.dp)
                 OneUIRow(L10n.t(S.Language),summary=L10n.lang.nativeName,onClick=onLanguage,leading={OneUIIconBadge(Icons.Outlined.Language)},trailing={ChevronIcon()})
                 if(L10n.lang==Lang.AR) {
+                    OneUIDivider(70.dp)
                     Text("نوع الأرقام",modifier=Modifier.fillMaxWidth(),style=MaterialTheme.typography.bodyLarge)
                     OneUISegmented(options=listOf("أرقام هندية  ١٢٣","أرقام عربية  1234"),selected=if(com.example.utils.Digits.isHindiChoice)0 else 1,onSelect={com.example.utils.Digits.set(ctx,it==0);com.example.widget.WidgetUpdater.INSTANCE.updateAll(ctx)})
                 }
             }
+        }
+        // Original rh0.d/rc0: the phone settings links to watch settings and About.
+        onWatch?.let { open ->
+            item(key="watch-l") { SectionLabel(if(L10n.lang==Lang.AR) "الساعة الذكية" else "Smartwatch") }
+            item(key="watch") { OneUICard {
+                OneUIRow(if(L10n.lang==Lang.AR) "إعدادات الساعة الذكية" else "Smartwatch settings",
+                    summary=if(L10n.lang==Lang.AR) "الإعدادات الخاصة بتطبيق وذكّر للساعة" else "Settings for the Wathkkir watch app",
+                    onClick=open,leading={OneUIIconBadge(Icons.Outlined.Watch)},trailing={ChevronIcon()})
+            } }
+        }
+        onAbout?.let { open ->
+            item(key="about") { OneUICard {
+                OneUIRow(L10n.t(S.About),onClick=open,leading={OneUIIconBadge(Icons.Outlined.Info)},trailing={ChevronIcon()})
+            } }
         }
     }
 }
