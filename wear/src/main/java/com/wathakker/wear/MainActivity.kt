@@ -375,7 +375,8 @@ fun CirclesPage(s: PrayerState, now: Long, w: Float, visible: Boolean, bg: Color
                 val c = if (isNext) Ink else if (past) Color(0xFFC9C9CE) else Color.White
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text1(slot.name, tx(w * 0.05f, c, true))
-                    Text1(if (past) Prayer.time24(slot.at) else Prayer.hhmm(slot.at - now), tx(w * 0.078f, c))
+                    if (past) Text1(Prayer.time24(slot.at), tx(w * 0.078f, c))
+                    else NativeCountdown(slot.at, c, w * 0.078f * WFonts.scale)
                     Text1(if (past) T("مضت", "Passed") else T("متبقية", "Left"), tx(w * 0.042f, if (isNext) Ink else SoftGrey))
                 }
             }
