@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    private static final String PKG = "com.wathakker.app";
+    private String PKG = "com.wathakker.app";
     private static final String[][] WIDGETS = {
         {"Hero", "330", "90"},
         {"HeroLarge", "330", "160"},
@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getIntent().hasExtra("package")) PKG=getIntent().getStringExtra("package");
         float d = getResources().getDisplayMetrics().density;
         AppWidgetManager awm = AppWidgetManager.getInstance(this);
         host = new AppWidgetHost(getApplicationContext(), 1024);
