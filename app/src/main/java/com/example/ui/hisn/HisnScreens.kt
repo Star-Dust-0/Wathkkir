@@ -226,7 +226,13 @@ fun HisnChapterContent(
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 OneUIButton(L10n.t(S.ReadDone), onMarkRead, Modifier.weight(1f), true, Icons.Outlined.Check)
-                OneUIButton(L10n.t(S.AddToMyAzkar), onAddToMyAzkar, Modifier.weight(1f), false, Icons.Outlined.NotificationAdd)
+                OneUIButton(
+                    L10n.t(if (added) S.AddedToMyAzkar else S.AddToMyAzkar),
+                    { if (!added) { tapped = true; onAddToMyAzkar() } },
+                    Modifier.weight(1f), false,
+                    if (added) Icons.Outlined.Check else Icons.Outlined.NotificationAdd,
+                    accentOverride = if (added) com.example.ui.theme.OneUIActiveGreen else null
+                )
             }
         }
     }
@@ -279,7 +285,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
                 val label = when {
                     done -> L10n.t(S.Done)
                     item.count > 1 -> "$remaining / ${item.count}"
-                    else -> L10n.t(S.TapToCount)
+                    else -> L10n.t(S.ReadDone)
                 }
                 Text(
                     label,
@@ -291,7 +297,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
             if (hasNotes) {
                 Icon(
                     Icons.Outlined.Info,
-                    if (L10n.t(S.Done) == L10n.t(S.Done)) "معلومات الذكر" else "Info",
+                    if (L10n.lang == com.example.ui.i18n.Lang.AR) "معلومات الذكر" else "Info",
                     tint = if (showFadl) cs.primary else cs.onSurfaceVariant,
                     modifier = Modifier
                         .size(40.dp)
