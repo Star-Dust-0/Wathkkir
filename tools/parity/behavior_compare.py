@@ -51,6 +51,7 @@ adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 adb('shell','settings','put','system','haptic_feedback_enabled','1')
 adb('shell','settings','put','global','window_animation_scale','1');adb('shell','settings','put','global','transition_animation_scale','1');adb('shell','settings','put','global','animator_duration_scale','1')
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo')
+adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
 adb('shell','svc','power','stayon','true');adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
 for apk in ['original.apk','comparison.apk','widgethost.apk']:check('install-'+apk,'Success' in adb('install','-r','-g',apk))
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
@@ -95,6 +96,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    for i,label in enumerate(labels):
     found=tap_bottom(label);check(slug+'-tab-'+str(i)+'-found',found)
     check(slug+'-tab-'+str(i)+'-in-app',foreground(pkg));shot(slug+f'-tab{i}')
+    if i==0:
+     time.sleep(10);shot(slug+'-hisn-settled')
+     fav='Favorites' if lang=='en' else 'المفضلة';check(slug+'-hisn-favorite-chip',tap_text(fav));time.sleep(3);shot(slug+'-hisn-favorites')
+     tap_text('All' if lang=='en' else 'الكل')
    record_stop(proc,slug+'-tabs')
   # Widget host binds both packages at the same sizes under the same language.
   adb('shell','appwidget','grantbind','--package','com.example.widgethost','--user','0')
@@ -102,6 +107,8 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    adb('shell','am','start','-S','-W','-n','com.example.widgethost/.MainActivity','--es','package',pkg,'--es','mode',mode);time.sleep(5);shot(f'{name}-{lang}-widgets-{mode}')
    for i in range(2):swipe();shot(f'{name}-{lang}-widgets-{mode}-scroll{i}')
   adb('shell','dumpsys','vibrator_manager')
+ adb('pull',f'/data/data/{pkg}/databases',str(OUT/(name+'-databases')))
+ adb('pull',f'/data/data/{pkg}/shared_prefs/hisn_prefs.xml',str(OUT/(name+'-hisn-prefs.xml')))
  (OUT/(name+'-vibrator.txt')).write_text(adb('shell','dumpsys','vibrator_manager'))
 (OUT/'checks.json').write_text(json.dumps(checks,indent=2));(OUT/'logcat.txt').write_text(adb('logcat','-d'))
 print(json.dumps({'checks':len(checks),'failures':[x for x in checks if not x['passed']]},indent=2))
