@@ -279,7 +279,7 @@ fun HisnItemCard(item: HisnItem, favorite: Boolean, onFavorite: () -> Unit) {
                 val label = when {
                     done -> L10n.t(S.Done)
                     item.count > 1 -> "$remaining / ${item.count}"
-                    else -> "اضغط للعد"
+                    else -> L10n.t(S.TapToCount)
                 }
                 Text(
                     label,
