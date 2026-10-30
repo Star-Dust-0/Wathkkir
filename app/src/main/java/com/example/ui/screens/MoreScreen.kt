@@ -1,4 +1,6 @@
 package com.example.ui.screens
+import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Label
@@ -19,25 +21,25 @@ import com.example.ui.oneui.OneUIScreen
 
 @Composable
 fun MoreScreen(onNavigate: (String) -> Unit) {
-    OneUIScreen(title = "المزيد") {
+    OneUIScreen(title = L10n.t(S.More)) {
         item(key = "g1") {
             OneUICard {
-                MoreRow("المفضلة", "الأذكار التي تحبها", Icons.Outlined.Star) { onNavigate("favorites") }
+                MoreRow(L10n.t(S.Favorites), L10n.t(S.FavSubtitle), Icons.Outlined.Star) { onNavigate("favorites") }
                 OneUIDivider(70.dp)
-                MoreRow("التنبيهات", "جميع أوقات التذكير", Icons.Outlined.Notifications) { onNavigate("reminders") }
+                MoreRow(L10n.t(S.Reminders), L10n.t(S.RemindersSubtitle), Icons.Outlined.Notifications) { onNavigate("reminders") }
                 OneUIDivider(70.dp)
-                MoreRow("الإحصائيات", "السجل والأيام المتتالية", Icons.Outlined.BarChart) { onNavigate("statistics") }
+                MoreRow(L10n.t(S.Stats), L10n.t(S.StatsSubtitle), Icons.Outlined.BarChart) { onNavigate("statistics") }
                 OneUIDivider(70.dp)
-                MoreRow("التصنيفات", "تنظيم الأذكار بالألوان", Icons.AutoMirrored.Filled.Label) { onNavigate("tags") }
+                MoreRow(L10n.t(S.Tags), L10n.t(S.TagsSubtitle), Icons.AutoMirrored.Filled.Label) { onNavigate("tags") }
             }
         }
         item(key = "g2") {
             OneUICard {
-                MoreRow("منبه صلاة الفجر", "حسب موقعك الجغرافي", Icons.Outlined.Alarm) { onNavigate("fajr_settings") }
+                MoreRow(L10n.t(S.FajrAlarm), L10n.t(S.ByLocation), Icons.Outlined.Alarm) { onNavigate("fajr_settings") }
                 OneUIDivider(70.dp)
-                MoreRow("الإعدادات", "الاهتزاز والخط والنغمة", Icons.Outlined.Settings) { onNavigate("settings") }
+                MoreRow(L10n.t(S.Settings), L10n.t(S.SettingsSubtitle), Icons.Outlined.Settings) { onNavigate("settings") }
                 OneUIDivider(70.dp)
-                MoreRow("حول التطبيق", "الإصدار والمطوّر", Icons.Outlined.Info) { onNavigate("about") }
+                MoreRow(L10n.t(S.About), L10n.t(S.AboutSubtitle), Icons.Outlined.Info) { onNavigate("about") }
             }
         }
     }
