@@ -1,5 +1,8 @@
 package com.example.ui.screens
 
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
@@ -124,8 +127,21 @@ fun MainScreen(viewModel: MainViewModel) {
                 navController = navController,
                 startDestination = "tabs",
                 modifier = Modifier.fillMaxSize(),
-                // Platform defaults: no custom transition specs - Navigation Compose 2.8
-                // supplies the library-standard transitions and in-app predictive back.
+                // Original hu0/ut0: directional full-width enter and quarter-width exit.
+                enterTransition = {
+                    slideInHorizontally(tween(345, easing = CubicBezierEasing(0.15f,0.5f,0.1f,0.9f))) { it * slideDirState.value }
+                },
+                exitTransition = {
+                    slideOutHorizontally(tween(120, easing = CubicBezierEasing(0.15f,0f,0.3f,0.85f))) { -it / 4 * slideDirState.value } +
+                        fadeOut(tween(75), targetAlpha = 0.73f)
+                },
+                popEnterTransition = {
+                    slideInHorizontally(tween(120, easing = CubicBezierEasing(0.15f,0f,0.3f,0.85f))) { -it / 4 * slideDirState.value } +
+                        fadeIn(tween(75), initialAlpha = 0.73f)
+                },
+                popExitTransition = {
+                    slideOutHorizontally(tween(345, easing = CubicBezierEasing(0.15f,0.5f,0.1f,0.9f))) { it * slideDirState.value }
+                }
             ) {
                 composable("tabs") {
                     val wide = false // original 3.4.2 keeps the floating bottom bar and swipe pager on large screens
