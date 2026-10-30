@@ -39,3 +39,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## 2026-10-30 21:35 phone harness startup
 - Run41114230864 failed before emulator: missing ephemeral debug.keystore. Application Kotlin/Java compilation finished, signing validation stopped packaging. No runtime checks or parity evidence were produced.
 - Restored test-only keystore generation in the phone workflow, matching the previously successful checkpoint. This is the standard disposable Android debug identity, not the owner's signing key. Also set headless JVM to avoid irrelevant KSP AWT event-thread errors. One corrected run only after failed run completion.
+
+## 2026-10-30 21:51 runtime harness obstruction
+- Phone41116393024 infrastructure green but only11checks ran: four Azkar opens failed because identical system Pixel Launcher ANR dialogs blocked both apps in both languages. XML and actual screenshot are the source, not an app parity mismatch. Four database baselines each contain the same five starter rows. No CRUD claimed.
+- Restore prior harness launcher force-stop/error-dialog suppression and detect/dismiss launcher error on launch. Script failures remain evidence; CI green is never treated as test pass.
