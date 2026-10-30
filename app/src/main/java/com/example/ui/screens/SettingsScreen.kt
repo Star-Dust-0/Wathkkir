@@ -36,6 +36,10 @@ fun SettingsScreen(viewModel: MainViewModel, onBack: () -> Unit, onNavigateToFaj
     val appFont by viewModel.appFont.collectAsState()
     var showFontPicker by remember { mutableStateOf(false) }
     var showLockWidgets by remember { mutableStateOf(false) }
+    var showTheme by remember { mutableStateOf(false) }
+    var showLanguage by remember { mutableStateOf(false) }
+    val themeMode by com.example.ThemeSettings.mode.collectAsState()
+    val fontScale by com.example.FontScaleSettings.scale.collectAsState()
     val ringtoneLauncher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val uri: Uri? = result.data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
@@ -58,9 +62,32 @@ fun SettingsScreen(viewModel: MainViewModel, onBack: () -> Unit, onNavigateToFaj
         toneSummary = toneSummary,
         onLocation = onLocation,
         onOptionalTimes = onOptionalTimes,
-        onLockWidgets = { showLockWidgets = true }
+        onLockWidgets = { showLockWidgets = true },
+        themeTitle = L10n.t(when(themeMode){"light"->S.Light;"dark"->S.Dark;else->S.SystemAuto}),
+        onTheme = { showTheme = true },
+        onLanguage = { showLanguage = true },
+        fontScale = fontScale,
+        onFontScale = { com.example.FontScaleSettings.set(settingsCtx,it) }
     )
 
+    if (showTheme) OneUIDialog(title=L10n.t(S.Appearance),onDismiss={showTheme=false},onConfirm=null,dismissText=L10n.t(S.Close)) {
+        listOf("auto" to S.SystemAuto,"light" to S.Light,"dark" to S.Dark).forEach { (key,label) ->
+            OneUIRow(L10n.t(label),onClick={
+                settingsCtx.getSharedPreferences("app_prefs",0).edit().putString("theme_mode",key).apply()
+                com.example.ThemeSettings.setMode(key);showTheme=false
+            },trailing={if(themeMode==key) ChevronIcon()})
+        }
+    }
+    if (showLanguage) OneUIDialog(title=L10n.t(S.Language),onDismiss={showLanguage=false},onConfirm=null,dismissText=L10n.t(S.Close)) {
+        androidx.compose.foundation.lazy.LazyColumn {
+            items(Lang.entries.size) { i -> val language=Lang.entries[i]
+                OneUIRow(language.nativeName,onClick={L10n.set(settingsCtx,language);showLanguage=false
+                    com.example.utils.WearSync.push(settingsCtx)
+                    com.example.widget.WidgetUpdater.INSTANCE.updateAll(settingsCtx)
+                },trailing={if(L10n.lang==language) ChevronIcon()})
+            }
+        }
+    }
     if (showFontPicker) {
         FontPickerDialog(
             selected = com.example.ui.theme.FontChoice.fromId(appFont),
@@ -127,7 +154,12 @@ fun SettingsContent(
     onPickSound: () -> Unit,
     onLocation: (() -> Unit)?,
     onOptionalTimes: (() -> Unit)?,
-    onLockWidgets: () -> Unit = {}
+    onLockWidgets: () -> Unit = {},
+    themeTitle: String = "",
+    onTheme: () -> Unit = {},
+    onLanguage: () -> Unit = {},
+    fontScale: Float = com.example.FontScaleSettings.DEFAULT,
+    onFontScale: (Float) -> Unit = {}
 ) {
     val ctx = LocalContext.current
     val haptics = com.example.utils.AppHaptics.enabled
@@ -169,6 +201,13 @@ fun SettingsContent(
             OneUICard {
                 OneUIRow(L10n.t(S.AppFont), summary = fontTitle, onClick = onPickFont,
                     leading = { OneUIIconBadge(Icons.Outlined.TextFields) }, trailing = { ChevronIcon() })
+                FontSizeSliderRow(fontScale,onFontScale)
+                OneUIRow(L10n.t(S.Appearance),summary=themeTitle,onClick=onTheme,leading={OneUIIconBadge(Icons.Outlined.Palette)},trailing={ChevronIcon()})
+                OneUIRow(L10n.t(S.Language),summary=L10n.lang.nativeName,onClick=onLanguage,leading={OneUIIconBadge(Icons.Outlined.Language)},trailing={ChevronIcon()})
+                if(L10n.lang==Lang.AR) {
+                    Text("نوع الأرقام",modifier=Modifier.fillMaxWidth(),style=MaterialTheme.typography.bodyLarge)
+                    OneUISegmented(options=listOf("أرقام هندية  ١٢٣","أرقام عربية  1234"),selected=if(com.example.utils.Digits.isHindiChoice)0 else 1,onSelect={com.example.utils.Digits.set(ctx,it==0);com.example.widget.WidgetUpdater.INSTANCE.updateAll(ctx)})
+                }
             }
         }
     }
