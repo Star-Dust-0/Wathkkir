@@ -1,8 +1,8 @@
 Current status: BUILD-STATUS.txt. Historical recovered source remains the build base; uncovered viewmodels/model/receiver helpers remain marked secondary reconstruction in SOURCE-ORIGINS.csv.
 Phone/watch compile. Comparison branch only, no main edits or release.
-Settings layout/type/motion/haptic policies are available from source and reconciled; see SETTINGS-SOURCE-RECOVERY.txt. Focused final interaction rerun pending. Do not substitute a physical-device caveat for source recovery.
+Settings layout/type/motion/haptic policies are available from source and reconciled; see SETTINGS-SOURCE-RECOVERY.txt. Focused settings interaction41070778457 passed35checks. Do not substitute a physical-device caveat for source recovery.
 Phone eight-kind native before-prayer countdown clean interaction41058376930 and watch dynamic complication/tile41059932710 passed their scoped checks, with inspected pixels. They remain explicit native-first differences, not full parity or battery/idle/target-rollover proof.
 Focused original/comparison41061755648:67checks, four drawer-back exits shared by both apps, not fixed speculatively. Both Hisn databases contain135chapters335items and matching favorites. Late Home chip/title41065716918 inspected; later localization count helpers compile and await final interaction check.
-PrayerBar/LockBar progress snapshot behavior, all settings permutations, widgets/tap/update rollover and complete app-wide parity remain open. HeroLarge preview and watch monochrome icon remain unverified fallback reconstructions.
+PrayerBar/LockBar progress snapshot behavior, all settings permutations, widgets/tap/update rollover and complete app-wide parity remain open. HeroLarge is absent from the final enabled receiver set; no new provider was invented. Watch monochrome icon remains an uncovered fallback.
 Physical Samsung rendering and motor output are separate runtime checks after code recovery, not missing source.
 Release only after user approval and correct user signing. No debug installer delivery.

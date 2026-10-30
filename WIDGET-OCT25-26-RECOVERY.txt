@@ -26,5 +26,19 @@ minute snapshot, not a new per-second dynamic-bar promise. Watch monochrome
 fallback source remains uncovered by these two days. Test-only host additions
 exercise real widget bindings, clicks and lifecycle, not shipped application UI.
 
-Phone and verification host compile passed after density restoration. Paired
-original/comparison host pixels, all kinds, refresh and scheduling checks pending.
+Final acceptance run41089951817:113/113 checks passed. Actual paired English and
+Arabic pixels inspected for all10 enabled home kinds and8 enabled lock kinds.
+Correct RTC minute / RTC_WAKEUP boundary arming checked with every host family;
+last-widget removal cancels both. Actual Pill clicks verified refresh and legacy
+none migration in both original and comparison, with native Toast visible.
+https://github.com/Star-Dust-0/Wathkkir/actions/runs/41089951817
+Two earlier runs failed test-only foreground/foreign-resource child lookup;
+corrected host now invokes the actual click-listener child. App code unchanged
+between those runs. Full all-kind tap permutations, sleep-through-boundary delivery,
+Samsung launcher behavior and API35 generated-preview rendering are NOT proved
+by this run. The recovered preview-density code compiles; its picker effect
+requires API35+. Lock text's dark shadow/contrast on this plain host background
+is shared by the original, not silently redesigned. Toast remains the recovered
+prose form while later native widget countdown is numeric; this intentional
+historical refresh/native display difference is explicit, not exact-text parity.
+Watch source changes audited, but no new watch runtime pass in this task.
