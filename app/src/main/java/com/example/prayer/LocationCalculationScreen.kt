@@ -193,12 +193,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                         Icon(
                             Icons.Outlined.Check, L10n.t(S.Save), tint = cs.primary,
                             modifier = Modifier.size(47.dp).clip(CircleShape).clickable {
-                                val n = nameDraft.trim()
-                                if (n.isNotEmpty()) {
-                                    if (cityPrefs.cityNameArOrig == null) cityPrefs.setCityNamesOrig(cityPrefs.getCityNameLocalized("ar"), cityPrefs.getCityNameLocalized("en"))
-                                    cityPrefs.setCityNames(n, n)
-                                    viewModel.refreshCityDisplay(); recalc()
-                                }
+                                if(viewModel.setCityAlias(nameDraft)) recalc()
                                 editingName = false
                             }.padding(12.dp)
                         )
@@ -207,6 +202,9 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                             modifier = Modifier.size(47.dp).clip(CircleShape).clickable { editingName = false }.padding(12.dp)
                         )
                     }
+                }
+                if (cityPrefs.cityNameArOrig != null) {
+                    Text(L10n.t(S.ResetCityNameAuto),color=cs.primary,modifier=Modifier.padding(start=68.dp,top=4.dp,bottom=8.dp).clickable {viewModel.resetCityAlias();recalc()})
                 }
                 if (state.useCurrentLocation && (!state.hasLocationPermission || !state.isGpsAvailable)) {
                     Spacer(Modifier.height(8.dp))

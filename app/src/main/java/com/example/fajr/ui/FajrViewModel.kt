@@ -143,6 +143,29 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
         return o.optString(key, "").ifEmpty { null }
     }
 
+    /** Original ds0/jx: aliases belong to a place and survive reselecting that place. */
+    fun setCityAlias(name: String): Boolean {
+        val n=name.trim()
+        val key=prefs.placeKey?.takeIf { it.isNotEmpty() } ?: device.placeKey(prefs.latitude,prefs.longitude)?.also { prefs.placeKey=it }
+        if(key==null || n.isEmpty()) return false
+        if(prefs.cityNameArOrig==null) prefs.setCityNamesOrig(prefs.getCityNameLocalized("ar"),prefs.getCityNameLocalized("en"))
+        val store=app().getSharedPreferences("fajr_prefs",0)
+        val aliases=try { JSONObject(store.getString("city_aliases_json",null) ?: "{}") } catch(_:Exception){JSONObject()}
+        aliases.put(key,n);store.edit().putString("city_aliases_json",aliases.toString()).apply()
+        prefs.setCityNames(n,n);refreshCityDisplay()
+        return true
+    }
+
+    fun resetCityAlias() {
+        val store=app().getSharedPreferences("fajr_prefs",0)
+        val aliases=try { JSONObject(store.getString("city_aliases_json",null) ?: "{}") } catch(_:Exception){JSONObject()}
+        prefs.placeKey?.let { aliases.remove(it) }
+        store.edit().putString("city_aliases_json",aliases.toString()).apply()
+        prefs.cityNameArOrig?.let { original ->
+            prefs.setCityNames(original,prefs.cityNameEnOrig ?: original);prefs.clearCityNamesOrig();refreshCityDisplay()
+        } ?: run { if(prefs.useCurrentLocation) updateLocationFromGps() }
+    }
+
     fun setRingtone(uri: Uri, title: String) {
         prefs.ringtoneUri = uri.toString()
         prefs.ringtoneTitle = title
