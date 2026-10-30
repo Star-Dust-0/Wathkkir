@@ -1182,10 +1182,28 @@ var226.drawRoundRect(var104, var4, var4, var203);
         HomeWidgets.langForNative.set(lang(context));
         Bitmap renderSize = renderSize(context, cls, i, z);
         remoteViews.setImageViewBitmap(res(context, "id", "lock_widget_art"), renderSize);
-        HomeWidgets.ovApply(context, remoteViews, renderSize.getWidth(), renderSize.getHeight());
+        // ImageView fitCenter scales the fixed 123x54dp lock artwork into the
+        // host's padded content area. Native text must use that same transform.
+        float density = context.getResources().getDisplayMetrics().density;
+        int hostW = Math.round(appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH,
+                Math.round(renderSize.getWidth() / density)) * density);
+        int hostH = Math.round(appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT,
+                Math.round(renderSize.getHeight() / density)) * density);
+        fitNativeOverlay(renderSize.getWidth(), renderSize.getHeight(), hostW, hostH);
+        HomeWidgets.ovApply(context, remoteViews, hostW, hostH);
         remoteViews.setInt(res(context, "id", "lock_widget_art"), "setLayoutDirection", rtl(context) ? 1 : 0);
         remoteViews.setOnClickPendingIntent(res(context, "id", "lock_widget_art"), null);
         appWidgetManager.updateAppWidget(i, remoteViews);
+    }
+
+    static void fitNativeOverlay(int bitmapW, int bitmapH, int hostW, int hostH) {
+        float[] geo = HomeWidgets.ovGeo.get();
+        if (geo == null || bitmapW <= 0 || bitmapH <= 0 || hostW <= 0 || hostH <= 0) return;
+        float scale = Math.min((float) hostW / bitmapW, (float) hostH / bitmapH);
+        geo[0] = geo[0] * scale + (hostW - bitmapW * scale) / 2f;
+        geo[1] = geo[1] * scale + (hostH - bitmapH * scale) / 2f;
+        geo[2] *= scale;
+        geo[3] *= scale;
     }
 
     public static void updateAll(Context context) {

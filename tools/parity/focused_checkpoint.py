@@ -7,8 +7,10 @@ def adb(*args):
  return r.stdout.decode(errors='replace').strip()
 def clear_launcher_anr():
  # Launcher can ANR during cold emulator start. Close only its identified system dialog.
- adb('shell','uiautomator','dump','/sdcard/anr.xml')
- xml=adb('shell','cat','/sdcard/anr.xml')
+ if kind=='phone': xml=hierarchy()
+ else:
+  adb('shell','uiautomator','dump','/sdcard/anr.xml')
+  xml=adb('shell','cat','/sdcard/anr.xml')
  if "Pixel Launcher isn't responding" in xml:
   import xml.etree.ElementTree as ET,re
   for n in ET.fromstring(xml).iter('node'):
@@ -16,8 +18,16 @@ def clear_launcher_anr():
     a=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
     if len(a)==4:adb('shell','input','tap',str((a[0]+a[2])//2),str((a[1]+a[3])//2));time.sleep(2)
 def shot(name):
- clear_launcher_anr()
+ if "widgets-" not in name: clear_launcher_anr()
  (out/(name+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=45))
+def hierarchy():
+ # Native countdown changes each second; uiautomator dump's idle wait can never
+ # complete. Our verification-only instrumentation reads the current tree directly.
+ text=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
+ marker='INSTRUMENTATION_RESULT: hierarchy='
+ for line in text.splitlines():
+  if line.startswith(marker):return line[len(marker):]
+ return ''
 def clock():
  adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0')
  adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','date','102910002026.00')
@@ -59,8 +69,8 @@ for build in ['original','rebuilt']:
    def tap(x,y): adb('shell','input','tap',str(int(ww*x)),str(int(hh*y)));time.sleep(2)
    def dump(name):
     adb('shell','rm','-f','/sdcard/window.xml')
-    adb('shell','uiautomator','dump','/sdcard/window.xml')
-    (out/(name+'.xml')).write_text(adb('shell','cat','/sdcard/window.xml'))
+    xml=hierarchy()
+    (out/(name+'.xml')).write_text(xml)
    dump(f'{build}-{lang}-home-ui')
    # Inspect all four real bottom tabs, then return to prayer and open settings.
    for tab in [1,2,3]:
@@ -76,8 +86,7 @@ for build in ['original','rebuilt']:
     checks=[]
     def click_label(label):
      adb('shell','rm','-f','/sdcard/action.xml')
-     adb('shell','uiautomator','dump','/sdcard/action.xml')
-     xml=adb('shell','cat','/sdcard/action.xml')
+     xml=hierarchy()
      try: root=ET.fromstring(xml)
      except ET.ParseError: return False
      for node in root.iter('node'):
@@ -111,5 +120,6 @@ for build in ['original','rebuilt']:
    for mode in ['default','iqama','barsA']:
     clock();print(adb('shell','am','start','-S','-W','-n','com.example.widgethost/.MainActivity','--es','mode',mode),flush=True);time.sleep(7);shot(f'{build}-{lang}-widgets-{mode}')
     time.sleep(5);shot(f'{build}-{lang}-widgets-{mode}-later')
-    dump(f'{build}-{lang}-widgets-{mode}-ui')
+    # Do not instrument the host while widgets are being captured.
+    # The host's bind/pixel logs and screenshots verify this section.
   (out/f'{build}-{lang}-logcat.txt').write_text(adb('logcat','-d'))

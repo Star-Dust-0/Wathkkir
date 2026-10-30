@@ -13,6 +13,14 @@ import org.robolectric.annotation.GraphicsMode;
 import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class) @Config(sdk=34) @GraphicsMode(GraphicsMode.Mode.NATIVE)
 public class NativeCountdownAuditTest {
+ @Test public void lockNativeOverlayUsesSameFitCenterAsArtwork() {
+  HomeWidgets.ovGeo.set(new float[]{123f,81f,100f,18f,0xff000000,0f});
+  LockWidgets.fitNativeOverlay(246,108,214,76);
+  float scale=76f/108f;float[] g=HomeWidgets.ovGeo.get();
+  assertEquals(107f,g[0],.01f);assertEquals(81f*scale,g[1],.01f);
+  assertEquals(100f*scale,g[2],.01f);assertEquals(18f*scale,g[3],.01f);
+  HomeWidgets.ovGeo.remove();
+ }
  @Test public void auditEachPublishedHomeKindBeforePrayerAndDuringIqama() throws Exception {
   Context c=RuntimeEnvironment.getApplication();c.getSharedPreferences("app_prefs",0).edit().putString("language","en").commit();
   StringBuilder out=new StringBuilder("kind,iqama,native_chronometer\n");
