@@ -1,6 +1,9 @@
 package com.wathakker.wear
 
 import android.content.ComponentName
+import androidx.wear.protolayout.expression.DynamicBuilders
+import androidx.wear.protolayout.TypeBuilders
+import androidx.wear.protolayout.DimensionBuilders
 import androidx.wear.protolayout.ActionBuilders
 import androidx.wear.protolayout.ColorBuilders.argb
 import androidx.wear.protolayout.DimensionBuilders.degrees
@@ -35,9 +38,10 @@ open class PrayerTileService : TileService() {
     // font change, which overflowed the layout. Dividing by the system fontScale keeps the tile's
     // designed geometry identical on every watch (glanceable fixed layout, like a watch face).
     private val fontScale: Float get() = resources.configuration.fontScale
-    private fun text(t: String, size: Float, color: Int, bold: Boolean) =
+    private fun text(t: String, size: Float, color: Int, bold: Boolean, dynamic: DynamicBuilders.DynamicString? = null) =
         LayoutElementBuilders.Text.Builder()
-            .setText(t)
+            .setText(TypeBuilders.StringProp.Builder(t).apply { if(dynamic != null) setDynamicValue(dynamic) }.build())
+            .apply { if(dynamic != null) setLayoutConstraintsForDynamicText(TypeBuilders.StringLayoutConstraint.Builder(T("المتبقي 00:00:00", "Left 00:00:00")).build()) }
             .setFontStyle(
                 LayoutElementBuilders.FontStyle.Builder()
                     .setSize(sp(size / fontScale)).setColor(argb(color))
@@ -45,17 +49,36 @@ open class PrayerTileService : TileService() {
                     .build()
             ).build()
 
-    fun layout(s: PrayerState, iq: Prayer.Iqama? = null): LayoutElementBuilders.LayoutElement {
+    fun layout(s: PrayerState, iq: Prayer.Iqama? = null, native: Boolean = false): LayoutElementBuilders.LayoutElement {
         val sweep = 270f
         // During an iqama window the arc and center switch to the iqama countdown (owner feature, wear 1.1.0).
         val arcProgress = if (iq != null) ((s.now - iq.prayer.at).toFloat() / maxOf(1L, iq.at - iq.prayer.at).toFloat()).coerceIn(0.02f, 1f) else s.progress
         // One Arc with sequential contents: elapsed fill first from the anchor, then the remaining track.
         // (Two sibling Arcs get concatenated by some renderers, which drew the fill after the track's end.)
         val fillLen = sweep * arcProgress
-        val fill = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(16f)).setColor(argb(tc.main)).build()
-        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep - fillLen)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
-        val arc = LayoutElementBuilders.Arc.Builder()
-            .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(fill).addContent(track).build()
+        val begin = iq?.prayer?.at ?: s.prev.at
+        val target = iq?.at ?: s.next.at
+        val now = DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
+        val elapsed = DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(begin)).durationUntil(now).toIntSeconds().asFloat()
+        val raw = elapsed.div(maxOf(1f,(target-begin)/1000f)).times(sweep)
+        val low = DynamicBuilders.DynamicFloat.onCondition(raw.lt(sweep*0.02f)).use(sweep*0.02f).elseUse(raw)
+        val progress = DynamicBuilders.DynamicFloat.onCondition(low.gt(sweep)).use(sweep).elseUse(low)
+        val fill = LayoutElementBuilders.ArcLine.Builder()
+            .setLength(DimensionBuilders.DegreesProp.Builder(fillLen).apply { if(native) setDynamicValue(progress) }.build())
+            .apply { if(native) setLayoutConstraintsForDynamicLength(DimensionBuilders.AngularLayoutConstraint.Builder(sweep).setAngularAlignment(LayoutElementBuilders.ANGULAR_ALIGNMENT_START).build()) }
+            .setThickness(dp(16f)).setColor(argb(tc.main)).build()
+        // A fixed background arc and a start-aligned dynamic overlay avoid reserving
+        // two full dynamic lengths sequentially in the same Arc.
+        val track = LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()
+        fun arc(line: LayoutElementBuilders.ArcLine) = LayoutElementBuilders.Arc.Builder()
+            .setAnchorAngle(degrees(-135f)).setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START).addContent(line).build()
+        val seconds0=now.durationUntil(DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(target))).toIntSeconds()
+        val seconds=DynamicBuilders.DynamicInt32.onCondition(seconds0.lt(0)).use(0).elseUse(seconds0)
+        val two=DynamicBuilders.DynamicInt32.IntFormatter.Builder().setMinIntegerDigits(2).setGroupingUsed(false).build()
+        val numeric=seconds.div(3600).format().concat(DynamicBuilders.DynamicString.constant(":"))
+            .concat(seconds.div(60).rem(60).format(two)).concat(DynamicBuilders.DynamicString.constant(":"))
+            .concat(seconds.rem(60).format(two))
+        val remaining=DynamicBuilders.DynamicString.constant(T("المتبقي ","Left ")).concat(numeric)
 
         fun gap(h: Float) = LayoutElementBuilders.Spacer.Builder().setHeight(dp(h)).build()
         // Layout measured against the reference gold widget ON THE REAL WATCH (Samsung font renders
@@ -69,13 +92,17 @@ open class PrayerTileService : TileService() {
             .addContent(gap(5f))
             .addContent(text(if (iq != null) T("إقامة ", "Iqama ") + iq.prayer.name else s.next.name, 19.5f, 0xFFFFFFFF.toInt(), false))
             .addContent(gap(9.7f))
-            .addContent(text(T("المتبقي ", "Left ") + Prayer.remainingText((iq?.at ?: s.next.at) - s.now), 14.5f, tc.main, true))
+            .addContent(text(T("المتبقي ", "Left ") + Prayer.remainingText((iq?.at ?: s.next.at) - s.now), 14.5f, tc.main, true, if(native) remaining else null))
             .addContent(gap(8f))
             .addContent(text(Prayer.hijriDay(s.now), 30f, 0xFFFFFFFF.toInt(), true))
             .addContent(gap(3.3f))
             .addContent(text(Prayer.hijriMonth(s.now), 14.5f, 0xFF9D9DA2.toInt(), false))
             .build()
 
+        val originalArc = LayoutElementBuilders.Arc.Builder().setAnchorAngle(degrees(-135f))
+            .setAnchorType(LayoutElementBuilders.ARC_ANCHOR_START)
+            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(fillLen)).setThickness(dp(16f)).setColor(argb(tc.main)).build())
+            .addContent(LayoutElementBuilders.ArcLine.Builder().setLength(degrees(sweep-fillLen)).setThickness(dp(16f)).setColor(argb(tc.dark)).build()).build()
         val click = ModifiersBuilders.Clickable.Builder()
             .setId("open")
             .setOnClick(ActionBuilders.LaunchAction.Builder().setAndroidActivity(
@@ -85,7 +112,7 @@ open class PrayerTileService : TileService() {
         return LayoutElementBuilders.Box.Builder()
             .setWidth(expand()).setHeight(expand())
             .setModifiers(ModifiersBuilders.Modifiers.Builder().setClickable(click).build())
-            .addContent(arc).addContent(center)
+            .apply { if(native) { addContent(arc(track)); addContent(arc(fill)) } else addContent(originalArc) }.addContent(center)
             .build()
     }
 
@@ -96,7 +123,7 @@ open class PrayerTileService : TileService() {
         val tile = TileBuilders.Tile.Builder()
             .setResourcesVersion("1")
             .setFreshnessIntervalMillis(60_000)
-            .setTileTimeline(TimelineBuilders.Timeline.fromLayoutElement(layout(s, iq)))
+            .setTileTimeline(TimelineBuilders.Timeline.fromLayoutElement(layout(s, iq, requestParams.deviceConfiguration.rendererSchemaVersion.let { it.major > 1 || (it.major == 1 && it.minor >= 200) })))
             .build()
         return Futures.immediateFuture(tile)
     }
