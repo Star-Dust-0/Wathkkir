@@ -5,15 +5,25 @@ def adb(*a):return subprocess.run(['adb',*a],capture_output=True,text=True,timeo
 def tree():
  x=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
  return next((s.split('=',1)[1] for s in x.splitlines() if s.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+def clear_launcher_dialog():
+ for attempt in range(3):
+  root=ET.fromstring(tree())
+  if not any("isn't responding" in n.get('text','') or 'is not responding' in n.get('text','') for n in root.iter('node')):return
+  for n in root.iter('node'):
+   if n.get('text')=='Close app':
+    b=list(map(int,re.findall(r'\d+',n.get('bounds',''))));adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(2);break
 def shot(n):
+ clear_launcher_dialog()
  (out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']));(out/(n+'.xml')).write_text(tree())
 def tap(label):
+ clear_launcher_dialog()
  for n in ET.fromstring(tree()).iter('node'):
   if label in [n.get('text'),n.get('content-desc')]:
    b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
    if len(b)==4:adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(3);return True
  return False
 def bottom(label):
+ clear_launcher_dialog()
  for n in ET.fromstring(tree()).iter('node'):
   if n.get('text')==label:
    b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
@@ -21,7 +31,7 @@ def bottom(label):
  return False
 adb('wait-for-device');adb('root');time.sleep(5);adb('wait-for-device')
 for a in ['original.apk','comparison.apk','widgethost.apk']:assert 'Success' in adb('install','-g',a)
-adb('shell','wm','size','1800x2560');adb('shell','wm','density','280')
+adb('shell','wm','size','1800x2560');adb('shell','wm','density','280');adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['en','ar']:
   slug=name+'-'+lang;adb('shell','am','force-stop',pkg);folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
