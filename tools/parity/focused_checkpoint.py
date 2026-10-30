@@ -5,7 +5,18 @@ out=pathlib.Path('evidence');out.mkdir(exist_ok=True)
 def adb(*args):
  r=subprocess.run(['adb',*args],capture_output=True,timeout=45)
  return r.stdout.decode(errors='replace').strip()
+def clear_launcher_anr():
+ # Launcher can ANR during cold emulator start. Close only its identified system dialog.
+ adb('shell','uiautomator','dump','/sdcard/anr.xml')
+ xml=adb('shell','cat','/sdcard/anr.xml')
+ if "Pixel Launcher isn't responding" in xml:
+  import xml.etree.ElementTree as ET,re
+  for n in ET.fromstring(xml).iter('node'):
+   if n.get('text')=='Close app':
+    a=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
+    if len(a)==4:adb('shell','input','tap',str((a[0]+a[2])//2),str((a[1]+a[3])//2));time.sleep(2)
 def shot(name):
+ clear_launcher_anr()
  (out/(name+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=45))
 def clock():
  adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0')
@@ -43,7 +54,7 @@ for build in ['original','rebuilt']:
     time.sleep(4);shot(f'{build}-{lang}-page{page}')
    print(adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.wathakker.wear.CirclesActivity'),flush=True);time.sleep(3);shot(f'{build}-{lang}-circles')
   else:
-   print(adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.example.MainActivity'),flush=True);time.sleep(6);shot(f'{build}-{lang}-home')
+   print(adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.example.MainActivity'),flush=True);time.sleep(6);clear_launcher_anr();shot(f'{build}-{lang}-home')
    dims=adb('shell','wm','size').strip().split()[-1].split('x');ww,hh=map(int,dims)
    def tap(x,y): adb('shell','input','tap',str(int(ww*x)),str(int(hh*y)));time.sleep(2)
    def dump(name):

@@ -40,9 +40,9 @@ fun FavoritesContent(
     onEdit: (Dhikr) -> Unit,
     onDelete: (Dhikr) -> Unit
 ) {
-    OneUIScreen(title = "المفضلة", subtitle = azkarCount(favorites.size), onBack = onBack) {
+    OneUIScreen(title = com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.Favorites), subtitle = azkarCount(favorites.size), onBack = onBack) {
         if (favorites.isEmpty()) {
-            item { OneUIEmptyState("لا توجد أذكار مفضلة", Icons.Default.Star) }
+            item { OneUIEmptyState(com.example.ui.i18n.L10n.t(com.example.ui.i18n.S.NoFavorites), Icons.Default.Star) }
         } else {
             dhikrCards(favorites, tagsMap, onToggleEnabled, onToggleFavorite, onClickTimes, onEdit, onDelete)
         }

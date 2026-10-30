@@ -11,10 +11,11 @@ import androidx.compose.ui.viewinterop.AndroidView
 /** Native-first numeric counter: the Android view owns ticks, not a coroutine. */
 @Composable
 fun NativeCountdown(target:Long,color:Color,sizeSp:Float,bold:Boolean=false,prefix:String="",modifier:Modifier=Modifier) {
+ val pixels=with(androidx.compose.ui.platform.LocalDensity.current){ androidx.compose.ui.unit.TextUnit(sizeSp,androidx.compose.ui.unit.TextUnitType.Sp).toPx() }
  AndroidView(modifier=modifier,factory={c->Chronometer(c).apply {
   isCountDown=true;includeFontPadding=false;setSingleLine(true)
  }},update={v->
-  v.setTextColor(color.toArgb());v.setTextSize(TypedValue.COMPLEX_UNIT_SP,sizeSp)
+  v.setTextColor(color.toArgb());v.setTextSize(TypedValue.COMPLEX_UNIT_PX,pixels)
   v.typeface=Typeface.create(Typeface.DEFAULT,if(bold)Typeface.BOLD else Typeface.NORMAL)
   v.format=prefix+"%s"
   if(v.tag!=target){v.tag=target;v.base=SystemClock.elapsedRealtime()+target-System.currentTimeMillis();v.start()}

@@ -485,7 +485,7 @@ public final class HomeWidgets {
         try {
             String str2 = ovToken.get();
             if (str2 != null) {
-                str = str.replace(str2, "00:00");
+                str = str.replace(str2, "00:00:00");
             }
             String b = Digits.forWidget(str);
             TextPaint textPaint = new TextPaint(1);
@@ -716,10 +716,22 @@ public final class HomeWidgets {
                 views.setViewVisibility(box, 0);
                 views.setViewVisibility(inactive, 8);
                 views.setViewVisibility(active, 0);
+                // Native durations may include hours. Fit the full numeric format, never wrap
+                // into a second line below small widgets (Pill and OneUI especially).
+                Paint nativePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                nativePaint.setTypeface(face(context, semi, true));
+                float nativeSize = geo[3];
+                nativePaint.setTextSize(nativeSize);
+                String sample = format.replace("%s", "00:00:00");
+                while(nativePaint.measureText(sample) > geo[2] && nativeSize > 6f) {
+                    nativeSize -= .5f; nativePaint.setTextSize(nativeSize);
+                }
+                Paint.FontMetrics metrics=nativePaint.getFontMetrics();
                 views.setViewPadding(box, Math.max(0, Math.round(geo[0] - geo[2] / 2)),
-                        Math.max(0, Math.round(geo[1] - geo[3] * .62f)),
+                        Math.max(0, Math.round(geo[1] - (metrics.descent-metrics.ascent)/2)),
                         Math.max(0, Math.round(width - geo[0] - geo[2] / 2)), 0);
-                views.setTextViewTextSize(active, 0, geo[3]);
+                views.setTextViewTextSize(active, 0, nativeSize);
+                views.setBoolean(active, "setSingleLine", true);
                 views.setTextColor(active, (int) geo[4]);
                 views.setChronometerCountDown(active, true);
                 views.setChronometer(active, base, format, true);

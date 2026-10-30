@@ -677,13 +677,13 @@ fun OneUIBottomBar(
     Box(modifier.fillMaxWidth()) {
     Row(
         Modifier.align(Alignment.BottomCenter)
-            .height(64.dp)
             .fillMaxWidth()
             .padding(horizontal = 20.dp)
             .padding(bottom = navInset + 12.dp)
             .then(Modifier.oneUIGlass(barShape, cs.surface,
                 alpha = if (skyMode == 1) 0.46f else if (skyMode == 2) 0.55f else 0.85f,
-                blurRadius = 28)),
+                blurRadius = 28))
+            .height(64.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
             tabs.forEach { tab ->
