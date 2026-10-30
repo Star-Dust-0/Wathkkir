@@ -154,10 +154,10 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
                 try {
                     context.startActivity(launch)
                 } catch (e: ActivityNotFoundException) {
-                    Toast.makeText(context, "اضغط مطولًا على شاشة القفل لإضافة الويدجت", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, L10n.t(S.LockWidgetsToast), Toast.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(context, "اضغط مطولًا على شاشة القفل لإضافة الويدجت", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, L10n.t(S.LockWidgetsToast), Toast.LENGTH_LONG).show()
             }
             onDismiss()
         },

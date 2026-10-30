@@ -17,3 +17,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Phone focused batch41104578918 finished20:42
 143checks pass;27/32paired scenes have identical text tokens. Five differences are settings background scroll positions after Cancel, not proof of functional mismatch or match. Actual EN/AR dialog image sheets inspected: restored plain surfaces, title/button geometry and localized content now visually align. Lock-help AR entire image exactly equal in this capture; EN differs188pixels(status clock). AR font differs349pixels mostly status clock. Other snapshots have large blurred-background differences from nondeterministic swipe/scroll. Need deterministic scroll-state measurement and dense motion analysis, not broad masks. Still not full parity. Appearance picker now genuinely opened, Cancel tests recorded. No claim all dialogs exact.
+
+## 2026-10-30 21:02 localization recovery
+- The literal Oct17 bulk-localization operation covered Dialogs.kt and MoreScreen.kt. These edits were omitted from the rebuild although L10n tables and enum were present. Replayed existing exact AR-key mappings for those files; ReminderTime selected explicitly over the later AlertTiming alias. Restored lock widget toast key use in SettingsScreen.
+- Local phone debug build passed with verification module. Runtime CRUD/Apply/Cancel/persistence and screenshot comparison remain unproven after this source repair. Compilation is not a parity verdict.
