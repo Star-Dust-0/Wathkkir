@@ -29,7 +29,7 @@ private class PreviewComp(c: Context, val k: Int, spoof: String? = null, style: 
     override val selfName get() = sp ?: super.selfName
     private val st = style
     override val cdStyle get() = if (st == "stopwatch") androidx.wear.watchface.complications.data.TimeDifferenceStyle.STOPWATCH
-        else androidx.wear.watchface.complications.data.TimeDifferenceStyle.SHORT_DUAL_UNIT
+        else if (st == "dual") androidx.wear.watchface.complications.data.TimeDifferenceStyle.SHORT_DUAL_UNIT else super.cdStyle
 }
 
 /** Debug preview: draws the real tile layout with the Tiles renderer, and the real complication data with the platform complication renderer. */

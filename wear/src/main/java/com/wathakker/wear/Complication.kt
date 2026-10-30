@@ -81,8 +81,13 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
             ComplicationType.RANGED_VALUE -> {
                 val total = (((iq?.at ?: s.next.at) - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceAtLeast(1f)
                 val elapsed = ((s.now - (iq?.prayer?.at ?: s.prev.at)) / 60000f).coerceIn(0f, total)
-                RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
-                    .setText(countdown).setTitle(title).setTapAction(tap()).build()
+                val builder = if (android.os.Build.VERSION.SDK_INT >= 33 && !preview) {
+                    RangedValueComplicationData.Builder(
+                        nativeRing(iq?.prayer?.at ?: s.prev.at, iq?.at ?: s.next.at),
+                        elapsed, 0f, total, desc
+                    )
+                } else RangedValueComplicationData.Builder(elapsed, 0f, total, desc)
+                builder.setText(countdown).setTitle(title).setTapAction(tap()).build()
             }
             ComplicationType.SHORT_TEXT ->
                 ShortTextComplicationData.Builder(countdown, desc).setTitle(title).setTapAction(tap()).build()
@@ -91,6 +96,20 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
     }
 
     override fun getPreviewData(type: ComplicationType): ComplicationData? = build(type, Prayer.compute(this), preview = true)
+
+    /** Native-first deviation: the platform evaluates ring progress from its clock.
+     * Never encode the large epoch as a float: subtract instants before conversion.
+     * The static fallback is retained for hosts without dynamic expression support.
+     */
+    @androidx.annotation.RequiresApi(33)
+    internal fun nativeRing(start: Long, end: Long): androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat {
+        val D = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.withSecondsPrecision(java.time.Instant.ofEpochMilli(start))
+        val now = androidx.wear.protolayout.expression.DynamicBuilders.DynamicInstant.platformTimeWithSecondsPrecision()
+        val elapsed = D.durationUntil(now).toIntSeconds().asFloat().div(60f)
+        val maximum = ((end - start) / 60000f).coerceAtLeast(1f)
+        val lower = androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(elapsed.lt(0f)).use(0f).elseUse(elapsed)
+        return androidx.wear.protolayout.expression.DynamicBuilders.DynamicFloat.onCondition(lower.gt(maximum)).use(maximum).elseUse(lower)
+    }
 
     /** Native countdown text; host renders and advances it without waking this provider. */
     internal fun nativeCountdown(target: Long) = TimeDifferenceComplicationText.Builder(
@@ -119,15 +138,13 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         android.util.Log.i("WathakkerCd", "boundary arm target=$target")
     }
 
-    /** Kept only while a ranged-value face is active, to advance its progress ring once a minute. */
-    internal fun scheduleNextMinute() {
-        val at = (System.currentTimeMillis() / 60000 + 1) * 60000 + 500
+    /** User-approved battery-policy deviation: no recurring minute wake. */
+    internal fun cancelLegacyMinutePulse() {
         val am = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pi = PendingIntent.getBroadcast(this, 8001,
             Intent(this, ComplicationTickReceiver::class.java).setAction("tick_" + selfName).putExtra("cls", selfName),
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        try { am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
-        catch (_: SecurityException) { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
+        if (pi != null) { am.cancel(pi); pi.cancel() }
     }
 
     override suspend fun onComplicationRequest(request: ComplicationRequest): ComplicationData? {
@@ -145,20 +162,15 @@ open class PrayerComplicationService : SuspendingComplicationDataSourceService()
         }
         if (kind == 0 || kind == 8) {
             scheduleBoundary(iq?.at ?: s.next.at)
-            // Only an actual ranged-value request keeps the minute pulse alive (its progress ring
-            // needs it). When the ring face is removed, requests stop and the pulse dies with the
-            // next fire - no idle wake tail. After boot/update the system re-queries active
-            // complications, which re-arms it if a ring face is still present.
-            if (request.complicationType == ComplicationType.RANGED_VALUE) scheduleNextMinute()
+            cancelLegacyMinutePulse()
         }
         return build(request.complicationType, s, iq = iq)
     }
 }
 
-/** Fires the minute pulse that advances the progress ring on ranged-value faces. Arms only from actual ranged requests; dies with the next fire once they stop. */
-/** All five declared complication providers (dates included) - full-refresh fan-out. */
+/** Full refresh fan-out including the main ranged/countdown provider. */
 internal val ALL_COMPLICATION_CLASSES = listOf(
-    DateGregComplication::class.java, DateHijriComplication::class.java, DateBothComplication::class.java,
+    PrayerComplicationService::class.java, DateGregComplication::class.java, DateHijriComplication::class.java, DateBothComplication::class.java,
     NextTimeComplication::class.java, UpcomingCountdownComplication::class.java)
 
 /** Ask the host to re-query every complication. No-op when no face hosts them. */
@@ -170,8 +182,12 @@ internal fun requestAllComplications(c: Context) {
 class ComplicationTickReceiver : BroadcastReceiver() {
     override fun onReceive(c: Context, i: Intent) {
         val cls = i.getStringExtra("cls") ?: return
-        Log.i("WathakkerCd", "tick fire cls=$cls")
-        ComplicationDataSourceUpdateRequester.create(c, ComponentName(c, cls)).requestUpdateAll()
+        val am = c.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val pi = PendingIntent.getBroadcast(c, 8001,
+            Intent(c, ComplicationTickReceiver::class.java).setAction("tick_" + cls).putExtra("cls", cls),
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
+        if (pi != null) { am.cancel(pi); pi.cancel() }
+        Log.i("WathakkerCd", "legacy minute pulse discarded cls=$cls")
     }
 }
 

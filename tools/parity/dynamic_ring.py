@@ -6,7 +6,7 @@ adb('wait-for-device');time.sleep(35)
 (out/'device.txt').write_text(adb('shell','getprop'))
 (out/'install.txt').write_text(adb('install','-g','watch-rebuilt.apk'))
 adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard');adb('shell','svc','power','stayon','true');adb('logcat','-c')
-(out/'launch.txt').write_text(adb('shell','am','start','-W','-n','com.wathakker.app/com.wathakker.wear.DynamicHostActivity'))
+(out/'launch.txt').write_text(adb('shell','am','start','-W','-n','com.wathakker.app.compare/com.wathakker.wear.DynamicHostActivity'))
 for sec in [5,35,65,125]:
  time.sleep(sec-(0 if sec==5 else {35:5,65:35,125:65}[sec]))
  (out/f'ring-{sec}.png').write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
