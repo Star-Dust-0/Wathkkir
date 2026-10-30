@@ -51,6 +51,11 @@ object Prayer {
         val cal = Calendar.getInstance(TimeZone.getDefault())
         cal.timeInMillis = now
         cal.add(Calendar.DAY_OF_YEAR, offsetDays)
+        // Original Oct26 watch day anchor: use the day's noon offset across DST changes.
+        cal.set(Calendar.HOUR_OF_DAY, 12)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
         val d = PrayerTimesCalculator.INSTANCE.calculateAll(cal, lat, lon, CalculationMethod.EGYPTIAN)
         val t = longArrayOf(d.fajr, d.sunrise, d.dhuhr, d.asr, d.maghrib, d.isha)
         // Jumuah: on Friday the Dhuhr slot is displayed as الجمعة / Jumuah (no iqama, matches the phone app).
