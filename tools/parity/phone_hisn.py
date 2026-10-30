@@ -71,7 +71,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();check('Hisn tab',tap('Hisn' if lang=='en' else 'حصن المسلم'));time.sleep(10);shot('initial-favorites')
   check('All filter',tap('All' if lang=='en' else 'الكل'));check('open short chapter',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('chapter-open')
   check('counter done',tap('عداد الذكر'));shot('counter-done');check('counter resets',tap('عداد الذكر'));shot('counter-reset')
-  check('show notes',tap('معلومات الذكر'));time.sleep(.5);shot('notes-open');check('hide notes',tap('معلومات الذكر'));time.sleep(.5);shot('notes-closed')
+  check('show notes',tap('Info' if lang=='en' else 'معلومات الذكر'));time.sleep(.5);shot('notes-open');check('hide notes',tap('Info' if lang=='en' else 'معلومات الذكر'));time.sleep(.5);shot('notes-closed')
   # Top action is chapter favorite, lower action is the only item's favorite.
   fav='Favorites' if lang=='en' else 'المفضلة'
   def favorite(which):
@@ -79,7 +79,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    return len(n)>which and touch(n[which])
   check('chapter favorite',favorite(0));shot('chapter-favorited');check('item favorite',favorite(1));shot('item-favorited')
   read='Read' if lang=='en' else 'تمت القراءة';add='Add to my azkar' if lang=='en' else 'أضف إلى أذكاري'
-  check('mark read',choose(read));time.sleep(.5);shot('chapter-read');check('add to Azkar',choose(add));time.sleep(1);shot('added-once');check('add again',choose(add));time.sleep(1);shot('added-twice')
+  def bottom_button(label):
+   root=ET.fromstring(tree());nodes=[n for n in root.iter('node') if n.get('text')==label]
+   return bool(nodes) and touch(nodes[-1])
+  check('mark read',bottom_button(read));time.sleep(.5);shot('chapter-read');check('add to Azkar',choose(add));time.sleep(1);shot('added-once');check('added state present',('Added' if lang=='en' else 'تمت الإضافة') in tree());check('add again guarded',tap('Added' if lang=='en' else 'تمت الإضافة'));time.sleep(1);shot('added-twice')
   adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot('list-return');check('favorite filter',tap(fav));shot('favorite-list')
   check('favorite chapter visible',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('chapter-reopen');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.5)
   # Search deliberately includes non-favorites while Favorites remains selected.
