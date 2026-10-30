@@ -101,7 +101,7 @@ fun StatsContent(
                                 Box(Modifier.size(9.dp).clip(CircleShape).background(donutColor(i)))
                                 Spacer(Modifier.width(8.dp))
                                 Text(
-                                    titles[id] ?: "ذكر #$id",
+                                    titles[id] ?: L10n.t(S.DhikrIdFmt).format(id),
                                     modifier = Modifier.weight(1f),
                                     color = cs.onSurface,
                                     maxLines = 1,
@@ -137,7 +137,7 @@ fun StatsContent(
         item(key = "streak") {
             OneUICard {
                 OneUIRow(
-                    title = "الأيام المتتالية",
+                    title = L10n.t(S.DayStreak),
                     summary = L10n.t(S.KeepGoing),
                     leading = { OneUIIconBadge(Icons.Outlined.LocalFireDepartment) },
                     trailing = {
@@ -171,7 +171,7 @@ fun StatsContent(
                         if (i > 0) OneUIDivider(70.dp)
                         val date = SimpleDateFormat("d MMM yyyy  hh:mm a", Locale("ar")).format(Date(h.timestamp))
                         OneUIRow(
-                            title = titles[h.dhikrId] ?: "ذكر #${h.dhikrId}",
+                            title = titles[h.dhikrId] ?: L10n.t(S.DhikrIdFmt).format(h.dhikrId),
                             summary = date,
                             leading = { OneUIIconBadge(Icons.Outlined.History) }
                         )
@@ -182,13 +182,7 @@ fun StatsContent(
     }
 }
 
-private fun dayCount(n: Int): String = when {
-    n == 0 -> "لا أيام"
-    n == 1 -> "يوم واحد"
-    n == 2 -> "يومان"
-    n in 3..10 -> "$n أيام"
-    else -> "$n يومًا"
-}
+private fun dayCount(n: Int): String = L10n.daysCount(n)
 
 @Composable
 private fun PeriodCell(label: String, value: Int, modifier: Modifier = Modifier) {

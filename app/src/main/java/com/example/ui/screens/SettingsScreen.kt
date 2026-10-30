@@ -171,7 +171,7 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
         )
         Spacer(Modifier.height(12.dp))
         Text(
-            "١. على شاشة القفل اضغط مطولًا على مكان فارغ، ثم أكّد هويتك.\n٢. اضغط «إضافة ويدجت» واختار «وَذكِّر» من القائمة.\n٣. اختار الويدجت الذي يعجبك، مثل «الإقامة (مصغر)» أو «شريط الصلاة».\n٤. رتّبها بالسحب ثم اضغط «تم».",
+            L10n.t(S.LockWidgetsSteps),
             color = cs.onSurface,
             style = MaterialTheme.typography.bodyLarge
         )

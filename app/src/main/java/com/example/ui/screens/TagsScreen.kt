@@ -99,7 +99,7 @@ fun TagsScreen(viewModel: MainViewModel, onBack: () -> Unit) {
             confirmText = L10n.t(S.Delete)
         ) {
             Text(
-                "سيتم حذف التصنيف \"${tag.name}\" من جميع الأذكار. لن تُحذف الأذكار نفسها.",
+                L10n.t(S.DeleteTagMsg).format(tag.name),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 style = MaterialTheme.typography.bodyLarge
             )
@@ -119,7 +119,7 @@ fun TagsContent(
     val size = tags.size
     OneUIScreen(
         title = L10n.t(S.Tags),
-        subtitle = "$size " + (if (size in 3..10) "تصنيفات" else "تصنيف"),
+        subtitle = L10n.tagsCount(size),
         onBack = onBack,
         actions = { OneUIIconAction(Icons.Outlined.Add, L10n.t(S.AddTag), onAdd) }
     ) {

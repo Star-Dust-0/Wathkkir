@@ -68,7 +68,7 @@ fun TasbeehContent(count: Int, onMenu: (() -> Unit)?, onTap: () -> Unit, onReset
     val finalProgress = progress
     val track = cs.surfaceVariant
 
-    OneUIScreen(title = L10n.t(S.TasbeehTab), subtitle = "$count تسبيحة", onMenu = onMenu) {
+    OneUIScreen(title = L10n.t(S.TasbeehTab), subtitle = L10n.tasbeehCount(count), onMenu = onMenu) {
         item(key = "ring") {
             Box(
                 modifier = Modifier.fillMaxWidth().padding(top = 12.dp),

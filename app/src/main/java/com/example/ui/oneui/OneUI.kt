@@ -671,21 +671,9 @@ fun parseColorSafe(hex: String, fallback: Color = Color(0xFF008080)): Color =
         fallback
     }
 
-fun azkarCount(n: Int): String = when {
-    n == 0 -> "لا أذكار"
-    n == 1 -> "ذكر واحد"
-    n == 2 -> "ذكران"
-    n in 3..10 -> "$n أذكار"
-    else -> "$n ذكرًا"
-}
+fun azkarCount(n: Int): String = L10n.azkarCount(n)
 
-fun readsCount(n: Int): String = when {
-    n == 0 -> "لا قراءات"
-    n == 1 -> "قراءة واحدة"
-    n == 2 -> "قراءتان"
-    n in 3..10 -> "$n قراءات"
-    else -> "$n قراءة"
-}
+fun readsCount(n: Int): String = L10n.readsCount(n)
 
 @Composable
 fun oneUiMenuColor(): Color {

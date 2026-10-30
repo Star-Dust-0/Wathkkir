@@ -121,7 +121,7 @@ fun HomeContent(
     val subtitle = if (activeCount == 0) {
         L10n.t(S.NoActiveReminders)
     } else {
-        "$activeCount " + (if (activeCount in 3..10) "تنبيهات" else "تنبيهًا") + " مفعلة"
+        L10n.remindersCount(activeCount)
     }
     OneUIScreen(title = "وَذكِّر", subtitle = subtitle, onMenu = onMenu) {
         item(key = "summary") {
