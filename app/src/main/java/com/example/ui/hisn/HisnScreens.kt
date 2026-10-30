@@ -45,11 +45,11 @@ fun filterChapters(
     items: List<HisnItem>
 ): List<HisnChapter> {
     val q = normalizeArabic(s.query.trim())
-    var list = s.chapters
-    if (s.onlyFavorites) list = list.filter { it.id in s.favoriteChapterIds }
-    if (q.isBlank()) return list
+    val list = s.chapters
+    if (q.isBlank()) return if (s.onlyFavorites) list.filter { it.id in s.favoriteChapterIds } else list
     val hitIds = items.filter { normalizeArabic(it.text).contains(q) }.map { it.chapterId }.toSet()
     return list.filter { normalizeArabic(it.name).contains(q) || it.id in hitIds }
+        .sortedByDescending { it.id in s.favoriteChapterIds }
 }
 
 @Composable
