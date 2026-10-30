@@ -61,3 +61,9 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## 2026-10-30 23:42 focused tile result
 - Run41130875638:15checks0failures,6/6equal semantic pairs. Actual settled main and ranged screenshots exactly identical in both languages. Tile text/spacing now aligned; each tile pair still differs2346pixels, visually in arc end/track rendering. Keep as unresolved, not exact parity. Native dynamic changes are approved but fallback visual must still be accounted for.
 - Next batch focuses phone popup repaired offset and observable settings scroll history, not another whole CRUD repetition.
+
+## 2026-10-30 23:58 phone popup/scroll result
+- Run41132826977 completed27checks0failures. Actual popup geometry now aligned in both languages after recovered offset. EN/AR popup residual690/710pixels mostly system clock/gesture areas, not a blanket exact-image claim.
+- Recorded pre/post swipes establish differing intermediate settings scroll offsets under the same gesture. At absolute list end, screenshot geometry/text matches; appearance-picker end snapshots residual579/840pixels instead of >1million. This isolates earlier large picker discrepancies to different backgrounds from intermediate scroll positions, not dialog geometry. Cause of differing scroll trajectory remains unproven (timing/gesture vs product physics); preserve evidence and later motion study.
+- Tile residual is thin arc-edge rasterization throughout arc, not spacing/text;2346pixels per locale, pending renderer/source-structure check. Do not silently label it approved dynamic deviation.
+- Next targeted utilities batch: Tasbeeh increment/target/session/restart/reset, converter directions/Today, Hisn default/All/Favorites/search. Newly selected labels checked against exact L10n table before dispatch.
