@@ -43,7 +43,7 @@
         android:progressDrawable="@drawable/widget_progress_white"
         android:layoutDirection="ltr"
         style="?android:attr/progressBarStyleHorizontal"/>
-    <TextView
+    <Chronometer
         android:textSize="13sp"
         android:textColor="#ffc9c9ce"
         android:gravity="right"

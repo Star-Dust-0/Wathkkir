@@ -910,7 +910,7 @@ var22 = Math.max(0L, var197 / 60000L);
 var108 = HomeWidgets.mmss(var197);
 
                                  } else {
-var108 = String.format(Locale.ENGLISH, "%02d:%02d", var22 / 60L, var22 % 60L);
+var108 = HomeWidgets.ovToken.get() != null ? HomeWidgets.ovToken.get() : String.format(Locale.ENGLISH, "%02d:%02d", var22 / 60L, var22 % 60L);
 
                                  }
 var220 = new StringBuilder();
@@ -1179,6 +1179,7 @@ var226.drawRoundRect(var104, var4, var4, var203);
         int i2 = appWidgetOptions.getInt("appWidgetMinWidth", 123);
         boolean z = i2 > 0 && appWidgetOptions.getInt("appWidgetMaxWidth", i2) <= 80 && (cls == Hijri.class || cls == Gregorian.class || cls == Next.class);
         HomeWidgets.ovBegin();
+        HomeWidgets.langForNative.set(lang(context));
         Bitmap renderSize = renderSize(context, cls, i, z);
         remoteViews.setImageViewBitmap(res(context, "id", "lock_widget_art"), renderSize);
         HomeWidgets.ovApply(context, remoteViews, renderSize.getWidth(), renderSize.getHeight());

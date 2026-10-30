@@ -74,6 +74,7 @@ public final class HomeWidgets {
     static final ThreadLocal<State> batchState = new ThreadLocal<>();
     static final ThreadLocal<Boolean> ovWanted = new ThreadLocal<>();
     static final ThreadLocal<String> ovToken = new ThreadLocal<>();
+    static final ThreadLocal<String> langForNative = new ThreadLocal<>();
     static final ThreadLocal<Long> ovBase = new ThreadLocal<>();
     static final ThreadLocal<Boolean> ovSemi = new ThreadLocal<>();
     static final ThreadLocal<float[]> ovGeo = new ThreadLocal<>();
@@ -739,15 +740,17 @@ public final class HomeWidgets {
             Log.w("WathakkerHome", "overlay failed", failure);
         } finally {
             ovSemi.remove(); ovWanted.remove(); ovToken.remove();
-            ovBase.remove(); ovGeo.remove(); ovFmt.remove();
+            ovBase.remove(); ovGeo.remove(); ovFmt.remove(); langForNative.remove();
         }
     }
 
     public static void ovArm(boolean z, long j, long j2) {
-        if (!z || ovWanted.get() == null) {
+        if (ovWanted.get() == null) {
             return;
         }
-        ovToken.set(mmss(j - j2));
+        // Native-first deviation: arm before prayer too. The bitmap text is only a
+        // geometry token; RemoteViews replaces it with a host-ticking Chronometer.
+        ovToken.set(z ? mmss(j - j2) : durText(Math.max(0L, (j - j2) / 60000L), langForNative.get() == null ? "en" : langForNative.get()));
         ovBase.set(Long.valueOf((j - System.currentTimeMillis()) + SystemClock.elapsedRealtime()));
     }
 
@@ -1636,7 +1639,7 @@ public final class HomeWidgets {
                                  var3 = var4;
 
                                  
-                                    var247 = String.format(Locale.ENGLISH, "%02d:%02d", var25 / 3600L, var25 / 60L % 60L);
+                                    var247 = ovToken.get() != null ? ovToken.get() : String.format(Locale.ENGLISH, "%02d:%02d", var25 / 3600L, var25 / 60L % 60L);
                                  
                               }
 
@@ -2304,6 +2307,7 @@ public final class HomeWidgets {
     public static RemoteViews view(Context context, String str, int i, int i2, int i3, boolean z) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), res(context, "layout", z ? "home_prayer_art_fit" : "home_prayer_art"));
         ovBegin();
+        langForNative.set(lang(context));
         Bitmap renderKind = renderKind(context, str, i2, i3, i);
         if (z) {
             try {

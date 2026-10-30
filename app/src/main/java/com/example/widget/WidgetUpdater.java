@@ -636,7 +636,9 @@ public final class WidgetUpdater {
         remoteViews.setTextViewText(R.id.facewidget_prayer_name, prayerState.getNextName());
         WidgetUpdater widgetUpdater = INSTANCE;
         remoteViews.setTextViewText(R.id.facewidget_prayer_time, widgetUpdater.formatTime(prayerState.getNextMillis()));
-        remoteViews.setTextViewText(R.id.facewidget_remaining, str);
+        remoteViews.setChronometerCountDown(R.id.facewidget_remaining, true);
+        remoteViews.setChronometer(R.id.facewidget_remaining,
+                SystemClock.elapsedRealtime() + prayerState.getNextMillis() - System.currentTimeMillis(), "%s", true);
         remoteViews.setProgressBar(R.id.facewidget_progress, 100, i, false);
         remoteViews.setOnClickPendingIntent(R.id.facewidget_root, widgetUpdater.launchIntent(context));
         return remoteViews;
