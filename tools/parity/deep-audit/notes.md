@@ -44,3 +44,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 - Phone41116393024 infrastructure green but only11checks ran: four Azkar opens failed because identical system Pixel Launcher ANR dialogs blocked both apps in both languages. XML and actual screenshot are the source, not an app parity mismatch. Four database baselines each contain the same five starter rows. No CRUD claimed.
 - Restore prior harness launcher force-stop/error-dialog suppression and detect/dismiss launcher error on launch. Script failures remain evidence; CI green is never treated as test pass.
 - Actual failed screenshot also exposed an underlying notification runtime permission dialog. pm clear resets installation-time grants, so explicitly regrant notifications and location after each isolated-data reset for CRUD suite (permissions themselves belong to a separate test matrix). Prepared before next run; do not claim current in-flight run includes this fix.
+
+## 2026-10-30 22:53 stateful phone
+- Corrected run41120585766 finished195checks,0failures. Runtime create/cancel/save/edit/favorite/reminder/tag and font/theme cancel/apply persistence exercised in EN/light and AR/dark, original vs rebuilt, with DB snapshots and actual images. This only proves the named finite cases, not all scenarios or visuals.
+- Move registered checkpoint to the prepared controlled watch rerun after phone completion. No parallel batch.
