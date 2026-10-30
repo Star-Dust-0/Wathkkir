@@ -28,7 +28,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import com.example.ui.oneui.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -331,7 +331,7 @@ private fun ConverterResult(weekday: String, dateText: String) {
         Text(weekday, color = cs.onSurfaceVariant, fontSize = 14.sp, textAlign = TextAlign.Center)
         Spacer(Modifier.height(4.dp))
         Text(
-            com.example.utils.Digits.ui(dateText),
+            dateText,
             color = cs.primary,
             fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
