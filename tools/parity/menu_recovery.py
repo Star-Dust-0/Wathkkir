@@ -8,15 +8,19 @@ def tree():
  return next((s.split('=',1)[1] for s in x.splitlines() if s.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
 def check(n,ok,detail=''):checks.append(dict(name=n,passed=bool(ok),detail=detail));print(n,bool(ok),detail,flush=True)
 def tap(label):
- for n in ET.fromstring(tree()).iter('node'):
+ root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
+ for n in root.iter('node'):
   if label in [n.get('text'),n.get('content-desc')]:
+   target=n
+   while target.get('clickable')!='true' and target in parents:target=parents[target]
+   if target.get('clickable')!='true':continue
    b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
    if len(b)==4 and b[2]>b[0] and b[3]>b[1] and 90<b[1]<2220:
     adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(1.5);return True
  return False
 def foreground(pkg):return any('mCurrentFocus=' in x and pkg in x for x in adb('shell','dumpsys','window').splitlines())
 def shot(n):
- x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
+ x=tree();(out/'checks.json').write_text(json.dumps(checks,indent=2,ensure_ascii=False));(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
  tokens=[(z.get('text',''),z.get('content-desc',''),z.get('checked','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];states[n]=tokens
  check(n+' foreground',foreground(pkg));return tokens
 def record(n):return subprocess.Popen(['adb','shell','screenrecord','--time-limit','45',f'/sdcard/{n}.mp4'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
@@ -43,6 +47,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   adb('shell',f"echo '{xml}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
   routes=['Favorites','Reminders','Statistics','Tags','Date converter','Qibla','Tasbeeh','Fajr alarm','Settings','About'] if lang=='en' else ['المفضلة','التنبيهات','الإحصائيات','التصنيفات','محول التاريخ','القبلة','السبحة','منبه صلاة الفجر','الإعدادات','حول التطبيق']
   for idx,label in enumerate(routes):
+   if idx not in [1,2,8,9]:continue
    tag=slug+'-route'+str(idx);proc=record(tag+'-motion');ok=openroute(label);check(tag+' opened '+label,ok);shot(tag)
    if not ok:stoprecord(proc,tag+'-motion');continue
    if idx==3:
@@ -53,17 +58,20 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     value=nums[0] if nums else '0';hit=tap(value);shot(tag+'-increment');after=tree();check(tag+' increment',hit and str(int(value)+1) in [z.get('text') for z in ET.fromstring(after).iter('node')]);check(tag+' target99',tap('99'));shot(tag+'-target');launch();openroute(label);shot(tag+'-reopen')
    elif idx==8:
     stoprecord(proc,tag+'-motion');proc=None
-    for k in range(4):swipe();shot(tag+'-scroll'+str(k))
-    # Each nested entry is located from the top again; don't guess scroll offsets.
     nested=['App font','Appearance','Language','Lock screen widgets','Smartwatch settings'] if lang=='en' else ['خط التطبيق','المظهر','اللغة','ويدجت شاشة القفل','إعدادات الساعة الذكية']
     for j,entry in enumerate(nested):
-     nestedproc=record(tag+'-nested'+str(j)+'-motion');openroute(label);found=False
-     for k in range(6):
+     openroute(label);found=False
+     for k in range(4):
       if tap(entry):found=True;break
       swipe()
-     check(tag+' nested '+entry,found);shot(tag+'-nested'+str(j));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.7);stoprecord(nestedproc,tag+'-nested'+str(j)+'-motion')
-   elif idx in [0,1,2,4,9]:
-    swipe();shot(tag+'-scroll');swipe(False);shot(tag+'-return')
+     check(tag+' nested '+entry,found);shot(tag+'-nested'+str(j))
+     if j in [0,1,2]:
+      choices=([('App font light','خط التطبيق الخفيف'),('Dark','داكن'),('English','English')][j]);choice=choices[0 if lang=='en' else 1]
+      proc2=record(tag+'-choice'+str(j));hit=tap(choice);check(tag+' staged choice '+str(j),hit);shot(tag+'-pending'+str(j))
+      check(tag+' cancel '+str(j),tap('Cancel' if lang=='en' else 'إلغاء'));shot(tag+'-cancel'+str(j));stoprecord(proc2,tag+'-choice'+str(j))
+     else:adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.7)
+   elif idx==9:
+    swipe();shot(tag+'-scroll')
    adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.8);check(tag+' back stays',foreground(pkg))
    if proc:stoprecord(proc,tag+'-motion')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))

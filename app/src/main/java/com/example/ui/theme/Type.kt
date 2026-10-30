@@ -98,3 +98,14 @@ fun getTypography(useDeviceFont: Boolean): Typography =
     oneUiTypography(if (useDeviceFont) null else TajawalFontFamily)
 
 fun getTypography(choice: FontChoice): Typography = oneUiTypography(fontFamilyFor(choice))
+
+fun FontChoice.localizedTitle(): String = com.example.ui.i18n.L10n.t(when (this) {
+ FontChoice.APP -> com.example.ui.i18n.S.AppFont
+ FontChoice.APP_LIGHT -> com.example.ui.i18n.S.FontLight
+ FontChoice.APP_BOLD -> com.example.ui.i18n.S.FontBold
+ FontChoice.SYSTEM -> com.example.ui.i18n.S.FontSystem
+ FontChoice.CAIRO -> com.example.ui.i18n.S.FontCairo
+ FontChoice.NASKH -> com.example.ui.i18n.S.FontNaskh
+ FontChoice.AMIRI -> com.example.ui.i18n.S.FontAmiri
+ FontChoice.RUQAA -> com.example.ui.i18n.S.FontRuqaa
+})

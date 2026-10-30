@@ -84,7 +84,7 @@ fun StatsContent(
                                 color = cs.onSurface,
                                 style = MaterialTheme.typography.headlineMedium
                             )
-                            Text(L10n.t(S.DayLabel), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
+                            Text(L10n.t(S.Today), color = cs.onSurfaceVariant, style = MaterialTheme.typography.bodySmall)
                         }
                     }
                     Spacer(Modifier.width(20.dp))
@@ -126,7 +126,7 @@ fun StatsContent(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 18.dp),
                     verticalAlignment = Alignment.Top
                 ) {
-                    PeriodCell(L10n.t(S.DayLabel), stats.todayCount, Modifier.weight(1f))
+                    PeriodCell(L10n.t(S.Today), stats.todayCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))
                     PeriodCell(L10n.t(S.Week), stats.weekCount, Modifier.weight(1f))
                     Box(Modifier.width(0.5.dp).height(44.dp).background(cs.outline).align(Alignment.CenterVertically))

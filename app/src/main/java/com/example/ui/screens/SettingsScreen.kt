@@ -1,4 +1,5 @@
 package com.example.ui.screens
+import com.example.ui.theme.localizedTitle
 import androidx.compose.material.icons.outlined.Watch
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.foundation.layout.padding
@@ -88,7 +89,7 @@ fun SettingsScreen(
 
     SettingsContent(
         vibration = vibration,
-        fontTitle = appFont.titleAr,
+        fontTitle = appFont.localizedTitle(),
         themeTitle = themeTitle,
         onBack = onBack,
         onVibration = { viewModel.updateVibrationEnabled(it) },
@@ -145,7 +146,7 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
     val context: Context = LocalContext.current
     val cs = MaterialTheme.colorScheme
     OneUIDialog(
-        title = "ويدجت شاشة القفل",
+        title = L10n.t(S.LockWidgets),
         onDismiss = onDismiss,
         onConfirm = {
             val launch = context.packageManager.getLaunchIntentForPackage("com.samsung.android.app.dressroom")
@@ -160,11 +161,11 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
             }
             onDismiss()
         },
-        confirmText = "فتح المحرر",
-        dismissText = "إغلاق"
+        confirmText = L10n.t(S.OpenEditor),
+        dismissText = L10n.t(S.Close)
     ) {
         Text(
-            "كل ويدجتات وَذكِّر متاحة في المساحة المخصصة تحت الساعة على شاشة القفل (One UI 8 أو أحدث).",
+            L10n.t(S.LockWidgetsDesc),
             color = cs.onSurface,
             fontSize = 16.sp,
             style = MaterialTheme.typography.bodyLarge
@@ -177,7 +178,7 @@ fun LockWidgetsDialog(onDismiss: () -> Unit) {
         )
         Spacer(Modifier.height(12.dp))
         Text(
-            "الضغط على الويدجت من شاشة القفل يفتح التطبيق مباشرة.",
+            L10n.t(S.LockWidgetsHint),
             modifier = Modifier.fillMaxWidth(),
             color = cs.onSurfaceVariant,
             style = MaterialTheme.typography.bodyMedium
@@ -310,7 +311,7 @@ fun SettingsContent(
                 OneUICard {
                     OneUIRow(
                         title = if (L10n.lang == com.example.ui.i18n.Lang.AR) "إعدادات الساعة الذكية" else "Smartwatch settings",
-                        summary = if (L10n.lang == com.example.ui.i18n.Lang.AR) "الإعدادات الخاصة بتطبيق وَذكِّر للساعة" else "Settings for the Wathakker watch app",
+                        summary = if (L10n.lang == com.example.ui.i18n.Lang.AR) "الإعدادات الخاصة بتطبيق وذكّر للساعة" else "Settings for the Wathkkir watch app",
                         leading = { OneUIIconBadge(androidx.compose.material.icons.Icons.Outlined.Watch) },
                         trailing = { ChevronIcon() },
                         onClick = onWatch

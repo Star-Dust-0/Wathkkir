@@ -13,8 +13,8 @@ fun formatTimeStr12h(timeStr: String): String {
     val minute = parts[1].toIntOrNull() ?: return timeStr
     val isAm = hour < 12
     val displayHour = if (hour % 12 == 0) 12 else hour % 12
-    val amPm = if (isAm) "ص" else "م"
-    return String.format(Locale.getDefault(), "%02d:%02d %s", displayHour, minute, amPm)
+    val amPm = com.example.ui.i18n.L10n.t(if (isAm) com.example.ui.i18n.S.AmMarker else com.example.ui.i18n.S.PmMarker)
+    return String.format(Locale.ENGLISH, "%02d:%02d %s", displayHour, minute, amPm)
 }
 
 
