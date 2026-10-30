@@ -81,11 +81,11 @@ val oneUITabs: List<BottomTab> = listOf(
     BottomTab("prayer", L10n.t(S.PrayerTab)) { c ->
         Icon(Icons.Outlined.Mosque, null, Modifier.size(24.dp), tint = c)
     },
-    BottomTab("azkar", L10n.t(S.AzkarTab)) { c ->
-        Icon(Icons.Outlined.FormatListBulleted, null, Modifier.size(24.dp), tint = c)
-    },
     BottomTab("hisn", L10n.t(S.HisnTab)) { c ->
         Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(24.dp), tint = c)
+    },
+    BottomTab("azkar", L10n.t(S.AzkarTab)) { c ->
+        Icon(Icons.Outlined.FormatListBulleted, null, Modifier.size(24.dp), tint = c)
     },
     BottomTab("calendar", L10n.t(S.CalendarTab)) { c ->
         Icon(Icons.Outlined.CalendarMonth, null, Modifier.size(24.dp), tint = c)
@@ -99,8 +99,8 @@ val oneUIDrawerItems: List<OneUIDrawerItem> = listOf(
     OneUIDrawerItem("tags", L10n.t(S.Tags), Icons.AutoMirrored.Outlined.Label, Color(4290617322L)),
     OneUIDrawerItem("hijri_converter", L10n.t(S.HijriConvTitle), Icons.Outlined.DateRange, Color(4284061916L)),
     OneUIDrawerItem("qibla", L10n.t(S.QiblaTitle), Icons.Outlined.Explore, Color(4280391411L)),
-    OneUIDrawerItem("fajr_alarm", L10n.t(S.FajrAlarm), Icons.Outlined.Alarm, Color(0xFFE5B455)),
     OneUIDrawerItem("tasbeeh", L10n.t(S.TasbeehTab), Icons.Outlined.AdsClick, Color(4290617322L)),
+    OneUIDrawerItem("fajr_alarm", L10n.t(S.FajrAlarm), Icons.Outlined.Alarm, Color(0xFFE5B455)),
     OneUIDrawerItem("settings", L10n.t(S.Settings), Icons.Outlined.Settings, Color(4287669422L)),
     OneUIDrawerItem("about", L10n.t(S.About), Icons.Outlined.Info, Color(4287532691L))
 )
