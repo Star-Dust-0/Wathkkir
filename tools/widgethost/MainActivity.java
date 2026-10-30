@@ -103,8 +103,16 @@ public class MainActivity extends Activity {
             v.setAppWidget(id, info);
             // Match a launcher: this public overload subtracts host default padding
             // before sending provider content dimensions. Pass outer dimensions once.
-            v.updateAppWidgetSize(null, wd, ht, wd, ht);
-            col.addView(v, new LinearLayout.LayoutParams((int)(wd * d), (int)(ht * d)));
+            // Lock artwork has the fixed Samsung content size 123x54dp. This
+            // generic host adds framework padding, so include that in its outer size.
+            int outerW=wd, outerH=ht;
+            if(kind.startsWith("Lock:")) {
+                android.graphics.Rect pad=AppWidgetHostView.getDefaultPaddingForWidget(this,cn,null);
+                outerW += Math.round((pad.left+pad.right)/d);
+                outerH += Math.round((pad.top+pad.bottom)/d);
+            }
+            v.updateAppWidgetSize(null, outerW, outerH, outerW, outerH);
+            col.addView(v, new LinearLayout.LayoutParams((int)(outerW * d), (int)(outerH * d)));
             kinds.add(kind);
             views.add(v);
         }
