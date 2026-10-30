@@ -32,7 +32,9 @@ def choose(label):
   swipe()
  return False
 def launch():
- adb('shell','am','force-stop',pkg);adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(3)
+ adb('shell','am','force-stop','com.google.android.apps.nexuslauncher');tap('Close app');adb('shell','am','force-stop',pkg);adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(3)
+ if tap('Close app'):
+  adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(2)
 def azkar():
  launch();return tap('Azkar' if lang=='en' else 'التذكيرات')
 def route(label):
@@ -60,7 +62,7 @@ def audit():
  adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
  for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
  for k,v in [('auto_time','0'),('auto_time_zone','0'),('window_animation_scale','1'),('transition_animation_scale','1'),('animator_duration_scale','1')]:adb('shell','settings','put','global',k,v)
- adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
+ adb('shell','settings','put','global','hide_error_dialogs','1');adb('shell','am','force-stop','com.google.android.apps.nexuslauncher');adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
  for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
   for lang in ['en','ar']:
    slug=name+'-'+lang;adb('shell','pm','clear',pkg);adb('shell','cmd','uimode','night','yes' if lang=='ar' else 'no');adb('shell','date','103010002026.00');folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
