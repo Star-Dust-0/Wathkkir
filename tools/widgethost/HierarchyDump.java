@@ -23,7 +23,7 @@ public class HierarchyDump extends Instrumentation {
  private String esc(CharSequence x) { return x==null?"":x.toString().replace("&","&amp;").replace("\"","&quot;").replace("<","&lt;").replace(">","&gt;").replace("\n","&#10;"); }
  private void node(AccessibilityNodeInfo n,StringBuilder s) {
   Rect r=new Rect();n.getBoundsInScreen(r);
-  s.append("<node text=\"").append(esc(n.getText())).append("\" content-desc=\"").append(esc(n.getContentDescription()))
+  s.append("<node class=\"").append(esc(n.getClassName())).append("\" text=\"").append(esc(n.getText())).append("\" content-desc=\"").append(esc(n.getContentDescription()))
    .append("\" bounds=\"[").append(r.left).append(",").append(r.top).append("][").append(r.right).append(",").append(r.bottom)
    .append("]\" clickable=\"").append(n.isClickable()).append("\" enabled=\"").append(n.isEnabled()).append("\">");
   for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);if(c!=null){node(c,s);c.recycle();}}
