@@ -1,0 +1,5 @@
+import java.util.*;import java.time.*;import com.example.fajr.calculation.*;
+public class WatchDayAnchorFixture{
+ static long[] calc(Calendar c){var t=PrayerTimesCalculator.INSTANCE.calculateAll(c,30.0444,31.2357,CalculationMethod.EGYPTIAN);return new long[]{t.getFajr(),t.getSunrise(),t.getDhuhr(),t.getAsr(),t.getMaghrib(),t.getIsha()};}
+ public static void main(String[] args){int n=0,bad=0;for(String zone:new String[]{"Africa/Cairo","Europe/London","America/New_York","Australia/Sydney","UTC"}){TimeZone.setDefault(TimeZone.getTimeZone(zone));for(int day=1;day<=365;day++)for(int h:new int[]{0,1,2,3,23}){Calendar c=Calendar.getInstance();c.clear();c.set(2026,0,1,h,30,0);c.add(Calendar.DAY_OF_YEAR,day-1);Calendar noon=(Calendar)c.clone();noon.set(Calendar.HOUR_OF_DAY,12);noon.set(Calendar.MINUTE,0);noon.set(Calendar.SECOND,0);noon.set(Calendar.MILLISECOND,0);n++;long[] a=calc(c),b=calc(noon);if(!Arrays.equals(a,b)){bad++;System.out.println(zone+" "+Instant.ofEpochMilli(c.getTimeInMillis())+" local="+c.get(Calendar.HOUR_OF_DAY)+" Fajr shift="+(a[0]-b[0])/60000);}}}System.out.println("cases="+n+" differing="+bad);}
+}
