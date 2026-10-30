@@ -65,12 +65,13 @@ def audit():
  adb('shell','settings','put','global','hide_error_dialogs','1');adb('shell','am','force-stop','com.google.android.apps.nexuslauncher');adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
  for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
   for lang in ['en','ar']:
-   slug=name+'-'+lang;adb('shell','pm','clear',pkg);adb('shell','cmd','uimode','night','yes' if lang=='ar' else 'no');adb('shell','date','103010002026.00');folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
+   slug=name+'-'+lang;adb('shell','pm','clear',pkg);adb('shell','pm','grant',pkg,'android.permission.POST_NOTIFICATIONS');adb('shell','pm','grant',pkg,'android.permission.ACCESS_COARSE_LOCATION');adb('shell','pm','grant',pkg,'android.permission.ACCESS_FINE_LOCATION');adb('shell','cmd','uimode','night','yes' if lang=='ar' else 'no');adb('shell','date','103010002026.00');folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
    x=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
    adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
    launch();time.sleep(7);baseline=db('baseline');check('seed data initialized',len(baseline.get('dhikr_table',[]))==5)
    add='Add dhikr' if lang=='en' else 'إضافة ذكر';save='Save' if lang=='en' else 'حفظ';cancel='Cancel' if lang=='en' else 'إلغاء'
-   if not check('azkar open',azkar()):shot('azkar-failed');continue
+   if not check('azkar open',azkar()):
+    shot('azkar-failed');(out/(slug+'-failure-window.txt')).write_text(adb('shell','dumpsys','window'));(out/(slug+'-failure-log.txt')).write_text(adb('logcat','-d'));continue
    check('add opened',tap(add));shot('add-empty');check('empty cannot save',not tap(save));check('cancel empty',tap(cancel));d=db('empty-cancel');check('empty cancel no write',d==baseline)
    azkar();tap(add);check('title entry',field(0,'ParityDraft'));check('content entry',field(1,'ParityBody'));hide_keyboard();shot('add-filled');check('draft cancel',tap(cancel));d=db('draft-cancel');check('draft cancel no write',d==baseline)
    azkar();tap(add);field(0,'ParitySaved');field(1,'ParityBody');hide_keyboard();shot('add-before-save');check('valid save',tap(save));d=db('created');rows=d.get('dhikr_table',[]);created=[r for r in rows if r[1]=='ParitySaved'];check('created once persisted',len(created)==1 and len(rows)==len(baseline.get('dhikr_table',[]))+1)
