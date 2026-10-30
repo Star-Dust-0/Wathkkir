@@ -44,8 +44,25 @@ for build in ['original','rebuilt']:
    print(adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.wathakker.wear.CirclesActivity'),flush=True);time.sleep(3);shot(f'{build}-{lang}-circles')
   else:
    print(adb('shell','am','start','-S','-W','-n','com.wathakker.app/com.example.MainActivity'),flush=True);time.sleep(6);shot(f'{build}-{lang}-home')
+   dims=adb('shell','wm','size').strip().split()[-1].split('x');ww,hh=map(int,dims)
+   def tap(x,y): adb('shell','input','tap',str(int(ww*x)),str(int(hh*y)));time.sleep(2)
+   def dump(name):
+    adb('shell','uiautomator','dump','/sdcard/window.xml')
+    (out/(name+'.xml')).write_text(adb('shell','cat','/sdcard/window.xml'))
+   dump(f'{build}-{lang}-home-ui')
+   # Inspect all four real bottom tabs, then return to prayer and open settings.
+   for tab in [1,2,3]:
+    x=(tab+.5)/4 if lang=='en' else 1-(tab+.5)/4
+    tap(x,.925);shot(f'{build}-{lang}-tab{tab}');dump(f'{build}-{lang}-tab{tab}-ui')
+   tap(.125 if lang=='en' else .875,.925)
+   tap(.89 if lang=='en' else .11,.09);shot(f'{build}-{lang}-settings');dump(f'{build}-{lang}-settings-ui')
+   adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(2)
+   tap(.11 if lang=='en' else .89,.09);shot(f'{build}-{lang}-drawer');dump(f'{build}-{lang}-drawer-ui')
+   adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1)
    adb('push','widgethost.apk','/data/local/tmp/host.apk')
    print(adb('shell','CLASSPATH=/data/local/tmp/host.apk app_process / GrantBind com.example.widgethost'),flush=True)
    for mode in ['default','iqama','barsA']:
     clock();print(adb('shell','am','start','-S','-W','-n','com.example.widgethost/.MainActivity','--es','mode',mode),flush=True);time.sleep(7);shot(f'{build}-{lang}-widgets-{mode}')
+    time.sleep(5);shot(f'{build}-{lang}-widgets-{mode}-later')
+    dump(f'{build}-{lang}-widgets-{mode}-ui')
   (out/f'{build}-{lang}-logcat.txt').write_text(adb('logcat','-d'))
