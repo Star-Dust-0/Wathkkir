@@ -72,12 +72,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   def switch(label):
    root=ET.fromstring(tree());title=next((n for n in root.iter('node') if n.get('text')==label),None)
    if title is None:return False
-   parents={c:p for p in root.iter() for c in p};row=title
-   while row in parents:
-    candidates=[n for n in row.iter('node') if n.get('clickable')=='true' and 0<rect(n)[2]-rect(n)[0]<200 and n.get('class')=='android.view.View']
-    if len(candidates)==1:return touch(candidates[0])
-    row=parents[row]
-   return False
+   b=rect(title)
+   candidates=[n for n in root.iter('node') if n.get('clickable')=='true' and n.get('class')=='android.view.View' and 0<rect(n)[2]-rect(n)[0]<200 and b[1] <= (rect(n)[1]+rect(n)[3])//2 <= b[3]+110]
+   candidates.sort(key=lambda n:abs((rect(n)[1]+rect(n)[3]-b[1]-b[3])//2))
+   (out/(slug+'-switch-targets.jsonl')).open('a').write(json.dumps(dict(label=label,title=b,candidates=[n.attrib for n in candidates]),ensure_ascii=False)+'\n')
+   return bool(candidates) and touch(candidates[0])
   def alertprefs(n):
    x=adb('shell','cat',folder+'/prayer_alerts.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
    try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
