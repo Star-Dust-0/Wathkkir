@@ -149,3 +149,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 -55checks0fail,18/24rawsemanticpairs;18scenes align,2OSnotificationlabels differ only deliberate Comparison appname,4prayerrootframes use sequentialclock.
 -Seededpage3 calculation/Hanafi/confirmationback/reminderchoice/notificationdenial/filesdismiss and done/reopen verifiedENlight/ARdark;actualpairedpixelsinspected. app_prefsidentical, vibrationfalsepersisted.
 -Fajrlabeltap hit noninteractive label/root ancestor, not the switch: allalerts stayedtrue in both. Therefore no off-switch claim; corrected next finite harness to target switchcenter by Fajrrowbounds and assertenabled_0false. Missingfajr_prefsfilename also corrected.
+
+## Onboarding actual switch correction41164184142
+-71checks0fail,18/24rawsemanticpairs; actual FajroffswitchpixelsalignENlight/ARdark. enabled_0false, other4alertstrue, vibrationfalse, asr_juristic1, completedonboardingpermissionflagsallidenticaloriginal/recovered. Sixremainingrawpairs are2OSapp-labeldifferencesand4sequentialliveprayerrootframes.
+-Seededpage3scopeonly, not GPS/citynetwork or fullpermissionallowmatrix. Closingthisfinitebatch; widerenginecoordinatesnext.
