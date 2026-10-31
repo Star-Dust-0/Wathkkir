@@ -70,20 +70,23 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();time.sleep(8)
   adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','date','103112002026.00')
   entry='Optional times' if lang=='en' else 'مواقيت إضافية';labels=['Imsak','Duha','Midnight','Qiyam'] if lang=='en' else ['الإمساك','الضحى','منتصف الليل','قيام الليل'];keys=['imsak','duha','midnight','qiyam']
+  def openoptional():return route('Settings' if lang=='en' else 'الإعدادات') and choose(entry)
   def readcalc():
-   x=adb('shell','cat',folder+'/fajr_prefs.xml');return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
+   x=adb('shell','cat',folder+'/fajr_prefs.xml');
+   if not x.lstrip().startswith('<?xml') and not x.lstrip().startswith('<map'):return {}
+   return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
   def switch(label):
    root=ET.fromstring(tree());title=next((n for n in root.iter('node') if n.get('text')==label),None)
    if title is None:return False
    b=rect(title);targets=[n for n in root.iter('node') if n.get('clickable')=='true' and 0<rect(n)[2]-rect(n)[0]<200 and abs((rect(n)[1]+rect(n)[3]-b[1]-b[3])//2)<40]
    return len(targets)==1 and touch(targets[0])
-  check('optional route',route(entry));shot('all-off')
+  check('optional route',openoptional());shot('all-off')
   for label,key in zip(labels,keys):check('enable '+key,switch(label))
-  shot('all-on');check('all enabled persisted',all(readcalc().get('opt_'+k)=='true' for k in keys));(out/(slug+'-on-prefs.xml')).write_text(adb('shell','cat',folder+'/fajr_prefs.xml'));route(entry);shot('on-reopen')
+  shot('all-on');check('all enabled persisted',all(readcalc().get('opt_'+k)=='true' for k in keys));(out/(slug+'-on-prefs.xml')).write_text(adb('shell','cat',folder+'/fajr_prefs.xml'));openoptional();shot('on-reopen')
   launch();shot('prayer-top-on');text=tree()
   for i in range(3):swipe();shot('prayer-on-lower'+str(i));text+=tree()
   check('all optional rows shown',all(label in text for label in labels))
-  route(entry)
+  openoptional()
   for label,key in zip(labels,keys):check('disable '+key,switch(label))
   shot('all-off-restored');check('all disabled persisted',all(readcalc().get('opt_'+k)=='false' for k in keys));launch();text=tree()
   for i in range(3):swipe();text+=tree()
