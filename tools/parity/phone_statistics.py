@@ -58,7 +58,8 @@ def db(n):
   c=sqlite3.connect(p);d={t:c.execute('SELECT * FROM '+t+' ORDER BY 1').fetchall() for t in ['dhikr_table','tag_table','dhikr_tag_cross_ref','dhikr_history']};c.close();databases[slug+'-'+n]=d;(out/'databases.json').write_text(json.dumps(databases,ensure_ascii=False,indent=2));return d
  except Exception as e:check(n+' database readable',False,str(e));return {}
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
-for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
+for a in ['original.apk','comparison.apk','widgethost.apk']:
+ result=adb('install','-r','-g',a);(out/('install-'+a+'.txt')).write_text(result);assert check('install '+a,'Success' in result),result
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['en','ar']:
@@ -70,7 +71,8 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();time.sleep(8)
   # Controlled Room history input, same files and times for both apps.
   adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo');adb('shell','date','103112002026.00')
-  baseline=db('baseline');check('baseline initialized',len(baseline.get('dhikr_table',[]))==5)
+  baseline=db('baseline');(out/(slug+'-baseline-log.txt')).write_text(adb('logcat','-d'));(out/(slug+'-baseline-window.txt')).write_text(adb('shell','dumpsys','window'));shot('baseline');
+  if not check('baseline initialized',len(baseline.get('dhikr_table',[]))==5):continue
   import datetime,zoneinfo
   zone=zoneinfo.ZoneInfo('Africa/Cairo')
   fixtures=[('empty',[]),('today',[(1,'2026-10-31'),(1,'2026-10-31'),(2,'2026-10-31')]),('streak-gap',[(1,'2026-10-31'),(2,'2026-10-30'),(3,'2026-10-29'),(4,'2026-10-27'),(5,'2026-10-24'),(1,'2026-09-30')]),('yesterday-streak',[(1,'2026-10-30'),(2,'2026-10-29'),(3,'2026-10-28'),(4,'2026-10-25'),(1,'2026-09-30')])]
