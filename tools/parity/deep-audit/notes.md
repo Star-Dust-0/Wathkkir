@@ -128,3 +128,6 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Watch additional controls
 - Run41157363967:91checks1initialforegroundmiss(originalARwatchface),23/28semanticpairs equal. Allfour sessions persist equal alertstyleoff,Adhanoff/on,locmodeAuto/phone,languageAR/EN. Actual alert radio/location/language/circles pixels inspected and align.4other rawsemanticdifferences are root settings scroll offsets aroundAdhan, no savedvalue mismatch. No physicalGPS/notificationdelivery/soundclaim.
 - Next finite watchfontplus/minusclamps/reopen and alarmUIlaunch/dismiss, not actual alarm firing. Originalcountdown/ring approved scope unchanged.
+
+## Watch font/alert finite batch
+- Run41158587480:87checks32sharedfonttargetfailures,16/16semanticpairs equal. Actual alarmUIFajr/Isha EN/ARlaunch/dismiss frames align; noalarmfire/soundclaim. Fontcounteraction target assumed plusright inRTL and strictunclipped squarebounds; sharedfailuresfromresizing/roundclipping, actualsavedstatesmatch original. Capturesnamedmax/minareNOTactualextrema(.8ARmaxlabel,1.2ARminlabel,1.1EN). RetainrawnamesbutdoNOTcallclampsproven. CorrectRTLdirection,bottomclippedbuttonbounds,reopenandscrollbeforeeachpress;nextbatchfontonly.
