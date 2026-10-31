@@ -10,14 +10,14 @@ def tree():
  return next((x.split('=',1)[1] for x in text.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
 def shot(n):
  x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=20));states[n]=[(z.get('text',''),z.get('content-desc','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
- check(n+' foreground',any(pkg in x and 'mCurrentFocus=' in x for x in adb('shell','dumpsys','window').splitlines()))
+ check(n+' expected foreground',any((pkg in x or ('system' in n and 'permissioncontroller' in x)) and 'mCurrentFocus=' in x for x in adb('shell','dumpsys','window').splitlines()))
 def tap(text):
  root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
  for n in root.iter('node'):
   if text not in [n.get('text'),n.get('content-desc')]:continue
   target=n
   while target.get('clickable')!='true' and target in parents:target=parents[target]
-  b=list(map(int,re.findall(r'\d+',target.get('bounds',''))))
+  b=list(map(int,re.findall(r'-?\d+',target.get('bounds',''))))
   if target.get('clickable')=='true' and len(b)==4 and b[2]>b[0] and b[3]>b[1] and 15<b[1]<420:
    adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.7);return True
  return False
@@ -55,6 +55,11 @@ adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 for f in ['watch-original.apk','watch-rebuilt.apk','widgethost.apk']:check('install '+f,'Success' in adb('install','-r','-g',f))
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','cmd','connectivity','airplane-mode','enable');time.sleep(2);adb('shell','setprop','persist.sys.timezone','UTC')
 adb('shell','settings','put','global','window_animation_scale','1');adb('shell','settings','put','global','transition_animation_scale','1');adb('shell','settings','put','global','animator_duration_scale','1')
+def oschoose(label):
+ for _ in range(6):
+  if tap(label):return True
+  scroll()
+ return False
 def granted(permission):
  text=adb('shell','dumpsys','package',pkg)
  return bool(re.search(r'android.permission.'+permission+r': granted=true',text))
@@ -63,7 +68,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   slug=name+'-'+lang;reset();zone();adb('shell','date','103010002026.00')
   for perm in ['ACCESS_FINE_LOCATION','ACCESS_COARSE_LOCATION','POST_NOTIFICATIONS']:
    adb('shell','pm','revoke',pkg,'android.permission.'+perm);adb('shell','pm','clear-permission-flags',pkg,'android.permission.'+perm,'user-set','user-fixed')
-  launch(3,4);shot(slug+'-denied-initial');check(slug+' Location tapped',choose('Location' if lang=='en' else 'الموقع'));shot(slug+'-location-system-dialog');check(slug+' OS deny tapped',tap("Don't allow"));check(slug+' location remains denied',not granted('ACCESS_COARSE_LOCATION'));shot(slug+'-after-deny');launch(3,4);check(slug+' Location retry tapped',choose('Location' if lang=='en' else 'الموقع'));shot(slug+'-location-system-retry');check(slug+' OS foreground allow tapped',tap('While using the app'));check(slug+' location granted',granted('ACCESS_COARSE_LOCATION'));shot(slug+'-after-location-grant');launch(3,4);shot(slug+'-location-grant-reopen');check(slug+' Notifications tapped',choose('Notifications' if lang=='en' else 'الإشعارات'));shot(slug+'-notification-system-dialog');check(slug+' OS notification allow tapped',tap('Allow'));check(slug+' notifications granted',granted('POST_NOTIFICATIONS'));shot(slug+'-notification-granted');launch(3,4);shot(slug+'-all-granted-reopen');(out/(slug+'-package-permissions.txt')).write_text(adb('shell','dumpsys','package',pkg))
+  launch(3,4);
+  for _ in range(3):
+   if 'permissioncontroller' in adb('shell','dumpsys','window'):oschoose('Don’t allow')
+  launch(3,4);shot(slug+'-denied-initial');check(slug+' Location tapped',choose('Location' if lang=='en' else 'الموقع'));shot(slug+'-location-system-dialog');check(slug+' OS deny tapped',oschoose('Don’t allow'));check(slug+' location remains denied',not granted('ACCESS_COARSE_LOCATION'));shot(slug+'-after-deny');launch(3,4);check(slug+' Location retry tapped',choose('Location' if lang=='en' else 'الموقع'));shot(slug+'-location-system-retry');check(slug+' OS foreground allow tapped',oschoose('While using app'));check(slug+' location granted',granted('ACCESS_COARSE_LOCATION'));shot(slug+'-after-location-grant');launch(3,4);shot(slug+'-location-grant-reopen');check(slug+' Notifications tapped',choose('Notifications' if lang=='en' else 'الإشعارات'));shot(slug+'-notification-system-dialog');check(slug+' OS notification allow tapped',oschoose('Allow'));check(slug+' notifications granted',granted('POST_NOTIFICATIONS'));shot(slug+'-notification-granted');launch(3,4);shot(slug+'-all-granted-reopen');(out/(slug+'-package-permissions.txt')).write_text(adb('shell','dumpsys','package',pkg))
 comparisons=[]
 for n,a in states.items():
  if n.startswith('original-'):
