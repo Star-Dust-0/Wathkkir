@@ -124,3 +124,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Settled settings endpoints and maximum scale verified
 - Run41156114793:47checks0fail,18/20semanticpairs equal. ActualEN/AR settled end frames align, fontmax1.6 persisted all4sessions and paired frames match. The two toggles-on screenshots differ in scroll positions, not savedtogglevalues; trajectory remains unproven. Attempted midreset used stalepre-resizecoordinates and remained1.6 both; do not claimresetproof. No more full settings rerun for thatsetupdetailnow.
 - Continue independent watch alert/location/language/permission/circles controls, retaining no physicalGPS/paireddevice/haptic claim from emulator.
+
+## Watch additional controls
+- Run41157363967:91checks1initialforegroundmiss(originalARwatchface),23/28semanticpairs equal. Allfour sessions persist equal alertstyleoff,Adhanoff/on,locmodeAuto/phone,languageAR/EN. Actual alert radio/location/language/circles pixels inspected and align.4other rawsemanticdifferences are root settings scroll offsets aroundAdhan, no savedvalue mismatch. No physicalGPS/notificationdelivery/soundclaim.
+- Next finite watchfontplus/minusclamps/reopen and alarmUIlaunch/dismiss, not actual alarm firing. Originalcountdown/ring approved scope unchanged.
