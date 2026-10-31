@@ -69,10 +69,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
   launch();time.sleep(8)
   def endscroll():
-   for _ in range(20):
-    r=adb('shell','am','instrument','-w','com.example.widgethost/.ScrollAction');time.sleep(.3)
-    (out/(slug+'-scroll-'+str(_)+'.txt')).write_text(r)
-    if 'scrolled=false' in r:break
+   previous=''
+   for _ in range(16):
+    swipe();time.sleep(.5);current=tree()
+    if current==previous:break
+    previous=current
    time.sleep(1)
   def snapshotprefs(n):
    for f in ['app_prefs','fajr_prefs','app_haptics']:(out/(slug+'-'+n+'-'+f+'.xml')).write_text(adb('shell','cat',f'/data/data/{pkg}/shared_prefs/{f}.xml'))
@@ -86,8 +87,8 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   labels=[n for n in ET.fromstring(tree()).iter('node') if n.get('text')=='A']
   check('font slider labels located',len(labels)>=2)
   if len(labels)>=2:
-   a=rect(labels[0]);b=rect(labels[1]);left=min(a[2],b[2]);right=max(a[0],b[0]);y=(a[1]+a[3])//2
-   adb('shell','input','tap',str(right-10),str(y));time.sleep(1);shot('font-scale-max');snapshotprefs('font-max')
+   a=rect(labels[0]);b=rect(labels[1]);left=min(a[2],b[2])+38;right=max(a[0],b[0])-38;y=(a[1]+a[3])//2
+   adb('shell','input','tap',str(right-35 if lang=='en' else left+35),str(y));time.sleep(1);shot('font-scale-max');snapshotprefs('font-max')
    # Move to the middle detent before continuing; compare actual persisted scale.
    adb('shell','input','tap',str((left+right)//2),str(y));time.sleep(1);shot('font-scale-reset');snapshotprefs('font-reset')
   route('Settings' if lang=='en' else 'الإعدادات');check('notification vibration restore',choose('Notification vibration' if lang=='en' else 'الاهتزاز للإشعارات'));check('haptic restore',choose('Haptic feedback' if lang=='en' else 'الاستجابة اللمسية'));snapshotprefs('toggles-on');shot('toggles-on')
