@@ -292,3 +292,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Patterns41220393641 harness isolation failure
 51checks24fail preserved. Log proves HierarchyDump instrumentation force-stops widgethost on every tree read; previousharness could test configvalue but cannotretainlivehost. Explicitreorder re-createddefault host anddeletedboundOneUI. No productverdict. Isolate identicalreadonlyHierarchyDump into separateverificationonlyuiprobe application; original/recoveredapp untouched. Then repeat original6patternfinitebatch withactualexistinghost checks.
+
+## Probe41221651914 setup failure
+32checks24fail; actuallog: Unabletofindinstrumentationinfo com.example.uiprobe/com.example.widgethost.HierarchyDump. ApplicationId suffix resolvesrelative instrumentationclass to newpackage, so use fullyqualified originalclass names; tree retrieval nowfailsfast retainingrawoutput instead of yieldingemptyhierarchy. No productverdict. Earlier41205501138taps and41207839644/41210239758resize scripts use dumpsys/screenshots,notinstrumentation;their finitehostclaims are unaffected. Configpalette scripts usedinstrumentation,so onlyselection/prefs andconfigscreens remain supported,notlivehostcontinuity.
