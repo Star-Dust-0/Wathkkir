@@ -48,6 +48,14 @@ public class MainActivity extends Activity {
         host.startListening();
         String operation=getIntent().getStringExtra("operation");
         if ("delete".equals(operation)) { host.deleteHost(); Log.i("WidgetRecoveryAudit","deleted host"); finish(); return; }
+        if ("resume".equals(operation)) {
+            LinearLayout col=new LinearLayout(this);col.setOrientation(LinearLayout.VERTICAL);ScrollView sv=new ScrollView(this);sv.addView(col);
+            for(int id:host.getAppWidgetIds()) { AppWidgetProviderInfo info=awm.getAppWidgetInfo(id);if(info==null)continue;
+                TextView label=new TextView(this);label.setText(info.provider.getClassName()+" id="+id);col.addView(label);
+                AppWidgetHostView v=host.createView(this,id,info);v.setAppWidget(id,info);col.addView(v,new LinearLayout.LayoutParams((int)(330*d),(int)(90*d)));Log.i("WidgetRebootAudit","reattach id="+id+" provider="+info.provider);
+            }
+            setContentView(sv);return;
+        }
         host.deleteHost(); // Each scene owns a clean host, including deletion callbacks from the preceding scene.
         host = new AppWidgetHost(getApplicationContext(), 1024);host.startListening();
 
