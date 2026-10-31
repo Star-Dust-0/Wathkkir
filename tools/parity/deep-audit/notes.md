@@ -221,3 +221,6 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Optional prayer rows41184408987
 -55checks0fail,8/18rawsemanticpairs. All4actualswitchesonpersist/reopen, all4prayerrowsappear;offpersistsandrowsremovedENlightARdark. Actualpixelsinspectedalign.10rawrootpairsdifferclock;2ENintermediatescrollalsoonebellvisibilitydiff,so notallscroll/motionproof. Finalvisibleoptionalminuteoutputsalign.
 -NextFajrbelldialogEarlyreminderCancel/Apply/backrollbackwithactualprefs,notjustdismissappearance.
+
+## Bell41185522717 invalid route
+-71checks48fail:shortbelltap togglesenabled, doesnotopendialog. Bothoriginal/recovered stayedroot. NoCancel/Applyverdictpossible;allfailed downstreamchecksretained. Correctedlongpressplusassertdialoganchor,enableonceviaactualshorttap. No productpatch.

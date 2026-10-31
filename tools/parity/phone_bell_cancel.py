@@ -78,7 +78,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    x=adb('shell','cat',folder+'/prayer_alerts.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
    try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
    except:return {}
-  def bell():launch();return tap('bell_0')
+  def bell():
+   launch();node=next((n for n in ET.fromstring(tree()).iter('node') if n.get('content-desc')=='bell_0'),None)
+   if node is None:return False
+   b=rect(node);cx=str((b[0]+b[2])//2);cy=str((b[1]+b[3])//2)
+   adb('shell','input','swipe',cx,cy,cx,cy,'1200');time.sleep(1)
+   return any(n.get('text') in ['At adhan time','عند الأذان'] for n in ET.fromstring(tree()).iter('node'))
+  launch();check('short bell enable',tap('bell_0'));check('enabled persisted',alertprefs('short-enable').get('enabled_0')=='true')
   early='Early reminder' if lang=='en' else 'تنبيه قبل الأذان';cancel='Cancel' if lang=='en' else 'إلغاء';apply='Apply' if lang=='en' else 'تطبيق'
   check('Fajr bell',bell());before=alertprefs('before');shot('bell-initial');check('early enable draft',switch(early));draft=alertprefs('draft');check('draft offset10',draft.get('offset_0')=='10');shot('early-draft');check('cancel draft',tap(cancel));after=alertprefs('cancel');check('cancel offset restored',after.get('offset_0')==before.get('offset_0'));check('reopen bell',bell());shot('after-cancel');check('early enable saved',switch(early));check('apply',tap(apply));check('offset10 persisted',alertprefs('applied').get('offset_0')=='10');check('reopen applied',bell());shot('applied-reopen');check('early disable draft',switch(early));check('draft offset0',alertprefs('disable-draft').get('offset_0')=='0');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check('back restores10',alertprefs('back').get('offset_0')=='10');check('reopen again',bell());check('early disable saved',switch(early));check('apply off',tap(apply));check('offset0 persisted',alertprefs('off').get('offset_0')=='0');bell();shot('off-reopen');tap(cancel)
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
