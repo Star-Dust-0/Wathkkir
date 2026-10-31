@@ -65,8 +65,8 @@ import com.example.ui.oneui.OneUIDialog
 import com.example.ui.oneui.OneUISwitch
 
 /**
- * Per-prayer bell settings (long-press a bell on the Prayer screen): enable, alert type
- * (notification / full alarm), timing relative to adhan, iqama reminder. Below the divider,
+ * Per-prayer bell settings (long-press a bell on the Prayer screen): enable,
+ * timing relative to adhan, iqama reminder. Below the divider,
  * the SHARED sound/vibration/volume/duration profile (single profile for all prayers).
  */
 @Composable
@@ -108,7 +108,6 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
     val enabled = remember(tick) { PrayerAlertStore.isEnabled(context, prayer) }
     val offset = remember(tick) { PrayerAlertStore.offsetMinutes(context, prayer) }
     val iqama = remember(tick) { PrayerAlertStore.iqamaReminder(context, prayer) }
-    val fullScreen = remember(tick) { PrayerAlertStore.fullScreen(context, prayer) }
 
     OneUIDialog(
         title = prayerName,
@@ -140,43 +139,6 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                 OneUISwitch(enabled, { PrayerAlertStore.setEnabled(context, prayer, it); changed() })
             }
             if (enabled) {
-                Spacer(Modifier.height(10.dp))
-                // Alert style: notification (default) or full-screen, per prayer. One UI choice row
-                // opening a radio dialog - the current "adhan alert" option split in two.
-                var showTypePicker by remember { mutableStateOf(false) }
-                Row(
-                    modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).plainClickable { showTypePicker = true }.padding(vertical = 6.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column(Modifier.weight(1f)) {
-                        Text(L10n.t(S.AdhanAlertType), color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Medium)
-                        Text(L10n.t(if (fullScreen) S.AlertTypeFullScreen else S.AlertTypeNotification), modifier = Modifier.padding(top = 2.dp), color = cs.primary, fontSize = 13.sp, lineHeight = 18.sp)
-                    }
-                }
-                if (showTypePicker) {
-                    var pendingType by remember { mutableStateOf(fullScreen) }
-                    OneUIDialog(
-                        title = L10n.t(S.AdhanAlertType),
-                        onDismiss = { showTypePicker = false },
-                        onConfirm = {
-                            if (pendingType != fullScreen) { PrayerAlertStore.setFullScreen(context, prayer, pendingType); changed() }
-                            showTypePicker = false
-                        },
-                        confirmText = L10n.t(S.Apply)
-                    ) {
-                        listOf(false to S.AlertTypeNotification, true to S.AlertTypeFullScreen).forEach { (v, key) ->
-                            Row(
-                                modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).plainClickable { pendingType = v }.padding(12.dp),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(L10n.t(key), color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
-                                if (v == pendingType) Icon(Icons.Outlined.Check, null, tint = cs.primary)
-                            }
-                        }
-                    }
-                }
                 Spacer(Modifier.height(10.dp))
                 // Early reminder: an ADDITION to the adhan-time notification, never a replacement.
                 val earlyOn = offset > 0
