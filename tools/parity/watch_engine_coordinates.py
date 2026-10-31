@@ -16,7 +16,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   x=f'<map><int name="locmode" value="0"/><long name="lat" value="{bits(lat)}"/><long name="lon" value="{bits(lon)}"/></map>'
   adb('shell',f"echo '{x}' > {folder}/wear_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/wear_prefs.xml; chmod 660 {folder}/wear_prefs.xml; restorecon -R {folder}")
   (out/(name+'-'+city+'-fixture.xml')).write_text(adb('shell','cat',folder+'/wear_prefs.xml'))
-  s=adb('shell','am','instrument','-w','-e','pkg',pkg,'-e','original',str(name=='original').lower(),'com.example.widgethost/.WatchEngineProbe');(out/(name+'-'+city+'-raw.txt')).write_text(s)
+  s=adb('shell','am','instrument','-w','-e','pkg',pkg,'-e','original',str(name=='original').lower(),'-e','lat',str(lat),'-e','lon',str(lon),'com.example.widgethost/.WatchEngineProbe');(out/(name+'-'+city+'-raw.txt')).write_text(s)
   line=next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: engine=')),None)
   assert line,s
   states[name][city]=json.loads(line);assert len(states[name][city])==810
