@@ -9,6 +9,7 @@ import com.example.R
 import com.example.data.AppDatabase
 import com.example.receiver.NotificationActionReceiver
 import com.example.ui.i18n.L10n
+import com.example.ui.i18n.S
 import com.example.utils.NotifPrefs
 import kotlinx.coroutines.*
 
@@ -33,8 +34,8 @@ class AlarmReceiver : BroadcastReceiver() {
             .setLargeIcon(BitmapFactory.decodeResource(context.resources,R.mipmap.ic_launcher))
             .setStyle(NotificationCompat.BigTextStyle().bigText(content)).setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true).setContentIntent(PendingIntent.getActivity(context,id*10+1,launch,flags))
-            .addAction(0,"تمت القراءة",action(NotificationActionReceiver.ACTION_MARK_AS_READ,id*10+2))
-            .addAction(0,"غفوة",action(NotificationActionReceiver.ACTION_SNOOZE,id*10+3)).build()
+            .addAction(0,L10n.t(S.NotifReadDone),action(NotificationActionReceiver.ACTION_MARK_AS_READ,id*10+2))
+            .addAction(0,L10n.t(S.NotifRemindLater),action(NotificationActionReceiver.ACTION_SNOOZE,id*10+3)).build()
         nm?.notify(id,notification)
         if (!intent.getBooleanExtra("IS_SNOOZE",false)) {
             val pending = goAsync()
@@ -48,7 +49,7 @@ class AlarmReceiver : BroadcastReceiver() {
         fun createNotificationChannel(context: Context) {
             if(android.os.Build.VERSION.SDK_INT >= 26) {
                 val nm = context.getSystemService(NotificationManager::class.java)
-                NotifPrefs.configureChannel(context,nm,NotificationChannel("dhikr_channel","أذكار",NotificationManager.IMPORTANCE_HIGH))
+                NotifPrefs.configureChannel(context,nm,NotificationChannel("dhikr_channel",L10n.t(S.NotifChannelAzkar),NotificationManager.IMPORTANCE_HIGH))
             }
         }
     }

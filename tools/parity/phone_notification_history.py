@@ -62,7 +62,9 @@ for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['en','ar']:
-  slug=name+'-'+lang;adb('shell','pm','clear',pkg)
+  slug=name+'-'+lang
+  for other in ['com.wathakker.app','com.wathakker.app.compare']:adb('shell','am','force-stop',other)
+  adb('shell','pm','clear',pkg)
   for perm in ['POST_NOTIFICATIONS','ACCESS_COARSE_LOCATION','ACCESS_FINE_LOCATION']:adb('shell','pm','grant',pkg,'android.permission.'+perm)
   adb('shell','cmd','uimode','night','yes' if lang=='ar' else 'no');folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
   x=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
@@ -74,7 +76,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   if not rows:continue
   ident=rows[0][0];azkar();field(0,'ParityNotify');hide_keyboard();tap('Options' if lang=='en' else 'خيارات');check('reminder times',tap('Reminder times' if lang=='en' else 'أوقات التنبيه'));check('add noon',choose('Add reminder time' if lang=='en' else 'إضافة وقت تنبيه'));check('save noon',tap(save));shot('scheduled');(out/(slug+'-scheduled-alarms.txt')).write_text(adb('shell','dumpsys','alarm'))
   # Keep process unstopped for real AlarmManager delivery. Advance near noon, then wait.
-  adb('shell','date','103111592026.50');adb('shell','input','keyevent','KEYCODE_HOME');time.sleep(22);(out/(slug+'-notification-dump.txt')).write_text(adb('shell','dumpsys','notification','--noredact'));adb('shell','cmd','statusbar','expand-notifications');time.sleep(2);shot('notification-shade');check('notification fixture present','ParityNotify' in tree());
+  adb('shell','date','103111592026.50');adb('shell','input','keyevent','KEYCODE_HOME');time.sleep(22);(out/(slug+'-notification-dump.txt')).write_text(adb('shell','dumpsys','notification','--noredact'));adb('shell','cmd','statusbar','expand-notifications');time.sleep(2);shot('notification-shade');check('notification fixture present','ParityNotify' in tree());check('localized read label',('Mark as read' if lang=='en' else 'تم القراءة') in tree());check('localized snooze label',('Remind me in 10 minutes' if lang=='en' else 'ذكرني بعد 10 دقائق') in tree());
   # Try actual notification action; no direct receiver call.
   check('notification mark read',tap('تمت القراءة') or tap('تم القراءة') or tap('Mark as read'));time.sleep(2);adb('shell','cmd','statusbar','collapse');d=db('notification-read');rows=[v for v in d.get('dhikr_table',[]) if v[0]==ident];check('read persisted',len(rows)==1 and rows[0][6]==1);check('history appended',len(d.get('dhikr_history',[]))==1 and d['dhikr_history'][0][1]==ident);route('Statistics' if lang=='en' else 'الإحصائيات');time.sleep(2);shot('statistics-after-notification')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
