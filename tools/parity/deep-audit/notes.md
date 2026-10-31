@@ -286,3 +286,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Palette41217774333
 179checks0fail28/28semanticpairs. Actual5bar5background4accentselectionsApplyprefsENlightARdark;actualpixelsinspected. Noallcombinationrenderclaim. Nextall6patternidsusingactualaccessibilitysquareboundsandRTLcolumnorderpluspostApplyhostimages.
+
+## Patterns41219100816
+103checks0fail.24/36semanticpairs:24draft/reopen matched;12host-labeledcaptures actually returned phoneMainActivity,not host,with ticking countdowndiff. Pixels confirm. SixpatternIDsactualselection/prefsApplypassENAR,but nohostrenderproof. Next audit explicitly reorders existinghost toforeground,assertslabelandnorebind,and resetsfixtureclockbeforecapture.
