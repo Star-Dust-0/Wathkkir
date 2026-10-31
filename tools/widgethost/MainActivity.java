@@ -144,6 +144,17 @@ public class MainActivity extends Activity {
                 Log.i("WidgetRecoveryAudit","tap kind="+kind+" found="+(target!=null)+" clicked="+(target!=null&&target.performClick()));
             }
         }},new android.content.IntentFilter("com.example.widgethost.CLICK"),android.content.Context.RECEIVER_EXPORTED);
+        registerReceiver(new android.content.BroadcastReceiver(){public void onReceive(android.content.Context c,android.content.Intent in){
+            int wd=in.getIntExtra("width",160), ht=in.getIntExtra("height",90);
+            float density=getResources().getDisplayMetrics().density;
+            for(int z=0;z<views.size();z++){
+                AppWidgetHostView v=views.get(z);v.updateAppWidgetSize(null,wd,ht,wd,ht);
+                v.setLayoutParams(new LinearLayout.LayoutParams((int)(wd*density),(int)(ht*density)));
+                Bundle opts=AppWidgetManager.getInstance(c).getAppWidgetOptions(v.getAppWidgetId());
+                Log.i("WidgetResizeAudit","kind="+kinds.get(z)+" id="+v.getAppWidgetId()+" outer="+wd+"x"+ht+" minW="+opts.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH)+" maxH="+opts.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT));
+            }
+            new Handler(Looper.getMainLooper()).postDelayed(()->dumpPixelStats(),2000);
+        }},new android.content.IntentFilter("com.example.widgethost.RESIZE"),android.content.Context.RECEIVER_EXPORTED);
         // After updates settle, dump per-widget pixel stats: a blank/never-updated
         // widget (the R8 regression) is a uniform surface -> std near 0.
         new Handler(Looper.getMainLooper()).postDelayed(this::dumpPixelStats, 6000);
