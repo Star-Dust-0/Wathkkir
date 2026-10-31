@@ -3,7 +3,7 @@ plugins { id("com.android.application") }
 android {
     namespace = "com.example.widgethost"
     compileSdk = 36
-    defaultConfig { applicationId = "com.example.widgethost"; minSdk = 30; targetSdk = 34; versionCode = 1; versionName = "1" }
+    defaultConfig { applicationId = "com.example.widgethost"; minSdk = 23; targetSdk = 34; versionCode = 1; versionName = "1" }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     sourceSets["main"].manifest.srcFile("../tools/widgethost/AndroidManifest.xml")
     sourceSets["main"].java.srcDirs("../tools/widgethost")

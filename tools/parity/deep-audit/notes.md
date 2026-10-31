@@ -167,3 +167,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 -Scopedcounts(today/week/month/streak/total)align:empty0;today3/3/3/1/3;streakgap1/4/5/3/6;yesterday0/4/4/3/5. OneENlowerframehasdifferentintermediatescrolloffset, notcontentverdict.
 -Actualworkingresetat06:21recoveredfrom0607Drivebackup/freshGitclone;main200dc32unchanged.
 -NextsamefinitehistorysuiteAPI23/36matrix, API34currentproofnotassumedacrossOSversions.
+
+## API23/36 matrix first setup issue
+-41168836184API23cannotestablishparity: verificationhost minSdk30 preventsinstallation. OriginalandcomparisonAPKinstallsucceededbutbaselineDBwasabsent, noappcrashlogcapturedbypriorharness. Thatdoesnotproveproductincompatibility.
+-LoweredverificationhostminSDK23only; captureinstalldiagnostics/baselinelog/window/pixels, skipinvalidDBfixturesratherthancreatingemptySQLitefile. AwaitAPI36existingjobbeforefurtherdispatch.
