@@ -271,3 +271,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Widgetresize41207839644
 363checks0fail,10kindspreservedid4actualhostsizecallbacksoriginal/recoveredEN. Actualpixelsinspected. Fixedscreencomparisonregion28/40exact,12differHero/PrayerBar/OneUIlimitedprogressedges;not40/40pixelclaim. Noreboot/orientation/tablet/Samsunghostcoverage. NextsamefiniteArabicresizeandper-providerdeletionalarmcleanupcheck.
+
+## Arabicresize41210239758
+365checks0fail,actual10kinds4resizeandfinalhostdeleteactivepulse/boundarycleanupbothapps. Actualpixelsinspected,28/40fixedregionsexact,12progress/OneUIresidualsnotallpixelclaim. NextactualboundIDconfigurationHero(colors)/OneUI(pattern/accent)/Pill(taponly),Backnochange/Applydefaulttapopen/reopenpairedscreens.
