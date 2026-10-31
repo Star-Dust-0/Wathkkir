@@ -65,16 +65,15 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    for n in root.iter('node'):
     if n.get('clickable')!='true':continue
     b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
-    if len(b)==4 and 60<=b[2]-b[0]<=130 and abs((b[2]-b[0])-(b[3]-b[1]))<8 and b[1]>180 and b[3]<430:opts.append((b,n))
+    if len(b)==4 and 60<=b[2]-b[0]<=130 and 60<=b[3]-b[1]<=130 and b[1]>180 and b[3]<=454:opts.append((b,n))
    if len(opts)!=2:return False
-   opts.sort();b=opts[-1 if plus else 0][0];adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.5);return True
-  for i in range(5):check(slug+' plus'+str(i),sizebutton(True))
+   opts.sort();b=opts[-1 if (plus == (lang=='en')) else 0][0];adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.5);return True
+  for i in range(5):
+   launch(3,8);scroll();check(slug+' plus'+str(i),sizebutton(True))
   shot(slug+'-font-max');prefs(slug+'-font-max-prefs');launch(3,8);shot(slug+'-font-max-reopen')
-  for i in range(8):check(slug+' minus'+str(i),sizebutton(False))
+  for i in range(8):
+   launch(3,8);scroll();check(slug+' minus'+str(i),sizebutton(False))
   shot(slug+'-font-min');prefs(slug+'-font-min-prefs');reset()
-  # UI-only alarm preview. No actual sound/vibration firing or external notification effects.
-  for prayer in [0,5]:
-   launch(0);adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.AdhanActivity','--ei','id',str(prayer),'--el','at','1793354400000');time.sleep(2);shot(slug+'-adhan'+str(prayer));adb('shell','input','tap','227','227');time.sleep(1);shot(slug+'-adhan'+str(prayer)+'-dismiss')
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'))
 comparisons=[]
 for n,a in states.items():
