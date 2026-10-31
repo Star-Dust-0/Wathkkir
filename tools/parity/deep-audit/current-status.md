@@ -1,4 +1,4 @@
-# Current audit status - 2026-10-31 13:20 Africa/Cairo
+# Current audit status - 2026-10-31 19:07 Africa/Cairo
 
 Incomplete. Comparison branch only. No release. This file supersedes historical status entries where they conflict; old entries record their own time, not today's verdict.
 
@@ -35,6 +35,14 @@ PhonebelloriginalOct20typographyoperationreplayed8bd24d7. UnshippedOct21devpicke
 - Watch font clamp71checks0fail,8/8semantic pairs; persisted1.3max/.8min and reopenedmax matchEN/AR. Actual pixels inspected (41160998827).
 
 Counts are scoped evidence, never total parity. Green workflow status alone is not a test pass: several prior harness runs had setup failures logged in notes.md.
+
+## Later finite evidence and correction
+- Invalidbell0/61/999nestedSave held60, nestedCancel/parentCancelrollback, IqamaApply/reopen/Back:267/0 (41196395358). All6bells actualtap/longpressandSunriseexceptions195/0 (41198538557);vibrationApply/Reset/Back persistence507/0 (41199658604).
+- DNDdeniedopenssystemsettingswithoutwriting; explicitemulatorgrantfixture supportsCancel/Apply/reopen/offBack/offApply95/0 (41201981006). NoactualOSgrantorhardwareproof. Tonepicker41204260199had4wrongexpectedclass assertions;actualGoogleSoundpickerGalleryActivityconfirmedoffline,redrunretained.
+-10widgettapkindsopen/refresh/legacy-none223/0 (41205501138),40resizesEN363/0 (41207839644),AR365/0withdeletecleanup (41210239758). These use dumpsys/screencap,notkillinginspection.28/40fixedregionsperlocaleexact;12progressresidualsremain.
+- MissingexactOct26WidgetConfigActivityrefreshread/save/labeloperationrestored2eceec7. Hero/OneUI/PillRefreshandSchedule/HijriNothingselectionBack/Apply/reopen223/0,60/60pairs (41214007984). Palette83/0then179/0,28/28pairs (41216500288/41217774333).
+- SixOneUIpatternIDs0/1/8/9/10/11actualselectionApplyprefspass103/0,24/24draft/reopenpairs (41219100816).12host-labeledpicturesarephoneapp,notwidgethost. NoactualpostApplyhostrenderproof.
+-41220393641exposedobserverkillinghost;41221651914isolatedprobehadregistrationfailure. Bothretained,notproductdefects. Correctobserverandrepeatfinitehostrenderbatch beforeusingitasevidence.
 
 ## Open
 - Thin watchtile arc-edge raster residual2346pixels eachlocale; not approved away.
