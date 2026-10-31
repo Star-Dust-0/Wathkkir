@@ -1,4 +1,4 @@
-# Current audit status - 2026-10-31 21:09 Africa/Cairo
+# Current audit status - 2026-11-01 00:14 Africa/Cairo
 
 Incomplete. Comparison branch only. No release. This file supersedes historical status entries where they conflict; old entries record their own time, not today's verdict.
 
@@ -49,6 +49,13 @@ Counts are scoped evidence, never total parity. Green workflow status alone is n
 - Actualpalettehost41225525891:292/0,56/56pairs,5bar/5bg/4accents;representativepixelsinspected,nofullpixelclaim.
 - Delete41227195028attempt2:164/0,normalizedprefsidentical4sessions;pattern/accentretainedinboth,bar/bg/tapremoved,lastalarmscanceled. Attempt1builddependencyresolutionfailurepreserved.
 - ActualawakeAlarmManagerboundary41230215176then3-chain41231462125:23/71checks0fail,12realchain deliveriesENARtargets12:05/14:52/15:12agree;actualpixelsinspected. Notphysicaldozeproof.
+
+## Latest boundary and host findings
+- Fridaychain41232729428:71/0,12actualdeliveries11:45/14:52/15:12ENAR;FridayJumahskipsDhuhrIqamaboth,actualpixelsinspected.
+- MidnightHomeB41234022199:23/0setupchecks,actualSunday/Hijri21/scheduleupdateboth. Otherfamilies41235246999and+65s41236469675:83/99setupchecks0failbutstaticdatewidgetsremainSaturday/Oct31/Hijri20inbothdespitetwominutepulses. Originalmatchingstaleness,noproductfix.
+- Lockinteractivity41240937315:91/0all8kindsnolisteners/noTasbihmutationbothENAR. Previous100tapincrementexpectationwaswrong,red41239728028retained.
+- Forcedidle41242177532:27/0,4verifiedIDLEscreenoff/unpluggedsessionsactualboundarydeliveredbeforewake. ENremaining147vs146residualopen;ARagrees146.
+- Reboot41245865681:13/0fourIDspersistandTICK/BOUNDARYbeforehostresumeinboth. Actualpixelsinspectedbuttimezone/clockbootresetmeansvisualparityunproven. Earlierenvironmentfailuresretainedinnotes.
 
 ## Open
 - Thin watchtile arc-edge raster residual2346pixels eachlocale; not approved away.
