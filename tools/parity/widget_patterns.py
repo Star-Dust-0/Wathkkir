@@ -9,7 +9,10 @@ def adb(*a):
 def check(n,ok,detail=''):
  checks.append(dict(name=slug+' '+n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(slug,n,ok,detail,flush=True);return bool(ok)
 def tree():
- s=adb('shell','am','instrument','-w','com.example.uiprobe/com.example.widgethost.HierarchyDump');return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+ s=adb('shell','am','instrument','-w','com.example.uiprobe/com.example.widgethost.HierarchyDump');(out/(slug+'-inspection-raw.txt')).write_text(s)
+ x=next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),None)
+ if x is None:raise RuntimeError('Hierarchy probe failed: '+s)
+ return x
 def shot(n):
  n=slug+'-'+n;x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=25));states[n]=[(z.get('text',''),z.get('content-desc',''),z.get('checked',''),z.get('enabled','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
 def rect(n):return list(map(int,re.findall(r'\d+',n.get('bounds',''))))
