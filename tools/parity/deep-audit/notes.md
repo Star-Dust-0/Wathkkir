@@ -157,3 +157,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Wider coordinates41165122005 invalid fixture
 -5670sameoutputcases/0mismatches are NOT coordinatecoverage: sensitivityguard failed, every city identical to Cairo in both. ForeignAPKenginecode is loaded under verificationhostUID, so targetappprivateprefs cannot be assumed readable even when adbrootreadback succeeds.
 -Nextcorrectedprobeuses explicit ContextWrapper wear_prefsdependency fixture with suppliedlatloninhostprefs. This compares actual engine functions under controlled inputs, not targetapppreference-storageintegration. Sensitivitymustpass.
+
+## Actual watch engine coordinate dependency grid41166141457
+-5670cases34020exact-msoutputs,0mismatch.7coordinatefixtures(Cairo/London/NewYork/Sydney/Quito/Tromso/CapeTown),5zones,9DST/leapdates,6hours,3dayoffsets. AllnonCairofixtureschange810/810casesinboth, so sensitivityguardpasses.
+-ExplicitContextWrapperwear_prefsdependencyfixture, fixturelatlonrecordedandchecked. Actualoriginal/recoveredenginefunctioncode; notappstorageorphone/GPSdeliveryintegration. FixedEgyptianmethod,noallmethodclaim.
