@@ -5,6 +5,10 @@ permissions:
   contents: read
 jobs:
   phone:
+    strategy:
+      fail-fast: false
+      matrix:
+        api: [23, 36]
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -33,7 +37,7 @@ jobs:
           sudo udevadm trigger --name-match=kvm
       - uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 34
+          api-level: ${{ matrix.api }}
           arch: x86_64
           target: google_apis
           profile: pixel_6
@@ -42,7 +46,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: phone-stateful-evidence
+          name: phone-statistics-api-${{ matrix.api }}
           path: |
             evidence
             app/build/test-results
