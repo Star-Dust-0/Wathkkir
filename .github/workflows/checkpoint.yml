@@ -38,7 +38,7 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/widget_resize_matrix.py
+          script: python3 -u tools/parity/widget_resize_ar.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
