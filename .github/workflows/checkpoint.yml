@@ -38,7 +38,7 @@ jobs:
           target: android-wear
           profile: wearos_large_round
           disable-animations: false
-          script: python3 -u tools/parity/watch_language_seeded_sync.py
+          script: python3 -u tools/parity/watch_font_steps.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
