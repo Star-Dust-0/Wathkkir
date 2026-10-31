@@ -101,3 +101,6 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Four-mode digit fixture invalid, not parity evidence
 - Run41145732805:75checks72fail. Every scene fell into language onboarding. Runtime SharedPreferences rewrote XML header with single quotes; harness echo-single-quote transport stripped them when changing digit style and corrupted fixture XML. Use base64 fixture transport and assert retained onboarding preference. No UI parity conclusion from this run. Keep exact failure evidence.
+
+## Paired actual watch APK engine boundary verification
+- Run41147235416:810paired actual original d21.c vs recovered Prayer.day inputs,0mismatches across exact6output milliseconds per input(4860times).5zones(Cairo/London/NewYork/Sydney/UTC),9dates(DSTand leap),6local hours,3dayoffsets,default Cairocoords and Egyptian method. This verifies the restored day-anchor behavior within that finite grid on WearAPI33TZDB. No claim for allcoordinates/methods/OSes or next/prev selection, notifications, sensor/hardware/motion. Original fixture runs unchanged; reflection no longer blocked. Invalid earlier setup runs remain failure evidence.
