@@ -90,6 +90,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();check('short bell enable',tap('bell_0'));check('enabled persisted',alertprefs('short-enable').get('enabled_0')=='true')
   early='Early reminder' if lang=='en' else 'تنبيه قبل الأذان';cancel='Cancel' if lang=='en' else 'إلغاء';apply='Apply' if lang=='en' else 'تطبيق'
   check('Fajr bell',bell());before=alertprefs('before');shot('bell-initial');check('early enable draft',switch(early));draft=alertprefs('draft');check('draft offset10',draft.get('offset_0')=='10');shot('early-draft');check('cancel draft',tap(cancel));after=alertprefs('cancel');check('cancel offset restored',after.get('offset_0')==before.get('offset_0'));check('reopen bell',bell());shot('after-cancel');check('early enable saved',switch(early));check('apply',tap(apply));check('offset10 persisted',alertprefs('applied').get('offset_0')=='10');check('reopen applied',bell());shot('applied-reopen');check('early disable draft',switch(early));check('draft offset0',alertprefs('disable-draft').get('offset_0')=='0');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check('back restores10',alertprefs('back').get('offset_0')=='10');check('reopen again',bell());check('early disable saved',switch(early));check('apply off',tap(apply));check('offset0 persisted',alertprefs('off').get('offset_0')=='0');bell();shot('off-reopen');time.sleep(5);shot('off-settled');swipe();time.sleep(2);shot('off-bottom');swipe(False);time.sleep(2);shot('off-return');tap(cancel)
+  check('minute dialog bell',bell());check('minute enable',switch(early))
+  current=10
+  for value in [1,30,60]:
+   label=('قبل الأذان بـ '+str(current)+' دقيقة') if lang=='ar' else (str(current)+' min before adhan')
+   check('minute open '+str(value),tap(label));check('minute input '+str(value),field(0,str(value)));hide_keyboard();check('minute save '+str(value),tap('Save' if lang=='en' else 'حفظ'));check('minute persisted '+str(value),alertprefs('minute-'+str(value)).get('offset_0')==str(value));shot('minute-'+str(value));current=value
+  check('minute cancel parent',tap(cancel));check('minute parent rollback0',alertprefs('minute-parent-cancel').get('offset_0')=='0')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():
