@@ -58,8 +58,15 @@ def db(n):
   c=sqlite3.connect(p);d={t:c.execute('SELECT * FROM '+t+' ORDER BY 1').fetchall() for t in ['dhikr_table','tag_table','dhikr_tag_cross_ref','dhikr_history']};c.close();databases[slug+'-'+n]=d;(out/'databases.json').write_text(json.dumps(databases,ensure_ascii=False,indent=2));return d
  except Exception as e:check(n+' database readable',False,str(e));return {}
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
+# API23 emulator can report boot_completed before encrypted-data restart.
+# Settle that first-boot transition before installing fixtures, then prove packages survive.
+api=int(adb('shell','getprop','ro.build.version.sdk').strip())
+if api==23:
+ time.sleep(120);adb('wait-for-device');adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard');adb('shell','input','keyevent','82')
 for a in ['original.apk','comparison.apk','widgethost.apk']:
  result=adb('install','-r','-g',a);(out/('install-'+a+'.txt')).write_text(result);assert check('install '+a,'Success' in result),result
+for package in ['com.wathakker.app','com.wathakker.app.compare','com.example.widgethost']:
+ path=adb('shell','pm','path',package);assert check('package survives boot '+package,'package:' in path),path
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['en','ar']:
@@ -88,3 +95,5 @@ for n,a in states.items():
  other='comparison-'+n[len('original-'):]
  if n.startswith('original-') and other in states:pairs.append(dict(scene=n[len('original-'):],same_tokens=a==states[other],original=a,comparison=states[other]))
 (out/'semantic-comparison.json').write_text(json.dumps(pairs,ensure_ascii=False,indent=2));print('failures',sum(not x['passed'] for x in checks),'checks',len(checks))
+
+assert all(x['passed'] for x in checks), 'See checks.json: failed checks are not workflow success'
