@@ -144,3 +144,8 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 -27checks0fail;12/16rawsemanticpairs. Four root prayer frames differ by sequential live clock, including crossing Iqama boundary; no boundary equivalence claim from these captures.
 -EN/light and AR/dark legacy location/files explainer denial persists stage3/done and no reask after restart; actual pairedframes inspected and explanations align.
 -Fresh onboarding after clear starts device-languageArabic in both priorlangsessions, then selectingEnglish/Next persists page1/languageen identically and reopens method page. This is not full bilingual onboardingcoverage.
+
+## Onboarding persisted-stage batch41163185279
+-55checks0fail,18/24rawsemanticpairs;18scenes align,2OSnotificationlabels differ only deliberate Comparison appname,4prayerrootframes use sequentialclock.
+-Seededpage3 calculation/Hanafi/confirmationback/reminderchoice/notificationdenial/filesdismiss and done/reopen verifiedENlight/ARdark;actualpairedpixelsinspected. app_prefsidentical, vibrationfalsepersisted.
+-Fajrlabeltap hit noninteractive label/root ancestor, not the switch: allalerts stayedtrue in both. Therefore no off-switch claim; corrected next finite harness to target switchcenter by Fajrrowbounds and assertenabled_0false. Missingfajr_prefsfilename also corrected.
