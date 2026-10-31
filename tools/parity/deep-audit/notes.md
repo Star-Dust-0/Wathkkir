@@ -134,3 +134,8 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Watchfont isolated target failure diagnosed exactly
 - Run41159823550:71checks52sharedfail,8/8semanticpairs equal. Prepressscroll moved both100pxbuttons to[95,133][195,233]and[259,133][359,233], excludedbyharnessy>180. No fontchangesoccurred. Removeunneededscroll and allow verified geometryy>80. This is testonly; no productchange. Clampverificationstillpending.
+
+## Font clamps verified and working environment recovered
+- Run41160998827:71checks0fail,8/8semanticpairs. Actual original/recoveredEN/ARpersistmax1.3/min.8andmaxreopen align. Pairedpixelsinspected. Earlierfailedtargetruns remain failures, not clamping evidence.
+- Workingfilesreset at04:55. Latest0441Drivearchives downloaded/verified and freshcomparisonclone restored. OriginalwatchAPKSHA256unchanged;main200dc32unchanged. Sourcebackupsfulfilled recoverypurpose. Localtoolchain/historicalscratch/evidencefiles must be reacquired as needed; no unrecorded completion claimed.
+- current-status.md separates today's scoped evidence from stale historical nativephone/status wording. SOURCE-ORIGINS.csv preserved as historical capture ledger, not falsely regenerated as exact original source.
