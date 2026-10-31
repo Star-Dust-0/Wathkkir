@@ -252,3 +252,7 @@ Historical originalOct20162046explicitlygloballyreplacedPrayerAlertDialog11sphel
 
 ## Bellinvalid/Iqama41196395358
 267checks0fail32/32rawsemanticpairs. Actualinvalid0/61/999Savekeepsnestedinputandparentoffset60unchanged;Cancelnestedkeeps60;IqamadraftparentCancelrestoresabsent/offset0,ApplytruepersistsandBackoffdraftrestores true. ENlightARdark. Actualpixelsinspected;inputcursorblink/sliderintermediateresidualnotwholepixelclaim.
+
+## Allsixbells41198538557
+195checks0fail24/24semanticpairs. Allsixactualshortenablepersist/longpress/IqamaabsentSunrise/vibrationfalseoverride/CancelremovesoverrideENlightARdark. Actualpixelsinspectedbothlocales. Dialogcroppixelcounts:[('ar-prayer-1-vibration.png', 621), ('en-prayer-4-initial.png', 0), ('ar-prayer-0-vibration.png', 0), ('en-prayer-3-vibration.png', 0), ('en-prayer-2-vibration.png', 0), ('ar-prayer-5-initial.png', 3116), ('ar-prayer-0-initial.png', 0), ('ar-prayer-2-vibration.png', 0), ('ar-prayer-5-vibration.png', 3300), ('en-prayer-5-initial.png', 0), ('en-prayer-5-vibration.png', 0), ('en-prayer-0-initial.png', 0), ('en-prayer-1-vibration.png', 0), ('ar-prayer-4-initial.png', 0), ('en-prayer-3-initial.png', 0), ('ar-prayer-2-initial.png', 0), ('ar-prayer-4-vibration.png', 0), ('en-prayer-1-initial.png', 0), ('ar-prayer-1-initial.png', 0), ('en-prayer-0-vibration.png', 0), ('ar-prayer-3-vibration.png', 0), ('en-prayer-4-vibration.png', 0), ('ar-prayer-3-initial.png', 0), ('en-prayer-2-initial.png', 0)]
+No actualmotor/allsixalarmdeliveryclaim.
