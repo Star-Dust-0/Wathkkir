@@ -1,5 +1,5 @@
 """Oct25 merge + Oct26 recovery acceptance: real hosts, paired pixels, taps, alarms."""
-import subprocess,time,pathlib,json,re,xml.etree.ElementTree as ET
+import subprocess,time,pathlib,json,re,os,xml.etree.ElementTree as ET
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[]
 def adb(*a):
  r=subprocess.run(['adb',*a],capture_output=True,timeout=70);return (r.stdout+r.stderr).decode(errors='replace')
@@ -23,7 +23,10 @@ adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo')
 adb('shell','am','force-stop','com.google.android.apps.nexuslauncher');adb('shell','input','keyevent','KEYCODE_BACK');adb('shell','appwidget','grantbind','--package','com.example.widgethost','--user','0')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
- prefs(pkg,'en');adb('shell','date','103112002026.00');adb('logcat','-c');host(pkg,'recover-homeB');time.sleep(6);shot(name+'-before');log=adb('logcat','-d');ids=re.findall(r'WidgetRecoveryAudit.*bound kind=[^ ]+ id=(\d+) ok=true',log);check(name+' four initial bindings',len(ids)==4);(out/(name+'-alarm-before.txt')).write_text(adb('shell','dumpsys','alarm'));adb('reboot');adb('wait-for-device')
+ prefs(pkg,'en');adb('shell','date','103112002026.00');adb('logcat','-c');host(pkg,'recover-homeB');time.sleep(6);shot(name+'-before');log=adb('logcat','-d');ids=re.findall(r'WidgetRecoveryAudit.*bound kind=[^ ]+ id=(\d+) ok=true',log);check(name+' four initial bindings',len(ids)==4);(out/(name+'-alarm-before.txt')).write_text(adb('shell','dumpsys','alarm'));adb('reboot');time.sleep(12);alive=subprocess.run(['pgrep','-f','qemu-system'],capture_output=True).returncode==0
+ if not alive:
+  (out/(name+'-emulator-restart.txt')).write_text('Emulator exited on adb reboot; restarting same AVD disk without wipe-data.');subprocess.Popen([os.environ['ANDROID_HOME']+'/emulator/emulator','-port','5554','-avd','test','-no-window','-gpu','swiftshader_indirect','-no-snapshot','-noaudio','-no-boot-anim'],stdout=(out/(name+'-coldboot-log.txt')).open('w'),stderr=subprocess.STDOUT)
+ subprocess.run(['adb','wait-for-device'],capture_output=True,timeout=240)
  for attempt in range(90):
   if adb('shell','getprop','sys.boot_completed').strip()=='1':break
   time.sleep(2)
