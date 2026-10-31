@@ -139,3 +139,8 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 - Run41160998827:71checks0fail,8/8semanticpairs. Actual original/recoveredEN/ARpersistmax1.3/min.8andmaxreopen align. Pairedpixelsinspected. Earlierfailedtargetruns remain failures, not clamping evidence.
 - Workingfilesreset at04:55. Latest0441Drivearchives downloaded/verified and freshcomparisonclone restored. OriginalwatchAPKSHA256unchanged;main200dc32unchanged. Sourcebackupsfulfilled recoverypurpose. Localtoolchain/historicalscratch/evidencefiles must be reacquired as needed; no unrecorded completion claimed.
 - current-status.md separates today's scoped evidence from stale historical nativephone/status wording. SOURCE-ORIGINS.csv preserved as historical capture ledger, not falsely regenerated as exact original source.
+
+## Permission refusal and onboarding resume finite batch41162208555
+-27checks0fail;12/16rawsemanticpairs. Four root prayer frames differ by sequential live clock, including crossing Iqama boundary; no boundary equivalence claim from these captures.
+-EN/light and AR/dark legacy location/files explainer denial persists stage3/done and no reask after restart; actual pairedframes inspected and explanations align.
+-Fresh onboarding after clear starts device-languageArabic in both priorlangsessions, then selectingEnglish/Next persists page1/languageen identically and reopens method page. This is not full bilingual onboardingcoverage.
