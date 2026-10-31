@@ -298,3 +298,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Patterns41222933968 valid live host
 152checks0fail36/36semanticpairs. SeparateprobechecksactualexistingOneUIhostlabel/norebind. All6patternsApplyprefs/reopenandlivehostseenENAR. Actual12hostpairsinspected; patternsvisuallymatch, but ENoriginal9:39/12:46versuscomparison11:39/2:46showsinitialtimezonefixtureordering contamination(initiallaunchbeforeCairotimezone). ARbothtimes11:39/2:46. Fixed200pxhighhostcropdiffsEN1886..1951,AR1..39pixels;notexactpixelparity. Movefixturetimezone/datebeforefirstlaunch;repeatsamefinitebatchwithoutproductedits.
+
+## Patterns41224242185
+152checks0fail36/36semanticpairs; actual6patternIDsApply/prefs/reopen/liveexistinghostENlightARdark. Actualall12hostpairsinspected,timezoneinitializationnowagrees. Fixedcrop(0,150,870,350):ARpattern10exact,other9pairs3..44pixels;ENpattern1/8residual1423/1715pixels;noexactpixelclaim. Differenceslocalizedprogressindicatorregionnotpatternbackground. Nextpaletteall5bar/5bg/4accentslivehostwithisolatedobserver,samefixture.
