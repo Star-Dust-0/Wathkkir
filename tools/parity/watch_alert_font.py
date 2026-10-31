@@ -65,14 +65,14 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    for n in root.iter('node'):
     if n.get('clickable')!='true':continue
     b=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
-    if len(b)==4 and 60<=b[2]-b[0]<=130 and 60<=b[3]-b[1]<=130 and b[1]>180 and b[3]<=454:opts.append((b,n))
+    if len(b)==4 and 60<=b[2]-b[0]<=130 and 60<=b[3]-b[1]<=130 and b[1]>80 and b[3]<=454:opts.append((b,n))
    if len(opts)!=2:return False
    opts.sort();b=opts[-1 if (plus == (lang=='en')) else 0][0];adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.5);return True
   for i in range(5):
-   launch(3,8);scroll();check(slug+' plus'+str(i),sizebutton(True))
+   launch(3,8);check(slug+' plus'+str(i),sizebutton(True))
   shot(slug+'-font-max');prefs(slug+'-font-max-prefs');launch(3,8);shot(slug+'-font-max-reopen')
   for i in range(8):
-   launch(3,8);scroll();check(slug+' minus'+str(i),sizebutton(False))
+   launch(3,8);check(slug+' minus'+str(i),sizebutton(False))
   shot(slug+'-font-min');prefs(slug+'-font-min-prefs');reset()
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'))
 comparisons=[]

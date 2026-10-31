@@ -131,3 +131,6 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Watch font/alert finite batch
 - Run41158587480:87checks32sharedfonttargetfailures,16/16semanticpairs equal. Actual alarmUIFajr/Isha EN/ARlaunch/dismiss frames align; noalarmfire/soundclaim. Fontcounteraction target assumed plusright inRTL and strictunclipped squarebounds; sharedfailuresfromresizing/roundclipping, actualsavedstatesmatch original. Capturesnamedmax/minareNOTactualextrema(.8ARmaxlabel,1.2ARminlabel,1.1EN). RetainrawnamesbutdoNOTcallclampsproven. CorrectRTLdirection,bottomclippedbuttonbounds,reopenandscrollbeforeeachpress;nextbatchfontonly.
+
+## Watchfont isolated target failure diagnosed exactly
+- Run41159823550:71checks52sharedfail,8/8semanticpairs equal. Prepressscroll moved both100pxbuttons to[95,133][195,233]and[259,133][359,233], excludedbyharnessy>180. No fontchangesoccurred. Removeunneededscroll and allow verified geometryy>80. This is testonly; no productchange. Clampverificationstillpending.
