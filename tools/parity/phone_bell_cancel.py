@@ -95,7 +95,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   for value in [1,30,60]:
    label=('قبل الأذان بـ '+str(current)+' دقيقة') if lang=='ar' else (str(current)+' min before adhan')
    check('minute open '+str(value),tap(label));check('minute input '+str(value),field(0,str(value)));hide_keyboard();check('minute save '+str(value),tap('Save' if lang=='en' else 'حفظ'));check('minute persisted '+str(value),alertprefs('minute-'+str(value)).get('offset_0')==str(value));shot('minute-'+str(value));current=value
-  check('minute cancel parent',tap(cancel));check('minute parent rollback0',alertprefs('minute-parent-cancel').get('offset_0')=='0')
+  for bad in ['0','61','999']:
+   label=('قبل الأذان بـ 60 دقيقة') if lang=='ar' else '60 min before adhan'
+   check('invalid open '+bad,tap(label));check('invalid input '+bad,field(0,bad));hide_keyboard();check('invalid Save tapped '+bad,tap('Save' if lang=='en' else 'حفظ'));check('invalid stays nested '+bad,any(n.get('class')=='android.widget.EditText' for n in ET.fromstring(tree()).iter('node')));check('invalid unchanged '+bad,alertprefs('invalid-'+bad).get('offset_0')=='60');shot('invalid-'+bad);check('invalid Cancel '+bad,tap(cancel));check('invalid Cancel still60 '+bad,alertprefs('invalid-cancel-'+bad).get('offset_0')=='60')
+  iqamaLabel='Iqama reminder' if lang=='en' else 'تنبيه الإقامة'
+  check('Iqama draft on',switch(iqamaLabel));check('Iqama draft true',alertprefs('iqama-draft').get('iqama_0')=='true');shot('iqama-draft');check('minute cancel parent',tap(cancel));rollback=alertprefs('minute-parent-cancel');check('minute parent rollback0',rollback.get('offset_0')=='0');check('Iqama parent rollback',rollback.get('iqama_0') is None)
+  check('Iqama reopen',bell());check('Iqama enable save',switch(iqamaLabel));check('Iqama Apply',tap(apply));check('Iqama saved true',alertprefs('iqama-applied').get('iqama_0')=='true');check('Iqama reopen saved',bell());shot('iqama-applied');check('Iqama draft disable',switch(iqamaLabel));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check('Iqama Back restores true',alertprefs('iqama-back').get('iqama_0')=='true')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():
