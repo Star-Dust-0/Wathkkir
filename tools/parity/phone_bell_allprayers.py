@@ -97,8 +97,15 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    node=next((n for n in ET.fromstring(tree()).iter('node') if n.get('content-desc')=='bell_'+str(prayer)),None)
    if node is None:check('bell node '+str(prayer),False);continue
    b=rect(node);cx=str((b[0]+b[2])//2);cy=str((b[1]+b[3])//2);adb('shell','input','swipe',cx,cy,cx,cy,'1200');time.sleep(3)
-   labels=[n.get('text') for n in ET.fromstring(tree()).iter('node')];check('dialog '+str(prayer),('At adhan time' if lang=='en' else 'عند الأذان') in labels);check('Iqama presence '+str(prayer),(('Iqama reminder' if lang=='en' else 'تنبيه الإقامة') in labels)==(prayer!=1));shot('prayer-'+str(prayer)+'-initial')
+   labels=[n.get('text') for n in ET.fromstring(tree()).iter('node')];check('dialog '+str(prayer),('At adhan time' if lang=='en' else 'عند الأذان') in labels);check('Iqama presence '+str(prayer),(('Iqama reminder' if lang=='en' else 'تنبيه الإقامة') in labels)==(prayer!=1));check('DND presence '+str(prayer),(('Auto silence during prayer' if lang=='en' else 'صامت تلقائي أثناء الصلاة') in labels)==(prayer!=1));shot('prayer-'+str(prayer)+'-initial')
    check('vibration draft '+str(prayer),switch(vibration));check('vibration override false '+str(prayer),alertprefs('vib-'+str(prayer)).get('vib_ov_'+str(prayer))=='false');shot('prayer-'+str(prayer)+'-vibration');check('cancel '+str(prayer),tap(cancel));check('vibration rollback '+str(prayer),alertprefs('cancel-'+str(prayer)).get('vib_ov_'+str(prayer)) is None)
+   def reopen_current():
+    n=next((n for n in ET.fromstring(tree()).iter('node') if n.get('content-desc')=='bell_'+str(prayer)),None)
+    if n is None:return False
+    b=rect(n);x=str((b[0]+b[2])//2);y=str((b[1]+b[3])//2);adb('shell','input','swipe',x,y,x,y,'1200');time.sleep(2);return any(n.get('text')==vibration for n in ET.fromstring(tree()).iter('node'))
+   check('vibration reopen '+str(prayer),reopen_current());check('vibration false again '+str(prayer),switch(vibration));check('vibration Apply '+str(prayer),tap(apply));check('vibration false persisted '+str(prayer),alertprefs('vib-applied-'+str(prayer)).get('vib_ov_'+str(prayer))=='false');check('vibration saved reopen '+str(prayer),reopen_current());shot('prayer-'+str(prayer)+'-applied')
+   reset='Reset to app settings' if lang=='en' else 'العودة لإعدادات التطبيق';check('reset draft '+str(prayer),tap(reset));check('reset removes override '+str(prayer),alertprefs('reset-draft-'+str(prayer)).get('vib_ov_'+str(prayer)) is None);adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check('Back restores override '+str(prayer),alertprefs('reset-back-'+str(prayer)).get('vib_ov_'+str(prayer))=='false');check('reset reopen '+str(prayer),reopen_current());check('reset saved '+str(prayer),tap(reset));check('reset Apply '+str(prayer),tap(apply));check('reset persisted '+str(prayer),alertprefs('reset-applied-'+str(prayer)).get('vib_ov_'+str(prayer)) is None)
+
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():
