@@ -153,3 +153,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Onboarding actual switch correction41164184142
 -71checks0fail,18/24rawsemanticpairs; actual FajroffswitchpixelsalignENlight/ARdark. enabled_0false, other4alertstrue, vibrationfalse, asr_juristic1, completedonboardingpermissionflagsallidenticaloriginal/recovered. Sixremainingrawpairs are2OSapp-labeldifferencesand4sequentialliveprayerrootframes.
 -Seededpage3scopeonly, not GPS/citynetwork or fullpermissionallowmatrix. Closingthisfinitebatch; widerenginecoordinatesnext.
+
+## Wider coordinates41165122005 invalid fixture
+-5670sameoutputcases/0mismatches are NOT coordinatecoverage: sensitivityguard failed, every city identical to Cairo in both. ForeignAPKenginecode is loaded under verificationhostUID, so targetappprivateprefs cannot be assumed readable even when adbrootreadback succeeds.
+-Nextcorrectedprobeuses explicit ContextWrapper wear_prefsdependency fixture with suppliedlatloninhostprefs. This compares actual engine functions under controlled inputs, not targetapppreference-storageintegration. Sensitivitymustpass.

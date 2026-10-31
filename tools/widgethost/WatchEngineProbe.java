@@ -6,6 +6,14 @@ public class WatchEngineProbe extends Instrumentation {
  @Override public void onStart(){Bundle out=new Bundle();try{
  String pkg=args.getString("pkg");boolean original=args.getString("original","false").equals("true");
  Context c=getContext().createPackageContext(pkg,Context.CONTEXT_INCLUDE_CODE|Context.CONTEXT_IGNORE_SECURITY);
+ // Explicit dependency fixture: loaded foreign code runs under host UID and cannot
+ // read target app-private preferences. Supply only wear_prefs through a wrapper.
+ if(args.containsKey("lat") && args.containsKey("lon")){
+ final android.content.SharedPreferences fixture=getContext().getSharedPreferences("engine_fixture",0);
+ fixture.edit().clear().putInt("locmode",0).putLong("lat",Double.doubleToLongBits(Double.parseDouble(args.getString("lat")))).putLong("lon",Double.doubleToLongBits(Double.parseDouble(args.getString("lon")))).commit();
+ final Context target=c;c=new android.content.ContextWrapper(target){@Override public android.content.SharedPreferences getSharedPreferences(String name,int mode){return name.equals("wear_prefs")?fixture:super.getSharedPreferences(name,mode);}};
+ out.putString("fixture",fixture.getAll().toString());
+ }
  ClassLoader cl=c.getClassLoader();Class<?> cls=cl.loadClass(original?"d21":"com.wathakker.wear.Prayer");Object instance=original?null:cls.getField("INSTANCE").get(null);
  Method method=cls.getDeclaredMethod(original?"c":"day",Context.class,int.class,long.class);method.setAccessible(true);
  JSONArray all=new JSONArray();String[] zones={"Africa/Cairo","Europe/London","America/New_York","Australia/Sydney","UTC"};
