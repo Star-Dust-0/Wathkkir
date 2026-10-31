@@ -156,7 +156,7 @@ fun PatternSection(selected: Int, onPick: (Int) -> Unit) {
 }
 
 @Composable
-fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, currentTapOpens: Boolean = true, showColors: Boolean = true, showPattern: Boolean = true, onApply: (String, String, Int, Int, Boolean) -> Unit, onNeedFilesPermission: () -> Unit = {}) {
+fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, currentTapOpens: Boolean = true, refreshable: Boolean = false, showColors: Boolean = true, showPattern: Boolean = true, onApply: (String, String, Int, Int, Boolean) -> Unit, onNeedFilesPermission: () -> Unit = {}) {
     val cs = MaterialTheme.colorScheme
     // Taps only select; nothing is saved or closed until Apply (One UI style).
     var barSel by remember { mutableStateOf(current) }
@@ -201,7 +201,7 @@ fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, cu
                 Text(L10n.t(S.WidgetTapTitle), color = cs.onSurfaceVariant, fontSize = 13.sp)
                 Spacer(Modifier.height(8.dp))
                 com.example.ui.oneui.OneUISegmented(
-                    options = listOf(L10n.t(S.WidgetTapOpenApp), L10n.t(S.WidgetTapNothing)),
+                    options = listOf(L10n.t(S.WidgetTapOpenApp), L10n.t(if (refreshable) S.WidgetTapRefresh else S.WidgetTapNothing)),
                     selected = if (tapOpens) 0 else 1,
                     onSelect = { tapOpens = it == 0 }
                 )
@@ -243,6 +243,12 @@ class WidgetConfigActivity : ComponentActivity() {
             "com.example.widget.GregorianWidgetProvider", "com.example.widget.HijriWidgetProvider",
             "com.example.widget.PillWidgetProvider"
         )
+        // 3.4.2: remaining-time/progress widgets refresh on tap; date/schedule keep Nothing.
+        val refreshable = prov in setOf(
+            "com.example.widget.HeroWidgetProvider", "com.example.widget.NextPrayerWidgetProvider",
+            "com.example.widget.PrayerBarWidgetProvider", "com.example.widget.ClockWidgetProvider",
+            "com.example.widget.PillWidgetProvider", "com.example.widget.OneUIWidgetProvider"
+        )
         val sp = getSharedPreferences("fajr_prefs", MODE_PRIVATE)
         val curBar = (sp.getString(keyFor("widget_bar_color"), null)
             ?: sp.getString("widget_bar_color", "auto") ?: "auto").let { v -> if (options.any { o -> o.first == v }) v else "auto" }
@@ -271,11 +277,12 @@ class WidgetConfigActivity : ComponentActivity() {
                     showColors = !decorated && !tapOnly,
                     showPattern = decorated,
                     onNeedFilesPermission = { com.example.ui.PermissionFlow.requestFilesIfNeeded(this@WidgetConfigActivity) },
-                    currentTapOpens = sp.getString(keyFor("widget_tap"), "open") != "none",
+                    currentTapOpens = sp.getString(keyFor("widget_tap"), "open") == "open",
+                    refreshable = refreshable,
                     onApply = { bar, bg, pat, accent, tap ->
                         val ed = sp.edit()
                         if (!tapOnly) ed.putString(keyFor("widget_bar_color"), bar).putString(keyFor("widget_bg_color"), bg).putInt(keyFor("widget_pattern"), pat).putInt(keyFor("widget_oneui_color"), accent)
-                        ed.putString(keyFor("widget_tap"), if (tap) "open" else "none").apply()
+                        ed.putString(keyFor("widget_tap"), if (tap) "open" else if (refreshable) "refresh" else "none").apply()
                         WidgetUpdater.INSTANCE.updateAll(this@WidgetConfigActivity)
                         com.example.lockwidgets.HomeWidgets.updateAll(this@WidgetConfigActivity)
                         setResult(RESULT_OK, Intent().putExtra("appWidgetId", appWidgetId))
