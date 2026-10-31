@@ -161,3 +161,9 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Actual watch engine coordinate dependency grid41166141457
 -5670cases34020exact-msoutputs,0mismatch.7coordinatefixtures(Cairo/London/NewYork/Sydney/Quito/Tromso/CapeTown),5zones,9DST/leapdates,6hours,3dayoffsets. AllnonCairofixtureschange810/810casesinboth, so sensitivityguardpasses.
 -ExplicitContextWrapperwear_prefsdependencyfixture, fixturelatlonrecordedandchecked. Actualoriginal/recoveredenginefunctioncode; notappstorageorphone/GPSdeliveryintegration. FixedEgyptianmethod,noallmethodclaim.
+
+## Phone statistics controlled history41167184724
+-39checks0fail,23/24semanticpairs. FourcontrolledRoomhistories(empty/today/streakgap/yesterdaystreak)readbackexactacrossallfouroriginal/recoveredENlightARdark sessions. Actualpairedframesinspected.
+-Scopedcounts(today/week/month/streak/total)align:empty0;today3/3/3/1/3;streakgap1/4/5/3/6;yesterday0/4/4/3/5. OneENlowerframehasdifferentintermediatescrolloffset, notcontentverdict.
+-Actualworkingresetat06:21recoveredfrom0607Drivebackup/freshGitclone;main200dc32unchanged.
+-NextsamefinitehistorysuiteAPI23/36matrix, API34currentproofnotassumedacrossOSversions.
