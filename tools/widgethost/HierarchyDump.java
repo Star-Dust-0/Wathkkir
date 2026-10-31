@@ -25,7 +25,7 @@ public class HierarchyDump extends Instrumentation {
   Rect r=new Rect();n.getBoundsInScreen(r);
   s.append("<node class=\"").append(esc(n.getClassName())).append("\" text=\"").append(esc(n.getText())).append("\" content-desc=\"").append(esc(n.getContentDescription()))
    .append("\" bounds=\"[").append(r.left).append(",").append(r.top).append("][").append(r.right).append(",").append(r.bottom)
-   .append("]\" clickable=\"").append(n.isClickable()).append("\" enabled=\"").append(n.isEnabled()).append("\">");
+   .append("]\" clickable=\"").append(n.isClickable()).append("\" enabled=\"").append(n.isEnabled()).append("\" range=\"").append(n.getRangeInfo()==null?"":n.getRangeInfo().getMin()+","+n.getRangeInfo().getMax()+","+n.getRangeInfo().getCurrent()).append("\">");
   for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);if(c!=null){node(c,s);c.recycle();}}
   s.append("</node>");
  }
