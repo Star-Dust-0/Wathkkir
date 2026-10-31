@@ -104,3 +104,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 
 ## Paired actual watch APK engine boundary verification
 - Run41147235416:810paired actual original d21.c vs recovered Prayer.day inputs,0mismatches across exact6output milliseconds per input(4860times).5zones(Cairo/London/NewYork/Sydney/UTC),9dates(DSTand leap),6local hours,3dayoffsets,default Cairocoords and Egyptian method. This verifies the restored day-anchor behavior within that finite grid on WearAPI33TZDB. No claim for allcoordinates/methods/OSes or next/prev selection, notifications, sensor/hardware/motion. Original fixture runs unchanged; reflection no longer blocked. Invalid earlier setup runs remain failure evidence.
+
+## Global digit import replay finite runtime check
+- Run41148704469:83checks0fails,20/28raw semantic pairs equal. All8non-equal scenes attributable to moving prayer countdown(4), differing settings scroll offsets(3), onecalendar lower-text visibility(1), not yet normalized. Actual pixels inspected: AR Hindi Tasbeeh/converter/Hisn, AR Latin calendar, EN Hindi settings. Digit glyphs and scene content align in these samples. Strict scroll/settling/endpoints remain an open item; do not report28/28or whole-phone visual parity. Last AR Latin settings shot even landed About, so route/foreground capture needs improvement there.
+- Next finite converter leap/invalid/year/direction/reopen cases and calendar absolute-end/events/reminder toggle/persistence. Fresh identical date fixture used to separate wall-clock changes from output formatting.
