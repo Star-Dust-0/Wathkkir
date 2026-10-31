@@ -112,3 +112,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Date/calendar finite parity
 - Run41151207220:71checks0fails,32/32semantic scene pairs equal. Actual frames inspected for leap29Feb2028conversion, invalid30Febnoresult, Hijri Today reverse, calendar absolute end and event reminder reopen. One reminder survives force-stop/reopen in both; direct prefs capture filename was wrong, so direct persisted file proof deferred. Year bounds/nonleap/emptyreopen scenes semantically align too. No claim for everydate/calendar algorithm or notification firing.
 - Next settings toggle/slider/digit selector and exact persisted reminder files. Add verification-only accessibility scroll endpoint operation to separate user swipe trajectories from absolute-end alignment.
+
+## Settings controls initial finite check and test corrections
+- Run41153476528:47checks8fail,15/16semanticpairs equal. Shared failures are wrongArabiclockhelp label and nonexistentSeekBar role(customslider), no product mismatch verdict. Notification vibration false/reopen/true exactly matches prefs. Event reminder IDs exactly match isra_miraj on and empty off in realfajr_prefs. Need captureapp_haptics separately, corrected next. ENendpoint differs; test boolean result serialization may be absent, changed instrumentation output to explicit string plus per-scroll evidence.
+- Next corrected finite repeat verifies shared failing paths, custom slider labels/actualscale, persistedhaptics and absolute-end. No broad rerun or product source change from setup failures.
