@@ -72,8 +72,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   def switch(label):
    root=ET.fromstring(tree());title=next((n for n in root.iter('node') if n.get('text')==label),None)
    if title is None:return False
-   b=rect(title);targets=[n for n in root.iter('node') if n.get('clickable')=='true' and 0<rect(n)[2]-rect(n)[0]<200 and abs((rect(n)[1]+rect(n)[3]-b[1]-b[3])//2)<40]
-   return len(targets)==1 and touch(targets[0])
+   parents={c:p for p in root.iter() for c in p};row=title
+   while row in parents:
+    candidates=[n for n in row.iter('node') if n.get('clickable')=='true' and 0<rect(n)[2]-rect(n)[0]<200 and n.get('class')=='android.view.View']
+    if len(candidates)==1:return touch(candidates[0])
+    row=parents[row]
+   return False
   def alertprefs(n):
    x=adb('shell','cat',folder+'/prayer_alerts.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
    try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
