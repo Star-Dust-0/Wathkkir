@@ -338,33 +338,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                             .padding(6.dp)
                     )
                 }
-                Spacer(Modifier.height(4.dp))
-                Text(L10n.t(S.AlarmVolume), color = cs.onSurfaceVariant, fontSize = 12.sp)
-                Slider(
-                    value = prefs.alarmVolume / 100f,
-                    onValueChange = { prefs.alarmVolume = (it * 100).toInt(); tick++ },
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(L10n.t(S.SnoozeDuration), color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Medium)
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        RoundBtn(Icons.Outlined.Remove, prefs.maxDurationMinutes > 1) {
-                            prefs.maxDurationMinutes = prefs.maxDurationMinutes - 1; tick++
-                        }
-                        Text(
-                            L10n.minutesCount(prefs.maxDurationMinutes),
-                            color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(horizontal = 10.dp)
-                        )
-                        RoundBtn(Icons.Outlined.Add, prefs.maxDurationMinutes < 30) {
-                            prefs.maxDurationMinutes = prefs.maxDurationMinutes + 1; tick++
-                        }
-                    }
-                }
+
             }
         }
     }
