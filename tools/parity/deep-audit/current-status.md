@@ -1,4 +1,4 @@
-# Current audit status - 2026-10-31 19:07 Africa/Cairo
+# Current audit status - 2026-10-31 21:09 Africa/Cairo
 
 Incomplete. Comparison branch only. No release. This file supersedes historical status entries where they conflict; old entries record their own time, not today's verdict.
 
@@ -43,6 +43,12 @@ Counts are scoped evidence, never total parity. Green workflow status alone is n
 - MissingexactOct26WidgetConfigActivityrefreshread/save/labeloperationrestored2eceec7. Hero/OneUI/PillRefreshandSchedule/HijriNothingselectionBack/Apply/reopen223/0,60/60pairs (41214007984). Palette83/0then179/0,28/28pairs (41216500288/41217774333).
 - SixOneUIpatternIDs0/1/8/9/10/11actualselectionApplyprefspass103/0,24/24draft/reopenpairs (41219100816).12host-labeledpicturesarephoneapp,notwidgethost. NoactualpostApplyhostrenderproof.
 -41220393641exposedobserverkillinghost;41221651914isolatedprobehadregistrationfailure. Bothretained,notproductdefects. Correctobserverandrepeatfinitehostrenderbatch beforeusingitasevidence.
+
+## Host and boundary follow-through
+- Isolatedobserverworked41224242185:152/0,36/36pairs,all6patternIDsactualexistinghostENAR. Onecroptexact,nine3..44pixelresidual,twoEN1423/1715progressregionresidual.
+- Actualpalettehost41225525891:292/0,56/56pairs,5bar/5bg/4accents;representativepixelsinspected,nofullpixelclaim.
+- Delete41227195028attempt2:164/0,normalizedprefsidentical4sessions;pattern/accentretainedinboth,bar/bg/tapremoved,lastalarmscanceled. Attempt1builddependencyresolutionfailurepreserved.
+- ActualawakeAlarmManagerboundary41230215176then3-chain41231462125:23/71checks0fail,12realchain deliveriesENARtargets12:05/14:52/15:12agree;actualpixelsinspected. Notphysicaldozeproof.
 
 ## Open
 - Thin watchtile arc-edge raster residual2346pixels eachlocale; not approved away.
