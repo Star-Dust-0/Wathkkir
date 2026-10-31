@@ -95,6 +95,7 @@ public class MainActivity extends Activity {
         if ("recover-dates".equals(mode)) selected=new String[][]{{"Hijri","82","90"},{"Gregorian","82","90"}};
         if ("recover-lockA".equals(mode)) selected=new String[][]{{"Lock:Day","123","54"},{"Lock:Tasbih","123","54"},{"Lock:Hijri","123","54"},{"Lock:Gregorian","123","54"}};
         if ("recover-lockB".equals(mode)) selected=new String[][]{{"Lock:Next","123","54"},{"Lock:Bar","123","54"},{"Lock:Countdown","123","54"},{"Lock:CountdownClean","123","54"}};
+        if ("single".equals(mode)) selected=new String[][]{{getIntent().getStringExtra("kind"),"330","90"}};
         for (String[] w : selected) {
             String kind = w[0];
             int wd = Integer.parseInt(w[1]), ht = Integer.parseInt(w[2]);
