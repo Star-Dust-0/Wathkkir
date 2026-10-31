@@ -201,3 +201,7 @@ New confirmed source replay omission: Settings.patterns retained removed option3
 ## Actual notification snooze41176663090
 -75checks0fail,6/10rawsemanticpairs. ActualSnoozebuttonschedulesRTC_WAKEUPat10mininall4sessions,clockadvanceactualredeliveryandReadappendsexactlyonehistory/count1. PairedredeliverypixelsinspectedalignexceptintentionalComparisonlabel/OSindicators. No deepidle/physicalaudio claim.
 -Nexttagrename/deleteCancel/Saveandlinked-dhikrpreservation;linkiscontrolledDBfixture,mutationsactualUI.
+
+## Tag mutations41178422264 invalid fixture (79checks20fail)
+-ControlledfixturecopiedonlybaseSQLitefile, missingcreatedtagstillinWAL; injectedlinkpointedtononexistenttag5inbothapps. ActualUIthenedited/deleteddefaulttag4, notfixturetag. Do notconverttheseassertfailuresintoproductdefects.
+-CorrectedSQLitebackupfromcompletepulledcreated-dbdirectory(automaticWALreplay),addedtag/linkreadbackbeforeUI. No productpatch.
