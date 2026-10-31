@@ -92,13 +92,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    x=adb('shell','cat',folder+'/fajr_prefs.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
    try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name','').startswith('widget_')}
    except:return {}
-  for kind in ['Hero','OneUI','Pill']:
+  for kind in ['Hero','OneUI','Pill','Schedule','Hijri']:
    adb('logcat','-c');adb('shell','am','start','-S','-W','-n','com.example.widgethost/.MainActivity','--es','package',pkg,'--es','mode','single','--es','kind',kind);time.sleep(5);ids=re.findall(r'WidgetRecoveryAudit.*bound kind='+kind+r' id=(\d+) ok=true',adb('logcat','-d'));check(kind+' bind',len(ids)==1)
    if not ids:continue
    wid=ids[0]
    def config():
     adb('shell','am','start','-W','-n',pkg+'/com.example.widget.WidgetConfigActivity','--ei','appWidgetId',wid);time.sleep(2)
-   before=wp(kind+'-before');config();shot(kind+'-config');swipe();shot(kind+'-config-lower');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check(kind+' Back no widget prefs change',wp(kind+'-back')==before);config();swipe();shot(kind+'-apply-before');check(kind+' Apply tapped',tap('Apply' if lang=='en' else 'تطبيق'));time.sleep(1);after=wp(kind+'-applied');check(kind+' Apply tap open saved',after.get('widget_tap_'+wid)=='open');config();shot(kind+'-reopen');adb('shell','input','keyevent','KEYCODE_BACK')
+   before=wp(kind+'-before');config();shot(kind+'-config');swipe();shot(kind+'-config-lower');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check(kind+' Back no widget prefs change',wp(kind+'-back')==before);config();swipe();shot(kind+'-apply-before');check(kind+' Apply tapped',tap('Apply' if lang=='en' else 'تطبيق'));time.sleep(1);after=wp(kind+'-applied');check(kind+' Apply tap open saved',after.get('widget_tap_'+wid)=='open');config();shot(kind+'-reopen');swipe();refreshable=kind in ['Hero','OneUI','Pill'];label=('Refresh display' if lang=='en' else 'تحديث العرض') if refreshable else ('Nothing' if lang=='en' else 'لا شيء');check(kind+' option draft',tap(label));shot(kind+'-option-draft');adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);check(kind+' Back discards option',wp(kind+'-option-back').get('widget_tap_'+wid)=='open');config();swipe();check(kind+' select saved option',tap(label));check(kind+' save option Apply',tap('Apply' if lang=='en' else 'تطبيق'));time.sleep(1);check(kind+' option persisted',wp(kind+'-option-applied').get('widget_tap_'+wid)==('refresh' if refreshable else 'none'));config();swipe();shot(kind+'-option-reopen');check(kind+' reopen Apply',tap('Apply' if lang=='en' else 'تطبيق'));check(kind+' reopening preserves option',wp(kind+'-option-reapplied').get('widget_tap_'+wid)==('refresh' if refreshable else 'none'))
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():
