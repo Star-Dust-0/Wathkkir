@@ -289,3 +289,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Patterns41219100816
 103checks0fail.24/36semanticpairs:24draft/reopen matched;12host-labeledcaptures actually returned phoneMainActivity,not host,with ticking countdowndiff. Pixels confirm. SixpatternIDsactualselection/prefsApplypassENAR,but nohostrenderproof. Next audit explicitly reorders existinghost toforeground,assertslabelandnorebind,and resetsfixtureclockbeforecapture.
+
+## Patterns41220393641 harness isolation failure
+51checks24fail preserved. Log proves HierarchyDump instrumentation force-stops widgethost on every tree read; previousharness could test configvalue but cannotretainlivehost. Explicitreorder re-createddefault host anddeletedboundOneUI. No productverdict. Isolate identicalreadonlyHierarchyDump into separateverificationonlyuiprobe application; original/recoveredapp untouched. Then repeat original6patternfinitebatch withactualexistinghost checks.

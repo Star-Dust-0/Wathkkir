@@ -9,7 +9,7 @@ def adb(*a):
 def check(n,ok,detail=''):
  checks.append(dict(name=slug+' '+n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(slug,n,ok,detail,flush=True);return bool(ok)
 def tree():
- s=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump');return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+ s=adb('shell','am','instrument','-w','com.example.uiprobe/com.example.widgethost.HierarchyDump');return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
 def shot(n):
  n=slug+'-'+n;x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=25));states[n]=[(z.get('text',''),z.get('content-desc',''),z.get('checked',''),z.get('enabled','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
 def rect(n):return list(map(int,re.findall(r'\d+',n.get('bounds',''))))
@@ -58,7 +58,7 @@ def db(n):
   c=sqlite3.connect(p);d={t:c.execute('SELECT * FROM '+t+' ORDER BY 1').fetchall() for t in ['dhikr_table','tag_table','dhikr_tag_cross_ref','dhikr_history']};c.close();databases[slug+'-'+n]=d;(out/'databases.json').write_text(json.dumps(databases,ensure_ascii=False,indent=2));return d
  except Exception as e:check(n+' database readable',False,str(e));return {}
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
-for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
+for a in ['original.apk','comparison.apk','widgethost.apk','uiprobe.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['en','ar']:
