@@ -295,3 +295,6 @@ No actualmotor/allsixalarmdeliveryclaim.
 
 ## Probe41221651914 setup failure
 32checks24fail; actuallog: Unabletofindinstrumentationinfo com.example.uiprobe/com.example.widgethost.HierarchyDump. ApplicationId suffix resolvesrelative instrumentationclass to newpackage, so use fullyqualified originalclass names; tree retrieval nowfailsfast retainingrawoutput instead of yieldingemptyhierarchy. No productverdict. Earlier41205501138taps and41207839644/41210239758resize scripts use dumpsys/screenshots,notinstrumentation;their finitehostclaims are unaffected. Configpalette scripts usedinstrumentation,so onlyselection/prefs andconfigscreens remain supported,notlivehostcontinuity.
+
+## Patterns41222933968 valid live host
+152checks0fail36/36semanticpairs. SeparateprobechecksactualexistingOneUIhostlabel/norebind. All6patternsApplyprefs/reopenandlivehostseenENAR. Actual12hostpairsinspected; patternsvisuallymatch, but ENoriginal9:39/12:46versuscomparison11:39/2:46showsinitialtimezonefixtureordering contamination(initiallaunchbeforeCairotimezone). ARbothtimes11:39/2:46. Fixed200pxhighhostcropdiffsEN1886..1951,AR1..39pixels;notexactpixelparity. Movefixturetimezone/datebeforefirstlaunch;repeatsamefinitebatchwithoutproductedits.
