@@ -2,6 +2,7 @@
     <queries><package android:name="com.wathakker.app"/><package android:name="com.wathakker.app.compare"/></queries>
     <instrumentation android:name=".HierarchyDump" android:targetPackage="com.example.widgethost"/>
     <instrumentation android:name=".WatchEngineProbe" android:targetPackage="com.example.widgethost"/>
+    <instrumentation android:name=".ScrollAction" android:targetPackage="com.example.widgethost"/>
     <application android:label="WidgetHost" android:icon="@android:drawable/sym_def_app_icon" android:theme="@android:style/Theme.Material.NoActionBar">
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
