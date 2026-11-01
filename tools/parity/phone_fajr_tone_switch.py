@@ -105,7 +105,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   assert check('system tone actual tap',tap('Alarm tone' if lang=='en' else 'نغمة المنبه')),'No tone row'
   time.sleep(2);shot('tone-categories')
   # System provider labels are English on the shared emulator OS.
-  assert check('Pixel Sounds category actual tap',tap('Pixel Sounds')),'No recorded category'
+  assert check('My Sounds category actual tap',tap('My Sounds')),'No recorded local category'
   time.sleep(2);shot('tone-list')
   root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
   # Select an actual enabled visible sound row, grounded in this hierarchy.
@@ -120,11 +120,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    # Android soundpicker native row uses a clickable ViewGroup with title text.
    for n in root.iter('node'):
     b=rect(n);texts=[c.get('text') for c in n.iter('node') if c.get('text')]
-    if n.get('clickable')=='true' and n.get('enabled')=='true' and len(b)==4 and 280<b[1]<1800 and b[3]<2300 and texts and not any(t in ['Save','Pixel Sounds','Search'] for t in texts):candidates.append(n)
+    if n.get('clickable')=='true' and n.get('enabled')=='true' and len(b)==4 and 280<b[1]<1800 and b[3]<2300 and texts and not any(t in ['Save','SAVE','My Sounds','Search','Add sound'] for t in texts):candidates.append(n)
   assert check('actual sound row found',bool(candidates),str([[(c.get('text'),c.get('class')) for c in n.iter('node')] for n in candidates[:2]])),'No sound row'
   check('actual sound row selected',touch(candidates[0]));time.sleep(1);shot('tone-selected')
   # Capture before committing; only provider Save/Done may return a selection.
-  committed=tap('Save') or tap('Done')
+  committed=tap('SAVE') or tap('Save') or tap('Done')
   assert check('actual tone Save',committed),'No provider Save/Done'
   time.sleep(2);shot('tone-chosen');p=fp('tone-chosen');uri=p.get('ringtone_uri','');title=p.get('ringtone_title','')
   check('tone nonempty URI saved',bool(uri),uri);check('tone nonempty title saved',bool(title),title)
