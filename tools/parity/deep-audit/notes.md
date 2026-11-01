@@ -402,3 +402,6 @@ LocationCalculationScreenlargergapconfirmed:originalsubtitleprayer-times,insets/
 
 ## Manualaliasreturn41268042855
 143checks0fail26/26pairs. LondonA/CairoBaliasesbothsaved,actualreturnArestoresAalias,resetAremovesonlyAkey,Baliasstillshowsafterreturn/reopenAR/EN. Actual4returnpairsinspected,clock/scrolloffsetdifferencesremain. NotGPS/geocodertransportproof.
+
+## Asrhighlat41269828135
+259checks0fail48/48pairs:all2Asr4highlatoptionsAR/ENactualdraftnotwritten,alternatingCancel/Backrollback,Applypersist/reopen. Actual12draftpairsinspected;clock/backgrounddifferencesremain,nofullframepixelclaim. Next8methodpickeroperationssamechain.
