@@ -10134,5 +10134,1962 @@
       }
     ],
     "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41277721994",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41277721994",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en location route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr maximum gesture saves in range",
+        "passed": true,
+        "detail": "28"
+      },
+      {
+        "name": "original-en adj_fajr maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_fajr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-28"
+      },
+      {
+        "name": "original-en adj_fajr minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_fajr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_fajr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_fajr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq maximum gesture saves in range",
+        "passed": true,
+        "detail": "27"
+      },
+      {
+        "name": "original-en adj_shuruq maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_shuruq maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq minimum gesture saves in range",
+        "passed": true,
+        "detail": "-29"
+      },
+      {
+        "name": "original-en adj_shuruq minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_shuruq minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_shuruq zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_shuruq zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-en adj_dhuhr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-en adj_dhuhr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_dhuhr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_dhuhr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-en adj_asr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-29"
+      },
+      {
+        "name": "original-en adj_asr minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_asr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_asr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_asr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-en adj_maghrib maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-en adj_maghrib minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_maghrib zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_maghrib zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-en adj_isha maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha minimum gesture saves in range",
+        "passed": true,
+        "detail": "-28"
+      },
+      {
+        "name": "original-en adj_isha minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-en adj_isha minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en adj_isha zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en adj_isha zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset maximum gesture saves in range",
+        "passed": true,
+        "detail": "2"
+      },
+      {
+        "name": "original-en hijri_offset maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset minimum gesture saves in range",
+        "passed": true,
+        "detail": "-2"
+      },
+      {
+        "name": "original-en hijri_offset minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-en hijri_offset zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en hijri_offset zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar location route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_fajr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-ar adj_fajr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_fajr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_fajr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_shuruq maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-ar adj_shuruq minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_shuruq zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_shuruq zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_dhuhr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-ar adj_dhuhr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_dhuhr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_dhuhr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_asr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-ar adj_asr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_asr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_asr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_maghrib maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib minimum gesture saves in range",
+        "passed": true,
+        "detail": "-29"
+      },
+      {
+        "name": "original-ar adj_maghrib minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "original-ar adj_maghrib minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_maghrib zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_maghrib zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "original-ar adj_isha maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "original-ar adj_isha minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar adj_isha zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar adj_isha zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset maximum gesture saves in range",
+        "passed": true,
+        "detail": "2"
+      },
+      {
+        "name": "original-ar hijri_offset maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset minimum gesture saves in range",
+        "passed": true,
+        "detail": "-2"
+      },
+      {
+        "name": "original-ar hijri_offset minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "original-ar hijri_offset zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar hijri_offset zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en location route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_fajr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-en adj_fajr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_fajr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_fajr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_shuruq maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-en adj_shuruq minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_shuruq zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_shuruq zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_dhuhr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-en adj_dhuhr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_dhuhr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_dhuhr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_asr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-en adj_asr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_asr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_asr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_maghrib maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-en adj_maghrib minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_maghrib zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_maghrib zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-en adj_isha maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha minimum gesture saves in range",
+        "passed": true,
+        "detail": "-29"
+      },
+      {
+        "name": "comparison-en adj_isha minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-en adj_isha minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en adj_isha zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en adj_isha zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset maximum gesture saves in range",
+        "passed": true,
+        "detail": "2"
+      },
+      {
+        "name": "comparison-en hijri_offset maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset minimum gesture saves in range",
+        "passed": true,
+        "detail": "-2"
+      },
+      {
+        "name": "comparison-en hijri_offset minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-en hijri_offset zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en hijri_offset zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar location route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr maximum gesture saves in range",
+        "passed": true,
+        "detail": "29"
+      },
+      {
+        "name": "comparison-ar adj_fajr maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-ar adj_fajr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-ar adj_fajr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_fajr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_fajr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq maximum gesture saves in range",
+        "passed": true,
+        "detail": "29"
+      },
+      {
+        "name": "comparison-ar adj_shuruq maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-ar adj_shuruq maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-ar adj_shuruq minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_shuruq zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_shuruq zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-ar adj_dhuhr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-ar adj_dhuhr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_dhuhr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_dhuhr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr maximum gesture saves in range",
+        "passed": true,
+        "detail": "29"
+      },
+      {
+        "name": "comparison-ar adj_asr maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-ar adj_asr maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr minimum gesture saves in range",
+        "passed": true,
+        "detail": "-29"
+      },
+      {
+        "name": "comparison-ar adj_asr minimum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-ar adj_asr minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_asr zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_asr zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib maximum gesture saves in range",
+        "passed": true,
+        "detail": "30"
+      },
+      {
+        "name": "comparison-ar adj_maghrib maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-ar adj_maghrib minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_maghrib zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_maghrib zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha maximum gesture saves in range",
+        "passed": true,
+        "detail": "29"
+      },
+      {
+        "name": "comparison-ar adj_isha maximum accessibility action accepted",
+        "passed": true,
+        "detail": "INSTRUMENTATION_RESULT: changed=true\nINSTRUMENTATION_CODE: 0\n"
+      },
+      {
+        "name": "comparison-ar adj_isha maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha minimum gesture saves in range",
+        "passed": true,
+        "detail": "-30"
+      },
+      {
+        "name": "comparison-ar adj_isha minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar adj_isha zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar adj_isha zero persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset seekbar reachable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset maximum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset maximum gesture saves in range",
+        "passed": true,
+        "detail": "2"
+      },
+      {
+        "name": "comparison-ar hijri_offset maximum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset minimum control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset minimum gesture saves in range",
+        "passed": true,
+        "detail": "-2"
+      },
+      {
+        "name": "comparison-ar hijri_offset minimum saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset zero control",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset zero gesture saves in range",
+        "passed": true,
+        "detail": "0"
+      },
+      {
+        "name": "comparison-ar hijri_offset zero saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset reopen location",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar hijri_offset zero persisted",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-adj_fajr-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_fajr-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_fajr-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_shuruq-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_shuruq-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_shuruq-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_dhuhr-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_dhuhr-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_dhuhr-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_asr-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_asr-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_asr-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_maghrib-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_maghrib-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_maghrib-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_fajr-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_fajr-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_fajr-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_dhuhr-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_dhuhr-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_dhuhr-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_asr-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_asr-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_asr-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_maghrib-maximum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_maghrib-minimum",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_maghrib-zero",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_isha-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_isha-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_isha-zero",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-maximum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-minimum",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-zero",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
   }
 ]
