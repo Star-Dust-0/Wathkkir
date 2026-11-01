@@ -60,14 +60,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
  for lang in ['ar','en']:
   slug=name+'-'+lang;reset();zone();adb('shell','date','103010002026.00');adb('logcat','-c');launch(3,0);pressed=choose('Open on phone' if lang=='en' else 'فتح في الجهاز');check(slug+' disconnected open phone tapped',pressed);
   if not pressed:shot(slug+'-route-failed');continue
- time.sleep(4);shot(slug+'-open-phone-return');check(slug+' no unexpected preference change',prefs(slug+'-after-open-prefs').get('lang')==str(2 if lang=='en' else 1));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot(slug+'-after-back');(out/(slug+'-open-phone-log.txt')).write_text(adb('logcat','-d'));launch(3,0);shot(slug+'-settings-reopen')
+  time.sleep(4);shot(slug+'-open-phone-return');check(slug+' no unexpected preference change',prefs(slug+'-after-open-prefs').get('lang')==str(2 if lang=='en' else 1));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot(slug+'-after-back');(out/(slug+'-open-phone-log.txt')).write_text(adb('logcat','-d'));launch(3,0);shot(slug+'-settings-reopen')
 comparisons=[]
 for n,a in states.items():
  if n.startswith('original-'):
   other='comparison-'+n[len('original-'):]
   if other in states:comparisons.append(dict(scene=n[len('original-'):],same_tokens=a==states[other],original=a,comparison=states[other]))
 (out/'semantic-comparison.json').write_text(json.dumps(comparisons,ensure_ascii=False,indent=2));print('checks',len(checks),'failures',sum(not x['passed'] for x in checks),flush=True)
-
-assert all(x['passed'] for x in checks), 'See checks.json'
 
 assert all(x['passed'] for x in checks), 'See checks.json'
