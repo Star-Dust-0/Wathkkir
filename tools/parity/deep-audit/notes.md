@@ -495,3 +495,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 13:49 nonFajr finite chains
 -41301072356:307checks0fail15/15semanticpairs. ENlightall5nonFajractualbaseenable/Apply/reopen/earlydraft10/nested30Save/parentCancelrollback/earlyApply10/offBackrestore10. FoureligibleIqamaApplytrue/reopen/offBackrestoretrue,SunrisenoIqama/DND. All15actualdialogpixelpairsinspected;text/layoutagree,backgroundclockdifferencesremain. NotAR/nestedinvalid/Cancel/sliderdrag/outside/DNDpermission/audio/delivery/force-stoppersistenceproof.44controlrowsboundexactly,notwholeappcompletion.
+
+## Nov1 14:05 remaining RTL bell scenario preparation
+-Preparedsameboundedother5prayerchainsARdarkwithoriginallocalizedlabels. EN307/0doesnotestablishRTLgeometry/controlhit/persistence. NotDNDpermission/invalid/outside/motion/hardwareproof. No productionchange.
