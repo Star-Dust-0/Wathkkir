@@ -56,9 +56,9 @@ for f in ['watch-original.apk','watch-rebuilt.apk','widgethost.apk']:check('inst
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','cmd','connectivity','airplane-mode','enable');time.sleep(2);adb('shell','setprop','persist.sys.timezone','UTC')
 adb('shell','settings','put','global','window_animation_scale','1');adb('shell','settings','put','global','transition_animation_scale','1');adb('shell','settings','put','global','animator_duration_scale','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
- for lang in ['ar','en']:
+ for lang in ['ar']:
   slug=name+'-'+lang
-  for theme in [0,1,2,3]:
+  for theme in [0,1]:
    for other in ['com.wathakker.app','com.wathakker.app.compare']:adb('shell','am','force-stop',other)
    reset();folder=f'/data/data/{pkg}/shared_prefs'
    # Seed private preferences in a reset emulator fixture. Launch circles directly,
@@ -66,7 +66,16 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    xml=f'<map><int name="lang" value="{2 if lang=="en" else 1}"/><int name="pat" value="11"/><int name="theme" value="{theme}"/><int name="font_choice" value="4"/><float name="font_scale" value="1.2"/><boolean name="perm_asked" value="true"/><int name="locmode" value="0"/></map>'
    adb('shell',f"echo '{xml}' > {folder}/wear_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/wear_prefs.xml; chmod 660 {folder}/wear_prefs.xml; restorecon -R {folder}")
    zone();adb('shell','date','103010002026.00');adb('logcat','-c')
+   adb('shell','dumpsys','battery','unplug');adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
    adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.CirclesActivity');time.sleep(5)
+   for attempt in range(12):
+    xml=tree();current=adb('shell','dumpsys','activity','activities')
+    active=pkg+'/com.wathakker.wear.CirclesActivity' in ''.join(x for x in current.splitlines() if 'topResumedActivity=' in x)
+    if active and 'Starting' not in xml and 'الفجر' in xml:break
+    if not active:adb('shell','am','start','-W','-n',pkg+'/com.wathakker.wear.CirclesActivity')
+    time.sleep(3)
+   assert check(slug+' theme'+str(theme)+' settled circles',active and 'الفجر' in xml),'No settled circles'
+
    n=slug+'-cold-circles-theme-'+str(theme);shot(n);p=prefs(n+'-prefs')
    check(n+' fixture retained',all(p.get(k)==v for k,v in [('theme',str(theme)),('lang','2' if lang=='en' else '1'),('font_choice','4'),('font_scale','1.2')]))
    current=adb('shell','dumpsys','activity','activities');(out/(n+'-activity.txt')).write_text(current)

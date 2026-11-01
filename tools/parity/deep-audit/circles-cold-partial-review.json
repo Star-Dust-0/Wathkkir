@@ -1,0 +1,17 @@
+{
+  "run": "41350855520",
+  "checks": 67,
+  "failed": 5,
+  "raw_pairs": 8,
+  "raw_same": 6,
+  "actual_pairs_inspected": 8,
+  "valid_pairs": [
+    "en-theme-0",
+    "en-theme-1",
+    "en-theme-2",
+    "en-theme-3",
+    "ar-theme-2",
+    "ar-theme-3"
+  ],
+  "limits": "Original AR0 screenshot Starting, AR1 ChargingActivity. Not product mismatches or8validpairs. Six valid actual pairs agree labels/order/colors/font geometry; background watchface visible. Not fullframe pixel or motion proof. Cold load fixture kept; Back check failed during setup forAR0/1, valid six exits pass. Narrow AR0/1 settled follow-through next."
+}
