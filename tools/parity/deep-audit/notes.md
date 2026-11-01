@@ -452,3 +452,8 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 -41286219795workflowgreenbut345checks24failedhelpopen/close. Languagechainsstillpass;helpchooseronlyscrollsdownfromrememberedlowerSettingsandcanmissroworhitpartlyheadercoveredtitle. Notproductfailureandnotallhelpparity. Successworkflowhasnoassert,nowexplicitfailureassertaddedtofocusedhelpbatch.
 - Focusedall11helpfixturestartsattopusingactualswipesbeforechoose;separatelanguagesettingprefixturefrompreviousactualselectionproof. No productionchange.
 -37bellcontrolrowsnowboundtoexactrecordedassertionnamesfromdownloadedpriorruns,othersunmappedratherthanbroadfile-levelcoverage.
+
+## Nov1 10:37 exact settings/watch assertion binding
+-22phonechoice rows(font8/theme3/language11) bound to exact recorded assertion names from their downloaded artifacts. Parent route rows separated. Alternating Back actions have rollback checks but no independent Back-handler assertion; final-picker opening is not selected-marker assertion.
+-18watchrows(font8/theme4/pattern1 plus5fontscalecontrols) bound to exact recorded assertions from41259575196/41260755694/41250592598. Pattern ledger indexes need reconciliation against actual pattern IDs1/8/9/10/11; no auto-claim for unbound IDs. Fontchoice run has no home rendering. Reopen fontscale captures assert foreground, not re-read scale. Direct subpage-intent scope retained.
+-41288415284 still in progress at10:36. No new product change or overall verdict.
