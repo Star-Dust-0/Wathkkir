@@ -4644,9 +4644,10 @@
       "control": "enabled",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 base adhan enable",
@@ -4656,7 +4657,15 @@
         "comparison-en-p1 base adhan enable",
         "comparison-en-p1 base enabled",
         "comparison-en-p1 base Apply",
-        "comparison-en-p1 enabled bell reopen"
+        "comparison-en-p1 enabled bell reopen",
+        "original-ar-p1 base adhan enable",
+        "original-ar-p1 base enabled",
+        "original-ar-p1 base Apply",
+        "original-ar-p1 enabled bell reopen",
+        "comparison-ar-p1 base adhan enable",
+        "comparison-ar-p1 base enabled",
+        "comparison-ar-p1 base Apply",
+        "comparison-ar-p1 enabled bell reopen"
       ]
     },
     {
@@ -4665,9 +4674,10 @@
       "control": "early-switch",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 early draft toggle",
@@ -4687,7 +4697,25 @@
         "comparison-en-p1 bell reopen applied",
         "comparison-en-p1 early off draft",
         "comparison-en-p1 early draft0",
-        "comparison-en-p1 early Back restores10"
+        "comparison-en-p1 early Back restores10",
+        "original-ar-p1 early draft toggle",
+        "original-ar-p1 early draft10",
+        "original-ar-p1 early save toggle",
+        "original-ar-p1 early Apply",
+        "original-ar-p1 early saved10",
+        "original-ar-p1 bell reopen applied",
+        "original-ar-p1 early off draft",
+        "original-ar-p1 early draft0",
+        "original-ar-p1 early Back restores10",
+        "comparison-ar-p1 early draft toggle",
+        "comparison-ar-p1 early draft10",
+        "comparison-ar-p1 early save toggle",
+        "comparison-ar-p1 early Apply",
+        "comparison-ar-p1 early saved10",
+        "comparison-ar-p1 bell reopen applied",
+        "comparison-ar-p1 early off draft",
+        "comparison-ar-p1 early draft0",
+        "comparison-ar-p1 early Back restores10"
       ]
     },
     {
@@ -4696,13 +4724,16 @@
       "control": "minutes-value",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 nested30 open",
-        "comparison-en-p1 nested30 open"
+        "comparison-en-p1 nested30 open",
+        "original-ar-p1 nested30 open",
+        "comparison-ar-p1 nested30 open"
       ]
     },
     {
@@ -4711,13 +4742,16 @@
       "control": "minutes-text",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 nested30 input",
-        "comparison-en-p1 nested30 input"
+        "comparison-en-p1 nested30 input",
+        "original-ar-p1 nested30 input",
+        "comparison-ar-p1 nested30 input"
       ]
     },
     {
@@ -4726,15 +4760,20 @@
       "control": "minutes-save",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 nested30 Save",
         "original-en-p1 nested30 immediate30",
         "comparison-en-p1 nested30 Save",
-        "comparison-en-p1 nested30 immediate30"
+        "comparison-en-p1 nested30 immediate30",
+        "original-ar-p1 nested30 Save",
+        "original-ar-p1 nested30 immediate30",
+        "comparison-ar-p1 nested30 Save",
+        "comparison-ar-p1 nested30 immediate30"
       ]
     },
     {
@@ -4841,9 +4880,10 @@
       "control": "apply",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 early Apply",
@@ -4851,7 +4891,13 @@
         "original-en-p1 bell reopen applied",
         "comparison-en-p1 early Apply",
         "comparison-en-p1 early saved10",
-        "comparison-en-p1 bell reopen applied"
+        "comparison-en-p1 bell reopen applied",
+        "original-ar-p1 early Apply",
+        "original-ar-p1 early saved10",
+        "original-ar-p1 bell reopen applied",
+        "comparison-ar-p1 early Apply",
+        "comparison-ar-p1 early saved10",
+        "comparison-ar-p1 bell reopen applied"
       ]
     },
     {
@@ -4860,9 +4906,10 @@
       "control": "cancel",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 parent Cancel",
@@ -4870,7 +4917,13 @@
         "original-en-p1 bell reopen rollback",
         "comparison-en-p1 parent Cancel",
         "comparison-en-p1 parent offset rollback",
-        "comparison-en-p1 bell reopen rollback"
+        "comparison-en-p1 bell reopen rollback",
+        "original-ar-p1 parent Cancel",
+        "original-ar-p1 parent offset rollback",
+        "original-ar-p1 bell reopen rollback",
+        "comparison-ar-p1 parent Cancel",
+        "comparison-ar-p1 parent offset rollback",
+        "comparison-ar-p1 bell reopen rollback"
       ]
     },
     {
@@ -4879,9 +4932,10 @@
       "control": "back",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 early off draft",
@@ -4891,7 +4945,15 @@
         "comparison-en-p1 early off draft",
         "comparison-en-p1 early draft0",
         "comparison-en-p1 early Back restores10",
-        "comparison-en-p1 bell reopen final"
+        "comparison-en-p1 bell reopen final",
+        "original-ar-p1 early off draft",
+        "original-ar-p1 early draft0",
+        "original-ar-p1 early Back restores10",
+        "original-ar-p1 bell reopen final",
+        "comparison-ar-p1 early off draft",
+        "comparison-ar-p1 early draft0",
+        "comparison-ar-p1 early Back restores10",
+        "comparison-ar-p1 bell reopen final"
       ]
     },
     {
@@ -4947,9 +5009,10 @@
       "control": "enabled",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 base adhan enable",
@@ -4959,7 +5022,15 @@
         "comparison-en-p2 base adhan enable",
         "comparison-en-p2 base enabled",
         "comparison-en-p2 base Apply",
-        "comparison-en-p2 enabled bell reopen"
+        "comparison-en-p2 enabled bell reopen",
+        "original-ar-p2 base adhan enable",
+        "original-ar-p2 base enabled",
+        "original-ar-p2 base Apply",
+        "original-ar-p2 enabled bell reopen",
+        "comparison-ar-p2 base adhan enable",
+        "comparison-ar-p2 base enabled",
+        "comparison-ar-p2 base Apply",
+        "comparison-ar-p2 enabled bell reopen"
       ]
     },
     {
@@ -4968,9 +5039,10 @@
       "control": "early-switch",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 early draft toggle",
@@ -4990,7 +5062,25 @@
         "comparison-en-p2 bell reopen applied",
         "comparison-en-p2 early off draft",
         "comparison-en-p2 early draft0",
-        "comparison-en-p2 early Back restores10"
+        "comparison-en-p2 early Back restores10",
+        "original-ar-p2 early draft toggle",
+        "original-ar-p2 early draft10",
+        "original-ar-p2 early save toggle",
+        "original-ar-p2 early Apply",
+        "original-ar-p2 early saved10",
+        "original-ar-p2 bell reopen applied",
+        "original-ar-p2 early off draft",
+        "original-ar-p2 early draft0",
+        "original-ar-p2 early Back restores10",
+        "comparison-ar-p2 early draft toggle",
+        "comparison-ar-p2 early draft10",
+        "comparison-ar-p2 early save toggle",
+        "comparison-ar-p2 early Apply",
+        "comparison-ar-p2 early saved10",
+        "comparison-ar-p2 bell reopen applied",
+        "comparison-ar-p2 early off draft",
+        "comparison-ar-p2 early draft0",
+        "comparison-ar-p2 early Back restores10"
       ]
     },
     {
@@ -4999,13 +5089,16 @@
       "control": "minutes-value",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 nested30 open",
-        "comparison-en-p2 nested30 open"
+        "comparison-en-p2 nested30 open",
+        "original-ar-p2 nested30 open",
+        "comparison-ar-p2 nested30 open"
       ]
     },
     {
@@ -5014,13 +5107,16 @@
       "control": "minutes-text",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 nested30 input",
-        "comparison-en-p2 nested30 input"
+        "comparison-en-p2 nested30 input",
+        "original-ar-p2 nested30 input",
+        "comparison-ar-p2 nested30 input"
       ]
     },
     {
@@ -5029,15 +5125,20 @@
       "control": "minutes-save",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 nested30 Save",
         "original-en-p2 nested30 immediate30",
         "comparison-en-p2 nested30 Save",
-        "comparison-en-p2 nested30 immediate30"
+        "comparison-en-p2 nested30 immediate30",
+        "original-ar-p2 nested30 Save",
+        "original-ar-p2 nested30 immediate30",
+        "comparison-ar-p2 nested30 Save",
+        "comparison-ar-p2 nested30 immediate30"
       ]
     },
     {
@@ -5144,9 +5245,10 @@
       "control": "apply",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 early Apply",
@@ -5154,7 +5256,13 @@
         "original-en-p2 bell reopen applied",
         "comparison-en-p2 early Apply",
         "comparison-en-p2 early saved10",
-        "comparison-en-p2 bell reopen applied"
+        "comparison-en-p2 bell reopen applied",
+        "original-ar-p2 early Apply",
+        "original-ar-p2 early saved10",
+        "original-ar-p2 bell reopen applied",
+        "comparison-ar-p2 early Apply",
+        "comparison-ar-p2 early saved10",
+        "comparison-ar-p2 bell reopen applied"
       ]
     },
     {
@@ -5163,9 +5271,10 @@
       "control": "cancel",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 parent Cancel",
@@ -5173,7 +5282,13 @@
         "original-en-p2 bell reopen rollback",
         "comparison-en-p2 parent Cancel",
         "comparison-en-p2 parent offset rollback",
-        "comparison-en-p2 bell reopen rollback"
+        "comparison-en-p2 bell reopen rollback",
+        "original-ar-p2 parent Cancel",
+        "original-ar-p2 parent offset rollback",
+        "original-ar-p2 bell reopen rollback",
+        "comparison-ar-p2 parent Cancel",
+        "comparison-ar-p2 parent offset rollback",
+        "comparison-ar-p2 bell reopen rollback"
       ]
     },
     {
@@ -5182,9 +5297,10 @@
       "control": "back",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 early off draft",
@@ -5194,7 +5310,15 @@
         "comparison-en-p2 early off draft",
         "comparison-en-p2 early draft0",
         "comparison-en-p2 early Back restores10",
-        "comparison-en-p2 bell reopen final"
+        "comparison-en-p2 bell reopen final",
+        "original-ar-p2 early off draft",
+        "original-ar-p2 early draft0",
+        "original-ar-p2 early Back restores10",
+        "original-ar-p2 bell reopen final",
+        "comparison-ar-p2 early off draft",
+        "comparison-ar-p2 early draft0",
+        "comparison-ar-p2 early Back restores10",
+        "comparison-ar-p2 bell reopen final"
       ]
     },
     {
@@ -5212,9 +5336,10 @@
       "control": "iqama",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 Iqama eligibility",
@@ -5234,7 +5359,25 @@
         "comparison-en-p2 Iqama reopen",
         "comparison-en-p2 Iqama off draft",
         "comparison-en-p2 Iqama draft false",
-        "comparison-en-p2 Iqama Back restores true"
+        "comparison-en-p2 Iqama Back restores true",
+        "original-ar-p2 Iqama eligibility",
+        "original-ar-p2 Iqama draft on",
+        "original-ar-p2 Iqama draft true",
+        "original-ar-p2 Iqama Apply",
+        "original-ar-p2 Iqama saved true",
+        "original-ar-p2 Iqama reopen",
+        "original-ar-p2 Iqama off draft",
+        "original-ar-p2 Iqama draft false",
+        "original-ar-p2 Iqama Back restores true",
+        "comparison-ar-p2 Iqama eligibility",
+        "comparison-ar-p2 Iqama draft on",
+        "comparison-ar-p2 Iqama draft true",
+        "comparison-ar-p2 Iqama Apply",
+        "comparison-ar-p2 Iqama saved true",
+        "comparison-ar-p2 Iqama reopen",
+        "comparison-ar-p2 Iqama off draft",
+        "comparison-ar-p2 Iqama draft false",
+        "comparison-ar-p2 Iqama Back restores true"
       ]
     },
     {
@@ -5299,9 +5442,10 @@
       "control": "enabled",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 base adhan enable",
@@ -5311,7 +5455,15 @@
         "comparison-en-p3 base adhan enable",
         "comparison-en-p3 base enabled",
         "comparison-en-p3 base Apply",
-        "comparison-en-p3 enabled bell reopen"
+        "comparison-en-p3 enabled bell reopen",
+        "original-ar-p3 base adhan enable",
+        "original-ar-p3 base enabled",
+        "original-ar-p3 base Apply",
+        "original-ar-p3 enabled bell reopen",
+        "comparison-ar-p3 base adhan enable",
+        "comparison-ar-p3 base enabled",
+        "comparison-ar-p3 base Apply",
+        "comparison-ar-p3 enabled bell reopen"
       ]
     },
     {
@@ -5320,9 +5472,10 @@
       "control": "early-switch",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 early draft toggle",
@@ -5342,7 +5495,25 @@
         "comparison-en-p3 bell reopen applied",
         "comparison-en-p3 early off draft",
         "comparison-en-p3 early draft0",
-        "comparison-en-p3 early Back restores10"
+        "comparison-en-p3 early Back restores10",
+        "original-ar-p3 early draft toggle",
+        "original-ar-p3 early draft10",
+        "original-ar-p3 early save toggle",
+        "original-ar-p3 early Apply",
+        "original-ar-p3 early saved10",
+        "original-ar-p3 bell reopen applied",
+        "original-ar-p3 early off draft",
+        "original-ar-p3 early draft0",
+        "original-ar-p3 early Back restores10",
+        "comparison-ar-p3 early draft toggle",
+        "comparison-ar-p3 early draft10",
+        "comparison-ar-p3 early save toggle",
+        "comparison-ar-p3 early Apply",
+        "comparison-ar-p3 early saved10",
+        "comparison-ar-p3 bell reopen applied",
+        "comparison-ar-p3 early off draft",
+        "comparison-ar-p3 early draft0",
+        "comparison-ar-p3 early Back restores10"
       ]
     },
     {
@@ -5351,13 +5522,16 @@
       "control": "minutes-value",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 nested30 open",
-        "comparison-en-p3 nested30 open"
+        "comparison-en-p3 nested30 open",
+        "original-ar-p3 nested30 open",
+        "comparison-ar-p3 nested30 open"
       ]
     },
     {
@@ -5366,13 +5540,16 @@
       "control": "minutes-text",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 nested30 input",
-        "comparison-en-p3 nested30 input"
+        "comparison-en-p3 nested30 input",
+        "original-ar-p3 nested30 input",
+        "comparison-ar-p3 nested30 input"
       ]
     },
     {
@@ -5381,15 +5558,20 @@
       "control": "minutes-save",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 nested30 Save",
         "original-en-p3 nested30 immediate30",
         "comparison-en-p3 nested30 Save",
-        "comparison-en-p3 nested30 immediate30"
+        "comparison-en-p3 nested30 immediate30",
+        "original-ar-p3 nested30 Save",
+        "original-ar-p3 nested30 immediate30",
+        "comparison-ar-p3 nested30 Save",
+        "comparison-ar-p3 nested30 immediate30"
       ]
     },
     {
@@ -5496,9 +5678,10 @@
       "control": "apply",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 early Apply",
@@ -5506,7 +5689,13 @@
         "original-en-p3 bell reopen applied",
         "comparison-en-p3 early Apply",
         "comparison-en-p3 early saved10",
-        "comparison-en-p3 bell reopen applied"
+        "comparison-en-p3 bell reopen applied",
+        "original-ar-p3 early Apply",
+        "original-ar-p3 early saved10",
+        "original-ar-p3 bell reopen applied",
+        "comparison-ar-p3 early Apply",
+        "comparison-ar-p3 early saved10",
+        "comparison-ar-p3 bell reopen applied"
       ]
     },
     {
@@ -5515,9 +5704,10 @@
       "control": "cancel",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 parent Cancel",
@@ -5525,7 +5715,13 @@
         "original-en-p3 bell reopen rollback",
         "comparison-en-p3 parent Cancel",
         "comparison-en-p3 parent offset rollback",
-        "comparison-en-p3 bell reopen rollback"
+        "comparison-en-p3 bell reopen rollback",
+        "original-ar-p3 parent Cancel",
+        "original-ar-p3 parent offset rollback",
+        "original-ar-p3 bell reopen rollback",
+        "comparison-ar-p3 parent Cancel",
+        "comparison-ar-p3 parent offset rollback",
+        "comparison-ar-p3 bell reopen rollback"
       ]
     },
     {
@@ -5534,9 +5730,10 @@
       "control": "back",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 early off draft",
@@ -5546,7 +5743,15 @@
         "comparison-en-p3 early off draft",
         "comparison-en-p3 early draft0",
         "comparison-en-p3 early Back restores10",
-        "comparison-en-p3 bell reopen final"
+        "comparison-en-p3 bell reopen final",
+        "original-ar-p3 early off draft",
+        "original-ar-p3 early draft0",
+        "original-ar-p3 early Back restores10",
+        "original-ar-p3 bell reopen final",
+        "comparison-ar-p3 early off draft",
+        "comparison-ar-p3 early draft0",
+        "comparison-ar-p3 early Back restores10",
+        "comparison-ar-p3 bell reopen final"
       ]
     },
     {
@@ -5564,9 +5769,10 @@
       "control": "iqama",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 Iqama eligibility",
@@ -5586,7 +5792,25 @@
         "comparison-en-p3 Iqama reopen",
         "comparison-en-p3 Iqama off draft",
         "comparison-en-p3 Iqama draft false",
-        "comparison-en-p3 Iqama Back restores true"
+        "comparison-en-p3 Iqama Back restores true",
+        "original-ar-p3 Iqama eligibility",
+        "original-ar-p3 Iqama draft on",
+        "original-ar-p3 Iqama draft true",
+        "original-ar-p3 Iqama Apply",
+        "original-ar-p3 Iqama saved true",
+        "original-ar-p3 Iqama reopen",
+        "original-ar-p3 Iqama off draft",
+        "original-ar-p3 Iqama draft false",
+        "original-ar-p3 Iqama Back restores true",
+        "comparison-ar-p3 Iqama eligibility",
+        "comparison-ar-p3 Iqama draft on",
+        "comparison-ar-p3 Iqama draft true",
+        "comparison-ar-p3 Iqama Apply",
+        "comparison-ar-p3 Iqama saved true",
+        "comparison-ar-p3 Iqama reopen",
+        "comparison-ar-p3 Iqama off draft",
+        "comparison-ar-p3 Iqama draft false",
+        "comparison-ar-p3 Iqama Back restores true"
       ]
     },
     {
@@ -5651,9 +5875,10 @@
       "control": "enabled",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 base adhan enable",
@@ -5663,7 +5888,15 @@
         "comparison-en-p4 base adhan enable",
         "comparison-en-p4 base enabled",
         "comparison-en-p4 base Apply",
-        "comparison-en-p4 enabled bell reopen"
+        "comparison-en-p4 enabled bell reopen",
+        "original-ar-p4 base adhan enable",
+        "original-ar-p4 base enabled",
+        "original-ar-p4 base Apply",
+        "original-ar-p4 enabled bell reopen",
+        "comparison-ar-p4 base adhan enable",
+        "comparison-ar-p4 base enabled",
+        "comparison-ar-p4 base Apply",
+        "comparison-ar-p4 enabled bell reopen"
       ]
     },
     {
@@ -5672,9 +5905,10 @@
       "control": "early-switch",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 early draft toggle",
@@ -5694,7 +5928,25 @@
         "comparison-en-p4 bell reopen applied",
         "comparison-en-p4 early off draft",
         "comparison-en-p4 early draft0",
-        "comparison-en-p4 early Back restores10"
+        "comparison-en-p4 early Back restores10",
+        "original-ar-p4 early draft toggle",
+        "original-ar-p4 early draft10",
+        "original-ar-p4 early save toggle",
+        "original-ar-p4 early Apply",
+        "original-ar-p4 early saved10",
+        "original-ar-p4 bell reopen applied",
+        "original-ar-p4 early off draft",
+        "original-ar-p4 early draft0",
+        "original-ar-p4 early Back restores10",
+        "comparison-ar-p4 early draft toggle",
+        "comparison-ar-p4 early draft10",
+        "comparison-ar-p4 early save toggle",
+        "comparison-ar-p4 early Apply",
+        "comparison-ar-p4 early saved10",
+        "comparison-ar-p4 bell reopen applied",
+        "comparison-ar-p4 early off draft",
+        "comparison-ar-p4 early draft0",
+        "comparison-ar-p4 early Back restores10"
       ]
     },
     {
@@ -5703,13 +5955,16 @@
       "control": "minutes-value",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 nested30 open",
-        "comparison-en-p4 nested30 open"
+        "comparison-en-p4 nested30 open",
+        "original-ar-p4 nested30 open",
+        "comparison-ar-p4 nested30 open"
       ]
     },
     {
@@ -5718,13 +5973,16 @@
       "control": "minutes-text",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 nested30 input",
-        "comparison-en-p4 nested30 input"
+        "comparison-en-p4 nested30 input",
+        "original-ar-p4 nested30 input",
+        "comparison-ar-p4 nested30 input"
       ]
     },
     {
@@ -5733,15 +5991,20 @@
       "control": "minutes-save",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 nested30 Save",
         "original-en-p4 nested30 immediate30",
         "comparison-en-p4 nested30 Save",
-        "comparison-en-p4 nested30 immediate30"
+        "comparison-en-p4 nested30 immediate30",
+        "original-ar-p4 nested30 Save",
+        "original-ar-p4 nested30 immediate30",
+        "comparison-ar-p4 nested30 Save",
+        "comparison-ar-p4 nested30 immediate30"
       ]
     },
     {
@@ -5848,9 +6111,10 @@
       "control": "apply",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 early Apply",
@@ -5858,7 +6122,13 @@
         "original-en-p4 bell reopen applied",
         "comparison-en-p4 early Apply",
         "comparison-en-p4 early saved10",
-        "comparison-en-p4 bell reopen applied"
+        "comparison-en-p4 bell reopen applied",
+        "original-ar-p4 early Apply",
+        "original-ar-p4 early saved10",
+        "original-ar-p4 bell reopen applied",
+        "comparison-ar-p4 early Apply",
+        "comparison-ar-p4 early saved10",
+        "comparison-ar-p4 bell reopen applied"
       ]
     },
     {
@@ -5867,9 +6137,10 @@
       "control": "cancel",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 parent Cancel",
@@ -5877,7 +6148,13 @@
         "original-en-p4 bell reopen rollback",
         "comparison-en-p4 parent Cancel",
         "comparison-en-p4 parent offset rollback",
-        "comparison-en-p4 bell reopen rollback"
+        "comparison-en-p4 bell reopen rollback",
+        "original-ar-p4 parent Cancel",
+        "original-ar-p4 parent offset rollback",
+        "original-ar-p4 bell reopen rollback",
+        "comparison-ar-p4 parent Cancel",
+        "comparison-ar-p4 parent offset rollback",
+        "comparison-ar-p4 bell reopen rollback"
       ]
     },
     {
@@ -5886,9 +6163,10 @@
       "control": "back",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 early off draft",
@@ -5898,7 +6176,15 @@
         "comparison-en-p4 early off draft",
         "comparison-en-p4 early draft0",
         "comparison-en-p4 early Back restores10",
-        "comparison-en-p4 bell reopen final"
+        "comparison-en-p4 bell reopen final",
+        "original-ar-p4 early off draft",
+        "original-ar-p4 early draft0",
+        "original-ar-p4 early Back restores10",
+        "original-ar-p4 bell reopen final",
+        "comparison-ar-p4 early off draft",
+        "comparison-ar-p4 early draft0",
+        "comparison-ar-p4 early Back restores10",
+        "comparison-ar-p4 bell reopen final"
       ]
     },
     {
@@ -5916,9 +6202,10 @@
       "control": "iqama",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 Iqama eligibility",
@@ -5938,7 +6225,25 @@
         "comparison-en-p4 Iqama reopen",
         "comparison-en-p4 Iqama off draft",
         "comparison-en-p4 Iqama draft false",
-        "comparison-en-p4 Iqama Back restores true"
+        "comparison-en-p4 Iqama Back restores true",
+        "original-ar-p4 Iqama eligibility",
+        "original-ar-p4 Iqama draft on",
+        "original-ar-p4 Iqama draft true",
+        "original-ar-p4 Iqama Apply",
+        "original-ar-p4 Iqama saved true",
+        "original-ar-p4 Iqama reopen",
+        "original-ar-p4 Iqama off draft",
+        "original-ar-p4 Iqama draft false",
+        "original-ar-p4 Iqama Back restores true",
+        "comparison-ar-p4 Iqama eligibility",
+        "comparison-ar-p4 Iqama draft on",
+        "comparison-ar-p4 Iqama draft true",
+        "comparison-ar-p4 Iqama Apply",
+        "comparison-ar-p4 Iqama saved true",
+        "comparison-ar-p4 Iqama reopen",
+        "comparison-ar-p4 Iqama off draft",
+        "comparison-ar-p4 Iqama draft false",
+        "comparison-ar-p4 Iqama Back restores true"
       ]
     },
     {
@@ -6003,9 +6308,10 @@
       "control": "enabled",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 base adhan enable",
@@ -6015,7 +6321,15 @@
         "comparison-en-p5 base adhan enable",
         "comparison-en-p5 base enabled",
         "comparison-en-p5 base Apply",
-        "comparison-en-p5 enabled bell reopen"
+        "comparison-en-p5 enabled bell reopen",
+        "original-ar-p5 base adhan enable",
+        "original-ar-p5 base enabled",
+        "original-ar-p5 base Apply",
+        "original-ar-p5 enabled bell reopen",
+        "comparison-ar-p5 base adhan enable",
+        "comparison-ar-p5 base enabled",
+        "comparison-ar-p5 base Apply",
+        "comparison-ar-p5 enabled bell reopen"
       ]
     },
     {
@@ -6024,9 +6338,10 @@
       "control": "early-switch",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 early draft toggle",
@@ -6046,7 +6361,25 @@
         "comparison-en-p5 bell reopen applied",
         "comparison-en-p5 early off draft",
         "comparison-en-p5 early draft0",
-        "comparison-en-p5 early Back restores10"
+        "comparison-en-p5 early Back restores10",
+        "original-ar-p5 early draft toggle",
+        "original-ar-p5 early draft10",
+        "original-ar-p5 early save toggle",
+        "original-ar-p5 early Apply",
+        "original-ar-p5 early saved10",
+        "original-ar-p5 bell reopen applied",
+        "original-ar-p5 early off draft",
+        "original-ar-p5 early draft0",
+        "original-ar-p5 early Back restores10",
+        "comparison-ar-p5 early draft toggle",
+        "comparison-ar-p5 early draft10",
+        "comparison-ar-p5 early save toggle",
+        "comparison-ar-p5 early Apply",
+        "comparison-ar-p5 early saved10",
+        "comparison-ar-p5 bell reopen applied",
+        "comparison-ar-p5 early off draft",
+        "comparison-ar-p5 early draft0",
+        "comparison-ar-p5 early Back restores10"
       ]
     },
     {
@@ -6055,13 +6388,16 @@
       "control": "minutes-value",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 nested30 open",
-        "comparison-en-p5 nested30 open"
+        "comparison-en-p5 nested30 open",
+        "original-ar-p5 nested30 open",
+        "comparison-ar-p5 nested30 open"
       ]
     },
     {
@@ -6070,13 +6406,16 @@
       "control": "minutes-text",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 nested30 input",
-        "comparison-en-p5 nested30 input"
+        "comparison-en-p5 nested30 input",
+        "original-ar-p5 nested30 input",
+        "comparison-ar-p5 nested30 input"
       ]
     },
     {
@@ -6085,15 +6424,20 @@
       "control": "minutes-save",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 nested30 Save",
         "original-en-p5 nested30 immediate30",
         "comparison-en-p5 nested30 Save",
-        "comparison-en-p5 nested30 immediate30"
+        "comparison-en-p5 nested30 immediate30",
+        "original-ar-p5 nested30 Save",
+        "original-ar-p5 nested30 immediate30",
+        "comparison-ar-p5 nested30 Save",
+        "comparison-ar-p5 nested30 immediate30"
       ]
     },
     {
@@ -6200,9 +6544,10 @@
       "control": "apply",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 early Apply",
@@ -6210,7 +6555,13 @@
         "original-en-p5 bell reopen applied",
         "comparison-en-p5 early Apply",
         "comparison-en-p5 early saved10",
-        "comparison-en-p5 bell reopen applied"
+        "comparison-en-p5 bell reopen applied",
+        "original-ar-p5 early Apply",
+        "original-ar-p5 early saved10",
+        "original-ar-p5 bell reopen applied",
+        "comparison-ar-p5 early Apply",
+        "comparison-ar-p5 early saved10",
+        "comparison-ar-p5 bell reopen applied"
       ]
     },
     {
@@ -6219,9 +6570,10 @@
       "control": "cancel",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 parent Cancel",
@@ -6229,7 +6581,13 @@
         "original-en-p5 bell reopen rollback",
         "comparison-en-p5 parent Cancel",
         "comparison-en-p5 parent offset rollback",
-        "comparison-en-p5 bell reopen rollback"
+        "comparison-en-p5 bell reopen rollback",
+        "original-ar-p5 parent Cancel",
+        "original-ar-p5 parent offset rollback",
+        "original-ar-p5 bell reopen rollback",
+        "comparison-ar-p5 parent Cancel",
+        "comparison-ar-p5 parent offset rollback",
+        "comparison-ar-p5 bell reopen rollback"
       ]
     },
     {
@@ -6238,9 +6596,10 @@
       "control": "back",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 early off draft",
@@ -6250,7 +6609,15 @@
         "comparison-en-p5 early off draft",
         "comparison-en-p5 early draft0",
         "comparison-en-p5 early Back restores10",
-        "comparison-en-p5 bell reopen final"
+        "comparison-en-p5 bell reopen final",
+        "original-ar-p5 early off draft",
+        "original-ar-p5 early draft0",
+        "original-ar-p5 early Back restores10",
+        "original-ar-p5 bell reopen final",
+        "comparison-ar-p5 early off draft",
+        "comparison-ar-p5 early draft0",
+        "comparison-ar-p5 early Back restores10",
+        "comparison-ar-p5 bell reopen final"
       ]
     },
     {
@@ -6268,9 +6635,10 @@
       "control": "iqama",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41301072356"
+        "41301072356",
+        "41304588966"
       ],
-      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "limits": "ENlightandARdark,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. Nootherlocales,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All30EN/ARdialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 Iqama eligibility",
@@ -6290,7 +6658,25 @@
         "comparison-en-p5 Iqama reopen",
         "comparison-en-p5 Iqama off draft",
         "comparison-en-p5 Iqama draft false",
-        "comparison-en-p5 Iqama Back restores true"
+        "comparison-en-p5 Iqama Back restores true",
+        "original-ar-p5 Iqama eligibility",
+        "original-ar-p5 Iqama draft on",
+        "original-ar-p5 Iqama draft true",
+        "original-ar-p5 Iqama Apply",
+        "original-ar-p5 Iqama saved true",
+        "original-ar-p5 Iqama reopen",
+        "original-ar-p5 Iqama off draft",
+        "original-ar-p5 Iqama draft false",
+        "original-ar-p5 Iqama Back restores true",
+        "comparison-ar-p5 Iqama eligibility",
+        "comparison-ar-p5 Iqama draft on",
+        "comparison-ar-p5 Iqama draft true",
+        "comparison-ar-p5 Iqama Apply",
+        "comparison-ar-p5 Iqama saved true",
+        "comparison-ar-p5 Iqama reopen",
+        "comparison-ar-p5 Iqama off draft",
+        "comparison-ar-p5 Iqama draft false",
+        "comparison-ar-p5 Iqama Back restores true"
       ]
     },
     {
