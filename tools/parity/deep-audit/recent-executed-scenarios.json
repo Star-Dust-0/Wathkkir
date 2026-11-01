@@ -12363,5 +12363,2081 @@
       }
     ],
     "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41280915220",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41280915220",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en app_bold final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en system final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cairo final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en naskh final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en amiri final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en ruqaa final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar app_bold final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar system final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cairo final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar naskh final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar amiri final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar ruqaa final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en app_bold final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en system final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cairo final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en naskh final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en amiri final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en ruqaa final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar app_bold final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar system final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cairo final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar naskh final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar amiri final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar ruqaa final picker",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-app-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-naskh-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-naskh-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-naskh-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-amiri-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-amiri-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-amiri-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-ruqaa-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-ruqaa-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-ruqaa-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-naskh-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-naskh-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-naskh-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-amiri-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-amiri-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-amiri-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-ruqaa-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-ruqaa-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-ruqaa-reopen",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
   }
 ]
