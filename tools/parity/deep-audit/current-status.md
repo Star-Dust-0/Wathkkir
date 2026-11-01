@@ -167,3 +167,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 14:05 remaining RTL bell scenario preparation
 -Preparedsameboundedother5prayerchainsARdarkwithoriginallocalizedlabels. EN307/0doesnotestablishRTLgeometry/controlhit/persistence. NotDNDpermission/invalid/outside/motion/hardwareproof. No productionchange.
+
+## Nov1 14:36 RTL nonFajr followthrough
+-41304588966ARdark307checks0fail15/15semanticpairs. Samefinite5nonFajrearly/nested30/Cancel/Apply/BackandeligibleIqamaApply/BackchainsasEN. All15ARactualdialogpixelpairsinspected,text/RTLlayoutalign;minuteclockbackgrounddifferencesremain.44controlrowsnowbindENandARexactassertions. Nototherlocales/DNDpermission/nestedinvalid/Cancel/outside/physicalslider/audio/delivery/force-stoppersistence/motionproof.
