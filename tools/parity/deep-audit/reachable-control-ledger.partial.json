@@ -29,11 +29,20 @@
       "control": "open",
       "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
       "evidence": [
-        "41263679091",
         "41264835524"
       ],
-      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
-      "status": "bounded evidence"
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en city dialog open",
+        "original-en reopen city dialog",
+        "original-ar city dialog open",
+        "original-ar reopen city dialog",
+        "comparison-en city dialog open",
+        "comparison-en reopen city dialog",
+        "comparison-ar city dialog open",
+        "comparison-ar reopen city dialog"
+      ]
     },
     {
       "id": "location.city.search",
@@ -41,11 +50,32 @@
       "control": "search",
       "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
       "evidence": [
-        "41263679091",
         "41264835524"
       ],
-      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
-      "status": "bounded evidence"
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en search zzzznotacity",
+        "original-en search London",
+        "original-en London result present",
+        "original-en search Cairo",
+        "original-en clear search",
+        "original-ar search zzzznotacity",
+        "original-ar search London",
+        "original-ar London result present",
+        "original-ar search Cairo",
+        "original-ar clear search",
+        "comparison-en search zzzznotacity",
+        "comparison-en search London",
+        "comparison-en London result present",
+        "comparison-en search Cairo",
+        "comparison-en clear search",
+        "comparison-ar search zzzznotacity",
+        "comparison-ar search London",
+        "comparison-ar London result present",
+        "comparison-ar search Cairo",
+        "comparison-ar clear search"
+      ]
     },
     {
       "id": "location.city.empty",
@@ -53,11 +83,20 @@
       "control": "empty",
       "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
       "evidence": [
-        "41263679091",
         "41264835524"
       ],
-      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
-      "status": "bounded evidence"
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en search zzzznotacity",
+        "original-en no results text",
+        "original-ar search zzzznotacity",
+        "original-ar no results text",
+        "comparison-en search zzzznotacity",
+        "comparison-en no results text",
+        "comparison-ar search zzzznotacity",
+        "comparison-ar no results text"
+      ]
     },
     {
       "id": "location.city.select",
@@ -65,11 +104,32 @@
       "control": "select",
       "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
       "evidence": [
-        "41263679091",
         "41264835524"
       ],
-      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
-      "status": "bounded evidence"
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en search London select",
+        "original-en actual London selection",
+        "original-en London coordinates",
+        "original-en location reopen",
+        "original-en selected city persisted",
+        "original-ar search London select",
+        "original-ar actual London selection",
+        "original-ar London coordinates",
+        "original-ar location reopen",
+        "original-ar selected city persisted",
+        "comparison-en search London select",
+        "comparison-en actual London selection",
+        "comparison-en London coordinates",
+        "comparison-en location reopen",
+        "comparison-en selected city persisted",
+        "comparison-ar search London select",
+        "comparison-ar actual London selection",
+        "comparison-ar London coordinates",
+        "comparison-ar location reopen",
+        "comparison-ar selected city persisted"
+      ]
     },
     {
       "id": "location.city.cancel",
@@ -77,11 +137,20 @@
       "control": "cancel",
       "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
       "evidence": [
-        "41263679091",
         "41264835524"
       ],
-      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
-      "status": "bounded evidence"
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en cancel city list",
+        "original-en cancel no coordinate change",
+        "original-ar cancel city list",
+        "original-ar cancel no coordinate change",
+        "comparison-en cancel city list",
+        "comparison-en cancel no coordinate change",
+        "comparison-ar cancel city list",
+        "comparison-ar cancel no coordinate change"
+      ]
     },
     {
       "id": "location.alias.edit",
@@ -89,11 +158,24 @@
       "control": "edit",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
-        "41268042855"
+        "41267011867"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en open alias editor",
+        "original-en reopen editor",
+        "original-en open saved editor",
+        "original-ar open alias editor",
+        "original-ar reopen editor",
+        "original-ar open saved editor",
+        "comparison-en open alias editor",
+        "comparison-en reopen editor",
+        "comparison-en open saved editor",
+        "comparison-ar open alias editor",
+        "comparison-ar reopen editor",
+        "comparison-ar open saved editor"
+      ]
     },
     {
       "id": "location.alias.draft",
@@ -101,11 +183,20 @@
       "control": "draft",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
-        "41268042855"
+        "41267011867"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en alias draft",
+        "original-en cancel no alias",
+        "original-ar alias draft",
+        "original-ar cancel no alias",
+        "comparison-en alias draft",
+        "comparison-en cancel no alias",
+        "comparison-ar alias draft",
+        "comparison-ar cancel no alias"
+      ]
     },
     {
       "id": "location.alias.cancel",
@@ -113,11 +204,20 @@
       "control": "cancel",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
-        "41268042855"
+        "41267011867"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en cancel alias",
+        "original-en cancel no alias",
+        "original-ar cancel alias",
+        "original-ar cancel no alias",
+        "comparison-en cancel alias",
+        "comparison-en cancel no alias",
+        "comparison-ar cancel alias",
+        "comparison-ar cancel no alias"
+      ]
     },
     {
       "id": "location.alias.empty-save",
@@ -125,11 +225,24 @@
       "control": "empty-save",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
-        "41268042855"
+        "41267011867"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en empty alias input",
+        "original-en empty save press",
+        "original-en empty rejected",
+        "original-ar empty alias input",
+        "original-ar empty save press",
+        "original-ar empty rejected",
+        "comparison-en empty alias input",
+        "comparison-en empty save press",
+        "comparison-en empty rejected",
+        "comparison-ar empty alias input",
+        "comparison-ar empty save press",
+        "comparison-ar empty rejected"
+      ]
     },
     {
       "id": "location.alias.save",
@@ -137,11 +250,32 @@
       "control": "save",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
-        "41268042855"
+        "41267011867"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en alias text",
+        "original-en save alias",
+        "original-en alias persisted",
+        "original-en location reopened",
+        "original-en saved alias visible",
+        "original-ar alias text",
+        "original-ar save alias",
+        "original-ar alias persisted",
+        "original-ar location reopened",
+        "original-ar saved alias visible",
+        "comparison-en alias text",
+        "comparison-en save alias",
+        "comparison-en alias persisted",
+        "comparison-en location reopened",
+        "comparison-en saved alias visible",
+        "comparison-ar alias text",
+        "comparison-ar save alias",
+        "comparison-ar alias persisted",
+        "comparison-ar location reopened",
+        "comparison-ar saved alias visible"
+      ]
     },
     {
       "id": "location.alias.reset",
@@ -149,11 +283,40 @@
       "control": "reset",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
         "41268042855"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en open reset editor",
+        "original-en reset London",
+        "original-en only A alias removed",
+        "original-en return Cairo",
+        "original-en B alias survives A reset",
+        "original-en B persists reopen",
+        "original-en B still alias",
+        "original-ar open reset editor",
+        "original-ar reset London",
+        "original-ar only A alias removed",
+        "original-ar return Cairo",
+        "original-ar B alias survives A reset",
+        "original-ar B persists reopen",
+        "original-ar B still alias",
+        "comparison-en open reset editor",
+        "comparison-en reset London",
+        "comparison-en only A alias removed",
+        "comparison-en return Cairo",
+        "comparison-en B alias survives A reset",
+        "comparison-en B persists reopen",
+        "comparison-en B still alias",
+        "comparison-ar open reset editor",
+        "comparison-ar reset London",
+        "comparison-ar only A alias removed",
+        "comparison-ar return Cairo",
+        "comparison-ar B alias survives A reset",
+        "comparison-ar B persists reopen",
+        "comparison-ar B still alias"
+      ]
     },
     {
       "id": "location.alias.return-A",
@@ -161,11 +324,56 @@
       "control": "return-A",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
         "41268042855"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en move to Cairo",
+        "original-en cityB not London alias",
+        "original-en London alias retained at B",
+        "original-en edit Cairo",
+        "original-en Cairo alias input",
+        "original-en save Cairo alias",
+        "original-en two aliases saved",
+        "original-en return London",
+        "original-en London alias restored",
+        "original-en A persisted reopen",
+        "original-en A alias stays",
+        "original-ar move to Cairo",
+        "original-ar cityB not London alias",
+        "original-ar London alias retained at B",
+        "original-ar edit Cairo",
+        "original-ar Cairo alias input",
+        "original-ar save Cairo alias",
+        "original-ar two aliases saved",
+        "original-ar return London",
+        "original-ar London alias restored",
+        "original-ar A persisted reopen",
+        "original-ar A alias stays",
+        "comparison-en move to Cairo",
+        "comparison-en cityB not London alias",
+        "comparison-en London alias retained at B",
+        "comparison-en edit Cairo",
+        "comparison-en Cairo alias input",
+        "comparison-en save Cairo alias",
+        "comparison-en two aliases saved",
+        "comparison-en return London",
+        "comparison-en London alias restored",
+        "comparison-en A persisted reopen",
+        "comparison-en A alias stays",
+        "comparison-ar move to Cairo",
+        "comparison-ar cityB not London alias",
+        "comparison-ar London alias retained at B",
+        "comparison-ar edit Cairo",
+        "comparison-ar Cairo alias input",
+        "comparison-ar save Cairo alias",
+        "comparison-ar two aliases saved",
+        "comparison-ar return London",
+        "comparison-ar London alias restored",
+        "comparison-ar A persisted reopen",
+        "comparison-ar A alias stays"
+      ]
     },
     {
       "id": "location.alias.return-B",
@@ -173,11 +381,32 @@
       "control": "return-B",
       "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
       "evidence": [
-        "41267011867",
         "41268042855"
       ],
-      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
-      "status": "bounded evidence"
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks. Exact assertion binding now includes only this finite manual-city/alias path. Cancel no-coordinate-change is the recorded coordinate predicate, not all preferences. No GPS/geocoder/error/permission/connected sync proof; downstream alarms/widgets remain separate.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en only A alias removed",
+        "original-en return Cairo",
+        "original-en B alias survives A reset",
+        "original-en B persists reopen",
+        "original-en B still alias",
+        "original-ar only A alias removed",
+        "original-ar return Cairo",
+        "original-ar B alias survives A reset",
+        "original-ar B persists reopen",
+        "original-ar B still alias",
+        "comparison-en only A alias removed",
+        "comparison-en return Cairo",
+        "comparison-en B alias survives A reset",
+        "comparison-en B persists reopen",
+        "comparison-en B still alias",
+        "comparison-ar only A alias removed",
+        "comparison-ar return Cairo",
+        "comparison-ar B alias survives A reset",
+        "comparison-ar B persists reopen",
+        "comparison-ar B still alias"
+      ]
     },
     {
       "id": "location.method.0",

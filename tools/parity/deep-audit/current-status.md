@@ -158,3 +158,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 13:17 nonFajrsetupfailure
 -41298777490:267checks182fail;allfivebasealertsdefaultoffsoearly/Iqama/DNDnotvisible. Sourceif(enabled)andactualXMLconfirmmissingbaseenableinharness,notproductdefect. MatchedemptydialogsNOThearlyproof. Addactualbaseenable/Apply/reopenandfailfastonmissingearly beforefinitechains. Retainredrun.
+
+## Nov1 13:32 exact city/alias binding
+-13citysearch/aliasrowsboundtoactualrecordedassertionnamesfrom41264835524/41267011867/41268042855. Manualsearch/noresults/Cancelcoordinatepredicate/selection/aliasemptyguard/selectiveReset/A-B-Aonly. NoGPS/networkerror/physicalmovement ordownstreamalarms/widgets/transportscopeexpansion.
