@@ -1,4 +1,4 @@
-# Current audit status - 2026-11-01 00:14 Africa/Cairo
+# Current audit status - 2026-11-01 03:24 Africa/Cairo
 
 Incomplete. Comparison branch only. No release. This file supersedes historical status entries where they conflict; old entries record their own time, not today's verdict.
 
@@ -74,3 +74,5 @@ Next: reconcile the control inventory against scoped evidence before another bat
 - Permissionallow41252887447 75/0,notificationdenialretry41253903491 95/0,GPSpermissionroute41254969483 63/0. Actualdeny/retryOSallow/reopeninspected;OSlabeldifferencesnotappfailure.NophysicalGPSfix. EarlierbadOSlabelharness41251773578retained.
 - Openphone41258419722 19/0,4/6rawpairs. BothAR/ENactualrowactionreturnsGeneral,Backfinishescomparisonrevealsoriginalunderneath,reopenSettingsmatches. Noactualphoneconnection/transportproof. Partialroute/capturefailedruns41256129536/41257272555retained.
 Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverallcompletionclaim.
+
+- Watchfontchoices41259575196:163/0,32/32pairs,all8actualAR/ENsave/reopen;selectedpixelsinspected,clippedchosenrows/scrolloffsetnotexactpixelproof. Nextpattern/themeactualsave/reopen/mainrenderbatch.
