@@ -5386,9 +5386,10 @@
       "control": "dnd-denied",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 DND denied route",
@@ -5398,7 +5399,15 @@
         "comparison-en-p2 DND denied route",
         "comparison-en-p2 DND request",
         "comparison-en-p2 DND settings foreground",
-        "comparison-en-p2 DND denied no write"
+        "comparison-en-p2 DND denied no write",
+        "original-ar-p2 DND denied route",
+        "original-ar-p2 DND request",
+        "original-ar-p2 DND settings foreground",
+        "original-ar-p2 DND denied no write",
+        "comparison-ar-p2 DND denied route",
+        "comparison-ar-p2 DND request",
+        "comparison-ar-p2 DND settings foreground",
+        "comparison-ar-p2 DND denied no write"
       ]
     },
     {
@@ -5407,9 +5416,10 @@
       "control": "dnd-granted",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 DND grant fixture reopen",
@@ -5445,7 +5455,41 @@
         "comparison-en-p2 DND final reopen",
         "comparison-en-p2 DND off again",
         "comparison-en-p2 DND Apply off",
-        "comparison-en-p2 DND saved false"
+        "comparison-en-p2 DND saved false",
+        "original-ar-p2 DND grant fixture reopen",
+        "original-ar-p2 DND draft on",
+        "original-ar-p2 DND draft true",
+        "original-ar-p2 DND Cancel",
+        "original-ar-p2 DND Cancel restores absent",
+        "original-ar-p2 DND save reopen",
+        "original-ar-p2 DND on again",
+        "original-ar-p2 DND Apply",
+        "original-ar-p2 DND saved true",
+        "original-ar-p2 DND saved reopen",
+        "original-ar-p2 DND off draft",
+        "original-ar-p2 DND draft false",
+        "original-ar-p2 DND Back restores true",
+        "original-ar-p2 DND final reopen",
+        "original-ar-p2 DND off again",
+        "original-ar-p2 DND Apply off",
+        "original-ar-p2 DND saved false",
+        "comparison-ar-p2 DND grant fixture reopen",
+        "comparison-ar-p2 DND draft on",
+        "comparison-ar-p2 DND draft true",
+        "comparison-ar-p2 DND Cancel",
+        "comparison-ar-p2 DND Cancel restores absent",
+        "comparison-ar-p2 DND save reopen",
+        "comparison-ar-p2 DND on again",
+        "comparison-ar-p2 DND Apply",
+        "comparison-ar-p2 DND saved true",
+        "comparison-ar-p2 DND saved reopen",
+        "comparison-ar-p2 DND off draft",
+        "comparison-ar-p2 DND draft false",
+        "comparison-ar-p2 DND Back restores true",
+        "comparison-ar-p2 DND final reopen",
+        "comparison-ar-p2 DND off again",
+        "comparison-ar-p2 DND Apply off",
+        "comparison-ar-p2 DND saved false"
       ]
     },
     {
@@ -5869,9 +5913,10 @@
       "control": "dnd-denied",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 DND denied route",
@@ -5881,7 +5926,15 @@
         "comparison-en-p3 DND denied route",
         "comparison-en-p3 DND request",
         "comparison-en-p3 DND settings foreground",
-        "comparison-en-p3 DND denied no write"
+        "comparison-en-p3 DND denied no write",
+        "original-ar-p3 DND denied route",
+        "original-ar-p3 DND request",
+        "original-ar-p3 DND settings foreground",
+        "original-ar-p3 DND denied no write",
+        "comparison-ar-p3 DND denied route",
+        "comparison-ar-p3 DND request",
+        "comparison-ar-p3 DND settings foreground",
+        "comparison-ar-p3 DND denied no write"
       ]
     },
     {
@@ -5890,9 +5943,10 @@
       "control": "dnd-granted",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 DND grant fixture reopen",
@@ -5928,7 +5982,41 @@
         "comparison-en-p3 DND final reopen",
         "comparison-en-p3 DND off again",
         "comparison-en-p3 DND Apply off",
-        "comparison-en-p3 DND saved false"
+        "comparison-en-p3 DND saved false",
+        "original-ar-p3 DND grant fixture reopen",
+        "original-ar-p3 DND draft on",
+        "original-ar-p3 DND draft true",
+        "original-ar-p3 DND Cancel",
+        "original-ar-p3 DND Cancel restores absent",
+        "original-ar-p3 DND save reopen",
+        "original-ar-p3 DND on again",
+        "original-ar-p3 DND Apply",
+        "original-ar-p3 DND saved true",
+        "original-ar-p3 DND saved reopen",
+        "original-ar-p3 DND off draft",
+        "original-ar-p3 DND draft false",
+        "original-ar-p3 DND Back restores true",
+        "original-ar-p3 DND final reopen",
+        "original-ar-p3 DND off again",
+        "original-ar-p3 DND Apply off",
+        "original-ar-p3 DND saved false",
+        "comparison-ar-p3 DND grant fixture reopen",
+        "comparison-ar-p3 DND draft on",
+        "comparison-ar-p3 DND draft true",
+        "comparison-ar-p3 DND Cancel",
+        "comparison-ar-p3 DND Cancel restores absent",
+        "comparison-ar-p3 DND save reopen",
+        "comparison-ar-p3 DND on again",
+        "comparison-ar-p3 DND Apply",
+        "comparison-ar-p3 DND saved true",
+        "comparison-ar-p3 DND saved reopen",
+        "comparison-ar-p3 DND off draft",
+        "comparison-ar-p3 DND draft false",
+        "comparison-ar-p3 DND Back restores true",
+        "comparison-ar-p3 DND final reopen",
+        "comparison-ar-p3 DND off again",
+        "comparison-ar-p3 DND Apply off",
+        "comparison-ar-p3 DND saved false"
       ]
     },
     {
@@ -6352,9 +6440,10 @@
       "control": "dnd-denied",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 DND denied route",
@@ -6364,7 +6453,15 @@
         "comparison-en-p4 DND denied route",
         "comparison-en-p4 DND request",
         "comparison-en-p4 DND settings foreground",
-        "comparison-en-p4 DND denied no write"
+        "comparison-en-p4 DND denied no write",
+        "original-ar-p4 DND denied route",
+        "original-ar-p4 DND request",
+        "original-ar-p4 DND settings foreground",
+        "original-ar-p4 DND denied no write",
+        "comparison-ar-p4 DND denied route",
+        "comparison-ar-p4 DND request",
+        "comparison-ar-p4 DND settings foreground",
+        "comparison-ar-p4 DND denied no write"
       ]
     },
     {
@@ -6373,9 +6470,10 @@
       "control": "dnd-granted",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 DND grant fixture reopen",
@@ -6411,7 +6509,41 @@
         "comparison-en-p4 DND final reopen",
         "comparison-en-p4 DND off again",
         "comparison-en-p4 DND Apply off",
-        "comparison-en-p4 DND saved false"
+        "comparison-en-p4 DND saved false",
+        "original-ar-p4 DND grant fixture reopen",
+        "original-ar-p4 DND draft on",
+        "original-ar-p4 DND draft true",
+        "original-ar-p4 DND Cancel",
+        "original-ar-p4 DND Cancel restores absent",
+        "original-ar-p4 DND save reopen",
+        "original-ar-p4 DND on again",
+        "original-ar-p4 DND Apply",
+        "original-ar-p4 DND saved true",
+        "original-ar-p4 DND saved reopen",
+        "original-ar-p4 DND off draft",
+        "original-ar-p4 DND draft false",
+        "original-ar-p4 DND Back restores true",
+        "original-ar-p4 DND final reopen",
+        "original-ar-p4 DND off again",
+        "original-ar-p4 DND Apply off",
+        "original-ar-p4 DND saved false",
+        "comparison-ar-p4 DND grant fixture reopen",
+        "comparison-ar-p4 DND draft on",
+        "comparison-ar-p4 DND draft true",
+        "comparison-ar-p4 DND Cancel",
+        "comparison-ar-p4 DND Cancel restores absent",
+        "comparison-ar-p4 DND save reopen",
+        "comparison-ar-p4 DND on again",
+        "comparison-ar-p4 DND Apply",
+        "comparison-ar-p4 DND saved true",
+        "comparison-ar-p4 DND saved reopen",
+        "comparison-ar-p4 DND off draft",
+        "comparison-ar-p4 DND draft false",
+        "comparison-ar-p4 DND Back restores true",
+        "comparison-ar-p4 DND final reopen",
+        "comparison-ar-p4 DND off again",
+        "comparison-ar-p4 DND Apply off",
+        "comparison-ar-p4 DND saved false"
       ]
     },
     {
@@ -6835,9 +6967,10 @@
       "control": "dnd-denied",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 DND denied route",
@@ -6847,7 +6980,15 @@
         "comparison-en-p5 DND denied route",
         "comparison-en-p5 DND request",
         "comparison-en-p5 DND settings foreground",
-        "comparison-en-p5 DND denied no write"
+        "comparison-en-p5 DND denied no write",
+        "original-ar-p5 DND denied route",
+        "original-ar-p5 DND request",
+        "original-ar-p5 DND settings foreground",
+        "original-ar-p5 DND denied no write",
+        "comparison-ar-p5 DND denied route",
+        "comparison-ar-p5 DND request",
+        "comparison-ar-p5 DND settings foreground",
+        "comparison-ar-p5 DND denied no write"
       ]
     },
     {
@@ -6856,9 +6997,10 @@
       "control": "dnd-granted",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41308318767"
+        "41308318767",
+        "41310841869"
       ],
-      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "limits": "ENlightandARdark; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All32actualEN/ARpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/otherlocales/force-stop/motion proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 DND grant fixture reopen",
@@ -6894,7 +7036,41 @@
         "comparison-en-p5 DND final reopen",
         "comparison-en-p5 DND off again",
         "comparison-en-p5 DND Apply off",
-        "comparison-en-p5 DND saved false"
+        "comparison-en-p5 DND saved false",
+        "original-ar-p5 DND grant fixture reopen",
+        "original-ar-p5 DND draft on",
+        "original-ar-p5 DND draft true",
+        "original-ar-p5 DND Cancel",
+        "original-ar-p5 DND Cancel restores absent",
+        "original-ar-p5 DND save reopen",
+        "original-ar-p5 DND on again",
+        "original-ar-p5 DND Apply",
+        "original-ar-p5 DND saved true",
+        "original-ar-p5 DND saved reopen",
+        "original-ar-p5 DND off draft",
+        "original-ar-p5 DND draft false",
+        "original-ar-p5 DND Back restores true",
+        "original-ar-p5 DND final reopen",
+        "original-ar-p5 DND off again",
+        "original-ar-p5 DND Apply off",
+        "original-ar-p5 DND saved false",
+        "comparison-ar-p5 DND grant fixture reopen",
+        "comparison-ar-p5 DND draft on",
+        "comparison-ar-p5 DND draft true",
+        "comparison-ar-p5 DND Cancel",
+        "comparison-ar-p5 DND Cancel restores absent",
+        "comparison-ar-p5 DND save reopen",
+        "comparison-ar-p5 DND on again",
+        "comparison-ar-p5 DND Apply",
+        "comparison-ar-p5 DND saved true",
+        "comparison-ar-p5 DND saved reopen",
+        "comparison-ar-p5 DND off draft",
+        "comparison-ar-p5 DND draft false",
+        "comparison-ar-p5 DND Back restores true",
+        "comparison-ar-p5 DND final reopen",
+        "comparison-ar-p5 DND off again",
+        "comparison-ar-p5 DND Apply off",
+        "comparison-ar-p5 DND saved false"
       ]
     },
     {
