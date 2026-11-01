@@ -1,4 +1,4 @@
-# Current audit status - 2026-11-01 03:24 Africa/Cairo
+# Current audit status - 2026-11-01 05:38 Africa/Cairo
 
 Incomplete. Comparison branch only. No release. This file supersedes historical status entries where they conflict; old entries record their own time, not today's verdict.
 
@@ -76,3 +76,10 @@ Next: reconcile the control inventory against scoped evidence before another bat
 Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverallcompletionclaim.
 
 - Watchfontchoices41259575196:163/0,32/32pairs,all8actualAR/ENsave/reopen;selectedpixelsinspected,clippedchosenrows/scrolloffsetnotexactpixelproof. Nextpattern/themeactualsave/reopen/mainrenderbatch.
+
+## Nov1 source omissions restored, bounded verification
+- Watchappearance41260755694:219/0,51/54rawpairsall5pattern4themeAR/ENsave/reopen/home;actualpixelsinspected,3ARminuteclockresiduals.
+- Citydialoglocalization/Cancelrestored e20ff77 fromOct20operations. Locationcenterzeroslider/insets/typography/haptic/subtitlesrestored c982c97 fromOct17-20operations.41264835524:67/0,18/18pairs;actualpixelsaligned,notdragproof.
+- AliasReseteditor-onlyplacementrestored59df01afromOct23finaloperation.41267011867:83/0,16/16pairs;actualpixelsinspected.
+- Manualtwo-placealiasreturn41268042855:143/0,26/26pairs;returnA/selectiveReset/returnB/reopenpassAR/EN. NotGPSA-B-Amovement.
+- Partial/redruns41262570502and41266002695retainedwithoriginalmismatches. NextfiniteAsr/highlatpickerCancel/Back/Apply/reopen;methodpickerandalloffsetdragstillopen.

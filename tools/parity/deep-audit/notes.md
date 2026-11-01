@@ -399,3 +399,6 @@ LocationCalculationScreenlargergapconfirmed:originalsubtitleprayer-times,insets/
 
 ## Aliasresetrepair41267011867
 83checks0fail16/16semanticpairs. ActualAR/ENreseteditorandpostresetpixelsinspected;emptyguard/Cancel/save/reopen/resetallpass. ManualLondonkeyaliasremovedanddefaultnamerestored. NotGPSA-B-Aproof. Nextmanualtwo-placeA-B-AaliasretentionandselectiveReset.
+
+## Manualaliasreturn41268042855
+143checks0fail26/26pairs. LondonA/CairoBaliasesbothsaved,actualreturnArestoresAalias,resetAremovesonlyAkey,Baliasstillshowsafterreturn/reopenAR/EN. Actual4returnpairsinspected,clock/scrolloffsetdifferencesremain. NotGPS/geocodertransportproof.
