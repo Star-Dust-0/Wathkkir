@@ -370,3 +370,6 @@ Noafterbootresult. Emulatorprocessdisappearedafteradbreboot;adbwait70stimeoutand
 
 ## Openphone41256129536 harness route incomplete
 23checks8fail. Five-scrollchooseendsjustbeforevisibleOpenonphoneEN;ARneedsmorescroll. Noactionexecuted. RootBackexitsapp,notappforeground. Increasebounded12scrollandfail-fastonmissingrow;captureBackwindowwithoutfalseforegroundassertion. No productverdict.
+
+## Openphone41257272555 partial evidence
+13checks0failandall4actualrowtapstrue. Postactioncapturewasincorrectlyoutsidelanguageloop,soonlyENcaptured. RetainlimitedevidenceandfixcaptureindentbeforeARclaim.
