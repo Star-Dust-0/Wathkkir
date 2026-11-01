@@ -15255,5 +15255,1651 @@
       }
     ],
     "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41284079104",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41284079104",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt reopened language persists",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "ar-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "fr-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "fr-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "fr-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "de-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "de-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "de-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "es-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "es-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "es-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "it-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "it-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "it-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "tr-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ur-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "id-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "id-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "id-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ru-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ru-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ru-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "pt-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "pt-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "pt-reopen",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
   }
 ]

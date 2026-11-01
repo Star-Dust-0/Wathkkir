@@ -1,5 +1,5 @@
 {
-  "scope": "Partial explicit source-reviewed phone/watch control/scenario ledger. Provider/widget/config/complication lifecycle and shared helpers still need expansion and exact assertion binding. Not a total or completion score.",
+  "scope": "Source-reviewed partial explicit scenario ledger covering phone menus/shared dialogs, watch settings, 10 enabled home widgets, 8 lock widgets, 6 complication providers and tile. Still not proven exhaustive or a completion score. Exact assertion binding and dynamic lifecycle/shared OS surfaces remain.",
   "navigation_source": "app/src/main/java/com/example/ui/screens/MainScreen.kt:173-258",
   "controls": [
     {
@@ -1784,99 +1784,121 @@
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "ar",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.en",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "en",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.fr",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "fr",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.de",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "de",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.es",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "es",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.it",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "it",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.tr",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "tr",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.ur",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "ur",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.id",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "id",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.ru",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "ru",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.pt",
       "source": "app/src/main/java/com/example/ui/screens/LanguagePickerDialog.kt",
       "control": "pt",
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
-      "evidence": [],
-      "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
-      "status": "unmapped"
+      "evidence": [
+        "41284079104"
+      ],
+      "limits": "301checks0fail;11actualchoicesfromindependentENfixture,draftunwritten/alternatingCancelBack/Apply/persist/localizedMenuSettingsLanguagereentry.22/33rawpairs. All11reopendialogpairsvisuallyinspected;selectedRU/PTrowsbelowvisibleviewportandIndonesia partlyclipped,soselectedpixelsnotprovenforall. Thisislightthemefixtureonly,notall11localesentireapporbothdismisspathseach. All11appliedscreenrawdifferencesduescrollvisibleSettingsrows.",
+      "status": "bounded evidence"
     },
     {
       "id": "prayer.bell.0.tap",
@@ -3857,11 +3879,2889 @@
       "evidence": [],
       "status": "unmapped",
       "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "widget.NextPrayer.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.NextPrayer.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.bar-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.bar-amber",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-amber",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.bar-blue",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-blue",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.bar-green",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-green",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.bar-purple",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-purple",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-black",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-black",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-gray",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-gray",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-white",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-white",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-glass",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-glass",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-frosted",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-frosted",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.background-wallblur",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-wallblur",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.PrayerBar.wallpaper-permission",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "wallpaper-permission",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.tap-none",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-none",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.bar-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.bar-amber",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-amber",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.bar-blue",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-blue",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.bar-green",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-green",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.bar-purple",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-purple",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-black",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-black",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-gray",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-gray",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-white",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-white",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-glass",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-glass",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-frosted",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-frosted",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.background-wallblur",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-wallblur",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Schedule.wallpaper-permission",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "wallpaper-permission",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.tap-none",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-none",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hijri.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.tap-none",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-none",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Gregorian.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.tap-none",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-none",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.DayPrayer.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.accent-0",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "accent-0",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.accent-1",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "accent-1",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.accent-2",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "accent-2",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.accent-3",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "accent-3",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-0",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-0",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-1",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-1",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-8",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-8",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-9",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-9",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-10",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-10",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.OneUI.pattern-11",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "pattern-11",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41224242185"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.bar-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.bar-amber",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-amber",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.bar-blue",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-blue",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.bar-green",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-green",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.bar-purple",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-purple",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-black",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-black",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-gray",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-gray",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-white",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-white",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-glass",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-glass",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-frosted",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-frosted",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.background-wallblur",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-wallblur",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Hero.wallpaper-permission",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "wallpaper-permission",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Pill.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.tap-open",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-open",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.tap-refresh",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "tap-refresh",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.apply",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "apply",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.back-new",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-new",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.back-existing",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "back-existing",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41214007984"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.delete",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "delete",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41227195028"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.resize",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "resize",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41207839644",
+        "41210239758"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.boundary",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "boundary",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.midnight",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "midnight",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.reboot",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "reboot",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.idle",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "idle",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.bar-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.bar-amber",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-amber",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.bar-blue",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-blue",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.bar-green",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-green",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.bar-purple",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "bar-purple",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-auto",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-auto",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-black",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-black",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-gray",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-gray",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-white",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-white",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-glass",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-glass",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-frosted",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-frosted",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.background-wallblur",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "background-wallblur",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [
+        "41225525891"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "widget.Clock.wallpaper-permission",
+      "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
+      "control": "wallpaper-permission",
+      "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+    },
+    {
+      "id": "lock-widget.Day.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Day.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Day.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Day.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Day.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Day.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Tasbih.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Hijri.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Gregorian.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Next.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Bar.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.Countdown.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.tap",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "tap",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [
+        "41240937315"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.resize",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "resize",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.boundary",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "boundary",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.midnight",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "midnight",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.reboot",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "reboot",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "lock-widget.CountdownClean.delete",
+      "source": "app/src/main/java/com/example/lockwidgets/LockWidgets.java",
+      "control": "delete",
+      "scenario": "actualhostnoninteractive/render/update/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "All8noninteractivetapfixtureevidenceislead;SamsungphysicalFaceWidgethostnotproved. Do notinventTasbihincrementaction:currentlockwidgetsno listeners."
+    },
+    {
+      "id": "complication.PrayerComplicationService.RANGED_VALUE",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "RANGED_VALUE",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.SHORT_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "SHORT_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.PrayerComplicationService.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.SHORT_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "SHORT_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateGregComplication.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.SHORT_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "SHORT_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateHijriComplication.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.LONG_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "LONG_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.DateBothComplication.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.SHORT_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "SHORT_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.NextTimeComplication.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.SHORT_TEXT",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "SHORT_TEXT",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.tap",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "tap",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.activation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "activation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.deactivation",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "deactivation",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boundary",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.midnight",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "midnight",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.time-zone",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "time-zone",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.boot",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "boot",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.location-sync",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "location-sync",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "complication.UpcomingCountdownComplication.fallback-host",
+      "source": "wear/src/main/java/com/wathakker/wear/Complication.kt",
+      "control": "fallback-host",
+      "scenario": "actualhostrenderer/tapCircles/providerlifecycle/updates",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "NativeSTOPWATCHcountdownisoriginal;dynamicring/no-minute-pulseimprovementownerretained. Preview/APIoutputnotphysicalhostlifecycleproof. Monochromeiconfallbackprovenanceopen."
+    },
+    {
+      "id": "watch.tile.tap-launch",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "tap-launch",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.render",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "render",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.timeline",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "timeline",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.boundary",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "boundary",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.activate",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "activate",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.deactivate",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "deactivate",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
+    },
+    {
+      "id": "watch.tile.resize-shape",
+      "source": "wear/src/main/java/com/wathakker/wear/Tile.kt",
+      "control": "resize-shape",
+      "scenario": "Tileactualhostrequest/render/click/lifecycle",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "2346arc-edgepixelresidualperlocaleopen. No approval to waive it."
     }
   ],
   "reachability_notes": [
     "Current oneUITabs has prayer,hisn,azkar,calendar only; the home/DashboardScreen when branch is not a declared tab. Do not count its shortcuts as reachable without proving another entry.",
     "Settings onFajr is not passed; onHijriConverter is passed but SettingsContent does not render a row for it. Drawer/launcher shortcuts still reach the converter.",
     "DashboardScreen invokes bare hisn but NavHost only declares hisn/{id} plus tabs; currently dead branch, not a confirmed shipped user-visible crash. No product change based on this source-only lead."
+  ],
+  "excluded_source_leads": [
+    "DisabledmanifestprovidersIqamaWidgetProvider,IqamaSmallWidgetProvider,WideBarWidgetProvidernotcountedasnormalreachablehomescreeninventory. Re-enable/deeplinkexposurewouldneedseparateverification.",
+    "DeadDashboardbranch,unusedAlertModeRow/RoundBtn,andunrenderedSettingsHijriConvertercallbackarenotassumedreachablecontrols."
   ]
 }
