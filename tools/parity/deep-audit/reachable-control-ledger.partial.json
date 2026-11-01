@@ -1,5 +1,5 @@
 {
-  "scope": "Manual source review: settings and location branches only. Not complete app denominator. No inherited file-level pass.",
+  "scope": "Partial manual review: Settings,Location,OptionalTimes,converter,Tasbeeh,phone-watch,About,Qibla,Reminders,Tags,Statistics and navigation. Other reachable UI/provider branches and nested shared helpers still need explicit expansion. Not complete denominator.",
   "navigation_source": "app/src/main/java/com/example/ui/screens/MainScreen.kt:173-258",
   "controls": [
     {
@@ -533,6 +533,499 @@
       "evidence": [],
       "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
       "status": "unmapped"
+    },
+    {
+      "id": "optional.imsak",
+      "source": "app/src/main/java/com/example/prayer/OptionalTimesScreen.kt",
+      "control": "imsak switch (row has no onClick)",
+      "scenario": "on; saved true; reopen; prayer output presence; off; absence",
+      "evidence": [
+        "41184408987"
+      ],
+      "limits": "All4enabled together then disabled together; individual combinations and all boundaries unproved. Live countdown/scroll residuals remain.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "optional.duha",
+      "source": "app/src/main/java/com/example/prayer/OptionalTimesScreen.kt",
+      "control": "duha switch (row has no onClick)",
+      "scenario": "on; saved true; reopen; prayer output presence; off; absence",
+      "evidence": [
+        "41184408987"
+      ],
+      "limits": "All4enabled together then disabled together; individual combinations and all boundaries unproved. Live countdown/scroll residuals remain.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "optional.midnight",
+      "source": "app/src/main/java/com/example/prayer/OptionalTimesScreen.kt",
+      "control": "midnight switch (row has no onClick)",
+      "scenario": "on; saved true; reopen; prayer output presence; off; absence",
+      "evidence": [
+        "41184408987"
+      ],
+      "limits": "All4enabled together then disabled together; individual combinations and all boundaries unproved. Live countdown/scroll residuals remain.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "optional.qiyam",
+      "source": "app/src/main/java/com/example/prayer/OptionalTimesScreen.kt",
+      "control": "qiyam switch (row has no onClick)",
+      "scenario": "on; saved true; reopen; prayer output presence; off; absence",
+      "evidence": [
+        "41184408987"
+      ],
+      "limits": "All4enabled together then disabled together; individual combinations and all boundaries unproved. Live countdown/scroll residuals remain.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.direction",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "direction",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.day-field",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "day-field",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.year-field",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "year-field",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.month-popup",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "month-popup",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.month-choice",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "month-choice",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.gregorian.today",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "today",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.direction",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "direction",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.day-field",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "day-field",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.year-field",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "year-field",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.month-popup",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "month-popup",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.month-choice",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "month-choice",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "converter.hijri.today",
+      "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
+      "control": "today",
+      "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "tasbeeh.increment",
+      "source": "app/src/main/java/com/example/ui/screens/TasbeehScreen.kt",
+      "control": "increment",
+      "scenario": "count; target; boundary; reset; reopen",
+      "evidence": [
+        "41136786987"
+      ],
+      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "tasbeeh.target33",
+      "source": "app/src/main/java/com/example/ui/screens/TasbeehScreen.kt",
+      "control": "target33",
+      "scenario": "count; target; boundary; reset; reopen",
+      "evidence": [],
+      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tasbeeh.target99",
+      "source": "app/src/main/java/com/example/ui/screens/TasbeehScreen.kt",
+      "control": "target99",
+      "scenario": "count; target; boundary; reset; reopen",
+      "evidence": [
+        "41136786987"
+      ],
+      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "tasbeeh.target100",
+      "source": "app/src/main/java/com/example/ui/screens/TasbeehScreen.kt",
+      "control": "target100",
+      "scenario": "count; target; boundary; reset; reopen",
+      "evidence": [],
+      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tasbeeh.reset",
+      "source": "app/src/main/java/com/example/ui/screens/TasbeehScreen.kt",
+      "control": "reset",
+      "scenario": "count; target; boundary; reset; reopen",
+      "evidence": [
+        "41136786987"
+      ],
+      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "phone-watch.download",
+      "source": "app/src/main/java/com/example/ui/screens/WatchSettingsScreen.kt",
+      "control": "download",
+      "scenario": "disconnected/connected; on/off/reopen; result/error; externalintent",
+      "evidence": [],
+      "limits": "Newfinitephone_watch_settings.pypreparedforactualdisconnectedrowtoggle/sync;separateswitchhittarget,connectedtransport,downloadexternalintentstillunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "phone-watch.sync",
+      "source": "app/src/main/java/com/example/ui/screens/WatchSettingsScreen.kt",
+      "control": "sync",
+      "scenario": "disconnected/connected; on/off/reopen; result/error; externalintent",
+      "evidence": [],
+      "limits": "Newfinitephone_watch_settings.pypreparedforactualdisconnectedrowtoggle/sync;separateswitchhittarget,connectedtransport,downloadexternalintentstillunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "phone-watch.h24-row",
+      "source": "app/src/main/java/com/example/ui/screens/WatchSettingsScreen.kt",
+      "control": "h24-row",
+      "scenario": "disconnected/connected; on/off/reopen; result/error; externalintent",
+      "evidence": [],
+      "limits": "Newfinitephone_watch_settings.pypreparedforactualdisconnectedrowtoggle/sync;separateswitchhittarget,connectedtransport,downloadexternalintentstillunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "phone-watch.h24-switch",
+      "source": "app/src/main/java/com/example/ui/screens/WatchSettingsScreen.kt",
+      "control": "h24-switch",
+      "scenario": "disconnected/connected; on/off/reopen; result/error; externalintent",
+      "evidence": [],
+      "limits": "Newfinitephone_watch_settings.pypreparedforactualdisconnectedrowtoggle/sync;separateswitchhittarget,connectedtransport,downloadexternalintentstillunmapped.",
+      "status": "unmapped"
+    },
+    {
+      "id": "about.instinct-link",
+      "source": "app/src/main/java/com/example/ui/screens/AboutScreen.kt",
+      "control": "instinct-link",
+      "scenario": "actualpress/back; display; externalintent",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "about.back",
+      "source": "app/src/main/java/com/example/ui/screens/AboutScreen.kt",
+      "control": "back",
+      "scenario": "actualpress/back; display; externalintent",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "about.version-icon-credit",
+      "source": "app/src/main/java/com/example/ui/screens/AboutScreen.kt",
+      "control": "version-icon-credit",
+      "scenario": "actualpress/back; display; externalintent",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "qibla.sensor",
+      "source": "app/src/main/java/com/example/prayer/QiblaScreen.kt",
+      "control": "Sensor heading / alignment feedback (not buttons)",
+      "scenario": "no location; no sensor; rotation/fallback; wrap; aligned buzz; lifecycle",
+      "evidence": [],
+      "limits": "No localclickhandlers otherthan sharedback. Sensor/animation/physicalvibrationrequiresseparateevidence.",
+      "status": "unmapped"
+    },
+    {
+      "id": "reminders.switch",
+      "source": "app/src/main/java/com/example/ui/screens/RemindersScreen.kt",
+      "control": "per-dhikr enable switch (row is non-clickable)",
+      "scenario": "empty/nonempty; enable/off; persist; alarm scheduled/canceled; sorted order",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.add",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "add",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.edit",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "edit",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.delete",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "delete",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.confirm",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "confirm",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.cancel",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "cancel",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.name",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "name",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.blank",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "blank",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "tags.palette",
+      "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
+      "control": "palette",
+      "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "statistics.outputs",
+      "source": "app/src/main/java/com/example/ui/screens/StatisticsScreen.kt",
+      "control": "Back and read-only donut/period/history outputs",
+      "scenario": "empty; history10limit; missingtitle; timezones/streak; reset/deletedsource",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.tabs",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "tabs",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.pager-swipe",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "pager-swipe",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.drawer-open",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "drawer-open",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.drawer-dismiss",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "drawer-dismiss",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.drawer-routes",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "drawer-routes",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.drawer-footer",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "drawer-footer",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.shortcut-qibla",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "shortcut-qibla",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.shortcut-fajr",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "shortcut-fajr",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.shortcut-converter",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "shortcut-converter",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.notification-detail",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "notification-detail",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "navigation.add-dialog",
+      "source": "app/src/main/java/com/example/ui/screens/MainScreen.kt",
+      "control": "add-dialog",
+      "scenario": "every declared route/hit target; Back; lifecycle; adjacent/nonadjacent motion",
+      "evidence": [],
+      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
+      "status": "unmapped"
     }
+  ],
+  "reachability_notes": [
+    "Current oneUITabs has prayer,hisn,azkar,calendar only; the home/DashboardScreen when branch is not a declared tab. Do not count its shortcuts as reachable without proving another entry.",
+    "Settings onFajr is not passed; onHijriConverter is passed but SettingsContent does not render a row for it. Drawer/launcher shortcuts still reach the converter.",
+    "DashboardScreen invokes bare hisn but NavHost only declares hisn/{id} plus tabs; currently dead branch, not a confirmed shipped user-visible crash. No product change based on this source-only lead."
   ]
 }
