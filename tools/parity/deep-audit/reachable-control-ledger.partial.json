@@ -4782,9 +4782,10 @@
       "control": "minutes-cancel",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 nested open",
@@ -4814,7 +4815,35 @@
         "comparison-en-p1 nested Back open",
         "comparison-en-p1 nested Back draft45",
         "comparison-en-p1 nested Back closes",
-        "comparison-en-p1 nested Back keeps10"
+        "comparison-en-p1 nested Back keeps10",
+        "original-ar-p1 nested open",
+        "original-ar-p1 nested draft25",
+        "original-ar-p1 nested Cancel",
+        "original-ar-p1 nested Cancel keeps10",
+        "original-ar-p1 invalid open",
+        "original-ar-p1 invalid input0",
+        "original-ar-p1 invalid Save",
+        "original-ar-p1 invalid still nested",
+        "original-ar-p1 invalid keeps10",
+        "original-ar-p1 invalid Cancel",
+        "original-ar-p1 nested Back open",
+        "original-ar-p1 nested Back draft45",
+        "original-ar-p1 nested Back closes",
+        "original-ar-p1 nested Back keeps10",
+        "comparison-ar-p1 nested open",
+        "comparison-ar-p1 nested draft25",
+        "comparison-ar-p1 nested Cancel",
+        "comparison-ar-p1 nested Cancel keeps10",
+        "comparison-ar-p1 invalid open",
+        "comparison-ar-p1 invalid input0",
+        "comparison-ar-p1 invalid Save",
+        "comparison-ar-p1 invalid still nested",
+        "comparison-ar-p1 invalid keeps10",
+        "comparison-ar-p1 invalid Cancel",
+        "comparison-ar-p1 nested Back open",
+        "comparison-ar-p1 nested Back draft45",
+        "comparison-ar-p1 nested Back closes",
+        "comparison-ar-p1 nested Back keeps10"
       ]
     },
     {
@@ -4994,9 +5023,10 @@
       "control": "outside",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p1 outer draft off",
@@ -5010,7 +5040,19 @@
         "comparison-en-p1 outside closes",
         "comparison-en-p1 outside restores10",
         "comparison-en-p1 outside reopen",
-        "comparison-en-p1 outside reopened10"
+        "comparison-en-p1 outside reopened10",
+        "original-ar-p1 outer draft off",
+        "original-ar-p1 outer draft0",
+        "original-ar-p1 outside closes",
+        "original-ar-p1 outside restores10",
+        "original-ar-p1 outside reopen",
+        "original-ar-p1 outside reopened10",
+        "comparison-ar-p1 outer draft off",
+        "comparison-ar-p1 outer draft0",
+        "comparison-ar-p1 outside closes",
+        "comparison-ar-p1 outside restores10",
+        "comparison-ar-p1 outside reopen",
+        "comparison-ar-p1 outside reopened10"
       ]
     },
     {
@@ -5195,9 +5237,10 @@
       "control": "minutes-cancel",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 nested open",
@@ -5227,7 +5270,35 @@
         "comparison-en-p2 nested Back open",
         "comparison-en-p2 nested Back draft45",
         "comparison-en-p2 nested Back closes",
-        "comparison-en-p2 nested Back keeps10"
+        "comparison-en-p2 nested Back keeps10",
+        "original-ar-p2 nested open",
+        "original-ar-p2 nested draft25",
+        "original-ar-p2 nested Cancel",
+        "original-ar-p2 nested Cancel keeps10",
+        "original-ar-p2 invalid open",
+        "original-ar-p2 invalid input0",
+        "original-ar-p2 invalid Save",
+        "original-ar-p2 invalid still nested",
+        "original-ar-p2 invalid keeps10",
+        "original-ar-p2 invalid Cancel",
+        "original-ar-p2 nested Back open",
+        "original-ar-p2 nested Back draft45",
+        "original-ar-p2 nested Back closes",
+        "original-ar-p2 nested Back keeps10",
+        "comparison-ar-p2 nested open",
+        "comparison-ar-p2 nested draft25",
+        "comparison-ar-p2 nested Cancel",
+        "comparison-ar-p2 nested Cancel keeps10",
+        "comparison-ar-p2 invalid open",
+        "comparison-ar-p2 invalid input0",
+        "comparison-ar-p2 invalid Save",
+        "comparison-ar-p2 invalid still nested",
+        "comparison-ar-p2 invalid keeps10",
+        "comparison-ar-p2 invalid Cancel",
+        "comparison-ar-p2 nested Back open",
+        "comparison-ar-p2 nested Back draft45",
+        "comparison-ar-p2 nested Back closes",
+        "comparison-ar-p2 nested Back keeps10"
       ]
     },
     {
@@ -5407,9 +5478,10 @@
       "control": "outside",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p2 outer draft off",
@@ -5423,7 +5495,19 @@
         "comparison-en-p2 outside closes",
         "comparison-en-p2 outside restores10",
         "comparison-en-p2 outside reopen",
-        "comparison-en-p2 outside reopened10"
+        "comparison-en-p2 outside reopened10",
+        "original-ar-p2 outer draft off",
+        "original-ar-p2 outer draft0",
+        "original-ar-p2 outside closes",
+        "original-ar-p2 outside restores10",
+        "original-ar-p2 outside reopen",
+        "original-ar-p2 outside reopened10",
+        "comparison-ar-p2 outer draft off",
+        "comparison-ar-p2 outer draft0",
+        "comparison-ar-p2 outside closes",
+        "comparison-ar-p2 outside restores10",
+        "comparison-ar-p2 outside reopen",
+        "comparison-ar-p2 outside reopened10"
       ]
     },
     {
@@ -5770,9 +5854,10 @@
       "control": "minutes-cancel",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 nested open",
@@ -5802,7 +5887,35 @@
         "comparison-en-p3 nested Back open",
         "comparison-en-p3 nested Back draft45",
         "comparison-en-p3 nested Back closes",
-        "comparison-en-p3 nested Back keeps10"
+        "comparison-en-p3 nested Back keeps10",
+        "original-ar-p3 nested open",
+        "original-ar-p3 nested draft25",
+        "original-ar-p3 nested Cancel",
+        "original-ar-p3 nested Cancel keeps10",
+        "original-ar-p3 invalid open",
+        "original-ar-p3 invalid input0",
+        "original-ar-p3 invalid Save",
+        "original-ar-p3 invalid still nested",
+        "original-ar-p3 invalid keeps10",
+        "original-ar-p3 invalid Cancel",
+        "original-ar-p3 nested Back open",
+        "original-ar-p3 nested Back draft45",
+        "original-ar-p3 nested Back closes",
+        "original-ar-p3 nested Back keeps10",
+        "comparison-ar-p3 nested open",
+        "comparison-ar-p3 nested draft25",
+        "comparison-ar-p3 nested Cancel",
+        "comparison-ar-p3 nested Cancel keeps10",
+        "comparison-ar-p3 invalid open",
+        "comparison-ar-p3 invalid input0",
+        "comparison-ar-p3 invalid Save",
+        "comparison-ar-p3 invalid still nested",
+        "comparison-ar-p3 invalid keeps10",
+        "comparison-ar-p3 invalid Cancel",
+        "comparison-ar-p3 nested Back open",
+        "comparison-ar-p3 nested Back draft45",
+        "comparison-ar-p3 nested Back closes",
+        "comparison-ar-p3 nested Back keeps10"
       ]
     },
     {
@@ -5982,9 +6095,10 @@
       "control": "outside",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p3 outer draft off",
@@ -5998,7 +6112,19 @@
         "comparison-en-p3 outside closes",
         "comparison-en-p3 outside restores10",
         "comparison-en-p3 outside reopen",
-        "comparison-en-p3 outside reopened10"
+        "comparison-en-p3 outside reopened10",
+        "original-ar-p3 outer draft off",
+        "original-ar-p3 outer draft0",
+        "original-ar-p3 outside closes",
+        "original-ar-p3 outside restores10",
+        "original-ar-p3 outside reopen",
+        "original-ar-p3 outside reopened10",
+        "comparison-ar-p3 outer draft off",
+        "comparison-ar-p3 outer draft0",
+        "comparison-ar-p3 outside closes",
+        "comparison-ar-p3 outside restores10",
+        "comparison-ar-p3 outside reopen",
+        "comparison-ar-p3 outside reopened10"
       ]
     },
     {
@@ -6345,9 +6471,10 @@
       "control": "minutes-cancel",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 nested open",
@@ -6377,7 +6504,35 @@
         "comparison-en-p4 nested Back open",
         "comparison-en-p4 nested Back draft45",
         "comparison-en-p4 nested Back closes",
-        "comparison-en-p4 nested Back keeps10"
+        "comparison-en-p4 nested Back keeps10",
+        "original-ar-p4 nested open",
+        "original-ar-p4 nested draft25",
+        "original-ar-p4 nested Cancel",
+        "original-ar-p4 nested Cancel keeps10",
+        "original-ar-p4 invalid open",
+        "original-ar-p4 invalid input0",
+        "original-ar-p4 invalid Save",
+        "original-ar-p4 invalid still nested",
+        "original-ar-p4 invalid keeps10",
+        "original-ar-p4 invalid Cancel",
+        "original-ar-p4 nested Back open",
+        "original-ar-p4 nested Back draft45",
+        "original-ar-p4 nested Back closes",
+        "original-ar-p4 nested Back keeps10",
+        "comparison-ar-p4 nested open",
+        "comparison-ar-p4 nested draft25",
+        "comparison-ar-p4 nested Cancel",
+        "comparison-ar-p4 nested Cancel keeps10",
+        "comparison-ar-p4 invalid open",
+        "comparison-ar-p4 invalid input0",
+        "comparison-ar-p4 invalid Save",
+        "comparison-ar-p4 invalid still nested",
+        "comparison-ar-p4 invalid keeps10",
+        "comparison-ar-p4 invalid Cancel",
+        "comparison-ar-p4 nested Back open",
+        "comparison-ar-p4 nested Back draft45",
+        "comparison-ar-p4 nested Back closes",
+        "comparison-ar-p4 nested Back keeps10"
       ]
     },
     {
@@ -6557,9 +6712,10 @@
       "control": "outside",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p4 outer draft off",
@@ -6573,7 +6729,19 @@
         "comparison-en-p4 outside closes",
         "comparison-en-p4 outside restores10",
         "comparison-en-p4 outside reopen",
-        "comparison-en-p4 outside reopened10"
+        "comparison-en-p4 outside reopened10",
+        "original-ar-p4 outer draft off",
+        "original-ar-p4 outer draft0",
+        "original-ar-p4 outside closes",
+        "original-ar-p4 outside restores10",
+        "original-ar-p4 outside reopen",
+        "original-ar-p4 outside reopened10",
+        "comparison-ar-p4 outer draft off",
+        "comparison-ar-p4 outer draft0",
+        "comparison-ar-p4 outside closes",
+        "comparison-ar-p4 outside restores10",
+        "comparison-ar-p4 outside reopen",
+        "comparison-ar-p4 outside reopened10"
       ]
     },
     {
@@ -6920,9 +7088,10 @@
       "control": "minutes-cancel",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 nested open",
@@ -6952,7 +7121,35 @@
         "comparison-en-p5 nested Back open",
         "comparison-en-p5 nested Back draft45",
         "comparison-en-p5 nested Back closes",
-        "comparison-en-p5 nested Back keeps10"
+        "comparison-en-p5 nested Back keeps10",
+        "original-ar-p5 nested open",
+        "original-ar-p5 nested draft25",
+        "original-ar-p5 nested Cancel",
+        "original-ar-p5 nested Cancel keeps10",
+        "original-ar-p5 invalid open",
+        "original-ar-p5 invalid input0",
+        "original-ar-p5 invalid Save",
+        "original-ar-p5 invalid still nested",
+        "original-ar-p5 invalid keeps10",
+        "original-ar-p5 invalid Cancel",
+        "original-ar-p5 nested Back open",
+        "original-ar-p5 nested Back draft45",
+        "original-ar-p5 nested Back closes",
+        "original-ar-p5 nested Back keeps10",
+        "comparison-ar-p5 nested open",
+        "comparison-ar-p5 nested draft25",
+        "comparison-ar-p5 nested Cancel",
+        "comparison-ar-p5 nested Cancel keeps10",
+        "comparison-ar-p5 invalid open",
+        "comparison-ar-p5 invalid input0",
+        "comparison-ar-p5 invalid Save",
+        "comparison-ar-p5 invalid still nested",
+        "comparison-ar-p5 invalid keeps10",
+        "comparison-ar-p5 invalid Cancel",
+        "comparison-ar-p5 nested Back open",
+        "comparison-ar-p5 nested Back draft45",
+        "comparison-ar-p5 nested Back closes",
+        "comparison-ar-p5 nested Back keeps10"
       ]
     },
     {
@@ -7132,9 +7329,10 @@
       "control": "outside",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41314642811"
+        "41314642811",
+        "41317283316"
       ],
-      "limits": "ENlightonlyfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All25actualpairsinspected;20/25rawtokenssame,5outsideaftermismatchescountdownseconds. Nofullframepixel/motionidentity,allinvalidvalues/nestedoutside/AR/hardware/delivery proof.",
+      "limits": "ENlightandARdarkfinite25Cancel/invalid0Save/nested45Back/outeroffdraftoutsidetaprollback10/reopen. All50actualpairsinspected;20/25rawtokenssameeachlocale,5outsideafterrawmismatchescountdownseconds;AR Isha also visible home-scroll displacement. No fullframe/motionidentity,allinvalidvalues/nestedoutside/otherlocales/hardware/delivery proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en-p5 outer draft off",
@@ -7148,7 +7346,19 @@
         "comparison-en-p5 outside closes",
         "comparison-en-p5 outside restores10",
         "comparison-en-p5 outside reopen",
-        "comparison-en-p5 outside reopened10"
+        "comparison-en-p5 outside reopened10",
+        "original-ar-p5 outer draft off",
+        "original-ar-p5 outer draft0",
+        "original-ar-p5 outside closes",
+        "original-ar-p5 outside restores10",
+        "original-ar-p5 outside reopen",
+        "original-ar-p5 outside reopened10",
+        "comparison-ar-p5 outer draft off",
+        "comparison-ar-p5 outer draft0",
+        "comparison-ar-p5 outside closes",
+        "comparison-ar-p5 outside restores10",
+        "comparison-ar-p5 outside reopen",
+        "comparison-ar-p5 outside reopened10"
       ]
     },
     {
