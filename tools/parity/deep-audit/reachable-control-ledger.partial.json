@@ -440,9 +440,191 @@
       "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
       "control": "Lock widgets Open editor/Close",
       "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
-      "evidence": [],
-      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
-      "status": "unmapped"
+      "evidence": [
+        "41288415284",
+        "41290680614",
+        "41296412003"
+      ],
+      "limits": "All11actualopen/Closehelppairsinspectedacross3runs. Notall11passinasinglebatch. Otherchecksfailedinolderbatchesretained. NoOpenEditor/fallbacktoast/physicalSamsunglockhost,Back/outside/motionproof. Seededlanguagefixture,notactualselectionchain.",
+      "status": "bounded per-locale recorded assertion and visual evidence",
+      "locale_bindings": {
+        "ar": {
+          "run": "41296412003",
+          "exact_assertions": [
+            "original-ar settings route",
+            "original-ar lock row reachable",
+            "original-ar help Close visible",
+            "original-ar no obsolete branding",
+            "original-ar help close",
+            "comparison-ar settings route",
+            "comparison-ar lock row reachable",
+            "comparison-ar help Close visible",
+            "comparison-ar no obsolete branding",
+            "comparison-ar help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "en": {
+          "run": "41288415284",
+          "exact_assertions": [
+            "original-en settings route",
+            "original-en lock row reachable",
+            "original-en help Close visible",
+            "original-en no obsolete branding",
+            "original-en help close",
+            "comparison-en settings route",
+            "comparison-en lock row reachable",
+            "comparison-en help Close visible",
+            "comparison-en no obsolete branding",
+            "comparison-en help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "fr": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-fr settings route",
+            "original-fr lock row reachable",
+            "original-fr help Close visible",
+            "original-fr no obsolete branding",
+            "original-fr help close",
+            "comparison-fr settings route",
+            "comparison-fr lock row reachable",
+            "comparison-fr help Close visible",
+            "comparison-fr no obsolete branding",
+            "comparison-fr help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "de": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-de settings route",
+            "original-de lock row reachable",
+            "original-de help Close visible",
+            "original-de no obsolete branding",
+            "original-de help close",
+            "comparison-de settings route",
+            "comparison-de lock row reachable",
+            "comparison-de help Close visible",
+            "comparison-de no obsolete branding",
+            "comparison-de help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "es": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-es settings route",
+            "original-es lock row reachable",
+            "original-es help Close visible",
+            "original-es no obsolete branding",
+            "original-es help close",
+            "comparison-es settings route",
+            "comparison-es lock row reachable",
+            "comparison-es help Close visible",
+            "comparison-es no obsolete branding",
+            "comparison-es help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "it": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-it settings route",
+            "original-it lock row reachable",
+            "original-it help Close visible",
+            "original-it no obsolete branding",
+            "original-it help close",
+            "comparison-it settings route",
+            "comparison-it lock row reachable",
+            "comparison-it help Close visible",
+            "comparison-it no obsolete branding",
+            "comparison-it help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "tr": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-tr settings route",
+            "original-tr lock row reachable",
+            "original-tr help Close visible",
+            "original-tr no obsolete branding",
+            "original-tr help close",
+            "comparison-tr settings route",
+            "comparison-tr lock row reachable",
+            "comparison-tr help Close visible",
+            "comparison-tr no obsolete branding",
+            "comparison-tr help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "ur": {
+          "run": "41296412003",
+          "exact_assertions": [
+            "original-ur settings route",
+            "original-ur lock row reachable",
+            "original-ur help Close visible",
+            "original-ur no obsolete branding",
+            "original-ur help close",
+            "comparison-ur settings route",
+            "comparison-ur lock row reachable",
+            "comparison-ur help Close visible",
+            "comparison-ur no obsolete branding",
+            "comparison-ur help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "id": {
+          "run": "41288415284",
+          "exact_assertions": [
+            "original-id settings route",
+            "original-id lock row reachable",
+            "original-id help Close visible",
+            "original-id no obsolete branding",
+            "original-id help close",
+            "comparison-id settings route",
+            "comparison-id lock row reachable",
+            "comparison-id help Close visible",
+            "comparison-id no obsolete branding",
+            "comparison-id help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "ru": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-ru settings route",
+            "original-ru lock row reachable",
+            "original-ru help Close visible",
+            "original-ru no obsolete branding",
+            "original-ru help close",
+            "comparison-ru settings route",
+            "comparison-ru lock row reachable",
+            "comparison-ru help Close visible",
+            "comparison-ru no obsolete branding",
+            "comparison-ru help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        },
+        "pt": {
+          "run": "41290680614",
+          "exact_assertions": [
+            "original-pt settings route",
+            "original-pt lock row reachable",
+            "original-pt help Close visible",
+            "original-pt no obsolete branding",
+            "original-pt help close",
+            "comparison-pt settings route",
+            "comparison-pt lock row reachable",
+            "comparison-pt help Close visible",
+            "comparison-pt no obsolete branding",
+            "comparison-pt help close"
+          ],
+          "pixels": "Actual help original/comparison pair inspected. Matching text/layout, not fullframe pixel equality or motion. Light fixture, seeded locale."
+        }
+      }
     },
     {
       "id": "settings.sound",
@@ -2741,7 +2923,12 @@
         "comparison-ru localized settings",
         "comparison-ru localized language",
         "comparison-ru reopened language persists"
-      ]
+      ],
+      "additional_visual_evidence": {
+        "run": "41286219795",
+        "scene": "ru-reopen-lower",
+        "finding": "Actual selected RU/PT marks visible and aligned in lower viewport; inspected12:27. This only adds selected-pixel proof, not help claims from failed batch."
+      }
     },
     {
       "id": "settings.language.pt",
@@ -2782,7 +2969,12 @@
         "comparison-pt localized settings",
         "comparison-pt localized language",
         "comparison-pt reopened language persists"
-      ]
+      ],
+      "additional_visual_evidence": {
+        "run": "41286219795",
+        "scene": "pt-reopen-lower",
+        "finding": "Actual selected RU/PT marks visible and aligned in lower viewport; inspected12:27. This only adds selected-pixel proof, not help claims from failed batch."
+      }
     },
     {
       "id": "prayer.bell.0.tap",
