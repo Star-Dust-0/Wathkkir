@@ -155,3 +155,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 13:01 location exact assertion binding
 -21locationrows(method8/asr2/highlat4/sliders7)nowexactassertionboundfromdownloaded41270837701/41272574823/41277721994. No newruntimecoveragecount. SliderSET_PROGRESSfallbackandoddindexBackrollbacklimitsretained;preferencecheckingdoesnotprovealarm/widget/Weartransport.
+
+## Nov1 13:17 nonFajrsetupfailure
+-41298777490:267checks182fail;allfivebasealertsdefaultoffsoearly/Iqama/DNDnotvisible. Sourceif(enabled)andactualXMLconfirmmissingbaseenableinharness,notproductdefect. MatchedemptydialogsNOThearlyproof. Addactualbaseenable/Apply/reopenandfailfastonmissingearly beforefinitechains. Retainredrun.
