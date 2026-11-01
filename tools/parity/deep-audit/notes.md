@@ -501,3 +501,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 14:36 RTL nonFajr followthrough
 -41304588966ARdark307checks0fail15/15semanticpairs. Samefinite5nonFajrearly/nested30/Cancel/Apply/BackandeligibleIqamaApply/BackchainsasEN. All15ARactualdialogpixelpairsinspected,text/RTLlayoutalign;minuteclockbackgrounddifferencesremain.44controlrowsnowbindENandARexactassertions. Nototherlocales/DNDpermission/nestedinvalid/Cancel/outside/physicalslider/audio/delivery/force-stoppersistence/motionproof.
+
+## Nov1 14:52 nonFajrDND bounded preparation
+-ENlight4eligibleotherprayersactualdeniedswitchopenssystemsettings/noprefwrite,explicitcmdgrantfixturethenCancel/Apply/reopen/offBack/offApply. OSgrantfixtureisnotactualOSpermissiongrantfloworrealDnDdelivery. No productchange.
