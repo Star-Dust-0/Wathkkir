@@ -94,8 +94,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   for prayer in range(1,6):
    slug=name+'-'+lang+'-p'+str(prayer)
    assert check('bell route',bell()), 'Inspect route evidence'
+   assert check('base adhan enable',switch('At adhan time')), 'Base switch missing'
+   assert check('base enabled',alertprefs('base-enabled').get('enabled_'+str(prayer))=='true'), 'Base enable failed'
+   check('base Apply',tap('Apply'));assert check('enabled bell reopen',bell()), 'Enabled route failed'
    baseline=alertprefs('baseline');early='Early reminder';cancel='Cancel';apply='Apply';offset='offset_'+str(prayer);iq='iqama_'+str(prayer)
-   check('early draft toggle',switch(early));check('early draft10',alertprefs('early-draft').get(offset)=='10');shot('early-draft')
+   assert check('early draft toggle',switch(early)), 'Early switch missing';assert check('early draft10',alertprefs('early-draft').get(offset)=='10'), 'Draft failed';shot('early-draft')
    check('nested30 open',tap('10 min before adhan'));check('nested30 input',field(0,'30'));hide_keyboard();check('nested30 Save',tap('Save'));check('nested30 immediate30',alertprefs('nested30').get(offset)=='30');shot('nested30')
    check('parent Cancel',tap(cancel));check('parent offset rollback',alertprefs('parent-cancel').get(offset)==baseline.get(offset))
    assert check('bell reopen rollback',bell()), 'Inspect rollback route'
