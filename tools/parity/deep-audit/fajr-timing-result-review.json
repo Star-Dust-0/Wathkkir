@@ -1,0 +1,721 @@
+{
+  "run": "41342345633",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41342345633",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en after final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar after final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en after final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 45",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 60",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after choose 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after persisted 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar after final persists reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "semantic_pairs": 34,
+  "equal_semantic_pairs": 31,
+  "pixels_inspected": 34,
+  "bound_controls": [
+    "fajr-alarm.before.0",
+    "fajr-alarm.before.5",
+    "fajr-alarm.before.10",
+    "fajr-alarm.before.15",
+    "fajr-alarm.before.30",
+    "fajr-alarm.before.45",
+    "fajr-alarm.before.60",
+    "fajr-alarm.after.0",
+    "fajr-alarm.after.5",
+    "fajr-alarm.after.10",
+    "fajr-alarm.after.15",
+    "fajr-alarm.after.30",
+    "fajr-alarm.after.45",
+    "fajr-alarm.after.60"
+  ],
+  "caveat": "Horizontal chip scroll offsets remain. No real alarm scheduling/delivery proof."
+}
