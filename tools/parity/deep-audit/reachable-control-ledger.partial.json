@@ -1,0 +1,538 @@
+{
+  "scope": "Manual source review: settings and location branches only. Not complete app denominator. No inherited file-level pass.",
+  "navigation_source": "app/src/main/java/com/example/ui/screens/MainScreen.kt:173-258",
+  "controls": [
+    {
+      "id": "location.gps",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Current location row and radio",
+      "scenario": "off -> on; permission absent/present; GPS unavailable/fix/error; return/reopen",
+      "evidence": [],
+      "limits": "No physical GPS fix, permission-response or geocoder outcomes established by manual-city evidence.",
+      "status": "unmapped"
+    },
+    {
+      "id": "location.manual",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Pick country/city row and radio",
+      "scenario": "GPS -> manual; reselect; reopen",
+      "evidence": [
+        "41264835524",
+        "41268042855"
+      ],
+      "limits": "Finite manual fixture only; independent row versus radio hit targets not exhaustively mapped.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.city.open",
+      "source": "app/src/main/java/com/example/fajr/ui/CitySearchDialog.kt",
+      "control": "open",
+      "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
+      "evidence": [
+        "41263679091",
+        "41264835524"
+      ],
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.city.search",
+      "source": "app/src/main/java/com/example/fajr/ui/CitySearchDialog.kt",
+      "control": "search",
+      "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
+      "evidence": [
+        "41263679091",
+        "41264835524"
+      ],
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.city.empty",
+      "source": "app/src/main/java/com/example/fajr/ui/CitySearchDialog.kt",
+      "control": "empty",
+      "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
+      "evidence": [
+        "41263679091",
+        "41264835524"
+      ],
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.city.select",
+      "source": "app/src/main/java/com/example/fajr/ui/CitySearchDialog.kt",
+      "control": "select",
+      "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
+      "evidence": [
+        "41263679091",
+        "41264835524"
+      ],
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.city.cancel",
+      "source": "app/src/main/java/com/example/fajr/ui/CitySearchDialog.kt",
+      "control": "cancel",
+      "scenario": "Open dialog; search London/no-results; select London; cancel; AR/EN",
+      "evidence": [
+        "41263679091",
+        "41264835524"
+      ],
+      "limits": "No network-failure/large-result/diacritics matrix; outside-tap/back not independently proved by this mapping.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.edit",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "edit",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.draft",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "draft",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.cancel",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "cancel",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.empty-save",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "empty-save",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.save",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "save",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.reset",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "reset",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.return-A",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "return-A",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.alias.return-B",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "return-B",
+      "scenario": "Editor draft/cancel/empty/save; editor-only Reset; A/B selective persistence",
+      "evidence": [
+        "41267011867",
+        "41268042855"
+      ],
+      "limits": "Actual manual locations only, not movement/geocoder. WearSync delivery and alarm/widget recalculation are not established by preference checks.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.0",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 0",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.1",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 1",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.2",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 2",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.3",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 3",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.4",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 4",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.5",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 5",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.6",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 6",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.method.7",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 7",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41270837701"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.asr.0",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 0",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.asr.1",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 1",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.high.0",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 0",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.high.1",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 1",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.high.2",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 2",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.high.3",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "Picker choice 3",
+      "scenario": "select draft; no pref write; alternating Cancel/Back rollback; Apply; force-stop/reopen",
+      "evidence": [
+        "41272574823"
+      ],
+      "limits": "Cancel and Back alternate by index, so each choice does not have both dismiss paths. Outside-tap dismissal unproved. Exact label crop equality applies only Asr/highlat12drafts, not full frames or downstream calculation/widget/alarms.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_fajr",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_fajr",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_shuruq",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_shuruq",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_dhuhr",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_dhuhr",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_asr",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_asr",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_maghrib",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_maghrib",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.adj_isha",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "adj_isha",
+      "scenario": "drag/tap toward +/-30; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "location.slider.hijri_offset",
+      "source": "app/src/main/java/com/example/prayer/LocationCalculationScreen.kt",
+      "control": "hijri_offset",
+      "scenario": "drag/tap toward +/-2; zero; reopen",
+      "evidence": [
+        "41275934011",
+        "41277721994"
+      ],
+      "limits": "356checks0fail, exact +/-30 or +/-2 and zero persist, zero survives force-stop/reopen AR/EN;13endpoints needed accessibility SET_PROGRESS after real gesture.24/42raw token pairs due scroll.28endpoint row pairs visually inspected; pressed/edge-shade residuals ENAsr and ARMaghrib remain. Not gesture/motion equivalence; downstream calculations/alarms/widgets not proved.",
+      "status": "bounded evidence"
+    },
+    {
+      "id": "settings.location",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Change location",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.optional",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Optional times",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.lock",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Lock widgets Open editor/Close",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.sound",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Notification sound OS picker",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.vibration",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Notification vibration row/switch",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.haptics",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Haptic feedback row/switch",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.font",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "App font picker",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.scale",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Font scale slider",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.appearance",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Appearance picker",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.language",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Language picker",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.digits",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Arabic digits segmented selector",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.watch",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "Watch settings",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    },
+    {
+      "id": "settings.about",
+      "source": "app/src/main/java/com/example/ui/screens/SettingsScreen.kt",
+      "control": "About",
+      "scenario": "each visible target; nested dialog options/save/dismiss/reopen",
+      "evidence": [],
+      "limits": "Reachable from MainScreen settings route. Older finite evidence exists in current-status/notes but exact assertions must be recovered and bound before marking these rows covered. Settings onFajr and onHijriConverter callbacks are not passed in current MainScreen wiring.",
+      "status": "unmapped"
+    }
+  ]
+}
