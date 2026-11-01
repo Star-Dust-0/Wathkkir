@@ -1,4 +1,6 @@
 package com.example.prayer
+import kotlin.math.roundToInt
+import androidx.compose.material3.Slider
 import com.example.utils.plainClickable
 
 import android.content.Context
@@ -268,7 +270,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
         item(key = "adj-label") { SectionLabel(L10n.t(S.AdjSection)) }
         item(key = "adj") {
             OneUICard {
-                Text(L10n.t(S.AdjNote), color = cs.onSurfaceVariant, fontSize = 12.sp)
+                Text(L10n.t(S.AdjNote), color = cs.onSurfaceVariant, fontSize = 12.sp, modifier = Modifier.fillMaxWidth().padding(start = 12.dp, end = 12.dp, top = 12.dp))
                 Spacer(Modifier.height(10.dp))
                 val offsets = remember(prefsTick) { PrayerAdjustments.offsetMinutes(context) }
                 val names = listOf(S.PrayerFajr, S.PrayerShuruq, S.PrayerDhuhr, S.PrayerAsr, S.PrayerMaghrib, S.PrayerIsha)
@@ -312,7 +314,7 @@ private fun LocOptionRow(selected: Boolean, icon: ImageVector, title: String, su
         Spacer(Modifier.width(10.dp))
         Column {
             Text(title, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
-            Text(subtitle, color = cs.onSurfaceVariant, fontSize = 11.sp)
+            Text(subtitle, modifier = Modifier.padding(top = 2.dp), color = cs.onSurfaceVariant, fontSize = 13.sp, lineHeight = 18.sp)
         }
     }
 }
@@ -325,7 +327,7 @@ private fun CalcRow(icon: ImageVector, title: String, value: String, onClick: ()
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
             .plainClickable(onClick = onClick)
-            .padding(vertical = 10.dp, horizontal = 4.dp),
+            .padding(vertical = 10.dp, horizontal = 12.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -333,7 +335,7 @@ private fun CalcRow(icon: ImageVector, title: String, value: String, onClick: ()
             Icon(icon, null, tint = cs.primary)
             Spacer(Modifier.width(8.dp))
             Column {
-                Text(title, color = cs.onSurfaceVariant, fontSize = 11.sp)
+                Text(title, modifier = Modifier.padding(top = 2.dp), color = cs.onSurfaceVariant, fontSize = 13.sp, lineHeight = 18.sp)
                 Text(value, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Bold)
             }
         }
@@ -344,45 +346,46 @@ private fun CalcRow(icon: ImageVector, title: String, value: String, onClick: ()
 @Composable
 private fun StepperRow(title: String, value: Int, unit: String, onChange: (Int) -> Unit, icon: ImageVector? = null, min: Int = -30, max: Int = 30) {
     val cs = MaterialTheme.colorScheme
-    Row(
-        modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
-            if (icon != null) {
-                Icon(icon, null, tint = cs.primary, modifier = Modifier.size(20.dp))
-                Spacer(Modifier.width(8.dp))
+    // Center-zero One UI slider: 0 sits in the middle, dragging toward the language's
+    // "forward" side adds and the other side subtracts (Slider mirrors automatically in RTL).
+    var drag by remember(value) { mutableIntStateOf(value) }
+    Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                if (icon != null) {
+                    Icon(icon, null, tint = cs.primary, modifier = Modifier.size(20.dp))
+                    Spacer(Modifier.width(8.dp))
+                }
+                Text(title, color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Medium)
             }
-            Text(title, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
-        }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            StepperButton(Icons.Outlined.Remove, value > min) { onChange(value - 1) }
             Text(
-                text = (if (value > 0) "+$value" else "$value") + " " + unit,
-                color = if (value != 0) cs.primary else cs.onSurfaceVariant,
+                // LRM pins the sign to the number in RTL ("+3 د", never "3+ د"); the min
+                // width + End alignment keep long values ("+30 د") off the screen edge.
+                text = "\u200E" + (if (drag > 0) "+$drag" else "$drag") + " " + unit,
+                color = if (drag != 0) cs.primary else cs.onSurfaceVariant,
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.width(72.dp),
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                textAlign = TextAlign.End,
+                modifier = Modifier.widthIn(min = 56.dp)
             )
-            StepperButton(Icons.Outlined.Add, value < max) { onChange(value + 1) }
         }
-    }
-}
-
-@Composable
-private fun StepperButton(icon: ImageVector, enabled: Boolean, onClick: () -> Unit) {
-    val cs = MaterialTheme.colorScheme
-    IconButton(
-        onClick = onClick,
-        enabled = enabled,
-        modifier = Modifier
-            .size(34.dp)
-            .clip(CircleShape)
-            .background(if (enabled) cs.primary.copy(alpha = 0.12f) else cs.onSurface.copy(alpha = 0.05f))
-    ) {
-        Icon(icon, null, tint = if (enabled) cs.primary else cs.onSurfaceVariant.copy(alpha = 0.4f), modifier = Modifier.size(18.dp))
+        val hapticView = androidx.compose.ui.platform.LocalView.current
+        Slider(
+            value = drag.toFloat(),
+            onValueChange = {
+                val v = it.roundToInt()
+                if (v != drag) com.example.utils.AppHaptics.tick(hapticView)
+                drag = v
+            },
+            onValueChangeFinished = { if (drag != value) onChange(drag) },
+            valueRange = min.toFloat()..max.toFloat(),
+            steps = (max - min) - 1,
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
