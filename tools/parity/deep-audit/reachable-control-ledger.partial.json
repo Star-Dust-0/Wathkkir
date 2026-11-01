@@ -4841,26 +4841,15 @@
       "status": "unmapped"
     },
     {
-      "id": "watch.pattern.0",
-      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
-      "control": "patternchoice0",
-      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
-      "evidence": [
-        "41260755694"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
-    },
-    {
-      "id": "watch.pattern.1",
-      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
-      "control": "patternchoice1",
+      "id": "watch.pattern.id-1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt; wear/src/main/java/com/wathakker/wear/Settings.kt:32",
+      "control": "Pattern ID 1 (visible ordinal 0)",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
         "41260755694"
       ],
       "status": "bounded recorded assertion evidence",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect. Exact actual-choice/prefs-save/reopen checks bound. Font has no home-render step in this run; theme/pattern home captures have foreground assertions, not all visual or motion claims. Reopen uses direct page/sub intent, not full navigation chain.",
+      "limits": "Source Settings.patterns maps visible ordinals0..4 to IDs1/8/9/10/11, not ID0..4. Exact actual-choice/save/reopened preference assertions bound. Direct subpage-intent reopen, not navigation chain. Home captures/foreground checks are not exact pixel/motion/hardware/transport proof.",
       "exact_assertions": [
         "original-ar-pat-1 actual choice",
         "original-ar-pat-1 saved choice",
@@ -4877,37 +4866,104 @@
       ]
     },
     {
-      "id": "watch.pattern.2",
-      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
-      "control": "patternchoice2",
+      "id": "watch.pattern.id-8",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt; wear/src/main/java/com/wathakker/wear/Settings.kt:32",
+      "control": "Pattern ID 8 (visible ordinal 1)",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
         "41260755694"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source Settings.patterns maps visible ordinals0..4 to IDs1/8/9/10/11, not ID0..4. Exact actual-choice/save/reopened preference assertions bound. Direct subpage-intent reopen, not navigation chain. Home captures/foreground checks are not exact pixel/motion/hardware/transport proof.",
+      "exact_assertions": [
+        "original-ar-pat-8 actual choice",
+        "original-ar-pat-8 saved choice",
+        "original-ar-pat-8 reopened choice",
+        "original-en-pat-8 actual choice",
+        "original-en-pat-8 saved choice",
+        "original-en-pat-8 reopened choice",
+        "comparison-ar-pat-8 actual choice",
+        "comparison-ar-pat-8 saved choice",
+        "comparison-ar-pat-8 reopened choice",
+        "comparison-en-pat-8 actual choice",
+        "comparison-en-pat-8 saved choice",
+        "comparison-en-pat-8 reopened choice"
+      ]
     },
     {
-      "id": "watch.pattern.3",
-      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
-      "control": "patternchoice3",
+      "id": "watch.pattern.id-9",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt; wear/src/main/java/com/wathakker/wear/Settings.kt:32",
+      "control": "Pattern ID 9 (visible ordinal 2)",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
         "41260755694"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source Settings.patterns maps visible ordinals0..4 to IDs1/8/9/10/11, not ID0..4. Exact actual-choice/save/reopened preference assertions bound. Direct subpage-intent reopen, not navigation chain. Home captures/foreground checks are not exact pixel/motion/hardware/transport proof.",
+      "exact_assertions": [
+        "original-ar-pat-9 actual choice",
+        "original-ar-pat-9 saved choice",
+        "original-ar-pat-9 reopened choice",
+        "original-en-pat-9 actual choice",
+        "original-en-pat-9 saved choice",
+        "original-en-pat-9 reopened choice",
+        "comparison-ar-pat-9 actual choice",
+        "comparison-ar-pat-9 saved choice",
+        "comparison-ar-pat-9 reopened choice",
+        "comparison-en-pat-9 actual choice",
+        "comparison-en-pat-9 saved choice",
+        "comparison-en-pat-9 reopened choice"
+      ]
     },
     {
-      "id": "watch.pattern.4",
-      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
-      "control": "patternchoice4",
+      "id": "watch.pattern.id-10",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt; wear/src/main/java/com/wathakker/wear/Settings.kt:32",
+      "control": "Pattern ID 10 (visible ordinal 3)",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
         "41260755694"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source Settings.patterns maps visible ordinals0..4 to IDs1/8/9/10/11, not ID0..4. Exact actual-choice/save/reopened preference assertions bound. Direct subpage-intent reopen, not navigation chain. Home captures/foreground checks are not exact pixel/motion/hardware/transport proof.",
+      "exact_assertions": [
+        "original-ar-pat-10 actual choice",
+        "original-ar-pat-10 saved choice",
+        "original-ar-pat-10 reopened choice",
+        "original-en-pat-10 actual choice",
+        "original-en-pat-10 saved choice",
+        "original-en-pat-10 reopened choice",
+        "comparison-ar-pat-10 actual choice",
+        "comparison-ar-pat-10 saved choice",
+        "comparison-ar-pat-10 reopened choice",
+        "comparison-en-pat-10 actual choice",
+        "comparison-en-pat-10 saved choice",
+        "comparison-en-pat-10 reopened choice"
+      ]
+    },
+    {
+      "id": "watch.pattern.id-11",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt; wear/src/main/java/com/wathakker/wear/Settings.kt:32",
+      "control": "Pattern ID 11 (visible ordinal 4)",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source Settings.patterns maps visible ordinals0..4 to IDs1/8/9/10/11, not ID0..4. Exact actual-choice/save/reopened preference assertions bound. Direct subpage-intent reopen, not navigation chain. Home captures/foreground checks are not exact pixel/motion/hardware/transport proof.",
+      "exact_assertions": [
+        "original-ar-pat-11 actual choice",
+        "original-ar-pat-11 saved choice",
+        "original-ar-pat-11 reopened choice",
+        "original-en-pat-11 actual choice",
+        "original-en-pat-11 saved choice",
+        "original-en-pat-11 reopened choice",
+        "comparison-ar-pat-11 actual choice",
+        "comparison-ar-pat-11 saved choice",
+        "comparison-ar-pat-11 reopened choice",
+        "comparison-en-pat-11 actual choice",
+        "comparison-en-pat-11 saved choice",
+        "comparison-en-pat-11 reopened choice"
+      ]
     },
     {
       "id": "watch.theme.0",
