@@ -242,3 +242,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 23:14 file-provider harness miss
 -41349456201stopped19checks2fails originalENonly. Basealarmactualon/off/reopenprefs pass butnopairproof. DocumentsUI nativeDownloadsdrawerrowenabledbutnodenorparentclickableflag;genericapptaprejectedwithoutpress. Actual3screensinspectedshowdrawerstillopenandfileRecentempty,notproductdefect. FutureproviderhelpertouchesenabledDownloadsrecordedlabelbounds;nosourcechange. Run watchcoldentrynextbeforeanotherfilebatch.
+
+## Nov1 23:30 cold circles partial
+-41350855520red67checks5fails: originalAR0Startingframe,AR1ChargingActivity,notpairedappdifferences. All8actualpairsinspected;6validENall4/AR2+3agreecircleslabels/order/color/fontgeometryandBackexits. Nofullpixel/motionproof. NarrowAR0/1unplug+wake+boundedsettled-destinationfollowthroughprepared,noproductchange.
