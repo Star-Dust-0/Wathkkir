@@ -396,3 +396,6 @@ LocationCalculationScreenlargergapconfirmed:originalsubtitleprayer-times,insets/
 
 ## Alias41266002695 original reset placement omission
 83checks4fail,8/16pairs. Draft/Cancel/emptyguard/savekeypersistpassboth. ActualpixelsconfirmedcomparisonResetinlineindisplaybranchwrapsaliastoconstrictedcolumn;originalResetonlybeloweditorrow. RecoveredOct23 15:47:59+15:48:11originaloperationsfromagent-01M5KCG0FQ80H6MZZYFK3YGWKM;replayedfinalbeloweditorplacementandeditingCity=falseonReset. Existingauthoritystrictshippedparity,notexternalapprovalclaim. Needsrerun.
+
+## Aliasresetrepair41267011867
+83checks0fail16/16semanticpairs. ActualAR/ENreseteditorandpostresetpixelsinspected;emptyguard/Cancel/save/reopen/resetallpass. ManualLondonkeyaliasremovedanddefaultnamerestored. NotGPSA-B-Aproof. Nextmanualtwo-placeA-B-AaliasretentionandselectiveReset.
