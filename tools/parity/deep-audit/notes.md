@@ -457,3 +457,5 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 -22phonechoice rows(font8/theme3/language11) bound to exact recorded assertion names from their downloaded artifacts. Parent route rows separated. Alternating Back actions have rollback checks but no independent Back-handler assertion; final-picker opening is not selected-marker assertion.
 -18watchrows(font8/theme4/pattern1 plus5fontscalecontrols) bound to exact recorded assertions from41259575196/41260755694/41250592598. Pattern ledger indexes need reconciliation against actual pattern IDs1/8/9/10/11; no auto-claim for unbound IDs. Fontchoice run has no home rendering. Reopen fontscale captures assert foreground, not re-read scale. Direct subpage-intent scope retained.
 -41288415284 still in progress at10:36. No new product change or overall verdict.
+
+-10:38 corrected ordinal-versus-ID ambiguity before further use: Settings.kt:32 maps five visible patterns to actual IDs1/8/9/10/11. Ledger IDs renamed explicitly id-N and all5 now bound to correct exact assertions; earlier auto-binding by ordinal1 was ambiguous and superseded. No app code change.
