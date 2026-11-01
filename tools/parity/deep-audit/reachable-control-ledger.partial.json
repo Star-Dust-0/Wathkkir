@@ -9232,10 +9232,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-NextPrayer-open expected open",
+        "original-NextPrayer-open expected refresh",
+        "original-NextPrayer-open actual click",
+        "comparison-NextPrayer-open expected open",
+        "comparison-NextPrayer-open expected refresh",
+        "comparison-NextPrayer-open actual click"
+      ]
     },
     {
       "id": "widget.NextPrayer.tap-refresh",
@@ -9243,54 +9251,54 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-NextPrayer-refresh expected open",
+        "original-NextPrayer-refresh expected refresh",
+        "original-NextPrayer-refresh actual click",
+        "comparison-NextPrayer-refresh expected open",
+        "comparison-NextPrayer-refresh expected refresh",
+        "comparison-NextPrayer-refresh actual click"
+      ]
     },
     {
       "id": "widget.NextPrayer.apply",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.NextPrayer.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.NextPrayer.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.NextPrayer.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.NextPrayer.resize",
@@ -9346,10 +9354,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-PrayerBar-open expected open",
+        "original-PrayerBar-open expected refresh",
+        "original-PrayerBar-open actual click",
+        "comparison-PrayerBar-open expected open",
+        "comparison-PrayerBar-open expected refresh",
+        "comparison-PrayerBar-open actual click"
+      ]
     },
     {
       "id": "widget.PrayerBar.tap-refresh",
@@ -9357,54 +9373,54 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-PrayerBar-refresh expected open",
+        "original-PrayerBar-refresh expected refresh",
+        "original-PrayerBar-refresh actual click",
+        "comparison-PrayerBar-refresh expected open",
+        "comparison-PrayerBar-refresh expected refresh",
+        "comparison-PrayerBar-refresh actual click"
+      ]
     },
     {
       "id": "widget.PrayerBar.apply",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.PrayerBar.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.PrayerBar.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.PrayerBar.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.PrayerBar.resize",
@@ -9459,132 +9475,108 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.bar-amber",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-amber",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.bar-blue",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-blue",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.bar-green",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-green",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.bar-purple",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-purple",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-auto",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-black",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-black",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-gray",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-gray",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-white",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-white",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-glass",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-glass",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-frosted",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-frosted",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.background-wallblur",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-wallblur",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.PrayerBar.wallpaper-permission",
@@ -9601,10 +9593,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Schedule-open expected open",
+        "original-Schedule-open expected refresh",
+        "original-Schedule-open actual click",
+        "comparison-Schedule-open expected open",
+        "comparison-Schedule-open expected refresh",
+        "comparison-Schedule-open actual click"
+      ]
     },
     {
       "id": "widget.Schedule.tap-none",
@@ -9612,10 +9612,18 @@
       "control": "tap-none",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Schedule-none expected open",
+        "original-Schedule-none expected refresh",
+        "original-Schedule-none actual click",
+        "comparison-Schedule-none expected open",
+        "comparison-Schedule-none expected refresh",
+        "comparison-Schedule-none actual click"
+      ]
     },
     {
       "id": "widget.Schedule.apply",
@@ -9625,8 +9633,34 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Schedule Apply tapped",
+        "original-en Schedule Apply tap open saved",
+        "original-en Schedule save option Apply",
+        "original-en Schedule option persisted",
+        "original-en Schedule reopen Apply",
+        "original-en Schedule reopening preserves option",
+        "original-ar Schedule Apply tapped",
+        "original-ar Schedule Apply tap open saved",
+        "original-ar Schedule save option Apply",
+        "original-ar Schedule option persisted",
+        "original-ar Schedule reopen Apply",
+        "original-ar Schedule reopening preserves option",
+        "comparison-en Schedule Apply tapped",
+        "comparison-en Schedule Apply tap open saved",
+        "comparison-en Schedule save option Apply",
+        "comparison-en Schedule option persisted",
+        "comparison-en Schedule reopen Apply",
+        "comparison-en Schedule reopening preserves option",
+        "comparison-ar Schedule Apply tapped",
+        "comparison-ar Schedule Apply tap open saved",
+        "comparison-ar Schedule save option Apply",
+        "comparison-ar Schedule option persisted",
+        "comparison-ar Schedule reopen Apply",
+        "comparison-ar Schedule reopening preserves option"
+      ]
     },
     {
       "id": "widget.Schedule.back-new",
@@ -9636,8 +9670,14 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Schedule Back no widget prefs change",
+        "original-ar Schedule Back no widget prefs change",
+        "comparison-en Schedule Back no widget prefs change",
+        "comparison-ar Schedule Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Schedule.back-existing",
@@ -9647,19 +9687,27 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Schedule option draft",
+        "original-en Schedule Back discards option",
+        "original-ar Schedule option draft",
+        "original-ar Schedule Back discards option",
+        "comparison-en Schedule option draft",
+        "comparison-en Schedule Back discards option",
+        "comparison-ar Schedule option draft",
+        "comparison-ar Schedule Back discards option"
+      ]
     },
     {
       "id": "widget.Schedule.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Schedule.resize",
@@ -9714,132 +9762,108 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.bar-amber",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-amber",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.bar-blue",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-blue",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.bar-green",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-green",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.bar-purple",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-purple",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-auto",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-black",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-black",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-gray",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-gray",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-white",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-white",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-glass",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-glass",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-frosted",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-frosted",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.background-wallblur",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-wallblur",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Schedule.wallpaper-permission",
@@ -9856,10 +9880,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Hijri-open expected open",
+        "original-Hijri-open expected refresh",
+        "original-Hijri-open actual click",
+        "comparison-Hijri-open expected open",
+        "comparison-Hijri-open expected refresh",
+        "comparison-Hijri-open actual click"
+      ]
     },
     {
       "id": "widget.Hijri.tap-none",
@@ -9867,10 +9899,18 @@
       "control": "tap-none",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Hijri-none expected open",
+        "original-Hijri-none expected refresh",
+        "original-Hijri-none actual click",
+        "comparison-Hijri-none expected open",
+        "comparison-Hijri-none expected refresh",
+        "comparison-Hijri-none actual click"
+      ]
     },
     {
       "id": "widget.Hijri.apply",
@@ -9880,8 +9920,34 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hijri Apply tapped",
+        "original-en Hijri Apply tap open saved",
+        "original-en Hijri save option Apply",
+        "original-en Hijri option persisted",
+        "original-en Hijri reopen Apply",
+        "original-en Hijri reopening preserves option",
+        "original-ar Hijri Apply tapped",
+        "original-ar Hijri Apply tap open saved",
+        "original-ar Hijri save option Apply",
+        "original-ar Hijri option persisted",
+        "original-ar Hijri reopen Apply",
+        "original-ar Hijri reopening preserves option",
+        "comparison-en Hijri Apply tapped",
+        "comparison-en Hijri Apply tap open saved",
+        "comparison-en Hijri save option Apply",
+        "comparison-en Hijri option persisted",
+        "comparison-en Hijri reopen Apply",
+        "comparison-en Hijri reopening preserves option",
+        "comparison-ar Hijri Apply tapped",
+        "comparison-ar Hijri Apply tap open saved",
+        "comparison-ar Hijri save option Apply",
+        "comparison-ar Hijri option persisted",
+        "comparison-ar Hijri reopen Apply",
+        "comparison-ar Hijri reopening preserves option"
+      ]
     },
     {
       "id": "widget.Hijri.back-new",
@@ -9891,8 +9957,14 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hijri Back no widget prefs change",
+        "original-ar Hijri Back no widget prefs change",
+        "comparison-en Hijri Back no widget prefs change",
+        "comparison-ar Hijri Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Hijri.back-existing",
@@ -9902,19 +9974,27 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hijri option draft",
+        "original-en Hijri Back discards option",
+        "original-ar Hijri option draft",
+        "original-ar Hijri Back discards option",
+        "comparison-en Hijri option draft",
+        "comparison-en Hijri Back discards option",
+        "comparison-ar Hijri option draft",
+        "comparison-ar Hijri Back discards option"
+      ]
     },
     {
       "id": "widget.Hijri.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Hijri.resize",
@@ -9970,10 +10050,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Gregorian-open expected open",
+        "original-Gregorian-open expected refresh",
+        "original-Gregorian-open actual click",
+        "comparison-Gregorian-open expected open",
+        "comparison-Gregorian-open expected refresh",
+        "comparison-Gregorian-open actual click"
+      ]
     },
     {
       "id": "widget.Gregorian.tap-none",
@@ -9981,54 +10069,54 @@
       "control": "tap-none",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Gregorian-none expected open",
+        "original-Gregorian-none expected refresh",
+        "original-Gregorian-none actual click",
+        "comparison-Gregorian-none expected open",
+        "comparison-Gregorian-none expected refresh",
+        "comparison-Gregorian-none actual click"
+      ]
     },
     {
       "id": "widget.Gregorian.apply",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Gregorian.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Gregorian.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Gregorian.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Gregorian.resize",
@@ -10084,10 +10172,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-DayPrayer-open expected open",
+        "original-DayPrayer-open expected refresh",
+        "original-DayPrayer-open actual click",
+        "comparison-DayPrayer-open expected open",
+        "comparison-DayPrayer-open expected refresh",
+        "comparison-DayPrayer-open actual click"
+      ]
     },
     {
       "id": "widget.DayPrayer.tap-none",
@@ -10095,54 +10191,54 @@
       "control": "tap-none",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-DayPrayer-none expected open",
+        "original-DayPrayer-none expected refresh",
+        "original-DayPrayer-none actual click",
+        "comparison-DayPrayer-none expected open",
+        "comparison-DayPrayer-none expected refresh",
+        "comparison-DayPrayer-none actual click"
+      ]
     },
     {
       "id": "widget.DayPrayer.apply",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.DayPrayer.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.DayPrayer.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.DayPrayer.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.DayPrayer.resize",
@@ -10198,10 +10294,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-OneUI-open expected open",
+        "original-OneUI-open expected refresh",
+        "original-OneUI-open actual click",
+        "comparison-OneUI-open expected open",
+        "comparison-OneUI-open expected refresh",
+        "comparison-OneUI-open actual click"
+      ]
     },
     {
       "id": "widget.OneUI.tap-refresh",
@@ -10209,10 +10313,18 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-OneUI-refresh expected open",
+        "original-OneUI-refresh expected refresh",
+        "original-OneUI-refresh actual click",
+        "comparison-OneUI-refresh expected open",
+        "comparison-OneUI-refresh expected refresh",
+        "comparison-OneUI-refresh actual click"
+      ]
     },
     {
       "id": "widget.OneUI.apply",
@@ -10222,8 +10334,34 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en OneUI Apply tapped",
+        "original-en OneUI Apply tap open saved",
+        "original-en OneUI save option Apply",
+        "original-en OneUI option persisted",
+        "original-en OneUI reopen Apply",
+        "original-en OneUI reopening preserves option",
+        "original-ar OneUI Apply tapped",
+        "original-ar OneUI Apply tap open saved",
+        "original-ar OneUI save option Apply",
+        "original-ar OneUI option persisted",
+        "original-ar OneUI reopen Apply",
+        "original-ar OneUI reopening preserves option",
+        "comparison-en OneUI Apply tapped",
+        "comparison-en OneUI Apply tap open saved",
+        "comparison-en OneUI save option Apply",
+        "comparison-en OneUI option persisted",
+        "comparison-en OneUI reopen Apply",
+        "comparison-en OneUI reopening preserves option",
+        "comparison-ar OneUI Apply tapped",
+        "comparison-ar OneUI Apply tap open saved",
+        "comparison-ar OneUI save option Apply",
+        "comparison-ar OneUI option persisted",
+        "comparison-ar OneUI reopen Apply",
+        "comparison-ar OneUI reopening preserves option"
+      ]
     },
     {
       "id": "widget.OneUI.back-new",
@@ -10233,8 +10371,14 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en OneUI Back no widget prefs change",
+        "original-ar OneUI Back no widget prefs change",
+        "comparison-en OneUI Back no widget prefs change",
+        "comparison-ar OneUI Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.OneUI.back-existing",
@@ -10244,8 +10388,18 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en OneUI option draft",
+        "original-en OneUI Back discards option",
+        "original-ar OneUI option draft",
+        "original-ar OneUI Back discards option",
+        "comparison-en OneUI option draft",
+        "comparison-en OneUI Back discards option",
+        "comparison-ar OneUI option draft",
+        "comparison-ar OneUI Back discards option"
+      ]
     },
     {
       "id": "widget.OneUI.delete",
@@ -10255,8 +10409,22 @@
       "evidence": [
         "41227195028"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual OneUI last-host deletion ENlight/ARdark; bar/bg/tap removed, pattern11/accent0 remain in both. No all-provider/multiwidget cleanup or OEM lifecycle claim.",
+      "exact_assertions": [
+        "original-en deleted bar/bg/tap keys absent",
+        "original-en last deletion cancels pulse and boundary",
+        "original-en delete callback no rendering crash",
+        "original-ar deleted bar/bg/tap keys absent",
+        "original-ar last deletion cancels pulse and boundary",
+        "original-ar delete callback no rendering crash",
+        "comparison-en deleted bar/bg/tap keys absent",
+        "comparison-en last deletion cancels pulse and boundary",
+        "comparison-en delete callback no rendering crash",
+        "comparison-ar deleted bar/bg/tap keys absent",
+        "comparison-ar last deletion cancels pulse and boundary",
+        "comparison-ar delete callback no rendering crash"
+      ]
     },
     {
       "id": "widget.OneUI.resize",
@@ -10314,8 +10482,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en OneUI choose 0",
+        "original-en OneUI Apply 0",
+        "original-en OneUI persists 0",
+        "original-en OneUI-accent-0 actual host",
+        "original-en OneUI-accent-0 no rebind",
+        "original-ar OneUI choose 0",
+        "original-ar OneUI Apply 0",
+        "original-ar OneUI persists 0",
+        "original-ar OneUI-accent-0 actual host",
+        "original-ar OneUI-accent-0 no rebind",
+        "comparison-en OneUI choose 0",
+        "comparison-en OneUI Apply 0",
+        "comparison-en OneUI persists 0",
+        "comparison-en OneUI-accent-0 actual host",
+        "comparison-en OneUI-accent-0 no rebind",
+        "comparison-ar OneUI choose 0",
+        "comparison-ar OneUI Apply 0",
+        "comparison-ar OneUI persists 0",
+        "comparison-ar OneUI-accent-0 actual host",
+        "comparison-ar OneUI-accent-0 no rebind"
+      ]
     },
     {
       "id": "widget.OneUI.accent-1",
@@ -10325,8 +10515,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en OneUI choose 1",
+        "original-en OneUI Apply 1",
+        "original-en OneUI persists 1",
+        "original-en OneUI-accent-1 actual host",
+        "original-en OneUI-accent-1 no rebind",
+        "original-ar OneUI choose 1",
+        "original-ar OneUI Apply 1",
+        "original-ar OneUI persists 1",
+        "original-ar OneUI-accent-1 actual host",
+        "original-ar OneUI-accent-1 no rebind",
+        "comparison-en OneUI choose 1",
+        "comparison-en OneUI Apply 1",
+        "comparison-en OneUI persists 1",
+        "comparison-en OneUI-accent-1 actual host",
+        "comparison-en OneUI-accent-1 no rebind",
+        "comparison-ar OneUI choose 1",
+        "comparison-ar OneUI Apply 1",
+        "comparison-ar OneUI persists 1",
+        "comparison-ar OneUI-accent-1 actual host",
+        "comparison-ar OneUI-accent-1 no rebind"
+      ]
     },
     {
       "id": "widget.OneUI.accent-2",
@@ -10336,8 +10548,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en OneUI choose 2",
+        "original-en OneUI Apply 2",
+        "original-en OneUI persists 2",
+        "original-en OneUI-accent-2 actual host",
+        "original-en OneUI-accent-2 no rebind",
+        "original-ar OneUI choose 2",
+        "original-ar OneUI Apply 2",
+        "original-ar OneUI persists 2",
+        "original-ar OneUI-accent-2 actual host",
+        "original-ar OneUI-accent-2 no rebind",
+        "comparison-en OneUI choose 2",
+        "comparison-en OneUI Apply 2",
+        "comparison-en OneUI persists 2",
+        "comparison-en OneUI-accent-2 actual host",
+        "comparison-en OneUI-accent-2 no rebind",
+        "comparison-ar OneUI choose 2",
+        "comparison-ar OneUI Apply 2",
+        "comparison-ar OneUI persists 2",
+        "comparison-ar OneUI-accent-2 actual host",
+        "comparison-ar OneUI-accent-2 no rebind"
+      ]
     },
     {
       "id": "widget.OneUI.accent-3",
@@ -10347,8 +10581,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en OneUI choose 3",
+        "original-en OneUI Apply 3",
+        "original-en OneUI persists 3",
+        "original-en OneUI-accent-3 actual host",
+        "original-en OneUI-accent-3 no rebind",
+        "original-ar OneUI choose 3",
+        "original-ar OneUI Apply 3",
+        "original-ar OneUI persists 3",
+        "original-ar OneUI-accent-3 actual host",
+        "original-ar OneUI-accent-3 no rebind",
+        "comparison-en OneUI choose 3",
+        "comparison-en OneUI Apply 3",
+        "comparison-en OneUI persists 3",
+        "comparison-en OneUI-accent-3 actual host",
+        "comparison-en OneUI-accent-3 no rebind",
+        "comparison-ar OneUI choose 3",
+        "comparison-ar OneUI Apply 3",
+        "comparison-ar OneUI persists 3",
+        "comparison-ar OneUI-accent-3 actual host",
+        "comparison-ar OneUI-accent-3 no rebind"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-0",
@@ -10358,8 +10614,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 0",
+        "original-en pattern choose 0",
+        "original-en pattern Apply 0",
+        "original-en pattern persisted 0",
+        "original-en existing host foreground 0",
+        "original-en host not rebound 0",
+        "original-ar six pattern squares 0",
+        "original-ar pattern choose 0",
+        "original-ar pattern Apply 0",
+        "original-ar pattern persisted 0",
+        "original-ar existing host foreground 0",
+        "original-ar host not rebound 0",
+        "comparison-en six pattern squares 0",
+        "comparison-en pattern choose 0",
+        "comparison-en pattern Apply 0",
+        "comparison-en pattern persisted 0",
+        "comparison-en existing host foreground 0",
+        "comparison-en host not rebound 0",
+        "comparison-ar six pattern squares 0",
+        "comparison-ar pattern choose 0",
+        "comparison-ar pattern Apply 0",
+        "comparison-ar pattern persisted 0",
+        "comparison-ar existing host foreground 0",
+        "comparison-ar host not rebound 0"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-1",
@@ -10369,8 +10651,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 1",
+        "original-en pattern choose 1",
+        "original-en pattern Apply 1",
+        "original-en pattern persisted 1",
+        "original-en existing host foreground 1",
+        "original-en host not rebound 1",
+        "original-ar six pattern squares 1",
+        "original-ar pattern choose 1",
+        "original-ar pattern Apply 1",
+        "original-ar pattern persisted 1",
+        "original-ar existing host foreground 1",
+        "original-ar host not rebound 1",
+        "comparison-en six pattern squares 1",
+        "comparison-en pattern choose 1",
+        "comparison-en pattern Apply 1",
+        "comparison-en pattern persisted 1",
+        "comparison-en existing host foreground 1",
+        "comparison-en host not rebound 1",
+        "comparison-ar six pattern squares 1",
+        "comparison-ar pattern choose 1",
+        "comparison-ar pattern Apply 1",
+        "comparison-ar pattern persisted 1",
+        "comparison-ar existing host foreground 1",
+        "comparison-ar host not rebound 1"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-8",
@@ -10380,8 +10688,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 8",
+        "original-en pattern choose 8",
+        "original-en pattern Apply 8",
+        "original-en pattern persisted 8",
+        "original-en existing host foreground 8",
+        "original-en host not rebound 8",
+        "original-ar six pattern squares 8",
+        "original-ar pattern choose 8",
+        "original-ar pattern Apply 8",
+        "original-ar pattern persisted 8",
+        "original-ar existing host foreground 8",
+        "original-ar host not rebound 8",
+        "comparison-en six pattern squares 8",
+        "comparison-en pattern choose 8",
+        "comparison-en pattern Apply 8",
+        "comparison-en pattern persisted 8",
+        "comparison-en existing host foreground 8",
+        "comparison-en host not rebound 8",
+        "comparison-ar six pattern squares 8",
+        "comparison-ar pattern choose 8",
+        "comparison-ar pattern Apply 8",
+        "comparison-ar pattern persisted 8",
+        "comparison-ar existing host foreground 8",
+        "comparison-ar host not rebound 8"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-9",
@@ -10391,8 +10725,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 9",
+        "original-en pattern choose 9",
+        "original-en pattern Apply 9",
+        "original-en pattern persisted 9",
+        "original-en existing host foreground 9",
+        "original-en host not rebound 9",
+        "original-ar six pattern squares 9",
+        "original-ar pattern choose 9",
+        "original-ar pattern Apply 9",
+        "original-ar pattern persisted 9",
+        "original-ar existing host foreground 9",
+        "original-ar host not rebound 9",
+        "comparison-en six pattern squares 9",
+        "comparison-en pattern choose 9",
+        "comparison-en pattern Apply 9",
+        "comparison-en pattern persisted 9",
+        "comparison-en existing host foreground 9",
+        "comparison-en host not rebound 9",
+        "comparison-ar six pattern squares 9",
+        "comparison-ar pattern choose 9",
+        "comparison-ar pattern Apply 9",
+        "comparison-ar pattern persisted 9",
+        "comparison-ar existing host foreground 9",
+        "comparison-ar host not rebound 9"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-10",
@@ -10402,8 +10762,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 10",
+        "original-en pattern choose 10",
+        "original-en pattern Apply 10",
+        "original-en pattern persisted 10",
+        "original-en existing host foreground 10",
+        "original-en host not rebound 10",
+        "original-ar six pattern squares 10",
+        "original-ar pattern choose 10",
+        "original-ar pattern Apply 10",
+        "original-ar pattern persisted 10",
+        "original-ar existing host foreground 10",
+        "original-ar host not rebound 10",
+        "comparison-en six pattern squares 10",
+        "comparison-en pattern choose 10",
+        "comparison-en pattern Apply 10",
+        "comparison-en pattern persisted 10",
+        "comparison-en existing host foreground 10",
+        "comparison-en host not rebound 10",
+        "comparison-ar six pattern squares 10",
+        "comparison-ar pattern choose 10",
+        "comparison-ar pattern Apply 10",
+        "comparison-ar pattern persisted 10",
+        "comparison-ar existing host foreground 10",
+        "comparison-ar host not rebound 10"
+      ]
     },
     {
       "id": "widget.OneUI.pattern-11",
@@ -10413,8 +10799,34 @@
       "evidence": [
         "41224242185"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Six actual IDs0/1/8/9/10/11, ENlight/ARdark. Separate observer/live host/no rebind. Inspected12host pairs; not exact pixels: ENpattern1/8 progress-region1423/1715pixel residuals; other finite crops mostly3..44pixels, AR10 exact. No all sizes/motion claim.",
+      "exact_assertions": [
+        "original-en six pattern squares 11",
+        "original-en pattern choose 11",
+        "original-en pattern Apply 11",
+        "original-en pattern persisted 11",
+        "original-en existing host foreground 11",
+        "original-en host not rebound 11",
+        "original-ar six pattern squares 11",
+        "original-ar pattern choose 11",
+        "original-ar pattern Apply 11",
+        "original-ar pattern persisted 11",
+        "original-ar existing host foreground 11",
+        "original-ar host not rebound 11",
+        "comparison-en six pattern squares 11",
+        "comparison-en pattern choose 11",
+        "comparison-en pattern Apply 11",
+        "comparison-en pattern persisted 11",
+        "comparison-en existing host foreground 11",
+        "comparison-en host not rebound 11",
+        "comparison-ar six pattern squares 11",
+        "comparison-ar pattern choose 11",
+        "comparison-ar pattern Apply 11",
+        "comparison-ar pattern persisted 11",
+        "comparison-ar existing host foreground 11",
+        "comparison-ar host not rebound 11"
+      ]
     },
     {
       "id": "widget.Hero.tap-open",
@@ -10422,10 +10834,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Hero-open expected open",
+        "original-Hero-open expected refresh",
+        "original-Hero-open actual click",
+        "comparison-Hero-open expected open",
+        "comparison-Hero-open expected refresh",
+        "comparison-Hero-open actual click"
+      ]
     },
     {
       "id": "widget.Hero.tap-refresh",
@@ -10433,10 +10853,18 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Hero-refresh expected open",
+        "original-Hero-refresh expected refresh",
+        "original-Hero-refresh actual click",
+        "comparison-Hero-refresh expected open",
+        "comparison-Hero-refresh expected refresh",
+        "comparison-Hero-refresh actual click"
+      ]
     },
     {
       "id": "widget.Hero.apply",
@@ -10446,8 +10874,34 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hero Apply tapped",
+        "original-en Hero Apply tap open saved",
+        "original-en Hero save option Apply",
+        "original-en Hero option persisted",
+        "original-en Hero reopen Apply",
+        "original-en Hero reopening preserves option",
+        "original-ar Hero Apply tapped",
+        "original-ar Hero Apply tap open saved",
+        "original-ar Hero save option Apply",
+        "original-ar Hero option persisted",
+        "original-ar Hero reopen Apply",
+        "original-ar Hero reopening preserves option",
+        "comparison-en Hero Apply tapped",
+        "comparison-en Hero Apply tap open saved",
+        "comparison-en Hero save option Apply",
+        "comparison-en Hero option persisted",
+        "comparison-en Hero reopen Apply",
+        "comparison-en Hero reopening preserves option",
+        "comparison-ar Hero Apply tapped",
+        "comparison-ar Hero Apply tap open saved",
+        "comparison-ar Hero save option Apply",
+        "comparison-ar Hero option persisted",
+        "comparison-ar Hero reopen Apply",
+        "comparison-ar Hero reopening preserves option"
+      ]
     },
     {
       "id": "widget.Hero.back-new",
@@ -10457,8 +10911,14 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hero Back no widget prefs change",
+        "original-ar Hero Back no widget prefs change",
+        "comparison-en Hero Back no widget prefs change",
+        "comparison-ar Hero Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Hero.back-existing",
@@ -10468,19 +10928,27 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Hero option draft",
+        "original-en Hero Back discards option",
+        "original-ar Hero option draft",
+        "original-ar Hero Back discards option",
+        "comparison-en Hero option draft",
+        "comparison-en Hero Back discards option",
+        "comparison-ar Hero option draft",
+        "comparison-ar Hero Back discards option"
+      ]
     },
     {
       "id": "widget.Hero.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Hero.resize",
@@ -10538,8 +11006,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en Hero choose auto",
+        "original-en Hero Apply auto",
+        "original-en Hero persists auto",
+        "original-en Hero-bar-auto actual host",
+        "original-en Hero-bar-auto no rebind",
+        "original-ar Hero choose auto",
+        "original-ar Hero Apply auto",
+        "original-ar Hero persists auto",
+        "original-ar Hero-bar-auto actual host",
+        "original-ar Hero-bar-auto no rebind",
+        "comparison-en Hero choose auto",
+        "comparison-en Hero Apply auto",
+        "comparison-en Hero persists auto",
+        "comparison-en Hero-bar-auto actual host",
+        "comparison-en Hero-bar-auto no rebind",
+        "comparison-ar Hero choose auto",
+        "comparison-ar Hero Apply auto",
+        "comparison-ar Hero persists auto",
+        "comparison-ar Hero-bar-auto actual host",
+        "comparison-ar Hero-bar-auto no rebind"
+      ]
     },
     {
       "id": "widget.Hero.bar-amber",
@@ -10549,8 +11039,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en Hero choose amber",
+        "original-en Hero Apply amber",
+        "original-en Hero persists amber",
+        "original-en Hero-bar-amber actual host",
+        "original-en Hero-bar-amber no rebind",
+        "original-ar Hero choose amber",
+        "original-ar Hero Apply amber",
+        "original-ar Hero persists amber",
+        "original-ar Hero-bar-amber actual host",
+        "original-ar Hero-bar-amber no rebind",
+        "comparison-en Hero choose amber",
+        "comparison-en Hero Apply amber",
+        "comparison-en Hero persists amber",
+        "comparison-en Hero-bar-amber actual host",
+        "comparison-en Hero-bar-amber no rebind",
+        "comparison-ar Hero choose amber",
+        "comparison-ar Hero Apply amber",
+        "comparison-ar Hero persists amber",
+        "comparison-ar Hero-bar-amber actual host",
+        "comparison-ar Hero-bar-amber no rebind"
+      ]
     },
     {
       "id": "widget.Hero.bar-blue",
@@ -10560,8 +11072,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en Hero choose blue",
+        "original-en Hero Apply blue",
+        "original-en Hero persists blue",
+        "original-en Hero-bar-blue actual host",
+        "original-en Hero-bar-blue no rebind",
+        "original-ar Hero choose blue",
+        "original-ar Hero Apply blue",
+        "original-ar Hero persists blue",
+        "original-ar Hero-bar-blue actual host",
+        "original-ar Hero-bar-blue no rebind",
+        "comparison-en Hero choose blue",
+        "comparison-en Hero Apply blue",
+        "comparison-en Hero persists blue",
+        "comparison-en Hero-bar-blue actual host",
+        "comparison-en Hero-bar-blue no rebind",
+        "comparison-ar Hero choose blue",
+        "comparison-ar Hero Apply blue",
+        "comparison-ar Hero persists blue",
+        "comparison-ar Hero-bar-blue actual host",
+        "comparison-ar Hero-bar-blue no rebind"
+      ]
     },
     {
       "id": "widget.Hero.bar-green",
@@ -10571,8 +11105,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en Hero choose green",
+        "original-en Hero Apply green",
+        "original-en Hero persists green",
+        "original-en Hero-bar-green actual host",
+        "original-en Hero-bar-green no rebind",
+        "original-ar Hero choose green",
+        "original-ar Hero Apply green",
+        "original-ar Hero persists green",
+        "original-ar Hero-bar-green actual host",
+        "original-ar Hero-bar-green no rebind",
+        "comparison-en Hero choose green",
+        "comparison-en Hero Apply green",
+        "comparison-en Hero persists green",
+        "comparison-en Hero-bar-green actual host",
+        "comparison-en Hero-bar-green no rebind",
+        "comparison-ar Hero choose green",
+        "comparison-ar Hero Apply green",
+        "comparison-ar Hero persists green",
+        "comparison-ar Hero-bar-green actual host",
+        "comparison-ar Hero-bar-green no rebind"
+      ]
     },
     {
       "id": "widget.Hero.bar-purple",
@@ -10582,19 +11138,39 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en Hero choose purple",
+        "original-en Hero Apply purple",
+        "original-en Hero persists purple",
+        "original-en Hero-bar-purple actual host",
+        "original-en Hero-bar-purple no rebind",
+        "original-ar Hero choose purple",
+        "original-ar Hero Apply purple",
+        "original-ar Hero persists purple",
+        "original-ar Hero-bar-purple actual host",
+        "original-ar Hero-bar-purple no rebind",
+        "comparison-en Hero choose purple",
+        "comparison-en Hero Apply purple",
+        "comparison-en Hero persists purple",
+        "comparison-en Hero-bar-purple actual host",
+        "comparison-en Hero-bar-purple no rebind",
+        "comparison-ar Hero choose purple",
+        "comparison-ar Hero Apply purple",
+        "comparison-ar Hero persists purple",
+        "comparison-ar Hero-bar-purple actual host",
+        "comparison-ar Hero-bar-purple no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-auto",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Hero.background-black",
@@ -10604,8 +11180,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en background choose black",
+        "original-en background Apply black",
+        "original-en background persists black",
+        "original-en Hero-bg-black actual host",
+        "original-en Hero-bg-black no rebind",
+        "original-ar background choose black",
+        "original-ar background Apply black",
+        "original-ar background persists black",
+        "original-ar Hero-bg-black actual host",
+        "original-ar Hero-bg-black no rebind",
+        "comparison-en background choose black",
+        "comparison-en background Apply black",
+        "comparison-en background persists black",
+        "comparison-en Hero-bg-black actual host",
+        "comparison-en Hero-bg-black no rebind",
+        "comparison-ar background choose black",
+        "comparison-ar background Apply black",
+        "comparison-ar background persists black",
+        "comparison-ar Hero-bg-black actual host",
+        "comparison-ar Hero-bg-black no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-gray",
@@ -10615,8 +11213,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en background choose gray",
+        "original-en background Apply gray",
+        "original-en background persists gray",
+        "original-en Hero-bg-gray actual host",
+        "original-en Hero-bg-gray no rebind",
+        "original-ar background choose gray",
+        "original-ar background Apply gray",
+        "original-ar background persists gray",
+        "original-ar Hero-bg-gray actual host",
+        "original-ar Hero-bg-gray no rebind",
+        "comparison-en background choose gray",
+        "comparison-en background Apply gray",
+        "comparison-en background persists gray",
+        "comparison-en Hero-bg-gray actual host",
+        "comparison-en Hero-bg-gray no rebind",
+        "comparison-ar background choose gray",
+        "comparison-ar background Apply gray",
+        "comparison-ar background persists gray",
+        "comparison-ar Hero-bg-gray actual host",
+        "comparison-ar Hero-bg-gray no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-white",
@@ -10626,8 +11246,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en background choose white",
+        "original-en background Apply white",
+        "original-en background persists white",
+        "original-en Hero-bg-white actual host",
+        "original-en Hero-bg-white no rebind",
+        "original-ar background choose white",
+        "original-ar background Apply white",
+        "original-ar background persists white",
+        "original-ar Hero-bg-white actual host",
+        "original-ar Hero-bg-white no rebind",
+        "comparison-en background choose white",
+        "comparison-en background Apply white",
+        "comparison-en background persists white",
+        "comparison-en Hero-bg-white actual host",
+        "comparison-en Hero-bg-white no rebind",
+        "comparison-ar background choose white",
+        "comparison-ar background Apply white",
+        "comparison-ar background persists white",
+        "comparison-ar Hero-bg-white actual host",
+        "comparison-ar Hero-bg-white no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-glass",
@@ -10637,8 +11279,30 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en background choose glass",
+        "original-en background Apply glass",
+        "original-en background persists glass",
+        "original-en Hero-bg-glass actual host",
+        "original-en Hero-bg-glass no rebind",
+        "original-ar background choose glass",
+        "original-ar background Apply glass",
+        "original-ar background persists glass",
+        "original-ar Hero-bg-glass actual host",
+        "original-ar Hero-bg-glass no rebind",
+        "comparison-en background choose glass",
+        "comparison-en background Apply glass",
+        "comparison-en background persists glass",
+        "comparison-en Hero-bg-glass actual host",
+        "comparison-en Hero-bg-glass no rebind",
+        "comparison-ar background choose glass",
+        "comparison-ar background Apply glass",
+        "comparison-ar background persists glass",
+        "comparison-ar Hero-bg-glass actual host",
+        "comparison-ar Hero-bg-glass no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-frosted",
@@ -10648,19 +11312,39 @@
       "evidence": [
         "41225525891"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual choice/Apply/prefs/live-existing-host/no rebind. Finite individual choices, NOT all cross combinations/exact pixel identity/wallpaper permission/motion/OEM proof.",
+      "exact_assertions": [
+        "original-en background choose frosted",
+        "original-en background Apply frosted",
+        "original-en background persists frosted",
+        "original-en Hero-bg-frosted actual host",
+        "original-en Hero-bg-frosted no rebind",
+        "original-ar background choose frosted",
+        "original-ar background Apply frosted",
+        "original-ar background persists frosted",
+        "original-ar Hero-bg-frosted actual host",
+        "original-ar Hero-bg-frosted no rebind",
+        "comparison-en background choose frosted",
+        "comparison-en background Apply frosted",
+        "comparison-en background persists frosted",
+        "comparison-en Hero-bg-frosted actual host",
+        "comparison-en Hero-bg-frosted no rebind",
+        "comparison-ar background choose frosted",
+        "comparison-ar background Apply frosted",
+        "comparison-ar background persists frosted",
+        "comparison-ar Hero-bg-frosted actual host",
+        "comparison-ar Hero-bg-frosted no rebind"
+      ]
     },
     {
       "id": "widget.Hero.background-wallblur",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-wallblur",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Hero.wallpaper-permission",
@@ -10677,10 +11361,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Pill-open expected open",
+        "original-Pill-open expected refresh",
+        "original-Pill-open actual click",
+        "comparison-Pill-open expected open",
+        "comparison-Pill-open expected refresh",
+        "comparison-Pill-open actual click"
+      ]
     },
     {
       "id": "widget.Pill.tap-refresh",
@@ -10688,10 +11380,18 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Pill-refresh expected open",
+        "original-Pill-refresh expected refresh",
+        "original-Pill-refresh actual click",
+        "comparison-Pill-refresh expected open",
+        "comparison-Pill-refresh expected refresh",
+        "comparison-Pill-refresh actual click"
+      ]
     },
     {
       "id": "widget.Pill.apply",
@@ -10701,8 +11401,34 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Pill Apply tapped",
+        "original-en Pill Apply tap open saved",
+        "original-en Pill save option Apply",
+        "original-en Pill option persisted",
+        "original-en Pill reopen Apply",
+        "original-en Pill reopening preserves option",
+        "original-ar Pill Apply tapped",
+        "original-ar Pill Apply tap open saved",
+        "original-ar Pill save option Apply",
+        "original-ar Pill option persisted",
+        "original-ar Pill reopen Apply",
+        "original-ar Pill reopening preserves option",
+        "comparison-en Pill Apply tapped",
+        "comparison-en Pill Apply tap open saved",
+        "comparison-en Pill save option Apply",
+        "comparison-en Pill option persisted",
+        "comparison-en Pill reopen Apply",
+        "comparison-en Pill reopening preserves option",
+        "comparison-ar Pill Apply tapped",
+        "comparison-ar Pill Apply tap open saved",
+        "comparison-ar Pill save option Apply",
+        "comparison-ar Pill option persisted",
+        "comparison-ar Pill reopen Apply",
+        "comparison-ar Pill reopening preserves option"
+      ]
     },
     {
       "id": "widget.Pill.back-new",
@@ -10712,8 +11438,14 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Pill Back no widget prefs change",
+        "original-ar Pill Back no widget prefs change",
+        "comparison-en Pill Back no widget prefs change",
+        "comparison-ar Pill Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Pill.back-existing",
@@ -10723,19 +11455,27 @@
       "evidence": [
         "41214007984"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Five actually tested provider kinds only, ENlight/ARdark. Back-new exact check compares prefs before/after, NOT activity RESULT_OK. Back-existing checks selected tap option rollback. Apply/reopen prefs proof is NOT actual widget click or alarm delivery.",
+      "exact_assertions": [
+        "original-en Pill option draft",
+        "original-en Pill Back discards option",
+        "original-ar Pill option draft",
+        "original-ar Pill Back discards option",
+        "comparison-en Pill option draft",
+        "comparison-en Pill Back discards option",
+        "comparison-ar Pill option draft",
+        "comparison-ar Pill Back discards option"
+      ]
     },
     {
       "id": "widget.Pill.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Pill.resize",
@@ -10791,10 +11531,18 @@
       "control": "tap-open",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Clock-open expected open",
+        "original-Clock-open expected refresh",
+        "original-Clock-open actual click",
+        "comparison-Clock-open expected open",
+        "comparison-Clock-open expected refresh",
+        "comparison-Clock-open actual click"
+      ]
     },
     {
       "id": "widget.Clock.tap-refresh",
@@ -10802,54 +11550,54 @@
       "control": "tap-refresh",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
       "evidence": [
-        "41214007984"
+        "41205501138"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual RemoteViews host click with seeded per-ID tap pref, EN only. Expected foreground/refresh-log/click checked, NOT settings-selection path. Legacy none refreshes six refreshable providers by original contract; name none does not imply no-op. Not OEM host/all locales/motion/delivery proof.",
+      "exact_assertions": [
+        "original-Clock-refresh expected open",
+        "original-Clock-refresh expected refresh",
+        "original-Clock-refresh actual click",
+        "comparison-Clock-refresh expected open",
+        "comparison-Clock-refresh expected refresh",
+        "comparison-Clock-refresh actual click"
+      ]
     },
     {
       "id": "widget.Clock.apply",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Clock.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Clock.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41214007984"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
     },
     {
       "id": "widget.Clock.delete",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "delete",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41227195028"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted OneUI-only last-delete evidence from this untested provider. No per-kind deletion assertion recovered."
     },
     {
       "id": "widget.Clock.resize",
@@ -10904,132 +11652,108 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.bar-amber",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-amber",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.bar-blue",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-blue",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.bar-green",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-green",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.bar-purple",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "bar-purple",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-auto",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-auto",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-black",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-black",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-gray",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-gray",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-white",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-white",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-glass",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-glass",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-frosted",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-frosted",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.background-wallblur",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "background-wallblur",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [
-        "41225525891"
-      ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Runreferencesarefiniteleads,notallprovider-controlassertions. NewbackreturnsOKdefaults;existingbackdiscards. Tap-onlyprovidernostoredbar/bgmeansisNewtestcanremaintrue;matchshippedbehaviorbeforecallingbug. RealOEMhostwallpaper/permission/deliveryandallcombinationsunproved."
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Retracted broad palette association: actual live-host palette run tested Hero5bars/5backgrounds and OneUI4accents only. This provider/choice is not in that run."
     },
     {
       "id": "widget.Clock.wallpaper-permission",
