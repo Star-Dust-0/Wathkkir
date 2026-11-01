@@ -5385,18 +5385,68 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-denied",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 DND denied route",
+        "original-en-p2 DND request",
+        "original-en-p2 DND settings foreground",
+        "original-en-p2 DND denied no write",
+        "comparison-en-p2 DND denied route",
+        "comparison-en-p2 DND request",
+        "comparison-en-p2 DND settings foreground",
+        "comparison-en-p2 DND denied no write"
+      ]
     },
     {
       "id": "prayer.bell.2.dnd-granted",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-granted",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 DND grant fixture reopen",
+        "original-en-p2 DND draft on",
+        "original-en-p2 DND draft true",
+        "original-en-p2 DND Cancel",
+        "original-en-p2 DND Cancel restores absent",
+        "original-en-p2 DND save reopen",
+        "original-en-p2 DND on again",
+        "original-en-p2 DND Apply",
+        "original-en-p2 DND saved true",
+        "original-en-p2 DND saved reopen",
+        "original-en-p2 DND off draft",
+        "original-en-p2 DND draft false",
+        "original-en-p2 DND Back restores true",
+        "original-en-p2 DND final reopen",
+        "original-en-p2 DND off again",
+        "original-en-p2 DND Apply off",
+        "original-en-p2 DND saved false",
+        "comparison-en-p2 DND grant fixture reopen",
+        "comparison-en-p2 DND draft on",
+        "comparison-en-p2 DND draft true",
+        "comparison-en-p2 DND Cancel",
+        "comparison-en-p2 DND Cancel restores absent",
+        "comparison-en-p2 DND save reopen",
+        "comparison-en-p2 DND on again",
+        "comparison-en-p2 DND Apply",
+        "comparison-en-p2 DND saved true",
+        "comparison-en-p2 DND saved reopen",
+        "comparison-en-p2 DND off draft",
+        "comparison-en-p2 DND draft false",
+        "comparison-en-p2 DND Back restores true",
+        "comparison-en-p2 DND final reopen",
+        "comparison-en-p2 DND off again",
+        "comparison-en-p2 DND Apply off",
+        "comparison-en-p2 DND saved false"
+      ]
     },
     {
       "id": "prayer.bell.3.tap",
@@ -5818,18 +5868,68 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-denied",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 DND denied route",
+        "original-en-p3 DND request",
+        "original-en-p3 DND settings foreground",
+        "original-en-p3 DND denied no write",
+        "comparison-en-p3 DND denied route",
+        "comparison-en-p3 DND request",
+        "comparison-en-p3 DND settings foreground",
+        "comparison-en-p3 DND denied no write"
+      ]
     },
     {
       "id": "prayer.bell.3.dnd-granted",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-granted",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 DND grant fixture reopen",
+        "original-en-p3 DND draft on",
+        "original-en-p3 DND draft true",
+        "original-en-p3 DND Cancel",
+        "original-en-p3 DND Cancel restores absent",
+        "original-en-p3 DND save reopen",
+        "original-en-p3 DND on again",
+        "original-en-p3 DND Apply",
+        "original-en-p3 DND saved true",
+        "original-en-p3 DND saved reopen",
+        "original-en-p3 DND off draft",
+        "original-en-p3 DND draft false",
+        "original-en-p3 DND Back restores true",
+        "original-en-p3 DND final reopen",
+        "original-en-p3 DND off again",
+        "original-en-p3 DND Apply off",
+        "original-en-p3 DND saved false",
+        "comparison-en-p3 DND grant fixture reopen",
+        "comparison-en-p3 DND draft on",
+        "comparison-en-p3 DND draft true",
+        "comparison-en-p3 DND Cancel",
+        "comparison-en-p3 DND Cancel restores absent",
+        "comparison-en-p3 DND save reopen",
+        "comparison-en-p3 DND on again",
+        "comparison-en-p3 DND Apply",
+        "comparison-en-p3 DND saved true",
+        "comparison-en-p3 DND saved reopen",
+        "comparison-en-p3 DND off draft",
+        "comparison-en-p3 DND draft false",
+        "comparison-en-p3 DND Back restores true",
+        "comparison-en-p3 DND final reopen",
+        "comparison-en-p3 DND off again",
+        "comparison-en-p3 DND Apply off",
+        "comparison-en-p3 DND saved false"
+      ]
     },
     {
       "id": "prayer.bell.4.tap",
@@ -6251,18 +6351,68 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-denied",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 DND denied route",
+        "original-en-p4 DND request",
+        "original-en-p4 DND settings foreground",
+        "original-en-p4 DND denied no write",
+        "comparison-en-p4 DND denied route",
+        "comparison-en-p4 DND request",
+        "comparison-en-p4 DND settings foreground",
+        "comparison-en-p4 DND denied no write"
+      ]
     },
     {
       "id": "prayer.bell.4.dnd-granted",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-granted",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 DND grant fixture reopen",
+        "original-en-p4 DND draft on",
+        "original-en-p4 DND draft true",
+        "original-en-p4 DND Cancel",
+        "original-en-p4 DND Cancel restores absent",
+        "original-en-p4 DND save reopen",
+        "original-en-p4 DND on again",
+        "original-en-p4 DND Apply",
+        "original-en-p4 DND saved true",
+        "original-en-p4 DND saved reopen",
+        "original-en-p4 DND off draft",
+        "original-en-p4 DND draft false",
+        "original-en-p4 DND Back restores true",
+        "original-en-p4 DND final reopen",
+        "original-en-p4 DND off again",
+        "original-en-p4 DND Apply off",
+        "original-en-p4 DND saved false",
+        "comparison-en-p4 DND grant fixture reopen",
+        "comparison-en-p4 DND draft on",
+        "comparison-en-p4 DND draft true",
+        "comparison-en-p4 DND Cancel",
+        "comparison-en-p4 DND Cancel restores absent",
+        "comparison-en-p4 DND save reopen",
+        "comparison-en-p4 DND on again",
+        "comparison-en-p4 DND Apply",
+        "comparison-en-p4 DND saved true",
+        "comparison-en-p4 DND saved reopen",
+        "comparison-en-p4 DND off draft",
+        "comparison-en-p4 DND draft false",
+        "comparison-en-p4 DND Back restores true",
+        "comparison-en-p4 DND final reopen",
+        "comparison-en-p4 DND off again",
+        "comparison-en-p4 DND Apply off",
+        "comparison-en-p4 DND saved false"
+      ]
     },
     {
       "id": "prayer.bell.5.tap",
@@ -6684,18 +6834,68 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-denied",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 DND denied route",
+        "original-en-p5 DND request",
+        "original-en-p5 DND settings foreground",
+        "original-en-p5 DND denied no write",
+        "comparison-en-p5 DND denied route",
+        "comparison-en-p5 DND request",
+        "comparison-en-p5 DND settings foreground",
+        "comparison-en-p5 DND denied no write"
+      ]
     },
     {
       "id": "prayer.bell.5.dnd-granted",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "dnd-granted",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41308318767"
+      ],
+      "limits": "ENlightonly; actual denied-switch system-settings route and no per-prayer dnd-key write. Explicit cmd grant fixture, not actual permission approval. FiniteCancel/Apply/reopen/offBack/offApply. All16actualpairsinspected;clockbackgrounddifferencesremain. No actual DND activation/scheduling window/hardware/AR/force-stop/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 DND grant fixture reopen",
+        "original-en-p5 DND draft on",
+        "original-en-p5 DND draft true",
+        "original-en-p5 DND Cancel",
+        "original-en-p5 DND Cancel restores absent",
+        "original-en-p5 DND save reopen",
+        "original-en-p5 DND on again",
+        "original-en-p5 DND Apply",
+        "original-en-p5 DND saved true",
+        "original-en-p5 DND saved reopen",
+        "original-en-p5 DND off draft",
+        "original-en-p5 DND draft false",
+        "original-en-p5 DND Back restores true",
+        "original-en-p5 DND final reopen",
+        "original-en-p5 DND off again",
+        "original-en-p5 DND Apply off",
+        "original-en-p5 DND saved false",
+        "comparison-en-p5 DND grant fixture reopen",
+        "comparison-en-p5 DND draft on",
+        "comparison-en-p5 DND draft true",
+        "comparison-en-p5 DND Cancel",
+        "comparison-en-p5 DND Cancel restores absent",
+        "comparison-en-p5 DND save reopen",
+        "comparison-en-p5 DND on again",
+        "comparison-en-p5 DND Apply",
+        "comparison-en-p5 DND saved true",
+        "comparison-en-p5 DND saved reopen",
+        "comparison-en-p5 DND off draft",
+        "comparison-en-p5 DND draft false",
+        "comparison-en-p5 DND Back restores true",
+        "comparison-en-p5 DND final reopen",
+        "comparison-en-p5 DND off again",
+        "comparison-en-p5 DND Apply off",
+        "comparison-en-p5 DND saved false"
+      ]
     },
     {
       "id": "prayer.location",
