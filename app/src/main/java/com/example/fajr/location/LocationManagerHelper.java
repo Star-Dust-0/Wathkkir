@@ -110,19 +110,42 @@ public final class LocationManagerHelper {
         }
     }
 
-    // Uncovered later helper recovered from APK v6.d, matching Oct23 alias key rule.
+    /** Identity of the geocoded place = EXACTLY the fields the display name is built from
+     * (city = locality, else subAdminArea, else adminArea; country as locale-stable ISO code),
+     * geocoded in English so the key survives UI-language switches. Null when the geocoder
+     * cannot resolve - callers must skip alias save/apply in that case. */
     public final String getPlaceKeyFromCoordinates(double latitude, double longitude) {
         try {
-            List<Address> addresses = new Geocoder(this.context, Locale.ENGLISH).getFromLocation(latitude, longitude, 1);
-            if (addresses == null || addresses.isEmpty()) return null;
+            Geocoder geocoder = new Geocoder(this.context, Locale.ENGLISH);
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            if (addresses == null || addresses.isEmpty()) {
+                return null;
+            }
             Address address = addresses.get(0);
             String city = address.getLocality();
-            if (city == null) city = address.getSubAdminArea();
-            if (city == null) city = address.getAdminArea();
+            if (city == null) {
+                city = address.getSubAdminArea();
+            }
+            if (city == null) {
+                city = address.getAdminArea();
+            }
             String country = address.getCountryCode();
-            if (country == null && city == null) return null;
-            return "g|" + (country == null ? "" : country.trim().toLowerCase(Locale.US).replaceAll("\\s+", " "))
-                + "|" + (city == null ? "" : city.trim().toLowerCase(Locale.US).replaceAll("\\s+", " "));
-        } catch (Exception e) { return null; }
+            if (country == null && city == null) {
+                return null;
+            }
+            return buildPlaceKey(country, city);
+        } catch (Exception e) {
+            return null;
+        }
     }
+
+    /** Production identity seam: same field selection and normalization as the display name. */
+    public static String buildPlaceKey(String countryCode, String cityField) {
+        return "g|" + normPlacePart(countryCode) + "|" + normPlacePart(cityField);
+    }
+
+    private static String normPlacePart(String s) {
+        return s == null ? "" : s.trim().toLowerCase(Locale.US).replaceAll("\\s+", " ");
+    }
+
 }
