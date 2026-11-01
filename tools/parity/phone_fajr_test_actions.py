@@ -85,11 +85,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   assert check('actual Test button',test_alarm()), 'Test unavailable'
   time.sleep(2);shot('test-alarm')
   check('test alarm foreground','com.example.fajr.ui.FajrAlarmActivity' in adb('shell','dumpsys','activity','activities'))
-  before=fp('before-dismiss');check('actual Dismiss',tap('إيقاف المنبه'));time.sleep(1);shot('dismiss-after');check('dismiss no snooze count increment',fp('after-dismiss').get('snooze_count','0')==before.get('snooze_count','0'))
+  before=fp('before-dismiss');check('actual Dismiss',tap('Stop alarm') or tap('إيقاف المنبه'));time.sleep(1);shot('dismiss-after');check('dismiss no snooze count increment',fp('after-dismiss').get('snooze_count','0')==before.get('snooze_count','0'))
   # Capture alarm-manager state separately; dismiss screen is not audio hardware proof.
   (out/(slug+'-dismiss-alarms.txt')).write_text(adb('shell','dumpsys','alarm'))
   assert check('Test again',test_alarm()), 'Test again unavailable'
-  time.sleep(1);before=fp('before-snooze');check('actual Snooze',tap('غفوة'));time.sleep(1);after=fp('after-snooze');check('snooze count increments once',int(after.get('snooze_count','0'))==int(before.get('snooze_count','0'))+1);shot('snooze-after');alarm=adb('shell','dumpsys','alarm');(out/(slug+'-snooze-alarms.txt')).write_text(alarm);check('snooze pending intent scheduled','ACTION_SNOOZE_TRIGGER' in alarm and pkg in alarm)
+  time.sleep(1);before=fp('before-snooze');check('actual Snooze',tap('Snooze') or tap('غفوة'));time.sleep(1);after=fp('after-snooze');check('snooze count increments once',int(after.get('snooze_count','0'))==int(before.get('snooze_count','0'))+1);shot('snooze-after');alarm=adb('shell','dumpsys','alarm');(out/(slug+'-snooze-alarms.txt')).write_text(alarm);check('snooze pending intent scheduled','ACTION_SNOOZE_TRIGGER' in alarm and pkg in alarm)
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'));adb('shell','am','force-stop',pkg)
 pairs=[]
 for n,a in states.items():
