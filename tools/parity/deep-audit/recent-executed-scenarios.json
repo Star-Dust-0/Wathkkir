@@ -14439,5 +14439,821 @@
       }
     ],
     "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41282953462",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41282953462",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en auto final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dark final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar auto final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dark final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en auto final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dark final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar auto final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar light final picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark draft not written",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark reopen picker",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark settings reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dark final picker",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-auto-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-auto-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-auto-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-light-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-light-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-light-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dark-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dark-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-dark-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-auto-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-auto-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-auto-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-light-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-light-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-light-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dark-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dark-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-dark-reopen",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
   }
 ]
