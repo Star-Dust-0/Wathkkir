@@ -74,7 +74,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   assert check('converter route',route(label)), 'route failure'
   assert check('Today fills',tap('Today' if lang=='en' else 'اليوم')), 'Today missing'
   assert check('Hijri direction',tap('Hijri to Gregorian' if lang=='en' else 'من هجري إلى ميلادي')), 'Direction missing'
-  months=['Muharram','Safar',"Rabi' al-Awwal", "Rabi' al-Thani",'Jumada al-Ula','Jumada al-Akhirah','Rajab',"Sha'ban",'Ramadan','Shawwal',"Dhul-Qa'dah",'Dhul-Hijjah'] if lang=='en' else ['محرم','صفر','ربيع الأول','ربيع الآخر','جمادى الأولى','جمادى الآخرة','رجب','شعبان','رمضان','شوال','ذو القعدة','ذو الحجة']
+  months=['Muharram','Safar',"Rabi' al-Awwal", "Rabi' al-Thani",'Jumada al-Ula','Jumada al-Akhirah','Rajab',"Sha'ban",'Ramadan','Shawwal',"Dhul-Qa'dah",'Dhul-Hijjah'] if lang=='en' else ['محرم','صفر','ربيع الأول','ربيع الثاني','جمادى الأولى','جمادى الثانية','رجب','شعبان','رمضان','شوال','ذو القعدة','ذو الحجة']
   weekdays=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] if lang=='en' else ['الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت','الأحد']
   def result_present():return any(n.get('text') in weekdays for n in ET.fromstring(tree()).iter('node'))
   def input_value(index,value):
