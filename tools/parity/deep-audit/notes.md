@@ -582,3 +582,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 23:30 cold circles partial
 -41350855520red67checks5fails: originalAR0Startingframe,AR1ChargingActivity,notpairedappdifferences. All8actualpairsinspected;6validENall4/AR2+3agreecircleslabels/order/color/fontgeometryandBackexits. Nofullpixel/motionproof. NarrowAR0/1unplug+wake+boundedsettled-destinationfollowthroughprepared,noproductchange.
+
+## Nov1 23:45 narrow circles harness return failure
+-41352207629red4checks0fail. SettledcirclesoriginalAR0predicatewastrue,butcheckhelperreturnsNoneandassertcheckraisedbeforeanypicture. Logsconfirm,notruntimeparity/productfailure. Addedboolreturntohelperbeforeboundedrerun;noappchange.
