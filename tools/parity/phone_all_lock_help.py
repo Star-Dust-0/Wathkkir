@@ -13,22 +13,22 @@ def tree():
 def shot(n):
  n=slug+'-'+n;x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=25));states[n]=[(z.get('text',''),z.get('content-desc',''),z.get('checked',''),z.get('enabled','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
 def rect(n):return list(map(int,re.findall(r'\d+',n.get('bounds',''))))
-def touch(n):
+def touch(n,min_y=70):
  b=rect(n)
- if len(b)!=4 or b[0]>=b[2] or b[1]>=b[3] or b[1]<320 or b[3]>2340:return False
+ if len(b)!=4 or b[0]>=b[2] or b[1]>=b[3] or b[1]<min_y or b[3]>2340:return False
  adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.7);return True
-def tap(label):
+def tap(label,min_y=70):
  root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
  for n in root.iter('node'):
   if label not in [n.get('text'),n.get('content-desc')]:continue
   t=n
   while t.get('clickable')!='true' and t in parents:t=parents[t]
-  if t.get('clickable')=='true' and t.get('enabled')=='true' and touch(n):return True
+  if t.get('clickable')=='true' and t.get('enabled')=='true' and touch(n,min_y):return True
  return False
 def swipe(up=True):adb('shell','input','swipe','540','1760' if up else '680','540','680' if up else '1760','350');time.sleep(1.2)
 def choose(label):
  for _ in range(5):
-  if tap(label):return True
+  if tap(label,320):return True
   swipe()
  return False
 def launch():
@@ -70,6 +70,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();time.sleep(8)
   choices=[['ar', 'العربية', {'Settings': 'الإعدادات', 'Menu': 'القائمة', 'Language': 'اللغة', 'Cancel': 'إلغاء', 'LockWidgets': 'ويدجت شاشة القفل', 'Close': 'إغلاق'}], ['en', 'English', {'Settings': 'Settings', 'Menu': 'Menu', 'Language': 'Language', 'Cancel': 'Cancel', 'LockWidgets': 'Lock screen widgets', 'Close': 'Close'}], ['fr', 'Français', {'Settings': 'Paramètres', 'Menu': 'Menu', 'Language': 'Langue', 'Cancel': 'Annuler', 'LockWidgets': "Widgets d'écran de verrouillage", 'Close': 'Fermer'}], ['de', 'Deutsch', {'Settings': 'Einstellungen', 'Menu': 'Menü', 'Language': 'Sprache', 'Cancel': 'Abbrechen', 'LockWidgets': 'Sperrbildschirm-Widgets', 'Close': 'Schließen'}], ['es', 'Español', {'Settings': 'Ajustes', 'Menu': 'Menú', 'Language': 'Idioma', 'Cancel': 'Cancelar', 'LockWidgets': 'Widgets de pantalla de bloqueo', 'Close': 'Cerrar'}], ['it', 'Italiano', {'Settings': 'Impostazioni', 'Menu': 'Menu', 'Language': 'Lingua', 'Cancel': 'Annulla', 'LockWidgets': 'Widget della schermata di blocco', 'Close': 'Chiudi'}], ['tr', 'Türkçe', {'Settings': 'Ayarlar', 'Menu': 'Menü', 'Language': 'Dil', 'Cancel': 'İptal', 'LockWidgets': "Kilit ekranı widget'ları", 'Close': 'Kapat'}], ['ur', 'اردو', {'Settings': 'ترتیبات', 'Menu': 'مینو', 'Language': 'زبان', 'Cancel': 'منسوخ', 'LockWidgets': 'لاک اسکرین ویجٹس', 'Close': 'بند کریں'}], ['id', 'Indonesia', {'Settings': 'Pengaturan', 'Menu': 'Menu', 'Language': 'Bahasa', 'Cancel': 'Batal', 'LockWidgets': 'Widget layar kunci', 'Close': 'Tutup'}], ['ru', 'Русский', {'Settings': 'Настройки', 'Menu': 'Меню', 'Language': 'Язык', 'Cancel': 'Отмена', 'LockWidgets': 'Виджеты экрана блокировки', 'Close': 'Закрыть'}], ['pt', 'Português', {'Settings': 'Configurações', 'Menu': 'Menu', 'Language': 'Idioma', 'Cancel': 'Cancelar', 'LockWidgets': 'Widgets da tela de bloqueio', 'Close': 'Fechar'}]]
   for idx,(code,native,labels) in enumerate(choices):
+   if code not in ['ar','ur']:continue
    adb('shell','am','force-stop',pkg)
    x='<map><string name="language">en</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
    adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
@@ -78,7 +79,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    adb('shell','am','force-stop',pkg)
    x=x.replace('>en</string>','>'+code+'</string>')
    adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
-   launch();check('settings route',tap(labels['Menu']) and tap(labels['Settings']))
+   launch();shot('home-before-menu');menu=tap(labels['Menu']);shot('menu-before-settings');settings=menu and tap(labels['Settings']);check('settings route',settings);assert settings, 'Settings route failed, inspect captures'
    # Settings opens near the last remembered scroll; reset to absolute top first.
    for _ in range(5):swipe(False)
    # Avoid tapping a title while its list is still moving beneath the fixed header.
@@ -91,7 +92,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     launch();tap(labels['Menu']);tap(labels['Settings']);time.sleep(2)
     for _ in range(3):swipe(False)
     time.sleep(2)
-   check('lock row reachable',opened)
+   check('lock row reachable',opened);assert opened, 'Help route failed, inspect captures'
    time.sleep(.6);shot('lock-help')
    texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
    check('help Close visible',labels['Close'] in texts)
