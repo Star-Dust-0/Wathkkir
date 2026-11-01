@@ -2010,8 +2010,14 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en converter",
+        "original-ar converter",
+        "comparison-en converter",
+        "comparison-ar converter"
+      ]
     },
     {
       "id": "converter.gregorian.day-field",
@@ -2021,8 +2027,26 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en day29",
+        "original-en invalid day30",
+        "original-en day29 again",
+        "original-en day28",
+        "original-ar day29",
+        "original-ar invalid day30",
+        "original-ar day29 again",
+        "original-ar day28",
+        "comparison-en day29",
+        "comparison-en invalid day30",
+        "comparison-en day29 again",
+        "comparison-en day28",
+        "comparison-ar day29",
+        "comparison-ar invalid day30",
+        "comparison-ar day29 again",
+        "comparison-ar day28"
+      ]
     },
     {
       "id": "converter.gregorian.year-field",
@@ -2032,8 +2056,22 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en year2028",
+        "original-en year2027",
+        "original-en year1invalid",
+        "original-ar year2028",
+        "original-ar year2027",
+        "original-ar year1invalid",
+        "comparison-en year2028",
+        "comparison-en year2027",
+        "comparison-en year1invalid",
+        "comparison-ar year2028",
+        "comparison-ar year2027",
+        "comparison-ar year1invalid"
+      ]
     },
     {
       "id": "converter.gregorian.month-popup",
@@ -2043,8 +2081,14 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en month open",
+        "original-ar month open",
+        "comparison-en month open",
+        "comparison-ar month open"
+      ]
     },
     {
       "id": "converter.gregorian.month-choice",
@@ -2054,8 +2098,14 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en February",
+        "original-ar February",
+        "comparison-en February",
+        "comparison-ar February"
+      ]
     },
     {
       "id": "converter.gregorian.today",
@@ -2065,8 +2115,14 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en Today",
+        "original-ar Today",
+        "comparison-en Today",
+        "comparison-ar Today"
+      ]
     },
     {
       "id": "converter.hijri.direction",
@@ -2076,52 +2132,50 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en direction",
+        "original-ar direction",
+        "comparison-en direction",
+        "comparison-ar direction"
+      ]
     },
     {
       "id": "converter.hijri.day-field",
       "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
       "control": "day-field",
       "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
-      "evidence": [
-        "41151207220"
-      ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "evidence": [],
+      "limits": "Prior reverseToday only does not exercise Hijri manual day/year/month controls. No assertion binding for this control.",
+      "status": "unmapped"
     },
     {
       "id": "converter.hijri.year-field",
       "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
       "control": "year-field",
       "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
-      "evidence": [
-        "41151207220"
-      ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "evidence": [],
+      "limits": "Prior reverseToday only does not exercise Hijri manual day/year/month controls. No assertion binding for this control.",
+      "status": "unmapped"
     },
     {
       "id": "converter.hijri.month-popup",
       "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
       "control": "month-popup",
       "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
-      "evidence": [
-        "41151207220"
-      ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "evidence": [],
+      "limits": "Prior reverseToday only does not exercise Hijri manual day/year/month controls. No assertion binding for this control.",
+      "status": "unmapped"
     },
     {
       "id": "converter.hijri.month-choice",
       "source": "app/src/main/java/com/example/prayer/HijriConverterScreen.kt",
       "control": "month-choice",
       "scenario": "both directions; valid/invalid/leap/bounds; month-choice/dismiss; Today; reopen",
-      "evidence": [
-        "41151207220"
-      ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "evidence": [],
+      "limits": "Prior reverseToday only does not exercise Hijri manual day/year/month controls. No assertion binding for this control.",
+      "status": "unmapped"
     },
     {
       "id": "converter.hijri.today",
@@ -2131,8 +2185,14 @@
       "evidence": [
         "41151207220"
       ],
-      "limits": "Only executed Gregorian leap2028/nonleap2027, invalid30Feb/year1, February choice, reverseToday and reopen mapped. Not all24monthchoices or bothyearboundaries; exactresult assertion versus screenshot distinction still needs artifact binding.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark finite inputs only. These named assertions check route/tap/field entry success, NOT exact result oracle. Recorded semantic/pixel scenes supply bounded paired output evidence separately. Gregorian 2028Feb29/30,2027Feb29/28,year1,February only; reverseToday only for Hijri. No all months/year bounds/motion claim. gregorian.direction is initial default entry, not explicit reverse-to-Gregorian press.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en reverse Today",
+        "original-ar reverse Today",
+        "comparison-en reverse Today",
+        "comparison-ar reverse Today"
+      ]
     },
     {
       "id": "tasbeeh.increment",
@@ -2142,8 +2202,26 @@
       "evidence": [
         "41136786987"
       ],
-      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark 3 increment taps, count3 survives force-stop, target99 tap, reset0 persists only. No target33/100/boundaries/haptics/motion claim. Historical session-only check merely searches33 text and is excluded from selected-state proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en count press0",
+        "original-en count press1",
+        "original-en count press2",
+        "original-en count persisted",
+        "original-ar count press0",
+        "original-ar count press1",
+        "original-ar count press2",
+        "original-ar count persisted",
+        "comparison-en count press0",
+        "comparison-en count press1",
+        "comparison-en count press2",
+        "comparison-en count persisted",
+        "comparison-ar count press0",
+        "comparison-ar count press1",
+        "comparison-ar count press2",
+        "comparison-ar count persisted"
+      ]
     },
     {
       "id": "tasbeeh.target33",
@@ -2162,8 +2240,14 @@
       "evidence": [
         "41136786987"
       ],
-      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark 3 increment taps, count3 survives force-stop, target99 tap, reset0 persists only. No target33/100/boundaries/haptics/motion claim. Historical session-only check merely searches33 text and is excluded from selected-state proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en target99",
+        "original-ar target99",
+        "comparison-en target99",
+        "comparison-ar target99"
+      ]
     },
     {
       "id": "tasbeeh.target100",
@@ -2182,8 +2266,18 @@
       "evidence": [
         "41136786987"
       ],
-      "limits": "Utility harness checks3increments,target99,reopencount3/reset0. Target-is-session-only assertion merely searches33text and is insufficient selected-state proof. Othertargets/boundariesunmapped.",
-      "status": "bounded evidence"
+      "limits": "ENlight/ARdark 3 increment taps, count3 survives force-stop, target99 tap, reset0 persists only. No target33/100/boundaries/haptics/motion claim. Historical session-only check merely searches33 text and is excluded from selected-state proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en reset",
+        "original-en reset persisted",
+        "original-ar reset",
+        "original-ar reset persisted",
+        "comparison-en reset",
+        "comparison-en reset persisted",
+        "comparison-ar reset",
+        "comparison-ar reset persisted"
+      ]
     },
     {
       "id": "phone-watch.download",
@@ -2277,54 +2371,202 @@
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "add",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en tags",
+        "original-en add",
+        "original-en name",
+        "original-en save",
+        "original-en created once",
+        "original-ar tags",
+        "original-ar add",
+        "original-ar name",
+        "original-ar save",
+        "original-ar created once",
+        "comparison-en tags",
+        "comparison-en add",
+        "comparison-en name",
+        "comparison-en save",
+        "comparison-en created once",
+        "comparison-ar tags",
+        "comparison-ar add",
+        "comparison-ar name",
+        "comparison-ar save",
+        "comparison-ar created once"
+      ]
     },
     {
       "id": "tags.edit",
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "edit",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en edit",
+        "original-en rename draft",
+        "original-en edit cancel",
+        "original-en cancel name unchanged",
+        "original-en edit save",
+        "original-en rename persisted",
+        "original-ar edit",
+        "original-ar rename draft",
+        "original-ar edit cancel",
+        "original-ar cancel name unchanged",
+        "original-ar edit save",
+        "original-ar rename persisted",
+        "comparison-en edit",
+        "comparison-en rename draft",
+        "comparison-en edit cancel",
+        "comparison-en cancel name unchanged",
+        "comparison-en edit save",
+        "comparison-en rename persisted",
+        "comparison-ar edit",
+        "comparison-ar rename draft",
+        "comparison-ar edit cancel",
+        "comparison-ar cancel name unchanged",
+        "comparison-ar edit save",
+        "comparison-ar rename persisted"
+      ]
     },
     {
       "id": "tags.delete",
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "delete",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en delete dialog",
+        "original-en delete cancel",
+        "original-en cancel tag retained",
+        "original-en confirm delete",
+        "original-en tag deleted",
+        "original-en links cleared",
+        "original-en dhikr preserved",
+        "original-ar delete dialog",
+        "original-ar delete cancel",
+        "original-ar cancel tag retained",
+        "original-ar confirm delete",
+        "original-ar tag deleted",
+        "original-ar links cleared",
+        "original-ar dhikr preserved",
+        "comparison-en delete dialog",
+        "comparison-en delete cancel",
+        "comparison-en cancel tag retained",
+        "comparison-en confirm delete",
+        "comparison-en tag deleted",
+        "comparison-en links cleared",
+        "comparison-en dhikr preserved",
+        "comparison-ar delete dialog",
+        "comparison-ar delete cancel",
+        "comparison-ar cancel tag retained",
+        "comparison-ar confirm delete",
+        "comparison-ar tag deleted",
+        "comparison-ar links cleared",
+        "comparison-ar dhikr preserved"
+      ]
     },
     {
       "id": "tags.confirm",
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "confirm",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en confirm delete",
+        "original-en tag deleted",
+        "original-en links cleared",
+        "original-en dhikr preserved",
+        "original-ar confirm delete",
+        "original-ar tag deleted",
+        "original-ar links cleared",
+        "original-ar dhikr preserved",
+        "comparison-en confirm delete",
+        "comparison-en tag deleted",
+        "comparison-en links cleared",
+        "comparison-en dhikr preserved",
+        "comparison-ar confirm delete",
+        "comparison-ar tag deleted",
+        "comparison-ar links cleared",
+        "comparison-ar dhikr preserved"
+      ]
     },
     {
       "id": "tags.cancel",
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "cancel",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en edit cancel",
+        "original-en cancel name unchanged",
+        "original-en delete cancel",
+        "original-en cancel tag retained",
+        "original-ar edit cancel",
+        "original-ar cancel name unchanged",
+        "original-ar delete cancel",
+        "original-ar cancel tag retained",
+        "comparison-en edit cancel",
+        "comparison-en cancel name unchanged",
+        "comparison-en delete cancel",
+        "comparison-en cancel tag retained",
+        "comparison-ar edit cancel",
+        "comparison-ar cancel name unchanged",
+        "comparison-ar delete cancel",
+        "comparison-ar cancel tag retained"
+      ]
     },
     {
       "id": "tags.name",
       "source": "app/src/main/java/com/example/ui/screens/TagsScreen.kt",
       "control": "name",
       "scenario": "Add/edit/delete; blank guard; Save/Cancel/Back/outside; trimming; persist; count/relation cascade",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41179477450"
+      ],
+      "limits": "ENlight/ARdark actual add/renameCancel/Save/deleteCancel/confirm and DB readback. Linked dhikr is controlled DB fixture, NOT UI association. Workflow remains red:8 list-vs-tuple link predicates falsely fail; retained raw failures and separate offline normalized check, not green run. Blank/palette/duplicate-name/UI association/motion unproved.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en name",
+        "original-en created once",
+        "original-en rename draft",
+        "original-en cancel name unchanged",
+        "original-en rename persisted",
+        "original-ar name",
+        "original-ar created once",
+        "original-ar rename draft",
+        "original-ar cancel name unchanged",
+        "original-ar rename persisted",
+        "comparison-en name",
+        "comparison-en created once",
+        "comparison-en rename draft",
+        "comparison-en cancel name unchanged",
+        "comparison-en rename persisted",
+        "comparison-ar name",
+        "comparison-ar created once",
+        "comparison-ar rename draft",
+        "comparison-ar cancel name unchanged",
+        "comparison-ar rename persisted"
+      ]
     },
     {
       "id": "tags.blank",
@@ -2349,9 +2591,45 @@
       "source": "app/src/main/java/com/example/ui/screens/StatisticsScreen.kt",
       "control": "Back and read-only donut/period/history outputs",
       "scenario": "empty; history10limit; missingtitle; timezones/streak; reset/deletedsource",
-      "evidence": [],
-      "limits": "Exact artifact assertions not yet recovered/mapped; source presence is not executed proof.",
-      "status": "unmapped"
+      "evidence": [
+        "41167184724"
+      ],
+      "limits": "API34 ENlight/ARdark 4 injected Room history fixtures. Named checks verify input counts and route only, not numerical output oracle. Recorded state/pixel frames compare displayed today/week/month/streak/total;23/24 raw pairs equal,1EN lower intermediate-scroll difference. No all dates/timezones/history mutations/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en empty fixture count",
+        "original-en empty statistics route",
+        "original-en today fixture count",
+        "original-en today statistics route",
+        "original-en streak-gap fixture count",
+        "original-en streak-gap statistics route",
+        "original-en yesterday-streak fixture count",
+        "original-en yesterday-streak statistics route",
+        "original-ar empty fixture count",
+        "original-ar empty statistics route",
+        "original-ar today fixture count",
+        "original-ar today statistics route",
+        "original-ar streak-gap fixture count",
+        "original-ar streak-gap statistics route",
+        "original-ar yesterday-streak fixture count",
+        "original-ar yesterday-streak statistics route",
+        "comparison-en empty fixture count",
+        "comparison-en empty statistics route",
+        "comparison-en today fixture count",
+        "comparison-en today statistics route",
+        "comparison-en streak-gap fixture count",
+        "comparison-en streak-gap statistics route",
+        "comparison-en yesterday-streak fixture count",
+        "comparison-en yesterday-streak statistics route",
+        "comparison-ar empty fixture count",
+        "comparison-ar empty statistics route",
+        "comparison-ar today fixture count",
+        "comparison-ar today statistics route",
+        "comparison-ar streak-gap fixture count",
+        "comparison-ar streak-gap statistics route",
+        "comparison-ar yesterday-streak fixture count",
+        "comparison-ar yesterday-streak statistics route"
+      ]
     },
     {
       "id": "navigation.tabs",
@@ -3024,18 +3302,34 @@
       "source": "app/src/main/java/com/example/ui/screens/HijriCalendarScreen.kt",
       "control": "calendar-tab",
       "scenario": "month/yearboundaries;dayselect; eventon/off/reopen/alarm;2pane",
-      "evidence": [],
-      "limits": "41151207220onlyfiniteToday/Events/reminderlead;notallgridcontrolsorrealnotificationdelivery.",
-      "status": "unmapped"
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "ENlight/ARdark tab/reminder button taps only in exact checks; reminder-on/reopen/off frames provide paired displayed state. Historical attempted direct preference capture used wrong filename, so not direct-file persistence proof. No delivery/all grid controls/two-pane/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en Calendar tab",
+        "original-ar Calendar tab",
+        "comparison-en Calendar tab",
+        "comparison-ar Calendar tab"
+      ]
     },
     {
       "id": "calendar.events-tab",
       "source": "app/src/main/java/com/example/ui/screens/HijriCalendarScreen.kt",
       "control": "events-tab",
       "scenario": "month/yearboundaries;dayselect; eventon/off/reopen/alarm;2pane",
-      "evidence": [],
-      "limits": "41151207220onlyfiniteToday/Events/reminderlead;notallgridcontrolsorrealnotificationdelivery.",
-      "status": "unmapped"
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "ENlight/ARdark tab/reminder button taps only in exact checks; reminder-on/reopen/off frames provide paired displayed state. Historical attempted direct preference capture used wrong filename, so not direct-file persistence proof. No delivery/all grid controls/two-pane/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en Events",
+        "original-ar Events",
+        "comparison-en Events",
+        "comparison-ar Events"
+      ]
     },
     {
       "id": "calendar.prev-month",
@@ -3069,9 +3363,21 @@
       "source": "app/src/main/java/com/example/ui/screens/HijriCalendarScreen.kt",
       "control": "event-reminder",
       "scenario": "month/yearboundaries;dayselect; eventon/off/reopen/alarm;2pane",
-      "evidence": [],
-      "limits": "41151207220onlyfiniteToday/Events/reminderlead;notallgridcontrolsorrealnotificationdelivery.",
-      "status": "unmapped"
+      "evidence": [
+        "41151207220"
+      ],
+      "limits": "ENlight/ARdark tab/reminder button taps only in exact checks; reminder-on/reopen/off frames provide paired displayed state. Historical attempted direct preference capture used wrong filename, so not direct-file persistence proof. No delivery/all grid controls/two-pane/motion proof.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en reminder on",
+        "original-en reminder off",
+        "original-ar reminder on",
+        "original-ar reminder off",
+        "comparison-en reminder on",
+        "comparison-en reminder off",
+        "comparison-ar reminder on",
+        "comparison-ar reminder off"
+      ]
     },
     {
       "id": "calendar.two-pane",

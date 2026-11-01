@@ -1,0 +1,56 @@
+{
+  "run": "41179477450",
+  "raw_workflow": "failure",
+  "raw_failed_predicates": 8,
+  "reason": "JSON rows are lists; original membership check compared tuple against list rows. Normalize each row to tuple for this separate offline review only.",
+  "checks": [
+    {
+      "session": "original-en",
+      "stage": "linked-readback",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "original-en",
+      "stage": "delete-cancel",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "original-ar",
+      "stage": "linked-readback",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "original-ar",
+      "stage": "delete-cancel",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "comparison-en",
+      "stage": "linked-readback",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "comparison-en",
+      "stage": "delete-cancel",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "comparison-ar",
+      "stage": "linked-readback",
+      "tag_id": 5,
+      "normalized_link_present": true
+    },
+    {
+      "session": "comparison-ar",
+      "stage": "delete-cancel",
+      "tag_id": 5,
+      "normalized_link_present": true
+    }
+  ]
+}
