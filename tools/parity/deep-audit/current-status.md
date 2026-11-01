@@ -197,3 +197,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 17:46 widget evidence scope correction
 -56widget rows exactbound;62unsupported broad associations retracted. Config41214007984onlyHero/OneUI/Pill/Schedule/Hijri; palette41225525891onlyHero5bar/5bgandOneUI4accent; lastdelete41227195028onlyOneUI. Actualclick41205501138separatelyboundall10providersENseededprefs. Sharedsourceisnotexecutedproviderproof. No newCI/productchange.
+
+## Nov1 18:02 manual converter result
+-41321413099passed291checks0fail48/48semanticpairs. All48actualpairedscreensinspected:manualHijri12monthsday1/year1448,1299/1300/1600/1601,DhulHijjahday0/31,GJan1year1899/1900/2100/2101,directiondraftretention/freshentryclearaligntext/layout/RTL/resultvisibility. Systemclock/caretblinkdiffsnotpixelidentity.4previouslydowngradedHijrimanualrowsnowboundedexactchecks. Input/resultpresencechecksNOTindependentdateoracle;paireddisplaydatescompareshippedoriginalonly. NotallGmonths/H29vs30monthlengths/allAPIs/timezones/motion. No productchange.
