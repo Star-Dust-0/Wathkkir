@@ -393,3 +393,6 @@ LocationCalculationScreenlargergapconfirmed:originalsubtitleprayer-times,insets/
 
 ## Locationreplay41264835524
 67/0checks18/18semanticpairsAR/ENcityandlocationreopen. Actual4locationpixelsinspected;metrics/subtitle/slidernowaligned,clockdiffers10:02vs10:01EN. Sliderdragbehaviornotprovedbythistest. Workspace resetafterbackup;recoveredcurrentclonec982c97andDrive0424source,CIartifactsre-downloaded. No source lost. Nextaliasdraft/cancel/empty/save/reopen/resettest.
+
+## Alias41266002695 original reset placement omission
+83checks4fail,8/16pairs. Draft/Cancel/emptyguard/savekeypersistpassboth. ActualpixelsconfirmedcomparisonResetinlineindisplaybranchwrapsaliastoconstrictedcolumn;originalResetonlybeloweditorrow. RecoveredOct23 15:47:59+15:48:11originaloperationsfromagent-01M5KCG0FQ80H6MZZYFK3YGWKM;replayedfinalbeloweditorplacementandeditingCity=falseonReset. Existingauthoritystrictshippedparity,notexternalapprovalclaim. Needsrerun.
