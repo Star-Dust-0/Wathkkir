@@ -279,3 +279,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 01:58 actual full-screen permission finite result
 -41363435477 123checks0fail,18pairs5rawequal,all18actualpairsinspected. Native Settings revoke -> Fajr warning -> row opens Settings -> Back without grant retains warning -> retry/nativegrant -> resume removes warning -> force-stop/reopen grant behavior+enabledprefretained ENlightARdark.10OSapp-namepairs testidentity,3ENtoneNonevsCesium converge onreopen; no productpatch.1control exactbound. Noactualalarmdelivery/lockscreen/audio/OEM/motionproof. Redfirst41362127876 retained.
+
+## Nov2 automatic null-key alias planned fixture
+- New finite fixture uses automatic mode, saved London coordinates, no place_key/aliases and GPS disabled to avoid last-known-location overwrite. Actual editor/save invokes installed app geocoder path. Outcome records successful key/alias/editor-close/reopen if backend resolves, otherwise explicitly unresolved geocoder/editor-kept/no-alias. Passing null guard is not successful alias fallback or physical GPS A-B-A proof. Neither reference APK nor product helper is patched/injected.
