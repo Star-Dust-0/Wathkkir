@@ -463,3 +463,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 ## Nov1 10:53 lockhelp partial result and route correction
 -41288415284:135checks60fail,redworkflowcorrectly. EN/FR/IT/ID/PTactualhelpopen/Closeandlanguagepickerpass;all5helpdialogpixelpairsinspectedandtext/layoutagree,clockbackgrounddifferent. Other6localesfailedatSettingsroutebecausehelperusedglobalEnglishlang/MenuinsteadtargetlocalizedMenu;laterfailedchecksarecascades,noproductdefect. ExactlocalizedMenu helperfixed;notall11helpverifiedyet.
 -22phonechoiceand22watchrowsnowexactassertionbound. WatchpatternsactualID1/8/9/10/11distinctfromvisibleordinal0..4,correctedsourcebinding. No runtime test invented from coveragecounts.
+
+## Nov1 11:09 watch route assertion reconciliation
+-8morewatchrows exactbound(language3/location2/permissions2/open-phone1)fromdownloaded51/95/63/19-checkartifacts. Directsubpage,seededphone_lang,reopenforeground-onlylimitsretained. Open-phone historical no-unexpected-preference-changeassertiononlychecks lang,notwholeprefs;correctedscopelabelinledger. No new CI/product change.41290680614stillinprogress11:08.

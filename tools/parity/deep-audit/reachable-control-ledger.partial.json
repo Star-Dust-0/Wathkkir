@@ -5273,8 +5273,18 @@
       "evidence": [
         "41249479614"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source modes0sync/1Arabic/2English confirmed. Sync uses seeded phone_lang=en, not actual phone-watch transfer. Choice save asserted; reopening only foreground/pixels, not independent preference reread. Direct subpage intent, not route/pager.",
+      "exact_assertions": [
+        "original-ar select sync",
+        "original-ar sync persisted",
+        "original-en select sync",
+        "original-en sync persisted",
+        "comparison-ar select sync",
+        "comparison-ar sync persisted",
+        "comparison-en select sync",
+        "comparison-en sync persisted"
+      ]
     },
     {
       "id": "watch.language.1",
@@ -5284,8 +5294,18 @@
       "evidence": [
         "41249479614"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source modes0sync/1Arabic/2English confirmed. Sync uses seeded phone_lang=en, not actual phone-watch transfer. Choice save asserted; reopening only foreground/pixels, not independent preference reread. Direct subpage intent, not route/pager.",
+      "exact_assertions": [
+        "original-ar select Arabic",
+        "original-ar Arabic persisted",
+        "original-en select Arabic",
+        "original-en Arabic persisted",
+        "comparison-ar select Arabic",
+        "comparison-ar Arabic persisted",
+        "comparison-en select Arabic",
+        "comparison-en Arabic persisted"
+      ]
     },
     {
       "id": "watch.language.2",
@@ -5295,8 +5315,18 @@
       "evidence": [
         "41249479614"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Source modes0sync/1Arabic/2English confirmed. Sync uses seeded phone_lang=en, not actual phone-watch transfer. Choice save asserted; reopening only foreground/pixels, not independent preference reread. Direct subpage intent, not route/pager.",
+      "exact_assertions": [
+        "original-ar select English",
+        "original-ar English persisted",
+        "original-en select English",
+        "original-en English persisted",
+        "comparison-ar select English",
+        "comparison-ar English persisted",
+        "comparison-en select English",
+        "comparison-en English persisted"
+      ]
     },
     {
       "id": "watch.location.0",
@@ -5304,10 +5334,20 @@
       "control": "locationchoice0",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
-        "41157363967"
+        "41254969483"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Mode0Sync/1GPS confirmed source. Actual deny/retry coarse-grant and persisted-mode checks, no actual GPS fix/geocoder or transport. Denial keeps Auto in both. Reopen capture only, direct subpage intent.",
+      "exact_assertions": [
+        "original-ar Sync tapped",
+        "original-ar Sync saved",
+        "original-en Sync tapped",
+        "original-en Sync saved",
+        "comparison-ar Sync tapped",
+        "comparison-ar Sync saved",
+        "comparison-en Sync tapped",
+        "comparison-en Sync saved"
+      ]
     },
     {
       "id": "watch.location.1",
@@ -5315,10 +5355,44 @@
       "control": "locationchoice1",
       "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
       "evidence": [
-        "41157363967"
+        "41254969483"
       ],
-      "status": "prior finite evidence lead, exact assertion binding pending",
-      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+      "status": "bounded recorded assertion evidence",
+      "limits": "Mode0Sync/1GPS confirmed source. Actual deny/retry coarse-grant and persisted-mode checks, no actual GPS fix/geocoder or transport. Denial keeps Auto in both. Reopen capture only, direct subpage intent.",
+      "exact_assertions": [
+        "original-ar Auto tapped",
+        "original-ar GPS denial tapped",
+        "original-ar Auto mode survives denial",
+        "original-ar permission remains denied",
+        "original-ar Auto retry tapped",
+        "original-ar GPS grant tapped",
+        "original-ar coarse granted",
+        "original-ar Auto saved",
+        "original-en Auto tapped",
+        "original-en GPS denial tapped",
+        "original-en Auto mode survives denial",
+        "original-en permission remains denied",
+        "original-en Auto retry tapped",
+        "original-en GPS grant tapped",
+        "original-en coarse granted",
+        "original-en Auto saved",
+        "comparison-ar Auto tapped",
+        "comparison-ar GPS denial tapped",
+        "comparison-ar Auto mode survives denial",
+        "comparison-ar permission remains denied",
+        "comparison-ar Auto retry tapped",
+        "comparison-ar GPS grant tapped",
+        "comparison-ar coarse granted",
+        "comparison-ar Auto saved",
+        "comparison-en Auto tapped",
+        "comparison-en GPS denial tapped",
+        "comparison-en Auto mode survives denial",
+        "comparison-en permission remains denied",
+        "comparison-en Auto retry tapped",
+        "comparison-en GPS grant tapped",
+        "comparison-en coarse granted",
+        "comparison-en Auto saved"
+      ]
     },
     {
       "id": "watch.alertstyle.0",
@@ -5614,27 +5688,95 @@
       "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
       "control": "permission-location",
       "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+      "evidence": [
+        "41253903491"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual OS denial/retry/allow and dumpsys grant checks; emulator English OS controls with AR/EN app. No physical GPS fix/push delivery/permanent denial or already-allowed no-op checks. Direct subpage intent, not root route.",
+      "exact_assertions": [
+        "original-ar Location tapped",
+        "original-ar OS deny tapped",
+        "original-ar location remains denied",
+        "original-ar Location retry tapped",
+        "original-ar OS foreground allow tapped",
+        "original-ar location granted",
+        "original-en Location tapped",
+        "original-en OS deny tapped",
+        "original-en location remains denied",
+        "original-en Location retry tapped",
+        "original-en OS foreground allow tapped",
+        "original-en location granted",
+        "comparison-ar Location tapped",
+        "comparison-ar OS deny tapped",
+        "comparison-ar location remains denied",
+        "comparison-ar Location retry tapped",
+        "comparison-ar OS foreground allow tapped",
+        "comparison-ar location granted",
+        "comparison-en Location tapped",
+        "comparison-en OS deny tapped",
+        "comparison-en location remains denied",
+        "comparison-en Location retry tapped",
+        "comparison-en OS foreground allow tapped",
+        "comparison-en location granted"
+      ]
     },
     {
       "id": "watch.permission-notification",
       "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
       "control": "permission-notification",
       "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+      "evidence": [
+        "41253903491"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "Actual OS denial/retry/allow and dumpsys grant checks; emulator English OS controls with AR/EN app. No physical GPS fix/push delivery/permanent denial or already-allowed no-op checks. Direct subpage intent, not root route.",
+      "exact_assertions": [
+        "original-ar Notifications tapped",
+        "original-ar OS notification deny tapped",
+        "original-ar notification remains denied",
+        "original-ar Notifications retry tapped",
+        "original-ar OS notification allow tapped",
+        "original-ar notifications granted",
+        "original-en Notifications tapped",
+        "original-en OS notification deny tapped",
+        "original-en notification remains denied",
+        "original-en Notifications retry tapped",
+        "original-en OS notification allow tapped",
+        "original-en notifications granted",
+        "comparison-ar Notifications tapped",
+        "comparison-ar OS notification deny tapped",
+        "comparison-ar notification remains denied",
+        "comparison-ar Notifications retry tapped",
+        "comparison-ar OS notification allow tapped",
+        "comparison-ar notifications granted",
+        "comparison-en Notifications tapped",
+        "comparison-en OS notification deny tapped",
+        "comparison-en notification remains denied",
+        "comparison-en Notifications retry tapped",
+        "comparison-en OS notification allow tapped",
+        "comparison-en notifications granted"
+      ]
     },
     {
       "id": "watch.open-phone",
       "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
       "control": "open-phone",
       "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+      "evidence": [
+        "41258419722"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "Disconnected action and language preference unchanged only, not whole preferences: historical assertion label is broader than predicate. Foreground/pixels separately inspected. Back has capture only, no assertion; comparison reveals original app underneath. No connected transport/phone launch.",
+      "exact_assertions": [
+        "original-ar disconnected open phone tapped",
+        "original-ar no unexpected preference change",
+        "original-en disconnected open phone tapped",
+        "original-en no unexpected preference change",
+        "comparison-ar disconnected open phone tapped",
+        "comparison-ar no unexpected preference change",
+        "comparison-en disconnected open phone tapped",
+        "comparison-en no unexpected preference change"
+      ]
     },
     {
       "id": "watch.about-version",
