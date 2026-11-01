@@ -1,5 +1,5761 @@
 [
   {
+    "run": "41196395358",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41196395358",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Fajr bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en early enable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en draft offset10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel offset restored",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reopen bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en early enable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en offset10 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reopen applied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en early disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en draft offset0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en back restores10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reopen again",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en early disable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en offset0 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute dialog bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute open 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute input 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute save 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute open 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute input 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute save 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute persisted 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute open 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute input 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute save 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute persisted 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid open 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid input 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Save tapped 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid stays nested 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid unchanged 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel still60 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid open 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid input 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Save tapped 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid stays nested 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid unchanged 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel still60 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid open 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid input 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Save tapped 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid stays nested 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid unchanged 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en invalid Cancel still60 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama draft true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute cancel parent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en minute parent rollback0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama parent rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama reopen saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama draft disable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Fajr bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar early enable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar draft offset10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel offset restored",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reopen bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar early enable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar offset10 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reopen applied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar early disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar draft offset0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar back restores10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reopen again",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar early disable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar offset0 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute dialog bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute open 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute input 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute save 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute open 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute input 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute save 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute persisted 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute open 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute input 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute save 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute persisted 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid open 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid input 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Save tapped 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid stays nested 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid unchanged 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel still60 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid open 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid input 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Save tapped 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid stays nested 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid unchanged 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel still60 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid open 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid input 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Save tapped 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid stays nested 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid unchanged 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar invalid Cancel still60 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama draft true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute cancel parent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar minute parent rollback0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama parent rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama reopen saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama draft disable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Fajr bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en early enable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en draft offset10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel offset restored",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reopen bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en early enable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en offset10 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reopen applied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en early disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en draft offset0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en back restores10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reopen again",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en early disable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en offset0 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute dialog bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute open 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute input 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute save 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute open 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute input 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute save 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute persisted 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute open 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute input 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute save 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute persisted 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid open 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid input 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Save tapped 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid stays nested 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid unchanged 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel still60 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid open 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid input 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Save tapped 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid stays nested 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid unchanged 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel still60 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid open 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid input 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Save tapped 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid stays nested 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid unchanged 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en invalid Cancel still60 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama draft true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute cancel parent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en minute parent rollback0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama parent rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama reopen saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama draft disable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Fajr bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar early enable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar draft offset10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel offset restored",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reopen bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar early enable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar offset10 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reopen applied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar early disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar draft offset0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar back restores10",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reopen again",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar early disable saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar offset0 persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute dialog bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute open 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute input 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute save 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute open 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute input 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute save 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute persisted 30",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute open 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute input 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute save 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute persisted 60",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid open 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid input 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Save tapped 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid stays nested 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid unchanged 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel still60 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid open 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid input 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Save tapped 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid stays nested 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid unchanged 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel still60 61",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid open 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid input 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Save tapped 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid stays nested 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid unchanged 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar invalid Cancel still60 999",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama draft true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute cancel parent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar minute parent rollback0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama parent rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama reopen saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama draft disable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama Back restores true",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-bell-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-early-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-after-cancel",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-applied-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-off-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-off-settled",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-off-bottom",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-off-return",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-minute-1",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-minute-30",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-minute-60",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-invalid-0",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-invalid-61",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-invalid-999",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-iqama-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-iqama-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-bell-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-early-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-after-cancel",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-applied-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-off-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-off-settled",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-off-bottom",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-off-return",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-minute-1",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-minute-30",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-minute-60",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-invalid-0",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-invalid-61",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-invalid-999",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-iqama-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-iqama-applied",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41198538557",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41198538557",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-prayer-0-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-0-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-1-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-1-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-2-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-2-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-3-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-3-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-4-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-4-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-5-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-5-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-0-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-0-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-1-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-1-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-2-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-2-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-3-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-3-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-4-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-4-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-5-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-5-vibration",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41199658604",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41199658604",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false again 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration false persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en vibration saved reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset removes override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en Back restores override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset saved 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reset persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false again 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration false persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar vibration saved reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset removes override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar Back restores override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset saved 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reset persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false again 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration false persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en vibration saved reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset removes override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en Back restores override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset saved 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reset persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 0 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 0 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 0",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 1 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 1 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 1",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 2 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 2 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 2",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 3 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 3 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 3",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 4 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 4 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 4",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 5 short enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar prayer 5 enabled",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar dialog 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Iqama presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND presence 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration override false 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration rollback 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false again 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration false persisted 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar vibration saved reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset draft 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset removes override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar Back restores override 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset reopen 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset saved 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset Apply 5",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reset persisted 5",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-prayer-0-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-0-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-0-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-1-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-1-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-1-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-2-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-2-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-2-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-3-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-3-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-3-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-4-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-4-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-4-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-5-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-5-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-prayer-5-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-0-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-0-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-0-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-1-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-1-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-1-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-2-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-2-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-2-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-3-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-3-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-3-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-4-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-4-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-4-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-5-initial",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-5-vibration",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-prayer-5-applied",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41201981006",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41201981006",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND bell denied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND request switch",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND system settings reached",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND denied no write",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND granted bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND true draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND cancel restores absent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND true persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND reopen true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND false draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND reopen final",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND disable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND Apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en DND false persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND bell denied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND request switch",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND system settings reached",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND denied no write",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND granted bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND true draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND cancel restores absent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND true persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND reopen true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND false draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND reopen final",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND disable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND Apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar DND false persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND bell denied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND request switch",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND system settings reached",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND denied no write",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND granted bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND true draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND cancel restores absent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND true persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND reopen true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND false draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND reopen final",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND disable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND Apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en DND false persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar short bell enable",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar enabled persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND bell denied",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND request switch",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND system settings reached",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND denied no write",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND granted bell",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND draft on",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND true draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND cancel restores absent",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND enable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND Apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND true persisted",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND reopen true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND disable draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND false draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND Back restores true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND reopen final",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND disable save",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND Apply off",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar DND false persisted",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-dnd-denied",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dnd-permission-route",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dnd-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dnd-applied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dnd-denied",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dnd-permission-route",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dnd-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dnd-applied",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
     "run": "41264835524",
     "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41264835524",
     "checks": [
@@ -16897,6 +22653,1960 @@
       },
       {
         "scene": "pt-reopen",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41286219795",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41286219795",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-ar lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-en settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-fr lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-fr lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-de settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-de lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-de lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-es settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-es lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-it settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-it lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-it lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-tr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-tr lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ur lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-id lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-id lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-ru settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ru lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-pt lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "original-pt lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-fr lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-de lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-es lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-it lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-tr lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ur lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id lock help open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-id lock help close",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ru lock help close",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt settings initial",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt picker open",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt select draft",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt draft unwritten",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt cancel",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt rollback",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt picker reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt reselect",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt apply",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt saved",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized menu",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized settings",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt localized language",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt reopened language persists",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt lock help open",
+        "passed": false,
+        "detail": ""
+      },
+      {
+        "name": "comparison-pt lock help close",
+        "passed": false,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "ar-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "en-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "fr-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "fr-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "fr-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "fr-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "fr-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "de-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "de-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "de-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "de-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "de-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "es-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "es-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "es-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "es-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "es-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "it-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "it-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "it-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "it-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "it-lock-help",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "tr-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "tr-lock-help",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ur-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "ur-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "id-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "id-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "id-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "id-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "id-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "ru-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "ru-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "ru-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ru-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "ru-lock-help",
+        "same_tokens": false
+      },
+      {
+        "scene": "pt-draft",
+        "same_tokens": true
+      },
+      {
+        "scene": "pt-applied",
+        "same_tokens": false
+      },
+      {
+        "scene": "pt-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "pt-reopen-lower",
+        "same_tokens": true
+      },
+      {
+        "scene": "pt-lock-help",
         "same_tokens": true
       }
     ],
