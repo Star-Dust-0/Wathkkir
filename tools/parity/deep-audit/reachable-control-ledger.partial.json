@@ -8350,126 +8350,310 @@
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "0",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 0",
+        "original-en before persisted 0",
+        "original-ar before choose 0",
+        "original-ar before persisted 0",
+        "comparison-en before choose 0",
+        "comparison-en before persisted 0",
+        "comparison-ar before choose 0",
+        "comparison-ar before persisted 0",
+        "original-en before settings verified reopen",
+        "original-en before final persists reopen",
+        "original-ar before settings verified reopen",
+        "original-ar before final persists reopen",
+        "comparison-en before settings verified reopen",
+        "comparison-en before final persists reopen",
+        "comparison-ar before settings verified reopen",
+        "comparison-ar before final persists reopen"
+      ]
     },
     {
       "id": "fajr-alarm.before.5",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "5",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 5",
+        "original-en before persisted 5",
+        "original-ar before choose 5",
+        "original-ar before persisted 5",
+        "comparison-en before choose 5",
+        "comparison-en before persisted 5",
+        "comparison-ar before choose 5",
+        "comparison-ar before persisted 5"
+      ]
     },
     {
       "id": "fajr-alarm.before.10",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "10",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 10",
+        "original-en before persisted 10",
+        "original-ar before choose 10",
+        "original-ar before persisted 10",
+        "comparison-en before choose 10",
+        "comparison-en before persisted 10",
+        "comparison-ar before choose 10",
+        "comparison-ar before persisted 10"
+      ]
     },
     {
       "id": "fajr-alarm.before.15",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "15",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 15",
+        "original-en before persisted 15",
+        "original-ar before choose 15",
+        "original-ar before persisted 15",
+        "comparison-en before choose 15",
+        "comparison-en before persisted 15",
+        "comparison-ar before choose 15",
+        "comparison-ar before persisted 15"
+      ]
     },
     {
       "id": "fajr-alarm.before.30",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "30",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 30",
+        "original-en before persisted 30",
+        "original-ar before choose 30",
+        "original-ar before persisted 30",
+        "comparison-en before choose 30",
+        "comparison-en before persisted 30",
+        "comparison-ar before choose 30",
+        "comparison-ar before persisted 30"
+      ]
     },
     {
       "id": "fajr-alarm.before.45",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "45",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 45",
+        "original-en before persisted 45",
+        "original-ar before choose 45",
+        "original-ar before persisted 45",
+        "comparison-en before choose 45",
+        "comparison-en before persisted 45",
+        "comparison-ar before choose 45",
+        "comparison-ar before persisted 45"
+      ]
     },
     {
       "id": "fajr-alarm.before.60",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "60",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en before choose 60",
+        "original-en before persisted 60",
+        "original-ar before choose 60",
+        "original-ar before persisted 60",
+        "comparison-en before choose 60",
+        "comparison-en before persisted 60",
+        "comparison-ar before choose 60",
+        "comparison-ar before persisted 60"
+      ]
     },
     {
       "id": "fajr-alarm.after.0",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "0",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 0",
+        "original-en after persisted 0",
+        "original-ar after choose 0",
+        "original-ar after persisted 0",
+        "comparison-en after choose 0",
+        "comparison-en after persisted 0",
+        "comparison-ar after choose 0",
+        "comparison-ar after persisted 0",
+        "original-en after settings verified reopen",
+        "original-en after final persists reopen",
+        "original-ar after settings verified reopen",
+        "original-ar after final persists reopen",
+        "comparison-en after settings verified reopen",
+        "comparison-en after final persists reopen",
+        "comparison-ar after settings verified reopen",
+        "comparison-ar after final persists reopen"
+      ]
     },
     {
       "id": "fajr-alarm.after.5",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "5",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 5",
+        "original-en after persisted 5",
+        "original-ar after choose 5",
+        "original-ar after persisted 5",
+        "comparison-en after choose 5",
+        "comparison-en after persisted 5",
+        "comparison-ar after choose 5",
+        "comparison-ar after persisted 5"
+      ]
     },
     {
       "id": "fajr-alarm.after.10",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "10",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 10",
+        "original-en after persisted 10",
+        "original-ar after choose 10",
+        "original-ar after persisted 10",
+        "comparison-en after choose 10",
+        "comparison-en after persisted 10",
+        "comparison-ar after choose 10",
+        "comparison-ar after persisted 10"
+      ]
     },
     {
       "id": "fajr-alarm.after.15",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "15",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 15",
+        "original-en after persisted 15",
+        "original-ar after choose 15",
+        "original-ar after persisted 15",
+        "comparison-en after choose 15",
+        "comparison-en after persisted 15",
+        "comparison-ar after choose 15",
+        "comparison-ar after persisted 15"
+      ]
     },
     {
       "id": "fajr-alarm.after.30",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "30",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 30",
+        "original-en after persisted 30",
+        "original-ar after choose 30",
+        "original-ar after persisted 30",
+        "comparison-en after choose 30",
+        "comparison-en after persisted 30",
+        "comparison-ar after choose 30",
+        "comparison-ar after persisted 30"
+      ]
     },
     {
       "id": "fajr-alarm.after.45",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "45",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 45",
+        "original-en after persisted 45",
+        "original-ar after choose 45",
+        "original-ar after persisted 45",
+        "comparison-en after choose 45",
+        "comparison-en after persisted 45",
+        "comparison-ar after choose 45",
+        "comparison-ar after persisted 45"
+      ]
     },
     {
       "id": "fajr-alarm.after.60",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "60",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41342345633"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected before/after preference for0/5/10/15/30/45/60. Final0 force-stop/reopen only, not each choice. 139/0checks31/34rawpairs;all34actualpairsinspected. Three ARafter30/45/60 and some EN endpoint frames have horizontal scroll/clipping offsets, not full pixel identity. No actual scheduled offsets/delivery/audio/motion/device guarantee.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en after choose 60",
+        "original-en after persisted 60",
+        "original-ar after choose 60",
+        "original-ar after persisted 60",
+        "comparison-en after choose 60",
+        "comparison-en after persisted 60",
+        "comparison-ar after choose 60",
+        "comparison-ar after persisted 60"
+      ]
     },
     {
       "id": "fajr-alarm.duration.1",
