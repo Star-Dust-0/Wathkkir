@@ -483,3 +483,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 12:46 remaining bell finite batch preparation
 -PreparedENlightotherfiveprayersearlytoggle/nested30Save/parentCancel/Apply/reopen/BackandeligibleIqamaApply/Back,Sunriseeligibility. BuildsfrompriorfiniteFajrharness;notclaimingallprayerDND/minuteinvalid/audio/hardware/motion. Singleboundedbatchwithfailfastroutes,notallpermutations. No productchange.
+
+## Nov1 13:01 location exact assertion binding
+-21locationrows(method8/asr2/highlat4/sliders7)nowexactassertionboundfromdownloaded41270837701/41272574823/41277721994. No newruntimecoveragecount. SliderSET_PROGRESSfallbackandoddindexBackrollbacklimitsretained;preferencecheckingdoesnotprovealarm/widget/Weartransport.
