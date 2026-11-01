@@ -179,3 +179,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 15:55 RTL nonFajrDND
 -41310841869ARdark211checks0fail16/16semanticpairs. All16actualpairsinspected,DNDdenyrouteandgrantfixtureUItext/RTLlayoutagree.8DNDrowsnowbindENARexactassertions;notactualOSgrantapproval/activeDNDwindowdelivery/force-stop/motion/hardwareproof. No productchange.
+
+## Nov1 16:10 nested dismissal finite preparation
+-ENlightother5prayersnested25Cancel/invalid0Saveguard/nested45Backandparentoffdraftoutsidetaprollback10/reopen. Outsidecoordinateverifiedagainstpreviousbottomdialogframes,actualdestinationasserted. Notallinvalidvalues/nestedoutside/AR/motion/delivery. No productchange.
