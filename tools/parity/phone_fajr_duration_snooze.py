@@ -46,7 +46,7 @@ def route(label):
   if not tap(label):continue
   time.sleep(2)
   texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
-  expected=['Enable Fajr alarm','تفعيل منبه صلاة الفجر','طريقة تحديد الموقع']
+  expected=['Alarm tone','نغمة المنبه']
   if any(x in texts for x in expected):return True
   shot('route-destination-miss-'+str(attempt))
  return False
