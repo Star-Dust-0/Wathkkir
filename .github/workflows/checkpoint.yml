@@ -39,7 +39,7 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/phone_fajr_duration_snooze.py
+          script: python3 -u tools/parity/phone_fajr_before_after.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

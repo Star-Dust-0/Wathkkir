@@ -8476,99 +8476,247 @@
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "1",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 1",
+        "original-en duration persisted 1",
+        "original-ar duration choose 1",
+        "original-ar duration persisted 1",
+        "comparison-en duration choose 1",
+        "comparison-en duration persisted 1",
+        "comparison-ar duration choose 1",
+        "comparison-ar duration persisted 1"
+      ]
     },
     {
       "id": "fajr-alarm.duration.2",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "2",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 2",
+        "original-en duration persisted 2",
+        "original-ar duration choose 2",
+        "original-ar duration persisted 2",
+        "comparison-en duration choose 2",
+        "comparison-en duration persisted 2",
+        "comparison-ar duration choose 2",
+        "comparison-ar duration persisted 2"
+      ]
     },
     {
       "id": "fajr-alarm.duration.3",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "3",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 3",
+        "original-en duration persisted 3",
+        "original-ar duration choose 3",
+        "original-ar duration persisted 3",
+        "comparison-en duration choose 3",
+        "comparison-en duration persisted 3",
+        "comparison-ar duration choose 3",
+        "comparison-ar duration persisted 3"
+      ]
     },
     {
       "id": "fajr-alarm.duration.5",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "5",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 5",
+        "original-en duration persisted 5",
+        "original-ar duration choose 5",
+        "original-ar duration persisted 5",
+        "comparison-en duration choose 5",
+        "comparison-en duration persisted 5",
+        "comparison-ar duration choose 5",
+        "comparison-ar duration persisted 5"
+      ]
     },
     {
       "id": "fajr-alarm.duration.10",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "10",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 10",
+        "original-en duration persisted 10",
+        "original-ar duration choose 10",
+        "original-ar duration persisted 10",
+        "comparison-en duration choose 10",
+        "comparison-en duration persisted 10",
+        "comparison-ar duration choose 10",
+        "comparison-ar duration persisted 10"
+      ]
     },
     {
       "id": "fajr-alarm.duration.15",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "15",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en duration choose 15",
+        "original-en duration persisted 15",
+        "original-ar duration choose 15",
+        "original-ar duration persisted 15",
+        "comparison-en duration choose 15",
+        "comparison-en duration persisted 15",
+        "comparison-ar duration choose 15",
+        "comparison-ar duration persisted 15",
+        "original-en duration settings verified reopen",
+        "original-en duration final persists reopen",
+        "original-ar duration settings verified reopen",
+        "original-ar duration final persists reopen",
+        "comparison-en duration settings verified reopen",
+        "comparison-en duration final persists reopen",
+        "comparison-ar duration settings verified reopen",
+        "comparison-ar duration final persists reopen"
+      ]
     },
     {
       "id": "fajr-alarm.snooze.5",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "5",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en snooze choose 5",
+        "original-en snooze persisted 5",
+        "original-ar snooze choose 5",
+        "original-ar snooze persisted 5",
+        "comparison-en snooze choose 5",
+        "comparison-en snooze persisted 5",
+        "comparison-ar snooze choose 5",
+        "comparison-ar snooze persisted 5"
+      ]
     },
     {
       "id": "fajr-alarm.snooze.10",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "10",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en snooze choose 10",
+        "original-en snooze persisted 10",
+        "original-ar snooze choose 10",
+        "original-ar snooze persisted 10",
+        "comparison-en snooze choose 10",
+        "comparison-en snooze persisted 10",
+        "comparison-ar snooze choose 10",
+        "comparison-ar snooze persisted 10"
+      ]
     },
     {
       "id": "fajr-alarm.snooze.15",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "15",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en snooze choose 15",
+        "original-en snooze persisted 15",
+        "original-ar snooze choose 15",
+        "original-ar snooze persisted 15",
+        "comparison-en snooze choose 15",
+        "comparison-en snooze persisted 15",
+        "comparison-ar snooze choose 15",
+        "comparison-ar snooze persisted 15"
+      ]
     },
     {
       "id": "fajr-alarm.snooze.20",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "20",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en snooze choose 20",
+        "original-en snooze persisted 20",
+        "original-ar snooze choose 20",
+        "original-ar snooze persisted 20",
+        "comparison-en snooze choose 20",
+        "comparison-en snooze persisted 20",
+        "comparison-ar snooze choose 20",
+        "comparison-ar snooze persisted 20"
+      ]
     },
     {
       "id": "fajr-alarm.snooze.30",
       "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
       "control": "30",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
-      "evidence": [],
-      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
-      "status": "unmapped"
+      "evidence": [
+        "41340709202"
+      ],
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en snooze choose 30",
+        "original-en snooze persisted 30",
+        "original-ar snooze choose 30",
+        "original-ar snooze persisted 30",
+        "comparison-en snooze choose 30",
+        "comparison-en snooze persisted 30",
+        "comparison-ar snooze choose 30",
+        "comparison-ar snooze persisted 30",
+        "original-en snooze settings verified reopen",
+        "original-en snooze final persists reopen",
+        "original-ar snooze settings verified reopen",
+        "original-ar snooze final persists reopen",
+        "comparison-en snooze settings verified reopen",
+        "comparison-en snooze final persists reopen",
+        "comparison-ar snooze settings verified reopen",
+        "comparison-ar snooze final persists reopen"
+      ]
     },
     {
       "id": "watch.pattern.id-1",
