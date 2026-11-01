@@ -96,7 +96,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     bounds=seek(label)
     if not check(key+' '+stage+' control',bool(bounds)):break
     x1,y1,x2,y2=bounds;y=(y1+y2)//2;middle=(x1+x2)//2;target=middle if value==0 else (x2+25 if (value>0)==(lang=='en') else x1-25)
-    adb('shell','input','swipe',str(middle),str(y),str(max(1,min(1078,target))),str(y),'800');time.sleep(1)
+    adb('shell','input','swipe',str(middle),str(y),str(max(1,min(1078,target))),str(y),'800');time.sleep(.4)
+    # Android input swipe samples can stop before the endpoint. An actual final tap
+    # settles the chosen detent, avoiding a false -29/29 endpoint assumption.
+    end=middle if value==0 else (x2-8 if (value>0)==(lang=='en') else x1+8)
+    adb('shell','input','tap',str(end),str(y));time.sleep(.7)
     check(key+' '+stage+' saved',int(fajr(key+'-'+stage).get(key,'0'))==value);shot(key+'-'+stage)
    check(key+' reopen location',location());check(key+' zero persisted',int(fajr(key+'-reopen').get(key,'0'))==0)
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'))
