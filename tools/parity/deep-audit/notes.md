@@ -603,3 +603,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 01:26 notification permission offline result
 -41360593740red90checks7falsestartupdenychecksfrombroadwindowdetectorincludinginactivepermissioncontroller. ActualstartupframesHome,noprompt;all14actualpairsinspected8rawsame. ActualFajrrowOSrequest/Androiddeny/stays/retryAndroidAllow/OSgrant/rowremoved/reopenpassENAR.4OSdialoglabelsfixtureappnameand2Homecountdowndiffs,nofullpixelclaim. pmrevoke/clearflagssetupnotOSretry-policyproof.1rowexactbound;norerunsolelytorecolor. Exact/fullscreen/delivery/motionremainopen.
+
+## Nov2 01:58 actual full-screen permission finite result
+-41363435477 123checks0fail,18pairs5rawequal,all18actualpairsinspected. Native Settings revoke -> Fajr warning -> row opens Settings -> Back without grant retains warning -> retry/nativegrant -> resume removes warning -> force-stop/reopen grant behavior+enabledprefretained ENlightARdark.10OSapp-namepairs testidentity,3ENtoneNonevsCesium converge onreopen; no productpatch.1control exactbound. Noactualalarmdelivery/lockscreen/audio/OEM/motionproof. Redfirst41362127876 retained.
