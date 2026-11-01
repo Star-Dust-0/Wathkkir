@@ -4,7 +4,7 @@ out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[];states={}
 def adb(*args):
  r=subprocess.run(['adb',*args],capture_output=True,timeout=45);return (r.stdout+r.stderr).decode(errors='replace')
 def check(n,ok,detail=''):
- checks.append(dict(name=n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(n,ok,detail,flush=True)
+ checks.append(dict(name=n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(n,ok,detail,flush=True);return bool(ok)
 def tree():
  text=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
  return next((x.split('=',1)[1] for x in text.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
