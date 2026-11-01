@@ -65,14 +65,14 @@ fun CitySearchDialog(onDismiss: () -> Unit, onCitySelected: (CityItem) -> Unit) 
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("اختر الدولة والمدينة", color = cs.onSurface, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                    Text(L10n.t(S.PickCountryCity), color = cs.onSurface, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 }
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
                     modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text("بحث عن مدينة أو دولة...") },
+                    placeholder = { Text(L10n.t(S.SearchCityHint)) },
                     leadingIcon = { Icon(Icons.Outlined.Search, null) },
                     trailingIcon = {
                         if (searchQuery.isNotEmpty()) {
@@ -85,7 +85,7 @@ fun CitySearchDialog(onDismiss: () -> Unit, onCitySelected: (CityItem) -> Unit) 
                 Spacer(Modifier.height(16.dp))
                 if (filteredCities.isEmpty()) {
                     Box(Modifier.fillMaxWidth().weight(1f), contentAlignment = Alignment.Center) {
-                        Text("لم يتم العثور على نتائج للبحث", color = cs.onSurfaceVariant)
+                        Text(L10n.t(S.NoSearchResults), color = cs.onSurfaceVariant)
                     }
                 } else {
                     LazyColumn(
@@ -104,7 +104,7 @@ fun CitySearchDialog(onDismiss: () -> Unit, onCitySelected: (CityItem) -> Unit) 
                     modifier = Modifier.fillMaxWidth().height(56.dp).plainClickable(onClick = onDismiss),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(L10n.t(S.Back), color = cs.onSurface, fontSize = 17.sp, fontWeight = FontWeight.Bold)
+                    Text(L10n.t(S.Cancel), color = cs.onSurface, fontSize = 17.sp, fontWeight = FontWeight.Bold)
                 }
             }
         }

@@ -84,10 +84,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   shot('city-list')
   for query in ['zzzznotacity','London','Cairo']:
    check('search '+query,field(0,query));hide_keyboard();shot('search-'+query)
-   if query=='zzzznotacity':check('no results text','لم يتم العثور على نتائج للبحث' in tree())
+   if query=='zzzznotacity':check('no results text',('No results found' if lang=='en' else 'لم يتم العثور على نتائج للبحث') in tree())
    if query=='London':check('London result present',('London' in tree()) and ('Cairo -' not in tree()))
   check('clear search',tap('Clear'));shot('search-cleared')
-  check('cancel city list',tap('Back' if lang=='en' else 'رجوع'));shot('city-cancel');check('cancel no coordinate change',fajr('cancel').get('latitude')==before.get('latitude'))
+  check('cancel city list',tap('Cancel' if lang=='en' else 'إلغاء'));shot('city-cancel');check('cancel no coordinate change',fajr('cancel').get('latitude')==before.get('latitude'))
   check('reopen city dialog',tap(hint));check('search London select',field(0,'London'));hide_keyboard()
   label='London - UK' if lang=='en' else 'لندن - المملكة المتحدة'
   check('actual London selection',tap(label));shot('london-selected');p=fajr('london');check('London coordinates',abs(float(p.get('latitude','0'))-51.5074)<.0001 and abs(float(p.get('longitude','0'))+.1278)<.0001)
