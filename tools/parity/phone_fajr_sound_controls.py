@@ -121,10 +121,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   for kind,title in [('tone','Alarm tone' if lang=='en' else 'نغمة المنبه'),('file','Audio file' if lang=='en' else 'ملف صوتي')]:
    before=fp(kind+'-before');assert check(kind+' picker actual tap',tap(title)), 'Picker tap failed';time.sleep(2);shot(kind+'-picker')
    current=adb('shell','dumpsys','activity','activities');(out/(slug+'-'+kind+'-activity.txt')).write_text(current)
-   check(kind+' external picker foreground',pkg+'/com.example.MainActivity' not in ''.join(x for x in current.splitlines() if 'mResumedActivity' in x))
+   check(kind+' external picker foreground',('com.google.android.soundpicker/' if kind=='tone' else 'com.google.android.documentsui/') in ''.join(x for x in current.splitlines() if 'topResumedActivity=' in x))
    adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(2);shot(kind+'-cancel')
    after=fp(kind+'-after');check(kind+' cancel ringtone unchanged',all(before.get(k)==after.get(k) for k in ['ringtone_uri','ringtone_title']))
-   check(kind+' cancel Fajr foreground',pkg in ''.join(x for x in adb('shell','dumpsys','activity','activities').splitlines() if 'mResumedActivity' in x))
+   check(kind+' cancel Fajr foreground',pkg in ''.join(x for x in adb('shell','dumpsys','activity','activities').splitlines() if 'topResumedActivity=' in x))
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'));adb('shell','am','force-stop',pkg)
 pairs=[]
 for n,a in states.items():
