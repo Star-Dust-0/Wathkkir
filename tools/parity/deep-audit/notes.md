@@ -564,3 +564,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 22:06 finite Fajr before/after choices
 -41342345633passed139checks0fail31/34rawpairs. All34actualpairsinspected:7beforeand7after0/5/10/15/30/45/60actualtap/preferencesENlightARdark,final0reopen.14rowsexactbound. ARafter30/45/60andENendpointshorizontaloffset/clippingresidualsremain,nofullpixelclaim. Notactualalarmoffset/delivery/audio/motionproof.
+
+## Nov1 22:22 sound helper failure retained
+-41345027418stopped12checks1becausecustomswitchhasnocheckableattributeinhierarchydump. Actualrecordedrowhasnestedclickableswitchbounds;rowoff/on/reopenpassedoriginalENonly,notpairedproof. Selectnestedclickablenodegroundedinrecordedhierarchy,noproductpatch.

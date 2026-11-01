@@ -99,8 +99,8 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     root=ET.fromstring(tree());parents=parent_map(root);n=next(n for n in root.iter('node') if n.get('text')==vibration)
     if mode=='switch':
      t=n
-     while t in parents and not any(x.get('checkable')=='true' for x in t.iter('node')):t=parents[t]
-     target=next((x for x in t.iter('node') if x.get('checkable')=='true'),None)
+     while t in parents and t.get('clickable')!='true':t=parents[t]
+     target=next((x for x in t.iter('node') if x is not t and x.get('clickable')=='true'),None)
      assert check(mode+' switch target',target is not None), 'Missing switch'
      ok=touch(target)
     else:ok=touch(n)
