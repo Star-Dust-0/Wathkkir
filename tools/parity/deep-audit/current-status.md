@@ -188,3 +188,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 17:14 RTL dismissal followthrough
 -41317283316ARdark293checks0fail20/25rawpairs. All25actualpairsinspected,nesteddraft/invalid0/outeroff/outside/reopenmatchdialogtext/layoutandrollback.5postdismisshomecountdowndiffs;ARIshaalsohasvisiblehomescrolldisplacement,notallclock-only.10rowsnowENARexactbound. No nestedoutside/allinvalid/motion/hardware/delivery/fullframeproof.
+
+## Nov1 17:30 historical utilities exact binding
+-21rows bound to exact assertions from downloaded41151207220/41136786987/41179477450/41167184724. Gregorian input/tap checks distinguished from output oracles;4Hijri manual input rows downgraded to unmapped because reverseToday never exercised them. CalendarReminder directprefcapturewrongfilename retained. Tag workflow remains red;8false list-vs-tuple failures separately normalized from recordedDB, not rewritten. Statistics input/route checks are NOT exact output assertions; historical23/24semantic/inspectedpixels remain separate. No new CI/product change.
