@@ -78,7 +78,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    adb('shell','am','force-stop',pkg)
    x=x.replace('>en</string>','>'+code+'</string>')
    adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
-   check('settings route',route(labels['Settings']))
+   launch();check('settings route',tap(labels['Menu']) and tap(labels['Settings']))
    # Settings opens near the last remembered scroll; reset to absolute top first.
    for _ in range(5):swipe(False)
    check('lock row reachable',choose(labels['LockWidgets']))
