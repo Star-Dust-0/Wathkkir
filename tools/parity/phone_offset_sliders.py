@@ -101,6 +101,14 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     # settles the chosen detent, avoiding a false -29/29 endpoint assumption.
     end=middle if value==0 else (x2-8 if (value>0)==(lang=='en') else x1+8)
     adb('shell','input','tap',str(end),str(y));time.sleep(.7)
+    observed=int(fajr(key+'-'+stage+'-gesture').get(key,'0'))
+    check(key+' '+stage+' gesture saves in range',-limit<=observed<=limit,str(observed))
+    # Exact endpoints are checked separately through the actual control's public
+    # accessibility SET_PROGRESS action. Gesture sampling is not an endpoint oracle.
+    if observed!=value:
+     result=adb('shell','am','instrument','-w','-e','y',str(y),'-e','value',str(value),'com.example.widgethost/.SliderAction')
+     check(key+' '+stage+' accessibility action accepted','INSTRUMENTATION_RESULT: changed=true' in result,result)
+     time.sleep(.7)
     check(key+' '+stage+' saved',int(fajr(key+'-'+stage).get(key,'0'))==value);shot(key+'-'+stage)
    check(key+' reopen location',location());check(key+' zero persisted',int(fajr(key+'-reopen').get(key,'0'))==0)
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'))
