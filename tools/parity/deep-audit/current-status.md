@@ -141,3 +141,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 11:41 source-ledger reconciliation
 -current-source-hashes.json reconciles historical514rows with currenttrackedsource:466samehash/48changed/0missing. This DOESNOTprovecompleteoriginalsource:identicalsecondaryreconstructionremainssecondary. Includeslatestpathcommitforeachtofollowrepairs,andlistsadditionaltrackedapp/wearpathswithoutinheritedprovenance. Historicalunbuilt/statusstringsremainhistory,nottodaysverdict. No app codechange.
+
+## Nov1 12:13 stop broad help reruns
+-41293023914timedout45min;104partialchecks84failcausedbyglobaly320guardrejectingMenuitself. Preserved,notpass/productdefect. Restore70defaultforheaderbuttonanduse320onlyforscrolledlistchoices. NarrowremainingAR/URwithhome/menu/prehelpscreensandfailfastrouteassertions,notanotherbroad11loop. Prior9localesvalidpairsremainbounded.
