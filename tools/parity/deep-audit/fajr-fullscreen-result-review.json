@@ -1,0 +1,636 @@
+{
+  "run": "41363435477",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41363435477",
+  "head": "b494e42d0506b935c5a1661e3f957cf7122a76d8",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fullscreen-system-initial actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial permission granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual native switch revoke",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en revoked native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en native switch now denied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en denied row visible on resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en denial keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en denied full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fullscreen-system-row-open actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en row-open native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en row opens denied native switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Back without grant keeps warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Back keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en retry full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fullscreen-system-retry actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en before-grant native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en grant target is denied switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual native switch grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en granted native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en native switch now granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en warning removed on grant resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en grant preserves enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en granted final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en warning absent after force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled stays after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fullscreen-system-initial actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial permission granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual native switch revoke",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar revoked native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar native switch now denied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar denied row visible on resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar denial keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar denied full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fullscreen-system-row-open actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar row-open native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar row opens denied native switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Back without grant keeps warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Back keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar retry full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fullscreen-system-retry actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar before-grant native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar grant target is denied switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual native switch grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar granted native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar native switch now granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar warning removed on grant resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar grant preserves enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar granted final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar warning absent after force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled stays after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fullscreen-system-initial actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial permission granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual native switch revoke",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en revoked native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en native switch now denied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en denied row visible on resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en denial keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en denied full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fullscreen-system-row-open actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en row-open native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en row opens denied native switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Back without grant keeps warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Back keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en retry full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fullscreen-system-retry actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en before-grant native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en grant target is denied switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual native switch grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en granted native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en native switch now granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en warning removed on grant resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en grant preserves enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en granted final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en warning absent after force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled stays after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fullscreen-system-initial actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial permission granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual native switch revoke",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar revoked native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar native switch now denied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar denied row visible on resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar denial keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar denied full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fullscreen-system-row-open actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar row-open native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar row opens denied native switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Back without grant keeps warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Back keeps enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar retry full-screen row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fullscreen-system-retry actual Settings foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar before-grant native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar grant target is denied switch",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual native switch grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar granted native permission row available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar native switch now granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar warning removed on grant resume",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar grant preserves enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar granted final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar warning absent after force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled stays after reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "paired_frames": 18,
+  "raw_semantic_equal": 5,
+  "all_actual_pairs_visually_inspected": true,
+  "differences": "10 OS Settings app name test-only; 3 EN tone caption initial None vs Cesium, final reopen converges; OS status icons/clocks differ. One full EN reopen pair pixel-identical.",
+  "bound_controls": [
+    "fajr-alarm.fullscreen-permission"
+  ],
+  "not_proven": [
+    "actual alarm delivery/lock screen display",
+    "hardware audio",
+    "OEMs",
+    "complete pixels/motion",
+    "exact alarm denial"
+  ]
+}
