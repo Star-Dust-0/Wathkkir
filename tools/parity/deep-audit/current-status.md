@@ -270,3 +270,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 ## Nov2 full-screen permission planned finite batch
 - Uses actual Android14 Settings switch revoke/Back/row-open/Back-without-grant/retry/grant/resume/reopen in original and comparison ENlight/ARdark. No alarm delivery, lock screen appearance, audio or OEM proof is intended.
 - Exact-alarm denial remains separate: Android documentation says USE_EXACT_ALARM is auto-granted and cannot be revoked by users; both app manifests declare it. Do not manufacture a missing permission row by patching the reference APK. Sources: https://developer.android.com/develop/background-work/services/alarms and https://source.android.com/docs/core/permissions/fsi-limits .
+
+## Nov2 LocationManagerHelper historical recovery
+- Recovered actual Oct23 16:56:53 printed Java helper block and matching14:30:33 edit. Restored missing public buildPlaceKey + private normPlacePart seam in place of equivalent inline secondary normalization. Geocoder field choice/null guards unchanged. Review location-helper-source-review.json. No complete original Kotlin source claim or automatic GPS runtime claim. Full-screen CI41362127876 predates this behavior-equivalent factoring.
