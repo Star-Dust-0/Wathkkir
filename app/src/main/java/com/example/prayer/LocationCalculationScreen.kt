@@ -407,7 +407,7 @@ private fun OptionPickerDialog(title: String, options: List<String>, selected: I
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(label, color = cs.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                Text(label, color = cs.onSurface, fontSize = 16.sp, fontWeight = FontWeight.Medium)
                 if (index == pending) {
                     Icon(Icons.Outlined.Check, null, tint = cs.primary)
                 }
