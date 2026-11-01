@@ -1,0 +1,458 @@
+{
+  "run": "41354849354",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm row target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm actual tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm enabled saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm reopen route True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm enabled persists True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm row target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm actual tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm enabled saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm reopen route False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm enabled persists False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en file picker tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en documents provider foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en documents drawer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en documents Downloads enabled row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en documents Downloads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual synthetic file selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chosen content URI persisted",
+      "passed": true,
+      "detail": "content://com.android.providers.downloads.documents/document/msf%3A1000000018"
+    },
+    {
+      "name": "original-en chosen title fixture",
+      "passed": true,
+      "detail": "parity-fixture.wav"
+    },
+    {
+      "name": "original-en chosen file reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chosen URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chosen title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chosen title displayed after reopen",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm row target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm actual tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm enabled saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm reopen route True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm enabled persists True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm row target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm actual tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm enabled saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm reopen route False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm enabled persists False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar file picker tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar documents provider foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual synthetic file selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chosen content URI persisted",
+      "passed": true,
+      "detail": "content://com.android.providers.downloads.documents/document/msf%3A1000000018"
+    },
+    {
+      "name": "original-ar chosen title fixture",
+      "passed": true,
+      "detail": "parity-fixture.wav"
+    },
+    {
+      "name": "original-ar chosen file reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chosen URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chosen title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chosen title displayed after reopen",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm row target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm actual tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm enabled saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm reopen route True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm enabled persists True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm row target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm actual tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm enabled saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm reopen route False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm enabled persists False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en file picker tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en documents provider foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en documents drawer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en documents Downloads enabled row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en documents Downloads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual synthetic file selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chosen content URI persisted",
+      "passed": true,
+      "detail": "content://com.android.providers.downloads.documents/document/msf%3A1000000018"
+    },
+    {
+      "name": "comparison-en chosen title fixture",
+      "passed": true,
+      "detail": "parity-fixture.wav"
+    },
+    {
+      "name": "comparison-en chosen file reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chosen URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chosen title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chosen title displayed after reopen",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm row target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm actual tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm enabled saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm reopen route True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm enabled persists True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm row target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm actual tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm enabled saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm reopen route False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm enabled persists False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar file picker tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar documents provider foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual synthetic file selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chosen content URI persisted",
+      "passed": true,
+      "detail": "content://com.android.providers.downloads.documents/document/msf%3A1000000018"
+    },
+    {
+      "name": "comparison-ar chosen title fixture",
+      "passed": true,
+      "detail": "parity-fixture.wav"
+    },
+    {
+      "name": "comparison-ar chosen file reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chosen URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chosen title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chosen title displayed after reopen",
+      "passed": false,
+      "detail": ""
+    }
+  ],
+  "bound": [
+    "fajr-alarm.audio-file"
+  ],
+  "actual_pairs_inspected": 12,
+  "raw_same": 11,
+  "raw_pairs": 12,
+  "red_status": "89checks4failed expected-chosen-title-after-reopen assertions. Actual both original and recovered show Default(Cesium) after force-stop despite URI/title stored. Original matching fallback, not new reconstruction defect or full selected media persistence proof.",
+  "limits": "No grant persistence/audio/output/provider permutations/scheduled delivery proof. InitialENtoneNonevsCesium persists first frame only."
+}
