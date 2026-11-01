@@ -83,7 +83,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     swipe()
    return False
   assert check('actual Test button',test_alarm()), 'Test unavailable'
-  time.sleep(2);shot('test-alarm')
+  time.sleep(2);shot('test-alarm');check('exact localized alarm body',any(n.get('text')== ("It's now time for Fajr adhan" if lang=='en' else 'حان الآن وقت أذان الفجر') for n in ET.fromstring(tree()).iter('node')))
   check('test alarm foreground','com.example.fajr.ui.FajrAlarmActivity' in adb('shell','dumpsys','activity','activities'))
   before=fp('before-dismiss');check('actual Dismiss',tap('Stop alarm') or tap('إيقاف المنبه'));time.sleep(1);shot('dismiss-after');check('dismiss no snooze count increment',fp('after-dismiss').get('snooze_count','0')==before.get('snooze_count','0'))
   # Capture alarm-manager state separately; dismiss screen is not audio hardware proof.
