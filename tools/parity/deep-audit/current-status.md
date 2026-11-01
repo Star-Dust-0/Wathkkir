@@ -266,3 +266,7 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 01:26 notification permission offline result
 -41360593740red90checks7falsestartupdenychecksfrombroadwindowdetectorincludinginactivepermissioncontroller. ActualstartupframesHome,noprompt;all14actualpairsinspected8rawsame. ActualFajrrowOSrequest/Androiddeny/stays/retryAndroidAllow/OSgrant/rowremoved/reopenpassENAR.4OSdialoglabelsfixtureappnameand2Homecountdowndiffs,nofullpixelclaim. pmrevoke/clearflagssetupnotOSretry-policyproof.1rowexactbound;norerunsolelytorecolor. Exact/fullscreen/delivery/motionremainopen.
+
+## Nov2 full-screen permission planned finite batch
+- Uses actual Android14 Settings switch revoke/Back/row-open/Back-without-grant/retry/grant/resume/reopen in original and comparison ENlight/ARdark. No alarm delivery, lock screen appearance, audio or OEM proof is intended.
+- Exact-alarm denial remains separate: Android documentation says USE_EXACT_ALARM is auto-granted and cannot be revoked by users; both app manifests declare it. Do not manufacture a missing permission row by patching the reference APK. Sources: https://developer.android.com/develop/background-work/services/alarms and https://source.android.com/docs/core/permissions/fsi-limits .
