@@ -1,5 +1,5 @@
 {
-  "scope": "Partial source-reviewed explicit control/scenario ledger now includes all6prayerbellbranchesandFajrsettings; widget/watch/provider/lifecycle/sharedhelper inventory still incomplete. Bounded evidence rows may be leads until exact assertions are bound; no completion score.",
+  "scope": "Partial explicit source-reviewed phone/watch control/scenario ledger. Provider/widget/config/complication lifecycle and shared helpers still need expansion and exact assertion binding. Not a total or completion score.",
   "navigation_source": "app/src/main/java/com/example/ui/screens/MainScreen.kt:173-258",
   "controls": [
     {
@@ -1751,27 +1751,33 @@
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "auto",
       "scenario": "draft/Cancel/Back/Apply/reopen/systemthemechange",
-      "evidence": [],
-      "limits": "Theme follows stagedpending,notimmediate. PriorCRUDselectiveevidenceislead.",
-      "status": "unmapped"
+      "evidence": [
+        "41282953462"
+      ],
+      "limits": "147checks0fail;AR/ENall3draftunwritten/alternatingCancelBack/Apply/persist/reopen.12/18rawpairs.6selectedreopendialogpairsvisuallyinspected, all6appliedSettingsframesdifferinvisiblelistrowsfromscroll. Systemauto tested ENsystemlight/ARsystemdark,notliveOSswitchwhileopen;outside/motionnotproved.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.theme.light",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "light",
       "scenario": "draft/Cancel/Back/Apply/reopen/systemthemechange",
-      "evidence": [],
-      "limits": "Theme follows stagedpending,notimmediate. PriorCRUDselectiveevidenceislead.",
-      "status": "unmapped"
+      "evidence": [
+        "41282953462"
+      ],
+      "limits": "147checks0fail;AR/ENall3draftunwritten/alternatingCancelBack/Apply/persist/reopen.12/18rawpairs.6selectedreopendialogpairsvisuallyinspected, all6appliedSettingsframesdifferinvisiblelistrowsfromscroll. Systemauto tested ENsystemlight/ARsystemdark,notliveOSswitchwhileopen;outside/motionnotproved.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.theme.dark",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "dark",
       "scenario": "draft/Cancel/Back/Apply/reopen/systemthemechange",
-      "evidence": [],
-      "limits": "Theme follows stagedpending,notimmediate. PriorCRUDselectiveevidenceislead.",
-      "status": "unmapped"
+      "evidence": [
+        "41282953462"
+      ],
+      "limits": "147checks0fail;AR/ENall3draftunwritten/alternatingCancelBack/Apply/persist/reopen.12/18rawpairs.6selectedreopendialogpairsvisuallyinspected, all6appliedSettingsframesdifferinvisiblelistrowsfromscroll. Systemauto tested ENsystemlight/ARsystemdark,notliveOSswitchwhileopen;outside/motionnotproved.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.language.ar",
@@ -3425,6 +3431,432 @@
       "evidence": [],
       "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
       "status": "unmapped"
+    },
+    {
+      "id": "watch.pattern.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "patternchoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.pattern.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "patternchoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.pattern.2",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "patternchoice2",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.pattern.3",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "patternchoice3",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.pattern.4",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "patternchoice4",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.theme.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "themechoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.theme.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "themechoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.theme.2",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "themechoice2",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.theme.3",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "themechoice3",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41260755694"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.2",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice2",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.3",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice3",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.4",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice4",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.5",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice5",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.6",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice6",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font.7",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "fontchoice7",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41259575196"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.language.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "languagechoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41249479614"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.language.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "languagechoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41249479614"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.language.2",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "languagechoice2",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41249479614"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.location.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "locationchoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41157363967"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.location.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "locationchoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41157363967"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.alertstyle.0",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "alertstylechoice0",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41157363967"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.alertstyle.1",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "alertstylechoice1",
+      "scenario": "actualselect/immediatepersist/reopen;RTL/EN;returnsettings/homerender",
+      "evidence": [
+        "41157363967"
+      ],
+      "status": "prior finite evidence lead, exact assertion binding pending",
+      "limits": "Finitepriorrunlead,notalllocales/size/motion/hardware/transport. Watchnativecountdownoriginal;newdynamicring/no-minute-pulseownerretained,notdefect."
+    },
+    {
+      "id": "watch.font-minus",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "font-minus",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.font-plus",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "font-plus",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.font-clamp-min",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "font-clamp-min",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.font-clamp-max",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "font-clamp-max",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.font6steps",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "font6steps",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.adhan-row",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "adhan-row",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.adhan-switch",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "adhan-switch",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.permission-location",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "permission-location",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.permission-notification",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "permission-notification",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.open-phone",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "open-phone",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.about-version",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "about-version",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.root-scroll",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "root-scroll",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.sub-back",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "sub-back",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.sub-edge-swipe",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "sub-edge-swipe",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.pager4",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "pager4",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.pager-back-exit",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "pager-back-exit",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.rotary",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "rotary",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
+    },
+    {
+      "id": "watch.alarm-dismiss",
+      "source": "wear/src/main/java/com/wathakker/wear/SettingsPage.kt",
+      "control": "alarm-dismiss",
+      "scenario": "actualaction/persistence/lifecycle/frame-motion and boundary outcomes",
+      "evidence": [],
+      "status": "unmapped",
+      "limits": "Earlierfinitewatchrunsareleadsonlyuntilindividualassertionsbound. Physicalrotary/GPS/audio/hapticsandpairedtransportunproven. Settingslistrestoration/transitionrequiresmotionframes."
     }
   ],
   "reachability_notes": [
