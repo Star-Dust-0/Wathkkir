@@ -118,7 +118,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   if not found:
    opened=tap('Show roots') or tap('Open navigation drawer')
    check('documents drawer',opened);shot('file-drawer')
-   check('documents Downloads',tap('Downloads'));time.sleep(1);shot('file-downloads')
+   # DocumentsUI drawer labels are enabled native rows but omit clickable=true.
+   node=next((n for n in ET.fromstring(tree()).iter('node') if n.get('text')=='Downloads' and n.get('enabled')=='true'),None)
+   assert check('documents Downloads enabled row',node is not None),'Missing Downloads row'
+   check('documents Downloads',touch(node));time.sleep(1);shot('file-downloads')
    found=tap('parity-fixture.wav')
   assert check('actual synthetic file selection',found),'Fixture not visible'
   time.sleep(2);shot('file-chosen');p=fp('file-chosen')
