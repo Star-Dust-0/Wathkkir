@@ -4,6 +4,10 @@ Generated from recorded checks and semantic pairs, not source regex hits. This i
 
 | Run | Checks | Failed | Token pairs | Equal |
 |---|---:|---:|---:|---:|
+| [41196395358](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41196395358) | 267 | 0 | 32 | 32 |
+| [41198538557](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41198538557) | 195 | 0 | 24 | 24 |
+| [41199658604](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41199658604) | 507 | 0 | 36 | 36 |
+| [41201981006](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41201981006) | 95 | 0 | 8 | 8 |
 | [41264835524](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41264835524) | 67 | 0 | 18 | 18 |
 | [41266002695](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41266002695) | 83 | 4 | 16 | 8 |
 | [41267011867](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41267011867) | 83 | 0 | 16 | 16 |
@@ -18,6 +22,7 @@ Generated from recorded checks and semantic pairs, not source regex hits. This i
 | [41280915220](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41280915220) | 375 | 0 | 48 | 42 |
 | [41282953462](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41282953462) | 147 | 0 | 18 | 12 |
 | [41284079104](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41284079104) | 301 | 0 | 33 | 22 |
+| [41286219795](https://github.com/Star-Dust-0/Wathkkir/actions/runs/41286219795) | 345 | 24 | 55 | 36 |
 
 ## Remaining map work
 
