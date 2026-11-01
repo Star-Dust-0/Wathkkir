@@ -41,9 +41,17 @@ def route(label):
  # Wait out menu transitions and verify destination content, not the clicked label.
  for attempt in range(3):
   launch();time.sleep(1.5)
-  if not tap('Menu' if lang=='en' else 'القائمة'):continue
+  # MainActivity may automatically ask notification permission on startup.
+  # Preserve that prompt as evidence, deny it if present, then route to Fajr.
+  if 'permissioncontroller' in adb('shell','dumpsys','window'):
+   shot('startup-notification-request-'+str(attempt))
+   deny=tap('Don’t allow') or tap("Don't allow")
+   check('startup notification deny '+str(attempt),deny);time.sleep(1)
+  if not tap('Menu' if lang=='en' else 'القائمة'):
+   shot('route-menu-miss-'+str(attempt));continue
   time.sleep(2)
-  if not tap(label):continue
+  if not tap(label):
+   shot('route-label-miss-'+str(attempt));continue
   time.sleep(2)
   texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
   expected=['Alarm on','Alarm off','المنبه مفعّل','المنبه معطّل']
