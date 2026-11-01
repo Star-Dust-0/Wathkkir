@@ -224,3 +224,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 21:34 finite Fajr choices verified
 -41340709202passed115checks0fail28/28semanticpairs. All28actualpairedframesinspectedENlightARdark:6duration1/2/3/5/10/15and5snooze5/10/15/20/30actualtap/write;final15and30persistforce-stop/reopen.11rowsexactbound. Noeachchoicereopen/auto-stop/snoozeredelivery/audiohardware/motionproof. InitialvibrationpredicatevacuousonmissingXML,notpreforacle;actualinitialframesbothenabled. EarlierENvibrationoffconfoundnotreproducedaftersettledrouting,noproductdefectclaimed.
+
+## Nov1 22:06 finite Fajr before/after choices
+-41342345633passed139checks0fail31/34rawpairs. All34actualpairsinspected:7beforeand7after0/5/10/15/30/45/60actualtap/preferencesENlightARdark,final0reopen.14rowsexactbound. ARafter30/45/60andENendpointshorizontaloffset/clippingresidualsremain,nofullpixelclaim. Notactualalarmoffset/delivery/audio/motionproof.
