@@ -276,3 +276,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 full-screen first-run setup miss
 -41362127876 15checks6fails originalEN only: actual Android14 Compose Settings permission row is View with no checked property, not widget.Switch. Three actual frames inspected, toggle stayedON because helper never touched it. No product mismatch or permission proof. Retain red result; revise native label-parent touch and retain appops/package evidence.
+
+## Nov2 01:58 actual full-screen permission finite result
+-41363435477 123checks0fail,18pairs5rawequal,all18actualpairsinspected. Native Settings revoke -> Fajr warning -> row opens Settings -> Back without grant retains warning -> retry/nativegrant -> resume removes warning -> force-stop/reopen grant behavior+enabledprefretained ENlightARdark.10OSapp-namepairs testidentity,3ENtoneNonevsCesium converge onreopen; no productpatch.1control exactbound. Noactualalarmdelivery/lockscreen/audio/OEM/motionproof. Redfirst41362127876 retained.
