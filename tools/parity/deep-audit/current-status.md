@@ -138,3 +138,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 11:26 lockhelp follow-up
 -41290680614:135checks20fail,7completevalidlocalehelppairsFR/DE/ES/IT/TR/RU/PTinspectedandtext/layoutmatch. ARboth,originalID,comparisonEN/URwenttoLocationdespiteSettingsroutepassing:taphelperacceptedy70behindfixedheaderanddidnotassertdestination;rawtokensARmatchingLocationisNOThelp-proof. PriorvalidEN/IDhelpfrom41288415284retained,AR/URnotyetpaired. No productdefect. Harnessnowrequiresy320belowheader,settling,pre-clickscreens,anddestination-basedretry. No repeatedgreenclaim.
+
+## Nov1 11:41 source-ledger reconciliation
+-current-source-hashes.json reconciles historical514rows with currenttrackedsource:466samehash/48changed/0missing. This DOESNOTprovecompleteoriginalsource:identicalsecondaryreconstructionremainssecondary. Includeslatestpathcommitforeachtofollowrepairs,andlistsadditionaltrackedapp/wearpathswithoutinheritedprovenance. Historicalunbuilt/statusstringsremainhistory,nottodaysverdict. No app codechange.
