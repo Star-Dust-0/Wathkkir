@@ -109,9 +109,9 @@ fun FajrAlarmScreen(prayerName: String, onDismiss: () -> Unit, onSnooze: (Int) -
                         )
                     }
                     Spacer(modifier = Modifier.height(20.dp))
-                    Text("صلاة الفجر", color = Color.White, fontSize = 32.sp, fontWeight = FontWeight.Bold)
+                    Text(prayerName, color = Color.White, fontSize = 32.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text("حان الآن موعد صلاة الفجر", color = Color(0xFF94A3B8), fontSize = 18.sp)
+                    Text(L10n.t(S.PrayerNowFmt).format(prayerName), color = Color(0xFF94A3B8), fontSize = 18.sp)
                     Spacer(modifier = Modifier.height(32.dp))
                     Text(currentTimeStr, color = Color.White, fontSize = 48.sp, fontWeight = FontWeight.ExtraBold)
                     Text(currentDateStr, color = Color(0xFFCBD5E1), fontSize = 16.sp)
@@ -129,7 +129,7 @@ fun FajrAlarmScreen(prayerName: String, onDismiss: () -> Unit, onSnooze: (Int) -
                             ) {
                                 Icon(Icons.Outlined.Snooze, contentDescription = null, tint = Color.White)
                                 Spacer(modifier = Modifier.width(8.dp))
-                                Text("غفوة", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                                Text(L10n.t(S.Snooze), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                             }
                             Button(
                                 onClick = onDismiss,
@@ -139,7 +139,7 @@ fun FajrAlarmScreen(prayerName: String, onDismiss: () -> Unit, onSnooze: (Int) -
                             ) {
                                 Icon(Icons.Outlined.NotificationsOff, contentDescription = null, tint = Color.White)
                                 Spacer(modifier = Modifier.width(8.dp))
-                                Text("إيقاف المنبه", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                                Text(L10n.t(S.StopAlarm), color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                             }
                         }
                     } else {
