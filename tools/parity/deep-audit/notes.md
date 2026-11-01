@@ -522,3 +522,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 17:30 historical utilities exact binding
 -21rows bound to exact assertions from downloaded41151207220/41136786987/41179477450/41167184724. Gregorian input/tap checks distinguished from output oracles;4Hijri manual input rows downgraded to unmapped because reverseToday never exercised them. CalendarReminder directprefcapturewrongfilename retained. Tag workflow remains red;8false list-vs-tuple failures separately normalized from recordedDB, not rewritten. Statistics input/route checks are NOT exact output assertions; historical23/24semantic/inspectedpixels remain separate. No new CI/product change.
+
+## Nov1 17:29 converter manual preparation
+-Finite12Hijrimanualmonths/year1300and1600boundaries/day0and31/Gregorian1900and2100boundaries/directiondraft/reopeninputcomparison. OutputpresencechecksareNOTexactdateoracles;pairedrenderedresultsneedinspection. Dispatch41321393640mistakenlytargetedoldcheckpointbellscriptandcancelledwhilequeued;notnewdismissalproof. Fixedactualcheckpointworkflowbeforecorrectdispatch. No productchange.
