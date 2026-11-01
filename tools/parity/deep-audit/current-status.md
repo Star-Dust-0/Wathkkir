@@ -105,4 +105,4 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 09:15 allphonethemes
 -41282953462:147checks0fail,12/18rawpairs. All3AR/ENdraftunwritten,alternatingCancelBackrollback,Apply,persist/reopen. Actual6reopenedselecteddialogpairsinspectedandalign.6appliedSettingsrawpairsdiffervisiblelistrowsduescroll. Auto followsENlight/ARdarkfixture;notliveOSswitchwhileopen. Nooutside/motion/fullframeclaim.
-- Partialledger395rowsnowincludeswatchsettingschoicebranches/pager/hardwareleads. Stillnotcompleteorcoveragecount.
+- Partialledger393rowsnowincludeswatchsettingschoicebranches/pager/hardwareleads. Stillnotcompleteorcoveragecount.
