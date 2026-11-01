@@ -38,7 +38,18 @@ def launch():
 def azkar():
  launch();return tap('Azkar' if lang=='en' else 'التذكيرات')
 def route(label):
- launch();return tap('Menu' if lang=='en' else 'القائمة') and tap(label)
+ # Wait out menu transitions and verify destination content, not the clicked label.
+ for attempt in range(3):
+  launch();time.sleep(1.5)
+  if not tap('Menu' if lang=='en' else 'القائمة'):continue
+  time.sleep(2)
+  if not tap(label):continue
+  time.sleep(2)
+  texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
+  expected=['Enable Fajr alarm','تفعيل منبه صلاة الفجر','طريقة تحديد الموقع']
+  if any(x in texts for x in expected):return True
+  shot('route-destination-miss-'+str(attempt))
+ return False
 def field(index,value):
  nodes=[n for n in ET.fromstring(tree()).iter('node') if n.get('class')=='android.widget.EditText']
  if index>=len(nodes) or not touch(nodes[index]):return False
@@ -71,11 +82,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   launch();time.sleep(8)
   adb('shell','date','103112002026.00')
   label='Fajr alarm' if lang=='en' else 'منبه صلاة الفجر'
-  assert check('Fajr settings route',route(label)), 'Missing Fajr route'
+  assert check('Fajr settings verified destination',route(label)), 'Missing Fajr route'
   def fp(n):
    x=adb('shell','cat',folder+'/fajr_prefs.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
    try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
    except:return {}
+  before=fp('before-choices');check('initial vibration default',before.get('is_vibration_enabled','true')=='true');shot('before-choices')
   headings={'duration':('Ring time before auto-stop (minutes)' if lang=='en' else 'مدة الرنين قبل الإيقاف التلقائي (بالدقائق)'), 'snooze':('Snooze length (minutes)' if lang=='en' else 'مدة الغفوة (بالدقائق)')}
   def bottom():
    for _ in range(5):swipe()
@@ -83,7 +95,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    bottom()
    for attempt in range(4):
     root=ET.fromstring(tree());h=next((n for n in root.iter('node') if n.get('text')==headings[family]),None)
-    if h is None:return False
+    if h is None:shot('missing-'+family+'-'+str(value));return False
     y=rect(h)[3];maxy=rect(next(n for n in root.iter('node') if n.get('text')==headings['snooze']))[1] if family=='duration' else 2250
     matches=[n for n in root.iter('node') if n.get('text')==str(value) and y<rect(n)[1]<maxy and rect(n)[0]>5 and rect(n)[2]<1075]
     if matches and touch(matches[0]):return True
@@ -94,7 +106,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    for value in values:
     assert check(family+' choose '+str(value),select_chip(family,value)), 'Missing scoped chip'
     check(family+' persisted '+str(value),fp(family+'-'+str(value)).get(key)==str(value));shot(family+'-'+str(value))
-   assert check(family+' settings reopen',route(label)), 'Reopen failed'
+   assert check(family+' settings verified reopen',route(label)), 'Reopen failed'
    check(family+' final persists reopen',fp(family+'-reopen').get(key)==str(values[-1]));bottom();shot(family+'-reopen')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'));adb('shell','am','force-stop',pkg)
 pairs=[]
