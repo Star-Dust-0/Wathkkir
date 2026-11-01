@@ -273,3 +273,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 LocationManagerHelper historical recovery
 - Recovered actual Oct23 16:56:53 printed Java helper block and matching14:30:33 edit. Restored missing public buildPlaceKey + private normPlacePart seam in place of equivalent inline secondary normalization. Geocoder field choice/null guards unchanged. Review location-helper-source-review.json. No complete original Kotlin source claim or automatic GPS runtime claim. Full-screen CI41362127876 predates this behavior-equivalent factoring.
+
+## Nov2 full-screen first-run setup miss
+-41362127876 15checks6fails originalEN only: actual Android14 Compose Settings permission row is View with no checked property, not widget.Switch. Three actual frames inspected, toggle stayedON because helper never touched it. No product mismatch or permission proof. Retain red result; revise native label-parent touch and retain appops/package evidence.

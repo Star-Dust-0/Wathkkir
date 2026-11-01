@@ -106,9 +106,25 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   check('enable alarm actual row',touch(target));check('enabled preference',fp('enabled').get('is_alarm_enabled')=='true')
   allow='Allow full-screen alerts' if lang=='en' else 'السماح بالعرض بملء الشاشة'
   def native_switch():
-   return next((n for n in ET.fromstring(tree()).iter('node') if n.get('class') in ['android.widget.Switch','android.widget.CompoundButton'] and n.get('enabled')=='true'),None)
+   # Android14 Settings is Compose: its actual permission row is an android.view.View,
+   # with no checkable/checked semantics in the instrumentation hierarchy.
+   root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
+   for n in root.iter('node'):
+    if n.get('text')!='Allow full screen notifications from this app':continue
+    t=n
+    while t.get('clickable')!='true' and t in parents:t=parents[t]
+    if t.get('clickable')=='true' and t.get('enabled')=='true':return t
+   return None
   def native_state(n):
-   q=native_switch();check(n+' native switch available',q is not None);return None if q is None else q.get('checked')=='true'
+   q=native_switch();check(n+' native permission row available',q is not None)
+   x=adb('shell','cmd','appops','get',pkg,'USE_FULL_SCREEN_INTENT');(out/(slug+'-'+n+'-fsi-appop.txt')).write_text(x)
+   if re.search(r'USE_FULL_SCREEN_INTENT: allow',x):return True
+   if re.search(r'USE_FULL_SCREEN_INTENT: (deny|ignore|errored)',x):return False
+   # Initial default follows manifest permission; retain package evidence rather than infer.
+   if 'No operations.' in x or re.search(r'USE_FULL_SCREEN_INTENT: default',x):
+    d=adb('shell','dumpsys','package',pkg);(out/(slug+'-'+n+'-fsi-package.txt')).write_text(d)
+    return 'android.permission.USE_FULL_SCREEN_INTENT: granted=true' in d
+   check(n+' recognizable full-screen appop state',False,x);return None
   def system_page(n):
    time.sleep(1);shot(n)
    dump=adb('shell','dumpsys','activity','activities');(out/(slug+'-'+n+'-activity.txt')).write_text(dump)
@@ -130,7 +146,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   check('Back without grant keeps warning',allow in tree());check('Back keeps enabled preference',fp('back').get('is_alarm_enabled')=='true')
   assert check('retry full-screen row actual press',choose(allow)),'Missing retry full-screen row'
   system_page('fullscreen-system-retry')
-  q=native_switch();assert check('grant target is denied switch',q is not None and q.get('checked')=='false'),'Wrong grant switch'
+  q=native_switch();assert check('grant target is denied switch',q is not None and native_state('before-grant') is False),'Wrong grant switch'
   check('actual native switch grant',touch(q));check('native switch now granted',native_state('granted') is True);shot('fullscreen-system-granted')
   adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(2);shot('fullscreen-granted-return')
   check('warning removed on grant resume',allow not in tree());check('grant preserves enabled preference',fp('granted').get('is_alarm_enabled')=='true')

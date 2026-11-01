@@ -1,0 +1,9 @@
+{
+  "run": "41362127876",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41362127876",
+  "checks": 15,
+  "failed": 6,
+  "scope": "original EN only before first actual revoke; no permission parity proof",
+  "finding": "Android14 Settings Compose permission row uses android.view.View, not android.widget.Switch and exposes no checked semantics. Helper did not press the actual enabled permission row. All three actual frames inspected; native control remained ON. Not a product mismatch.",
+  "next": "Use observed exact native label parent View for actual touch; record cmd appops get plus package state for initial default, screenshot every state. No patched APK or fabricated grant."
+}
