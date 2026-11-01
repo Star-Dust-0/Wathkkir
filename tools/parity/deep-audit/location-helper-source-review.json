@@ -1,0 +1,22 @@
+{
+  "status": "historical Java helper block restored; no full original Kotlin source claim",
+  "source": {
+    "agent_id": "agent-01M5KCG0FQ80H6MZZYFK3YGWKM",
+    "timestamp": "Friday, October 23, 2026, 4:56:53 PM EEST",
+    "kind": "actual tool printed Java helper body, independently paired with Oct23 14:30:33 mutation"
+  },
+  "recovered_methods": [
+    "getPlaceKeyFromCoordinates",
+    "buildPlaceKey",
+    "normPlacePart"
+  ],
+  "change": "Previous secondary reconstruction inlined identical country/city normalization. Restores missing historical public production identity seam and helper factoring. No intended user-visible behavior change.",
+  "preserved": "null/empty geocoder, null country+city guard, Locale.ENGLISH geocoder, locality->subAdminArea->adminArea field choice, normalization with Locale.US whitespace collapse",
+  "sha256": "653a4275f400b2064cce61245b27f567c38af7d69da6afc534ade3e2a67bcd6c",
+  "not_proven": [
+    "Complete original Kotlin source",
+    "Automatic geocoder backend runtime",
+    "Full source closure",
+    "Physical GPS A-B-A movement"
+  ]
+}
