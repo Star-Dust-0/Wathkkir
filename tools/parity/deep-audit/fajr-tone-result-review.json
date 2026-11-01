@@ -1,0 +1,425 @@
+{
+  "run": "41357809926",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled separate switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en switch off survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en system tone actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en My Sounds category actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual sound row found",
+      "passed": true,
+      "detail": "[[('', 'android.widget.RelativeLayout'), ('', 'android.widget.LinearLayout'), ('', 'android.widget.RadioButton'), ('Default (Cesium)', 'android.widget.TextView')]]"
+    },
+    {
+      "name": "original-en actual sound row selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual tone Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone nonempty URI saved",
+      "passed": true,
+      "detail": "content://settings/system/alarm_alert"
+    },
+    {
+      "name": "original-en tone nonempty title saved",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "original-en tone reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone stored title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chosen tone visible after reopen",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled separate switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar switch off survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar system tone actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar My Sounds category actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual sound row found",
+      "passed": true,
+      "detail": "[[('', 'android.widget.RelativeLayout'), ('', 'android.widget.LinearLayout'), ('', 'android.widget.RadioButton'), ('Default (Cesium)', 'android.widget.TextView')]]"
+    },
+    {
+      "name": "original-ar actual sound row selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual tone Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone nonempty URI saved",
+      "passed": true,
+      "detail": "content://settings/system/alarm_alert"
+    },
+    {
+      "name": "original-ar tone nonempty title saved",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "original-ar tone reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone stored title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chosen tone visible after reopen",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled separate switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en switch off survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en system tone actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en My Sounds category actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual sound row found",
+      "passed": true,
+      "detail": "[[('', 'android.widget.RelativeLayout'), ('', 'android.widget.LinearLayout'), ('', 'android.widget.RadioButton'), ('Default (Cesium)', 'android.widget.TextView')]]"
+    },
+    {
+      "name": "comparison-en actual sound row selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual tone Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone nonempty URI saved",
+      "passed": true,
+      "detail": "content://settings/system/alarm_alert"
+    },
+    {
+      "name": "comparison-en tone nonempty title saved",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "comparison-en tone reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone stored title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chosen tone visible after reopen",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch target True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch target False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled separate switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar switch off survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar system tone actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar My Sounds category actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual sound row found",
+      "passed": true,
+      "detail": "[[('', 'android.widget.RelativeLayout'), ('', 'android.widget.LinearLayout'), ('', 'android.widget.RadioButton'), ('Default (Cesium)', 'android.widget.TextView')]]"
+    },
+    {
+      "name": "comparison-ar actual sound row selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual tone Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone nonempty URI saved",
+      "passed": true,
+      "detail": "content://settings/system/alarm_alert"
+    },
+    {
+      "name": "comparison-ar tone nonempty title saved",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    },
+    {
+      "name": "comparison-ar tone reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone URI survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone stored title survives force stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chosen tone visible after reopen",
+      "passed": true,
+      "detail": "Default (Cesium)"
+    }
+  ],
+  "pairs": 16,
+  "same_tokens": 16,
+  "actual_pairs_inspected": 16,
+  "scope": "Actual separate alarm switch on/off, off persists reopen. Actual MySounds Default(Cesium) selection and provider SAVE, URI/title save and reopen display.",
+  "limits": "Default system tone only, not downloading Pixel catalog sound or arbitrary custom tone; no hardware audio, scheduled delivery, permission branch, motion/fullpixel proof. Previouspartial41356489413retainedwrongSavecaseanddownloadprogress."
+}
