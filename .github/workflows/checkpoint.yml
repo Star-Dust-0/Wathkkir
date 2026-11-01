@@ -38,7 +38,7 @@ jobs:
           target: android-wear
           profile: wearos_large_round
           disable-animations: false
-          script: python3 -u tools/parity/watch_notification_denial.py
+          script: python3 -u tools/parity/watch_gps_permission_route.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
