@@ -1,5 +1,5 @@
 {
-  "scope": "Partial source-reviewed reachable control ledger, including shared Azkar/Hisn/dialog/calendar/font/language controls. Still incomplete: prayer/bell/Fajr/widget/watch/provider/lifecycle/sharedcontrol expansions remain. Not a completion score.",
+  "scope": "Partial source-reviewed explicit control/scenario ledger now includes all6prayerbellbranchesandFajrsettings; widget/watch/provider/lifecycle/sharedhelper inventory still incomplete. Bounded evidence rows may be leads until exact assertions are bound; no completion score.",
   "navigation_source": "app/src/main/java/com/example/ui/screens/MainScreen.kt:173-258",
   "controls": [
     {
@@ -1663,72 +1663,88 @@
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "app",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.app_light",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "app_light",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.app_bold",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "app_bold",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.system",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "system",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.cairo",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "cairo",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.naskh",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "naskh",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.amiri",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "amiri",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.font.ruqaa",
       "source": "app/src/main/java/com/example/ui/screens/FontPickerDialog.kt",
       "control": "ruqaa",
       "scenario": "draftnotwritten;Cancel/Back;Apply;selectedstate;reopen",
-      "evidence": [],
-      "limits": "All8choicesnotmappedbypriorgenericfonttest;newboundedbatchprepared.",
-      "status": "unmapped"
+      "evidence": [
+        "41280915220"
+      ],
+      "limits": "375checks0fail;all8AR/ENdraftunwritten/alternatingCancelBack/Apply/persist/reopen. All16reopenedselecteddialogpairsvisuallyinspected.42/48rawpairs;6appliedscreensdifferinvisiblelower/upperSettingsrowsduescroll. Notbothdismisspathspereachchoice;nooutsideorframe-motionclaim.",
+      "status": "bounded evidence"
     },
     {
       "id": "settings.theme.auto",
@@ -1854,6 +1870,1560 @@
       "scenario": "draft/Cancel/Back/Apply/reopen/RTL/localizedlabels",
       "evidence": [],
       "limits": "All11runtimechoicesnotmapped. Source table equalityisnotUIorfunctionproof.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.0.iqama",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "iqama",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.dnd-denied",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-denied",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.0.dnd-granted",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-granted",
+      "scenario": "finiteprayer0; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.1.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.1.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.2.iqama",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "iqama",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.dnd-denied",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-denied",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.2.dnd-granted",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-granted",
+      "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.3.iqama",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "iqama",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.dnd-denied",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-denied",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.3.dnd-granted",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-granted",
+      "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.4.iqama",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "iqama",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.dnd-denied",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-denied",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.4.dnd-granted",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-granted",
+      "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.tap",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "tap",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.longpress",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "longpress",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41198538557"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.enabled",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "enabled",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.early-switch",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "early-switch",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.minutes-value",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-value",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.minutes-text",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-text",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.minutes-save",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-save",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.minutes-cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-cancel",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.minutes-slider",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "minutes-slider",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.tone",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "tone",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.audio-file",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "audio-file",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.vibration",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "vibration",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.reset",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "reset",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41199658604"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.apply",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "apply",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.cancel",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "cancel",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.back",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "back",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.outside",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "outside",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.bell.5.iqama",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "iqama",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41196395358"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.dnd-denied",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-denied",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.bell.5.dnd-granted",
+      "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
+      "control": "dnd-granted",
+      "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
+      "evidence": [
+        "41201981006"
+      ],
+      "limits": "These references are prior finite batch leads, not proof everyprayer/controlcombination. Exact assertion identity still needs binding. External pickers/cancel/result paths, outside dismissal, intermediate slider pixels/motion and actualhardware are open. Shuruq has no Iqama/DND.",
+      "status": "prior finite evidence lead, exact assertion binding pending"
+    },
+    {
+      "id": "prayer.location",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "location",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.qibla",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "qibla",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.back-menu",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "back-menu",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.optional-rows",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "optional-rows",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.countdown",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "countdown",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.day-boundary",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "day-boundary",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "prayer.friday",
+      "source": "app/src/main/java/com/example/prayer/PrayerTimesScreen.kt",
+      "control": "friday",
+      "scenario": "actualentry/control; calculation/dayboundary/render/motion",
+      "evidence": [],
+      "limits": "NestedPrayercontent/menuandcallbacksreviewed; separate exactartifactbindingneeded. HelpersAlertModeRow/RoundBtnnotcalledbycurrentbellbody,notcountedasreachablecontrols.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.enabled-row",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "enabled-row",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.enabled-switch",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "enabled-switch",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.notif-permission",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "notif-permission",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.exact-permission",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "exact-permission",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.fullscreen-permission",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "fullscreen-permission",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.tone",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "tone",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.audio-file",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "audio-file",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.volume",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "volume",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.vibration-row",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "vibration-row",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.vibration-switch",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "vibration-switch",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.test",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "test",
+      "scenario": "toggle/permissiondenied-granted/reopen;pickerCancel-result;range10..100;testlaunch",
+      "evidence": [],
+      "limits": "No actualfiring/volume/audio/fullscreenlockdeliveryproof fromtestbuttonappearance alone. Permissionroutevisibilitydependsenabled/API/grants.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.0",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "0",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.5",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "5",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.10",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "10",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.15",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "15",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.30",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "30",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.45",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "45",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.before.60",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "60",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.0",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "0",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.5",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "5",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.10",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "10",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.15",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "15",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.30",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "30",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.45",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "45",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.after.60",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "60",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.1",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "1",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.2",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "2",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.3",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "3",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.5",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "5",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.10",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "10",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.duration.15",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "15",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.snooze.5",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "5",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.snooze.10",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "10",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.snooze.15",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "15",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.snooze.20",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "20",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
+      "status": "unmapped"
+    },
+    {
+      "id": "fajr-alarm.snooze.30",
+      "source": "app/src/main/java/com/example/ui/screens/FajrAlarmSettingsScreen.kt",
+      "control": "30",
+      "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
+      "evidence": [],
+      "limits": "RescheduleeffectsneedAlarmManagerandactualdeliveryevidence,notjustpreferences. Sharedlabelambiguityrequiresgroup-groundedhit target.",
       "status": "unmapped"
     }
   ],
