@@ -128,3 +128,7 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 -41288415284 still in progress at10:36. No new product change or overall verdict.
 
 -10:38 corrected ordinal-versus-ID ambiguity before further use: Settings.kt:32 maps five visible patterns to actual IDs1/8/9/10/11. Ledger IDs renamed explicitly id-N and all5 now bound to correct exact assertions; earlier auto-binding by ordinal1 was ambiguous and superseded. No app code change.
+
+## Nov1 10:53 lockhelp partial result and route correction
+-41288415284:135checks60fail,redworkflowcorrectly. EN/FR/IT/ID/PTactualhelpopen/Closeandlanguagepickerpass;all5helpdialogpixelpairsinspectedandtext/layoutagree,clockbackgrounddifferent. Other6localesfailedatSettingsroutebecausehelperusedglobalEnglishlang/MenuinsteadtargetlocalizedMenu;laterfailedchecksarecascades,noproductdefect. ExactlocalizedMenu helperfixed;notall11helpverifiedyet.
+-22phonechoiceand22watchrowsnowexactassertionbound. WatchpatternsactualID1/8/9/10/11distinctfromvisibleordinal0..4,correctedsourcebinding. No runtime test invented from coveragecounts.
