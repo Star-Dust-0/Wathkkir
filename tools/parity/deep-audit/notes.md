@@ -390,3 +390,6 @@ LocationCalculationScreenlargergapconfirmed:originalsubtitleprayer-times,insets/
 
 ## Cityrepair41263679091 and recovered location slider chain
 67/0checks10/18rawpairs;all10citydialogscenesAR/ENmatchtokens,actualpixelsinspected. Eightunderlyingscreensstilldiffer. HistoricalOct17 21:41:09sliderreplacementandOct18 04:08:27fullStepperRowsource+12dpinsets recovered;Oct20 18:22:13haptictickand16:20:46typography replayed. Oct18 22:52:05all11AutoUpdateFajrstringsoperationreplayed. Keepslateraliaslogic. Needscompileandactualpixels,noLocationcompletionclaim.
+
+## Locationreplay41264835524
+67/0checks18/18semanticpairsAR/ENcityandlocationreopen. Actual4locationpixelsinspected;metrics/subtitle/slidernowaligned,clockdiffers10:02vs10:01EN. Sliderdragbehaviornotprovedbythistest. Workspace resetafterbackup;recoveredcurrentclonec982c97andDrive0424source,CIartifactsre-downloaded. No source lost. Nextaliasdraft/cancel/empty/save/reopen/resettest.
