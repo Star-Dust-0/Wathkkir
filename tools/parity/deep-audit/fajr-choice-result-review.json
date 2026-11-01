@@ -1,0 +1,598 @@
+{
+  "run": "41340709202",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41340709202",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duration final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze choose 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze persisted 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duration final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze choose 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze persisted 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duration final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze choose 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze persisted 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial vibration default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duration final persists reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze choose 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze persisted 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze choose 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze persisted 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze choose 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze persisted 15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze choose 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze persisted 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze choose 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze persisted 30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze settings verified reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze final persists reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "semantic_pairs": 28,
+  "equal_semantic_pairs": 28,
+  "pixels_inspected": 28,
+  "bound_controls": [
+    "fajr-alarm.duration.1",
+    "fajr-alarm.duration.2",
+    "fajr-alarm.duration.3",
+    "fajr-alarm.duration.5",
+    "fajr-alarm.duration.10",
+    "fajr-alarm.duration.15",
+    "fajr-alarm.snooze.5",
+    "fajr-alarm.snooze.10",
+    "fajr-alarm.snooze.15",
+    "fajr-alarm.snooze.20",
+    "fajr-alarm.snooze.30"
+  ],
+  "caveat": "Initial missing-pref predicate is vacuous; pixels show enabled vibration. No physical/audio/actual duration or snooze delivery proof."
+}
