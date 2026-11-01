@@ -185,3 +185,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 16:43 nested dismiss finiteEN
 -41314642811:293checks0fail20/25rawsemanticpairs. All25actualpairsinspected. Other5prayersnested25Cancel/invalid0Saveguard/nested45Backandouteroffdraftoutsidetaprollback10/reopenpass.5outsideafterrawdiffscountdownseconds.10rowsbound. Noallinvalidvalues/nestedoutside/AR/frame-motion/delivery/hardwareproof. PreparedRTLfollowthrough,noproductchange.
+
+## Nov1 17:14 RTL dismissal followthrough
+-41317283316ARdark293checks0fail20/25rawpairs. All25actualpairsinspected,nesteddraft/invalid0/outeroff/outside/reopenmatchdialogtext/layoutandrollback.5postdismisshomecountdowndiffs;ARIshaalsohasvisiblehomescrolldisplacement,notallclock-only.10rowsnowENARexactbound. No nestedoutside/allinvalid/motion/hardware/delivery/fullframeproof.
