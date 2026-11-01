@@ -1,0 +1,794 @@
+{
+  "run": "41346421903",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41346421903",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en sound verified route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration row enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en vibration switch enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume minimum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume minimum gesture in range",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "original-en volume minimum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume maximum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume maximum gesture in range",
+      "passed": true,
+      "detail": "100"
+    },
+    {
+      "name": "original-en volume maximum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume middle seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "original-en volume middle settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en volume middle persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tone cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en file picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en file external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en file cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en file cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar sound verified route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration row enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar vibration switch enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume minimum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume minimum gesture in range",
+      "passed": true,
+      "detail": "16"
+    },
+    {
+      "name": "original-ar volume minimum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume maximum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume maximum gesture in range",
+      "passed": true,
+      "detail": "95"
+    },
+    {
+      "name": "original-ar volume maximum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume middle seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "original-ar volume middle settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar volume middle persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tone cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar file picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar file external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar file cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar file cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en sound verified route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration row enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en vibration switch enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume minimum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume minimum gesture in range",
+      "passed": true,
+      "detail": "14"
+    },
+    {
+      "name": "comparison-en volume minimum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume maximum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume maximum gesture in range",
+      "passed": true,
+      "detail": "100"
+    },
+    {
+      "name": "comparison-en volume maximum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume middle seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "comparison-en volume middle settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en volume middle persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tone cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en file picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en file external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en file cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en file cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar sound verified route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration row enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch tap False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch saved False",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar switch switch target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch tap True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch saved True",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar vibration switch enabled persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume minimum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume minimum gesture in range",
+      "passed": true,
+      "detail": "15"
+    },
+    {
+      "name": "comparison-ar volume minimum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume maximum seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume maximum gesture in range",
+      "passed": true,
+      "detail": "97"
+    },
+    {
+      "name": "comparison-ar volume maximum settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume middle seekbar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "comparison-ar volume middle settled saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar volume middle persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tone cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar file picker actual tap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar file external picker foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar file cancel ringtone unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar file cancel Fajr foreground",
+      "passed": false,
+      "detail": ""
+    }
+  ],
+  "bound": [
+    "fajr-alarm.tone",
+    "fajr-alarm.audio-file",
+    "fajr-alarm.volume",
+    "fajr-alarm.vibration-row",
+    "fajr-alarm.vibration-switch"
+  ],
+  "pixels_inspected": 28,
+  "raw_pairs_equal": 23,
+  "raw_pairs": 28,
+  "offline_review": "Eight cancellation pictures show Fajr settings. Saved picker dumps topResumedActivity/ResumedActivity identify expected Google soundpicker and documentsui. Script used missing mResumedActivity, causing8false negatives and vacuous external-positive checks. No rerun solely to recolor workflow.",
+  "volume_observations": [
+    {
+      "name": "original-en volume minimum gesture in range",
+      "passed": true,
+      "detail": "11"
+    },
+    {
+      "name": "original-en volume maximum gesture in range",
+      "passed": true,
+      "detail": "100"
+    },
+    {
+      "name": "original-en volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "original-ar volume minimum gesture in range",
+      "passed": true,
+      "detail": "16"
+    },
+    {
+      "name": "original-ar volume maximum gesture in range",
+      "passed": true,
+      "detail": "95"
+    },
+    {
+      "name": "original-ar volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "comparison-en volume minimum gesture in range",
+      "passed": true,
+      "detail": "14"
+    },
+    {
+      "name": "comparison-en volume maximum gesture in range",
+      "passed": true,
+      "detail": "100"
+    },
+    {
+      "name": "comparison-en volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    },
+    {
+      "name": "comparison-ar volume minimum gesture in range",
+      "passed": true,
+      "detail": "15"
+    },
+    {
+      "name": "comparison-ar volume maximum gesture in range",
+      "passed": true,
+      "detail": "97"
+    },
+    {
+      "name": "comparison-ar volume middle gesture in range",
+      "passed": true,
+      "detail": "55"
+    }
+  ]
+}
