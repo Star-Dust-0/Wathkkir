@@ -215,3 +215,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 19:40 Fajr screen localization repair
 -4133100751239checks0failbut4/6semanticpairs. All6actualpairsinspected;ENtitle/body/buttonsandARtitle/bodyhardcodedoldercopydifferfromshipped. RecoveredOct21 16:13:46literalText(prayerName)/PrayerNowFmt.format(prayerName)restored;buttonsexistingS.Snooze/StopAlarmmatchactualENARoriginal. No newcopy,noscheduler/autostopchanges. Arabicdismiss/snoozereturnsettingsscrolloffsetdiffretained,notallfullframeidentity. Nextsameboundedrerunverifyrepair.
+
+## Nov1 19:56 Fajr shared key omission
+-4133244783139checks0fail2/6semanticpairs. ActualENARalarmframesinspected:title/buttonsrestored,butsharedPrayerNowFmtkeymissingadhan. HistoricalOct21 12:49:06ENliteralincludesadhan;actualoriginalENAR41331007512and41332447831confirmexactbody. RestoredonlyENARsharedkey,other9localesunverifiedanduntouched. Addexactlocalizedbodyassertion. ARreturnsettingsscrollpositiondiffretained. No scheduler/autostopchange.
