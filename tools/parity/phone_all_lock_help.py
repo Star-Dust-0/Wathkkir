@@ -15,7 +15,7 @@ def shot(n):
 def rect(n):return list(map(int,re.findall(r'\d+',n.get('bounds',''))))
 def touch(n):
  b=rect(n)
- if len(b)!=4 or b[0]>=b[2] or b[1]>=b[3] or b[1]<70 or b[3]>2340:return False
+ if len(b)!=4 or b[0]>=b[2] or b[1]>=b[3] or b[1]<320 or b[3]>2340:return False
  adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.7);return True
 def tap(label):
  root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
@@ -25,7 +25,7 @@ def tap(label):
   while t.get('clickable')!='true' and t in parents:t=parents[t]
   if t.get('clickable')=='true' and t.get('enabled')=='true' and touch(n):return True
  return False
-def swipe(up=True):adb('shell','input','swipe','540','1760' if up else '680','540','680' if up else '1760','350');time.sleep(.6)
+def swipe(up=True):adb('shell','input','swipe','540','1760' if up else '680','540','680' if up else '1760','350');time.sleep(1.2)
 def choose(label):
  for _ in range(5):
   if tap(label):return True
@@ -81,7 +81,17 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    launch();check('settings route',tap(labels['Menu']) and tap(labels['Settings']))
    # Settings opens near the last remembered scroll; reset to absolute top first.
    for _ in range(5):swipe(False)
-   check('lock row reachable',choose(labels['LockWidgets']))
+   # Avoid tapping a title while its list is still moving beneath the fixed header.
+   time.sleep(2);shot('settings-before-help')
+   opened=False
+   for attempt in range(3):
+    choose(labels['LockWidgets']);time.sleep(1)
+    if labels['Close'] in [n.get('text') for n in ET.fromstring(tree()).iter('node')]:opened=True;break
+    adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1)
+    launch();tap(labels['Menu']);tap(labels['Settings']);time.sleep(2)
+    for _ in range(3):swipe(False)
+    time.sleep(2)
+   check('lock row reachable',opened)
    time.sleep(.6);shot('lock-help')
    texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
    check('help Close visible',labels['Close'] in texts)
