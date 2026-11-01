@@ -43,7 +43,7 @@ def route(label):
   launch();time.sleep(1.5)
   # MainActivity may automatically ask notification permission on startup.
   # Preserve that prompt as evidence, deny it if present, then route to Fajr.
-  if 'permissioncontroller' in adb('shell','dumpsys','window'):
+  if any('permissioncontroller' in x and 'mCurrentFocus=' in x for x in adb('shell','dumpsys','window').splitlines()):
    shot('startup-notification-request-'+str(attempt))
    deny=tap('Don’t allow') or tap("Don't allow")
    check('startup notification deny '+str(attempt),deny);time.sleep(1)
