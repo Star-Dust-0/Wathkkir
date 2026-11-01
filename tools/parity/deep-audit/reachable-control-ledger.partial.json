@@ -4644,19 +4644,19 @@
       "control": "enabled",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41199658604"
+        "41301072356"
       ],
-      "limits": "Only named assertions, AR/EN original/comparison. Preferences/route checks do not prove pixels, hardware or delivery. All-six vibration/Reset/tap/longpress bound; detailed early/minutes/Iqama/DND chains are Fajr only. Outside dismissal and other prayers detailed chains remain unproved.",
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
-        "original-en prayer 1 short enable",
-        "original-en prayer 1 enabled",
-        "original-ar prayer 1 short enable",
-        "original-ar prayer 1 enabled",
-        "comparison-en prayer 1 short enable",
-        "comparison-en prayer 1 enabled",
-        "comparison-ar prayer 1 short enable",
-        "comparison-ar prayer 1 enabled"
+        "original-en-p1 base adhan enable",
+        "original-en-p1 base enabled",
+        "original-en-p1 base Apply",
+        "original-en-p1 enabled bell reopen",
+        "comparison-en-p1 base adhan enable",
+        "comparison-en-p1 base enabled",
+        "comparison-en-p1 base Apply",
+        "comparison-en-p1 enabled bell reopen"
       ]
     },
     {
@@ -4664,36 +4664,78 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "early-switch",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 early draft toggle",
+        "original-en-p1 early draft10",
+        "original-en-p1 early save toggle",
+        "original-en-p1 early Apply",
+        "original-en-p1 early saved10",
+        "original-en-p1 bell reopen applied",
+        "original-en-p1 early off draft",
+        "original-en-p1 early draft0",
+        "original-en-p1 early Back restores10",
+        "comparison-en-p1 early draft toggle",
+        "comparison-en-p1 early draft10",
+        "comparison-en-p1 early save toggle",
+        "comparison-en-p1 early Apply",
+        "comparison-en-p1 early saved10",
+        "comparison-en-p1 bell reopen applied",
+        "comparison-en-p1 early off draft",
+        "comparison-en-p1 early draft0",
+        "comparison-en-p1 early Back restores10"
+      ]
     },
     {
       "id": "prayer.bell.1.minutes-value",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-value",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 nested30 open",
+        "comparison-en-p1 nested30 open"
+      ]
     },
     {
       "id": "prayer.bell.1.minutes-text",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-text",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 nested30 input",
+        "comparison-en-p1 nested30 input"
+      ]
     },
     {
       "id": "prayer.bell.1.minutes-save",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-save",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 nested30 Save",
+        "original-en-p1 nested30 immediate30",
+        "comparison-en-p1 nested30 Save",
+        "comparison-en-p1 nested30 immediate30"
+      ]
     },
     {
       "id": "prayer.bell.1.minutes-cancel",
@@ -4798,27 +4840,59 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "apply",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 early Apply",
+        "original-en-p1 early saved10",
+        "original-en-p1 bell reopen applied",
+        "comparison-en-p1 early Apply",
+        "comparison-en-p1 early saved10",
+        "comparison-en-p1 bell reopen applied"
+      ]
     },
     {
       "id": "prayer.bell.1.cancel",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "cancel",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 parent Cancel",
+        "original-en-p1 parent offset rollback",
+        "original-en-p1 bell reopen rollback",
+        "comparison-en-p1 parent Cancel",
+        "comparison-en-p1 parent offset rollback",
+        "comparison-en-p1 bell reopen rollback"
+      ]
     },
     {
       "id": "prayer.bell.1.back",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "back",
       "scenario": "finiteprayer1; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p1 early off draft",
+        "original-en-p1 early draft0",
+        "original-en-p1 early Back restores10",
+        "original-en-p1 bell reopen final",
+        "comparison-en-p1 early off draft",
+        "comparison-en-p1 early draft0",
+        "comparison-en-p1 early Back restores10",
+        "comparison-en-p1 bell reopen final"
+      ]
     },
     {
       "id": "prayer.bell.1.outside",
@@ -4873,19 +4947,19 @@
       "control": "enabled",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41199658604"
+        "41301072356"
       ],
-      "limits": "Only named assertions, AR/EN original/comparison. Preferences/route checks do not prove pixels, hardware or delivery. All-six vibration/Reset/tap/longpress bound; detailed early/minutes/Iqama/DND chains are Fajr only. Outside dismissal and other prayers detailed chains remain unproved.",
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
-        "original-en prayer 2 short enable",
-        "original-en prayer 2 enabled",
-        "original-ar prayer 2 short enable",
-        "original-ar prayer 2 enabled",
-        "comparison-en prayer 2 short enable",
-        "comparison-en prayer 2 enabled",
-        "comparison-ar prayer 2 short enable",
-        "comparison-ar prayer 2 enabled"
+        "original-en-p2 base adhan enable",
+        "original-en-p2 base enabled",
+        "original-en-p2 base Apply",
+        "original-en-p2 enabled bell reopen",
+        "comparison-en-p2 base adhan enable",
+        "comparison-en-p2 base enabled",
+        "comparison-en-p2 base Apply",
+        "comparison-en-p2 enabled bell reopen"
       ]
     },
     {
@@ -4893,36 +4967,78 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "early-switch",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 early draft toggle",
+        "original-en-p2 early draft10",
+        "original-en-p2 early save toggle",
+        "original-en-p2 early Apply",
+        "original-en-p2 early saved10",
+        "original-en-p2 bell reopen applied",
+        "original-en-p2 early off draft",
+        "original-en-p2 early draft0",
+        "original-en-p2 early Back restores10",
+        "comparison-en-p2 early draft toggle",
+        "comparison-en-p2 early draft10",
+        "comparison-en-p2 early save toggle",
+        "comparison-en-p2 early Apply",
+        "comparison-en-p2 early saved10",
+        "comparison-en-p2 bell reopen applied",
+        "comparison-en-p2 early off draft",
+        "comparison-en-p2 early draft0",
+        "comparison-en-p2 early Back restores10"
+      ]
     },
     {
       "id": "prayer.bell.2.minutes-value",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-value",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 nested30 open",
+        "comparison-en-p2 nested30 open"
+      ]
     },
     {
       "id": "prayer.bell.2.minutes-text",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-text",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 nested30 input",
+        "comparison-en-p2 nested30 input"
+      ]
     },
     {
       "id": "prayer.bell.2.minutes-save",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-save",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 nested30 Save",
+        "original-en-p2 nested30 immediate30",
+        "comparison-en-p2 nested30 Save",
+        "comparison-en-p2 nested30 immediate30"
+      ]
     },
     {
       "id": "prayer.bell.2.minutes-cancel",
@@ -5027,27 +5143,59 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "apply",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 early Apply",
+        "original-en-p2 early saved10",
+        "original-en-p2 bell reopen applied",
+        "comparison-en-p2 early Apply",
+        "comparison-en-p2 early saved10",
+        "comparison-en-p2 bell reopen applied"
+      ]
     },
     {
       "id": "prayer.bell.2.cancel",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "cancel",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 parent Cancel",
+        "original-en-p2 parent offset rollback",
+        "original-en-p2 bell reopen rollback",
+        "comparison-en-p2 parent Cancel",
+        "comparison-en-p2 parent offset rollback",
+        "comparison-en-p2 bell reopen rollback"
+      ]
     },
     {
       "id": "prayer.bell.2.back",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "back",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 early off draft",
+        "original-en-p2 early draft0",
+        "original-en-p2 early Back restores10",
+        "original-en-p2 bell reopen final",
+        "comparison-en-p2 early off draft",
+        "comparison-en-p2 early draft0",
+        "comparison-en-p2 early Back restores10",
+        "comparison-en-p2 bell reopen final"
+      ]
     },
     {
       "id": "prayer.bell.2.outside",
@@ -5063,9 +5211,31 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "iqama",
       "scenario": "finiteprayer2; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p2 Iqama eligibility",
+        "original-en-p2 Iqama draft on",
+        "original-en-p2 Iqama draft true",
+        "original-en-p2 Iqama Apply",
+        "original-en-p2 Iqama saved true",
+        "original-en-p2 Iqama reopen",
+        "original-en-p2 Iqama off draft",
+        "original-en-p2 Iqama draft false",
+        "original-en-p2 Iqama Back restores true",
+        "comparison-en-p2 Iqama eligibility",
+        "comparison-en-p2 Iqama draft on",
+        "comparison-en-p2 Iqama draft true",
+        "comparison-en-p2 Iqama Apply",
+        "comparison-en-p2 Iqama saved true",
+        "comparison-en-p2 Iqama reopen",
+        "comparison-en-p2 Iqama off draft",
+        "comparison-en-p2 Iqama draft false",
+        "comparison-en-p2 Iqama Back restores true"
+      ]
     },
     {
       "id": "prayer.bell.2.dnd-denied",
@@ -5129,19 +5299,19 @@
       "control": "enabled",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41199658604"
+        "41301072356"
       ],
-      "limits": "Only named assertions, AR/EN original/comparison. Preferences/route checks do not prove pixels, hardware or delivery. All-six vibration/Reset/tap/longpress bound; detailed early/minutes/Iqama/DND chains are Fajr only. Outside dismissal and other prayers detailed chains remain unproved.",
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
-        "original-en prayer 3 short enable",
-        "original-en prayer 3 enabled",
-        "original-ar prayer 3 short enable",
-        "original-ar prayer 3 enabled",
-        "comparison-en prayer 3 short enable",
-        "comparison-en prayer 3 enabled",
-        "comparison-ar prayer 3 short enable",
-        "comparison-ar prayer 3 enabled"
+        "original-en-p3 base adhan enable",
+        "original-en-p3 base enabled",
+        "original-en-p3 base Apply",
+        "original-en-p3 enabled bell reopen",
+        "comparison-en-p3 base adhan enable",
+        "comparison-en-p3 base enabled",
+        "comparison-en-p3 base Apply",
+        "comparison-en-p3 enabled bell reopen"
       ]
     },
     {
@@ -5149,36 +5319,78 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "early-switch",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 early draft toggle",
+        "original-en-p3 early draft10",
+        "original-en-p3 early save toggle",
+        "original-en-p3 early Apply",
+        "original-en-p3 early saved10",
+        "original-en-p3 bell reopen applied",
+        "original-en-p3 early off draft",
+        "original-en-p3 early draft0",
+        "original-en-p3 early Back restores10",
+        "comparison-en-p3 early draft toggle",
+        "comparison-en-p3 early draft10",
+        "comparison-en-p3 early save toggle",
+        "comparison-en-p3 early Apply",
+        "comparison-en-p3 early saved10",
+        "comparison-en-p3 bell reopen applied",
+        "comparison-en-p3 early off draft",
+        "comparison-en-p3 early draft0",
+        "comparison-en-p3 early Back restores10"
+      ]
     },
     {
       "id": "prayer.bell.3.minutes-value",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-value",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 nested30 open",
+        "comparison-en-p3 nested30 open"
+      ]
     },
     {
       "id": "prayer.bell.3.minutes-text",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-text",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 nested30 input",
+        "comparison-en-p3 nested30 input"
+      ]
     },
     {
       "id": "prayer.bell.3.minutes-save",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-save",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 nested30 Save",
+        "original-en-p3 nested30 immediate30",
+        "comparison-en-p3 nested30 Save",
+        "comparison-en-p3 nested30 immediate30"
+      ]
     },
     {
       "id": "prayer.bell.3.minutes-cancel",
@@ -5283,27 +5495,59 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "apply",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 early Apply",
+        "original-en-p3 early saved10",
+        "original-en-p3 bell reopen applied",
+        "comparison-en-p3 early Apply",
+        "comparison-en-p3 early saved10",
+        "comparison-en-p3 bell reopen applied"
+      ]
     },
     {
       "id": "prayer.bell.3.cancel",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "cancel",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 parent Cancel",
+        "original-en-p3 parent offset rollback",
+        "original-en-p3 bell reopen rollback",
+        "comparison-en-p3 parent Cancel",
+        "comparison-en-p3 parent offset rollback",
+        "comparison-en-p3 bell reopen rollback"
+      ]
     },
     {
       "id": "prayer.bell.3.back",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "back",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 early off draft",
+        "original-en-p3 early draft0",
+        "original-en-p3 early Back restores10",
+        "original-en-p3 bell reopen final",
+        "comparison-en-p3 early off draft",
+        "comparison-en-p3 early draft0",
+        "comparison-en-p3 early Back restores10",
+        "comparison-en-p3 bell reopen final"
+      ]
     },
     {
       "id": "prayer.bell.3.outside",
@@ -5319,9 +5563,31 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "iqama",
       "scenario": "finiteprayer3; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p3 Iqama eligibility",
+        "original-en-p3 Iqama draft on",
+        "original-en-p3 Iqama draft true",
+        "original-en-p3 Iqama Apply",
+        "original-en-p3 Iqama saved true",
+        "original-en-p3 Iqama reopen",
+        "original-en-p3 Iqama off draft",
+        "original-en-p3 Iqama draft false",
+        "original-en-p3 Iqama Back restores true",
+        "comparison-en-p3 Iqama eligibility",
+        "comparison-en-p3 Iqama draft on",
+        "comparison-en-p3 Iqama draft true",
+        "comparison-en-p3 Iqama Apply",
+        "comparison-en-p3 Iqama saved true",
+        "comparison-en-p3 Iqama reopen",
+        "comparison-en-p3 Iqama off draft",
+        "comparison-en-p3 Iqama draft false",
+        "comparison-en-p3 Iqama Back restores true"
+      ]
     },
     {
       "id": "prayer.bell.3.dnd-denied",
@@ -5385,19 +5651,19 @@
       "control": "enabled",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41199658604"
+        "41301072356"
       ],
-      "limits": "Only named assertions, AR/EN original/comparison. Preferences/route checks do not prove pixels, hardware or delivery. All-six vibration/Reset/tap/longpress bound; detailed early/minutes/Iqama/DND chains are Fajr only. Outside dismissal and other prayers detailed chains remain unproved.",
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
-        "original-en prayer 4 short enable",
-        "original-en prayer 4 enabled",
-        "original-ar prayer 4 short enable",
-        "original-ar prayer 4 enabled",
-        "comparison-en prayer 4 short enable",
-        "comparison-en prayer 4 enabled",
-        "comparison-ar prayer 4 short enable",
-        "comparison-ar prayer 4 enabled"
+        "original-en-p4 base adhan enable",
+        "original-en-p4 base enabled",
+        "original-en-p4 base Apply",
+        "original-en-p4 enabled bell reopen",
+        "comparison-en-p4 base adhan enable",
+        "comparison-en-p4 base enabled",
+        "comparison-en-p4 base Apply",
+        "comparison-en-p4 enabled bell reopen"
       ]
     },
     {
@@ -5405,36 +5671,78 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "early-switch",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 early draft toggle",
+        "original-en-p4 early draft10",
+        "original-en-p4 early save toggle",
+        "original-en-p4 early Apply",
+        "original-en-p4 early saved10",
+        "original-en-p4 bell reopen applied",
+        "original-en-p4 early off draft",
+        "original-en-p4 early draft0",
+        "original-en-p4 early Back restores10",
+        "comparison-en-p4 early draft toggle",
+        "comparison-en-p4 early draft10",
+        "comparison-en-p4 early save toggle",
+        "comparison-en-p4 early Apply",
+        "comparison-en-p4 early saved10",
+        "comparison-en-p4 bell reopen applied",
+        "comparison-en-p4 early off draft",
+        "comparison-en-p4 early draft0",
+        "comparison-en-p4 early Back restores10"
+      ]
     },
     {
       "id": "prayer.bell.4.minutes-value",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-value",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 nested30 open",
+        "comparison-en-p4 nested30 open"
+      ]
     },
     {
       "id": "prayer.bell.4.minutes-text",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-text",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 nested30 input",
+        "comparison-en-p4 nested30 input"
+      ]
     },
     {
       "id": "prayer.bell.4.minutes-save",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-save",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 nested30 Save",
+        "original-en-p4 nested30 immediate30",
+        "comparison-en-p4 nested30 Save",
+        "comparison-en-p4 nested30 immediate30"
+      ]
     },
     {
       "id": "prayer.bell.4.minutes-cancel",
@@ -5539,27 +5847,59 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "apply",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 early Apply",
+        "original-en-p4 early saved10",
+        "original-en-p4 bell reopen applied",
+        "comparison-en-p4 early Apply",
+        "comparison-en-p4 early saved10",
+        "comparison-en-p4 bell reopen applied"
+      ]
     },
     {
       "id": "prayer.bell.4.cancel",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "cancel",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 parent Cancel",
+        "original-en-p4 parent offset rollback",
+        "original-en-p4 bell reopen rollback",
+        "comparison-en-p4 parent Cancel",
+        "comparison-en-p4 parent offset rollback",
+        "comparison-en-p4 bell reopen rollback"
+      ]
     },
     {
       "id": "prayer.bell.4.back",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "back",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 early off draft",
+        "original-en-p4 early draft0",
+        "original-en-p4 early Back restores10",
+        "original-en-p4 bell reopen final",
+        "comparison-en-p4 early off draft",
+        "comparison-en-p4 early draft0",
+        "comparison-en-p4 early Back restores10",
+        "comparison-en-p4 bell reopen final"
+      ]
     },
     {
       "id": "prayer.bell.4.outside",
@@ -5575,9 +5915,31 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "iqama",
       "scenario": "finiteprayer4; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p4 Iqama eligibility",
+        "original-en-p4 Iqama draft on",
+        "original-en-p4 Iqama draft true",
+        "original-en-p4 Iqama Apply",
+        "original-en-p4 Iqama saved true",
+        "original-en-p4 Iqama reopen",
+        "original-en-p4 Iqama off draft",
+        "original-en-p4 Iqama draft false",
+        "original-en-p4 Iqama Back restores true",
+        "comparison-en-p4 Iqama eligibility",
+        "comparison-en-p4 Iqama draft on",
+        "comparison-en-p4 Iqama draft true",
+        "comparison-en-p4 Iqama Apply",
+        "comparison-en-p4 Iqama saved true",
+        "comparison-en-p4 Iqama reopen",
+        "comparison-en-p4 Iqama off draft",
+        "comparison-en-p4 Iqama draft false",
+        "comparison-en-p4 Iqama Back restores true"
+      ]
     },
     {
       "id": "prayer.bell.4.dnd-denied",
@@ -5641,19 +6003,19 @@
       "control": "enabled",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
       "evidence": [
-        "41199658604"
+        "41301072356"
       ],
-      "limits": "Only named assertions, AR/EN original/comparison. Preferences/route checks do not prove pixels, hardware or delivery. All-six vibration/Reset/tap/longpress bound; detailed early/minutes/Iqama/DND chains are Fajr only. Outside dismissal and other prayers detailed chains remain unproved.",
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
-        "original-en prayer 5 short enable",
-        "original-en prayer 5 enabled",
-        "original-ar prayer 5 short enable",
-        "original-ar prayer 5 enabled",
-        "comparison-en prayer 5 short enable",
-        "comparison-en prayer 5 enabled",
-        "comparison-ar prayer 5 short enable",
-        "comparison-ar prayer 5 enabled"
+        "original-en-p5 base adhan enable",
+        "original-en-p5 base enabled",
+        "original-en-p5 base Apply",
+        "original-en-p5 enabled bell reopen",
+        "comparison-en-p5 base adhan enable",
+        "comparison-en-p5 base enabled",
+        "comparison-en-p5 base Apply",
+        "comparison-en-p5 enabled bell reopen"
       ]
     },
     {
@@ -5661,36 +6023,78 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "early-switch",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 early draft toggle",
+        "original-en-p5 early draft10",
+        "original-en-p5 early save toggle",
+        "original-en-p5 early Apply",
+        "original-en-p5 early saved10",
+        "original-en-p5 bell reopen applied",
+        "original-en-p5 early off draft",
+        "original-en-p5 early draft0",
+        "original-en-p5 early Back restores10",
+        "comparison-en-p5 early draft toggle",
+        "comparison-en-p5 early draft10",
+        "comparison-en-p5 early save toggle",
+        "comparison-en-p5 early Apply",
+        "comparison-en-p5 early saved10",
+        "comparison-en-p5 bell reopen applied",
+        "comparison-en-p5 early off draft",
+        "comparison-en-p5 early draft0",
+        "comparison-en-p5 early Back restores10"
+      ]
     },
     {
       "id": "prayer.bell.5.minutes-value",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-value",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 nested30 open",
+        "comparison-en-p5 nested30 open"
+      ]
     },
     {
       "id": "prayer.bell.5.minutes-text",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-text",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 nested30 input",
+        "comparison-en-p5 nested30 input"
+      ]
     },
     {
       "id": "prayer.bell.5.minutes-save",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "minutes-save",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 nested30 Save",
+        "original-en-p5 nested30 immediate30",
+        "comparison-en-p5 nested30 Save",
+        "comparison-en-p5 nested30 immediate30"
+      ]
     },
     {
       "id": "prayer.bell.5.minutes-cancel",
@@ -5795,27 +6199,59 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "apply",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 early Apply",
+        "original-en-p5 early saved10",
+        "original-en-p5 bell reopen applied",
+        "comparison-en-p5 early Apply",
+        "comparison-en-p5 early saved10",
+        "comparison-en-p5 bell reopen applied"
+      ]
     },
     {
       "id": "prayer.bell.5.cancel",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "cancel",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 parent Cancel",
+        "original-en-p5 parent offset rollback",
+        "original-en-p5 bell reopen rollback",
+        "comparison-en-p5 parent Cancel",
+        "comparison-en-p5 parent offset rollback",
+        "comparison-en-p5 bell reopen rollback"
+      ]
     },
     {
       "id": "prayer.bell.5.back",
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "back",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 early off draft",
+        "original-en-p5 early draft0",
+        "original-en-p5 early Back restores10",
+        "original-en-p5 bell reopen final",
+        "comparison-en-p5 early off draft",
+        "comparison-en-p5 early draft0",
+        "comparison-en-p5 early Back restores10",
+        "comparison-en-p5 bell reopen final"
+      ]
     },
     {
       "id": "prayer.bell.5.outside",
@@ -5831,9 +6267,31 @@
       "source": "app/src/main/java/com/example/prayer/PrayerAlertDialog.kt",
       "control": "iqama",
       "scenario": "finiteprayer5; enabled/disabled; stagedparentrestore; nestedSave/Cancel; persistence/recalculation",
-      "evidence": [],
-      "limits": "No exact recorded assertion bound to this prayer/control. Prior file-level run lead removed rather than implying coverage. Needs targeted verification; not confirmed product failure.",
-      "status": "unmapped"
+      "evidence": [
+        "41301072356"
+      ],
+      "limits": "ENlightonly,actualbaseenable/Apply/reopen. Finite10minuteearlydefault/nested30Save/parentCancel/earlyApplyandBack/IqamaApplyandBack. NoARinthisrun,nestedinvalid/Cancel/sliderphysicaldrag/outside/DNDpermission/audio/delivery/force-stop persistence proof. All15dialogpairsvisuallyinspected;clock/backgrounddifferencesremain,nofullpixelormotionidentity.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en-p5 Iqama eligibility",
+        "original-en-p5 Iqama draft on",
+        "original-en-p5 Iqama draft true",
+        "original-en-p5 Iqama Apply",
+        "original-en-p5 Iqama saved true",
+        "original-en-p5 Iqama reopen",
+        "original-en-p5 Iqama off draft",
+        "original-en-p5 Iqama draft false",
+        "original-en-p5 Iqama Back restores true",
+        "comparison-en-p5 Iqama eligibility",
+        "comparison-en-p5 Iqama draft on",
+        "comparison-en-p5 Iqama draft true",
+        "comparison-en-p5 Iqama Apply",
+        "comparison-en-p5 Iqama saved true",
+        "comparison-en-p5 Iqama reopen",
+        "comparison-en-p5 Iqama off draft",
+        "comparison-en-p5 Iqama draft false",
+        "comparison-en-p5 Iqama Back restores true"
+      ]
     },
     {
       "id": "prayer.bell.5.dnd-denied",
