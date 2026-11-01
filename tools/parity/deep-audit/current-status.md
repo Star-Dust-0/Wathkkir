@@ -135,3 +135,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 11:09 watch route assertion reconciliation
 -8morewatchrows exactbound(language3/location2/permissions2/open-phone1)fromdownloaded51/95/63/19-checkartifacts. Directsubpage,seededphone_lang,reopenforeground-onlylimitsretained. Open-phone historical no-unexpected-preference-changeassertiononlychecks lang,notwholeprefs;correctedscopelabelinledger. No new CI/product change.41290680614stillinprogress11:08.
+
+## Nov1 11:26 lockhelp follow-up
+-41290680614:135checks20fail,7completevalidlocalehelppairsFR/DE/ES/IT/TR/RU/PTinspectedandtext/layoutmatch. ARboth,originalID,comparisonEN/URwenttoLocationdespiteSettingsroutepassing:taphelperacceptedy70behindfixedheaderanddidnotassertdestination;rawtokensARmatchingLocationisNOThelp-proof. PriorvalidEN/IDhelpfrom41288415284retained,AR/URnotyetpaired. No productdefect. Harnessnowrequiresy320belowheader,settling,pre-clickscreens,anddestination-basedretry. No repeatedgreenclaim.
