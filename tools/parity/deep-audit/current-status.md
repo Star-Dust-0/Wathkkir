@@ -236,3 +236,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov1 22:58 source recovery follow-through
 -LocationAliasStore.kt byte-identical complete historical Oct23 16:56:32 source now explicitly classified in alias-source-recovery-review.json. Main FajrViewModel remains secondary. Found omitted Oct23 16:57:33 null-place-key fix; shipped code80 ds0.invoke case0 printed Oct30 02:16:19 independently confirms fallbackgeocode+persist beforealiasguard. Replayed onlythatoperation. Existingmanualaliasrunsalwaysseed/pickakeysodontcoverit. Automatic-locationruntimeverificationstillpending;geocodernullguardretained. Notfulloriginalsourcecompletion.
+
+## Nov1 23:02 watch source omission recovered
+-CirclesActivity initialOct21creationwasreplayedwithoutOct21 03:19:31Settings.load(this)insertion. Originalwatchcode73newstaticinspectionindependentlyconfirmskg1.a(this)firstafterSuperandkg1readsweartheme/lang/pat/font. RestoredsingleexistingcallbeforeLocationSync.refresh,notnewdesign. REAstandalone6.8.0isolated/noSetup,pinnedengine6e5eacf5. ColdentrydirectCircles4themesAR/ENprepared;previouswarmMainActivitysettingscouldhideomission. No cold runtimeproofyet.

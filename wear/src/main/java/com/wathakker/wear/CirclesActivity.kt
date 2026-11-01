@@ -22,6 +22,7 @@ import kotlinx.coroutines.delay
 class CirclesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Settings.load(this)
         LocationSync.refresh(this)
         setContent {
             val ctx = LocalContext.current
