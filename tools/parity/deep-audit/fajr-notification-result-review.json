@@ -1,0 +1,498 @@
+{
+  "run": "41360593740",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en startup notification deny 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification denied reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification permission row visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en denial preserves alarm enabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification Android permission controller",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Android deny",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en permission row stays after denial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification retry actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Android Allow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en OS notification granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en permission row removed after grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en allowed final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en permission stays granted after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en notification row absent on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enabled stays on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar startup notification deny 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification denied reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification permission row visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar denial preserves alarm enabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification Android permission controller",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Android deny",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar permission row stays after denial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification retry actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Android Allow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar OS notification granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar permission row removed after grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar allowed final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar permission stays granted after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar notification row absent on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enabled stays on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en startup notification deny 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification denied reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification permission row visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en denial preserves alarm enabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification Android permission controller",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Android deny",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en permission row stays after denial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification retry actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Android Allow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en OS notification granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en permission row removed after grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en allowed final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en permission stays granted after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en notification row absent on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enabled stays on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alarm target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enable alarm actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar startup notification deny 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification denied reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification permission row visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar denial preserves alarm enabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification row actual press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification Android permission controller",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Android deny",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar permission row stays after denial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification retry actual row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Android Allow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar OS notification granted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar permission row removed after grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar allowed final reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar permission stays granted after reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar notification row absent on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enabled stays on reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "false_startup_checks": [
+    {
+      "name": "original-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar startup notification deny 0",
+      "passed": false,
+      "detail": ""
+    }
+  ],
+  "review": "Broad dumpsys window substring includes inactive permissioncontroller, so7startupdeny checks fail on actualHome,noOSprompt. All actualFajrpermission chains pass. Corrected future detector must use currentfocus/topresumed only; no rerun solely forgreen.",
+  "pairs": 14,
+  "same_tokens": 8,
+  "actual_pairs_inspected": 14,
+  "differences": "4OSdialogproductlabel Wathkkir vs WathkkirComparison expectedfixture;2startupHomecountdowndifferences.",
+  "limits": "ActualAndroiddeny/Allow but explicitpmrevoke+retryflags setup. Not OS retry-policy or delivery proof."
+}
