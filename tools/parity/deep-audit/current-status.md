@@ -83,3 +83,8 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 - AliasReseteditor-onlyplacementrestored59df01afromOct23finaloperation.41267011867:83/0,16/16pairs;actualpixelsinspected.
 - Manualtwo-placealiasreturn41268042855:143/0,26/26pairs;returnA/selectiveReset/returnB/reopenpassAR/EN. NotGPSA-B-Amovement.
 - Partial/redruns41262570502and41266002695retainedwithoriginalmismatches. NextfiniteAsr/highlatpickerCancel/Back/Apply/reopen;methodpickerandalloffsetdragstillopen.
+
+## Nov1 picker and slider reconciliation
+- Methodpicker41270837701:343/0,64/64pairs,all8AR/ENdraftrollback/Apply/reopen. Asr/highlatlabel14spvs16sprestored5fe9d5f;41272574823:259/0,48/48pairs,12dialoginteriorcrops0differentpixels. Fullframe/motionnotproved.
+- Offset41274264822:259/9failedsampledendpointassertions;41275934011:259/4failedaftertapsettle,actual28/29/-29inbothapps. Allzero/reopenpassed. These are unprovedgestureendpoints,notconfirmedproductdefects.14zero-rowpairsvisuallyinspected,pressedhighlightresidualENMaghrib.
+- recent-executed-scenarios.json/md tracks exactrecordedchecksandpairsfromlocallyrecoveredartifacts. Notthereachablecontroldenominator. Next:exactendpointpublicaccessibilitytestwithgesturevaluesretained,thenroute/controlinventorymapping.

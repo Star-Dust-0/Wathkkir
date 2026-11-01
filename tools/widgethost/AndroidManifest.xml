@@ -3,6 +3,7 @@
     <instrumentation android:name="com.example.widgethost.HierarchyDump" android:targetPackage="${applicationId}"/>
     <instrumentation android:name="com.example.widgethost.WatchEngineProbe" android:targetPackage="${applicationId}"/>
     <instrumentation android:name="com.example.widgethost.ScrollAction" android:targetPackage="${applicationId}"/>
+    <instrumentation android:name="com.example.widgethost.SliderAction" android:targetPackage="${applicationId}"/>
     <application android:label="WidgetHost" android:icon="@android:drawable/sym_def_app_icon" android:theme="@android:style/Theme.Material.NoActionBar">
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>

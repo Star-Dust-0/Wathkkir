@@ -414,3 +414,8 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Offset41274264822 incompleteendpointgesture
 259checks9fail;21/42rawpairs. Actualrangevaluesatfailedtargets29/-29/-28/27ratherthanendpoints30/-30,bothoriginalandrecoveredaffected. adbinputswipesamplesnotguaranteedfinalendpoint;settlewithactualtapatslideredgebeforeendpointassertion. Zero/reopenallpass. Scrolloffsetscauseotherrawdifferences;notproductfailureyet,nofullsliderparityclaim.
+
+## Nov1 07:38 endpoint audit continuation
+-41275934011:259checks4failed; real sampled values28/29/-29inbothappsdespiteendpointtap. Allzeroandreopenchecks pass.13/42rawtokenpairs; scrolloffsetsandfailedendpointvaluesprecludefullframeclaim. Actual14zero-rowpairpixelsinspected;ENMaghribpressedhighlightresidual visible. No productchange based on sampledgesture.
+- Harness now retains observed gesture-value/range evidence and uses publicaccessibilitySET_PROGRESSonlyifgesturedoesnotreach requestedendpoint. This separatesexactendpointpersistencetestfromphysicalgesture/motionequivalence.
+- Recentexecutedscenarioledgerisapartial exactassertionindex,notcompletecontrolcoverage.
