@@ -1,0 +1,17 @@
+{
+  "scope": "Source-only recovery review, not runtime or complete-source proof. No transcripts included.",
+  "alias_store": {
+    "file": "app/src/main/java/com/example/fajr/location/LocationAliasStore.kt",
+    "sha256": "2ffad0261d708aa179ed6efad0dc4a6bc5665ab22e0d5c8ac82562cf4fcdf30a",
+    "classification": "Exact complete printed historical source matches current bytes",
+    "source_agent": "agent-01M5KCG0FQ80H6MZZYFK3YGWKM",
+    "source_time": "2026-10-23T16:56:32+03:00"
+  },
+  "missing_place_key_repair": {
+    "file": "app/src/main/java/com/example/fajr/ui/FajrViewModel.kt",
+    "historical_operation": "2026-10-23T16:57:33+03:00 in same source agent",
+    "shipped_baseline_evidence": "Code80 defpackage.ds0.invoke case0 printed Oct30 02:16:19 Africa/Cairo in recovery agent; nullable key derives using helper d.d(lat,lon), persists result then guards nonnull/nonempty alias.",
+    "repair": "Replay only omitted nullable place-key derivation and persistence before alias save. Keep null-geocoder guard.",
+    "limits": "Not a full recovered FajrViewModel. No automatic-location runtime regression proof yet. Existing manual aliases tests always had m|lat|lon keys and could not cover this path."
+  }
+}
