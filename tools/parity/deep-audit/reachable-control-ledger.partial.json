@@ -9579,27 +9579,75 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual NextPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en NextPrayer Apply tapped",
+        "original-en NextPrayer Apply tap open saved",
+        "original-en NextPrayer save option Apply",
+        "original-en NextPrayer option persisted",
+        "original-en NextPrayer reopen Apply",
+        "original-en NextPrayer reopening preserves option",
+        "original-ar NextPrayer Apply tapped",
+        "original-ar NextPrayer Apply tap open saved",
+        "original-ar NextPrayer save option Apply",
+        "original-ar NextPrayer option persisted",
+        "original-ar NextPrayer reopen Apply",
+        "original-ar NextPrayer reopening preserves option",
+        "comparison-en NextPrayer Apply tapped",
+        "comparison-en NextPrayer Apply tap open saved",
+        "comparison-en NextPrayer save option Apply",
+        "comparison-en NextPrayer option persisted",
+        "comparison-en NextPrayer reopen Apply",
+        "comparison-en NextPrayer reopening preserves option",
+        "comparison-ar NextPrayer Apply tapped",
+        "comparison-ar NextPrayer Apply tap open saved",
+        "comparison-ar NextPrayer save option Apply",
+        "comparison-ar NextPrayer option persisted",
+        "comparison-ar NextPrayer reopen Apply",
+        "comparison-ar NextPrayer reopening preserves option"
+      ]
     },
     {
       "id": "widget.NextPrayer.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual NextPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en NextPrayer Back no widget prefs change",
+        "original-ar NextPrayer Back no widget prefs change",
+        "comparison-en NextPrayer Back no widget prefs change",
+        "comparison-ar NextPrayer Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.NextPrayer.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual NextPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en NextPrayer option draft",
+        "original-en NextPrayer Back discards option",
+        "original-ar NextPrayer option draft",
+        "original-ar NextPrayer Back discards option",
+        "comparison-en NextPrayer option draft",
+        "comparison-en NextPrayer Back discards option",
+        "comparison-ar NextPrayer option draft",
+        "comparison-ar NextPrayer Back discards option"
+      ]
     },
     {
       "id": "widget.NextPrayer.delete",
@@ -9751,27 +9799,75 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual PrayerBar instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en PrayerBar Apply tapped",
+        "original-en PrayerBar Apply tap open saved",
+        "original-en PrayerBar save option Apply",
+        "original-en PrayerBar option persisted",
+        "original-en PrayerBar reopen Apply",
+        "original-en PrayerBar reopening preserves option",
+        "original-ar PrayerBar Apply tapped",
+        "original-ar PrayerBar Apply tap open saved",
+        "original-ar PrayerBar save option Apply",
+        "original-ar PrayerBar option persisted",
+        "original-ar PrayerBar reopen Apply",
+        "original-ar PrayerBar reopening preserves option",
+        "comparison-en PrayerBar Apply tapped",
+        "comparison-en PrayerBar Apply tap open saved",
+        "comparison-en PrayerBar save option Apply",
+        "comparison-en PrayerBar option persisted",
+        "comparison-en PrayerBar reopen Apply",
+        "comparison-en PrayerBar reopening preserves option",
+        "comparison-ar PrayerBar Apply tapped",
+        "comparison-ar PrayerBar Apply tap open saved",
+        "comparison-ar PrayerBar save option Apply",
+        "comparison-ar PrayerBar option persisted",
+        "comparison-ar PrayerBar reopen Apply",
+        "comparison-ar PrayerBar reopening preserves option"
+      ]
     },
     {
       "id": "widget.PrayerBar.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual PrayerBar instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en PrayerBar Back no widget prefs change",
+        "original-ar PrayerBar Back no widget prefs change",
+        "comparison-en PrayerBar Back no widget prefs change",
+        "comparison-ar PrayerBar Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.PrayerBar.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual PrayerBar instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en PrayerBar option draft",
+        "original-en PrayerBar Back discards option",
+        "original-ar PrayerBar option draft",
+        "original-ar PrayerBar Back discards option",
+        "comparison-en PrayerBar option draft",
+        "comparison-en PrayerBar Back discards option",
+        "comparison-ar PrayerBar option draft",
+        "comparison-ar PrayerBar Back discards option"
+      ]
     },
     {
       "id": "widget.PrayerBar.delete",
@@ -10597,27 +10693,75 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Gregorian instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Gregorian Apply tapped",
+        "original-en Gregorian Apply tap open saved",
+        "original-en Gregorian save option Apply",
+        "original-en Gregorian option persisted",
+        "original-en Gregorian reopen Apply",
+        "original-en Gregorian reopening preserves option",
+        "original-ar Gregorian Apply tapped",
+        "original-ar Gregorian Apply tap open saved",
+        "original-ar Gregorian save option Apply",
+        "original-ar Gregorian option persisted",
+        "original-ar Gregorian reopen Apply",
+        "original-ar Gregorian reopening preserves option",
+        "comparison-en Gregorian Apply tapped",
+        "comparison-en Gregorian Apply tap open saved",
+        "comparison-en Gregorian save option Apply",
+        "comparison-en Gregorian option persisted",
+        "comparison-en Gregorian reopen Apply",
+        "comparison-en Gregorian reopening preserves option",
+        "comparison-ar Gregorian Apply tapped",
+        "comparison-ar Gregorian Apply tap open saved",
+        "comparison-ar Gregorian save option Apply",
+        "comparison-ar Gregorian option persisted",
+        "comparison-ar Gregorian reopen Apply",
+        "comparison-ar Gregorian reopening preserves option"
+      ]
     },
     {
       "id": "widget.Gregorian.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Gregorian instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Gregorian Back no widget prefs change",
+        "original-ar Gregorian Back no widget prefs change",
+        "comparison-en Gregorian Back no widget prefs change",
+        "comparison-ar Gregorian Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Gregorian.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Gregorian instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Gregorian option draft",
+        "original-en Gregorian Back discards option",
+        "original-ar Gregorian option draft",
+        "original-ar Gregorian Back discards option",
+        "comparison-en Gregorian option draft",
+        "comparison-en Gregorian Back discards option",
+        "comparison-ar Gregorian option draft",
+        "comparison-ar Gregorian Back discards option"
+      ]
     },
     {
       "id": "widget.Gregorian.delete",
@@ -10769,27 +10913,75 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual DayPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en DayPrayer Apply tapped",
+        "original-en DayPrayer Apply tap open saved",
+        "original-en DayPrayer save option Apply",
+        "original-en DayPrayer option persisted",
+        "original-en DayPrayer reopen Apply",
+        "original-en DayPrayer reopening preserves option",
+        "original-ar DayPrayer Apply tapped",
+        "original-ar DayPrayer Apply tap open saved",
+        "original-ar DayPrayer save option Apply",
+        "original-ar DayPrayer option persisted",
+        "original-ar DayPrayer reopen Apply",
+        "original-ar DayPrayer reopening preserves option",
+        "comparison-en DayPrayer Apply tapped",
+        "comparison-en DayPrayer Apply tap open saved",
+        "comparison-en DayPrayer save option Apply",
+        "comparison-en DayPrayer option persisted",
+        "comparison-en DayPrayer reopen Apply",
+        "comparison-en DayPrayer reopening preserves option",
+        "comparison-ar DayPrayer Apply tapped",
+        "comparison-ar DayPrayer Apply tap open saved",
+        "comparison-ar DayPrayer save option Apply",
+        "comparison-ar DayPrayer option persisted",
+        "comparison-ar DayPrayer reopen Apply",
+        "comparison-ar DayPrayer reopening preserves option"
+      ]
     },
     {
       "id": "widget.DayPrayer.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual DayPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en DayPrayer Back no widget prefs change",
+        "original-ar DayPrayer Back no widget prefs change",
+        "comparison-en DayPrayer Back no widget prefs change",
+        "comparison-ar DayPrayer Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.DayPrayer.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual DayPrayer instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en DayPrayer option draft",
+        "original-en DayPrayer Back discards option",
+        "original-ar DayPrayer option draft",
+        "original-ar DayPrayer Back discards option",
+        "comparison-en DayPrayer option draft",
+        "comparison-en DayPrayer Back discards option",
+        "comparison-ar DayPrayer option draft",
+        "comparison-ar DayPrayer Back discards option"
+      ]
     },
     {
       "id": "widget.DayPrayer.delete",
@@ -12328,27 +12520,75 @@
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "apply",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Clock instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Clock Apply tapped",
+        "original-en Clock Apply tap open saved",
+        "original-en Clock save option Apply",
+        "original-en Clock option persisted",
+        "original-en Clock reopen Apply",
+        "original-en Clock reopening preserves option",
+        "original-ar Clock Apply tapped",
+        "original-ar Clock Apply tap open saved",
+        "original-ar Clock save option Apply",
+        "original-ar Clock option persisted",
+        "original-ar Clock reopen Apply",
+        "original-ar Clock reopening preserves option",
+        "comparison-en Clock Apply tapped",
+        "comparison-en Clock Apply tap open saved",
+        "comparison-en Clock save option Apply",
+        "comparison-en Clock option persisted",
+        "comparison-en Clock reopen Apply",
+        "comparison-en Clock reopening preserves option",
+        "comparison-ar Clock Apply tapped",
+        "comparison-ar Clock Apply tap open saved",
+        "comparison-ar Clock save option Apply",
+        "comparison-ar Clock option persisted",
+        "comparison-ar Clock reopen Apply",
+        "comparison-ar Clock reopening preserves option"
+      ]
     },
     {
       "id": "widget.Clock.back-new",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-new",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Clock instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Clock Back no widget prefs change",
+        "original-ar Clock Back no widget prefs change",
+        "comparison-en Clock Back no widget prefs change",
+        "comparison-ar Clock Back no widget prefs change"
+      ]
     },
     {
       "id": "widget.Clock.back-existing",
       "source": "app/src/main/java/com/example/widget/WidgetConfigActivity.kt",
       "control": "back-existing",
       "scenario": "provider-specificactualhost/config/selection/draft/save/reopen/render/lifecycle",
-      "evidence": [],
-      "status": "unmapped",
-      "limits": "Retracted inherited five-kind config run from this untested provider kind. Shared config source does not prove actual instance behavior."
+      "evidence": [
+        "41325512089"
+      ],
+      "status": "bounded recorded assertion evidence",
+      "limits": "ENlight/ARdark actual Clock instance. Back-new checks prefs unchanged, NOT RESULT_OK. Back-existing checks tap option draft rollback; tap-only isNew remains true by shipped contract. DefaultApplyopen/optionApply(refresh3,none2)/reopenApplyprefs checked. All60paired configscreensinspected;60/60tokenssame,text/layout/RTL/selectedoptionalign;systemclockdiffsremain. Notallcolors/patterns/livehostclickfromconfiguredvalue/activityresult/OEM/motionproof.",
+      "exact_assertions": [
+        "original-en Clock option draft",
+        "original-en Clock Back discards option",
+        "original-ar Clock option draft",
+        "original-ar Clock Back discards option",
+        "comparison-en Clock option draft",
+        "comparison-en Clock Back discards option",
+        "comparison-ar Clock option draft",
+        "comparison-ar Clock Back discards option"
+      ]
     },
     {
       "id": "widget.Clock.delete",
