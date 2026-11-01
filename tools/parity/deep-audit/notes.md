@@ -513,3 +513,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 16:10 nested dismissal finite preparation
 -ENlightother5prayersnested25Cancel/invalid0Saveguard/nested45Backandparentoffdraftoutsidetaprollback10/reopen. Outsidecoordinateverifiedagainstpreviousbottomdialogframes,actualdestinationasserted. Notallinvalidvalues/nestedoutside/AR/motion/delivery. No productchange.
+
+## Nov1 16:43 nested dismiss finiteEN
+-41314642811:293checks0fail20/25rawsemanticpairs. All25actualpairsinspected. Other5prayersnested25Cancel/invalid0Saveguard/nested45Backandouteroffdraftoutsidetaprollback10/reopenpass.5outsideafterrawdiffscountdownseconds.10rowsbound. Noallinvalidvalues/nestedoutside/AR/frame-motion/delivery/hardwareproof. PreparedRTLfollowthrough,noproductchange.
