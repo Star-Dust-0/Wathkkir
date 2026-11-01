@@ -55,8 +55,11 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
     fun refreshCityDisplay() { _uiState.update { it.copy(cityName = prefs.getCityNameLocalized(L10n.lang.code)) } }
     fun isCurrentPlaceAliased(): Boolean = prefs.placeKey?.let { LocationAliasStore.aliasFor(getApplication(), it) != null } ?: false
     fun setCityAlias(alias: String?): Boolean {
-        val trimmed = alias?.trim().orEmpty(); val key = prefs.placeKey ?: return false
-        if (trimmed.isEmpty()) return false
+        val trimmed = alias?.trim().orEmpty()
+        // Oct23 16:57 fix, also present in shipped code80 ds0: old saved locations
+        // can have coordinates but no place_key until the first successful geocode.
+        val key = prefs.placeKey ?: locationHelper.getPlaceKeyFromCoordinates(prefs.latitude, prefs.longitude)?.also { prefs.placeKey = it }
+        if (key == null || trimmed.isEmpty()) return false
         if (prefs.cityNameArOrig == null) prefs.setCityNamesOrig(prefs.getCityNameLocalized("ar"), prefs.getCityNameLocalized("en"))
         LocationAliasStore.put(getApplication(), key, trimmed); prefs.setCityNames(trimmed, trimmed)
         refreshCityDisplay(); _aliasVersion.value++; return true
