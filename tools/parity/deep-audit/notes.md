@@ -534,3 +534,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov1 18:18 remaining widget config preparation
 -Finiteother5kindsNextPrayer/PrayerBar/Clock/DayPrayer/GregorianBack-newprefunchanged/Applydefaultopen/optiondraftBackrollback/optionApply/reopenApply. Separateobserveravoidshostinstrumentationstop. DoesNOTassertactivityRESULT_OKorOEMlifecycle;tap-onlyisNewquirkretained,notproductpatched. No release/productchange.
+
+## Nov1 18:34 host exact binding
+-18rowsbound:8lockwidgetno-opclickchecks41240937315and10homewidget4sizeresizecallback/nonblank/nocrashchecks41207839644/41210239758. Exact checks donotprovevisualidentityorOEMhostbehavior. Lockno-opnotTasbihinteraction. No newCI/productchange.
