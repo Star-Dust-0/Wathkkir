@@ -12091,5 +12091,277 @@
       }
     ],
     "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
+  },
+  {
+    "run": "41279783029",
+    "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41279783029",
+    "checks": [
+      {
+        "name": "setup install original.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install comparison.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "setup install widgethost.apk",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en watch settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en h24 on row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en h24 saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en watch reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en h24 reopened",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en h24 off row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en h24 saved false",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en sync press",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-en about route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar watch settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar h24 on row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar h24 saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar watch reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar h24 reopened",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar h24 off row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar h24 saved false",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar sync press",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "original-ar about route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en watch settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en h24 on row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en h24 saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en watch reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en h24 reopened",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en h24 off row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en h24 saved false",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en sync press",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-en about route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar watch settings route",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar h24 on row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar h24 saved true",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar watch reopen",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar h24 reopened",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar h24 off row",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar h24 saved false",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar sync press",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "comparison-ar about route",
+        "passed": true,
+        "detail": ""
+      }
+    ],
+    "pairs": [
+      {
+        "scene": "en-watch-settings-default",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-watch-h24-on",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-watch-h24-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-watch-h24-off",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-watch-sync-disconnected",
+        "same_tokens": true
+      },
+      {
+        "scene": "en-about",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-watch-settings-default",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-watch-h24-on",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-watch-h24-reopen",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-watch-h24-off",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-watch-sync-disconnected",
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-about",
+        "same_tokens": true
+      }
+    ],
+    "limits": "Finite recorded checks only. Equal tokens and green checks do not establish pixels, motion, transport or whole-control coverage. Earlier artifacts not present locally are omitted, not failures."
   }
 ]
