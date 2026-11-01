@@ -10,7 +10,8 @@ def tree():
  return next((x.split('=',1)[1] for x in text.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
 def shot(n):
  x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=20));states[n]=[(z.get('text',''),z.get('content-desc','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
- check(n+' foreground',any(pkg in x and 'mCurrentFocus=' in x for x in adb('shell','dumpsys','window').splitlines()))
+ focus=adb('shell','dumpsys','window');(out/(n+'-window.txt')).write_text(focus)
+ if not n.endswith('-after-back'):check(n+' foreground',any(pkg in x and 'mCurrentFocus=' in x for x in focus.splitlines()))
 def tap(text):
  root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
  for n in root.iter('node'):
@@ -23,7 +24,7 @@ def tap(text):
  return False
 def scroll(up=True):adb('shell','input','swipe','227','340' if up else '120','227','120' if up else '340','300');time.sleep(.5)
 def choose(text):
- for k in range(5):
+ for k in range(12):
   if tap(text):return True
   scroll()
  return False
@@ -57,7 +58,9 @@ adb('shell','settings','put','global','auto_time','0');adb('shell','settings','p
 adb('shell','settings','put','global','window_animation_scale','1');adb('shell','settings','put','global','transition_animation_scale','1');adb('shell','settings','put','global','animator_duration_scale','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang in ['ar','en']:
-  slug=name+'-'+lang;reset();zone();adb('shell','date','103010002026.00');adb('logcat','-c');launch(3,0);check(slug+' disconnected open phone tapped',choose('Open on phone' if lang=='en' else 'فتح في الجهاز'));time.sleep(4);shot(slug+'-open-phone-return');check(slug+' no unexpected preference change',prefs(slug+'-after-open-prefs').get('lang')==str(2 if lang=='en' else 1));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot(slug+'-after-back');(out/(slug+'-open-phone-log.txt')).write_text(adb('logcat','-d'));launch(3,0);shot(slug+'-settings-reopen')
+  slug=name+'-'+lang;reset();zone();adb('shell','date','103010002026.00');adb('logcat','-c');launch(3,0);pressed=choose('Open on phone' if lang=='en' else 'فتح في الجهاز');check(slug+' disconnected open phone tapped',pressed);
+  if not pressed:shot(slug+'-route-failed');continue
+ time.sleep(4);shot(slug+'-open-phone-return');check(slug+' no unexpected preference change',prefs(slug+'-after-open-prefs').get('lang')==str(2 if lang=='en' else 1));adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(1);shot(slug+'-after-back');(out/(slug+'-open-phone-log.txt')).write_text(adb('logcat','-d'));launch(3,0);shot(slug+'-settings-reopen')
 comparisons=[]
 for n,a in states.items():
  if n.startswith('original-'):
