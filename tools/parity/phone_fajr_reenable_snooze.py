@@ -1,0 +1,153 @@
+"""Original/recovered stateful phone UI audit in an isolated emulator only.
+No network disclosure, release, real-device data mutation, or host account changes.
+Evidence, including failed setup, is saved per checkpoint. Counts are not parity.
+"""
+import subprocess,time,pathlib,json,re,sqlite3,xml.etree.ElementTree as ET
+out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[];states={};databases={}
+def adb(*a):
+ r=subprocess.run(['adb',*a],capture_output=True,timeout=50);return (r.stdout+r.stderr).decode(errors='replace')
+def check(n,ok,detail=''):
+ checks.append(dict(name=slug+' '+n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(slug,n,ok,detail,flush=True);return bool(ok)
+def tree():
+ s=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump');return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+def shot(n):
+ n=slug+'-'+n;x=tree();(out/(n+'.xml')).write_text(x);(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=25));states[n]=[(z.get('text',''),z.get('content-desc',''),z.get('checked',''),z.get('enabled','')) for z in ET.fromstring(x).iter('node') if z.get('text') or z.get('content-desc')];(out/'states.json').write_text(json.dumps(states,ensure_ascii=False,indent=2))
+def rect(n):return list(map(int,re.findall(r'\d+',n.get('bounds',''))))
+def touch(n):
+ b=rect(n)
+ if len(b)!=4 or b[0]>=b[2] or b[1]>=b[3] or b[1]<70 or b[3]>2340:return False
+ adb('shell','input','tap',str((b[0]+b[2])//2),str((b[1]+b[3])//2));time.sleep(.7);return True
+def tap(label):
+ root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p}
+ for n in root.iter('node'):
+  if label not in [n.get('text'),n.get('content-desc')]:continue
+  t=n
+  while t.get('clickable')!='true' and t in parents:t=parents[t]
+  if t.get('clickable')=='true' and t.get('enabled')=='true' and touch(n):return True
+ return False
+def swipe(up=True):adb('shell','input','swipe','540','1760' if up else '680','540','680' if up else '1760','350');time.sleep(.6)
+def choose(label):
+ for _ in range(5):
+  if tap(label):return True
+  swipe()
+ return False
+def launch():
+ adb('shell','am','force-stop','com.google.android.apps.nexuslauncher');tap('Close app');adb('shell','am','force-stop',pkg);adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(3)
+ if tap('Close app'):
+  adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(2)
+def azkar():
+ launch();return tap('Azkar' if lang=='en' else 'التذكيرات')
+def route(label):
+ # Wait out menu transitions and verify destination content, not the clicked label.
+ for attempt in range(3):
+  launch();time.sleep(1.5)
+  # MainActivity may automatically ask notification permission on startup.
+  # Preserve that prompt as evidence, deny it if present, then route to Fajr.
+  if any('permissioncontroller' in x and 'mCurrentFocus=' in x for x in adb('shell','dumpsys','window').splitlines()):
+   shot('startup-notification-request-'+str(attempt))
+   deny=tap('Don’t allow') or tap("Don't allow")
+   check('startup notification deny '+str(attempt),deny);time.sleep(1)
+  if not tap('Menu' if lang=='en' else 'القائمة'):
+   shot('route-menu-miss-'+str(attempt));continue
+  time.sleep(2)
+  if not tap(label):
+   shot('route-label-miss-'+str(attempt));continue
+  time.sleep(2)
+  texts=[n.get('text','') for n in ET.fromstring(tree()).iter('node')]
+  expected=['Alarm on','Alarm off','المنبه مفعّل','المنبه معطّل']
+  if any(x in texts for x in expected):return True
+  shot('route-destination-miss-'+str(attempt))
+ return False
+def field(index,value):
+ nodes=[n for n in ET.fromstring(tree()).iter('node') if n.get('class')=='android.widget.EditText']
+ if index>=len(nodes) or not touch(nodes[index]):return False
+ adb('shell','input','keyevent','KEYCODE_MOVE_END');adb('shell','input','keyevent',*(['KEYCODE_DEL']*max(1,len(nodes[index].get('text','')))));adb('shell','input','text',value);time.sleep(.5);return True
+def hide_keyboard():
+ s=adb('shell','dumpsys','input_method')
+ if 'mInputShown=true' in s or 'mIsInputViewShown=true' in s:adb('shell','input','keyevent','KEYCODE_BACK');time.sleep(.5)
+def prefs():
+ x=adb('shell','cat',f'/data/data/{pkg}/shared_prefs/app_prefs.xml')
+ try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
+ except:return {'parse_error':x}
+def db(n):
+ # Closing app checkpoints WAL before pull, and makes restart persistence explicit.
+ adb('shell','am','force-stop',pkg);folder=out/(slug+'-'+n+'-db');folder.mkdir(exist_ok=True);adb('pull',f'/data/data/{pkg}/databases/.',str(folder));p=folder/'wazakkir_database'
+ if not p.exists():check(n+' database available',False);return {}
+ try:
+  c=sqlite3.connect(p);d={t:c.execute('SELECT * FROM '+t+' ORDER BY 1').fetchall() for t in ['dhikr_table','tag_table','dhikr_tag_cross_ref','dhikr_history']};c.close();databases[slug+'-'+n]=d;(out/'databases.json').write_text(json.dumps(databases,ensure_ascii=False,indent=2));return d
+ except Exception as e:check(n+' database readable',False,str(e));return {}
+adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
+for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
+adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
+adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0')
+for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
+ for lang in ['en','ar']:
+  slug=name+'-'+lang;adb('shell','pm','clear',pkg)
+  for perm in ['POST_NOTIFICATIONS','ACCESS_COARSE_LOCATION','ACCESS_FINE_LOCATION']:adb('shell','pm','grant',pkg,'android.permission.'+perm)
+  adb('shell','cmd','uimode','night','yes' if lang=='ar' else 'no');folder=f'/data/data/{pkg}/shared_prefs';adb('shell','mkdir','-p',folder)
+  x=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
+  adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
+  launch();time.sleep(8)
+  adb('shell','date','103112002026.00')
+  label='Fajr alarm' if lang=='en' else 'منبه صلاة الفجر'
+  assert check('Fajr settings verified destination',route(label)), 'Missing Fajr route'
+  def fp(n):
+   x=adb('shell','cat',folder+'/fajr_prefs.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
+   try:return {n.get('name'):n.get('value',n.text) for n in ET.fromstring(x).iter() if n.get('name')}
+   except:return {}
+  def test_alarm():
+   for _ in range(8):
+    if tap('Test the alarm now' if lang=='en' else 'تجربة المنبه الآن'):return True
+    swipe()
+   return False
+  def resumed_alarm():
+   x=adb('shell','dumpsys','activity','activities')
+   return any('FajrAlarmActivity' in z and pkg in z for z in x.splitlines() if 'topResumedActivity=' in z)
+  adb('shell','am','force-stop',pkg)
+  value='<map><int name="snooze_count" value="0"/><int name="snooze_minutes" value="1"/><boolean name="is_alarm_enabled" value="true"/><int name="alarm_volume" value="0"/><boolean name="use_current_location" value="false"/></map>'
+  adb('shell',f"echo '{value}' > {folder}/fajr_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/fajr_prefs.xml; chmod 660 {folder}/fajr_prefs.xml; restorecon -R {folder}")
+  assert check('settings destination for actual snooze',route(label)),'No Fajr'
+  # If startup changes fixture state, actually enable the row before creating snooze.
+  if tap('Alarm off' if lang=='en' else 'المنبه معطّل'):time.sleep(.5)
+  assert check('actual Test',test_alarm()),'No Test';time.sleep(1);shot('test-alarm')
+  assert check('actual Snooze',tap('Snooze') or tap('غفوة')),'No Snooze';time.sleep(1)
+  before=adb('shell','dumpsys','alarm');(out/(slug+'-pending-before-disable.txt')).write_text(before)
+  check('snooze pending before disable','ACTION_SNOOZE_TRIGGER' in before)
+  # Snooze already finishes Activity back to settings. Never force-stop here:
+  # Android cancels alarms on force-stop, which would make disable proof vacuous.
+  for _ in range(7):
+   if any(n.get('text') in ['Alarm on','المنبه مفعّل'] for n in ET.fromstring(tree()).iter('node')):break
+   swipe(False)
+  check('settings returned without force-stop',any(n.get('text') in ['Alarm on','المنبه مفعّل'] for n in ET.fromstring(tree()).iter('node')))
+  pre_disable=adb('shell','dumpsys','alarm');(out/(slug+'-immediately-before-disable.txt')).write_text(pre_disable)
+  check('pending survives return settings before disable','ACTION_SNOOZE_TRIGGER' in pre_disable)
+  assert check('actual disable row',tap('Alarm on' if lang=='en' else 'المنبه مفعّل')),'No disable';time.sleep(1);shot('disabled-with-pending-snooze')
+  q=fp('disabled');check('disabled preference',q.get('is_alarm_enabled')=='false')
+  after=adb('shell','dumpsys','alarm');(out/(slug+'-pending-after-disable.txt')).write_text(after)
+  # Keep raw dumps. ACTION may remain in historical statistics; isolate scheduled Alarm records.
+  def scheduled_snooze(dump):
+   lines=dump.splitlines();found=[]
+   for i,z in enumerate(lines):
+    if 'ACTION_SNOOZE_TRIGGER' in z:
+     context='\n'.join(lines[max(0,i-5):i+2])
+     if pkg in context and ('type=0' in context or 'RTC_WAKEUP' in context or 'operation=' in context):found.append(context)
+   return found
+  result={'before':scheduled_snooze(before),'after':scheduled_snooze(after)}
+  (out/(slug+'-scheduled-snooze-records.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2))
+  check('scheduled snooze retained after disable like shipped',bool(result['after']),str(result))
+  assert check('actual re-enable before deadline',tap('Alarm off' if lang=='en' else 'المنبه معطّل')),'No re-enable';time.sleep(.5)
+  check('re-enabled preference',fp('re-enabled').get('is_alarm_enabled')=='true')
+  (out/(slug+'-after-reenable-alarms.txt')).write_text(adb('shell','dumpsys','alarm'))
+  time.sleep(65);shot('after-former-snooze-deadline');check('retained snooze redelivers after re-enable',resumed_alarm())
+  final=adb('shell','dumpsys','alarm');(out/(slug+'-after-deadline-alarms.txt')).write_text(final)
+  check('enabled remains after deadline',fp('after-deadline').get('is_alarm_enabled')=='true')
+  check('actual Dismiss after re-enabled snooze',tap('Stop alarm') or tap('إيقاف المنبه'));time.sleep(1)
+  check('Dismiss leaves alarm foreground',not resumed_alarm())
+  (out/(slug+'-log.txt')).write_text(adb('logcat','-d'));adb('shell','am','force-stop',pkg)
+pairs=[]
+for n,a in states.items():
+ other='comparison-'+n[len('original-'):]
+ if n.startswith('original-') and other in states:pairs.append(dict(scene=n[len('original-'):],same_tokens=a==states[other],original=a,comparison=states[other]))
+(out/'semantic-comparison.json').write_text(json.dumps(pairs,ensure_ascii=False,indent=2));print('failures',sum(not x['passed'] for x in checks),'checks',len(checks))
+
+assert all(x['passed'] for x in checks), 'See checks.json'

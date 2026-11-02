@@ -330,3 +330,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 06:50 actual disable retains pending snooze in BOTH apps
 -41388389330 51checks4fails(sharedwrongremovalexpectation),6pairs2rawsame,all6actualpairsinspected. No force-stop betweenSnoozeandDisable; same liveAlarmidentity/due survives actualDisable inoriginalandcomparisonENAR. Neitherforegroundsbyformerdeadlinewhiledisabled. Preserve shippedquirk,noschedulerpatch. Re-enablebeforedeadline/unobservable receiverexecution/audio/deepidle/motionunproven. Returnscroll/header/clockresidualsremain.
+
+## Nov2 06:51 retained snooze re-enable consequence planned
+-ENAR actualSnooze/Disable/pendingretained/re-enableBEFOREdeadline/waitactualdelivery/Dismiss. No force-stop in chain. Preserve shipped behavior,notdesiredcancel semantics. Nohardware/deepidle/motionclaim.
