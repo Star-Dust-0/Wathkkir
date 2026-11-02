@@ -1,0 +1,14 @@
+{
+  "run": "41386209714",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41386209714",
+  "checks": 47,
+  "fails": 0,
+  "pairs": 6,
+  "raw_equal": 6,
+  "finding": "Invalid cancellation attribution: route() uses launch()/am force-stop after Snooze, which itself removes pending alarms before actual disable. Green result proves neither cancelAllAlarms nor action identity. Keep first evidence; retry without any force-stop between Snooze and Disable.",
+  "not_proven": [
+    "product cancellation",
+    "source suspected action mismatch"
+  ],
+  "all_actual_pairs_inspected": true
+}

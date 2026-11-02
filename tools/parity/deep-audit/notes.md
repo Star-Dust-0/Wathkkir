@@ -639,3 +639,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 06:03 disable-pending-snooze cancellation planned
 -ENARactualTest/Snooze1min/returnsettings/actualbasealarmdisable/rawAlarmManagerbeforeafter/waitformerdeadline. Currentsecondaryscheduler cancels snoozecodeusingmainaction; do notpatchbeforeoriginalcomparison. Historicalalarmstatisticsmustnotbeconfusedwithactivependingrecords. Nohardwareaudio/deepidleproof.
+
+## Nov2 06:25 disable-snooze first fixture confound
+-41386209714 47checks0fail6pairs6same but route() force-stopped app afterSnooze,removingpendingalarmsbeforeactualdisable. Notcancellationproof. Retainfirstresult,retrywithoutforce-stopbetweenSnooze/DisableandcapturependingimmediatelybeforeDisable. No productpatch.
