@@ -306,3 +306,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 actual Fajr snooze redelivery planned
 - ActualTest -> elapsedauto-stop -> realone-minuteAlarmManagerPendingIntentdelivery -> receiverforeground/countanddateguards -> actualDismiss. No manualbroadcast/appkeyinjectionduringdelivery; explicitinitialprefsfixture only. Notphysicaldeepidle/audio/lockscreenpolicyproof.
+
+## Nov2 04:10 actual snooze redelivery and text mismatch
+-41373951368 63checks0fail10/10semanticpairs,all10actualpairsinspected. RealelapsedAlarmManagerredelivery/count1/no-maindate/Dismisspass. Actualnativeheads-upnotificationexcludedfromhierarchyrevealedconfirmedENARFajrNowbodymismatchagainstshipped. RestoreexactoriginalENARvaluesonly;other9localesremainunverified. Addednative notification assertion; no receiverlogicpatch. Nooverallpassclaimuntilrepairverified.

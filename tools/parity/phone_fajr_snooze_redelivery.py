@@ -123,7 +123,9 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    time.sleep(55);shot('actual-snooze-redelivery')
    active=resumed_alarm();check('real snooze redelivery alarm foreground',active)
    q=fp('redelivered');check('receiver snooze does not increment count',q.get('snooze_count')=='1');check('receiver snooze does not write main slot date','last_alarm_triggered_date' not in q)
-   (out/(slug+'-redelivery-notifications.txt')).write_text(adb('shell','dumpsys','notification','--noredact'))
+   notification=adb('shell','dumpsys','notification','--noredact');(out/(slug+'-redelivery-notifications.txt')).write_text(notification)
+   expected='It is now time for Fajr adhan' if lang=='en' else 'حان الآن وقت أذان الفجر'
+   check('actual native notification exact localized body','android.text=String ('+expected+')' in notification)
    (out/(slug+'-redelivery-activities.txt')).write_text(adb('shell','dumpsys','activity','activities'))
    if active:
     check('redelivered actual Dismiss',tap('Stop alarm') or tap('إيقاف المنبه'));time.sleep(2);shot('redelivery-dismissed');check('redelivery dismissed foreground gone',not resumed_alarm());check('dismiss keeps snooze count1',fp('redelivery-dismissed').get('snooze_count')=='1')
