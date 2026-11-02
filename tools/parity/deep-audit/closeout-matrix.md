@@ -12,6 +12,8 @@ Nov2 16:51: confirmed Add-selected-tag coroutine-path mismatch from41455920401. 
 
 Nov2 22:02: confirmed event-delivery crash41508248570 from literal application label giving labelRes0. Restore original resource label and notification icon, then focused delivery rerun. Not yet fixed/verified.
 
+Nov2 22:06: watch tile manifest binding action differs from shipped original and exacttiles1.4.1onBindcontract. RestoredBIND_TILE_PROVIDER; actual protected-service IPC probe prepared, unrun. Probe root host cannot prove native watchface activation/permissions.
+
 R1. Controlled static and return-scroll comparison: separate persistent layout/scroll differences from differing gestures, focus and caret. Include lower-language uncommitted Turkish selection and AR Isha/Fajr return captures.
 R2. Forced-idle phone remaining147vs146: match event times/update ordering; do not mask unequal text. Preserve both raw logs and classify mismatch vs sampling.
 R3. Source provenance: original complete snapshot is still INCOMPLETE. Mark secondary model/viewmodel/receiver/helper reconstruction and watch monochrome fallback honestly. Runtime parity cannot turn it into recovered literal source.
