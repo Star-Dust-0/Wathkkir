@@ -606,3 +606,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 01:58 actual full-screen permission finite result
 -41363435477 123checks0fail,18pairs5rawequal,all18actualpairsinspected. Native Settings revoke -> Fajr warning -> row opens Settings -> Back without grant retains warning -> retry/nativegrant -> resume removes warning -> force-stop/reopen grant behavior+enabledprefretained ENlightARdark.10OSapp-namepairs testidentity,3ENtoneNonevsCesium converge onreopen; no productpatch.1control exactbound. Noactualalarmdelivery/lockscreen/audio/OEM/motionproof. Redfirst41362127876 retained.
+
+## Nov2 02:15 automatic null-key alias runtime
+-41364762395 59checks0fail8/8semanticpairs,all8actualpairsinspected. Actualgeocoder derivesg|gb|greaterlondon inall4ENARoriginal/comparisonsessions;Savewritesalias,closeseditor,andforce-stop/reopen retainsauto/key/alias. FixtureGPSdisabled,savedLondoncoords,initialCaironameintentionallystale. Proves restored nullableplacekeyfallback finitepath,notphysicalGPS/A-B-A/motion/nullgeocoderbranch.
