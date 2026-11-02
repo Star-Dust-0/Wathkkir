@@ -100,6 +100,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   if key is not None and result['alias_saved']:
    adb('shell','cmd','location','set-location-enabled','true')
    adb('shell','pm','grant','com.example.uiprobe','android.permission.ACCESS_FINE_LOCATION');adb('shell','pm','grant','com.example.uiprobe','android.permission.ACCESS_COARSE_LOCATION')
+   adb('shell','pm','grant','com.example.uiprobe','android.permission.ACCESS_BACKGROUND_LOCATION')
    feedlog=open(out/(slug+'-gps-feed.txt'),'w');feed=subprocess.Popen(['adb','shell','am','instrument','-w','com.example.uiprobe/com.example.widgethost.GpsFeed'],stdout=feedlog,stderr=feedlog)
    time.sleep(3)
    current='Current location' if lang=='en' else 'الموقع الحالي'
