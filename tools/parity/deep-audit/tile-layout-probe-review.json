@@ -1,0 +1,8 @@
+{
+  "original_bytes": 499,
+  "comparison_bytes": 507,
+  "package_normalized_exact": true,
+  "run": "41395522604",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41395522604",
+  "scope": "Actual original/recovered layout serialized with explicit context/state fixture.499/507bytes differ ONLY nested launch package string and consequent length fields; recursive package normalization yields byte-for-byte identity. Not preview raster, service lifecycle, dynamic ring or physical host proof. Original APK decompile also agrees on geometry/progress. No product patch."
+}

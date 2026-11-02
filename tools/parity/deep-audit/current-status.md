@@ -342,3 +342,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 07:44 tile residual source/proto investigation
 -Original APK freshdecompileconfirms13dp/270deg/6dp/overlaidarc scalarstructureandmatchingfloatprogress.2346pixelthinanti-aliasedarc-edge residualreinspected. Addverification-onlyforeignAPKTileLayoutProbeexplicitcontext/statefixturetocompareactualserializedlayoutbeforeanyproductpatch. NotactualTileService lifecycle/render/motionproof.
+
+## Nov2 08:03 actual serialized tile layout identity
+-41395522604 original499bytes/comparison507bytes,ONLYnestedlaunchpackage+lengthfields differ. Recursivepackage-normalizedactualserializedLayoutElementexact. Explicitstate/contextfixture,notproviderlifecycle/dynamic/rasterproof. Nextsameverificationrendererbothactualprotostoisolaterasterresidualbeforeanyproductpatch.
