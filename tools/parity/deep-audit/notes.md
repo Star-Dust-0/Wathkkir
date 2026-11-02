@@ -693,3 +693,7 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 12:06 settings isolated repeat
 -41420529883 51checks0fail30actualpairsallinspected. BothENARvibrationoffpersistscoldlaunch/reopen/4scrolls. Freshfontboundsactual1.6/1.2/0.8both. Priororiginalonlyvibrationflipnotreproduced;repeatlockhelpand16scrollcontextbeforeproductpatch. IntermediateENARscroll/returnpositionsdiffer;notwholeframeortrajectorypass. Default1.3.2remains.
+
+## Nov2 12:50 full settings scroll repeat, dependency default alignment
+-41426052546 59checks0fail62actualpairsallinspected. VibrationoffpersistsbothENARlockhelp/coldlaunch/reopen/all16scrolls. Earlierflipnotreproducedtwice,noproductvibrationpatch. Actualfont1.6/1.2/0.8both;all6settledendframesstatusbar-onlydiff. Somepreprobeverticalswipescrosssliderandchange1.0to1.2inbothseparateapps,fixturetouchsideeffectsreal. Intermediateoffset/motionstillunproven.
+-Material3defaultaligned1.4.0basedoriginalmeasureformula,all18bellcrops0diff,selected573checkregressionplus51/59checkisolates. Broaderdefault-buildtheme/font/offsetregressionnext;notallappparity.

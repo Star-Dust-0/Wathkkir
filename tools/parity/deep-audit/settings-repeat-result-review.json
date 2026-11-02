@@ -1,0 +1,699 @@
+{
+  "run": "41426052546",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41426052546",
+  "checks": 59,
+  "failures": 0,
+  "actual_pairs_inspected": 62,
+  "raw_same": 48,
+  "result": "EN/AR original and comparison vibration remains false through lock help, off taps, cold launch, reopen and all16 separately captured scrolls. Prior original-only flip not reproduced in two bounded repeats. No vibration product patch justified.",
+  "font": "Actual fresh controls persist1.6/1.2/0.8 both; all6 settled end captures differ only statusbar pixels. Before probes some scrolls cross slider and change1.0to1.2 in either app, evidence for fixture touch side effects.",
+  "limits": [
+    "No trajectory parity; intermediate scroll offsets differ.",
+    "Prior flip source not proved, retained as unconfirmed rather than erased.",
+    "Global dependency alignment has finite regression only, broader theme/font/offset test next."
+  ],
+  "pixels": [
+    {
+      "scene": "en-initial",
+      "pixels": 3587,
+      "bbox": [
+        73,
+        47,
+        967,
+        2374
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-lock-help",
+      "pixels": 472,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-vibration-off",
+      "pixels": 475,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-both-off",
+      "pixels": 287,
+      "bbox": [
+        73,
+        52,
+        91,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-cold-launch",
+      "pixels": 10667,
+      "bbox": [
+        73,
+        47,
+        967,
+        1250
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-reopened-before-scroll",
+      "pixels": 3587,
+      "bbox": [
+        73,
+        47,
+        967,
+        2374
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-1",
+      "pixels": 356247,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2365
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-2",
+      "pixels": 475,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-3",
+      "pixels": 475,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-4",
+      "pixels": 475,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-5",
+      "pixels": 475,
+      "bbox": [
+        73,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-6",
+      "pixels": 716,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-7",
+      "pixels": 827,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-8",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-9",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-10",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-11",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-12",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-13",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-14",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-15",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-16",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-font-high-before",
+      "pixels": 1107918,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-high-after",
+      "pixels": 1278262,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2395
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-high-settled-end",
+      "pixels": 639,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-font-middle-before",
+      "pixels": 1239110,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-middle-after",
+      "pixels": 1154942,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-middle-settled-end",
+      "pixels": 794,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-font-low-before",
+      "pixels": 1284161,
+      "bbox": [
+        42,
+        46,
+        1038,
+        2321
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-low-after",
+      "pixels": 606,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-font-low-settled-end",
+      "pixels": 794,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-initial",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-lock-help",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-vibration-off",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-both-off",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-cold-launch",
+      "pixels": 10498,
+      "bbox": [
+        52,
+        52,
+        983,
+        1250
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-reopened-before-scroll",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-1",
+      "pixels": 869270,
+      "bbox": [
+        42,
+        23,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-scroll-2",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-3",
+      "pixels": 637,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-4",
+      "pixels": 518,
+      "bbox": [
+        52,
+        52,
+        92,
+        79
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-5",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-6",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-7",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-8",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-9",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-10",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-11",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-12",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-13",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-14",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-15",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-16",
+      "pixels": 566,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-high-before",
+      "pixels": 1364741,
+      "bbox": [
+        42,
+        24,
+        1038,
+        2398
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-high-after",
+      "pixels": 1012425,
+      "bbox": [
+        42,
+        23,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-high-settled-end",
+      "pixels": 764,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-middle-before",
+      "pixels": 1311623,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-middle-after",
+      "pixels": 1376875,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-middle-settled-end",
+      "pixels": 827,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-low-before",
+      "pixels": 821464,
+      "bbox": [
+        42,
+        32,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-low-after",
+      "pixels": 667066,
+      "bbox": [
+        42,
+        42,
+        1038,
+        2247
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-low-settled-end",
+      "pixels": 629,
+      "bbox": [
+        52,
+        52,
+        92,
+        80
+      ],
+      "same_tokens": true
+    }
+  ]
+}
