@@ -58,7 +58,7 @@ def db(n):
   c=sqlite3.connect(p);d={t:c.execute('SELECT * FROM '+t+' ORDER BY 1').fetchall() for t in ['dhikr_table','tag_table','dhikr_tag_cross_ref','dhikr_history']};c.close();databases[slug+'-'+n]=d;(out/'databases.json').write_text(json.dumps(databases,ensure_ascii=False,indent=2));return d
  except Exception as e:check(n+' database readable',False,str(e));return {}
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='setup'
-for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
+for a in ['original.apk','comparison.apk','widgethost.apk','uiprobe.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
 adb('shell','cmd','location','set-location-enabled','false');adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 def fajr(n):
  x=adb('shell','cat',f'/data/data/{pkg}/shared_prefs/fajr_prefs.xml');(out/(slug+'-'+n+'-prefs.xml')).write_text(x)
@@ -99,11 +99,16 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   # Continue only a real successful alias path, never substitute seeded place identities.
   if key is not None and result['alias_saved']:
    adb('shell','cmd','location','set-location-enabled','true')
+   adb('shell','pm','grant','com.example.uiprobe','android.permission.ACCESS_FINE_LOCATION');adb('shell','pm','grant','com.example.uiprobe','android.permission.ACCESS_COARSE_LOCATION')
+   feedlog=open(out/(slug+'-gps-feed.txt'),'w');feed=subprocess.Popen(['adb','shell','am','instrument','-w','com.example.uiprobe/com.example.widgethost.GpsFeed'],stdout=feedlog,stderr=feedlog)
+   time.sleep(3)
    current='Current location' if lang=='en' else 'الموقع الحالي'
    def move(n,lon,lat):
     response=adb('emu','geo','fix',str(lon),str(lat));(out/(slug+'-'+n+'-geo-response.txt')).write_text(response)
     check(n+' emulator geo command accepted','OK' in response)
     time.sleep(4)
+    provider=adb('shell','dumpsys','location');(out/(slug+'-'+n+'-before-refresh-system-location.txt')).write_text(provider)
+    check(n+' OS has nonnull GPS fix','last location=Location[gps' in provider)
     assert check(n+' actual current location row refresh',tap(current)),'No current location row'
     time.sleep(8);shot(n)
     (out/(slug+'-'+n+'-system-location.txt')).write_text(adb('shell','dumpsys','location'))
@@ -118,6 +123,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    check('GPS return A key restored',q.get('place_key')==key);check('GPS return A alias applied','AutoAliasAudit' in tree())
    assert check('GPS return A force-stop reopen',location()),'No final location route'
    time.sleep(5);shot('gps-return-A-reopen');q=fajr('gps-final-reopen');check('GPS return A alias retained reopen','AutoAliasAudit' in tree());check('GPS automatic mode retained reopen',q.get('use_current_location')=='true');check('GPS return A saved key retained reopen',q.get('place_key')==key)
+   adb('shell','am','force-stop','com.example.uiprobe');feed.wait(timeout=15);feedlog.close()
   (out/(slug+'-logcat.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():

@@ -609,3 +609,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 02:15 automatic null-key alias runtime
 -41364762395 59checks0fail8/8semanticpairs,all8actualpairsinspected. Actualgeocoder derivesg|gb|greaterlondon inall4ENARoriginal/comparisonsessions;Savewritesalias,closeseditor,andforce-stop/reopen retainsauto/key/alias. FixtureGPSdisabled,savedLondoncoords,initialCaironameintentionallystale. Proves restored nullableplacekeyfallback finitepath,notphysicalGPS/A-B-A/motion/nullgeocoderbranch.
+
+## Nov2 02:32 GPS console no-delivery finding
+-41366226768 135checks12fails,all16actualpairsinspected10rawequal. OS GPS providerOFF,mStartedfalse,lastlocationnull despite consoleOK. B never moved; A/returnchecks vacuous,notmovementproof. OriginalstaleGPSoffwarning vs comparison remains residual. Add verification-only OS GPS listener to activateprovider; no productpatch/keyseed/geocoderinjection.

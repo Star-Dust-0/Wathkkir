@@ -1,0 +1,11 @@
+{
+  "run": "41366226768",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41366226768",
+  "checks": 135,
+  "failed": 12,
+  "pairs": 16,
+  "raw_equal": 10,
+  "all_actual_pairs_inspected": true,
+  "finding": "Emulator geo console accepted commands but Android GPS provider OFF, mStarted=false, all providers last location=null. No active listener requested fixes. All B legs retained London fixture; passing A/return checks are vacuous and not movement evidence. Original stale GPS-off message differs comparison after enabling: retain residual, not proof of movement.",
+  "next": "Separate verification-only instrumentation requests GPS updates while emu geo commands run. Do not seed app keys/names or modify product location code."
+}
