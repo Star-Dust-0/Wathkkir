@@ -1,0 +1,379 @@
+{
+  "run": "41364762395",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41364762395",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alias visible reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "outcomes": {
+    "comparison-ar-automatic-alias-outcome": {
+      "key": "g|gb|greater london",
+      "alias_saved": true,
+      "editor_remains": false,
+      "prefs": {
+        "place_key": "g|gb|greater london",
+        "city_name": "AutoAliasAudit",
+        "city_name_ar": "AutoAliasAudit",
+        "calculation_method": "1",
+        "city_name_ar_orig": "القاهرة",
+        "latitude": "51.5074",
+        "city_name_en_orig": "القاهرة",
+        "city_name_en": "AutoAliasAudit",
+        "city_aliases_json": "{\"g|gb|greater london\":\"AutoAliasAudit\"}",
+        "longitude": "-0.1278",
+        "use_current_location": "true"
+      }
+    },
+    "original-en-automatic-alias-outcome": {
+      "key": "g|gb|greater london",
+      "alias_saved": true,
+      "editor_remains": false,
+      "prefs": {
+        "place_key": "g|gb|greater london",
+        "city_name": "AutoAliasAudit",
+        "city_name_ar": "AutoAliasAudit",
+        "calculation_method": "1",
+        "city_name_ar_orig": "القاهرة",
+        "latitude": "51.5074",
+        "city_name_en_orig": "القاهرة",
+        "city_name_en": "AutoAliasAudit",
+        "city_aliases_json": "{\"g|gb|greater london\":\"AutoAliasAudit\"}",
+        "longitude": "-0.1278",
+        "use_current_location": "true"
+      }
+    },
+    "original-ar-automatic-alias-outcome": {
+      "key": "g|gb|greater london",
+      "alias_saved": true,
+      "editor_remains": false,
+      "prefs": {
+        "place_key": "g|gb|greater london",
+        "city_name": "AutoAliasAudit",
+        "city_name_ar": "AutoAliasAudit",
+        "calculation_method": "1",
+        "city_name_ar_orig": "القاهرة",
+        "latitude": "51.5074",
+        "city_name_en_orig": "القاهرة",
+        "city_name_en": "AutoAliasAudit",
+        "city_aliases_json": "{\"g|gb|greater london\":\"AutoAliasAudit\"}",
+        "longitude": "-0.1278",
+        "use_current_location": "true"
+      }
+    },
+    "comparison-en-automatic-alias-outcome": {
+      "key": "g|gb|greater london",
+      "alias_saved": true,
+      "editor_remains": false,
+      "prefs": {
+        "place_key": "g|gb|greater london",
+        "city_name": "AutoAliasAudit",
+        "city_name_ar": "AutoAliasAudit",
+        "calculation_method": "1",
+        "city_name_ar_orig": "القاهرة",
+        "latitude": "51.5074",
+        "city_name_en_orig": "القاهرة",
+        "city_name_en": "AutoAliasAudit",
+        "city_aliases_json": "{\"g|gb|greater london\":\"AutoAliasAudit\"}",
+        "longitude": "-0.1278",
+        "use_current_location": "true"
+      }
+    }
+  },
+  "pairs": 8,
+  "raw_equal_pairs": 8,
+  "all_actual_pairs_inspected": true,
+  "limits": "Actual app geocoder resolves saved London coordinates with GPS disabled. UI initial Cairo name is intentionally stale fixture, not claimed location truth. Original preferences orig names agree. Cursor blink and OS clock residuals prevent full pixel proof. Not physical GPS, movement A-B-A, all locales or unavailable geocoder."
+}

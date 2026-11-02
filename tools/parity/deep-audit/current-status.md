@@ -282,3 +282,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 automatic null-key alias planned fixture
 - New finite fixture uses automatic mode, saved London coordinates, no place_key/aliases and GPS disabled to avoid last-known-location overwrite. Actual editor/save invokes installed app geocoder path. Outcome records successful key/alias/editor-close/reopen if backend resolves, otherwise explicitly unresolved geocoder/editor-kept/no-alias. Passing null guard is not successful alias fallback or physical GPS A-B-A proof. Neither reference APK nor product helper is patched/injected.
+
+## Nov2 02:15 automatic null-key alias runtime
+-41364762395 59checks0fail8/8semanticpairs,all8actualpairsinspected. Actualgeocoder derivesg|gb|greaterlondon inall4ENARoriginal/comparisonsessions;Savewritesalias,closeseditor,andforce-stop/reopen retainsauto/key/alias. FixtureGPSdisabled,savedLondoncoords,initialCaironameintentionallystale. Proves restored nullableplacekeyfallback finitepath,notphysicalGPS/A-B-A/motion/nullgeocoderbranch.
