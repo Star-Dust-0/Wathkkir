@@ -303,3 +303,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 03:41 actual elapsed auto-stop finite result
 -41371509922 67checks0fail12pairs11rawequal,all12actualpairsinspected. ActualTestcount0/duration5,count3/duration15 foregroundat40s thenreturnedby~65s bothapps; count0->1andsnoozependingintent,count3stays3. Fixed60s agreeswithshippedsamples,notlabelled5/15minbehavior,nochange. WrongvibrationfixturekeyactualONboth,nooffproof. Count3nonewalarmnotindependentlyasserted. ARduration5returnscrollresidual+ENminuteclockremain.2durationrowsadditionalexactbound. Noaudio/redelivery/motionproof.
+
+## Nov2 actual Fajr snooze redelivery planned
+- ActualTest -> elapsedauto-stop -> realone-minuteAlarmManagerPendingIntentdelivery -> receiverforeground/countanddateguards -> actualDismiss. No manualbroadcast/appkeyinjectionduringdelivery; explicitinitialprefsfixture only. Notphysicaldeepidle/audio/lockscreenpolicyproof.
