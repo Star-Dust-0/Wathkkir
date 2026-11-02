@@ -1,0 +1,15 @@
+{
+  "run": "41378407135",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41378407135",
+  "checks": 30,
+  "fails": 27,
+  "pairs": 27,
+  "raw_equal": 26,
+  "finding": "All routes actually reached Fajr settings but harness expected EN on/off caption rather than localized summary. Original/comparison all nine settings visibly agree at last attempt. No receiver delivery attempted; pair failures reflect absent data, not product mismatch. Initial seeded enabled became off by startup, so retry explicitly enables actual row before Test.",
+  "scope": "No notification locale proof from this run. Retain failed fixture.",
+  "all_actual_pairs_inspected": true,
+  "visual_residuals": [
+    "FR first default None versus Cesium",
+    "FR last clock minute"
+  ]
+}

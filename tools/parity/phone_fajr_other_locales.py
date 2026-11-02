@@ -80,7 +80,7 @@ adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device');slug='se
 for a in ['original.apk','comparison.apk','widgethost.apk']:check('install '+a,'Success' in adb('install','-r','-g',a))
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0')
-locale_labels={'fr': {'Menu': 'Menu', 'FajrAlarm': 'Alarme de Fajr', 'Snooze': 'Répéter', 'StopAlarm': "Arrêter l'alarme"}, 'de': {'Menu': 'Menü', 'FajrAlarm': 'Fajr-Wecker', 'Snooze': 'Schlummern', 'StopAlarm': 'Alarm stoppen'}, 'es': {'Menu': 'Menú', 'FajrAlarm': 'Alarma de Fajr', 'Snooze': 'Posponer', 'StopAlarm': 'Detener alarma'}, 'it': {'Menu': 'Menu', 'FajrAlarm': 'Sveglia di Fajr', 'Snooze': 'Posticipa', 'StopAlarm': 'Ferma sveglia'}, 'tr': {'Menu': 'Menü', 'FajrAlarm': 'Sabah namazı alarmı', 'Snooze': 'Ertele', 'StopAlarm': 'Alarmı durdur'}, 'ur': {'Menu': 'مینو', 'FajrAlarm': 'فجر کا الارم', 'Snooze': 'غفوہ', 'StopAlarm': 'الارم بند کریں'}, 'id': {'Menu': 'Menu', 'FajrAlarm': 'Alarm Subuh', 'Snooze': 'Tunda', 'StopAlarm': 'Hentikan alarm'}, 'ru': {'Menu': 'Меню', 'FajrAlarm': 'Будильник на фаджр', 'Snooze': 'Отложить', 'StopAlarm': 'Остановить будильник'}, 'pt': {'Menu': 'Menu', 'FajrAlarm': 'Alarme do Fajr', 'Snooze': 'Soneca', 'StopAlarm': 'Parar alarme'}}
+locale_labels={'fr': {'Menu': 'Menu', 'FajrAlarm': 'Alarme de Fajr', 'Snooze': 'Répéter', 'StopAlarm': "Arrêter l'alarme", 'AlarmOnDesc': 'Alarme activée', 'AlarmOffDesc': 'Alarme désactivée'}, 'de': {'Menu': 'Menü', 'FajrAlarm': 'Fajr-Wecker', 'Snooze': 'Schlummern', 'StopAlarm': 'Alarm stoppen', 'AlarmOnDesc': 'Alarm an', 'AlarmOffDesc': 'Alarm aus'}, 'es': {'Menu': 'Menú', 'FajrAlarm': 'Alarma de Fajr', 'Snooze': 'Posponer', 'StopAlarm': 'Detener alarma', 'AlarmOnDesc': 'Alarma activada', 'AlarmOffDesc': 'Alarma desactivada'}, 'it': {'Menu': 'Menu', 'FajrAlarm': 'Sveglia di Fajr', 'Snooze': 'Posticipa', 'StopAlarm': 'Ferma sveglia', 'AlarmOnDesc': 'Sveglia attiva', 'AlarmOffDesc': 'Sveglia disattivata'}, 'tr': {'Menu': 'Menü', 'FajrAlarm': 'Sabah namazı alarmı', 'Snooze': 'Ertele', 'StopAlarm': 'Alarmı durdur', 'AlarmOnDesc': 'Alarm açık', 'AlarmOffDesc': 'Alarm kapalı'}, 'ur': {'Menu': 'مینو', 'FajrAlarm': 'فجر کا الارم', 'Snooze': 'غفوہ', 'StopAlarm': 'الارم بند کریں', 'AlarmOnDesc': 'الارم فعال', 'AlarmOffDesc': 'الارم غیر فعال'}, 'id': {'Menu': 'Menu', 'FajrAlarm': 'Alarm Subuh', 'Snooze': 'Tunda', 'StopAlarm': 'Hentikan alarm', 'AlarmOnDesc': 'Alarm aktif', 'AlarmOffDesc': 'Alarm nonaktif'}, 'ru': {'Menu': 'Меню', 'FajrAlarm': 'Будильник на фаджр', 'Snooze': 'Отложить', 'StopAlarm': 'Остановить будильник', 'AlarmOnDesc': 'Будильник включён', 'AlarmOffDesc': 'Будильник выключен'}, 'pt': {'Menu': 'Menu', 'FajrAlarm': 'Alarme do Fajr', 'Snooze': 'Soneca', 'StopAlarm': 'Parar alarme', 'AlarmOnDesc': 'Alarme ativado', 'AlarmOffDesc': 'Alarme desativado'}}
 notices={}
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  for lang,labels in locale_labels.items():
@@ -103,9 +103,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     time.sleep(2)
     if tap(labels['FajrAlarm']):
      time.sleep(2)
-     if any(n.get('text') in ['Alarm on','Alarm off'] for n in ET.fromstring(tree()).iter('node')):opened=True;break
+     if any(n.get('text') in [labels['AlarmOnDesc'],labels['AlarmOffDesc']] for n in ET.fromstring(tree()).iter('node')):opened=True;break
    shot('route-miss-'+str(attempt))
   if not check('verified Fajr settings destination',opened):continue
+  if any(n.get('text')==labels['AlarmOffDesc'] for n in ET.fromstring(tree()).iter('node')):
+   check('actual enable row',tap(labels['AlarmOffDesc']));time.sleep(1)
+  check('enabled before Test',any(n.get('text')==labels['AlarmOnDesc'] for n in ET.fromstring(tree()).iter('node')))
+  (out/(slug+'-enabled-prefs.xml')).write_text(adb('shell','cat',folder+'/fajr_prefs.xml'))
   clicked=False
   for _ in range(8):
    if tap('Test the alarm now'):clicked=True;break
