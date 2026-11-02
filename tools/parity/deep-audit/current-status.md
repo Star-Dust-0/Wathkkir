@@ -297,3 +297,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 03:13 actual emulator GPS A-B-A finite result
 -41369169890 148checks0fail16/16semanticpairs,all16actualpairsinspected. OSnonnullGPSfixes+storedcoords verifyLondon/Cairo/London. ActualCurrentlocationrow invokesappgeocoder,distinctg|gb|greaterlondon/g|eg|ميدانالتحرير keys; BpreservesAalias,Arestoresdisplayandkey/reopen. SeparatehelperbackgroundgrantactivatesOSlistener,noappkeyseed/productpatch.2rowsbound. NotphysicalGPS/jitter/passiveautomaticrefresh/transport/motion. Earlier nofixredruns retained; staleGPSwarningresidualclearswithvalidfixes.
+
+## Nov2 auto-stop finite planned
+- Actual Test button wait with seeded count0/duration5 and count3/duration15, snooze1. Observe still foreground before60s and return at65s, countincrement/cap and snoozePendingIntent. Source currently fixed60000ms despite durationpref; compare shipped behavior rather than change based on label. Explicit prefsfixture, not UIchoiceproof; no hardwareaudio or snoozeredelivery claim.
