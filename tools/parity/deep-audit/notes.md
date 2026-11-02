@@ -627,3 +627,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 04:31 Fajr receiver notification repair verified
 -41376230491 67checks0fail10pairs7rawsame,all10actualpairsinspected. RealAlarmManagersnoozeredelivery+receivercount1/no-maindate+Dismisspass; exactnativeENARFajrNowbody matchesoriginal after3b35c59. ENclock/ARreturnscrollresiduals andOSapplabelsremain. Noother9locale/audio/physicalidle/lockscreenpolicy/notificationcleanupproof.
+
+## Nov2 other9 Fajr notification locales finite batch planned
+- ActualTest/localizedSnooze/real1minuteAlarmManagerdelivery/native notification title+body+shade/localizedDismiss for FR DE ES IT TR UR ID RU PT. Seeded initial language/preferences only; no receiver injection. Compare shipped values before edits. No audio/physicalidle/fullmotion proof.
