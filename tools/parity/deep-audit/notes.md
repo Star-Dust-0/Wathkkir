@@ -709,3 +709,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 16:51 critical transaction mismatch
 -41455920401255checks18reportedfail22actualpairsallinspected. ShippedAddtaglossconfirmedENARandfreshsa.invokeSuspendcase1smali:immediateinsertwritesrelations,resumedinsertreturnssansrelations. Reconstructbothpathswithcoroutineintrinsics,notgloballydisabletags. Switchclassandhistoricalalarmcountfixturefailuresseparate;actualDeleteactive2to0both. Rerunrequired.
+
+## Nov2 17:47 Dhikr transaction repair result
+41465825842 compile and focused runtime:255checks,12reported alarm-parser failures. Corrected offline active-only raw dumps show2/0/2/0 Save/Disable/Reenable/Delete all original/comparison EN/AR. No CI rerun solely to recolor workflow. All22actualpairs visually inspected,20app-contentexact,2native-croppedcaret-only. Selected-tag resumed insert mismatch repaired563b544: both now have no relations, as shipped. Immediate-return path only source-reviewed. Actualdismissal/trim/emptytime/duplicateCancel/toggle/delete pass. Future parser repaired; old result preserved. See dhikr-transaction-repair-result-review.json. A1editrelations and A2nestedwheel remain.

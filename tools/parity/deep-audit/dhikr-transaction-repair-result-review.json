@@ -1,0 +1,1644 @@
+{
+  "run": "41465825842",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41465825842",
+  "commit": "563b5449bea6c681cd01549d3adadb3686c6b71d",
+  "raw_checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en create Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en trim title input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en trim body input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tag selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en title and content trimmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en shipped resumed create omits selected relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en back Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en outside Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en delete only time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en last-time empty Save disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en empty parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en empty Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add12 first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add12 duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duplicate parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en duplicate Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add12 saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times actual Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual pending dhikr alarms after Save",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual enabled switch off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en disable removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual enabled switch on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en reenable restores pending dhikr alarms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual delete options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual delete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en delete removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual delete removes fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual delete removes relations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar create Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar trim title input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar trim body input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tag selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar title and content trimmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar shipped resumed create omits selected relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar back Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar outside Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar delete only time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar last-time empty Save disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar empty parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar empty Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add12 first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add12 duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duplicate parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar duplicate Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add12 saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times actual Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual pending dhikr alarms after Save",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual enabled switch off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar disable removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual enabled switch on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar reenable restores pending dhikr alarms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual delete options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual delete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar delete removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual delete removes fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual delete removes relations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en create Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en trim title input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en trim body input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tag selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en title and content trimmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en shipped resumed create omits selected relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en back Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en outside Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en delete only time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en last-time empty Save disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en empty parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en empty Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add12 first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add12 duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duplicate parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en duplicate Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add12 saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times actual Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual pending dhikr alarms after Save",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual enabled switch off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en disable removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual enabled switch on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en reenable restores pending dhikr alarms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual delete options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual delete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en delete removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual delete removes fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual delete removes relations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Add dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Add no saved draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar create Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar trim title input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar trim body input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tag selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar title and content trimmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar shipped resumed create omits selected relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar back Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Edit dialog actually gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar outside Edit unchanged title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar delete only time",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar last-time empty Save disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar empty parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar empty Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add12 first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add12 duplicate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duplicate parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar duplicate Cancel preserves09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar repeat title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add12 saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times actual Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual pending dhikr alarms after Save",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual enabled switch off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar disable removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual enabled switch on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar reenable restores pending dhikr alarms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual delete options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual delete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar delete removes pending dhikr alarms",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual delete removes fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual delete removes relations",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "reported_checks": 255,
+  "reported_failures": 12,
+  "classification": "Red workflow retained. All12 alarm assertions are parser failures. Corrected offline active-only parse below, not a green rerun.",
+  "repair": "Observed resumed insert preserves shipped omission of selected tag relations in both locales. Immediate-return path preserved from smali but not separately forced in runtime.",
+  "active_alarm_offline_review": {
+    "original-en": {
+      "two-time-save": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #34: Alarm{c8a1564 type 0 origWhen 1793696400000 whenElapsed 65040700 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h59m25s903ms app_standby=-2s357ms device_idle=-- battery_saver=-2s357ms tare=-2s357ms\n      whenElapsed=+17h59m25s903ms maxWhenElapsed=+17h59m25s903ms\n      operation=PendingIntent{8a7c3cd: PendingIntentRecord{aa50482 com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #36: Alarm{79cfc9 type 0 origWhen 1793707200000 whenElapsed 75840700 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h59m25s903ms app_standby=-2s357ms device_idle=-- battery_saver=-2s357ms tare=-2s357ms\n      whenElapsed=+20h59m25s903ms maxWhenElapsed=+20h59m25s903ms\n      operation=PendingIntent{fa2e6ce: PendingIntentRecord{c0339ef com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "disabled": {
+        "count": 0,
+        "raw_active_blocks": []
+      },
+      "reenabled": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #34: Alarm{a03f8e0 type 0 origWhen 1793696400000 whenElapsed 65040699 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h59m20s905ms app_standby=-1s728ms device_idle=-- battery_saver=-1s728ms tare=-1s728ms\n      whenElapsed=+17h59m20s905ms maxWhenElapsed=+17h59m20s905ms\n      operation=PendingIntent{6c56799: PendingIntentRecord{f3ea5e com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #36: Alarm{bf79e3f type 0 origWhen 1793707200000 whenElapsed 75840700 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h59m20s906ms app_standby=-1s727ms device_idle=-- battery_saver=-1s727ms tare=-1s727ms\n      whenElapsed=+20h59m20s906ms maxWhenElapsed=+20h59m20s906ms\n      operation=PendingIntent{e5fc30c: PendingIntentRecord{37be455 com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "deleted": {
+        "count": 0,
+        "raw_active_blocks": []
+      }
+    },
+    "original-ar": {
+      "two-time-save": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #33: Alarm{498d639 type 0 origWhen 1793696400000 whenElapsed 65040700 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h56m17s939ms app_standby=-2s323ms device_idle=-- battery_saver=-2s323ms tare=-2s323ms\n      whenElapsed=+17h56m17s939ms maxWhenElapsed=+17h56m17s939ms\n      operation=PendingIntent{f6ec47e: PendingIntentRecord{97c3ddf com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #35: Alarm{e3a7a2c type 0 origWhen 1793707200000 whenElapsed 75840699 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h56m17s938ms app_standby=-2s323ms device_idle=-- battery_saver=-2s323ms tare=-2s323ms\n      whenElapsed=+20h56m17s938ms maxWhenElapsed=+20h56m17s938ms\n      operation=PendingIntent{a279cf5: PendingIntentRecord{f2eaa8a com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "disabled": {
+        "count": 0,
+        "raw_active_blocks": []
+      },
+      "reenabled": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #33: Alarm{df7d813 type 0 origWhen 1793696400000 whenElapsed 65040700 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h56m12s947ms app_standby=-1s729ms device_idle=-- battery_saver=-1s729ms tare=-1s729ms\n      whenElapsed=+17h56m12s947ms maxWhenElapsed=+17h56m12s947ms\n      operation=PendingIntent{80efa50: PendingIntentRecord{8852449 com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #35: Alarm{b34e14e type 0 origWhen 1793707200000 whenElapsed 75840699 com.wathakker.app}\n      tag=*walarm*:com.wathakker.app/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h56m12s946ms app_standby=-1s729ms device_idle=-- battery_saver=-1s729ms tare=-1s729ms\n      whenElapsed=+20h56m12s946ms maxWhenElapsed=+20h56m12s946ms\n      operation=PendingIntent{27de26f: PendingIntentRecord{b716b7c com.wathakker.app broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "deleted": {
+        "count": 0,
+        "raw_active_blocks": []
+      }
+    },
+    "comparison-en": {
+      "two-time-save": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #33: Alarm{710db93 type 0 origWhen 1793696400000 whenElapsed 65040699 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h52m35s152ms app_standby=-2s378ms device_idle=-- battery_saver=-2s378ms tare=-2s378ms\n      whenElapsed=+17h52m35s152ms maxWhenElapsed=+17h52m35s152ms\n      operation=PendingIntent{bc677d0: PendingIntentRecord{6e293c9 com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #35: Alarm{df65ace type 0 origWhen 1793707200000 whenElapsed 75840700 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h52m35s153ms app_standby=-2s377ms device_idle=-- battery_saver=-2s377ms tare=-2s377ms\n      whenElapsed=+20h52m35s153ms maxWhenElapsed=+20h52m35s153ms\n      operation=PendingIntent{ae39def: PendingIntentRecord{2e340fc com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "disabled": {
+        "count": 0,
+        "raw_active_blocks": []
+      },
+      "reenabled": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #32: Alarm{46eab7b type 0 origWhen 1793696400000 whenElapsed 65040699 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h52m30s286ms app_standby=-1s711ms device_idle=-- battery_saver=-1s711ms tare=-1s711ms\n      whenElapsed=+17h52m30s286ms maxWhenElapsed=+17h52m30s286ms\n      operation=PendingIntent{780ad98: PendingIntentRecord{23e69f1 com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #34: Alarm{a40b9d6 type 0 origWhen 1793707200000 whenElapsed 75840699 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h52m30s286ms app_standby=-1s710ms device_idle=-- battery_saver=-1s710ms tare=-1s710ms\n      whenElapsed=+20h52m30s286ms maxWhenElapsed=+20h52m30s286ms\n      operation=PendingIntent{7b28457: PendingIntentRecord{d9f0b44 com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "deleted": {
+        "count": 0,
+        "raw_active_blocks": []
+      }
+    },
+    "comparison-ar": {
+      "two-time-save": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #32: Alarm{404c7be type 0 origWhen 1793696400000 whenElapsed 65040700 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h49m0s481ms app_standby=-2s460ms device_idle=-- battery_saver=-2s460ms tare=-2s460ms\n      whenElapsed=+17h49m0s481ms maxWhenElapsed=+17h49m0s481ms\n      operation=PendingIntent{5d9201f: PendingIntentRecord{c364f6c com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #34: Alarm{8dae935 type 0 origWhen 1793707200000 whenElapsed 75840699 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h49m0s480ms app_standby=-2s460ms device_idle=-- battery_saver=-2s460ms tare=-2s460ms\n      whenElapsed=+20h49m0s480ms maxWhenElapsed=+20h49m0s480ms\n      operation=PendingIntent{c41a1ca: PendingIntentRecord{3799f3b com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "disabled": {
+        "count": 0,
+        "raw_active_blocks": []
+      },
+      "reenabled": {
+        "count": 2,
+        "raw_active_blocks": [
+          "    RTC_WAKEUP #32: Alarm{f4ff0bc type 0 origWhen 1793696400000 whenElapsed 65040700 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 09:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+17h48m55s462ms app_standby=-1s716ms device_idle=-- battery_saver=-1s716ms tare=-1s716ms\n      whenElapsed=+17h48m55s462ms maxWhenElapsed=+17h48m55s462ms\n      operation=PendingIntent{dcaf845: PendingIntentRecord{16eeb9a com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]",
+          "    RTC_WAKEUP #34: Alarm{b1f6ccb type 0 origWhen 1793707200000 whenElapsed 75840699 com.wathakker.app.compare}\n      tag=*walarm*:com.wathakker.app.compare/com.example.alarm.AlarmReceiver\n      type=RTC_WAKEUP origWhen=2026-11-03 12:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\n      policyWhenElapsed: requester=+20h48m55s461ms app_standby=-1s716ms device_idle=-- battery_saver=-1s716ms tare=-1s716ms\n      whenElapsed=+20h48m55s461ms maxWhenElapsed=+20h48m55s461ms\n      operation=PendingIntent{f895ca8: PendingIntentRecord{9a7d3c1 com.wathakker.app.compare broadcastIntent}}\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]"
+        ]
+      },
+      "deleted": {
+        "count": 0,
+        "raw_active_blocks": []
+      }
+    }
+  },
+  "pixels": [
+    {
+      "scene": "ar-add-back-after",
+      "pixels": 549,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-outside-after",
+      "pixels": 549,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-create-tag-before-save",
+      "pixels": 515,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-deleted-live",
+      "pixels": 855,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-disabled-live",
+      "pixels": 657,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-back-after",
+      "pixels": 282,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-outside-after",
+      "pixels": 282,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-reenabled-live",
+      "pixels": 1140,
+      "app_pixels": 285,
+      "bbox": [
+        82,
+        47,
+        967,
+        676
+      ]
+    },
+    {
+      "scene": "ar-times-duplicate-draft",
+      "pixels": 794,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-times-empty",
+      "pixels": 633,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-times-saved-live",
+      "pixels": 596,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "en-add-back-after",
+      "pixels": 2649,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        47,
+        967,
+        83
+      ]
+    },
+    {
+      "scene": "en-add-outside-after",
+      "pixels": 857,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-create-tag-before-save",
+      "pixels": 1109,
+      "app_pixels": 329,
+      "bbox": [
+        51,
+        52,
+        310,
+        1107
+      ]
+    },
+    {
+      "scene": "en-deleted-live",
+      "pixels": 339,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-disabled-live",
+      "pixels": 339,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-edit-back-after",
+      "pixels": 850,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-edit-outside-after",
+      "pixels": 849,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-reenabled-live",
+      "pixels": 339,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-times-duplicate-draft",
+      "pixels": 338,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "en-times-empty",
+      "pixels": 1025,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-times-saved-live",
+      "pixels": 339,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        52,
+        121,
+        80
+      ]
+    }
+  ],
+  "visual_review": "All22pairs inspected on6contact sheets.20exact app content after OS top100/bottom60 exclusion. Remaining ar-reenabled-live and en-create-tag-before-save isolated to blinking edit caret, inspected at native crop. No whole-frame exact claim.",
+  "verified_cases": [
+    "Actual Add/Edit Back and outside dismiss before any force stop, no persisted draft",
+    "Trim title/body Save",
+    "Original selected tag visible before AddSave, then no relation after resumed insertion, now matching comparison",
+    "Last-time-empty Save disabled, Cancel preserves09:00",
+    "Duplicate12:00draft canceled without write",
+    "09:00+12:00Save and exact pending times agree",
+    "Actual generic View enabled switch off/on pixels and active alarms2/0/2",
+    "Delete removes DB fixture, relations and active alarm0"
+  ],
+  "remaining_critical": [
+    "Edit tag Save/Cancel relations",
+    "Nested reminder wheel Save/Cancel and midnight boundaries",
+    "Separately forced immediate-insert runtime branch"
+  ]
+}
