@@ -1,0 +1,8 @@
+{
+  "run": "41390610490",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41390610490",
+  "checks": 11,
+  "fails": 1,
+  "scope": "Original EN Test/Snooze/pending/return settings only. Disable tap failed although text exists. No paired result or re-enable evidence.",
+  "cause": "Helper accepted label existence but safe-touch bounds may reject row under collapsed header. Add actual frame at attempts and bounded scroll/tap. No product patch."
+}
