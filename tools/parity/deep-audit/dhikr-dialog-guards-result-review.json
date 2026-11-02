@@ -1,0 +1,2163 @@
+{
+  "run": "41448188554",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41448188554",
+  "checks": 363,
+  "failures": 0,
+  "pairs_inspected": 30,
+  "app_content_exact_pairs": 24,
+  "result": "Actual Cancel/blank validation and nested tag callbacks agree EN/light AR/dark. Tag Add independently persists after canceled parent; no dhikr/ref changes.",
+  "caveats": [
+    "Back/outside sent but dialog disappearance NOT asserted before force-stop. Data no-write proven, dismissal behavior still pending.",
+    "Six app residuals are visible caret timing. No fullframe/motion proof.",
+    "No actual trim save executed despite original harness comment."
+  ],
+  "pixels": [
+    {
+      "scene": "ar-add-back-draft",
+      "pixels": 349,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        99,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-blank",
+      "pixels": 763,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-cancel-draft",
+      "pixels": 700,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-outside-draft",
+      "pixels": 565,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-title-only",
+      "pixels": 763,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-add-whitespace-title",
+      "pixels": 349,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        99,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-back-draft",
+      "pixels": 654,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-blank-body",
+      "pixels": 517,
+      "app_pixels": 0,
+      "bbox": [
+        81,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-cancel-draft",
+      "pixels": 689,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-outside-draft",
+      "pixels": 654,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "ar-nested-tag-blank-press",
+      "pixels": 910,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-nested-tag-canceled",
+      "pixels": 712,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-nested-tag-created",
+      "pixels": 712,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-nested-tag-draft",
+      "pixels": 712,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        121,
+        80
+      ]
+    },
+    {
+      "scene": "ar-nested-tag-empty",
+      "pixels": 547,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-add-back-draft",
+      "pixels": 865,
+      "app_pixels": 329,
+      "bbox": [
+        82,
+        47,
+        967,
+        1107
+      ]
+    },
+    {
+      "scene": "en-add-blank",
+      "pixels": 696,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        120,
+        80
+      ]
+    },
+    {
+      "scene": "en-add-cancel-draft",
+      "pixels": 2844,
+      "app_pixels": 329,
+      "bbox": [
+        72,
+        47,
+        967,
+        1107
+      ]
+    },
+    {
+      "scene": "en-add-outside-draft",
+      "pixels": 865,
+      "app_pixels": 329,
+      "bbox": [
+        82,
+        47,
+        967,
+        1107
+      ]
+    },
+    {
+      "scene": "en-add-title-only",
+      "pixels": 971,
+      "app_pixels": 275,
+      "bbox": [
+        82,
+        52,
+        341,
+        958
+      ]
+    },
+    {
+      "scene": "en-add-whitespace-title",
+      "pixels": 677,
+      "app_pixels": 329,
+      "bbox": [
+        82,
+        52,
+        362,
+        1107
+      ]
+    },
+    {
+      "scene": "en-edit-back-draft",
+      "pixels": 348,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        99,
+        80
+      ]
+    },
+    {
+      "scene": "en-edit-blank-body",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-edit-cancel-draft",
+      "pixels": 348,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        99,
+        80
+      ]
+    },
+    {
+      "scene": "en-edit-outside-draft",
+      "pixels": 865,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-nested-tag-blank-press",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-nested-tag-canceled",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-nested-tag-created",
+      "pixels": 348,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        52,
+        99,
+        80
+      ]
+    },
+    {
+      "scene": "en-nested-tag-draft",
+      "pixels": 806,
+      "app_pixels": 270,
+      "bbox": [
+        82,
+        47,
+        967,
+        1415
+      ]
+    },
+    {
+      "scene": "en-nested-tag-empty",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en complete default dhikr seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en complete default tag seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add cancel title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add cancel content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add cancel no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add cancel no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add back title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add back content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add back no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add back no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add outside title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add outside content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add outside no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add outside no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en empty disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en only title entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en missing content disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en blank title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en content nonblank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en whitespace title disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en blank cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested tag show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested blank Add press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested tag field available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested Cancel text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en parent remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en parent cancel after nested cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested canceled no tag write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested create show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested create name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en nested actual Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en parent Cancel after nested Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en separate nested tag persists parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en parent canceled no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture saved once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit cancel draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit cancel draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit cancel unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit cancel unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit back draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit back draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit back unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit back unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit outside draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit outside draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit outside unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit outside unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit whitespace body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit blank body disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit blank Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit blank no write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar complete default dhikr seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar complete default tag seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add cancel title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add cancel content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add cancel no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add cancel no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add back title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add back content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add back no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add back no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add outside title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add outside content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add outside no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add outside no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar empty disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar only title entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar missing content disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar blank title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar content nonblank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar whitespace title disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar blank cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested tag show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested blank Add press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested tag field available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested Cancel text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar parent remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar parent cancel after nested cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested canceled no tag write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested create show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested create name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nested actual Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar parent Cancel after nested Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar separate nested tag persists parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar parent canceled no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture saved once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit cancel draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit cancel draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit cancel unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit cancel unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit back draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit back draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit back unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit back unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit outside draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit outside draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit outside unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit outside unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit whitespace body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit blank body disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit blank Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit blank no write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en complete default dhikr seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en complete default tag seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add cancel title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add cancel content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add cancel no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add cancel no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add back title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add back content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add back no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add back no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add outside title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add outside content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add outside no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add outside no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en empty disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en only title entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en missing content disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en blank title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en content nonblank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en whitespace title disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en blank cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested tag show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested blank Add press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested tag field available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested Cancel text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en parent remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en parent cancel after nested cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested canceled no tag write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested create show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested create name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nested actual Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en parent Cancel after nested Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en separate nested tag persists parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en parent canceled no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture saved once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit cancel draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit cancel draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit cancel unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit cancel unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit back draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit back draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit back unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit back unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit outside draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit outside draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit outside unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit outside unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit whitespace body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit blank body disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit blank Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit blank no write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar complete default dhikr seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar complete default tag seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add cancel title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add cancel content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add cancel no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add cancel no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add back title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add back content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add back no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add back no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add outside title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add outside content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add outside no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add outside no ref write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar empty disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar only title entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar missing content disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar blank title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar content nonblank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar whitespace title disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar blank cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested tag show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested blank Add press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested tag field available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested Cancel text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar parent remains",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar parent cancel after nested cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested canceled no tag write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested create show",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested create name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nested actual Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar parent Cancel after nested Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar separate nested tag persists parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar parent canceled no dhikr write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Azkar route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Add dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture saved once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit cancel draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit cancel draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit cancel dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit cancel unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit cancel unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit back draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit back draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit back dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit back unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit back unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit outside draft title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit outside draft body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit outside dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit outside unchanged dhikr",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit outside unchanged refs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit actual Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit whitespace body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit blank body disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit blank Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit blank no write",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
