@@ -1,0 +1,11 @@
+{
+  "run": "41367717321",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41367717321",
+  "checks": 148,
+  "failed": 24,
+  "pairs": 16,
+  "raw_equal": 10,
+  "all_actual_pairs_inspected": true,
+  "finding": "Listener registered but inactive with {na} while app-under-test foreground; background helper had fine/coarse but no background location grant. GPS remains OFF and last locations null. Feed Process crashed recorded when cleanup force-stops helper, not established early crash. All B legs unchanged, no A-B-A proof.",
+  "next": "Give isolated verification helper explicit background location grant for OS request while app under test foreground, preserve current failed runs. No production app permission change."
+}
