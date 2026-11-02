@@ -660,3 +660,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 08:03 actual serialized tile layout identity
 -41395522604 original499bytes/comparison507bytes,ONLYnestedlaunchpackage+lengthfields differ. Recursivepackage-normalizedactualserializedLayoutElementexact. Explicitstate/contextfixture,notproviderlifecycle/dynamic/rasterproof. Nextsameverificationrendererbothactualprotostoisolaterasterresidualbeforeanyproductpatch.
+
+## Nov2 08:24 same-host renderer build fixture failure
+-41397425771 no runtime evidence: tiles1.4.1 minSdk26 conflicts with phonehelper23. Isolate Wear-onlyrenderer innewtilehost min26; keep phonehelper23, no productchange. Retrysamefiniteprobe/render.

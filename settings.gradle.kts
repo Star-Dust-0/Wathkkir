@@ -32,3 +32,5 @@ if (providers.gradleProperty("withWear").isPresent) include(":wear")
 if (providers.gradleProperty("withVerification").isPresent) include(":widgethost")
 
 if (providers.gradleProperty("withVerification").isPresent) include(":uiprobe")
+
+if (providers.gradleProperty("withVerification").isPresent) include(":tilehost")
