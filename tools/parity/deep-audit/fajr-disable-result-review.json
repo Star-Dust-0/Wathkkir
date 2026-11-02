@@ -1,0 +1,309 @@
+{
+  "run": "41388389330",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41388389330",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en settings destination for actual snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en snooze pending before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en settings returned without force-stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en pending survives return settings before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual disable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en disabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en scheduled snooze removed after disable",
+      "passed": false,
+      "detail": "{'before': ['      type=ELAPSED origWhen=+26s568ms window=+21s615ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+26s568ms app_standby=-2s251ms device_idle=-- battery_saver=-2s251ms tare=-2s251ms\\n      whenElapsed=+26s568ms maxWhenElapsed=+48s183ms\\n      operation=PendingIntent{9cf8f75: PendingIntentRecord{493eb0a com.google.android.gms/com.google.android.gms.scheduler broadcastIntent}}\\n    RTC_WAKEUP #10: Alarm{8544f7b type 0 origWhen 1793448111809 whenElapsed 186167 com.wathakker.app}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:51.809 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -3s118ms, -36s499ms, -39s305ms, -45s182ms, -1m8s658ms, -1m13s975ms, -1m14s132ms, -1m17s934ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{8544f7b type 0 origWhen 1793448111809 whenElapsed 186167 com.wathakker.app}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:51.809 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3'], 'after': ['      type=ELAPSED origWhen=+23s118ms window=+22s239ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+23s118ms app_standby=-3s13ms device_idle=-- battery_saver=-6s533ms tare=-6s533ms\\n      whenElapsed=+23s118ms maxWhenElapsed=+45s357ms\\n      operation=PendingIntent{fdfc03f: PendingIntentRecord{493eb0a com.google.android.gms/com.google.android.gms.scheduler broadcastIntent}}\\n    RTC_WAKEUP #4: Alarm{8544f7b type 0 origWhen 1793448111809 whenElapsed 186167 com.wathakker.app}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:51.809 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -3s122ms, -11s658ms, -45s39ms, -47s845ms, -53s722ms, -1m17s198ms, -1m22s515ms, -1m22s672ms, -1m26s474ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{8544f7b type 0 origWhen 1793448111809 whenElapsed 186167 com.wathakker.app}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:51.809 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3']}"
+    },
+    {
+      "name": "original-en no alarm foreground after disabled snooze deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en disabled remains after deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar settings destination for actual snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar snooze pending before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar settings returned without force-stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar pending survives return settings before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual disable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar disabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar scheduled snooze removed after disable",
+      "passed": false,
+      "detail": "{'before': ['      type=ELAPSED_WAKEUP origWhen=+53s806ms window=+1m9s505ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+53s806ms app_standby=-38s868ms device_idle=-- battery_saver=-- tare=-38s868ms\\n      whenElapsed=+53s806ms maxWhenElapsed=+2m3s311ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #8: Alarm{a6d8611 type 0 origWhen 1793448099698 whenElapsed 318693 com.wathakker.app}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:39.698 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -41s468ms, -56s646ms, -1m6s36ms, -1m17s774ms, -1m31s875ms, -1m48s495ms, -1m53s629ms, -2m2s313ms, -2m6s791ms, -2m15s327ms, -2m48s708ms, -2m51s514ms, -2m57s391ms, -3m20s867ms, -3m26s184ms, -3m26s341ms, -3m30s143ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{a6d8611 type 0 origWhen 1793448099698 whenElapsed 318693 com.wathakker.app}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:39.698 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3'], 'after': ['      type=ELAPSED_WAKEUP origWhen=+48s946ms window=+1m9s505ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+48s946ms app_standby=-43s728ms device_idle=-- battery_saver=-- tare=-43s728ms\\n      whenElapsed=+48s946ms maxWhenElapsed=+1m58s451ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #6: Alarm{a6d8611 type 0 origWhen 1793448099698 whenElapsed 318693 com.wathakker.app}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:39.698 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -46s328ms, -1m1s506ms, -1m10s896ms, -1m22s634ms, -1m36s735ms, -1m53s355ms, -1m58s489ms, -2m7s173ms, -2m11s651ms, -2m20s187ms, -2m53s568ms, -2m56s374ms, -3m2s251ms, -3m25s727ms, -3m31s44ms, -3m31s201ms, -3m35s3ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{a6d8611 type 0 origWhen 1793448099698 whenElapsed 318693 com.wathakker.app}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:39.698 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3']}"
+    },
+    {
+      "name": "original-ar no alarm foreground after disabled snooze deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar disabled remains after deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en settings destination for actual snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en snooze pending before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en settings returned without force-stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en pending survives return settings before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual disable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en disabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en scheduled snooze removed after disable",
+      "passed": false,
+      "detail": "{'before': ['      type=ELAPSED_WAKEUP origWhen=+38s452ms window=+1m1s281ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+38s452ms app_standby=-43s256ms device_idle=-- battery_saver=-- tare=-43s256ms\\n      whenElapsed=+38s452ms maxWhenElapsed=+1m39s733ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #9: Alarm{1bce398 type 0 origWhen 1793448103257 whenElapsed 453992 com.wathakker.app.compare}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:43.257 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -45s45ms, -1m46s400ms, -2m56s785ms, -3m11s963ms, -3m21s353ms, -3m33s91ms, -3m47s192ms, -4m3s812ms, -4m8s946ms, -4m17s630ms, -4m22s108ms, -4m30s644ms, -5m4s25ms, -5m6s831ms, -5m12s708ms, -5m36s184ms, -5m41s501ms, -5m41s658ms, -5m45s460ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{1bce398 type 0 origWhen 1793448103257 whenElapsed 453992 com.wathakker.app.compare}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:43.257 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3'], 'after': ['      type=ELAPSED_WAKEUP origWhen=+33s103ms window=+1m1s281ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+33s103ms app_standby=-48s605ms device_idle=-- battery_saver=-- tare=-48s605ms\\n      whenElapsed=+33s103ms maxWhenElapsed=+1m34s384ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #7: Alarm{1bce398 type 0 origWhen 1793448103257 whenElapsed 453992 com.wathakker.app.compare}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:43.257 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -50s394ms, -1m51s749ms, -3m2s134ms, -3m17s312ms, -3m26s702ms, -3m38s440ms, -3m52s541ms, -4m9s161ms, -4m14s295ms, -4m22s979ms, -4m27s457ms, -4m35s993ms, -5m9s374ms, -5m12s180ms, -5m18s57ms, -5m41s533ms, -5m46s850ms, -5m47s7ms, -5m50s809ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{1bce398 type 0 origWhen 1793448103257 whenElapsed 453992 com.wathakker.app.compare}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:43.257 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3']}"
+    },
+    {
+      "name": "comparison-en no alarm foreground after disabled snooze deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en disabled remains after deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar settings destination for actual snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar snooze pending before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar settings returned without force-stop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar pending survives return settings before disable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual disable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar disabled preference",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar scheduled snooze removed after disable",
+      "passed": false,
+      "detail": "{'before': ['      type=ELAPSED_WAKEUP origWhen=+42s729ms window=+1m17s784ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+42s729ms app_standby=-1m0s944ms device_idle=-- battery_saver=-- tare=-1m0s944ms\\n      whenElapsed=+42s729ms maxWhenElapsed=+2m0s513ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #7: Alarm{1cf994 type 0 origWhen 1793448100372 whenElapsed 586841 com.wathakker.app.compare}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:40.372 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -2m5s262ms, -2m57s859ms, -3m59s214ms, -5m9s599ms, -5m24s777ms, -5m34s167ms, -5m45s905ms, -6m0s6ms, -6m16s626ms, -6m21s760ms, -6m30s444ms, -6m34s922ms, -6m43s458ms, -7m16s839ms, -7m19s645ms, -7m25s522ms, -7m48s998ms, -7m54s315ms, -7m54s472ms, -7m58s274ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{1cf994 type 0 origWhen 1793448100372 whenElapsed 586841 com.wathakker.app.compare}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:40.372 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3'], 'after': ['      type=ELAPSED_WAKEUP origWhen=+37s796ms window=+1m17s784ms repeatInterval=0 count=0 flags=0x0\\n      policyWhenElapsed: requester=+37s796ms app_standby=-1m5s877ms device_idle=-- battery_saver=-- tare=-1m5s877ms\\n      whenElapsed=+37s796ms maxWhenElapsed=+1m55s580ms\\n      listener=android.app.AlarmManager$ListenerWrapper@cb68842\\n    RTC_WAKEUP #5: Alarm{1cf994 type 0 origWhen 1793448100372 whenElapsed 586841 com.wathakker.app.compare}\\n      tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n      type=RTC_WAKEUP origWhen=2026-10-31 12:01:40.372 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3', '    com.google.android.gms, u0: -2m10s195ms, -3m2s792ms, -4m4s147ms, -5m14s532ms, -5m29s710ms, -5m39s100ms, -5m50s838ms, -6m4s939ms, -6m21s559ms, -6m26s693ms, -6m35s377ms, -6m39s855ms, -6m48s391ms, -7m21s772ms, -7m24s578ms, -7m30s455ms, -7m53s931ms, -7m59s248ms, -7m59s405ms, -8m3s207ms, \\n  \\n  Temporary Quota Reserves:\\n  \\n  Next wake from idle: Alarm{1cf994 type 0 origWhen 1793448100372 whenElapsed 586841 com.wathakker.app.compare}\\n    tag=*walarm*:ACTION_SNOOZE_TRIGGER\\n    type=RTC_WAKEUP origWhen=2026-10-31 12:01:40.372 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3']}"
+    },
+    {
+      "name": "comparison-ar no alarm foreground after disabled snooze deadline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar disabled remains after deadline",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pairs": 6,
+  "raw_equal": 2,
+  "all_actual_pairs_inspected": true,
+  "finding": "BOTH shipped and comparison retain same live snooze Alarm record after actual Disable. Initial four assertions wrongly expected removal. Same record identity/due time survives before/after; this is not mere history. Neither foregrounds after former deadline while disabled. Preserve shipped quirk, no scheduler patch.",
+  "sessions": [
+    {
+      "session": "original-en",
+      "before_pending": true,
+      "after_actual_disable_pending": true,
+      "final_action_lines": [
+        "      *walarm*:ACTION_SNOOZE_TRIGGER"
+      ]
+    },
+    {
+      "session": "original-ar",
+      "before_pending": true,
+      "after_actual_disable_pending": true,
+      "final_action_lines": [
+        "      *walarm*:ACTION_SNOOZE_TRIGGER"
+      ]
+    },
+    {
+      "session": "comparison-en",
+      "before_pending": true,
+      "after_actual_disable_pending": true,
+      "final_action_lines": [
+        "      *walarm*:ACTION_SNOOZE_TRIGGER"
+      ]
+    },
+    {
+      "session": "comparison-ar",
+      "before_pending": true,
+      "after_actual_disable_pending": true,
+      "final_action_lines": [
+        "      *walarm*:ACTION_SNOOZE_TRIGGER"
+      ]
+    }
+  ],
+  "visual_residuals": [
+    "return settings scroll offset,header position in EN/AR",
+    "clock minute difference"
+  ],
+  "not_proven": [
+    "re-enable before pending deadline behavior",
+    "actual no receiver execution claim",
+    "hardwareaudio/deepidle/fullpixel/motion"
+  ],
+  "prior_invalid_fixture": "41386209714 used force-stop and cannot prove product cancellation."
+}
