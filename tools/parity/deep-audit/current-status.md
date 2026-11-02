@@ -291,3 +291,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 02:32 GPS console no-delivery finding
 -41366226768 135checks12fails,all16actualpairsinspected10rawequal. OS GPS providerOFF,mStartedfalse,lastlocationnull despite consoleOK. B never moved; A/returnchecks vacuous,notmovementproof. OriginalstaleGPSoffwarning vs comparison remains residual. Add verification-only OS GPS listener to activateprovider; no productpatch/keyseed/geocoderinjection.
+
+## Nov2 02:48 GPS listener background fixture gap
+-41367717321 148checks24fails,all16pairsinspected10rawequal. OSlistener registeredbutinactive{na},backgroundhelpernoforegroundlocationeligibility,providerOFF/lastnull. FeedProcesscrashedatforce-stopcleanupnotconfirmedearlycrash. Grantbackgroundpermissiononlytoseparateverificationhelper,notproduct. NoA-B-Aprooforproductpatch.
