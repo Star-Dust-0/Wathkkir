@@ -700,3 +700,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 13:58 defaultMaterial3 broader regression
 -41431940671 success879checks0fail,108actualpairsallinspected:themes147/18,fonts375/48,offsets357/42. ActualApply/Cancel/Back/persistenceequalfiniteENARchoices. Scrollpositions/blurredbackgroundsresidualsretained,noglobalparityclaim. NextactualTasbeeh33/99/100boundarypressesandcoldreopenselectedchip/ring,notmerely33labelpresence.
+
+## Nov2 14:51 Tasbeeh actual boundary result
+-41440987073:259checks0fail48actualpairsallinspected. Actual33/99/100selection/press0,1,target-1,target,target+1,fullring/wrap;countpersistscoldrestart,selectedtargetresets33confirmedactualchip/ring. Resetpersists.33appcontentexact,15tiny1..17glyphantialiasresidualscropped;OSstatus/gesturebarseparate. No productpatch/motion/hardwareclaim. NextDhikrAddEditCancel/Back/outside/blankguards/nestedtagAddseparatecallbacktransactionsemantics.
