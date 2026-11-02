@@ -39,7 +39,7 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/phone_auto_alias_null_key.py
+          script: python3 -u tools/parity/phone_auto_alias_gps_roundtrip.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

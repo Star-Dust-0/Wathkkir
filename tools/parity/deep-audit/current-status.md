@@ -285,3 +285,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 02:15 automatic null-key alias runtime
 -41364762395 59checks0fail8/8semanticpairs,all8actualpairsinspected. Actualgeocoder derivesg|gb|greaterlondon inall4ENARoriginal/comparisonsessions;Savewritesalias,closeseditor,andforce-stop/reopen retainsauto/key/alias. FixtureGPSdisabled,savedLondoncoords,initialCaironameintentionallystale. Proves restored nullableplacekeyfallback finitepath,notphysicalGPS/A-B-A/motion/nullgeocoderbranch.
+
+## Nov2 automatic emulator GPS roundtrip planned
+- Extend successful actual-geocoder alias fixture with emulator geo fix A(London)->B(Cairo)->A and actual Current location row refresh each leg; verify prefs coordinates, derived distinct keys, retained alias storage and restored display/reopen. OS location dumps retained. No physical movement, sensors, phone-watch transport or GPS jitter claim. If emulator does not deliver fix, preserve failure rather than seed the key/name to make it pass.
