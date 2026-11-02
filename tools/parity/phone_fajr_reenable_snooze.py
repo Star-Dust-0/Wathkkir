@@ -121,7 +121,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   check('settings returned without force-stop',any(n.get('text') in ['Alarm on','المنبه مفعّل'] for n in ET.fromstring(tree()).iter('node')))
   pre_disable=adb('shell','dumpsys','alarm');(out/(slug+'-immediately-before-disable.txt')).write_text(pre_disable)
   check('pending survives return settings before disable','ACTION_SNOOZE_TRIGGER' in pre_disable)
-  assert check('actual disable row',tap('Alarm on' if lang=='en' else 'المنبه مفعّل')),'No disable';time.sleep(1);shot('disabled-with-pending-snooze')
+  # A label can exist in hierarchy outside safe touch bounds under collapsing header.
+  disabled=False
+  for attempt in range(4):
+   shot('before-disable-attempt-'+str(attempt))
+   if tap('Alarm on' if lang=='en' else 'المنبه مفعّل'):disabled=True;break
+   swipe(False)
+  assert check('actual disable row',disabled),'No disable';time.sleep(1);shot('disabled-with-pending-snooze')
   q=fp('disabled');check('disabled preference',q.get('is_alarm_enabled')=='false')
   after=adb('shell','dumpsys','alarm');(out/(slug+'-pending-after-disable.txt')).write_text(after)
   # Keep raw dumps. ACTION may remain in historical statistics; isolate scheduled Alarm records.
@@ -135,7 +141,11 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   result={'before':scheduled_snooze(before),'after':scheduled_snooze(after)}
   (out/(slug+'-scheduled-snooze-records.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2))
   check('scheduled snooze retained after disable like shipped',bool(result['after']),str(result))
-  assert check('actual re-enable before deadline',tap('Alarm off' if lang=='en' else 'المنبه معطّل')),'No re-enable';time.sleep(.5)
+  reenabled=False
+  for attempt in range(4):
+   if tap('Alarm off' if lang=='en' else 'المنبه معطّل'):reenabled=True;break
+   shot('reenable-miss-'+str(attempt));swipe(False)
+  assert check('actual re-enable before deadline',reenabled),'No re-enable';time.sleep(.5)
   check('re-enabled preference',fp('re-enabled').get('is_alarm_enabled')=='true')
   (out/(slug+'-after-reenable-alarms.txt')).write_text(adb('shell','dumpsys','alarm'))
   time.sleep(65);shot('after-former-snooze-deadline');check('retained snooze redelivers after re-enable',resumed_alarm())
