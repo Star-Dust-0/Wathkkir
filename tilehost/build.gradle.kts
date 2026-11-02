@@ -8,4 +8,8 @@ android {
  sourceSets["main"].manifest.srcFile("../tools/tilehost/AndroidManifest.xml")
  sourceSets["main"].java.srcDirs("../tools/tilehost")
 }
-dependencies { implementation("androidx.wear.tiles:tiles:1.4.1"); implementation("androidx.wear.watchface:watchface-complications-data-source:1.2.1"); implementation("androidx.wear.tiles:tiles-renderer:1.4.1"); implementation("androidx.wear.protolayout:protolayout:1.3.0") }
+dependencies {
+ implementation("androidx.wear.tiles:tiles-proto:1.4.1")
+ implementation("androidx.wear.protolayout:protolayout-proto:1.3.0")
+ implementation("androidx.wear.protolayout:protolayout-external-protobuf:1.3.0")
+ implementation("androidx.wear.tiles:tiles:1.4.1"); implementation("androidx.wear.watchface:watchface-complications-data-source:1.2.1"); implementation("androidx.wear.tiles:tiles-renderer:1.4.1"); implementation("androidx.wear.protolayout:protolayout:1.3.0") }

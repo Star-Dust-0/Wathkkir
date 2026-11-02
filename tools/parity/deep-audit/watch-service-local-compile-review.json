@@ -1,0 +1,14 @@
+{
+  "run": "41526717333",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41526717333",
+  "outcome": "7compileerrorsbeforeemulator;noactualproviderIPCresult. RemoteCIstoppedpendingparentapproval.",
+  "cause": "tiles-protoisruntime-onlyinexacttiles1.4.1POM;hostdirecttoProtoreferencesneedexplicitcompiledependencyandrelocatedprotobuf.",
+  "local_validation": "CompleteProviderServiceProbe.javajavacexit0,6classfilesgeneratedwithAndroidstubandexacttiles/proto/protolayout/expression/complicationdataclasses. FullGradlepackaging/runtimeNOTproven.",
+  "sources": [
+    "https://dl.google.com/dl/android/maven2/androidx/wear/tiles/tiles/1.4.1/tiles-1.4.1.pom",
+    "https://dl.google.com/dl/android/maven2/androidx/wear/tiles/tiles-proto/1.4.1/tiles-proto-1.4.1.jar",
+    "https://dl.google.com/dl/android/maven2/androidx/wear/protolayout/protolayout-external-protobuf/1.3.0/protolayout-external-protobuf-1.3.0.jar"
+  ],
+  "fix": "Verificationhostexplicittiles-proto/protolayout-proto/external-protobufdependenciesonly. Productionunchanged.",
+  "authority_limit": "ParentNov223:39:20requireslocalwholeprobecompileandaskbeforeanymoreCI. Asked23:39:43,awaiting."
+}
