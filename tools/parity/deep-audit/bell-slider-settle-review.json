@@ -1,0 +1,389 @@
+{
+  "run": "41407178301",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41407178301",
+  "checks": 55,
+  "failures": 0,
+  "pairs": 18,
+  "all_actual_pairs_inspected": true,
+  "finding": "Static reproducible thumb/track mismatch, NOT settling: within-app 1/6/8s slider crops zero difference in all six app/locale/value sessions. Both bounds/range identical. EN thumb centers original/comparison 10=256/241,30=533/532,45=740/751. AR mirrors. No product patch until source/dependency cause grounded.",
+  "results": [
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4049
+    },
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4049
+    },
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4049
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 372,
+      "full_pixels": 372
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 372,
+      "full_pixels": 372
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 372,
+      "full_pixels": 372
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3507,
+      "full_pixels": 3507
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3507,
+      "full_pixels": 3507
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3507,
+      "full_pixels": 3507
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4579
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4729
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 3852,
+      "full_pixels": 4321
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 366,
+      "full_pixels": 1098
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 366,
+      "full_pixels": 1102
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 366,
+      "full_pixels": 592
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3504,
+      "full_pixels": 4140
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3504,
+      "full_pixels": 4001
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 3504,
+      "full_pixels": 4231
+    }
+  ]
+}
