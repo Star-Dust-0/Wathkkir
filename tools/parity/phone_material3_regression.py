@@ -1,7 +1,7 @@
 """Finite selected regression for proposed dependency alignment, not all-app proof."""
 import subprocess,pathlib,shutil,json
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);results=[]
-for scenario in ['phone_settings_controls','phone_location_pickers','phone_bell_cancel']:
+for scenario in ['phone_all_themes','phone_all_fonts','phone_offset_sliders']:
  work=pathlib.Path('regression-'+scenario);work.mkdir(exist_ok=True)
  for apk in ['original.apk','comparison.apk','widgethost.apk']:
   target=work/apk
