@@ -678,3 +678,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 09:36 bell slider residual bounded repeat
 -Recovered41194167863actualpixelsreinspected:1/60sliders0diff,30thumb/trackedge372EN/366ARsmallresidualdespitesamerange/bounds. No productpatch. Actual10/30/45nestedinputwith1/6/8secondssettledrepeatcaptureplannedENARtoisolateanimation/samplingbeforedeciding. Notdragtrajectory/audio/OEMproof.
+
+## Nov2 09:59 static bell slider mismatch confirmed
+-41407178301 55checks0fail18pairsallactualpixelsinspected. Sameappslidercrops1/6/8s0diff,betweenappsstatic3852(value10)/372EN366AR(value30)/3507EN3504AR(value45). Notanimation. Bound/rangematch,thumbx10original256comparison241;30=533/532;45=740/751. Investigateoriginalmaterialslidergeometry/dependencybeforeproductpatch. Fullframebackgroundresidualsseparate.
