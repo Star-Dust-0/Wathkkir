@@ -1,5 +1,9 @@
 package com.example.ui.viewmodel
 
+import kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED
+import kotlin.coroutines.intrinsics.startCoroutineUninterceptedOrReturn
+import kotlin.coroutines.intrinsics.suspendCoroutineUninterceptedOrReturn
+
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
@@ -86,8 +90,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     } }
     fun addDhikrWithScheduleAndTags(title: String, content: String, times: List<String>, tagIds: List<Long>) { viewModelScope.launch {
         val dhikr = Dhikr(title = title, content = content, reminderTimes = times, isEnabled = true)
-        val id = repository.insert(dhikr).toInt(); alarmScheduler.schedule(dhikr.copy(id = id))
-        if (tagIds.isNotEmpty()) repository.updateDhikrTags(id, tagIds)
+        // Shipped code80 sa.invokeSuspend case1 keeps two distinct insert paths:
+        // immediate completion writes tags; resumed completion schedules then returns.
+        // Preserve that observed quirk, not an unconditional tag-loss rule.
+        var insertSuspended = false
+        val inserted: Long = suspendCoroutineUninterceptedOrReturn { continuation ->
+            val insert: suspend () -> Long = { repository.insert(dhikr) }
+            insert.startCoroutineUninterceptedOrReturn(continuation).also {
+                insertSuspended = it === COROUTINE_SUSPENDED
+            }
+        }
+        val id = inserted.toInt(); alarmScheduler.schedule(dhikr.copy(id = id))
+        if (!insertSuspended && tagIds.isNotEmpty()) repository.updateDhikrTags(id, tagIds)
     } }
     fun updateDhikrWithTags(dhikr: Dhikr, newTitle: String, newContent: String, tagIds: List<Long>) { viewModelScope.launch {
         val updated = dhikr.copy(title = newTitle, content = newContent)
