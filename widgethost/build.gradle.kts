@@ -8,5 +8,3 @@ android {
     sourceSets["main"].manifest.srcFile("../tools/widgethost/AndroidManifest.xml")
     sourceSets["main"].java.srcDirs("../tools/widgethost")
 }
-
-dependencies { implementation("androidx.wear.tiles:tiles-renderer:1.4.1"); implementation("androidx.wear.protolayout:protolayout:1.3.0") }
