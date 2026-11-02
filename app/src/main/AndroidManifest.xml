@@ -15,8 +15,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.samsung.systemui.permission.FACE_WIDGET" />
-    <application android:theme="@style/Theme.MyApplication" android:label="Wathkkir Comparison" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:supportsRtl="true" android:fullBackupContent="@xml/backup_rules" android:roundIcon="@mipmap/ic_launcher_round" android:dataExtractionRules="@xml/data_extraction_rules" android:enableOnBackInvokedCallback="true">
-        <activity android:theme="@style/Theme.MyApplication" android:label="Wathkkir Comparison" android:name="com.example.MainActivity" android:exported="true" android:launchMode="singleTask">
+    <application android:theme="@style/Theme.MyApplication" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:supportsRtl="true" android:fullBackupContent="@xml/backup_rules" android:roundIcon="@mipmap/ic_launcher_round" android:dataExtractionRules="@xml/data_extraction_rules" android:enableOnBackInvokedCallback="true">
+        <activity android:theme="@style/Theme.MyApplication" android:label="@string/app_name" android:name="com.example.MainActivity" android:exported="true" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

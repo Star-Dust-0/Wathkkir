@@ -133,7 +133,7 @@ class EventReminderReceiver : BroadcastReceiver() {
         nm.notify(
             (System.currentTimeMillis() % 100000).toInt(),
             NotificationCompat.Builder(context, chId)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(com.example.R.drawable.ic_stat_prayer)
                 .setContentTitle(context.getString(context.applicationInfo.labelRes))
                 .setContentText(name)
                 .setAutoCancel(true)
