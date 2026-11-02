@@ -1,0 +1,362 @@
+{
+  "run": "41371509922",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41371509922",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.75474461599998"
+    },
+    {
+      "name": "original-en count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count3-duration15 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.57068925700003"
+    },
+    {
+      "name": "original-en count3-duration15 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.56741289800004"
+    },
+    {
+      "name": "original-ar count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count3-duration15 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.76595165100002"
+    },
+    {
+      "name": "original-ar count3-duration15 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.64753383200002"
+    },
+    {
+      "name": "comparison-en count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count3-duration15 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.56644126600008"
+    },
+    {
+      "name": "comparison-en count3-duration15 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.51145656499989"
+    },
+    {
+      "name": "comparison-ar count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count3-duration15 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.59212316599996"
+    },
+    {
+      "name": "comparison-ar count3-duration15 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pairs": 12,
+  "raw_equal_pairs": 11,
+  "all_actual_pairs_inspected": true,
+  "result": "Both original and comparison actual Test alarm foreground before timeout, returns without tap by65s at duration5/count0 and duration15/count3. Count0 increments1 and real snooze PendingIntent observed; count3 remains3.",
+  "residuals": [
+    "EN one alarm clock minute differs",
+    "AR duration5 return settings scroll offset differs",
+    "Vibration fixture wrong pref key; actual ON both",
+    "count3 absence of new PendingIntent not independently checked"
+  ],
+  "limits": [
+    "No exact60s timing measurement",
+    "Not actual5/15minute ring duration",
+    "No audio/vibration output",
+    "No snooze redelivery",
+    "No full pixel/motion proof"
+  ],
+  "bound_controls": [
+    "fajr-alarm.duration.5",
+    "fajr-alarm.duration.15"
+  ]
+}
