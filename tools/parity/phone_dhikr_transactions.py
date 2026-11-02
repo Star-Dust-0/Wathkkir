@@ -83,7 +83,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    if mode=='back':adb('shell','input','keyevent','KEYCODE_BACK')
    else:adb('shell','input','tap','540','220')
    time.sleep(1);shot('add-'+mode+'-after');check(mode+' Add dialog actually gone',not named(newtitle));d=db('add-'+mode+'-closed');check(mode+' Add no saved draft',not any(v[1]=='TxnDraft' for v in d.get('dhikr_table',[])))
-  check('create Azkar',azkar());check('create Add',tap(add));check('trim title input',field(0,'  TxnSaved  '));check('trim body input',field(1,'  TxnBody  '));hide_keyboard();check('tag selected',tap('أدعية عامة'));shot('create-tag-before-save');check('actual create Save',tap(save));d=db('created');rows=[v for v in d.get('dhikr_table',[]) if v[1]=='TxnSaved'];check('title and content trimmed',len(rows)==1 and rows[0][2]=='TxnBody');ident=rows[0][0] if rows else -1;tags=[v for v in d.get('tag_table',[]) if v[1]=='أدعية عامة'];check('selected tag actual relation',bool(tags) and [ident,tags[0][0]] in [list(v) for v in d.get('dhikr_tag_cross_ref',[])])
+  check('create Azkar',azkar());check('create Add',tap(add));check('trim title input',field(0,'  TxnSaved  '));check('trim body input',field(1,'  TxnBody  '));hide_keyboard();check('tag selected',tap('أدعية عامة'));shot('create-tag-before-save');check('actual create Save',tap(save));d=db('created');rows=[v for v in d.get('dhikr_table',[]) if v[1]=='TxnSaved'];check('title and content trimmed',len(rows)==1 and rows[0][2]=='TxnBody');ident=rows[0][0] if rows else -1;tags=[v for v in d.get('tag_table',[]) if v[1]=='أدعية عامة'];check('shipped resumed create omits selected relation',not any(v[0]==ident for v in d.get('dhikr_tag_cross_ref',[])))
   def fixture(cold=True):
    if cold:check('fixture Azkar',azkar())
    check('fixture search',field(0,'TxnSaved'));hide_keyboard()
@@ -99,11 +99,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   opentimes();check('add12 first',tap(addtime));check('add12 duplicate',tap(addtime));shot('times-duplicate-draft');check('duplicate parent Cancel',tap(cancel));d=db('times-duplicate-cancel');check('duplicate Cancel preserves09',any(v[0]==ident and v[4]=='09:00' for v in d.get('dhikr_table',[])))
   opentimes();check('add12 saved',tap(addtime));check('times actual Save',tap(save));time.sleep(1);shot('times-saved-live')
   def alarms(stage):
-   raw=adb('shell','dumpsys','alarm');(out/(slug+'-'+stage+'-alarms.txt')).write_text(raw);lines=[z.strip() for z in raw.splitlines() if pkg in z and 'AlarmReceiver' in z];(out/(slug+'-'+stage+'-alarm-lines.json')).write_text(json.dumps(lines));return lines
+   raw=adb('shell','dumpsys','alarm');(out/(slug+'-'+stage+'-alarms.txt')).write_text(raw);sections=re.split(r'\n    (?:RTC_WAKEUP|RTC|ELAPSED_WAKEUP|ELAPSED) #\d+:',raw);lines=[z for z in sections[1:] if re.match(r' Alarm\{[^\n]* '+re.escape(pkg)+r'\}',z) and '/com.example.alarm.AlarmReceiver' in z.split('\n    ')[0]];(out/(slug+'-'+stage+'-alarm-lines.json')).write_text(json.dumps(lines));return lines
   live=alarms('two-time-save');check('actual pending dhikr alarms after Save',len(live)>=2)
   # Do not force-stop between saved schedule, actual disable/enable/delete and alarm inspection.
   def toggle():
-   nodes=[n for n in ET.fromstring(tree()).iter('node') if n.get('class')=='android.widget.Switch'];return bool(nodes) and touch(nodes[0])
+   root=ET.fromstring(tree());titles=[n for n in root.iter('node') if n.get('text')=='TxnSaved' and n.get('class')!='android.widget.EditText'];
+   if not titles:return False
+   tb=rect(titles[0]);cy=(tb[1]+tb[3])//2;nodes=[n for n in root.iter('node') if n.get('clickable')=='true' and len(rect(n))==4 and 100<=rect(n)[2]-rect(n)[0]<=160 and rect(n)[1]<=cy<=rect(n)[3]];return bool(nodes) and touch(nodes[0])
   check('actual enabled switch off',toggle());time.sleep(1);shot('disabled-live');off=alarms('disabled');check('disable removes pending dhikr alarms',len(off)<len(live));check('actual enabled switch on',toggle());time.sleep(1);on=alarms('reenabled');check('reenable restores pending dhikr alarms',len(on)>=len(live));shot('reenabled-live')
   check('actual delete options',tap(options));check('actual delete',tap(delete));time.sleep(1);shot('deleted-live');gone=alarms('deleted');check('delete removes pending dhikr alarms',len(gone)<len(on));d=db('deleted');check('actual delete removes fixture',not any(v[0]==ident for v in d.get('dhikr_table',[])));check('actual delete removes relations',not any(v[0]==ident for v in d.get('dhikr_tag_cross_ref',[])))
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
