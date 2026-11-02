@@ -1,0 +1,183 @@
+{
+  "run": "41530559108",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41530559108",
+  "commit": "b9928d38534415d62a93879e631769b940901ceb",
+  "result": "FAILED;oneapprovedremoteattemptconsumed,noadditionalruns.",
+  "checks": 32,
+  "failed": 26,
+  "cause": "Rootapp_processnotregisteredapplicationcaller;AndroidSecurityExceptionUnabletofindappforcallerwhenbindServicebothoriginalandcomparison. FailsbeforetileIPC,socomplicationsneverreached. Not26productdefects.",
+  "proved": "FullGradlebuild/packagingpass. BothinstalledappsPackageManagerdeclarescorrectBIND_TILE_PROVIDERaction. Manifestrepairpresentinactualinstalledcomparison.",
+  "unverified": [
+    "actualTileServiceonBind/request/resources/lifecycle",
+    "sixComplicationprovidersactivation/request/data/tap",
+    "dynamicringlivehostupdate",
+    "nativewatchfacepermission/discovery/UI",
+    "pairedDataLayerdelivery",
+    "physicalOEM/audio/motor/sensors/rotary"
+  ],
+  "visual": "BothdiagnosticPNGsactuallyinspected:OSlocationpermissiondialog,NOTcomplicationtapdestinationortilerender. Filenamesmisleading,norenderproof.",
+  "authority": "OriginalauthenticatedruntimeprojectionMohamedSlack1793655621.666289afterquestion1793655603.364989exactlyoneActionsattempt. Parentrequiresstopafterfailure.",
+  "next": "Do not rerun. Futureproviderlifecyclevalidationneedsregisteredtrustedhost/nativeWearhostorphysicaldevice;noauthorityforadditionalCI. Reconcile remainingfixedmatrixwithoutnewrun.",
+  "raw_checks": [
+    {
+      "name": "install watch-original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install watch-rebuilt.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install tilehost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original tile provider discoverable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original service probe complete",
+      "passed": false,
+      "detail": "$Stub$Proxy.bindServiceInstance(IActivityManager.java:5375)\n\tat android.app.ContextImpl.bindServiceCommon(ContextImpl.java:2035)\n\tat android.app.ContextImpl.bindService(ContextImpl.java:1951)\n\tat com.example.widgethost.ProviderServiceProbe.lambda$bind$1(ProviderServiceProbe.java:15)\n\tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)\n\tat com.example.widgethost.ProviderServiceProbe.lambda$ui$0(ProviderServiceProbe.java:10)\n\tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:942)\n\tat android.os.Handler.dispatchMessage(Handler.java:99)\n\tat android.os.Looper.loopOnce(Looper.java:201)\n\tat android.os.Looper.loop(Looper.java:288)\n\tat com.example.widgethost.ProviderServiceProbe.main(ProviderServiceProbe.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:355)\n"
+    },
+    {
+      "name": "original PrayerComplicationService actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original PrayerComplicationService actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateGregComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateGregComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateHijriComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateHijriComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateBothComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateBothComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original NextTimeComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original NextTimeComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original UpcomingCountdownComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original UpcomingCountdownComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison tile provider discoverable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison service probe complete",
+      "passed": false,
+      "detail": "xternalSyntheticLambda2.run(D8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:942)\n\tat android.os.Handler.dispatchMessage(Handler.java:99)\n\tat android.os.Looper.loopOnce(Looper.java:201)\n\tat android.os.Looper.loop(Looper.java:288)\n\tat com.example.widgethost.ProviderServiceProbe.main(ProviderServiceProbe.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:355)\nCaused by: android.os.RemoteException: Remote stack trace:\n\tat com.android.server.am.ActiveServices.bindServiceLocked(ActiveServices.java:2773)\n\tat com.android.server.am.ActivityManagerService.bindServiceInstance(ActivityManagerService.java:12725)\n\tat com.android.server.am.ActivityManagerService.bindServiceInstance(ActivityManagerService.java:12681)\n\tat android.app.IActivityManager$Stub.onTransact(IActivityManager.java:2518)\n\tat com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2637)\n\n"
+    },
+    {
+      "name": "comparison PrayerComplicationService actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison PrayerComplicationService actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateGregComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateGregComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateHijriComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateHijriComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateBothComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateBothComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison NextTimeComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison NextTimeComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison UpcomingCountdownComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison UpcomingCountdownComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    }
+  ]
+}
