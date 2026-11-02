@@ -663,3 +663,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 08:24 same-host renderer build fixture failure
 -41397425771 no runtime evidence: tiles1.4.1 minSdk26 conflicts with phonehelper23. Isolate Wear-onlyrenderer innewtilehost min26; keep phonehelper23, no productchange. Retrysamefiniteprobe/render.
+
+## Nov2 08:45 same-host green but invalid capture
+-41399531951 actualpixelsStarting(original)/Charging(comparison),notrenderorparityproofdespitegreen. Addunplug/startupsettle/boundedactualDhuhrdestinationpredicate/attemptcaptures/asyncrendercompletionlogs. Productunchanged.
