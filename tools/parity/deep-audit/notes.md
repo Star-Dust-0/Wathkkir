@@ -715,3 +715,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 18:47 R2 event timing triage
 Recovered41242177532rawlogs/screens/source: exactnexttarget1793451120000allfour;originalENfire12:05:00.000versuscomparison.002tick/.038boundary/.041Homeupdate. Floor remaining147onlyatexactminuteand146after. ARbothfire.001andboth146. ActualState.nowfororiginalframe notlogged, so mechanismstronglygroundedbutcontrolledsame-instantprooffuture. No product patch. See idle-boundary-timing-triage.json.
+
+## Nov2 19:28 nested transaction closeout
+41484132263:583checks0fail,24/24appcroppixels exact,all24actualpairsinspected. Actualwheelgesturetargets2359/0000andDBSave,both12/24hENAR. NestedCancelandnestedSave/parentCancelrollback09. Edittagselect/removeSaveCancelrelationsandtrimmedtextagreeallfour. Firstfailed41475193274retained,no productpatch. A1/A2boundedcasesclose,notglobalparity.
