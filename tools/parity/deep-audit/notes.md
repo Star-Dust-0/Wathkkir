@@ -642,3 +642,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 06:25 disable-snooze first fixture confound
 -41386209714 47checks0fail6pairs6same but route() force-stopped app afterSnooze,removingpendingalarmsbeforeactualdisable. Notcancellationproof. Retainfirstresult,retrywithoutforce-stopbetweenSnooze/DisableandcapturependingimmediatelybeforeDisable. No productpatch.
+
+## Nov2 06:50 actual disable retains pending snooze in BOTH apps
+-41388389330 51checks4fails(sharedwrongremovalexpectation),6pairs2rawsame,all6actualpairsinspected. No force-stop betweenSnoozeandDisable; same liveAlarmidentity/due survives actualDisable inoriginalandcomparisonENAR. Neitherforegroundsbyformerdeadlinewhiledisabled. Preserve shippedquirk,noschedulerpatch. Re-enablebeforedeadline/unobservable receiverexecution/audio/deepidle/motionunproven. Returnscroll/header/clockresidualsremain.
