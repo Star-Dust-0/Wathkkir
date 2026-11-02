@@ -4987,45 +4987,97 @@
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "search-icon",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en search action",
+        "original-ar search action",
+        "comparison-en search action",
+        "comparison-ar search action"
+      ]
     },
     {
       "id": "hisn.search-text",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "search-text",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en enter empty-result query",
+        "original-en no results",
+        "original-en clear query",
+        "original-ar enter empty-result query",
+        "original-ar no results",
+        "original-ar clear query",
+        "comparison-en enter empty-result query",
+        "comparison-en no results",
+        "comparison-en clear query",
+        "comparison-ar enter empty-result query",
+        "comparison-ar no results",
+        "comparison-ar clear query"
+      ]
     },
     {
       "id": "hisn.all",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "all",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en All filter",
+        "original-ar All filter",
+        "comparison-en All filter",
+        "comparison-ar All filter"
+      ]
     },
     {
       "id": "hisn.favorites-filter",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "favorites-filter",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en favorite filter",
+        "original-en favorite chapter visible",
+        "original-ar favorite filter",
+        "original-ar favorite chapter visible",
+        "comparison-en favorite filter",
+        "comparison-en favorite chapter visible",
+        "comparison-ar favorite filter",
+        "comparison-ar favorite chapter visible"
+      ]
     },
     {
       "id": "hisn.chapter-open",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "chapter-open",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en open short chapter",
+        "original-ar open short chapter",
+        "comparison-en open short chapter",
+        "comparison-ar open short chapter"
+      ]
     },
     {
       "id": "hisn.chapter-star",
@@ -5050,54 +5102,118 @@
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "chapter-favorite",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en chapter favorite",
+        "original-ar chapter favorite",
+        "comparison-en chapter favorite",
+        "comparison-ar chapter favorite"
+      ]
     },
     {
       "id": "hisn.read",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "read",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en mark read",
+        "original-ar mark read",
+        "comparison-en mark read",
+        "comparison-ar mark read"
+      ]
     },
     {
       "id": "hisn.add-to-azkar",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "add-to-azkar",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en add to Azkar",
+        "original-en added state present",
+        "original-en add again guarded",
+        "original-ar add to Azkar",
+        "original-ar added state present",
+        "original-ar add again guarded",
+        "comparison-en add to Azkar",
+        "comparison-en added state present",
+        "comparison-en add again guarded",
+        "comparison-ar add to Azkar",
+        "comparison-ar added state present",
+        "comparison-ar add again guarded"
+      ]
     },
     {
       "id": "hisn.item-counter",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "item-counter",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en counter done",
+        "original-en counter resets",
+        "original-ar counter done",
+        "original-ar counter resets",
+        "comparison-en counter done",
+        "comparison-en counter resets",
+        "comparison-ar counter done",
+        "comparison-ar counter resets"
+      ]
     },
     {
       "id": "hisn.item-info",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "item-info",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en show notes",
+        "original-en hide notes",
+        "original-ar show notes",
+        "original-ar hide notes",
+        "comparison-en show notes",
+        "comparison-en hide notes",
+        "comparison-ar show notes",
+        "comparison-ar hide notes"
+      ]
     },
     {
       "id": "hisn.item-star",
       "source": "app/src/main/java/com/example/ui/hisn/HisnScreens.kt",
       "control": "item-star",
       "scenario": "searchfullcollectionwhilefavoriteson; chapter/itemfavorite; read/addguard; counter0/reset; infoexpand/collapse",
-      "evidence": [],
-      "limits": "41142551606isfiniteonechapterlead. Perchapter/itemvariants, widepane, scroll/motionandallsearchnormalizationnotproven.",
-      "status": "unmapped"
+      "evidence": [
+        "41142551606"
+      ],
+      "limits": "One short chapter ID4/item19, ENlight/ARdark. Exact named taps recorded,32/32semantic pairs agree. Final DB agrees apart from read timestamps:6favorites including chapter4/item19 and chapter4/item0,1read,6dhikr. No positive nonfavorite query tested, despite old harness comment claiming it. No chapter-list star, app-barBack(two OSBacks only), wide-pane, all corpus or motion claim.",
+      "status": "bounded recorded assertion evidence",
+      "exact_assertions": [
+        "original-en item favorite",
+        "original-ar item favorite",
+        "comparison-en item favorite",
+        "comparison-ar item favorite"
+      ]
     },
     {
       "id": "hisn.two-pane",

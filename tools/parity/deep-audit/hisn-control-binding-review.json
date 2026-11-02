@@ -1,0 +1,599 @@
+{
+  "run": "41142551606",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41142551606",
+  "checks": 79,
+  "failures": 0,
+  "semantic_pairs": 32,
+  "same_pairs": 32,
+  "source_review": [
+    "HisnScreens.kt filteredHisnChapters has favorites-only empty-query filtering, fullcollection nonempty-query matching and favorites pinning. The historical empty-result query does not prove positive nonfavorite results.",
+    "Chapter action favorite callback separate from list-star callback; only chapter action bound. OSBack exercised, no appbar tap proof.",
+    "HisnChapterContent Add callback guarded by tapped/alreadyAdded; recorded second disabled Added button tap is UI state plus final DB, not callback invocation.",
+    "Statistics is read-only. CoreDaos.clearHistory is declared, repository/UI has no call. No reachable global import/export/reset-data control found in reviewed SettingsContent/MainScreen/Statistics/DAOs. This is source scope, not proof absent from unknown original source."
+  ],
+  "bound_rows": [
+    "hisn.search-icon",
+    "hisn.search-text",
+    "hisn.all",
+    "hisn.favorites-filter",
+    "hisn.chapter-open",
+    "hisn.chapter-favorite",
+    "hisn.read",
+    "hisn.add-to-azkar",
+    "hisn.item-counter",
+    "hisn.item-info",
+    "hisn.item-star"
+  ],
+  "raw_named_checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en open short chapter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en counter done",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en counter resets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en show notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en hide notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en chapter favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en item favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en mark read",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add to Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en added state present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en add again guarded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en favorite filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en favorite chapter visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en search action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en enter empty-result query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en no results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en clear query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar open short chapter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar counter done",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar counter resets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar show notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar hide notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar chapter favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar item favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar mark read",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add to Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar added state present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar add again guarded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar favorite filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar favorite chapter visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar search action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar enter empty-result query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar no results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar clear query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en open short chapter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en counter done",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en counter resets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en show notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en hide notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en chapter favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en item favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en mark read",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add to Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en added state present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en add again guarded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en favorite filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en favorite chapter visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en search action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en enter empty-result query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en no results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en clear query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar open short chapter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar counter done",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar counter resets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar show notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar hide notes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar chapter favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar item favorite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar mark read",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add to Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar added state present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar add again guarded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar favorite filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar favorite chapter visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar search action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar enter empty-result query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar no results",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar clear query",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "normalized_db_observation": {
+    "original-en-hisn-final": {
+      "favorites": [
+        [
+          1,
+          29,
+          0
+        ],
+        [
+          2,
+          30,
+          0
+        ],
+        [
+          3,
+          31,
+          0
+        ],
+        [
+          4,
+          96,
+          0
+        ],
+        [
+          5,
+          4,
+          19
+        ],
+        [
+          6,
+          4,
+          0
+        ]
+      ],
+      "read_without_timestamp": [
+        [
+          1,
+          4,
+          "2026-10-30"
+        ]
+      ],
+      "dhikr_count": 6
+    },
+    "original-ar-hisn-final": {
+      "favorites": [
+        [
+          1,
+          29,
+          0
+        ],
+        [
+          2,
+          30,
+          0
+        ],
+        [
+          3,
+          31,
+          0
+        ],
+        [
+          4,
+          96,
+          0
+        ],
+        [
+          5,
+          4,
+          19
+        ],
+        [
+          6,
+          4,
+          0
+        ]
+      ],
+      "read_without_timestamp": [
+        [
+          1,
+          4,
+          "2026-10-30"
+        ]
+      ],
+      "dhikr_count": 6
+    },
+    "comparison-en-hisn-final": {
+      "favorites": [
+        [
+          1,
+          29,
+          0
+        ],
+        [
+          2,
+          30,
+          0
+        ],
+        [
+          3,
+          31,
+          0
+        ],
+        [
+          4,
+          96,
+          0
+        ],
+        [
+          5,
+          4,
+          19
+        ],
+        [
+          6,
+          4,
+          0
+        ]
+      ],
+      "read_without_timestamp": [
+        [
+          1,
+          4,
+          "2026-10-30"
+        ]
+      ],
+      "dhikr_count": 6
+    },
+    "comparison-ar-hisn-final": {
+      "favorites": [
+        [
+          1,
+          29,
+          0
+        ],
+        [
+          2,
+          30,
+          0
+        ],
+        [
+          3,
+          31,
+          0
+        ],
+        [
+          4,
+          96,
+          0
+        ],
+        [
+          5,
+          4,
+          19
+        ],
+        [
+          6,
+          4,
+          0
+        ]
+      ],
+      "read_without_timestamp": [
+        [
+          1,
+          4,
+          "2026-10-30"
+        ]
+      ],
+      "dhikr_count": 6
+    }
+  },
+  "open_B2_cases": [
+    "Calendar prev/next/day/year-boundary and event-reminder actual alarm, no additional pass inferred",
+    "Positive fullcollection query while Favorites selected",
+    "Appbar chapter Back/list-star and wide pane remain untested, decide representative critical vs optional sampling at closeout"
+  ]
+}
