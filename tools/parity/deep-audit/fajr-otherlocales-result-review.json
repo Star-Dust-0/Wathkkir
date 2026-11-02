@@ -1,0 +1,1146 @@
+{
+  "run": "41382042074",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41382042074",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Prière du Fajr', 'body': \"C'est l'heure de la prière du Fajr\"}"
+    },
+    {
+      "name": "original-fr actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-fr dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Fajr-Gebet', 'body': 'Es ist Zeit für das Fajr-Gebet'}"
+    },
+    {
+      "name": "original-de actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-de dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Oración del Fajr', 'body': 'Es la hora de la oración del Fajr'}"
+    },
+    {
+      "name": "original-es actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-es dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Preghiera del Fajr', 'body': \"È l'ora della preghiera del Fajr\"}"
+    },
+    {
+      "name": "original-it actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-it dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Sabah namazı', 'body': 'Sabah namazı vakti geldi'}"
+    },
+    {
+      "name": "original-tr actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-tr dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'نمازِ فجر', 'body': 'اب فجر کی نماز کا وقت ہو گیا ہے'}"
+    },
+    {
+      "name": "original-ur actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ur dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Salat Subuh', 'body': 'Sudah waktunya salat Subuh'}"
+    },
+    {
+      "name": "original-id actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-id dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Намаз фаджр', 'body': 'Время намаза фаджр наступило'}"
+    },
+    {
+      "name": "original-ru actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ru dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Oração do Fajr', 'body': 'Chegou a hora da oração do Fajr'}"
+    },
+    {
+      "name": "original-pt actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-pt dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Prière du Fajr', 'body': \"C'est l'heure de la prière du Fajr\"}"
+    },
+    {
+      "name": "comparison-fr actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-fr dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Fajr-Gebet', 'body': 'Es ist Zeit für das Fajr-Gebet'}"
+    },
+    {
+      "name": "comparison-de actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-de dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Oración del Fajr', 'body': 'Es la hora de la oración del Fajr'}"
+    },
+    {
+      "name": "comparison-es actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-es dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Preghiera del Fajr', 'body': \"È l'ora della preghiera del Fajr\"}"
+    },
+    {
+      "name": "comparison-it actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-it dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Sabah namazı', 'body': 'Sabah namazı vakti geldi'}"
+    },
+    {
+      "name": "comparison-tr actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-tr dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'نمازِ فجر', 'body': 'اب فجر کی نماز کا وقت ہو گیا ہے'}"
+    },
+    {
+      "name": "comparison-ur actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ur dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Salat Subuh', 'body': 'Sudah waktunya salat Subuh'}"
+    },
+    {
+      "name": "comparison-id actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-id dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Намаз фаджр', 'body': 'Время намаза фаджр наступило'}"
+    },
+    {
+      "name": "comparison-ru actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ru dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt verified Fajr settings destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt actual enable row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt enabled before Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt actual Test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt Test alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt actual localized Snooze",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt snooze pending intent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt actual receiver delivery foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt native title/body extracted",
+      "passed": true,
+      "detail": "{'title': 'Oração do Fajr', 'body': 'Chegou a hora da oração do Fajr'}"
+    },
+    {
+      "name": "comparison-pt actual localized Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-pt dismissed foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "paired-fr native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Prière du Fajr', 'body': \"C'est l'heure de la prière du Fajr\"}, 'comparison': {'title': 'Prière du Fajr', 'body': \"C'est l'heure de la prière du Fajr\"}}"
+    },
+    {
+      "name": "paired-de native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Fajr-Gebet', 'body': 'Es ist Zeit für das Fajr-Gebet'}, 'comparison': {'title': 'Fajr-Gebet', 'body': 'Es ist Zeit für das Fajr-Gebet'}}"
+    },
+    {
+      "name": "paired-es native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Oración del Fajr', 'body': 'Es la hora de la oración del Fajr'}, 'comparison': {'title': 'Oración del Fajr', 'body': 'Es la hora de la oración del Fajr'}}"
+    },
+    {
+      "name": "paired-it native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Preghiera del Fajr', 'body': \"È l'ora della preghiera del Fajr\"}, 'comparison': {'title': 'Preghiera del Fajr', 'body': \"È l'ora della preghiera del Fajr\"}}"
+    },
+    {
+      "name": "paired-tr native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Sabah namazı', 'body': 'Sabah namazı vakti geldi'}, 'comparison': {'title': 'Sabah namazı', 'body': 'Sabah namazı vakti geldi'}}"
+    },
+    {
+      "name": "paired-ur native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'نمازِ فجر', 'body': 'اب فجر کی نماز کا وقت ہو گیا ہے'}, 'comparison': {'title': 'نمازِ فجر', 'body': 'اب فجر کی نماز کا وقت ہو گیا ہے'}}"
+    },
+    {
+      "name": "paired-id native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Salat Subuh', 'body': 'Sudah waktunya salat Subuh'}, 'comparison': {'title': 'Salat Subuh', 'body': 'Sudah waktunya salat Subuh'}}"
+    },
+    {
+      "name": "paired-ru native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Намаз фаджр', 'body': 'Время намаза фаджр наступило'}, 'comparison': {'title': 'Намаз фаджр', 'body': 'Время намаза фаджр наступило'}}"
+    },
+    {
+      "name": "paired-pt native receiver localized title/body exact pair",
+      "passed": true,
+      "detail": "{'original': {'title': 'Oração do Fajr', 'body': 'Chegou a hora da oração do Fajr'}, 'comparison': {'title': 'Oração do Fajr', 'body': 'Chegou a hora da oração do Fajr'}}"
+    }
+  ],
+  "pairs": 27,
+  "raw_equal": 23,
+  "all_actual_pairs_inspected": true,
+  "native_notices": {
+    "original-fr": {
+      "title": "Prière du Fajr",
+      "body": "C'est l'heure de la prière du Fajr"
+    },
+    "original-de": {
+      "title": "Fajr-Gebet",
+      "body": "Es ist Zeit für das Fajr-Gebet"
+    },
+    "original-es": {
+      "title": "Oración del Fajr",
+      "body": "Es la hora de la oración del Fajr"
+    },
+    "original-it": {
+      "title": "Preghiera del Fajr",
+      "body": "È l'ora della preghiera del Fajr"
+    },
+    "original-tr": {
+      "title": "Sabah namazı",
+      "body": "Sabah namazı vakti geldi"
+    },
+    "original-ur": {
+      "title": "نمازِ فجر",
+      "body": "اب فجر کی نماز کا وقت ہو گیا ہے"
+    },
+    "original-id": {
+      "title": "Salat Subuh",
+      "body": "Sudah waktunya salat Subuh"
+    },
+    "original-ru": {
+      "title": "Намаз фаджр",
+      "body": "Время намаза фаджр наступило"
+    },
+    "original-pt": {
+      "title": "Oração do Fajr",
+      "body": "Chegou a hora da oração do Fajr"
+    },
+    "comparison-fr": {
+      "title": "Prière du Fajr",
+      "body": "C'est l'heure de la prière du Fajr"
+    },
+    "comparison-de": {
+      "title": "Fajr-Gebet",
+      "body": "Es ist Zeit für das Fajr-Gebet"
+    },
+    "comparison-es": {
+      "title": "Oración del Fajr",
+      "body": "Es la hora de la oración del Fajr"
+    },
+    "comparison-it": {
+      "title": "Preghiera del Fajr",
+      "body": "È l'ora della preghiera del Fajr"
+    },
+    "comparison-tr": {
+      "title": "Sabah namazı",
+      "body": "Sabah namazı vakti geldi"
+    },
+    "comparison-ur": {
+      "title": "نمازِ فجر",
+      "body": "اب فجر کی نماز کا وقت ہو گیا ہے"
+    },
+    "comparison-id": {
+      "title": "Salat Subuh",
+      "body": "Sudah waktunya salat Subuh"
+    },
+    "comparison-ru": {
+      "title": "Намаз фаджр",
+      "body": "Время намаза фаджр наступило"
+    },
+    "comparison-pt": {
+      "title": "Oração do Fajr",
+      "body": "Chegou a hora da oração do Fajr"
+    }
+  },
+  "proven": "FR DE ES IT TR UR ID RU PT actual enabled row/Test/localized Snooze/real elapsed1minuteAlarmManagerreceiver/native title+body exactpair/shade/localizedDismiss. All27 actual pairs inspected, alarm labels/order/layout/native body agree. No product copy patch needed.",
+  "residuals": [
+    "OS test-only app label Wathkkir Comparison",
+    "four native shade token pairs differ while actual displayed title/body agree; see raw states"
+  ],
+  "not_proven": [
+    "physical audio/vibration",
+    "deep idle",
+    "lockscreen policy",
+    "notification cleanup",
+    "all shared translation keys",
+    "fullpixel/motion"
+  ]
+}

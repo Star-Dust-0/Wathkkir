@@ -633,3 +633,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 05:14 other9locale route predicate miss
 -41378407135 30checks27fails27pairs26same. Actualroute did reach localizedFajrsettings, but helperonlyacceptedENAlarmon/off. NoTest/deliverywasattempted,noproductmismatchproof. Retrylocalizesdestinationpredicateandusesactualenablerowafterstartupseedbecameoff. No productchange.
+
+## Nov2 06:02 other9locale Fajr native notification finite result
+-41382042074 210checks0fail27pairs23rawsame,all27actualpairsinspected. FR DE ES IT TR UR ID RU PT actualenable/Test/localizedSnooze/real1minAlarmManagerreceiver/native title+body/shade/localizedDismiss agree. No copyrepairneeded. OSappidentity/fournativeshaderawtokenresiduals,notfullpixels/motion/audio/deepidle/lockscreenpolicy/cleanup/allsharedkeysproof. Priorfailedroutefixture retained.
