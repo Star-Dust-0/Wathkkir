@@ -113,7 +113,14 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   assert check('actual Snooze',tap('Snooze') or tap('غفوة')),'No Snooze';time.sleep(1)
   before=adb('shell','dumpsys','alarm');(out/(slug+'-pending-before-disable.txt')).write_text(before)
   check('snooze pending before disable','ACTION_SNOOZE_TRIGGER' in before)
-  assert check('return settings route',route(label)),'No settings'
+  # Snooze already finishes Activity back to settings. Never force-stop here:
+  # Android cancels alarms on force-stop, which would make disable proof vacuous.
+  for _ in range(7):
+   if any(n.get('text') in ['Alarm on','المنبه مفعّل'] for n in ET.fromstring(tree()).iter('node')):break
+   swipe(False)
+  check('settings returned without force-stop',any(n.get('text') in ['Alarm on','المنبه مفعّل'] for n in ET.fromstring(tree()).iter('node')))
+  pre_disable=adb('shell','dumpsys','alarm');(out/(slug+'-immediately-before-disable.txt')).write_text(pre_disable)
+  check('pending survives return settings before disable','ACTION_SNOOZE_TRIGGER' in pre_disable)
   assert check('actual disable row',tap('Alarm on' if lang=='en' else 'المنبه مفعّل')),'No disable';time.sleep(1);shot('disabled-with-pending-snooze')
   q=fp('disabled');check('disabled preference',q.get('is_alarm_enabled')=='false')
   after=adb('shell','dumpsys','alarm');(out/(slug+'-pending-after-disable.txt')).write_text(after)
