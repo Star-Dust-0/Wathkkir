@@ -621,3 +621,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 03:41 actual elapsed auto-stop finite result
 -41371509922 67checks0fail12pairs11rawequal,all12actualpairsinspected. ActualTestcount0/duration5,count3/duration15 foregroundat40s thenreturnedby~65s bothapps; count0->1andsnoozependingintent,count3stays3. Fixed60s agreeswithshippedsamples,notlabelled5/15minbehavior,nochange. WrongvibrationfixturekeyactualONboth,nooffproof. Count3nonewalarmnotindependentlyasserted. ARduration5returnscrollresidual+ENminuteclockremain.2durationrowsadditionalexactbound. Noaudio/redelivery/motionproof.
+
+## Nov2 04:10 actual snooze redelivery and text mismatch
+-41373951368 63checks0fail10/10semanticpairs,all10actualpairsinspected. RealelapsedAlarmManagerredelivery/count1/no-maindate/Dismisspass. Actualnativeheads-upnotificationexcludedfromhierarchyrevealedconfirmedENARFajrNowbodymismatchagainstshipped. RestoreexactoriginalENARvaluesonly;other9localesremainunverified. Addednative notification assertion; no receiverlogicpatch. Nooverallpassclaimuntilrepairverified.
