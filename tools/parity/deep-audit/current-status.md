@@ -309,3 +309,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 04:10 actual snooze redelivery and text mismatch
 -41373951368 63checks0fail10/10semanticpairs,all10actualpairsinspected. RealelapsedAlarmManagerredelivery/count1/no-maindate/Dismisspass. Actualnativeheads-upnotificationexcludedfromhierarchyrevealedconfirmedENARFajrNowbodymismatchagainstshipped. RestoreexactoriginalENARvaluesonly;other9localesremainunverified. Addednative notification assertion; no receiverlogicpatch. Nooverallpassclaimuntilrepairverified.
+
+## Nov2 04:31 Fajr receiver notification repair verified
+-41376230491 67checks0fail10pairs7rawsame,all10actualpairsinspected. RealAlarmManagersnoozeredelivery+receivercount1/no-maindate+Dismisspass; exactnativeENARFajrNowbody matchesoriginal after3b35c59. ENclock/ARreturnscrollresiduals andOSapplabelsremain. Noother9locale/audio/physicalidle/lockscreenpolicy/notificationcleanupproof.
