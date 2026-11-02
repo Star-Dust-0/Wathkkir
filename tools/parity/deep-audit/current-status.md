@@ -58,7 +58,7 @@ Counts are scoped evidence, never total parity. Green workflow status alone is n
 - Reboot41245865681:13/0fourIDspersistandTICK/BOUNDARYbeforehostresumeinboth. Actualpixelsinspectedbuttimezone/clockbootresetmeansvisualparityunproven. Earlierenvironmentfailuresretainedinnotes.
 
 ## Open
-- Prior watchtile preview arc-edge2346pixel residual: same actual serialized layouts render pixel-identically through one AndroidX renderer in finite fixture41401766263. Preview-only residual retained, no product patch justified; other states/provider lifecycle/dynamic/OEM not proved.
+- Prior watchtile preview arc-edge2346pixel residual: same actual serialized layouts render pixel-identically through one AndroidX renderer in finite fixture41401766263. Preview-only residual retained, no product patch justified; 24ENAR/theme/progress-statepairsalso0pixel41404282026; provider lifecycle/dynamic/OEM not proved.
 - Scroll trajectories/settling and motion frame-by-frame equivalence.
 - Complete permutations/API/device-size, permission denial/onboarding, alert/background/boundary/reboot/idle and phone-watch delivery matrix.
 - Physical sensors, Samsung lock host, motor/audio/rotary and connected device delivery.
