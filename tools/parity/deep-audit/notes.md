@@ -675,3 +675,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 09:34 same-host tile matrix finite identity
 -41404282026 all48actualdestinations,24pairs(allactualpixelsinspected),24wholeframes0differentpixels. EN/ARx4themesxstartfloor/middle24h/iqamaendclamp. Explicitglobals/context/state/nativefalseonly. BothactualAPKserializedlayouts,oneAndroidXrenderer. Priorpreview2346arc-edge residualnotreproducedhere,noproductpatchjustified. Notproviderlifecycle/prefsIO/dynamic/OEMproof.
+
+## Nov2 09:36 bell slider residual bounded repeat
+-Recovered41194167863actualpixelsreinspected:1/60sliders0diff,30thumb/trackedge372EN/366ARsmallresidualdespitesamerange/bounds. No productpatch. Actual10/30/45nestedinputwith1/6/8secondssettledrepeatcaptureplannedENARtoisolateanimation/samplingbeforedeciding. Notdragtrajectory/audio/OEMproof.
