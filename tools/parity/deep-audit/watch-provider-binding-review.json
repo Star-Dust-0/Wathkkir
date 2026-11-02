@@ -1,0 +1,14 @@
+{
+  "finding": "ComparisonmanifestPrayerTileServiceintentfilterBIND_UPDATE_REQUESTvsoriginalBIND_TILE_PROVIDER;tiles1.4.1onBindrejectsotheractions.",
+  "original_manifest": "phone-independentwatchAPK1.1.2code73,decodedexactservice99-104",
+  "original_action": "androidx.wear.tiles.action.BIND_TILE_PROVIDER",
+  "comparison_old_action": "androidx.wear.tiles.action.BIND_UPDATE_REQUEST",
+  "repair": "RestoreoriginalBIND_TILE_PROVIDERactiononly.",
+  "sources": [
+    "https://developer.android.com/reference/androidx/wear/tiles/TileService",
+    "https://dl.google.com/dl/android/maven2/androidx/wear/tiles/tiles/1.4.1/tiles-1.4.1-sources.jar"
+  ],
+  "probe_scope": "ActualAndroidbindService/IPCfromrootedemulatorhostperprovider,activation/update/deactivationcallbackandtap. Notnativewatchfaceactivation/permissionpath,notphysicalwatch,notpairedDataLayer. No preview-onlyclaims. Pendingcompile/runtime.",
+  "permission_boundary": "Protectedservicepermissionintentionallybypassedbyrootverificationhost,notproductionpermissionchange.",
+  "user_approved_watch_scope": "OriginalownerOct3020:29:36answerafter20:28:02questionkeepnewdynamicring/no-minutepulse;codecommentsnotauthority."
+}
