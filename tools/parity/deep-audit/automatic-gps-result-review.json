@@ -1,0 +1,756 @@
+{
+  "run": "41369169890",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41369169890",
+  "head": "99c4ddc7f88c1f2b57f654fd0e5597439cd74752",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install uiprobe.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-A-london emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-A-london OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-A-london actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS A uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS A retains derived place key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS A applies alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-B-cairo emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-B-cairo OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-B-cairo actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS B uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS B has distinct geocoded key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS B no A alias displayed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS B preserves stored A alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-return-A emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-return-A OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en gps-return-A actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS return A key restored",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS return A alias applied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS return A force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS return A alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS automatic mode retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en GPS return A saved key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-A-london emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-A-london OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-A-london actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS A uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS A retains derived place key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS A applies alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-B-cairo emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-B-cairo OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-B-cairo actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS B uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS B has distinct geocoded key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS B no A alias displayed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS B preserves stored A alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-return-A emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-return-A OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar gps-return-A actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS return A key restored",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS return A alias applied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS return A force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS return A alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS automatic mode retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar GPS return A saved key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-A-london emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-A-london OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-A-london actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS A uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS A retains derived place key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS A applies alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-B-cairo emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-B-cairo OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-B-cairo actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS B uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS B has distinct geocoded key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS B no A alias displayed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS B preserves stored A alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-return-A emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-return-A OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en gps-return-A actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS return A key restored",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS return A alias applied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS return A force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS return A alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS automatic mode retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en GPS return A saved key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar location route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic mode fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar null place key fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual auto alias editor press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar auto alias text entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual auto alias save press",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived structural g key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived key saves alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar successful save closes editor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic alias force-stop reopen route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar automatic mode remains selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar derived key retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar alias visible reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-A-london emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-A-london OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-A-london actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS A uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS A retains derived place key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS A applies alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-B-cairo emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-B-cairo OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-B-cairo actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS B uses injected coordinates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS B has distinct geocoded key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS B no A alias displayed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS B preserves stored A alias",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-return-A emulator geo command accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-return-A OS has nonnull GPS fix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar gps-return-A actual current location row refresh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS return A key restored",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS return A alias applied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS return A force-stop reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS return A alias retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS automatic mode retained reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar GPS return A saved key retained reopen",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pairs": 16,
+  "raw_equal_pairs": 16,
+  "all_actual_pairs_inspected": true,
+  "verified": "OS nonnull GPS fixes plus app coordinates/key/name; g|gb|greater london -> g|eg|ميدان التحرير -> original London key/alias and force-stop reopen. Actual geocoder untouched. Isolated helper activates OS listener with background grant.",
+  "limits": "Emulator fixtures, actual row refresh each leg. Not physical sensors/movement, jitter, autonomous refresh, transport, complete pixels/motion. Earlier stale GPS warning residual disappeared with valid fixes, not patched away.",
+  "bound_controls": [
+    "location.gps",
+    "location.alias.return-A"
+  ]
+}

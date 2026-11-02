@@ -294,3 +294,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 02:48 GPS listener background fixture gap
 -41367717321 148checks24fails,all16pairsinspected10rawequal. OSlistener registeredbutinactive{na},backgroundhelpernoforegroundlocationeligibility,providerOFF/lastnull. FeedProcesscrashedatforce-stopcleanupnotconfirmedearlycrash. Grantbackgroundpermissiononlytoseparateverificationhelper,notproduct. NoA-B-Aprooforproductpatch.
+
+## Nov2 03:13 actual emulator GPS A-B-A finite result
+-41369169890 148checks0fail16/16semanticpairs,all16actualpairsinspected. OSnonnullGPSfixes+storedcoords verifyLondon/Cairo/London. ActualCurrentlocationrow invokesappgeocoder,distinctg|gb|greaterlondon/g|eg|ميدانالتحرير keys; BpreservesAalias,Arestoresdisplayandkey/reopen. SeparatehelperbackgroundgrantactivatesOSlistener,noappkeyseed/productpatch.2rowsbound. NotphysicalGPS/jitter/passiveautomaticrefresh/transport/motion. Earlier nofixredruns retained; staleGPSwarningresidualclearswithvalidfixes.
