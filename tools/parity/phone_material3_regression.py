@@ -3,6 +3,9 @@ import subprocess,pathlib,shutil,json
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);results=[]
 for scenario in ['phone_settings_controls','phone_location_pickers','phone_bell_cancel']:
  work=pathlib.Path('regression-'+scenario);work.mkdir(exist_ok=True)
+ for apk in ['original.apk','comparison.apk','widgethost.apk']:
+  target=work/apk
+  if not target.exists():target.symlink_to(pathlib.Path(apk).resolve())
  res=subprocess.run(['python3','-u',str(pathlib.Path('tools/parity',scenario+'.py').resolve())],cwd=work)
  data=work/'evidence'
  if data.exists():shutil.copytree(data,out/scenario,dirs_exist_ok=True)
