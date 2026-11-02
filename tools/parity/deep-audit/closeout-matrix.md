@@ -10,7 +10,7 @@ Close the fixed packages below once each has a source review plus exact evidence
 
 Nov2 16:51: confirmed Add-selected-tag coroutine-path mismatch from41455920401. Repair563b544 verified in observed resumed-insert path by41465825842. All22pairs inspected,20app-content exact and2caret-only. Raw workflow255checks12parser failures retained; corrected active-only offline2/0/2/0 allfour. Immediate-return path source-preserved, not forced in runtime. Shipped resumed insert drops tags while immediate insert saves them. Bounded observed mismatch repaired; no all-path claim. The Material3 slider mismatch was repaired, followed by bounded settings/location/bell/theme/font/offset regressions. This is not a zero-defect certificate.
 
-Nov2 22:02: confirmed event-delivery crash41508248570 from literal application label giving labelRes0. Restore original resource label and notification icon, then focused delivery rerun. Not yet fixed/verified.
+Nov2 22:02: confirmed event-delivery crash41508248570 from literal application label giving labelRes0. Repair09f6521 actualENARdelivery/rearm/cancelverified41515486885.75checks5originalENdelivery-windowfailsretained.10pairsallinspected/appcropexact. No whole-run green/parityclaim.
 
 Nov2 22:06: watch tile manifest binding action differs from shipped original and exacttiles1.4.1onBindcontract. RestoredBIND_TILE_PROVIDER; actual protected-service IPC probe prepared, unrun. Probe root host cannot prove native watchface activation/permissions.
 

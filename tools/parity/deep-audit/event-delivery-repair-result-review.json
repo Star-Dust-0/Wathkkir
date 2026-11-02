@@ -1,0 +1,500 @@
+{
+  "run": "41515486885",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41515486885",
+  "commit": "09f6521c2cc48fcd4d69666c4ddba1722daf0d39",
+  "checks": 75,
+  "failures": 5,
+  "verdict": "ComparisoneventlabelrepairverifiedactualdeliveryENAR. Redoverallresultretained:originalENdidnotdeliver/rearmduring12secondwindow,notcalledparity. OriginalARandcomparisonENARall18casecheckspass. No rerunjustforgreen.",
+  "comparison_notification": "actualactivepkg/channelrecord,currentJan50900titleWathkkir,ArabicIsramirajbody,yearlynexttarget1829718000000,noeventreceiverprocesscrash,cancelIDsandalarmsclearbothlocales",
+  "visual": "10pairsallinspected3sheets,all10appcropexact. NotificationUInotvisuallyopened;dumpsysnotificationevidenceonly.",
+  "original_only_failure": "originalEN75checkrun5failedconditions:activepost/title/time/body,nextrearm. originalENwasobserveddeliveringin41508248570. Cannotattributeexactcausefromlogs;AlarmManagerfalsewakeupsrecorded,notproofcause.",
+  "pixels": [
+    {
+      "scene": "ar-event-after-delivery",
+      "pixels": 2631,
+      "app_pixels": 0,
+      "bbox": [
+        204,
+        46,
+        356,
+        84
+      ]
+    },
+    {
+      "scene": "ar-event-off",
+      "pixels": 2631,
+      "app_pixels": 0,
+      "bbox": [
+        204,
+        46,
+        356,
+        84
+      ]
+    },
+    {
+      "scene": "ar-event-on",
+      "pixels": 2631,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        319,
+        84
+      ]
+    },
+    {
+      "scene": "ar-event-reopen",
+      "pixels": 2631,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        319,
+        84
+      ]
+    },
+    {
+      "scene": "ar-events-initial",
+      "pixels": 2631,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        319,
+        84
+      ]
+    },
+    {
+      "scene": "en-event-after-delivery",
+      "pixels": 3196,
+      "app_pixels": 0,
+      "bbox": [
+        146,
+        46,
+        356,
+        84
+      ]
+    },
+    {
+      "scene": "en-event-off",
+      "pixels": 3196,
+      "app_pixels": 0,
+      "bbox": [
+        146,
+        46,
+        356,
+        84
+      ]
+    },
+    {
+      "scene": "en-event-on",
+      "pixels": 3569,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        931,
+        84
+      ]
+    },
+    {
+      "scene": "en-event-reopen",
+      "pixels": 3757,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        967,
+        84
+      ]
+    },
+    {
+      "scene": "en-events-initial",
+      "pixels": 3569,
+      "app_pixels": 0,
+      "bbox": [
+        167,
+        46,
+        931,
+        84
+      ]
+    }
+  ],
+  "raw_checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "original-en actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event wallclock epoch parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #51: Alarm{11c4914 type 0 origWhen 1799132400000 whenElapsed 421284999 com.wathakker.app}\\n      tag=*walarm*:com.wathakker.app/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m27s631ms app_standby=-1s890ms device_idle=-- battery_saver=-1s890ms tare=-1s890ms\\n      whenElapsed=+4d20h59m27s631ms maxWhenElapsed=+4d20h59m27s631ms\\n      operation=PendingIntent{c765bd: PendingIntentRecord{2cca117 com.wathakker.app broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "original-en event target09local",
+      "passed": true,
+      "detail": "2027-01-05 09:00:00+02:00"
+    },
+    {
+      "name": "original-en actual active event notification delivered",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual event notification title",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual event notification current timestamp",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual event notification text",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en event next occurrence rearmed",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en event receiver no process crash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "original-ar actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event wallclock epoch parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #42: Alarm{89e8be7 type 0 origWhen 1799132400000 whenElapsed 421353197 com.wathakker.app}\\n      tag=*walarm*:com.wathakker.app/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m31s427ms app_standby=-2s606ms device_idle=-- battery_saver=-2s606ms tare=-2s606ms\\n      whenElapsed=+4d20h59m31s427ms maxWhenElapsed=+4d20h59m31s427ms\\n      operation=PendingIntent{5cc2394: PendingIntentRecord{2cca117 com.wathakker.app broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "original-ar event target09local",
+      "passed": true,
+      "detail": "2027-01-05 09:00:00+02:00"
+    },
+    {
+      "name": "original-ar actual active event notification delivered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual event notification title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual event notification current timestamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual event notification text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event next occurrence rearmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event receiver no process crash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "comparison-en actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event wallclock epoch parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #46: Alarm{e57f2de type 0 origWhen 1799132400000 whenElapsed 421416290 com.wathakker.app.compare}\\n      tag=*walarm*:com.wathakker.app.compare/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m30s562ms app_standby=-2s64ms device_idle=-- battery_saver=-2s64ms tare=-2s64ms\\n      whenElapsed=+4d20h59m30s562ms maxWhenElapsed=+4d20h59m30s562ms\\n      operation=PendingIntent{d263cbf: PendingIntentRecord{a843f8c com.wathakker.app.compare broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "comparison-en event target09local",
+      "passed": true,
+      "detail": "2027-01-05 09:00:00+02:00"
+    },
+    {
+      "name": "comparison-en actual active event notification delivered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual event notification title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual event notification current timestamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual event notification text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event next occurrence rearmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event receiver no process crash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "comparison-ar actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event wallclock epoch parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #47: Alarm{1983b81 type 0 origWhen 1799132400000 whenElapsed 421482438 com.wathakker.app.compare}\\n      tag=*walarm*:com.wathakker.app.compare/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m28s919ms app_standby=-2s652ms device_idle=-- battery_saver=-2s652ms tare=-2s652ms\\n      whenElapsed=+4d20h59m28s919ms maxWhenElapsed=+4d20h59m28s919ms\\n      operation=PendingIntent{6b8d426: PendingIntentRecord{a843f8c com.wathakker.app.compare broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "comparison-ar event target09local",
+      "passed": true,
+      "detail": "2027-01-05 09:00:00+02:00"
+    },
+    {
+      "name": "comparison-ar actual active event notification delivered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual event notification title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual event notification current timestamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual event notification text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event next occurrence rearmed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event receiver no process crash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
