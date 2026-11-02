@@ -1,0 +1,1212 @@
+{
+  "run": "41431940671",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41431940671",
+  "default_material3": "1.4.0",
+  "checks": 879,
+  "failures": 0,
+  "actual_pairs_inspected": 108,
+  "scopes": {
+    "themes": {
+      "checks": 147,
+      "pairs": 18,
+      "raw_same": 13
+    },
+    "fonts": {
+      "checks": 375,
+      "pairs": 48,
+      "raw_same": 44
+    },
+    "offsets": {
+      "checks": 357,
+      "pairs": 42,
+      "raw_same": 21
+    }
+  },
+  "verdict": "Actual Apply/Cancel/Back/reopen/preferences agree EN/AR for3theme8fontchoices and6prayeroffset plusHijri max/min/zero. All108pairs inspected. No newly confirmed dependency regression.",
+  "limits": [
+    "Most differences are scroll position or blurred background offsets, not full-frame parity.",
+    "No trajectory or all-app/global parity claim.",
+    "Small AR lower offset differences need retained exact pixel accounting, not broad mask."
+  ],
+  "pixels": {
+    "phone_all_themes": [
+      {
+        "scene": "en-auto-draft",
+        "pixels": 1352262,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-auto-applied",
+        "pixels": 1213665,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-auto-reopen",
+        "pixels": 1372374,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-light-draft",
+        "pixels": 1372374,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-light-applied",
+        "pixels": 1158466,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-light-reopen",
+        "pixels": 1199904,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2348
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dark-draft",
+        "pixels": 1199904,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2348
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-dark-applied",
+        "pixels": 720776,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-dark-reopen",
+        "pixels": 1532837,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-auto-draft",
+        "pixels": 1176903,
+        "bbox": [
+          0,
+          47,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-auto-applied",
+        "pixels": 333697,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2369
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-auto-reopen",
+        "pixels": 1454163,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2384
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-light-draft",
+        "pixels": 1454163,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2384
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-light-applied",
+        "pixels": 1072216,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2333
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-light-reopen",
+        "pixels": 1319149,
+        "bbox": [
+          12,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dark-draft",
+        "pixels": 1319149,
+        "bbox": [
+          12,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-dark-applied",
+        "pixels": 1178168,
+        "bbox": [
+          42,
+          33,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-dark-reopen",
+        "pixels": 1066009,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      }
+    ],
+    "phone_all_fonts": [
+      {
+        "scene": "en-app-draft",
+        "pixels": 674,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app-applied",
+        "pixels": 677,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app-reopen",
+        "pixels": 559,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-draft",
+        "pixels": 559,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-applied",
+        "pixels": 564,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_light-reopen",
+        "pixels": 559,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-draft",
+        "pixels": 650,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-applied",
+        "pixels": 655,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-app_bold-reopen",
+        "pixels": 710,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-draft",
+        "pixels": 710,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-applied",
+        "pixels": 712,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-system-reopen",
+        "pixels": 710,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-draft",
+        "pixels": 710,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-applied",
+        "pixels": 628,
+        "bbox": [
+          103,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-cairo-reopen",
+        "pixels": 551036,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-naskh-draft",
+        "pixels": 551036,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-naskh-applied",
+        "pixels": 1037417,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2395
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-naskh-reopen",
+        "pixels": 548967,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2392
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-amiri-draft",
+        "pixels": 548967,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2392
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-amiri-applied",
+        "pixels": 788845,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-amiri-reopen",
+        "pixels": 562420,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-ruqaa-draft",
+        "pixels": 562420,
+        "bbox": [
+          0,
+          52,
+          1068,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-ruqaa-applied",
+        "pixels": 1225762,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2397
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-ruqaa-reopen",
+        "pixels": 590493,
+        "bbox": [
+          0,
+          47,
+          1068,
+          2384
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-draft",
+        "pixels": 259,
+        "bbox": [
+          123,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-applied",
+        "pixels": 259,
+        "bbox": [
+          123,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app-reopen",
+        "pixels": 259,
+        "bbox": [
+          123,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-draft",
+        "pixels": 259,
+        "bbox": [
+          123,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-applied",
+        "pixels": 317,
+        "bbox": [
+          123,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_light-reopen",
+        "pixels": 631,
+        "bbox": [
+          102,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-draft",
+        "pixels": 631,
+        "bbox": [
+          102,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-applied",
+        "pixels": 631,
+        "bbox": [
+          102,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-app_bold-reopen",
+        "pixels": 631,
+        "bbox": [
+          102,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-draft",
+        "pixels": 631,
+        "bbox": [
+          102,
+          52,
+          141,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-applied",
+        "pixels": 829,
+        "bbox": [
+          102,
+          47,
+          967,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-system-reopen",
+        "pixels": 564,
+        "bbox": [
+          102,
+          52,
+          142,
+          79
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-draft",
+        "pixels": 564,
+        "bbox": [
+          102,
+          52,
+          142,
+          79
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-applied",
+        "pixels": 762,
+        "bbox": [
+          102,
+          47,
+          967,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-cairo-reopen",
+        "pixels": 570594,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-naskh-draft",
+        "pixels": 570594,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-naskh-applied",
+        "pixels": 455426,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2392
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-naskh-reopen",
+        "pixels": 567594,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-amiri-draft",
+        "pixels": 567594,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-amiri-applied",
+        "pixels": 389234,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2398
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-amiri-reopen",
+        "pixels": 716586,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-ruqaa-draft",
+        "pixels": 716586,
+        "bbox": [
+          0,
+          52,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-ruqaa-applied",
+        "pixels": 1159072,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2389
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-ruqaa-reopen",
+        "pixels": 795787,
+        "bbox": [
+          0,
+          47,
+          1080,
+          2400
+        ],
+        "same_tokens": true
+      }
+    ],
+    "phone_offset_sliders": [
+      {
+        "scene": "en-adj_fajr-maximum",
+        "pixels": 997421,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_fajr-minimum",
+        "pixels": 997320,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_fajr-zero",
+        "pixels": 992317,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_shuruq-maximum",
+        "pixels": 1032797,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_shuruq-minimum",
+        "pixels": 1032787,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_shuruq-zero",
+        "pixels": 1028906,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_dhuhr-maximum",
+        "pixels": 213749,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_dhuhr-minimum",
+        "pixels": 213656,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_dhuhr-zero",
+        "pixels": 212691,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_asr-maximum",
+        "pixels": 772028,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_asr-minimum",
+        "pixels": 772090,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_asr-zero",
+        "pixels": 769954,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "en-adj_maghrib-maximum",
+        "pixels": 213762,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_maghrib-minimum",
+        "pixels": 213660,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_maghrib-zero",
+        "pixels": 212691,
+        "bbox": [
+          42,
+          46,
+          1038,
+          2399
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-maximum",
+        "pixels": 0,
+        "bbox": null,
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-minimum",
+        "pixels": 0,
+        "bbox": null,
+        "same_tokens": true
+      },
+      {
+        "scene": "en-adj_isha-zero",
+        "pixels": 0,
+        "bbox": null,
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-maximum",
+        "pixels": 235,
+        "bbox": [
+          123,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-minimum",
+        "pixels": 235,
+        "bbox": [
+          123,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "en-hijri_offset-zero",
+        "pixels": 235,
+        "bbox": [
+          123,
+          52,
+          142,
+          80
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_fajr-maximum",
+        "pixels": 543789,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_fajr-minimum",
+        "pixels": 543637,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_fajr-zero",
+        "pixels": 541778,
+        "bbox": [
+          42,
+          15,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-maximum",
+        "pixels": 665957,
+        "bbox": [
+          42,
+          62,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-minimum",
+        "pixels": 665816,
+        "bbox": [
+          42,
+          62,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_shuruq-zero",
+        "pixels": 663276,
+        "bbox": [
+          42,
+          62,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_dhuhr-maximum",
+        "pixels": 869968,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_dhuhr-minimum",
+        "pixels": 870376,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_dhuhr-zero",
+        "pixels": 867931,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2399
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_asr-maximum",
+        "pixels": 757451,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_asr-minimum",
+        "pixels": 757402,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_asr-zero",
+        "pixels": 755017,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_maghrib-maximum",
+        "pixels": 295028,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_maghrib-minimum",
+        "pixels": 294897,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_maghrib-zero",
+        "pixels": 293720,
+        "bbox": [
+          42,
+          23,
+          1038,
+          2391
+        ],
+        "same_tokens": false
+      },
+      {
+        "scene": "ar-adj_isha-maximum",
+        "pixels": 9,
+        "bbox": [
+          398,
+          2364,
+          681,
+          2373
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_isha-minimum",
+        "pixels": 9,
+        "bbox": [
+          398,
+          2364,
+          681,
+          2373
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-adj_isha-zero",
+        "pixels": 9,
+        "bbox": [
+          398,
+          2364,
+          681,
+          2373
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-maximum",
+        "pixels": 207,
+        "bbox": [
+          398,
+          47,
+          967,
+          2373
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-minimum",
+        "pixels": 442,
+        "bbox": [
+          123,
+          47,
+          967,
+          2373
+        ],
+        "same_tokens": true
+      },
+      {
+        "scene": "ar-hijri_offset-zero",
+        "pixels": 442,
+        "bbox": [
+          123,
+          47,
+          967,
+          2373
+        ],
+        "same_tokens": true
+      }
+    ]
+  }
+}
