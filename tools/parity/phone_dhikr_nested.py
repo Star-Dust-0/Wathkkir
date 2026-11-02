@@ -96,7 +96,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     if re.fullmatch(r'\d{1,2}:\d{2}.*',n.get('text','')) and touch(n):return True
    return False
   def wheels():
-   root=ET.fromstring(tree());cols=[n for n in root.iter('node') if n.get('scrollable')=='true' and len(rect(n))==4 and 100<rect(n)[2]-rect(n)[0]<300 and 400<rect(n)[3]-rect(n)[1]<900]
+   root=ET.fromstring(tree());cols=[n for n in root.iter('node') if n.get('class')=='android.view.View' and len(rect(n))==4 and 100<rect(n)[2]-rect(n)[0]<300 and 400<rect(n)[3]-rect(n)[1]<900 and len([c for c in n.iter('node') if c.get('text')])>=2]
    return sorted(cols,key=lambda n:rect(n)[0])
   def center(n):
    b=rect(n);cy=(b[1]+b[3])/2;vals=[]
@@ -114,13 +114,13 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     diff=(values.index(target)-values.index(current))%len(values)
     direction=(1 if values.index(target)>values.index(current) else -1) if index==2 else (1 if diff<=len(values)/2 else -1)
     b=rect(n);x=(b[0]+b[2])//2;y=(b[1]+b[3])//2;step=round((b[3]-b[1])/5)
-    adb('shell','input','swipe',str(x),str(y),str(x),str(y-direction*step),'600');time.sleep(1)
+    print('WHEEL',slug,index,attempt,current,target,direction,flush=True);adb('shell','input','swipe',str(x),str(y),str(x),str(y-direction*step),'600');time.sleep(1)
    return False
   def pick(h,m,ampm=None):
    cols=wheels();check('actual wheel columns',len(cols)==(3 if ampm else 2),str([(rect(n),center(n)) for n in cols]))
    hours=[str(i) for i in range(1,13)] if ampm else [f'{i:02d}' for i in range(24)]
-   check('hour wheel '+h,selectcol(0,h,hours));check('minute wheel '+m,selectcol(1,m,[f'{i:02d}' for i in range(60)]))
-   if ampm:check('ampm wheel '+ampm,selectcol(2,ampm,['AM','PM'] if lang=='en' else ['ص','م']))
+   assert check('hour wheel '+h,selectcol(0,h,hours)), 'Hour selection failed, stop instead of testing unchanged time';assert check('minute wheel '+m,selectcol(1,m,[f'{i:02d}' for i in range(60)])), 'Minute selection failed'
+   if ampm:assert check('ampm wheel '+ampm,selectcol(2,ampm,['AM','PM'] if lang=='en' else ['ص','م'])), 'AMPM selection failed'
   def currenttime(d):return next((v[4] for v in d.get('dhikr_table',[]) if v[0]==ident),None)
   for is24 in [False,True]:
    mode='24' if is24 else '12';adb('shell','settings','put','system','time_12_24',mode)
