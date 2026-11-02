@@ -681,3 +681,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 09:59 static bell slider mismatch confirmed
 -41407178301 55checks0fail18pairsallactualpixelsinspected. Sameappslidercrops1/6/8s0diff,betweenappsstatic3852(value10)/372EN366AR(value30)/3507EN3504AR(value45). Notanimation. Bound/rangematch,thumbx10original256comparison241;30=533/532;45=740/751. Investigateoriginalmaterialslidergeometry/dependencybeforeproductpatch. Fullframebackgroundresidualsseparate.
+
+## Nov2 10:04 slider dependency cause grounded
+-Freshphone3.4.2/code80APK yr1 actualmeasurecompensatesdiscretestepsbytrackcorner,matchingMaterial31.4.0source,unlikerecovereddefaultBOM1.3.2. Test-onlyCIoverride1.4.0prepared/defaultremains1.3.2. Needpairedresultandbroaderregressionbeforeglobalpromotion. Nohandtunedthumbpatch.
