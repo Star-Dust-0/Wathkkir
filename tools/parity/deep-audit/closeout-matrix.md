@@ -10,6 +10,8 @@ Close the fixed packages below once each has a source review plus exact evidence
 
 Nov2 16:51: confirmed Add-selected-tag coroutine-path mismatch from41455920401. Repair563b544 verified in observed resumed-insert path by41465825842. All22pairs inspected,20app-content exact and2caret-only. Raw workflow255checks12parser failures retained; corrected active-only offline2/0/2/0 allfour. Immediate-return path source-preserved, not forced in runtime. Shipped resumed insert drops tags while immediate insert saves them. Bounded observed mismatch repaired; no all-path claim. The Material3 slider mismatch was repaired, followed by bounded settings/location/bell/theme/font/offset regressions. This is not a zero-defect certificate.
 
+Nov2 22:02: confirmed event-delivery crash41508248570 from literal application label giving labelRes0. Restore original resource label and notification icon, then focused delivery rerun. Not yet fixed/verified.
+
 R1. Controlled static and return-scroll comparison: separate persistent layout/scroll differences from differing gestures, focus and caret. Include lower-language uncommitted Turkish selection and AR Isha/Fajr return captures.
 R2. Forced-idle phone remaining147vs146: match event times/update ordering; do not mask unequal text. Preserve both raw logs and classify mismatch vs sampling.
 R3. Source provenance: original complete snapshot is still INCOMPLETE. Mark secondary model/viewmodel/receiver/helper reconstruction and watch monochrome fallback honestly. Runtime parity cannot turn it into recovered literal source.
