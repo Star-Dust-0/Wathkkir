@@ -684,3 +684,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 10:04 slider dependency cause grounded
 -Freshphone3.4.2/code80APK yr1 actualmeasurecompensatesdiscretestepsbytrackcorner,matchingMaterial31.4.0source,unlikerecovereddefaultBOM1.3.2. Test-onlyCIoverride1.4.0prepared/defaultremains1.3.2. Needpairedresultandbroaderregressionbeforeglobalpromotion. Nohandtunedthumbpatch.
+
+## Nov2 10:28 original slider geometry restored under test override
+-41410186996 55checks0fail18pairsallactualpixelsinspected. Material31.4.0overrideeliminatesALL18slidercroppixeldiffs;2wholeframesexact,otherclock/backgroundresiduals. Default1.3.2remainsuntilbroadersettings/location/nestedpickerregression. No handtunedthumbpatch.
