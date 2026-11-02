@@ -1,0 +1,12 @@
+{
+  "run": "41401766263",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41401766263",
+  "actual_pixels_inspected": true,
+  "image_size": [
+    454,
+    454
+  ],
+  "different_pixels": 0,
+  "scope": "Both actual APK serialized layout outputs rendered by identical AndroidX TileRenderer/context. Explicit time/state/theme0/null-iqama fixture, native=false comparison. Destination Dhuhr+10:03 and render-completed children=1 confirmed. Text/arc/date pixels all identical. This isolates prior 2346-pixel preview-only arc-edge residual for this fixture, not whole tile/provider lifecycle/dynamic/OEM proof. No product patch.",
+  "prior_invalid_run": "41399531951 retained, not parity evidence"
+}
