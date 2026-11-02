@@ -300,3 +300,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 auto-stop finite planned
 - Actual Test button wait with seeded count0/duration5 and count3/duration15, snooze1. Observe still foreground before60s and return at65s, countincrement/cap and snoozePendingIntent. Source currently fixed60000ms despite durationpref; compare shipped behavior rather than change based on label. Explicit prefsfixture, not UIchoiceproof; no hardwareaudio or snoozeredelivery claim.
+
+## Nov2 03:41 actual elapsed auto-stop finite result
+-41371509922 67checks0fail12pairs11rawequal,all12actualpairsinspected. ActualTestcount0/duration5,count3/duration15 foregroundat40s thenreturnedby~65s bothapps; count0->1andsnoozependingintent,count3stays3. Fixed60s agreeswithshippedsamples,notlabelled5/15minbehavior,nochange. WrongvibrationfixturekeyactualONboth,nooffproof. Count3nonewalarmnotindependentlyasserted. ARduration5returnscrollresidual+ENminuteclockremain.2durationrowsadditionalexactbound. Noaudio/redelivery/motionproof.

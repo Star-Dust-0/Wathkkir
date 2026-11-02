@@ -9402,9 +9402,10 @@
       "control": "5",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
       "evidence": [
-        "41340709202"
+        "41340709202",
+        "41371509922"
       ],
-      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained. Additional41371509922 actual elapsed Test alarm: saved duration5/count0 and duration15/count3 both stop between40s and~65s; count0->1, count3 stays3. Duration is explicit prefsfixture, not new chip selection proof. Fixed60s matches shipped at these samples. No cap absence-of-alarm proof, exact timeout instant, audio/vibration effects or redelivery proof. Vibration fixture used wrong key vibration_enabled; actual frames show ON both, not disabled proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en duration choose 5",
@@ -9414,7 +9415,39 @@
         "comparison-en duration choose 5",
         "comparison-en duration persisted 5",
         "comparison-ar duration choose 5",
-        "comparison-ar duration persisted 5"
+        "comparison-ar duration persisted 5",
+        "original-en count0-duration5 verified settings route",
+        "original-en count0-duration5 saved count fixture",
+        "original-en count0-duration5 actual Test button",
+        "original-en count0-duration5 actual alarm foreground",
+        "original-en count0-duration5 still ringing before 60s",
+        "original-en count0-duration5 auto-stop returned without tap",
+        "original-en count0-duration5 expected snooze count after timeout",
+        "original-en count0-duration5 real snooze pending intent scheduled",
+        "original-ar count0-duration5 verified settings route",
+        "original-ar count0-duration5 saved count fixture",
+        "original-ar count0-duration5 actual Test button",
+        "original-ar count0-duration5 actual alarm foreground",
+        "original-ar count0-duration5 still ringing before 60s",
+        "original-ar count0-duration5 auto-stop returned without tap",
+        "original-ar count0-duration5 expected snooze count after timeout",
+        "original-ar count0-duration5 real snooze pending intent scheduled",
+        "comparison-en count0-duration5 verified settings route",
+        "comparison-en count0-duration5 saved count fixture",
+        "comparison-en count0-duration5 actual Test button",
+        "comparison-en count0-duration5 actual alarm foreground",
+        "comparison-en count0-duration5 still ringing before 60s",
+        "comparison-en count0-duration5 auto-stop returned without tap",
+        "comparison-en count0-duration5 expected snooze count after timeout",
+        "comparison-en count0-duration5 real snooze pending intent scheduled",
+        "comparison-ar count0-duration5 verified settings route",
+        "comparison-ar count0-duration5 saved count fixture",
+        "comparison-ar count0-duration5 actual Test button",
+        "comparison-ar count0-duration5 actual alarm foreground",
+        "comparison-ar count0-duration5 still ringing before 60s",
+        "comparison-ar count0-duration5 auto-stop returned without tap",
+        "comparison-ar count0-duration5 expected snooze count after timeout",
+        "comparison-ar count0-duration5 real snooze pending intent scheduled"
       ]
     },
     {
@@ -9444,9 +9477,10 @@
       "control": "15",
       "scenario": "actualselect;persist/reopen;selectedstate;alarmtiming",
       "evidence": [
-        "41340709202"
+        "41340709202",
+        "41371509922"
       ],
-      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained.",
+      "limits": "API34 ENlight/ARdark: actual scoped chip tap and immediate expected preference. All28 paired frames inspected; selected text/layout/RTL align; clocks differ. Only final duration15/snooze30 force-stop/reopen tested, not each choice. No actual auto-stop duration, snooze delivery, sound, hardware, motion or all-device proof. Initial vibration predicate defaults missing XML to true and is NOT a preferences oracle; actual initial pixels show enabled both. Earlier41336567130 route false-positive and41339335094 wrong-label failures retained. Additional41371509922 actual elapsed Test alarm: saved duration5/count0 and duration15/count3 both stop between40s and~65s; count0->1, count3 stays3. Duration is explicit prefsfixture, not new chip selection proof. Fixed60s matches shipped at these samples. No cap absence-of-alarm proof, exact timeout instant, audio/vibration effects or redelivery proof. Vibration fixture used wrong key vibration_enabled; actual frames show ON both, not disabled proof.",
       "status": "bounded recorded assertion evidence",
       "exact_assertions": [
         "original-en duration choose 15",
@@ -9464,7 +9498,35 @@
         "comparison-en duration settings verified reopen",
         "comparison-en duration final persists reopen",
         "comparison-ar duration settings verified reopen",
-        "comparison-ar duration final persists reopen"
+        "comparison-ar duration final persists reopen",
+        "original-en count3-duration15 verified settings route",
+        "original-en count3-duration15 saved count fixture",
+        "original-en count3-duration15 actual Test button",
+        "original-en count3-duration15 actual alarm foreground",
+        "original-en count3-duration15 still ringing before 60s",
+        "original-en count3-duration15 auto-stop returned without tap",
+        "original-en count3-duration15 expected snooze count after timeout",
+        "original-ar count3-duration15 verified settings route",
+        "original-ar count3-duration15 saved count fixture",
+        "original-ar count3-duration15 actual Test button",
+        "original-ar count3-duration15 actual alarm foreground",
+        "original-ar count3-duration15 still ringing before 60s",
+        "original-ar count3-duration15 auto-stop returned without tap",
+        "original-ar count3-duration15 expected snooze count after timeout",
+        "comparison-en count3-duration15 verified settings route",
+        "comparison-en count3-duration15 saved count fixture",
+        "comparison-en count3-duration15 actual Test button",
+        "comparison-en count3-duration15 actual alarm foreground",
+        "comparison-en count3-duration15 still ringing before 60s",
+        "comparison-en count3-duration15 auto-stop returned without tap",
+        "comparison-en count3-duration15 expected snooze count after timeout",
+        "comparison-ar count3-duration15 verified settings route",
+        "comparison-ar count3-duration15 saved count fixture",
+        "comparison-ar count3-duration15 actual Test button",
+        "comparison-ar count3-duration15 actual alarm foreground",
+        "comparison-ar count3-duration15 still ringing before 60s",
+        "comparison-ar count3-duration15 auto-stop returned without tap",
+        "comparison-ar count3-duration15 expected snooze count after timeout"
       ]
     },
     {
