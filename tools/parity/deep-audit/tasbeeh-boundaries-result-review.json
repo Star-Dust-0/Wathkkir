@@ -1,0 +1,804 @@
+{
+  "run": "41440987073",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41440987073",
+  "checks": 259,
+  "failures": 0,
+  "actual_pairs_inspected": 48,
+  "verdict": "Actual33/99/100 selection and actual counter taps reach1,target-1,target,target+1. Ring full at target, wraps after. Count persists cold restart; selected target resets33 (actual chip and ring inspected), reset persists. EN/light AR/dark.",
+  "limits": [
+    "No motion trajectory or physical haptics proof.",
+    "No whole-frame equality: statusbar and EN cold-reopen gesturebar differ.",
+    "33/48 app-content exact; remaining15 have1..17small count glyph antialias pixels, crops inspected. No product mismatch established."
+  ],
+  "pixels": [
+    {
+      "scene": "ar-100-count-1",
+      "pixels": 562,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        141,
+        80
+      ]
+    },
+    {
+      "scene": "ar-100-count-100",
+      "pixels": 894,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-100-count-101",
+      "pixels": 894,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-100-count-99",
+      "pixels": 894,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-100-reopen",
+      "pixels": 906,
+      "app_pixels": 11,
+      "bbox": [
+        103,
+        47,
+        967,
+        998
+      ]
+    },
+    {
+      "scene": "ar-100-reset-reopen",
+      "pixels": 697,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-100-reset",
+      "pixels": 901,
+      "app_pixels": 6,
+      "bbox": [
+        103,
+        47,
+        967,
+        979
+      ]
+    },
+    {
+      "scene": "ar-100-zero",
+      "pixels": 562,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        141,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-count-1",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-count-32",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-count-33",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-count-34",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-reopen",
+      "pixels": 589,
+      "app_pixels": 4,
+      "bbox": [
+        103,
+        52,
+        548,
+        994
+      ]
+    },
+    {
+      "scene": "ar-33-reset-reopen",
+      "pixels": 831,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-reset",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-33-zero",
+      "pixels": 585,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-count-1",
+      "pixels": 831,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-count-100",
+      "pixels": 760,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-count-98",
+      "pixels": 760,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-count-99",
+      "pixels": 760,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-reopen",
+      "pixels": 579,
+      "app_pixels": 17,
+      "bbox": [
+        103,
+        52,
+        688,
+        998
+      ]
+    },
+    {
+      "scene": "ar-99-reset-reopen",
+      "pixels": 562,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        141,
+        80
+      ]
+    },
+    {
+      "scene": "ar-99-reset",
+      "pixels": 566,
+      "app_pixels": 4,
+      "bbox": [
+        103,
+        52,
+        576,
+        991
+      ]
+    },
+    {
+      "scene": "ar-99-zero",
+      "pixels": 831,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-100-count-1",
+      "pixels": 856,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-100-count-100",
+      "pixels": 668,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-100-count-101",
+      "pixels": 668,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-100-count-99",
+      "pixels": 668,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-100-reopen",
+      "pixels": 3781,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        52,
+        682,
+        2374
+      ]
+    },
+    {
+      "scene": "en-100-reset-reopen",
+      "pixels": 3969,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        47,
+        967,
+        2374
+      ]
+    },
+    {
+      "scene": "en-100-reset",
+      "pixels": 669,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        52,
+        508,
+        952
+      ]
+    },
+    {
+      "scene": "en-100-zero",
+      "pixels": 861,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-33-count-1",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        122,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-33-count-32",
+      "pixels": 541,
+      "app_pixels": 5,
+      "bbox": [
+        122,
+        47,
+        967,
+        967
+      ]
+    },
+    {
+      "scene": "en-33-count-33",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        122,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-33-count-34",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        122,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-33-reopen",
+      "pixels": 4006,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        2374
+      ]
+    },
+    {
+      "scene": "en-33-reset-reopen",
+      "pixels": 3177,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        52,
+        682,
+        2374
+      ]
+    },
+    {
+      "scene": "en-33-reset",
+      "pixels": 706,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-33-zero",
+      "pixels": 536,
+      "app_pixels": 0,
+      "bbox": [
+        122,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-99-count-1",
+      "pixels": 624,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-99-count-100",
+      "pixels": 626,
+      "app_pixels": 2,
+      "bbox": [
+        103,
+        52,
+        620,
+        952
+      ]
+    },
+    {
+      "scene": "en-99-count-98",
+      "pixels": 627,
+      "app_pixels": 3,
+      "bbox": [
+        103,
+        52,
+        624,
+        996
+      ]
+    },
+    {
+      "scene": "en-99-count-99",
+      "pixels": 624,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-99-reopen",
+      "pixels": 3926,
+      "app_pixels": 2,
+      "bbox": [
+        103,
+        47,
+        967,
+        2374
+      ]
+    },
+    {
+      "scene": "en-99-reset-reopen",
+      "pixels": 3973,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        2374
+      ]
+    },
+    {
+      "scene": "en-99-reset",
+      "pixels": 813,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        47,
+        967,
+        952
+      ]
+    },
+    {
+      "scene": "en-99-zero",
+      "pixels": 625,
+      "app_pixels": 1,
+      "bbox": [
+        103,
+        52,
+        508,
+        952
+      ]
+    }
+  ],
+  "assertions": [
+    "setup install original.apk",
+    "setup install comparison.apk",
+    "setup install widgethost.apk",
+    "original-en Tasbeeh route",
+    "original-en 33 reset",
+    "original-en 33 actual zero",
+    "original-en 33 target click",
+    "original-en 33 previous count available",
+    "original-en 33 visible current count",
+    "original-en 33 actual press count 1",
+    "original-en 33 previous count available",
+    "original-en 33 visible current count",
+    "original-en 33 actual press count 32",
+    "original-en 33 previous count available",
+    "original-en 33 visible current count",
+    "original-en 33 actual press count 33",
+    "original-en 33 previous count available",
+    "original-en 33 visible current count",
+    "original-en 33 actual press count 34",
+    "original-en 33 cold route",
+    "original-en 33 count survives cold reopen",
+    "original-en 33 actual reset",
+    "original-en 33 reset saved",
+    "original-en 33 reset reopen route",
+    "original-en 33 reset survives",
+    "original-en 99 reset",
+    "original-en 99 actual zero",
+    "original-en 99 target click",
+    "original-en 99 previous count available",
+    "original-en 99 visible current count",
+    "original-en 99 actual press count 1",
+    "original-en 99 previous count available",
+    "original-en 99 visible current count",
+    "original-en 99 actual press count 98",
+    "original-en 99 previous count available",
+    "original-en 99 visible current count",
+    "original-en 99 actual press count 99",
+    "original-en 99 previous count available",
+    "original-en 99 visible current count",
+    "original-en 99 actual press count 100",
+    "original-en 99 cold route",
+    "original-en 99 count survives cold reopen",
+    "original-en 99 actual reset",
+    "original-en 99 reset saved",
+    "original-en 99 reset reopen route",
+    "original-en 99 reset survives",
+    "original-en 100 reset",
+    "original-en 100 actual zero",
+    "original-en 100 target click",
+    "original-en 100 previous count available",
+    "original-en 100 visible current count",
+    "original-en 100 actual press count 1",
+    "original-en 100 previous count available",
+    "original-en 100 visible current count",
+    "original-en 100 actual press count 99",
+    "original-en 100 previous count available",
+    "original-en 100 visible current count",
+    "original-en 100 actual press count 100",
+    "original-en 100 previous count available",
+    "original-en 100 visible current count",
+    "original-en 100 actual press count 101",
+    "original-en 100 cold route",
+    "original-en 100 count survives cold reopen",
+    "original-en 100 actual reset",
+    "original-en 100 reset saved",
+    "original-en 100 reset reopen route",
+    "original-en 100 reset survives",
+    "original-ar Tasbeeh route",
+    "original-ar 33 reset",
+    "original-ar 33 actual zero",
+    "original-ar 33 target click",
+    "original-ar 33 previous count available",
+    "original-ar 33 visible current count",
+    "original-ar 33 actual press count 1",
+    "original-ar 33 previous count available",
+    "original-ar 33 visible current count",
+    "original-ar 33 actual press count 32",
+    "original-ar 33 previous count available",
+    "original-ar 33 visible current count",
+    "original-ar 33 actual press count 33",
+    "original-ar 33 previous count available",
+    "original-ar 33 visible current count",
+    "original-ar 33 actual press count 34",
+    "original-ar 33 cold route",
+    "original-ar 33 count survives cold reopen",
+    "original-ar 33 actual reset",
+    "original-ar 33 reset saved",
+    "original-ar 33 reset reopen route",
+    "original-ar 33 reset survives",
+    "original-ar 99 reset",
+    "original-ar 99 actual zero",
+    "original-ar 99 target click",
+    "original-ar 99 previous count available",
+    "original-ar 99 visible current count",
+    "original-ar 99 actual press count 1",
+    "original-ar 99 previous count available",
+    "original-ar 99 visible current count",
+    "original-ar 99 actual press count 98",
+    "original-ar 99 previous count available",
+    "original-ar 99 visible current count",
+    "original-ar 99 actual press count 99",
+    "original-ar 99 previous count available",
+    "original-ar 99 visible current count",
+    "original-ar 99 actual press count 100",
+    "original-ar 99 cold route",
+    "original-ar 99 count survives cold reopen",
+    "original-ar 99 actual reset",
+    "original-ar 99 reset saved",
+    "original-ar 99 reset reopen route",
+    "original-ar 99 reset survives",
+    "original-ar 100 reset",
+    "original-ar 100 actual zero",
+    "original-ar 100 target click",
+    "original-ar 100 previous count available",
+    "original-ar 100 visible current count",
+    "original-ar 100 actual press count 1",
+    "original-ar 100 previous count available",
+    "original-ar 100 visible current count",
+    "original-ar 100 actual press count 99",
+    "original-ar 100 previous count available",
+    "original-ar 100 visible current count",
+    "original-ar 100 actual press count 100",
+    "original-ar 100 previous count available",
+    "original-ar 100 visible current count",
+    "original-ar 100 actual press count 101",
+    "original-ar 100 cold route",
+    "original-ar 100 count survives cold reopen",
+    "original-ar 100 actual reset",
+    "original-ar 100 reset saved",
+    "original-ar 100 reset reopen route",
+    "original-ar 100 reset survives",
+    "comparison-en Tasbeeh route",
+    "comparison-en 33 reset",
+    "comparison-en 33 actual zero",
+    "comparison-en 33 target click",
+    "comparison-en 33 previous count available",
+    "comparison-en 33 visible current count",
+    "comparison-en 33 actual press count 1",
+    "comparison-en 33 previous count available",
+    "comparison-en 33 visible current count",
+    "comparison-en 33 actual press count 32",
+    "comparison-en 33 previous count available",
+    "comparison-en 33 visible current count",
+    "comparison-en 33 actual press count 33",
+    "comparison-en 33 previous count available",
+    "comparison-en 33 visible current count",
+    "comparison-en 33 actual press count 34",
+    "comparison-en 33 cold route",
+    "comparison-en 33 count survives cold reopen",
+    "comparison-en 33 actual reset",
+    "comparison-en 33 reset saved",
+    "comparison-en 33 reset reopen route",
+    "comparison-en 33 reset survives",
+    "comparison-en 99 reset",
+    "comparison-en 99 actual zero",
+    "comparison-en 99 target click",
+    "comparison-en 99 previous count available",
+    "comparison-en 99 visible current count",
+    "comparison-en 99 actual press count 1",
+    "comparison-en 99 previous count available",
+    "comparison-en 99 visible current count",
+    "comparison-en 99 actual press count 98",
+    "comparison-en 99 previous count available",
+    "comparison-en 99 visible current count",
+    "comparison-en 99 actual press count 99",
+    "comparison-en 99 previous count available",
+    "comparison-en 99 visible current count",
+    "comparison-en 99 actual press count 100",
+    "comparison-en 99 cold route",
+    "comparison-en 99 count survives cold reopen",
+    "comparison-en 99 actual reset",
+    "comparison-en 99 reset saved",
+    "comparison-en 99 reset reopen route",
+    "comparison-en 99 reset survives",
+    "comparison-en 100 reset",
+    "comparison-en 100 actual zero",
+    "comparison-en 100 target click",
+    "comparison-en 100 previous count available",
+    "comparison-en 100 visible current count",
+    "comparison-en 100 actual press count 1",
+    "comparison-en 100 previous count available",
+    "comparison-en 100 visible current count",
+    "comparison-en 100 actual press count 99",
+    "comparison-en 100 previous count available",
+    "comparison-en 100 visible current count",
+    "comparison-en 100 actual press count 100",
+    "comparison-en 100 previous count available",
+    "comparison-en 100 visible current count",
+    "comparison-en 100 actual press count 101",
+    "comparison-en 100 cold route",
+    "comparison-en 100 count survives cold reopen",
+    "comparison-en 100 actual reset",
+    "comparison-en 100 reset saved",
+    "comparison-en 100 reset reopen route",
+    "comparison-en 100 reset survives",
+    "comparison-ar Tasbeeh route",
+    "comparison-ar 33 reset",
+    "comparison-ar 33 actual zero",
+    "comparison-ar 33 target click",
+    "comparison-ar 33 previous count available",
+    "comparison-ar 33 visible current count",
+    "comparison-ar 33 actual press count 1",
+    "comparison-ar 33 previous count available",
+    "comparison-ar 33 visible current count",
+    "comparison-ar 33 actual press count 32",
+    "comparison-ar 33 previous count available",
+    "comparison-ar 33 visible current count",
+    "comparison-ar 33 actual press count 33",
+    "comparison-ar 33 previous count available",
+    "comparison-ar 33 visible current count",
+    "comparison-ar 33 actual press count 34",
+    "comparison-ar 33 cold route",
+    "comparison-ar 33 count survives cold reopen",
+    "comparison-ar 33 actual reset",
+    "comparison-ar 33 reset saved",
+    "comparison-ar 33 reset reopen route",
+    "comparison-ar 33 reset survives",
+    "comparison-ar 99 reset",
+    "comparison-ar 99 actual zero",
+    "comparison-ar 99 target click",
+    "comparison-ar 99 previous count available",
+    "comparison-ar 99 visible current count",
+    "comparison-ar 99 actual press count 1",
+    "comparison-ar 99 previous count available",
+    "comparison-ar 99 visible current count",
+    "comparison-ar 99 actual press count 98",
+    "comparison-ar 99 previous count available",
+    "comparison-ar 99 visible current count",
+    "comparison-ar 99 actual press count 99",
+    "comparison-ar 99 previous count available",
+    "comparison-ar 99 visible current count",
+    "comparison-ar 99 actual press count 100",
+    "comparison-ar 99 cold route",
+    "comparison-ar 99 count survives cold reopen",
+    "comparison-ar 99 actual reset",
+    "comparison-ar 99 reset saved",
+    "comparison-ar 99 reset reopen route",
+    "comparison-ar 99 reset survives",
+    "comparison-ar 100 reset",
+    "comparison-ar 100 actual zero",
+    "comparison-ar 100 target click",
+    "comparison-ar 100 previous count available",
+    "comparison-ar 100 visible current count",
+    "comparison-ar 100 actual press count 1",
+    "comparison-ar 100 previous count available",
+    "comparison-ar 100 visible current count",
+    "comparison-ar 100 actual press count 99",
+    "comparison-ar 100 previous count available",
+    "comparison-ar 100 visible current count",
+    "comparison-ar 100 actual press count 100",
+    "comparison-ar 100 previous count available",
+    "comparison-ar 100 visible current count",
+    "comparison-ar 100 actual press count 101",
+    "comparison-ar 100 cold route",
+    "comparison-ar 100 count survives cold reopen",
+    "comparison-ar 100 actual reset",
+    "comparison-ar 100 reset saved",
+    "comparison-ar 100 reset reopen route",
+    "comparison-ar 100 reset survives"
+  ]
+}
