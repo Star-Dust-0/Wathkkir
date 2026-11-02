@@ -1,0 +1,328 @@
+{
+  "run": "41373951368",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41373951368",
+  "checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.54185920599991"
+    },
+    {
+      "name": "original-en count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en real snooze redelivery alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en receiver snooze does not increment count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en receiver snooze does not write main slot date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en redelivered actual Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en redelivery dismissed foreground gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en dismiss keeps snooze count1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.55376320699997"
+    },
+    {
+      "name": "original-ar count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar real snooze redelivery alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar receiver snooze does not increment count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar receiver snooze does not write main slot date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar redelivered actual Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar redelivery dismissed foreground gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar dismiss keeps snooze count1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.50787801199988"
+    },
+    {
+      "name": "comparison-en count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en real snooze redelivery alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en receiver snooze does not increment count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en receiver snooze does not write main slot date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en redelivered actual Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en redelivery dismissed foreground gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en dismiss keeps snooze count1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Fajr settings verified destination",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 verified settings route",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 saved count fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 actual Test button",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 actual alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 still ringing before 60s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 auto-stop returned without tap",
+      "passed": true,
+      "detail": "65.52270939799996"
+    },
+    {
+      "name": "comparison-ar count0-duration5 expected snooze count after timeout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar count0-duration5 real snooze pending intent scheduled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar real snooze redelivery alarm foreground",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar receiver snooze does not increment count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar receiver snooze does not write main slot date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar redelivered actual Dismiss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar redelivery dismissed foreground gone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar dismiss keeps snooze count1",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pairs": 10,
+  "raw_equal": 10,
+  "all_actual_pairs_inspected": true,
+  "functional": "Actual auto-stop to real elapsed one-minute AlarmManager receiver redelivery, count stays1/main date absent; actual Dismiss returns and keeps1 ENAR.",
+  "confirmed_mismatch": "Actual native notification visible screenshots and dumps: original EN It is now time for Fajr adhan / AR حان الآن وقت أذان الفجر; comparison Fajr prayer / موعد صلاة الفجر. UI hierarchy excludes system heads-up, so10/10semanticpairs not full parity.",
+  "repair": "Restore shipped EN/AR S.FajrNow values; other9locales unverified, retain. No receiver/scheduler logic change.",
+  "limits": "No audio/physicaldeepidle/notification-dismiss cleanup/fullpixels/motion proof"
+}
