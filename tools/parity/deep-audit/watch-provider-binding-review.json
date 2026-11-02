@@ -10,5 +10,6 @@
   ],
   "probe_scope": "ActualAndroidbindService/IPCfromrootedemulatorhostperprovider,activation/update/deactivationcallbackandtap. Notnativewatchfaceactivation/permissionpath,notphysicalwatch,notpairedDataLayer. No preview-onlyclaims. Pendingcompile/runtime.",
   "permission_boundary": "Protectedservicepermissionintentionallybypassedbyrootverificationhost,notproductionpermissionchange.",
-  "user_approved_watch_scope": "OriginalownerOct3020:29:36answerafter20:28:02questionkeepnewdynamicring/no-minutepulse;codecommentsnotauthority."
+  "user_approved_watch_scope": "OriginalownerOct3020:29:36answerafter20:28:02questionkeepnewdynamicring/no-minutepulse;codecommentsnotauthority.",
+  "dispatch_note": "GitHubregistersonlycheckpoint/dynamicring/watchsleepfrommain;watchrecoverynotregistered. Routepreparedwatchworkflowthroughalreadyregisteredmanualcheckpoint,comparisonbranchonly. No runlaunchedbyfaileddispatchworkflowlookup."
 }
