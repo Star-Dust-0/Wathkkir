@@ -1,0 +1,115 @@
+{
+  "run": "41242177532",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41242177532",
+  "status": "R2 mechanism identified, controlled same-instant check still pending. Not called resolved.",
+  "actual_pixel_review": "Allfourafterframes inspected in paired sheet. ENoriginal2h47mvscomparison2h46m. ARboth2h46m. Saved nexttargetequalallfour.",
+  "samples": {
+    "original-en": {
+      "target": {
+        "target": 1793441100000,
+        "actual_after": "1793441124\n",
+        "log_boundary_fire": true
+      },
+      "relevant_log_lines": [
+        "10-31 12:05:00.000  4566  4566 I WathakkerLock: boundary fire",
+        "10-31 12:05:00.001  4566  4566 I WathakkerHome: size Schedule#2 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.005  4566  4566 I WathakkerHome: size DayPrayer#3 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.006  4566  4566 I WathakkerHome: size Pill#4 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.017  4566  4566 I WathakkerHome: size OneUI#5 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.063  4566  4566 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000",
+        "10-31 12:05:00.065  4566  4566 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000"
+      ]
+    },
+    "original-ar": {
+      "target": {
+        "target": 1793441100000,
+        "actual_after": "1793441123\n",
+        "log_boundary_fire": true
+      },
+      "relevant_log_lines": [
+        "10-31 12:05:00.001  6216  6216 I WathakkerLock: boundary fire",
+        "10-31 12:05:00.004  6216  6216 I WathakkerHome: size Schedule#6 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.006  6216  6216 I WathakkerHome: size DayPrayer#7 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.007  6216  6216 I WathakkerHome: size Pill#8 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.010  6216  6216 I WathakkerHome: size OneUI#9 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.014  6216  6216 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000",
+        "10-31 12:05:00.016  6216  6216 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000",
+        "10-31 12:05:00.016  6216  6216 I WathakkerLock: tick fire",
+        "10-31 12:05:00.017  6216  6216 I WathakkerHome: size Schedule#6 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.019  6216  6216 I WathakkerHome: size DayPrayer#7 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.020  6216  6216 I WathakkerHome: size Pill#8 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.020  6216  6216 I WathakkerHome: size OneUI#9 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.024  6216  6216 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000",
+        "10-31 12:05:00.026  6216  6216 I WathakkerLock: pulse arm next=1793441160000 boundaryTarget=1793451120000"
+      ]
+    },
+    "comparison-en": {
+      "target": {
+        "target": 1793441100000,
+        "actual_after": "1793441123\n",
+        "log_boundary_fire": true
+      },
+      "relevant_log_lines": [
+        "10-31 12:05:00.002  6726  6726 I WathakkerLock: tick fire t=1793441100002",
+        "10-31 12:05:00.007  6726  6726 I WathakkerHome: updateBatch pulseOnly=false t=1793441100007",
+        "10-31 12:05:00.008  6726  6726 I WathakkerHome: size Schedule#10 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.016  6726  6726 I WathakkerHome: size DayPrayer#11 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.018  6726  6726 I WathakkerHome: size Pill#12 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.022  6726  6726 I WathakkerHome: size OneUI#13 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.033  6726  6726 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true",
+        "10-31 12:05:00.037  6726  6726 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true",
+        "10-31 12:05:00.038  6726  6726 I WathakkerLock: boundary fire t=1793441100038",
+        "10-31 12:05:00.041  6726  6726 I WathakkerHome: updateBatch pulseOnly=false t=1793441100041",
+        "10-31 12:05:00.042  6726  6726 I WathakkerHome: size Schedule#10 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.049  6726  6726 I WathakkerHome: size DayPrayer#11 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.050  6726  6726 I WathakkerHome: size Pill#12 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.052  6726  6726 I WathakkerHome: size OneUI#13 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.059  6726  6726 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true",
+        "10-31 12:05:00.062  6726  6726 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true"
+      ]
+    },
+    "comparison-ar": {
+      "target": {
+        "target": 1793441100000,
+        "actual_after": "1793441123\n",
+        "log_boundary_fire": true
+      },
+      "relevant_log_lines": [
+        "10-31 12:05:00.001  7081  7081 I WathakkerLock: boundary fire t=1793441100001",
+        "10-31 12:05:00.006  7081  7081 I WathakkerHome: updateBatch pulseOnly=false t=1793441100006",
+        "10-31 12:05:00.006  7081  7081 I WathakkerHome: size Schedule#14 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.020  7081  7081 I WathakkerHome: size DayPrayer#15 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.026  7081  7081 I WathakkerHome: size Pill#16 sw=411dp density=2.625 min=144x66 max=144x66 sizes=null used=144x66",
+        "10-31 12:05:00.029  7081  7081 I WathakkerHome: size OneUI#17 sw=411dp density=2.625 min=314x74 max=314x74 sizes=null used=314x74",
+        "10-31 12:05:00.037  7081  7081 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true",
+        "10-31 12:05:00.041  7081  7081 I WathakkerLock: arm next=1793441160000 target=1793451120000 canExact=true pulseExact=true boundExact=true"
+      ]
+    }
+  },
+  "arithmetic": [
+    {
+      "at": 1793441100000,
+      "remaining_minutes": 167
+    },
+    {
+      "at": 1793441100001,
+      "remaining_minutes": 166
+    },
+    {
+      "at": 1793441100002,
+      "remaining_minutes": 166
+    },
+    {
+      "at": 1793441100038,
+      "remaining_minutes": 166
+    },
+    {
+      "at": 1793441100041,
+      "remaining_minutes": 166
+    }
+  ],
+  "original_source": "Fresh unchanged originalphone3.4.2/code80 decompile HomeWidgets.remainingText uses Math.max(0L,(state.at-state.now)/60000);LockWidgets.onReceive calls updateAllTick,HomeWidgets.updateAll(!full),WidgetUpdater.updateFace,schedule. This does not establish actual State.now timestamp for original EN frame.",
+  "comparison_source": "HomeWidgets.remainingText and bitmap rendering use same integer-floor expression. Boundary log timestamp and updateBatch log are recorded, not exact original State.now capture.",
+  "judgment": "Millisecond boundary ordering/sampling explains147onlyat12:05:00.000versus146after. Strong hypothesis supported by exact targets/timings and same rounding formula, not yet direct state-timestamp proof. Do not change floor formula to mask it.",
+  "next_bounded_check": "Compare actual original/recovered State calculation at controlled identical timestamps around exact-minute boundary; render or inspect deliveredtext while distinguishing serviceupdate time from screenshot time. No general idle matrix expansion."
+}

@@ -712,3 +712,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 17:47 Dhikr transaction repair result
 41465825842 compile and focused runtime:255checks,12reported alarm-parser failures. Corrected offline active-only raw dumps show2/0/2/0 Save/Disable/Reenable/Delete all original/comparison EN/AR. No CI rerun solely to recolor workflow. All22actualpairs visually inspected,20app-contentexact,2native-croppedcaret-only. Selected-tag resumed insert mismatch repaired563b544: both now have no relations, as shipped. Immediate-return path only source-reviewed. Actualdismissal/trim/emptytime/duplicateCancel/toggle/delete pass. Future parser repaired; old result preserved. See dhikr-transaction-repair-result-review.json. A1editrelations and A2nestedwheel remain.
+
+## Nov2 18:47 R2 event timing triage
+Recovered41242177532rawlogs/screens/source: exactnexttarget1793451120000allfour;originalENfire12:05:00.000versuscomparison.002tick/.038boundary/.041Homeupdate. Floor remaining147onlyatexactminuteand146after. ARbothfire.001andboth146. ActualState.nowfororiginalframe notlogged, so mechanismstronglygroundedbutcontrolledsame-instantprooffuture. No product patch. See idle-boundary-timing-triage.json.
