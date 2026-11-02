@@ -1,0 +1,390 @@
+{
+  "run": "41410186996",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41410186996",
+  "checks": 55,
+  "failures": 0,
+  "actual_pairs_inspected": 18,
+  "slider_crop_zero_diff_pairs": 18,
+  "whole_frame_zero_diff_pairs": 2,
+  "scope": "Test-only Material3 1.4.0 override; default still1.3.2. All18 slider crops exact; full frames retain clock/background differences. Need broader settings/location/nested picker regression before default promotion.",
+  "results": [
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 197
+    },
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 0
+    },
+    {
+      "lang": "en",
+      "value": 10,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 0
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 349
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 349
+    },
+    {
+      "lang": "en",
+      "value": 30,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 546
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 197
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 197
+    },
+    {
+      "lang": "en",
+      "value": 45,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 197
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 696
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 409
+    },
+    {
+      "lang": "ar",
+      "value": 10,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,10.0",
+      "range_comparison": "1.0,60.0,10.0",
+      "slider_pixels": 0,
+      "full_pixels": 776
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 571
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 213
+    },
+    {
+      "lang": "ar",
+      "value": 30,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,29.999998",
+      "range_comparison": "1.0,60.0,29.999998",
+      "slider_pixels": 0,
+      "full_pixels": 182
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "settle1",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 615
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "settle6",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 848
+    },
+    {
+      "lang": "ar",
+      "value": 45,
+      "stage": "repeat8",
+      "bounds_original": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "bounds_comparison": [
+        79,
+        1221,
+        1001,
+        1337
+      ],
+      "range_original": "1.0,60.0,45.0",
+      "range_comparison": "1.0,60.0,45.0",
+      "slider_pixels": 0,
+      "full_pixels": 213
+    }
+  ]
+}
