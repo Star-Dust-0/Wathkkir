@@ -690,3 +690,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 11:25 selected Material3 regression reviewed, not global pass
 -41413270416 573scriptchecks0fail100actualpairsallinspected.80location/bellrawstatesagree;18/20settingsrawstatesagree. ENvibrationoffbecomesonbetweenreopen/scrolloriginalonlyconfirmedpersistedprefs;isolatestepbeforeproductpatch. Fontresetstalegeometryleft1.6both,notactualresetproof. ARlargefontreturnscrolloffsetdiff. Defaultstill1.3.2,testoverride1.4.0only.
+
+## Nov2 12:06 settings isolated repeat
+-41420529883 51checks0fail30actualpairsallinspected. BothENARvibrationoffpersistscoldlaunch/reopen/4scrolls. Freshfontboundsactual1.6/1.2/0.8both. Priororiginalonlyvibrationflipnotreproduced;repeatlockhelpand16scrollcontextbeforeproductpatch. IntermediateENARscroll/returnpositionsdiffer;notwholeframeortrajectorypass. Default1.3.2remains.

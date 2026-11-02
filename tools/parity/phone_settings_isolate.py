@@ -73,11 +73,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    for f in ['app_prefs','fajr_prefs','app_haptics']:(out/(slug+'-'+n+'-'+f+'.xml')).write_text(adb('shell','cat',f'/data/data/{pkg}/shared_prefs/{f}.xml'))
   settings='Settings' if lang=='en' else 'الإعدادات';vibration='Notification vibration' if lang=='en' else 'الاهتزاز للإشعارات';haptic='Haptic feedback' if lang=='en' else 'الاستجابة اللمسية'
   check('settings',route(settings));checkpoint('initial')
+  check('lock help',choose('Lock screen widgets' if lang=='en' else 'ويدجت شاشة القفل'));checkpoint('lock-help');check('close help',tap('Close' if lang=='en' else 'إغلاق'))
   check('vibration off tap',choose(vibration));check('vibration off persisted',prefs().get('vibration_enabled')=='false');checkpoint('vibration-off')
   check('haptic off tap',choose(haptic));checkpoint('both-off')
   launch();checkpoint('cold-launch')
   check('menu',tap('Menu' if lang=='en' else 'القائمة'));check('settings reopen',tap(settings));checkpoint('reopened-before-scroll')
-  for i in range(4):swipe();checkpoint('scroll-'+str(i+1))
+  for i in range(16):swipe();checkpoint('scroll-'+str(i+1))
   # Relaunch before each endpoint probe, and read fresh font label bounds each time.
   for stage,fraction in [('font-high',.95),('font-middle',.5),('font-low',.05)]:
    check(stage+' settings',route(settings))
@@ -89,6 +90,8 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
     a,b=rect(labels[0]),rect(labels[1]);left=min(a[2],b[2])+38;right=max(a[0],b[0])-38;y=(a[1]+a[3])//2
     f=fraction if lang=='en' else 1-fraction
     adb('shell','input','tap',str(round(left+(right-left)*f)),str(y));time.sleep(2);checkpoint(stage+'-after')
+    for _ in range(8):swipe()
+    time.sleep(2);checkpoint(stage+'-settled-end')
   (out/(slug+'-log.txt')).write_text(adb('logcat','-d'))
 pairs=[]
 for n,a in states.items():

@@ -1,0 +1,346 @@
+{
+  "run": "41420529883",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41420529883",
+  "checks": 51,
+  "failed": 0,
+  "actual_pairs_inspected": 30,
+  "raw_same": 16,
+  "result": "Both EN/AR actual vibration off survives cold-launch, reopen and four individual scrolls; previous original-only flip not reproduced. Font fresh-bound probes persist 1.6/1.2/0.8 identically.",
+  "limits": [
+    "Intermediate scroll/return positions differ, not stable wholeframes.",
+    "Cold-launch prayer countdown/background are elapsed-time fixtures, not synchronized captures.",
+    "Prior51checked/30pair result does not explain previous vibration flip. Repeat original lock-help+16scroll context before product judgment."
+  ],
+  "pixels": [
+    {
+      "scene": "en-initial",
+      "pixels": 3467,
+      "bbox": [
+        52,
+        52,
+        682,
+        2374
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-vibration-off",
+      "pixels": 355,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-both-off",
+      "pixels": 355,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-cold-launch",
+      "pixels": 17205,
+      "bbox": [
+        52,
+        52,
+        980,
+        1250
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-reopened-before-scroll",
+      "pixels": 3348,
+      "bbox": [
+        52,
+        52,
+        682,
+        2374
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-1",
+      "pixels": 1198633,
+      "bbox": [
+        42,
+        19,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-scroll-2",
+      "pixels": 1305891,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2294
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-scroll-3",
+      "pixels": 283,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-scroll-4",
+      "pixels": 283,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "en-font-high-before",
+      "pixels": 999023,
+      "bbox": [
+        42,
+        52,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-high-after",
+      "pixels": 909773,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-middle-before",
+      "pixels": 1099600,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-middle-after",
+      "pixels": 1098683,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2386
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-low-before",
+      "pixels": 1040706,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "en-font-low-after",
+      "pixels": 1019217,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2395
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-initial",
+      "pixels": 355,
+      "bbox": [
+        51,
+        52,
+        681,
+        2373
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-vibration-off",
+      "pixels": 355,
+      "bbox": [
+        51,
+        52,
+        681,
+        2373
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-both-off",
+      "pixels": 291,
+      "bbox": [
+        53,
+        52,
+        681,
+        2373
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-cold-launch",
+      "pixels": 2550661,
+      "bbox": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-reopened-before-scroll",
+      "pixels": 538,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-1",
+      "pixels": 1344732,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-scroll-2",
+      "pixels": 538,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-3",
+      "pixels": 538,
+      "bbox": [
+        52,
+        47,
+        967,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-scroll-4",
+      "pixels": 340,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-high-before",
+      "pixels": 340,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-high-after",
+      "pixels": 340,
+      "bbox": [
+        52,
+        52,
+        71,
+        80
+      ],
+      "same_tokens": true
+    },
+    {
+      "scene": "ar-font-middle-before",
+      "pixels": 1293757,
+      "bbox": [
+        30,
+        23,
+        1038,
+        2392
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-middle-after",
+      "pixels": 1346611,
+      "bbox": [
+        30,
+        23,
+        1038,
+        2394
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-low-before",
+      "pixels": 1295245,
+      "bbox": [
+        30,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    },
+    {
+      "scene": "ar-font-low-after",
+      "pixels": 1343567,
+      "bbox": [
+        30,
+        15,
+        1038,
+        2399
+      ],
+      "same_tokens": false
+    }
+  ]
+}
