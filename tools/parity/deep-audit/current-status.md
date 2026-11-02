@@ -288,3 +288,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 automatic emulator GPS roundtrip planned
 - Extend successful actual-geocoder alias fixture with emulator geo fix A(London)->B(Cairo)->A and actual Current location row refresh each leg; verify prefs coordinates, derived distinct keys, retained alias storage and restored display/reopen. OS location dumps retained. No physical movement, sensors, phone-watch transport or GPS jitter claim. If emulator does not deliver fix, preserve failure rather than seed the key/name to make it pass.
+
+## Nov2 02:32 GPS console no-delivery finding
+-41366226768 135checks12fails,all16actualpairsinspected10rawequal. OS GPS providerOFF,mStartedfalse,lastlocationnull despite consoleOK. B never moved; A/returnchecks vacuous,notmovementproof. OriginalstaleGPSoffwarning vs comparison remains residual. Add verification-only OS GPS listener to activateprovider; no productpatch/keyseed/geocoderinjection.
