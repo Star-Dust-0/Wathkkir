@@ -8,7 +8,7 @@ Close the fixed packages below once each has a source review plus exact evidence
 
 ## Must-fix or must-triage
 
-Nov2 16:51: confirmed Add-selected-tag coroutine-path mismatch from41455920401. Repair prepared, rerun pending. Shipped resumed insert drops tags while immediate insert saves them. Do not mark fixed before rerun. The Material3 slider mismatch was repaired, followed by bounded settings/location/bell/theme/font/offset regressions. This is not a zero-defect certificate.
+Nov2 16:51: confirmed Add-selected-tag coroutine-path mismatch from41455920401. Repair563b544 verified in observed resumed-insert path by41465825842. All22pairs inspected,20app-content exact and2caret-only. Raw workflow255checks12parser failures retained; corrected active-only offline2/0/2/0 allfour. Immediate-return path source-preserved, not forced in runtime. Shipped resumed insert drops tags while immediate insert saves them. Bounded observed mismatch repaired; no all-path claim. The Material3 slider mismatch was repaired, followed by bounded settings/location/bell/theme/font/offset regressions. This is not a zero-defect certificate.
 
 R1. Controlled static and return-scroll comparison: separate persistent layout/scroll differences from differing gestures, focus and caret. Include lower-language uncommitted Turkish selection and AR Isha/Fajr return captures.
 R2. Forced-idle phone remaining147vs146: match event times/update ordering; do not mask unequal text. Preserve both raw logs and classify mismatch vs sampling.

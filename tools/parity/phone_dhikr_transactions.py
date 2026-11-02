@@ -99,7 +99,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   opentimes();check('add12 first',tap(addtime));check('add12 duplicate',tap(addtime));shot('times-duplicate-draft');check('duplicate parent Cancel',tap(cancel));d=db('times-duplicate-cancel');check('duplicate Cancel preserves09',any(v[0]==ident and v[4]=='09:00' for v in d.get('dhikr_table',[])))
   opentimes();check('add12 saved',tap(addtime));check('times actual Save',tap(save));time.sleep(1);shot('times-saved-live')
   def alarms(stage):
-   raw=adb('shell','dumpsys','alarm');(out/(slug+'-'+stage+'-alarms.txt')).write_text(raw);sections=re.split(r'\n    (?:RTC_WAKEUP|RTC|ELAPSED_WAKEUP|ELAPSED) #\d+:',raw);lines=[z for z in sections[1:] if re.match(r' Alarm\{[^\n]* '+re.escape(pkg)+r'\}',z) and '/com.example.alarm.AlarmReceiver' in z.split('\n    ')[0]];(out/(slug+'-'+stage+'-alarm-lines.json')).write_text(json.dumps(lines));return lines
+   raw=adb('shell','dumpsys','alarm');(out/(slug+'-'+stage+'-alarms.txt')).write_text(raw);sections=re.split(r'\n(?=    (?:RTC_WAKEUP|RTC|ELAPSED_WAKEUP|ELAPSED) #\d+:)',raw);lines=[z for z in sections[1:] if re.match(r'    \S+ #\d+: Alarm\{[^\n]* '+re.escape(pkg)+r'\}',z) and 'tag=*walarm*:'+pkg+'/com.example.alarm.AlarmReceiver' in z[:500]];(out/(slug+'-'+stage+'-alarm-lines.json')).write_text(json.dumps(lines));return lines
   live=alarms('two-time-save');check('actual pending dhikr alarms after Save',len(live)>=2)
   # Do not force-stop between saved schedule, actual disable/enable/delete and alarm inspection.
   def toggle():
