@@ -1,0 +1,918 @@
+{
+  "run": "41491743318",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41491743318",
+  "checks": 127,
+  "failures": 32,
+  "visual_pairs_inspected": 26,
+  "app_exact_pairs": 24,
+  "failures_classified": [
+    "No actual text entered by first TextInput action. All dependent search/Back checks fail, no product mismatch.",
+    "Human dumpsys origWhen2027-01-0507:00UTC interpreted asAfrica/Cairo07:00. Wrong clock advance before actual09:00target. Numeric origWhen1799132400000matchesallfour. No delivery established."
+  ],
+  "bounded_passes": [
+    "CalendarNovDec2026Jan2027 arrows/headings/day5 actualselected",
+    "ChapterliststarDBchapter4",
+    "Eventidsisra_mirajenabled/reopen/pendingexactalarm/offprefsoffalarmcanceled"
+  ],
+  "visual_limits": "24appcontentexact.2day5detailsframesdifferent intermediate scrollpositions, not equal endpoint/motion proof. RetryusesactualScrollActiontobottomandsettle.",
+  "raw_checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Favorites filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual Arabic query input",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en nonfavorite chapter returned",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en nonfavorite chapter open",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en appbar Back actual",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en query retained after Back",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en clear actual query",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual chapter list-star",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en list-star persisted chapter4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Calendar tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en prev month actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en November heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en next month actual back",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en next year actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en January2027 heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual day5 selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "original-en actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event wallclock target parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #48: Alarm{a170a03 type 0 origWhen 1799132400000 whenElapsed 421314676 com.wathakker.app}\\n      tag=*walarm*:com.wathakker.app/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m2s694ms app_standby=-1s996ms device_idle=-- battery_saver=-1s996ms tare=-1s996ms\\n      whenElapsed=+4d20h59m2s694ms maxWhenElapsed=+4d20h59m2s694ms\\n      operation=PendingIntent{22e5d80: PendingIntentRecord{7358c8c com.wathakker.app broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "original-en event target09local",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual event notification delivered",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Favorites filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual Arabic query input",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nonfavorite chapter returned",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar nonfavorite chapter open",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar appbar Back actual",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar query retained after Back",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar clear actual query",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual chapter list-star",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar list-star persisted chapter4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Calendar tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar prev month actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar November heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar next month actual back",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar next year actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar January2027 heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual day5 selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "original-ar actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event wallclock target parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #43: Alarm{30931ef type 0 origWhen 1799132400000 whenElapsed 421425807 com.wathakker.app}\\n      tag=*walarm*:com.wathakker.app/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m11s755ms app_standby=-2s802ms device_idle=-- battery_saver=-2s802ms tare=-2s802ms\\n      whenElapsed=+4d20h59m11s755ms maxWhenElapsed=+4d20h59m11s755ms\\n      operation=PendingIntent{5fb44fc: PendingIntentRecord{7358c8c com.wathakker.app broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "original-ar event target09local",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual event notification delivered",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Favorites filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual Arabic query input",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nonfavorite chapter returned",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en nonfavorite chapter open",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en appbar Back actual",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en query retained after Back",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en clear actual query",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual chapter list-star",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en list-star persisted chapter4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Calendar tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en prev month actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en November heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en next month actual back",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en next year actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en January2027 heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual day5 selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "comparison-en actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event wallclock target parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #47: Alarm{4b51f56 type 0 origWhen 1799132400000 whenElapsed 421524923 com.wathakker.app.compare}\\n      tag=*walarm*:com.wathakker.app.compare/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m9s740ms app_standby=-2s138ms device_idle=-- battery_saver=-2s138ms tare=-2s138ms\\n      whenElapsed=+4d20h59m9s740ms maxWhenElapsed=+4d20h59m9s740ms\\n      operation=PendingIntent{32ebbd7: PendingIntentRecord{ff2e13 com.wathakker.app.compare broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "comparison-en event target09local",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual event notification delivered",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Hisn tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Favorites filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual Arabic query input",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nonfavorite chapter returned",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar nonfavorite chapter open",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar appbar Back actual",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar query retained after Back",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar clear actual query",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar All filter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual chapter list-star",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar list-star persisted chapter4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Calendar tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar prev month actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar November heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar next month actual back",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar next year actual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar January2027 heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual day5 selected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Events tab",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar initial no event prefs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar turn first reminder on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual one event enabled",
+      "passed": true,
+      "detail": "['isra_miraj']"
+    },
+    {
+      "name": "comparison-ar actual one event alarm",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event pref survives reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event alarm rearmed on reopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event wallclock target parsed",
+      "passed": true,
+      "detail": "['    RTC_WAKEUP #47: Alarm{b9ba0d6 type 0 origWhen 1799132400000 whenElapsed 421628732 com.wathakker.app.compare}\\n      tag=*walarm*:com.wathakker.app.compare/com.example.prayer.EventReminderReceiver\\n      type=RTC_WAKEUP origWhen=2027-01-05 07:00:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5\\n      policyWhenElapsed: requester=+4d20h59m6s996ms app_standby=-2s949ms device_idle=-- battery_saver=-2s949ms tare=-2s949ms\\n      whenElapsed=+4d20h59m6s996ms maxWhenElapsed=+4d20h59m6s996ms\\n      operation=PendingIntent{7c8df57: PendingIntentRecord{ff2e13 com.wathakker.app.compare broadcastIntent}}\\n      idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]']"
+    },
+    {
+      "name": "comparison-ar event target09local",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual event notification delivered",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar turn enabled reminder off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event off prefs cleared",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar event off alarm canceled",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "pixels": [
+    {
+      "scene": "ar-calendar-day5-details",
+      "pixels": 1518549,
+      "app_pixels": 1477925,
+      "bbox": [
+        42,
+        15,
+        1038,
+        2399
+      ]
+    },
+    {
+      "scene": "ar-calendar-day5",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-calendar-december",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-calendar-january",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-calendar-november",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-event-off",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-event-on",
+      "pixels": 0,
+      "app_pixels": 0,
+      "bbox": null
+    },
+    {
+      "scene": "ar-event-reopen",
+      "pixels": 198,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-events-initial",
+      "pixels": 0,
+      "app_pixels": 0,
+      "bbox": null
+    },
+    {
+      "scene": "ar-hisn-list-star",
+      "pixels": 207,
+      "app_pixels": 0,
+      "bbox": [
+        398,
+        47,
+        967,
+        2373
+      ]
+    },
+    {
+      "scene": "ar-hisn-nonfavorite-open",
+      "pixels": 207,
+      "app_pixels": 0,
+      "bbox": [
+        398,
+        47,
+        967,
+        2373
+      ]
+    },
+    {
+      "scene": "ar-hisn-nonfavorite-positive",
+      "pixels": 9,
+      "app_pixels": 0,
+      "bbox": [
+        398,
+        2364,
+        681,
+        2373
+      ]
+    },
+    {
+      "scene": "ar-hisn-query-return",
+      "pixels": 207,
+      "app_pixels": 0,
+      "bbox": [
+        398,
+        47,
+        967,
+        2373
+      ]
+    },
+    {
+      "scene": "en-calendar-day5-details",
+      "pixels": 609432,
+      "app_pixels": 601003,
+      "bbox": [
+        42,
+        154,
+        1038,
+        2398
+      ]
+    },
+    {
+      "scene": "en-calendar-day5",
+      "pixels": 0,
+      "app_pixels": 0,
+      "bbox": null
+    },
+    {
+      "scene": "en-calendar-december",
+      "pixels": 1618,
+      "app_pixels": 0,
+      "bbox": [
+        169,
+        48,
+        261,
+        82
+      ]
+    },
+    {
+      "scene": "en-calendar-january",
+      "pixels": 0,
+      "app_pixels": 0,
+      "bbox": null
+    },
+    {
+      "scene": "en-calendar-november",
+      "pixels": 1618,
+      "app_pixels": 0,
+      "bbox": [
+        169,
+        48,
+        261,
+        82
+      ]
+    },
+    {
+      "scene": "en-event-off",
+      "pixels": 0,
+      "app_pixels": 0,
+      "bbox": null
+    },
+    {
+      "scene": "en-event-on",
+      "pixels": 188,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-event-reopen",
+      "pixels": 188,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-events-initial",
+      "pixels": 188,
+      "app_pixels": 0,
+      "bbox": [
+        934,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "en-hisn-list-star",
+      "pixels": 2391,
+      "app_pixels": 0,
+      "bbox": [
+        81,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-hisn-nonfavorite-open",
+      "pixels": 2391,
+      "app_pixels": 0,
+      "bbox": [
+        81,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-hisn-nonfavorite-positive",
+      "pixels": 2391,
+      "app_pixels": 0,
+      "bbox": [
+        81,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-hisn-query-return",
+      "pixels": 2391,
+      "app_pixels": 0,
+      "bbox": [
+        81,
+        47,
+        967,
+        82
+      ]
+    }
+  ]
+}

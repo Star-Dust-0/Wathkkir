@@ -80,7 +80,7 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   # B2: positive search must include a chapter that is not a favorite.
   check('Hisn tab',tap('Hisn' if lang=='en' else 'حصن المسلم'));time.sleep(5);check('Favorites filter',tap('Favorites' if lang=='en' else 'المفضلة'))
   query='الثوب';encoded=__import__('base64').b64encode(query.encode()).decode()
-  result=adb('shell','am','instrument','-w','-e','base64',encoded,'com.example.widgethost.TextInput');check('actual Arabic query input','set=true' in result);hide_keyboard();time.sleep(1);shot('hisn-nonfavorite-positive');check('nonfavorite chapter returned',named('دُعَاءُ لُبْسِ الثَّوبِ'));check('nonfavorite chapter open',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('hisn-nonfavorite-open');check('appbar Back actual',tap('Back' if lang=='en' else 'رجوع'));check('query retained after Back',named(query));shot('hisn-query-return')
+  check('query field focus',field(0,''));result=adb('shell','am','instrument','-w','-e','base64',encoded,'com.example.widgethost.TextInput');(out/(slug+'-input-result.txt')).write_text(result);assert check('actual Arabic query input','set=true' in result,result),'No actual search text entered';hide_keyboard();time.sleep(1);shot('hisn-nonfavorite-positive');check('nonfavorite chapter returned',named('دُعَاءُ لُبْسِ الثَّوبِ'));check('nonfavorite chapter open',tap('دُعَاءُ لُبْسِ الثَّوبِ'));shot('hisn-nonfavorite-open');check('appbar Back actual',tap('Back' if lang=='en' else 'رجوع'));check('query retained after Back',named(query));shot('hisn-query-return')
   # Clear by actual accessibility text action, then list-star callback on known chapter.
   check('clear actual query','set=true' in adb('shell','am','instrument','-w','-e','base64','','com.example.widgethost.TextInput'));hide_keyboard();check('All filter',tap('All' if lang=='en' else 'الكل'))
   root=ET.fromstring(tree());parents={c:p for p in root.iter() for c in p};title=next((n for n in root.iter('node') if n.get('text')=='دُعَاءُ لُبْسِ الثَّوبِ'),None)
@@ -104,7 +104,9 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
    if len(opts)!=2:return False
    opts.sort(key=lambda n:rect(n)[0]);right=nextmonth==(lang=='en');return touch(opts[-1 if right else 0])
   check('prev month actual',monthmove(False));check('November heading',any(('November 2026' if lang=='en' else 'نوفمبر 2026') in n.get('text','') for n in ET.fromstring(tree()).iter('node')));shot('calendar-november');check('next month actual back',monthmove(True));check('next year actual',monthmove(True));check('January2027 heading',any(('January 2027' if lang=='en' else 'يناير 2027') in n.get('text','') for n in ET.fromstring(tree()).iter('node')));shot('calendar-january')
-  root=ET.fromstring(tree());cells=[n for n in root.iter('node') if n.get('clickable')=='true' and len(rect(n))==4 and 110<=rect(n)[2]-rect(n)[0]<=145 and 160<=rect(n)[3]-rect(n)[1]<=200];chosen=next((n for n in cells if any(c.get('text')=='5' for c in n.iter('node'))),None);check('actual day5 selected',chosen is not None and touch(chosen));shot('calendar-day5');swipe();shot('calendar-day5-details')
+  root=ET.fromstring(tree());cells=[n for n in root.iter('node') if n.get('clickable')=='true' and len(rect(n))==4 and 110<=rect(n)[2]-rect(n)[0]<=145 and 160<=rect(n)[3]-rect(n)[1]<=200];chosen=next((n for n in cells if any(c.get('text')=='5' for c in n.iter('node'))),None);check('actual day5 selected',chosen is not None and touch(chosen));shot('calendar-day5');
+  for _ in range(6):adb('shell','am','instrument','-w','com.example.widgethost.ScrollAction');time.sleep(.5)
+  time.sleep(2);shot('calendar-day5-details')
   launch();tap('Calendar' if lang=='en' else 'التقويم');check('Events tab',tap('Events' if lang=='en' else 'المناسبات'));shot('events-initial')
   def eventprefs(stage):
    raw=adb('shell','cat',f'/data/data/{pkg}/shared_prefs/fajr_prefs.xml');(out/(slug+'-'+stage+'-fajr.xml')).write_text(raw)
@@ -115,10 +117,10 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   check('initial no event prefs',eventprefs('before')==[]);check('turn first reminder on',tap('Turn reminder on' if lang=='en' else 'تفعيل التذكير'));time.sleep(1);ids=eventprefs('on');live=eventalarms('on');check('actual one event enabled',len(ids)==1,str(ids));check('actual one event alarm',len(live)==1);shot('event-on')
   launch();tap('Calendar' if lang=='en' else 'التقويم');tap('Events' if lang=='en' else 'المناسبات');check('event pref survives reopen',eventprefs('reopen')==ids);live=eventalarms('reopen');check('event alarm rearmed on reopen',len(live)==1);shot('event-reopen')
   # Advance only isolated emulator clock to real AlarmManager delivery.
-  dates=re.findall(r'origWhen=(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})',live[0]) if len(live)==1 else []
-  check('event wallclock target parsed',bool(dates),str(live))
-  if dates:
-   dt=__import__('datetime').datetime.strptime(dates[0],'%Y-%m-%d %H:%M:%S').replace(tzinfo=__import__('zoneinfo').ZoneInfo('Africa/Cairo'));check('event target09local',dt.hour==9 and dt.minute==0);adb('shell','date','-s','@'+str(int(dt.timestamp())-5));adb('logcat','-c');time.sleep(10);raw=adb('shell','dumpsys','notification','--noredact');(out/(slug+'-event-delivered-notification.txt')).write_text(raw);check('actual event notification delivered',any(pkg in b and 'event_reminders_channel' in b for b in re.split(r'(?=NotificationRecord\()',raw)));eventalarms('after-delivery');(out/(slug+'-event-delivery-log.txt')).write_text(adb('logcat','-d'))
+  epochs=re.findall(r'origWhen (\d{13})',live[0]) if len(live)==1 else []
+  check('event wallclock epoch parsed',bool(epochs),str(live))
+  if epochs:
+   target=int(epochs[0]);dt=__import__('datetime').datetime.fromtimestamp(target/1000,__import__('zoneinfo').ZoneInfo('Africa/Cairo'));check('event target09local',dt.hour==9 and dt.minute==0,str(dt));adb('shell','date','-s','@'+str(target//1000-5));adb('logcat','-c');time.sleep(12);raw=adb('shell','dumpsys','notification','--noredact');(out/(slug+'-event-delivered-notification.txt')).write_text(raw);check('actual event notification delivered',any(pkg in b and 'event_reminders_channel' in b for b in re.split(r'(?=NotificationRecord\()',raw)));eventalarms('after-delivery');(out/(slug+'-event-delivery-log.txt')).write_text(adb('logcat','-d'))
   check('turn enabled reminder off',tap('Reminder on' if lang=='en' else 'التذكير مفعّل'));check('event off prefs cleared',eventprefs('off')==[]);check('event off alarm canceled',len(eventalarms('off'))==0);shot('event-off')
 pairs=[]
 for n,a in states.items():
