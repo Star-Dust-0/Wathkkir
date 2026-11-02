@@ -315,3 +315,6 @@ Nextboundedbatch:all8watchfontchoicesactualselection/saved/reopenENAR. Nooverall
 
 ## Nov2 other9 Fajr notification locales finite batch planned
 - ActualTest/localizedSnooze/real1minuteAlarmManagerdelivery/native notification title+body+shade/localizedDismiss for FR DE ES IT TR UR ID RU PT. Seeded initial language/preferences only; no receiver injection. Compare shipped values before edits. No audio/physicalidle/fullmotion proof.
+
+## Nov2 05:14 other9locale route predicate miss
+-41378407135 30checks27fails27pairs26same. Actualroute did reach localizedFajrsettings, but helperonlyacceptedENAlarmon/off. NoTest/deliverywasattempted,noproductmismatchproof. Retrylocalizesdestinationpredicateandusesactualenablerowafterstartupseedbecameoff. No productchange.
