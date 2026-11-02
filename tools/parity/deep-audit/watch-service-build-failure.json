@@ -1,0 +1,8 @@
+{
+  "run": "41521437989",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41521437989",
+  "result": "Buildfailurebeforeemulatorstartup;noartifact/runtime/providerclaim",
+  "root_cause": "tilehostrendererdoesnotexporttilesproviderclasses;ProviderServiceProbeimportsandroidx.wear.tilesbutdirecttilesdependencyabsent. Allreportedcompilefailuresmissingtilespackage/types.",
+  "repair": "Addverificationhostimplementationandroidx.wear.tiles:tiles:1.4.1,productunchanged.",
+  "retry_limit": "Oneboundedretryforthisspecificcompilefix,stop/reportifstillstalledratherthanblindserialreruns."
+}
