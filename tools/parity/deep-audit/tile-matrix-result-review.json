@@ -1,0 +1,131 @@
+{
+  "run": "41404282026",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41404282026",
+  "pairs": 24,
+  "render_destination_checks": 48,
+  "all_actual_pairs_inspected": true,
+  "zero_pixel_difference_pairs": 24,
+  "scope": "EN/AR x four themes x start-floor/middle-24h/iqama-end-clamp. Actual original/comparison APK layout serialization, explicit globals/context/state fixture, one same AndroidX renderer. native=false. Not provider lifecycle/preferences IO/dynamic ring/physical OEM proof. No product patch.",
+  "results": [
+    {
+      "case": "ar-t0-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t0-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t0-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t1-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t1-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t1-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t2-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t2-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t2-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t3-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t3-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "ar-t3-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t0-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t0-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t0-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t1-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t1-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t1-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t2-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t2-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t2-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t3-start",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t3-middle",
+      "different_pixels": 0,
+      "bbox": null
+    },
+    {
+      "case": "en-t3-iqama-end",
+      "different_pixels": 0,
+      "bbox": null
+    }
+  ]
+}
