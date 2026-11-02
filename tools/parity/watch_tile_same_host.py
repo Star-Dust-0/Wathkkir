@@ -9,6 +9,8 @@ for f in ['watch-original.apk','watch-rebuilt.apk','widgethost.apk','tilehost.ap
  s=adb('install','-r','-g',f);assert 'Success' in s,s
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
  text=adb('shell','am','instrument','-w','-e','pkg',pkg,'-e','original',str(name=='original').lower(),'com.example.widgethost/.TileLayoutProbe');(out/(name+'-tile-probe.txt')).write_text(text);print(text,flush=True);assert 'INSTRUMENTATION_RESULT: error=' not in text;assert 'INSTRUMENTATION_RESULT: proto=' in text
+time.sleep(35)
+adb('shell','dumpsys','battery','unplug');adb('shell','svc','power','stayon','true');adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
 # Render both actual serialized outputs with one identical verification host/library.
 import base64
 for name in ['original','comparison']:
@@ -19,6 +21,16 @@ for name in ['original','comparison']:
   b.append(n);return bytes(b)
  layout=base64.b64encode(b'\x0a'+vi(len(raw))+raw).decode()
  adb('shell','am','force-stop','com.example.tilehost');adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
- adb('shell','am','start','-W','-n','com.example.tilehost/com.example.widgethost.TileReferenceActivity','--es','layout',layout);time.sleep(5)
+ valid=False
+ for attempt in range(4):
+  adb('shell','input','keyevent','KEYCODE_WAKEUP');adb('shell','wm','dismiss-keyguard')
+  launch=adb('shell','am','start','-W','-n','com.example.tilehost/com.example.widgethost.TileReferenceActivity','--es','layout',layout);(out/(name+'-launch-'+str(attempt)+'.txt')).write_text(launch);time.sleep(5)
+  tree=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump');(out/(name+'-hierarchy-'+str(attempt)+'.txt')).write_text(tree)
+  (out/(name+'-attempt-'+str(attempt)+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
+  if 'Dhuhr' in tree and '10:03' in tree:valid=True;break
+  time.sleep(3)
+ (out/(name+'-render-valid.json')).write_text(json.dumps({'valid':valid}))
+ assert valid,'No actual tile rendered; do not claim pixel parity'
+
  (out/(name+'-same-host.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
  (out/(name+'-same-host-log.txt')).write_text(adb('logcat','-d'))

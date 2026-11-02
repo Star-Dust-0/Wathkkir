@@ -1,0 +1,6 @@
+{
+  "run": "41399531951",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41399531951",
+  "actual_pixels_inspected": true,
+  "finding": "Green script but both captures invalid: original Starting screen, comparison ChargingActivity. No render/pixel parity. Startup/charging confound, no product defect. Add unplug,settled launch destination assertion,attempt screenshots and async render callback logs."
+}
