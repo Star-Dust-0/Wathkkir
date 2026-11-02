@@ -687,3 +687,6 @@ Asr/highlat41269828135tightdialogcropsshowlabel14spcomparisonvs16sporiginal. Oct
 
 ## Nov2 10:28 original slider geometry restored under test override
 -41410186996 55checks0fail18pairsallactualpixelsinspected. Material31.4.0overrideeliminatesALL18slidercroppixeldiffs;2wholeframesexact,otherclock/backgroundresiduals. Default1.3.2remainsuntilbroadersettings/location/nestedpickerregression. No handtunedthumbpatch.
+
+## Nov2 11:25 selected Material3 regression reviewed, not global pass
+-41413270416 573scriptchecks0fail100actualpairsallinspected.80location/bellrawstatesagree;18/20settingsrawstatesagree. ENvibrationoffbecomesonbetweenreopen/scrolloriginalonlyconfirmedpersistedprefs;isolatestepbeforeproductpatch. Fontresetstalegeometryleft1.6both,notactualresetproof. ARlargefontreturnscrolloffsetdiff. Defaultstill1.3.2,testoverride1.4.0only.

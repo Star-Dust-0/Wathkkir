@@ -1,0 +1,901 @@
+{
+  "run": "41413270416",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41413270416",
+  "checks": 573,
+  "script_failures": 0,
+  "actual_pairs_inspected": 100,
+  "verdict": "Finite locations and nested bell states agree. NOT global pass. Default remains1.3.2 pending isolated settings discrepancy.",
+  "residuals": [
+    "EN vibration false after initial tap, true after reopen/scroll in original only; original EN restored toggle subsequently false vs comparison true. Need isolate per step before product patch.",
+    "Font reset stale bounds: persisted1.6 both, not true midpoint reset.",
+    "AR large font return scroll offset differs. No whole motion parity claim."
+  ],
+  "pixel_results": [
+    {
+      "scenario": "phone_bell_cancel",
+      "pairs": 32,
+      "raw_same": 32,
+      "results": [
+        {
+          "scene": "en-bell-initial",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-early-draft",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-after-cancel",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-applied-reopen",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-off-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-off-settled",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-off-bottom",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-off-return",
+          "pixels": 282,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "en-minute-1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-minute-30",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-minute-60",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-invalid-0",
+          "pixels": 432,
+          "bbox": [
+            123,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-invalid-61",
+          "pixels": 580,
+          "bbox": [
+            123,
+            52,
+            202,
+            2042
+          ]
+        },
+        {
+          "scene": "en-invalid-999",
+          "pixels": 542,
+          "bbox": [
+            234,
+            47,
+            967,
+            2042
+          ]
+        },
+        {
+          "scene": "en-iqama-draft",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-iqama-applied",
+          "pixels": 333,
+          "bbox": [
+            122,
+            52,
+            142,
+            80
+          ]
+        },
+        {
+          "scene": "ar-bell-initial",
+          "pixels": 374,
+          "bbox": [
+            1038,
+            1096,
+            1053,
+            1221
+          ]
+        },
+        {
+          "scene": "ar-early-draft",
+          "pixels": 848,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1222
+          ]
+        },
+        {
+          "scene": "ar-after-cancel",
+          "pixels": 223,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1221
+          ]
+        },
+        {
+          "scene": "ar-applied-reopen",
+          "pixels": 272,
+          "bbox": [
+            1038,
+            1055,
+            1052,
+            1202
+          ]
+        },
+        {
+          "scene": "ar-off-reopen",
+          "pixels": 848,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1222
+          ]
+        },
+        {
+          "scene": "ar-off-settled",
+          "pixels": 290,
+          "bbox": [
+            1038,
+            1095,
+            1049,
+            1202
+          ]
+        },
+        {
+          "scene": "ar-off-bottom",
+          "pixels": 601,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1221
+          ]
+        },
+        {
+          "scene": "ar-off-return",
+          "pixels": 495,
+          "bbox": [
+            123,
+            52,
+            1049,
+            1201
+          ]
+        },
+        {
+          "scene": "ar-minute-1",
+          "pixels": 530,
+          "bbox": [
+            1038,
+            1035,
+            1052,
+            1213
+          ]
+        },
+        {
+          "scene": "ar-minute-30",
+          "pixels": 732,
+          "bbox": [
+            1038,
+            1035,
+            1053,
+            1222
+          ]
+        },
+        {
+          "scene": "ar-minute-60",
+          "pixels": 609,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1221
+          ]
+        },
+        {
+          "scene": "ar-invalid-0",
+          "pixels": 197,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-invalid-61",
+          "pixels": 235,
+          "bbox": [
+            123,
+            52,
+            142,
+            80
+          ]
+        },
+        {
+          "scene": "ar-invalid-999",
+          "pixels": 235,
+          "bbox": [
+            123,
+            52,
+            142,
+            80
+          ]
+        },
+        {
+          "scene": "ar-iqama-draft",
+          "pixels": 287,
+          "bbox": [
+            1038,
+            1039,
+            1054,
+            1202
+          ]
+        },
+        {
+          "scene": "ar-iqama-applied",
+          "pixels": 546,
+          "bbox": [
+            122,
+            52,
+            1049,
+            1201
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "phone_location_pickers",
+      "pairs": 48,
+      "raw_same": 48,
+      "results": [
+        {
+          "scene": "en-asr-0-dialog",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-asr-0-draft",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-asr-0-applied",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-asr-0-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-asr-1-dialog",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-asr-1-draft",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-asr-1-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-asr-1-reopen",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-0-dialog",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-0-draft",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-0-applied",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-0-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-high-1-dialog",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-high-1-draft",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-high-1-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-high-1-reopen",
+          "pixels": 282,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "en-high-2-dialog",
+          "pixels": 281,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "en-high-2-draft",
+          "pixels": 281,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "en-high-2-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "en-high-2-reopen",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-3-dialog",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-3-draft",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-3-applied",
+          "pixels": 188,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-high-3-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-asr-0-dialog",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-asr-0-draft",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-asr-0-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-asr-0-reopen",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-asr-1-dialog",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-asr-1-draft",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-asr-1-applied",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-asr-1-reopen",
+          "pixels": 349,
+          "bbox": [
+            124,
+            52,
+            141,
+            80
+          ]
+        },
+        {
+          "scene": "ar-high-0-dialog",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-0-draft",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-0-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-0-reopen",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-high-1-dialog",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-high-1-draft",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-high-1-applied",
+          "pixels": 198,
+          "bbox": [
+            934,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-high-1-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-2-dialog",
+          "pixels": 282,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "ar-high-2-draft",
+          "pixels": 282,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "ar-high-2-applied",
+          "pixels": 282,
+          "bbox": [
+            123,
+            52,
+            142,
+            79
+          ]
+        },
+        {
+          "scene": "ar-high-2-reopen",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-3-dialog",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-3-draft",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-3-applied",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "scene": "ar-high-3-reopen",
+          "pixels": 0,
+          "bbox": null
+        }
+      ]
+    },
+    {
+      "scenario": "phone_settings_controls",
+      "pairs": 20,
+      "raw_same": 18,
+      "results": [
+        {
+          "scene": "en-settings-top",
+          "pixels": 3640,
+          "bbox": [
+            102,
+            47,
+            967,
+            2374
+          ]
+        },
+        {
+          "scene": "en-lock-help",
+          "pixels": 526,
+          "bbox": [
+            102,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "en-vibration-off",
+          "pixels": 340,
+          "bbox": [
+            102,
+            52,
+            121,
+            80
+          ]
+        },
+        {
+          "scene": "en-haptic-off",
+          "pixels": 340,
+          "bbox": [
+            102,
+            52,
+            121,
+            80
+          ]
+        },
+        {
+          "scene": "en-settings-end",
+          "pixels": 10318,
+          "bbox": [
+            80,
+            47,
+            996,
+            456
+          ]
+        },
+        {
+          "scene": "en-font-scale-max",
+          "pixels": 10318,
+          "bbox": [
+            80,
+            47,
+            996,
+            739
+          ]
+        },
+        {
+          "scene": "en-font-scale-reset",
+          "pixels": 10318,
+          "bbox": [
+            80,
+            47,
+            996,
+            739
+          ]
+        },
+        {
+          "scene": "en-toggles-on",
+          "pixels": 632358,
+          "bbox": [
+            42,
+            15,
+            1038,
+            2399
+          ]
+        },
+        {
+          "scene": "en-event-persisted",
+          "pixels": 671,
+          "bbox": [
+            80,
+            52,
+            121,
+            80
+          ]
+        },
+        {
+          "scene": "ar-settings-top",
+          "pixels": 777,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-lock-help",
+          "pixels": 777,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-vibration-off",
+          "pixels": 777,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-haptic-off",
+          "pixels": 777,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-settings-end",
+          "pixels": 882,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-digits-hindi",
+          "pixels": 814,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-digits-latin",
+          "pixels": 814,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-font-scale-max",
+          "pixels": 814,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-font-scale-reset",
+          "pixels": 814,
+          "bbox": [
+            80,
+            47,
+            967,
+            80
+          ]
+        },
+        {
+          "scene": "ar-toggles-on",
+          "pixels": 1214633,
+          "bbox": [
+            42,
+            15,
+            1038,
+            2399
+          ]
+        },
+        {
+          "scene": "ar-event-persisted",
+          "pixels": 616,
+          "bbox": [
+            80,
+            52,
+            121,
+            80
+          ]
+        }
+      ]
+    }
+  ]
+}
