@@ -1,0 +1,3193 @@
+{
+  "run": "41475193274",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41475193274",
+  "checks": 583,
+  "failures": 156,
+  "classification": "Harness failed to identify any wheel because custom hierarchy omits scrollable attrs. No gesture occurred; unchanged09:00 caused all16 saved-boundary expectations to fail. No product mismatch established.",
+  "passed": "Allfour sessions actual edit-tag select Cancel/no relation; select Save/relation; remove Cancel/keeps; remove Save/none; trimmed edited title/body persist. Nested open and Cancel/saveunchanged paths executed but changed draft rollback not tested.",
+  "visual": "All24pairs inspected6sheets. Actual wheels remain09:00everywhere, not mislabeled screenshot filenames2359/midnight. 24/24appcrops exact; OS time differs.",
+  "pixels": [
+    {
+      "scene": "ar-12-2359-parent-draft",
+      "pixels": 1245,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-12-midnight-wheel",
+      "pixels": 887,
+      "app_pixels": 0,
+      "bbox": [
+        82,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-12-nested-cancel-parent",
+      "pixels": 1245,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-12-nested-initial",
+      "pixels": 1245,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-12-nested2359",
+      "pixels": 1245,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "ar-24-2359-parent-draft",
+      "pixels": 1417,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        52,
+        141,
+        80
+      ]
+    },
+    {
+      "scene": "ar-24-midnight-wheel",
+      "pixels": 728,
+      "app_pixels": 0,
+      "bbox": [
+        102,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-24-nested-cancel-parent",
+      "pixels": 1615,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-24-nested-initial",
+      "pixels": 1615,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-24-nested2359",
+      "pixels": 1615,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-tag-reopen",
+      "pixels": 831,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        47,
+        967,
+        80
+      ]
+    },
+    {
+      "scene": "ar-edit-tag-selected",
+      "pixels": 659,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-12-2359-parent-draft",
+      "pixels": 2124,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-12-midnight-wheel",
+      "pixels": 2053,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-12-nested-cancel-parent",
+      "pixels": 2124,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-12-nested-initial",
+      "pixels": 2718,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-12-nested2359",
+      "pixels": 2312,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-24-2359-parent-draft",
+      "pixels": 2517,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-24-midnight-wheel",
+      "pixels": 657,
+      "app_pixels": 0,
+      "bbox": [
+        103,
+        52,
+        142,
+        80
+      ]
+    },
+    {
+      "scene": "en-24-nested-cancel-parent",
+      "pixels": 2517,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-24-nested-initial",
+      "pixels": 2517,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-24-nested2359",
+      "pixels": 2517,
+      "app_pixels": 0,
+      "bbox": [
+        50,
+        48,
+        194,
+        82
+      ]
+    },
+    {
+      "scene": "en-edit-tag-reopen",
+      "pixels": 2614,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        47,
+        967,
+        82
+      ]
+    },
+    {
+      "scene": "en-edit-tag-selected",
+      "pixels": 2433,
+      "app_pixels": 0,
+      "bbox": [
+        51,
+        48,
+        194,
+        82
+      ]
+    }
+  ],
+  "raw_checks": [
+    {
+      "name": "setup install original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install comparison.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "setup install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tag id available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit select tag",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit tag Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tag Cancel no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit select tag saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en tag Save relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit trim persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit remove draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en remove Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en remove Cancel keeps relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en edit remove saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en remove Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en remove Save no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 12",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en ampm wheel AM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 9",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en ampm wheel AM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 12 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-en hour wheel 09",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-en 24 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tag id available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit select tag",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit tag Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tag Cancel no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit select tag saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar tag Save relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit trim persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit remove draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar remove Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar remove Cancel keeps relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar edit remove saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar remove Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar remove Save no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 12",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar ampm wheel ص",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 9",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar ampm wheel ص",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 12 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "original-ar hour wheel 09",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original-ar 24 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tag id available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit select tag",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit tag Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tag Cancel no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit select tag saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en tag Save relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit trim persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit remove draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en remove Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en remove Cancel keeps relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en edit remove saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en remove Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en remove Save no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en ampm wheel PM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 12",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en ampm wheel AM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 9",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en ampm wheel AM",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 12 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-en hour wheel 09",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-en 24 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar create Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar Add",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar create Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tag id available",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit select tag",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit tag Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tag Cancel no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit select tag saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar tag Save relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit trim persisted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit remove draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar remove Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar remove Cancel keeps relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar edit remove saved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar remove Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar remove Save no relation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 11",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar ampm wheel م",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 12",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar ampm wheel ص",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 9",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar ampm wheel ص",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 12 reset09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 open nested",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 nested Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 parent Cancel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 nested Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 nested open again",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 nested Save draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 parent Cancel rolls back nestedSave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 parent Cancel keeps09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 final nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 23",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 59",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 nested Save final",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 parent Save2359",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 stored2359",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 midnight nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 midnight nested Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 midnight parent Save",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 stored0000",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture Azkar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar fixture search",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times options",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar times dialog",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 reset nested open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar actual wheel columns",
+      "passed": false,
+      "detail": "[]"
+    },
+    {
+      "name": "comparison-ar hour wheel 09",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar minute wheel 00",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison-ar 24 reset09",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "retry": "Use actual narrow View parent bounds and child numeric labels, selector offline validated all8recorded initial trees; failfast on selection failure. No production edit."
+}
