@@ -2,10 +2,12 @@ package com.example.widgethost;
 import android.content.*;import android.os.*;import java.util.concurrent.*;import java.util.concurrent.atomic.*;import java.util.*;
 import androidx.wear.tiles.*;
 import android.support.wearable.complications.*;
-/** Isolated rooted-emulator service host. Actual Android service binding/IPC, not a native face. */
-public final class ProviderServiceProbe {
+/** Registered instrumentation application host. Actual binding/IPC, not a native watch face. */
+public final class ProviderServiceProbe extends android.app.Instrumentation {
+ android.os.Bundle args;static StringBuilder results;
+ public void onCreate(Bundle value){super.onCreate(value);args=value;start();}
  static Context context;static Handler main;static String pkg;static ArrayList<ServiceConnection> connections=new ArrayList<>();
- static void report(String k,String v){System.out.println("PROBE "+k+"="+v.replace('\n',' '));System.out.flush();}
+ static synchronized void report(String k,String v){String line="PROBE "+k+"="+v.replace('\n',' ');results.append(line).append("\n");android.util.Log.i("ProviderServiceProbe",line);}
  interface Work {void run()throws Exception;}
  static void ui(Work work)throws Exception {CountDownLatch latch=new CountDownLatch(1);AtomicReference<Throwable> error=new AtomicReference<>();main.post(()->{try{work.run();}catch(Throwable e){error.set(e);}finally{latch.countDown();}});if(!latch.await(15,TimeUnit.SECONDS))throw new Exception("main dispatch timeout");if(error.get()!=null)throw new Exception(error.get());}
  static IBinder bind(String cls,String action)throws Exception {
@@ -31,9 +33,18 @@ public final class ProviderServiceProbe {
   IComplicationManager callback=new IComplicationManager.Stub(){public void updateComplicationData(int actual,ComplicationData d){report(cls+"_id",String.valueOf(actual));report(cls+"_type",String.valueOf(d.getType()));report(cls+"_data",d.toStringNoRedaction());report(cls+"_tap",String.valueOf(d.getTapAction()));try{if(d.getTapAction()!=null)d.getTapAction().send();report(cls+"_tap_sent","true");}catch(Exception e){report(cls+"_tap_error",e.toString());}latch.countDown();}};
   report(cls+"_api",String.valueOf(p.getApiVersion()));p.onComplicationActivated(id,type,callback.asBinder());p.onUpdate(id,type,callback.asBinder());if(!latch.await(20,TimeUnit.SECONDS))throw new Exception("Complication actual service callback timeout "+cls);p.onComplicationDeactivated(id);
  }
- public static void main(String[] args)throws Exception {
-  Looper.prepareMainLooper();main=new Handler(Looper.getMainLooper());pkg=args[0];
-  Class<?> at=Class.forName("android.app.ActivityThread");Object thread=at.getMethod("systemMain").invoke(null);context=(Context)at.getMethod("getSystemContext").invoke(thread);
-  new Thread(()->{try{tile();String[] names={"PrayerComplicationService","DateGregComplication","DateHijriComplication","DateBothComplication","NextTimeComplication","UpcomingCountdownComplication"};int[] types={5,3,3,4,3,3};for(int i=0;i<names.length;i++)complication(names[i],types[i],100+i);report("complete","true");}catch(Throwable e){e.printStackTrace();report("error",e.toString());}finally{try{ui(()->{for(ServiceConnection c:connections)context.unbindService(c);});}catch(Exception ignored){}System.exit(0);}},"actual-service-requests").start();Looper.loop();
+ public void onStart(){
+  results=new StringBuilder();context=getTargetContext().getApplicationContext();main=new Handler(Looper.getMainLooper());pkg=args.getString("pkg");Bundle result=new Bundle();
+  try{
+   report("host_package",context.getPackageName());report("host_uid",String.valueOf(android.os.Process.myUid()));report("host_context",context.getClass().getName());
+   getUiAutomation().adoptShellPermissionIdentity("com.google.android.wearable.permission.BIND_TILE_PROVIDER","com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER");
+   report("tile_permission",String.valueOf(context.checkSelfPermission("com.google.android.wearable.permission.BIND_TILE_PROVIDER")));report("complication_permission",String.valueOf(context.checkSelfPermission("com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER")));
+   boolean ok=true;
+   try{tile();}catch(Throwable e){ok=false;report("tile_error",android.util.Log.getStackTraceString(e));}
+   String[] names={"PrayerComplicationService","DateGregComplication","DateHijriComplication","DateBothComplication","NextTimeComplication","UpcomingCountdownComplication"};int[] types={5,3,3,4,3,3};
+   for(int i=0;i<names.length;i++){try{complication(names[i],types[i],100+i);}catch(Throwable e){ok=false;report(names[i]+"_error",android.util.Log.getStackTraceString(e));}}
+   report("complete",String.valueOf(ok));
+  }catch(Throwable e){report("error",android.util.Log.getStackTraceString(e));}
+  finally{try{ui(()->{for(ServiceConnection c:connections)context.unbindService(c);});}catch(Exception ignored){}getUiAutomation().dropShellPermissionIdentity();result.putString("probe",results.toString());finish(0,result);}
  }
 }
