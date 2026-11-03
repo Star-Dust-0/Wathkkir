@@ -1,0 +1,181 @@
+{
+  "run": "41552722733",
+  "url": "https://github.com/Star-Dust-0/Wathkkir/actions/runs/41552722733",
+  "result": "FAILED34checks28fails;oneauthorizedattemptconsumed,noextraremoterun.",
+  "cause": "ActualregisteredInstrumentationappUID10091/Applicationconfirmed. ShelladoptedBIND_TILE_PROVIDER/BIND_COMPLICATION_PROVIDERremain-1;Androiddeniesprotectedservicebindall7inbothapps. Newhostpermissionblocker,notproductdefect.",
+  "predicate_error": "RegisteredcontextcheckexpectedContextImplbutactualvalidApplicationwrapper;2false-negativechecksretained. Doesnotcausebindingfailure.",
+  "visual": "Bothscreensinspected:originalStarting,comparisonprayerhome. Neitheractualcomplicationtapdestinationnortilerender.",
+  "unverified": "actualproviderrequest/callback/lifecycle/type/tap,dynamicringlivehost,pairedtransport,physicalOEMaudio/motor/sensor/rotary.",
+  "raw_checks": [
+    {
+      "name": "install watch-original.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install watch-rebuilt.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install widgethost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "install tilehost.apk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original tile provider discoverable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original registered app context",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original service probe complete",
+      "passed": false,
+      "detail": "Service(ContextImpl.java:1951) \tat android.content.ContextWrapper.bindService(ContextWrapper.java:853) \tat com.example.widgethost.ProviderServiceProbe.lambda$bind$1(ProviderServiceProbe.java:17) \tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0) \tat com.example.widgethost.ProviderServiceProbe.lambda$ui$0(ProviderServiceProbe.java:12) \tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0) \tat android.os.Handler.handleCallback(Handler.java:942) \tat android.os.Handler.dispatchMessage(Handler.java:99) \tat android.os.Looper.loopOnce(Looper.java:201) \tat android.os.Looper.loop(Looper.java:288) \tat android.app.ActivityThread.main(ActivityThread.java:7898) \tat java.lang.reflect.Method.invoke(Native Method) \tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548) \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936) \nPROBE complete=false\n\nINSTRUMENTATION_CODE: 0\n"
+    },
+    {
+      "name": "original PrayerComplicationService actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original PrayerComplicationService actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateGregComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateGregComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateHijriComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateHijriComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateBothComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original DateBothComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original NextTimeComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original NextTimeComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original UpcomingCountdownComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "original UpcomingCountdownComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison tile provider discoverable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "comparison registered app context",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison service probe complete",
+      "passed": false,
+      "detail": "Service(ContextImpl.java:1951) \tat android.content.ContextWrapper.bindService(ContextWrapper.java:853) \tat com.example.widgethost.ProviderServiceProbe.lambda$bind$1(ProviderServiceProbe.java:17) \tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0) \tat com.example.widgethost.ProviderServiceProbe.lambda$ui$0(ProviderServiceProbe.java:12) \tat com.example.widgethost.ProviderServiceProbe$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0) \tat android.os.Handler.handleCallback(Handler.java:942) \tat android.os.Handler.dispatchMessage(Handler.java:99) \tat android.os.Looper.loopOnce(Looper.java:201) \tat android.os.Looper.loop(Looper.java:288) \tat android.app.ActivityThread.main(ActivityThread.java:7898) \tat java.lang.reflect.Method.invoke(Native Method) \tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548) \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936) \nPROBE complete=false\n\nINSTRUMENTATION_CODE: 0\n"
+    },
+    {
+      "name": "comparison PrayerComplicationService actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison PrayerComplicationService actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateGregComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateGregComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateHijriComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateHijriComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateBothComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison DateBothComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison NextTimeComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison NextTimeComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison UpcomingCountdownComplication actual requested type",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "comparison UpcomingCountdownComplication actual tap sent",
+      "passed": false,
+      "detail": ""
+    }
+  ]
+}

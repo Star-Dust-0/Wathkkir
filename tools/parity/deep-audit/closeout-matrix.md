@@ -48,3 +48,7 @@ All possible dates/counts/coordinates/event interleavings; full language/font/th
 ## Execution discipline
 
 Next work is A1/A2 exact evidence/source reconciliation, then one combined critical transaction probe only for demonstrated missing cases. In parallel local reads can bind B/D/E without another CI. Finish R1/R2 with one controlled experiment per unresolved mechanism, not serial speculative permutations. F1/F2 blockers are grouped once their supported routes are checked. Do not introduce additional standing monitoring or announce a finish time.
+
+## Nov3 02:50 test handoff and service blocker
+- One newly authorized registered-instrumentation run41552722733 built/started but all7protected provider binds denied in both apps (permission=-1). RegisteredApplicationcontextisvalid;2contextpredicatesfalse-negative. No more remote runs. Bothscreensinspected,notprovideroutput.
+- Userrequestedside-by-sidetestphone/watchAPKs built locally,debugsigned,testlabels,actualAPKattachments handedtoparent. Exactartifactsnotinstalled/visuallyverified,hardwareparitynotclaimed. See test-apk-handoff.json. No mainmerge/productionrelease.

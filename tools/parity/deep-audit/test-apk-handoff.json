@@ -1,0 +1,24 @@
+{
+  "request": "MohamedruntimeoriginalSlack1793665681.565059and1793665688.540589testalongsideoriginal+sendAPK;parentrelayedreal.apkformatcorrection1793665764.468259",
+  "source_base": "d78d49ddb66a243ebc4155b21fe318a88fe6ef2e",
+  "source_delta": "Phoneallapp_namestringresourcesandwatchmanifestlabelWathkkirTestonly;IDsremaincom.wathakker.app.comparebothapps,originalcom.wathakker.app. Sourcechangescommittedwiththisrecord.",
+  "build": "LocalGradle9.3.1/AndroidSDK36phone+36.1watch/debug;phoneheap1gParallelGCmaxworkers1;noadditionalActions.",
+  "signature": "Debugtestkeyonly,notownersreleasekey,nokeystoreinsecrets/sourcebackup.",
+  "files": [
+    {
+      "file": "Wathkkir-Test-phone-3.4.2.apk",
+      "bytes": 20887499,
+      "version": "3.4.2/code81",
+      "sha256": "15b9880cf05ca3276b0871f786e2392597760d37dff1d56532c058e788d9fbd2"
+    },
+    {
+      "file": "Wathkkir-Test-watch-1.1.2.apk",
+      "version": "1.1.2/code73",
+      "sha256": "28571ce7d8b8f6f70896a6e30b29bee48e67c4cc3a6ffbfc3d77007588489419"
+    }
+  ],
+  "validation": "BothAPKsignatureand16KBnativezipalignmentpass,aaptpackage/label/versionpass,allnon-signaturedecompressedpayloadbytessameaslocalGradleoutput. Compressionchangedcontainerencodingonly.",
+  "delivery": "ActualAPKattachmentstransferredtoparentwatch02:42phone02:49. Parentownsuserdelivery.",
+  "limits": "ExacttestAPKsnotinstalled/visuallyverified,noavailableattacheddevice. NOTrealdeviceverified,notparitycertificate. R1/R2/sourceINCOMPLETE/providerexecution/pairedtransport/physicalboundariesremain.",
+  "release": "NoGitHubrelease,mainunchanged,onlyuserrequestedtestdelivery."
+}
