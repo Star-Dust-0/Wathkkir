@@ -909,7 +909,7 @@ fun OneUIDrawer(
     else FrostSpec(Color(0xFFF3F3F4), 0.90f, Color.Black.copy(alpha = 0.05f))
     val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     Box(modifier = Modifier.fillMaxSize()) {
-        AnimatedVisibility(visible = open, enter = fadeIn(tween(220)), exit = fadeOut(tween(220))) {
+        AnimatedVisibility(visible = open, enter = fadeIn(tween(240)), exit = fadeOut(tween(200))) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -922,15 +922,17 @@ fun OneUIDrawer(
             )
         }
         val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-        val drawerProgress by animateFloatAsState(if (open) 1f else 0f, tween(280), label = "drawerSlide")
-        if (open || drawerProgress > 0f) {
-            val drawerSlidePx = with(LocalDensity.current) { 324.dp.toPx() }
-            val slideSign = if (isRtl) 1f else -1f
+        // Panel is CenterStart: left edge in LTR, right edge in RTL. Slides in from its own
+        // edge like the original drawer (slide 280ms + fade 220ms in, slide 240ms + fade 180ms out).
+        val fromEdge: (Int) -> Int = { full -> if (isRtl) full else -full }
+        AnimatedVisibility(
+            visible = open,
+            modifier = Modifier.align(Alignment.CenterStart),
+            enter = slideInHorizontally(tween(280), fromEdge) + fadeIn(tween(220)),
+            exit = slideOutHorizontally(tween(240), fromEdge) + fadeOut(tween(180))
+        ) {
             Column(
                 modifier = Modifier
-                    .align(Alignment.TopStart)
-                    .offset { IntOffset((slideSign * (1f - drawerProgress) * drawerSlidePx).toInt(), 0) }
-                    .alpha(drawerProgress)
                     .padding(start = 11.dp, top = statusTop + 14.dp, bottom = 40.dp)
                     .layout { measurable, constraints ->
                         val w = minOf((constraints.maxWidth * 0.78f).toInt(), DrawerMaxWidth.roundToPx())
