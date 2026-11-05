@@ -6,7 +6,8 @@
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
     android:configure="com.example.widget.WidgetConfigActivity" android:initialLayout="@layout/widget_clock"
-    android:previewLayout="@layout/widget_clock"
+    android:previewImage="@drawable/home_preview_clock"
+    android:previewLayout="@layout/home_preview_clock"
     android:widgetCategory="home_screen|keyguard"
     android:widgetFeatures="reconfigurable"
     android:description="@string/widget_clock_desc" />

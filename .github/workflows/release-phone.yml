@@ -1,0 +1,45 @@
+name: Build signed phone release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+      - name: Build unsigned release APK
+        run: gradle :app:assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+      - name: Sign with the release key
+        env:
+          MORPHE_KEYSTORE_BASE64: ${{ secrets.MORPHE_KEYSTORE_BASE64 }}
+          MORPHE_KEY_PASSWORD: ${{ secrets.MORPHE_KEY_PASSWORD }}
+        run: |
+          set -e
+          echo "$MORPHE_KEYSTORE_BASE64" | base64 -d > release.keystore
+          KS_PASS=""
+          for P in "$MORPHE_KEY_PASSWORD" "android" ""; do
+            if keytool -list -keystore release.keystore -storepass "$P" >/tmp/kt.txt 2>&1; then KS_PASS="$P"; break; fi
+          done
+          if [ ! -s /tmp/kt.txt ] || ! keytool -list -keystore release.keystore -storepass "$KS_PASS" >/dev/null 2>&1; then echo "keystore password rejected"; exit 1; fi
+          ALIAS=$(grep -i 'PrivateKeyEntry' /tmp/kt.txt | head -1 | cut -d, -f1)
+          echo "signing alias: $ALIAS"
+          BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)
+          VER=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
+          "$ANDROID_HOME/build-tools/$BT/zipalign" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk aligned.apk
+          "$ANDROID_HOME/build-tools/$BT/apksigner" sign --ks release.keystore --ks-pass "pass:$KS_PASS" --key-pass "pass:$KS_PASS" --ks-key-alias "$ALIAS" --out "Wathkkir-phone-$VER.apk" aligned.apk
+          "$ANDROID_HOME/build-tools/$BT/apksigner" verify --print-certs "Wathkkir-phone-$VER.apk"
+          rm -f release.keystore aligned.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signed-phone-release
+          path: Wathkkir-phone-*.apk
+          retention-days: 7
