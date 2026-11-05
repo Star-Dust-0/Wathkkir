@@ -1,13 +1,16 @@
-"""3.4.3 picker preview hotfix verification: real launcher picker, system-generated previews, real widget renders."""
+"""3.4.3 picker preview hotfix verification: pixel-exact real renders, system previews, real launcher picker."""
 import subprocess,time,pathlib,json,re
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[]
 def adb(*a,t=90):
  r=subprocess.run(['adb',*a],capture_output=True,timeout=t);return (r.stdout+r.stderr).decode(errors='replace')
 def check(item,ok,detail=''):checks.append(dict(item=item,passed=bool(ok),detail=str(detail)[:400]));print(item,bool(ok),str(detail)[:200],flush=True)
 def shot(n):(out/(n+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p']))
-def host(mode,kind=None):
+def host(mode,kind=None,w=None,h=None,outf=None):
  args=['shell','am','start','-S','-W','-n','com.example.widgethost/.MainActivity','--es','package','com.wathakker.app','--es','mode',mode]
  if kind:args+=['--es','kind',kind]
+ if w:args+=['--es','w',str(w)]
+ if h:args+=['--es','h',str(h)]
+ if outf:args+=['--es','out',outf]
  return adb(*args)
 def prefs(lang):
  folder='/data/data/com.wathakker.app/shared_prefs';adb('shell','mkdir','-p',folder)
@@ -28,11 +31,21 @@ for a in ['app-debug.apk','widgethost.apk']:check(a+' installed','Success' in ad
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420')
 adb('shell','settings','put','global','auto_time','0');adb('shell','settings','put','global','auto_time_zone','0');adb('shell','setprop','persist.sys.timezone','Africa/Cairo')
 adb('shell','appwidget','grantbind','--package','com.example.widgethost','--user','0')
-# Real widget renders (comparison base for the preview bitmaps)
+# Pixel-exact real widget renders in both themes (base for the preview bitmaps)
 prefs('ar')
-adb('shell','date','110610002026.00');adb('logcat','-c');host('oneui');time.sleep(13);shot('real-oneui');(out/'real-oneui-log.txt').write_text(adb('logcat','-d'))
-adb('shell','date','110610002026.00');host('recover-homeA');time.sleep(13);shot('real-homeA-clock')
-# System-generated picker previews (the exact API launchers use)
+for theme,night in [('light','no'),('dark','yes')]:
+ adb('shell','cmd','uimode','night',night);adb('shell','am','force-stop','com.wathakker.app');time.sleep(2)
+ for kind,w,h in [('OneUI',330,90),('Clock',240,90)]:
+  adb('shell','date','110610002026.00');adb('logcat','-c')
+  name='%s-%s.png'%(kind.lower(),theme)
+  host('renderpng',kind,w,h,name);time.sleep(14)
+  log=adb('logcat','-d');(out/('render-%s-log.txt'%name)).write_text(log)
+  check(name+' rendered',('renderpng wrote '+name) in log,';'.join(re.findall(r'renderpng \S+.*',log))[:200])
+  data=subprocess.run(['adb','exec-out','run-as','com.example.widgethost','cat','files/'+name],capture_output=True,timeout=60).stdout
+  (out/name).write_bytes(data)
+  check(name+' pulled',len(data)>10000,str(len(data)))
+# System-generated picker previews (the exact API launchers use) - dark theme like his phone
+adb('shell','cmd','uimode','night','yes');adb('shell','am','force-stop','com.wathakker.app');time.sleep(2)
 adb('logcat','-c');host('previews');time.sleep(12);shot('previews-top')
 log=adb('logcat','-d');(out/'previews-log.txt').write_text(log)
 for name,cls in [('OneUI','com.example.widget.OneUIWidgetProvider'),('Clock','com.example.widget.ClockWidgetProvider')]:

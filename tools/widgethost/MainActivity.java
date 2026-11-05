@@ -64,6 +64,36 @@ public class MainActivity extends Activity {
         col.setOrientation(LinearLayout.VERTICAL);
         sv.addView(col);
         String mode=getIntent().getStringExtra("mode");
+        if ("renderpng".equals(mode)) {
+            String kind=getIntent().getStringExtra("kind");
+            int wd=Integer.parseInt(getIntent().getStringExtra("w"));
+            int ht=Integer.parseInt(getIntent().getStringExtra("h"));
+            String outf=getIntent().getStringExtra("out");
+            int id=host.allocateAppWidgetId();
+            ComponentName cn=new ComponentName(PKG,"com.example.widget."+kind+"WidgetProvider");
+            boolean ok=awm.bindAppWidgetIdIfAllowed(id,cn,new Bundle());
+            Log.i("WidgetHost","renderpng bind "+kind+" id="+id+" -> "+ok);
+            AppWidgetProviderInfo info=awm.getAppWidgetInfo(id);
+            if (info==null) { Log.i("WidgetHost","renderpng no info for "+kind); finish(); return; }
+            AppWidgetHostView v=host.createView(getApplicationContext(),id,info);
+            v.setAppWidget(id,info);
+            v.updateAppWidgetSize(null,wd,ht,wd,ht);
+            setContentView(v,new ViewGroup.LayoutParams((int)(wd*d),(int)(ht*d)));
+            new Handler(Looper.getMainLooper()).postDelayed(()->{
+                try {
+                    int w=v.getWidth(),h=v.getHeight();
+                    Bitmap b=Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
+                    Canvas c=new Canvas(b);
+                    v.draw(c);
+                    java.io.File f=new java.io.File(getFilesDir(),outf);
+                    java.io.FileOutputStream fos=new java.io.FileOutputStream(f);
+                    b.compress(Bitmap.CompressFormat.PNG,100,fos);
+                    fos.close();
+                    Log.i("WidgetHost","renderpng wrote "+outf+" "+w+"x"+h);
+                } catch(Throwable t){ Log.i("WidgetHost","renderpng error "+t); }
+            },10000);
+            return;
+        }
         if ("previews".equals(mode)) {
             String[] cls = {"com.example.widget.HeroWidgetProvider","com.example.widget.HeroLargeWidgetProvider","com.example.widget.PrayerBarWidgetProvider","com.example.widget.DayPrayerWidgetProvider","com.example.widget.PillWidgetProvider","com.example.widget.NextPrayerWidgetProvider","com.example.widget.HijriWidgetProvider","com.example.widget.OneUIWidgetProvider","com.example.widget.ClockWidgetProvider","com.example.lockwidgets.LockWidgets$Bar","com.example.lockwidgets.LockWidgets$Countdown","com.example.lockwidgets.LockWidgets$CountdownClean","com.example.lockwidgets.LockWidgets$Next"};
             for (String k : cls) {
