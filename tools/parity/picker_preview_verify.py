@@ -56,7 +56,7 @@ for i in range(14):
 check('app row in picker',found_app)
 seen=set()
 for i in range(14):
- xml=uidump();(out/'picker-%d.xml'%i).write_text(xml);shot('picker-%d'%i)
+ xml=uidump();(out/('picker-%d.xml'%i)).write_text(xml);shot('picker-%d'%i)
  for lbl,key in [('تقدم الصلاة - مزخرف','oneui'),('عداد الصلاة','clock')]:
   if lbl in xml:seen.add(key)
  if seen=={'oneui','clock'}:break
