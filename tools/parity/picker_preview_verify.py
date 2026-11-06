@@ -1,4 +1,4 @@
-"""3.4.3 picker preview hotfix verification: pixel-exact real renders, system previews, real launcher picker."""
+"""Picker preview verification: pixel-exact real renders, system previews, real launcher picker."""
 import subprocess,time,pathlib,json,re
 out=pathlib.Path('evidence');out.mkdir(exist_ok=True);checks=[]
 def adb(*a,t=90):
