@@ -12,8 +12,8 @@ android {
     applicationId = "com.wathakker.app"
     minSdk = 23
     targetSdk = 36
-    versionCode = 82
-    versionName = "3.4.3"
+    versionCode = 81
+    versionName = "3.4.2"
   }
 
   signingConfigs {
