@@ -1,10 +1,20 @@
 name: Manual README gallery capture
 on:
   workflow_dispatch:
+    inputs:
+      phone:
+        description: 'Run phone job'
+        type: boolean
+        default: true
+      watch:
+        description: 'Run watch job'
+        type: boolean
+        default: true
 permissions:
   contents: read
 jobs:
   phone:
+    if: inputs.phone
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -42,6 +52,7 @@ jobs:
           path: evidence
           retention-days: 14
   watch:
+    if: inputs.watch
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:

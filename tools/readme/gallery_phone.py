@@ -15,7 +15,47 @@ def dump():
     adb('shell', 'uiautomator', 'dump', '/sdcard/_ui.xml')
     return adb('shell', 'cat', '/sdcard/_ui.xml')
 
+def dismiss_dialogs():
+    """Clear ANR (Pixel Launcher isn't responding) and system permission prompts."""
+    for _ in range(3):
+        x = dump()
+        if "isn" in x and 'responding' in x:
+            for label in ['Wait', 'انتظار', 'Close app', 'إغلاق التطبيق']:
+                if label in x:
+                    _tap_in(x, label)
+                    time.sleep(2)
+                    adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher')
+                    break
+            continue
+        if "Don't allow" in x or 'عدم السماح' in x:
+            for label in ['Allow all the time', 'While using the app', 'Allow only while using the app', 'Allow', 'ALLOW', 'السماح', 'السماح دائمًا']:
+                if label in x:
+                    _tap_in(x, label)
+                    time.sleep(2)
+                    break
+            continue
+        break
+
+def _tap_in(x, label):
+    try:
+        root = ET.fromstring(x)
+    except Exception:
+        return
+    ns = list(root.iter('node'))
+    parents = {c: p for p in ns for c in p}
+    for n in ns:
+        if n.get('text', '') != label and n.get('content-desc', '') != label:
+            continue
+        t2 = n
+        while t2 is not None and t2.get('clickable') != 'true' and t2 in parents:
+            t2 = parents[t2]
+        target = t2 if t2 is not None else n
+        cx, cy = center(target.get('bounds'))
+        adb('shell', 'input', 'tap', str(cx), str(cy))
+        return
+
 def shot(n):
+    dismiss_dialogs()
     (out/(n+'.xml')).write_text(dump())
     (out/(n+'.png')).write_bytes(subprocess.check_output(['adb', 'exec-out', 'screencap', '-p'], timeout=30))
     print('shot', n, flush=True)
@@ -36,6 +76,7 @@ def tap_xy(x, y, settle=1.2):
 def tap(text, exact=False, settle=1.2):
     """Tap the visible node whose text or content-desc matches, climbing to the clickable parent."""
     for _ in range(3):
+        dismiss_dialogs()
         ns = nodes()
         parents = {c: p for p in ns for c in p}
         for n in ns:
@@ -91,6 +132,7 @@ FAJR = ('<map><float name="latitude" value="30.0444"/><float name="longitude" va
 
 adb('wait-for-device')
 adb('root'); time.sleep(3); adb('wait-for-device')
+adb('shell', 'am', 'force-stop', 'com.google.android.apps.nexuslauncher')
 print('install:', 'Success' in adb('install', '-r', '-g', 'app-debug.apk', t=300), flush=True)
 adb('shell', 'wm', 'size', '1080x2400'); adb('shell', 'wm', 'density', '420')
 adb('shell', 'settings', 'put', 'global', 'hide_error_dialogs', '1')
@@ -98,12 +140,14 @@ adb('shell', 'settings', 'put', 'global', 'auto_time', '0')
 adb('shell', 'settings', 'put', 'global', 'auto_time_zone', '0')
 adb('shell', 'setprop', 'persist.sys.timezone', 'Africa/Cairo')
 adb('shell', 'date', '103016222026.00')
-for p in ['POST_NOTIFICATIONS', 'ACCESS_COARSE_LOCATION', 'ACCESS_FINE_LOCATION']:
-    adb('shell', 'pm', 'grant', PKG, 'android.permission.' + p)
-
 # ---- Phase 1: onboarding (01 language, 02 calculation, 03 alerts) ----
 adb('shell', 'pm', 'clear', PKG); time.sleep(2)
+# grants must come AFTER pm clear (clear wipes them)
+for p in ['POST_NOTIFICATIONS', 'ACCESS_COARSE_LOCATION', 'ACCESS_FINE_LOCATION']:
+    adb('shell', 'pm', 'grant', PKG, 'android.permission.' + p)
+adb('shell', 'appops', 'set', PKG, 'MANAGE_EXTERNAL_STORAGE', 'allow')
 launch(3)  # first launch creates /data/data dirs
+dismiss_dialogs()
 set_prefs({'app_prefs': APP})
 launch(6)
 shot('01-language')
