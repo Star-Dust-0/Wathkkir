@@ -56,7 +56,7 @@ object Prayer {
         cal.set(Calendar.MINUTE, 0)
         cal.set(Calendar.SECOND, 0)
         cal.set(Calendar.MILLISECOND, 0)
-        val d = PrayerTimesCalculator.INSTANCE.calculateAll(cal, lat, lon, CalculationMethod.EGYPTIAN)
+        val d = PrayerTimesCalculator.calculateAll(cal, lat, lon, CalculationMethod.EGYPTIAN)
         val t = longArrayOf(d.fajr, d.sunrise, d.dhuhr, d.asr, d.maghrib, d.isha)
         // Jumuah: on Friday the Dhuhr slot is displayed as الجمعة / Jumuah (no iqama, matches the phone app).
         val ns = if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY)

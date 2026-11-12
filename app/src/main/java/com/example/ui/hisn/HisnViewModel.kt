@@ -44,7 +44,7 @@ class HisnViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            try { HisnImporter.ensureImported(getApplication(), dao) } catch (e: Exception) { e.printStackTrace() }
+            try { HisnImporter.ensureImported(getApplication(), dao) } catch (e: Exception) { android.util.Log.w("HisnViewModel", "hisn import failed", e) }
         }
     }
 

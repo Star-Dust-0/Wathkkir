@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                     try {
                         launcher.launch("android.permission.POST_NOTIFICATIONS")
                     } catch (e: Exception) {
-                        e.printStackTrace()
+                        android.util.Log.w("MainActivity", "startup task failed", e)
                     }
                 }
             }

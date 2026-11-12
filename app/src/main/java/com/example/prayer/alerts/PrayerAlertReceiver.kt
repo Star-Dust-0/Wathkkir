@@ -71,9 +71,10 @@ class PrayerAlertReceiver : BroadcastReceiver() {
             if (shuruq) L10n.t(S.ShuruqNow) else L10n.t(S.PrayerNowFmt).format(prayerName)
         }
         if (isEarly && at <= now) return // too late to count down to anything; the adhan notification covers it
+        // No setLargeIcon: BitmapFactory.decodeResource on the adaptive-XML launcher icon
+        // returns null on Android 8+, so it never rendered anything.
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_stat_prayer)
-            .setLargeIcon(android.graphics.BitmapFactory.decodeResource(context.resources, R.mipmap.ic_launcher))
             .setContentTitle(prayerName)
             .setContentText(text)
             .setPriority(if (isIqama) NotificationCompat.PRIORITY_DEFAULT else NotificationCompat.PRIORITY_HIGH)
@@ -108,7 +109,9 @@ class PrayerAlertReceiver : BroadcastReceiver() {
                         .putExtra(PrayerAlertScheduler.EXTRA_PRAYER, prayer)
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 )
-            } catch (_: Exception) {}
+            } catch (e: Exception) {
+                android.util.Log.w("PrayerAlertReceiver", "could not launch PrayerAlertActivity", e)
+            }
         }
         val notification = builder.build()
         if (kind == PrayerAlertScheduler.KIND_ADHAN) nm.cancel(400 + prayer + PrayerAlertScheduler.KIND_EARLY * 10)
@@ -154,7 +157,9 @@ class PrayerAlertReceiver : BroadcastReceiver() {
             if (nm.isNotificationPolicyAccessGranted) {
                 nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
             }
-        } catch (_: Throwable) {}
+        } catch (t: Throwable) {
+            android.util.Log.w("PrayerAlertReceiver", "enable DND failed", t)
+        }
     }
 
     private fun restoreDnd(context: Context) {
@@ -163,7 +168,9 @@ class PrayerAlertReceiver : BroadcastReceiver() {
             if (nm.isNotificationPolicyAccessGranted) {
                 nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
             }
-        } catch (_: Throwable) {}
+        } catch (t: Throwable) {
+            android.util.Log.w("PrayerAlertReceiver", "restore DND failed", t)
+        }
     }
 
     companion object {

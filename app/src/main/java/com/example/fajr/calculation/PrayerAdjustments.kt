@@ -44,7 +44,7 @@ object PrayerAdjustments {
         method: CalculationMethod
     ): PrayerTimesCalculator.DayPrayerTimes {
         val asrFactor = if (asrHanafi(context)) 2 else 1
-        return PrayerTimesCalculator.INSTANCE.calculateAll(
+        return PrayerTimesCalculator.calculateAll(
             calendar, latitude, longitude, method, asrFactor, highLatRule(context), offsetMinutes(context)
         )
     }

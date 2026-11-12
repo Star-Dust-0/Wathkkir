@@ -39,6 +39,6 @@ object ShortcutNav {
                 sc("hijri_converter", L10n.t(S.HijriConvTitle), com.example.R.drawable.ic_shortcut_date_range, "hijri_converter")
             )
             ShortcutManagerCompat.setDynamicShortcuts(app, list)
-        } catch (_: Throwable) {}
+        } catch (t: Throwable) { android.util.Log.w("Shortcuts", "operation failed", t) }
     }
 }

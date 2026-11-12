@@ -124,7 +124,7 @@ object Onboarding {
         fun finish() {
             for (i in prayerIdx.indices) PrayerAlertStore.setEnabled(ctx, prayerIdx[i], alerts[i])
             com.example.utils.NotifPrefs.setVibration(ctx, reminder == 0)
-            try { PrayerAlertScheduler.scheduleAll(ctx) } catch (_: Throwable) {}
+            try { PrayerAlertScheduler.scheduleAll(ctx) } catch (t: Throwable) { android.util.Log.w("Onboarding", "operation failed", t) }
             // the location step was handled here, so the old flow starts at the files step
             sp.edit().putInt("perm_stage", 2).apply()
             if (Build.VERSION.SDK_INT >= 33) {

@@ -306,6 +306,8 @@ internal val AR = mapOf(
     S.AdhanAlertType to "نوع تنبيه الأذان",
     S.AlertTypeNotification to "تنبيه إشعار",
     S.AlertTypeFullScreen to "تنبيه إشعار بملء الشاشة",
+    S.ExactAlarmDeniedTitle to "التنبيه الدقيق متوقف",
+    S.ExactAlarmDeniedBody to "صلاحية المنبهات الدقيقة غير ممنوحة، لذلك قد تتأخر تنبيهات الصلاة عن وقتها. اضغط لمنحها من الإعدادات.",
 )
 
 internal val EN = mapOf(
@@ -609,6 +611,8 @@ internal val EN = mapOf(
     S.AdhanAlertType to "Adhan alert type",
     S.AlertTypeNotification to "Notification alert",
     S.AlertTypeFullScreen to "Full-screen notification alert",
+    S.ExactAlarmDeniedTitle to "Exact alarms are off",
+    S.ExactAlarmDeniedBody to "The exact-alarm permission is not granted, so prayer alerts may be late. Tap to grant it in settings.",
 )
 
 internal val FR = mapOf(
@@ -890,6 +894,8 @@ internal val FR = mapOf(
     S.AdhanAlertType to "Type d'alerte de l'adhan",
     S.AlertTypeNotification to "Alerte notification",
     S.AlertTypeFullScreen to "Alerte notification plein écran",
+    S.ExactAlarmDeniedTitle to "Alarmes exactes désactivées",
+    S.ExactAlarmDeniedBody to "L'autorisation des alarmes exactes n'est pas accordée : les alertes de prière peuvent être retardées. Touchez pour l'accorder dans les paramètres.",
 )
 
 internal val DE = mapOf(
@@ -1171,6 +1177,8 @@ internal val DE = mapOf(
     S.AdhanAlertType to "Adhan-Hinweistyp",
     S.AlertTypeNotification to "Benachrichtigung",
     S.AlertTypeFullScreen to "Vollbild-Benachrichtigung",
+    S.ExactAlarmDeniedTitle to "Exakte Alarme deaktiviert",
+    S.ExactAlarmDeniedBody to "Die Berechtigung für exakte Alarme fehlt, daher können Gebetsbenachrichtigungen verspätet kommen. Zum Erteilen in den Einstellungen tippen.",
 )
 
 internal val ES = mapOf(
@@ -1452,6 +1460,8 @@ internal val ES = mapOf(
     S.AdhanAlertType to "Tipo de alerta del adhan",
     S.AlertTypeNotification to "Alerta de notificación",
     S.AlertTypeFullScreen to "Alerta de notificación a pantalla completa",
+    S.ExactAlarmDeniedTitle to "Alarmas exactas desactivadas",
+    S.ExactAlarmDeniedBody to "El permiso de alarmas exactas no está concedido, por lo que las alertas de oración pueden retrasarse. Toca para concederlo en ajustes.",
 )
 
 internal val IT = mapOf(
@@ -1732,6 +1742,8 @@ internal val IT = mapOf(
     S.AdhanAlertType to "Tipo di avviso adhan",
     S.AlertTypeNotification to "Avviso notifica",
     S.AlertTypeFullScreen to "Avviso notifica a schermo intero",
+    S.ExactAlarmDeniedTitle to "Allarmi esatti disattivati",
+    S.ExactAlarmDeniedBody to "L'autorizzazione per gli allarmi esatti non è concessa: gli avvisi di preghiera potrebbero arrivare in ritardo. Tocca per concederla nelle impostazioni.",
 )
 
 internal val TR = mapOf(
@@ -2013,6 +2025,8 @@ internal val TR = mapOf(
     S.AdhanAlertType to "Ezan uyarı türü",
     S.AlertTypeNotification to "Bildirim uyarısı",
     S.AlertTypeFullScreen to "Tam ekran bildirim uyarısı",
+    S.ExactAlarmDeniedTitle to "Tam alarmlar kapalı",
+    S.ExactAlarmDeniedBody to "Tam alarm izni verilmedi; namaz uyarıları geçebilir. Ayarlardan izin vermek için dokunun.",
 )
 
 internal val UR = mapOf(
@@ -2294,6 +2308,8 @@ internal val UR = mapOf(
     S.AdhanAlertType to "اذان کی تنبیہ کی قسم",
     S.AlertTypeNotification to "اطلاع کی تنبیہ",
     S.AlertTypeFullScreen to "پوری اسکرین اطلاع کی تنبیہ",
+    S.ExactAlarmDeniedTitle to "درست الارم بند ہیں",
+    S.ExactAlarmDeniedBody to "درست الارم کی اجازت نہیں ہے، اس لیے نماز کی یاد دہانیاں دیر سے آ سکتی ہیں۔ ترتیبات میں اجازت دینے کے لیے دبائیں۔",
 )
 
 internal val ID = mapOf(
@@ -2575,6 +2591,8 @@ internal val ID = mapOf(
     S.AdhanAlertType to "Jenis pengingat azan",
     S.AlertTypeNotification to "Pengingat notifikasi",
     S.AlertTypeFullScreen to "Pengingat notifikasi layar penuh",
+    S.ExactAlarmDeniedTitle to "Alarm presisi nonaktif",
+    S.ExactAlarmDeniedBody to "Izin alarm presisi belum diberikan, sehingga pengingat salat bisa terlambat. Ketuk untuk memberikannya di pengaturan.",
 )
 
 internal val RU = mapOf(
@@ -2856,6 +2874,8 @@ internal val RU = mapOf(
     S.AdhanAlertType to "Тип оповещения об азане",
     S.AlertTypeNotification to "Уведомление",
     S.AlertTypeFullScreen to "Полноэкранное уведомление",
+    S.ExactAlarmDeniedTitle to "Точные будильники отключены",
+    S.ExactAlarmDeniedBody to "Разрешение на точные будильники не выдано, поэтому напоминания о намазе могут опаздывать. Нажмите, чтобы выдать его в настройках.",
 )
 
 internal val PT = mapOf(
@@ -3136,4 +3156,6 @@ internal val PT = mapOf(
     S.AdhanAlertType to "Tipo de alerta de adhan",
     S.AlertTypeNotification to "Alerta de notificação",
     S.AlertTypeFullScreen to "Alerta de notificação em ecrã inteiro",
+    S.ExactAlarmDeniedTitle to "Alarmes exatos desativados",
+    S.ExactAlarmDeniedBody to "A permissão de alarmes exatos não foi concedida, por isso os alertas de oração podem atrasar. Toque para concedê-la nas definições.",
 )

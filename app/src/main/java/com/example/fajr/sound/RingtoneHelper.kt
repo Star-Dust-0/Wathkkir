@@ -17,7 +17,7 @@ class RingtoneHelper(private val context: Context) {
     fun getValidRingtoneUri(prefs: FajrPreferences): Uri {
         if (prefs.ringtoneUri.isNotEmpty()) {
             val uri = Uri.parse(prefs.ringtoneUri)
-            try { context.contentResolver.openFileDescriptor(uri, "r")?.close(); return uri } catch (_: Exception) {}
+            try { context.contentResolver.openFileDescriptor(uri, "r")?.close(); return uri } catch (e: Exception) { android.util.Log.w("RingtoneHelper", "operation failed", e) }
         }
         return RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
             ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
@@ -32,7 +32,7 @@ class RingtoneHelper(private val context: Context) {
                 }
             }
             RingtoneManager.getRingtone(context, uri)?.getTitle(context)?.takeIf { it.isNotEmpty() }?.let { return it }
-        } catch (e: Exception) { e.printStackTrace() }
+        } catch (e: Exception) { android.util.Log.w("RingtoneHelper", "ringtone failed", e) }
         return L10n.t(S.DefaultAlarmTone)
     }
     fun playPreview(uri: Uri, volume: Float) {
@@ -42,7 +42,7 @@ class RingtoneHelper(private val context: Context) {
                 setAudioAttributes(AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_ALARM).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
                 setDataSource(context, uri); setVolume(volume, volume); prepare(); start()
             }
-        } catch (e: Exception) { e.printStackTrace(); stopPreview() }
+        } catch (e: Exception) { android.util.Log.w("RingtoneHelper", "preview failed", e); stopPreview() }
     }
-    fun stopPreview() { try { mediaPlayer?.stop(); mediaPlayer?.release() } catch (_: Exception) {} finally { mediaPlayer = null } }
+    fun stopPreview() { try { mediaPlayer?.stop(); mediaPlayer?.release() } catch (e: Exception) { android.util.Log.w("RingtoneHelper", "operation failed", e) } finally { mediaPlayer = null } }
 }

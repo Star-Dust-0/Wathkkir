@@ -100,7 +100,7 @@ fun HisnListContent(
             OneUIIconAction(Icons.Outlined.Search, L10n.t(S.SearchHisn)) {
                 searchScope.launch {
                     hisnListState.animateScrollToItem(0)
-                    try { searchFocus.requestFocus() } catch (_: Exception) {}
+                    try { searchFocus.requestFocus() } catch (e: Exception) { android.util.Log.w("HisnScreens", "operation failed", e) }
                 }
             }
         }

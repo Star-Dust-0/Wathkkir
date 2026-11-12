@@ -61,7 +61,7 @@ public final class LocationManagerHelper {
             }
             return location;
         } catch (SecurityException e) {
-            e.printStackTrace();
+            android.util.Log.w("LocationHelper", "location lookup failed", e);
             return null;
         }
     }
@@ -105,7 +105,7 @@ public final class LocationManagerHelper {
             }
             return unknown + " (" + String.format(Locale.US, "%.2f, %.2f", Double.valueOf(latitude), Double.valueOf(longitude)) + ")";
         } catch (Exception e) {
-            e.printStackTrace();
+            android.util.Log.w("LocationHelper", "geocoder failed", e);
             return unknown + " (" + String.format(Locale.US, "%.2f, %.2f", Double.valueOf(latitude), Double.valueOf(longitude)) + ")";
         }
     }
@@ -135,6 +135,7 @@ public final class LocationManagerHelper {
             }
             return buildPlaceKey(country, city);
         } catch (Exception e) {
+            android.util.Log.w("LocationHelper", "geocoder place key failed", e);
             return null;
         }
     }

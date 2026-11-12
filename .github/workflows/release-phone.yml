@@ -16,26 +16,35 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '9.3.1'
+      - name: Run unit tests
+        run: gradle :app:testDebugUnitTest --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
       - name: Build unsigned release APK
         run: gradle :app:assembleRelease --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+      # Signing uses explicit secrets. Preferred new names are WATHKKIR_*; the legacy
+      # MORPHE_* names (carried over from the Morphe repo) still work as fallbacks so
+      # existing repo secrets keep building until they are renamed. No password
+      # guessing: an unset or wrong password fails the build loudly.
       - name: Sign with the release key
         env:
+          WATHKKIR_KEYSTORE_BASE64: ${{ secrets.WATHKKIR_KEYSTORE_BASE64 }}
+          WATHKKIR_STORE_PASSWORD: ${{ secrets.WATHKKIR_STORE_PASSWORD }}
+          WATHKKIR_KEY_PASSWORD: ${{ secrets.WATHKKIR_KEY_PASSWORD }}
           MORPHE_KEYSTORE_BASE64: ${{ secrets.MORPHE_KEYSTORE_BASE64 }}
           MORPHE_KEY_PASSWORD: ${{ secrets.MORPHE_KEY_PASSWORD }}
         run: |
           set -e
-          echo "$MORPHE_KEYSTORE_BASE64" | base64 -d > release.keystore
-          KS_PASS=""
-          for P in "$MORPHE_KEY_PASSWORD" "android" ""; do
-            if keytool -list -keystore release.keystore -storepass "$P" >/tmp/kt.txt 2>&1; then KS_PASS="$P"; break; fi
-          done
-          if [ ! -s /tmp/kt.txt ] || ! keytool -list -keystore release.keystore -storepass "$KS_PASS" >/dev/null 2>&1; then echo "keystore password rejected"; exit 1; fi
+          KS_B64="${WATHKKIR_KEYSTORE_BASE64:-$MORPHE_KEYSTORE_BASE64}"
+          KS_PASS="${WATHKKIR_STORE_PASSWORD:-$MORPHE_KEY_PASSWORD}"
+          KEY_PASS="${WATHKKIR_KEY_PASSWORD:-$KS_PASS}"
+          if [ -z "$KS_B64" ]; then echo "no keystore secret set (WATHKKIR_KEYSTORE_BASE64)"; exit 1; fi
+          echo "$KS_B64" | base64 -d > release.keystore
+          if ! keytool -list -keystore release.keystore -storepass "$KS_PASS" >/tmp/kt.txt 2>&1; then echo "keystore password rejected"; exit 1; fi
           ALIAS=$(grep -i 'PrivateKeyEntry' /tmp/kt.txt | head -1 | cut -d, -f1)
           echo "signing alias: $ALIAS"
           BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)
           VER=$(grep -oP 'versionName = "\K[^"]+' app/build.gradle.kts)
           "$ANDROID_HOME/build-tools/$BT/zipalign" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk aligned.apk
-          "$ANDROID_HOME/build-tools/$BT/apksigner" sign --ks release.keystore --ks-pass "pass:$KS_PASS" --key-pass "pass:$KS_PASS" --ks-key-alias "$ALIAS" --out "Wathkkir-phone-$VER.apk" aligned.apk
+          "$ANDROID_HOME/build-tools/$BT/apksigner" sign --ks release.keystore --ks-pass "pass:$KS_PASS" --key-pass "pass:$KEY_PASS" --ks-key-alias "$ALIAS" --out "Wathkkir-phone-$VER.apk" aligned.apk
           "$ANDROID_HOME/build-tools/$BT/apksigner" verify --print-certs "Wathkkir-phone-$VER.apk"
           rm -f release.keystore aligned.apk
       - uses: actions/upload-artifact@v4

@@ -56,7 +56,7 @@ object PermissionFlow {
                 a.requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 77)
             }
         } catch (e: Exception) {
-            try { a.startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)) } catch (_: Exception) {}
+            try { a.startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)) } catch (e: Exception) { android.util.Log.w("PermissionFlow", "operation failed", e) }
         }
     }
 

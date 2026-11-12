@@ -235,7 +235,7 @@ class FajrAlarmActivity : ComponentActivity() {
             mp.start()
             mediaPlayer = mp
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("FajrAlarmActivity", "operation failed", e)
         }
         if (prefs.isVibrationEnabled) {
             try {
@@ -253,7 +253,7 @@ class FajrAlarmActivity : ComponentActivity() {
                     vibrator?.vibrate(pattern, 0)
                 }
             } catch (e: Exception) {
-                e.printStackTrace()
+                android.util.Log.w("FajrAlarmActivity", "operation failed", e)
             }
         }
         val r = Runnable { handleAutoStop() }
@@ -279,13 +279,13 @@ class FajrAlarmActivity : ComponentActivity() {
             }
             mediaPlayer = null
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("FajrAlarmActivity", "operation failed", e)
         }
         try {
             vibrator?.cancel()
             vibrator = null
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("FajrAlarmActivity", "operation failed", e)
         }
         finish()
     }

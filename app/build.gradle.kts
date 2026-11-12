@@ -12,8 +12,8 @@ android {
     applicationId = "com.wathakker.app"
     minSdk = 23
     targetSdk = 36
-    versionCode = 81
-    versionName = "3.4.2"
+    versionCode = 82
+    versionName = "3.5.0"
   }
 
   signingConfigs {
@@ -42,6 +42,11 @@ android {
   lint { abortOnError = false }
 }
 
+// Room writes its schema JSON here so migrations are reviewable and testable.
+ksp {
+  arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 tasks.withType<JavaCompile>().configureEach {
   options.compilerArgs.addAll(listOf("-Xmaxerrs", "200000", "-Xmaxwarns", "50", "-Xlint:none"))
 }
@@ -66,9 +71,14 @@ dependencies {
   implementation(libs.androidx.room.runtime)
   implementation(libs.kotlinx.coroutines.android)
   implementation(libs.kotlinx.coroutines.core)
-  implementation(libs.okhttp)
   implementation("androidx.autofill:autofill:1.1.0")
   implementation("com.google.android.gms:play-services-wearable:19.0.0")
   implementation("androidx.profileinstaller:profileinstaller:1.4.1")
   implementation("dev.chrisbanes.haze:haze:1.6.0")
+
+  testImplementation(libs.junit)
+  testImplementation(libs.robolectric)
+  testImplementation(libs.androidx.junit)
+  testImplementation(libs.androidx.core)
+  testImplementation("androidx.room:room-testing:2.7.0")
 }

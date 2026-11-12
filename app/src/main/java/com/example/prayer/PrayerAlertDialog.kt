@@ -257,7 +257,7 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                                         Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
                                             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     )
-                                } catch (_: Throwable) {}
+                                } catch (t: Throwable) { android.util.Log.w("PrayerAlertDialog", "operation failed", t) }
                             } else {
                                 PrayerAlertStore.setAutoDnd(context, prayer, want)
                                 changed()

@@ -113,7 +113,7 @@ class PrayerAlertActivity : ComponentActivity() {
             mp.start()
             mediaPlayer = mp
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("PrayerAlertActivity", "operation failed", e)
         }
         val vibrate = if (prayer in 0..5) PrayerAlertStore.effectiveVibration(this, prayer) else prefs.isVibrationEnabled
         if (vibrate) {
@@ -132,7 +132,7 @@ class PrayerAlertActivity : ComponentActivity() {
                     vibrator?.vibrate(pattern, 0)
                 }
             } catch (e: Exception) {
-                e.printStackTrace()
+                android.util.Log.w("PrayerAlertActivity", "operation failed", e)
             }
         }
         val r = Runnable { stopAndFinish() }
@@ -145,7 +145,7 @@ class PrayerAlertActivity : ComponentActivity() {
         if (prayer in 0..5) {
             try {
                 (getSystemService(NOTIFICATION_SERVICE) as NotificationManager).cancel(400 + prayer)
-            } catch (_: Exception) {}
+            } catch (e: Exception) { android.util.Log.w("PrayerAlertActivity", "operation failed", e) }
         }
         try {
             mediaPlayer?.let {
@@ -154,13 +154,13 @@ class PrayerAlertActivity : ComponentActivity() {
             }
             mediaPlayer = null
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("PrayerAlertActivity", "operation failed", e)
         }
         try {
             vibrator?.cancel()
             vibrator = null
         } catch (e: Exception) {
-            e.printStackTrace()
+            android.util.Log.w("PrayerAlertActivity", "operation failed", e)
         }
         finish()
     }

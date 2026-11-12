@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
  * Entities and DAO interfaces are Kotlin secondary reconstructions; no stale generated classes are used.
  */
 @androidx.room.Database(entities = [Dhikr::class, Tag::class, DhikrTagCrossRef::class, DhikrHistory::class,
-    HisnChapter::class, HisnItem::class, HisnFavorite::class, HisnRead::class], version = 8, exportSchema = false)
+    HisnChapter::class, HisnItem::class, HisnFavorite::class, HisnRead::class], version = 8, exportSchema = true)
 @androidx.room.TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dhikrDao(): DhikrDao
@@ -41,9 +41,13 @@ abstract class AppDatabase : RoomDatabase() {
             INSTANCE?.let { return it }
             synchronized(this) {
                 val app = context.applicationContext
+                // No blanket destructive fallback: 7 -> 8 has a real migration, so a missing
+                // migration for a current version must fail loudly instead of silently wiping
+                // azkar, history and favorites. Only pre-7 legacy installs (before Hisn) still
+                // take the destructive path, as no schema for those versions was recoverable.
                 val instance = Room.databaseBuilder(app, AppDatabase::class.java, "wazakkir_database")
                     .addMigrations(MIGRATION_7_8)
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigrationFrom(1, 2, 3, 4, 5, 6)
                     .addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
@@ -78,7 +82,7 @@ abstract class AppDatabase : RoomDatabase() {
                     Tag(0L, "أدعية عامة", "#059669")
                 ).forEach { tag -> tagDao.insertTag(tag) }
             } catch (e: Exception) {
-                e.printStackTrace()
+                android.util.Log.w("AppDatabase", "seeding defaults failed", e)
             }
         }
 

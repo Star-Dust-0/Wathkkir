@@ -79,7 +79,7 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     var beforeMin by remember { mutableIntStateOf(fp.alarmBeforeMin) }
     var afterMin by remember { mutableIntStateOf(fp.alarmAfterMin) }
     var snoozeMin by remember { mutableIntStateOf(fp.snoozeMinutes) }
-    fun reschedule() { try { com.example.fajr.alarm.FajrAlarmScheduler(ctx).scheduleNextFajrAlarm() } catch (_: Throwable) {} }
+    fun reschedule() { try { com.example.fajr.alarm.FajrAlarmScheduler(ctx).scheduleNextFajrAlarm() } catch (t: Throwable) { android.util.Log.w("FajrAlarmSettings", "operation failed", t) } }
     var volume by remember(st.alarmVolume) { mutableIntStateOf(st.alarmVolume) }
 
     LaunchedEffect(Unit) { viewModel.loadSettings(); viewModel.refreshFajrTimeManually() }
@@ -166,7 +166,7 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                             summary = w("بدونه قد يتأخر المنبه", "Without it the alarm may be late"),
                             leading = { OneUIIconBadge(Icons.Outlined.Warning) },
                             onClick = {
-                                try { ctx.startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:" + ctx.packageName))) } catch (_: Exception) {}
+                                try { ctx.startActivity(Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM, Uri.parse("package:" + ctx.packageName))) } catch (e: Exception) { android.util.Log.w("FajrAlarmSettings", "operation failed", e) }
                             }
                         )
                     }
@@ -177,7 +177,7 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                             summary = w("مطلوب لظهور المنبه فوق شاشة القفل", "Needed to show over the lock screen"),
                             leading = { OneUIIconBadge(Icons.Outlined.Warning) },
                             onClick = {
-                                try { ctx.startActivity(Intent(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT, Uri.parse("package:" + ctx.packageName))) } catch (_: Exception) {}
+                                try { ctx.startActivity(Intent(Settings.ACTION_MANAGE_APP_USE_FULL_SCREEN_INTENT, Uri.parse("package:" + ctx.packageName))) } catch (e: Exception) { android.util.Log.w("FajrAlarmSettings", "operation failed", e) }
                             }
                         )
                     }

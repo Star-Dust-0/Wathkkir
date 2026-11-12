@@ -101,9 +101,9 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     fun recalc() {
         prefsTick++
         viewModel.refreshFajrTimeManually()
-        try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context) } catch (_: Throwable) {}
-        try { WidgetUpdater.INSTANCE.updateAll(context) } catch (_: Throwable) {}
-        try { LockWidgets.updateAll(context) } catch (_: Throwable) {}
+        try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
+        try { WidgetUpdater.INSTANCE.updateAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
+        try { LockWidgets.updateAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
     }
 
     if (showCityDialog) {
@@ -194,7 +194,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                             if (viewModel.setCityAlias(cityEditText)) {
                                 editingCity = false
                                 recalc()
-                                try { com.example.utils.WearSync.push(context, null) } catch (_: Throwable) {}
+                                try { com.example.utils.WearSync.push(context, null) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
                             }
                         }) { Icon(Icons.Outlined.Check, L10n.t(S.Save), tint = cs.primary) }
                         IconButton(onClick = { editingCity = false }) { Icon(Icons.Outlined.Close, L10n.t(S.Cancel), tint = cs.onSurfaceVariant) }
@@ -212,7 +212,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
                 }
                 if (editingCity && cityAliased) {
                     TextButton(
-                        onClick = { viewModel.clearCityAlias(); editingCity = false; recalc(); try { com.example.utils.WearSync.push(context, null) } catch (_: Throwable) {} },
+                        onClick = { viewModel.clearCityAlias(); editingCity = false; recalc(); try { com.example.utils.WearSync.push(context, null) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) } },
                         modifier = Modifier.align(Alignment.End).padding(end = 12.dp)
                     ) {
                         Text(L10n.t(S.ResetCityNameAuto), color = cs.primary, fontSize = 13.sp, fontWeight = FontWeight.Bold)

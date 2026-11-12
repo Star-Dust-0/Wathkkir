@@ -16,7 +16,7 @@ object HisnImporter {
         val prefs = context.getSharedPreferences("hisn_prefs", Context.MODE_PRIVATE)
         if (prefs.getBoolean("defaults_v330", false)) return
         for (id in intArrayOf(29, 30, 31, 96)) {
-            try { dao.addFavorite(HisnFavorite(0L, id, 0)) } catch (e: Exception) { e.printStackTrace() }
+            try { dao.addFavorite(HisnFavorite(0L, id, 0)) } catch (e: Exception) { android.util.Log.w("HisnImporter", "add favorite failed", e) }
         }
         prefs.edit().putBoolean("defaults_v330", true).apply()
     }

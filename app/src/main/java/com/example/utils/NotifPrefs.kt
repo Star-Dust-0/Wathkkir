@@ -65,7 +65,7 @@ object NotifPrefs {
     /** Applies the current values to every notification channel right away. */
     @JvmStatic
     fun refreshChannels(c: Context) {
-        try { com.example.alarm.AlarmReceiver.Companion.createNotificationChannel(c.applicationContext) } catch (_: Throwable) {}
+        try { com.example.alarm.AlarmReceiver.Companion.createNotificationChannel(c.applicationContext) } catch (t: Throwable) { android.util.Log.w("NotifPrefs", "operation failed", t) }
         com.example.prayer.alerts.PrayerAlertReceiver.refreshChannels(c.applicationContext)
     }
 

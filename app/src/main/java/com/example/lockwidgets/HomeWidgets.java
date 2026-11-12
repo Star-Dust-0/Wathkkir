@@ -44,7 +44,7 @@ public final class HomeWidgets {
  /** Half of the framework's per-update bitmap allowance (about 6 x screen pixels in bytes), so an update is never rejected for memory. */
  static long bitmapBudget(Context c){android.util.DisplayMetrics dm=c.getResources().getDisplayMetrics();return (long)(3.0*dm.widthPixels*dm.heightPixels);}
  static float oversample(Context c,int wd,int ht,float d){if(!large(c))return 1f;float os=2f;Float cap=osCap.get();if(cap!=null)os=Math.min(os,cap);long lim=Math.min(6_000_000L,bitmapBudget(c));while(os>1f&&(wd*d*os)*(ht*d*os)*4>lim)os-=0.25f;return Math.max(1f,os);}
- static RemoteViews view(Context c,String kind,int id,int wd,int ht,boolean one){RemoteViews v=new RemoteViews(c.getPackageName(),res(c,"layout",one?"home_prayer_art_fit":"home_prayer_art"));ovBegin();Bitmap ob=renderKind(c,kind,wd,ht,id);if(one)try{ob.setDensity(1);}catch(Throwable e){}v.setImageViewBitmap(res(c,"id","home_prayer_image"),ob);ovApply(c,v,(int)(wd*c.getResources().getDisplayMetrics().density),(int)(ht*c.getResources().getDisplayMetrics().density));int rt=res(c,"id","home_prayer_root");PendingIntent pi=tapIntent(c,kind,id);v.setOnClickPendingIntent(res(c,"id","home_prayer_image"),pi);if(one&&rt!=0)v.setOnClickPendingIntent(rt,pi);return v;}
+ static RemoteViews view(Context c,String kind,int id,int wd,int ht,boolean one){RemoteViews v=new RemoteViews(c.getPackageName(),res(c,"layout",one?"home_prayer_art_fit":"home_prayer_art"));ovBegin();Bitmap ob=renderKind(c,kind,wd,ht,id);if(one)try{ob.setDensity(1);}catch(Throwable e){android.util.Log.w("WathakkerHome","setDensity failed",e);}v.setImageViewBitmap(res(c,"id","home_prayer_image"),ob);ovApply(c,v,(int)(wd*c.getResources().getDisplayMetrics().density),(int)(ht*c.getResources().getDisplayMetrics().density));int rt=res(c,"id","home_prayer_root");PendingIntent pi=tapIntent(c,kind,id);v.setOnClickPendingIntent(res(c,"id","home_prayer_image"),pi);if(one&&rt!=0)v.setOnClickPendingIntent(rt,pi);return v;}
  public static android.util.SizeF slackKey(android.util.SizeF z){return new android.util.SizeF(Math.max(1f,z.getWidth()-3f),Math.max(1f,z.getHeight()-3f));}
  public static java.util.ArrayList<android.util.SizeF> cornerSizes(int mnW,int mxW,int mnH,int mxH){java.util.ArrayList<android.util.SizeF> r=new java.util.ArrayList<>();int[][] cs={{mnW,mnH},{mxW,mnH},{mnW,mxH},{mxW,mxH}};for(int[] q:cs){android.util.SizeF z=new android.util.SizeF(q[0],q[1]);if(!r.contains(z))r.add(z);}return r;}
  static void updateBatch(Context c){updateBatch(c,false);}
@@ -87,7 +87,7 @@ public final class HomeWidgets {
  *  real=false: the frosted colour mesh only (WallpaperColors, permissionless). */
  static android.graphics.Bitmap wallBlur(Context c,boolean real){
   android.app.WallpaperManager wm=android.app.WallpaperManager.getInstance(c);
-  int id=-1;try{id=wm.getWallpaperId(android.app.WallpaperManager.FLAG_SYSTEM);}catch(Throwable t){}
+  int id=-1;try{id=wm.getWallpaperId(android.app.WallpaperManager.FLAG_SYSTEM);}catch(Throwable t){android.util.Log.w("WathakkerHome","wallpaperId failed",t);}
   if(real&&wpReal!=null&&id==wpRealId)return wpReal;
   if(!real&&wpMesh!=null&&id==wpMeshId)return wpMesh;
   android.graphics.Bitmap small=null;
@@ -137,10 +137,10 @@ public final class HomeWidgets {
  /** Lighter blur for the glass (Morphe) prototype: larger thumb, one box pass - shapes stay readable. */
  static android.graphics.Bitmap lightWallBlur(Context c){
   android.app.WallpaperManager wm=android.app.WallpaperManager.getInstance(c);
-  int id=-1;try{id=wm.getWallpaperId(android.app.WallpaperManager.FLAG_SYSTEM);}catch(Throwable t){}
+  int id=-1;try{id=wm.getWallpaperId(android.app.WallpaperManager.FLAG_SYSTEM);}catch(Throwable t){android.util.Log.w("WathakkerHome","wallpaperId failed",t);}
   if(wpLight!=null&&id==wpLightId)return wpLight;
   android.graphics.Bitmap small=null;
-  try{android.graphics.drawable.Drawable d=wm.getDrawable();if(d!=null){int w=d.getIntrinsicWidth(),h=d.getIntrinsicHeight();if(w<=0||h<=0){w=720;h=1280;}int sw=96,sh=Math.max(1,96*h/w);small=android.graphics.Bitmap.createBitmap(sw,sh,android.graphics.Bitmap.Config.ARGB_8888);android.graphics.Canvas cv=new android.graphics.Canvas(small);d.setBounds(0,0,sw,sh);d.draw(cv);}}catch(Throwable t){}
+  try{android.graphics.drawable.Drawable d=wm.getDrawable();if(d!=null){int w=d.getIntrinsicWidth(),h=d.getIntrinsicHeight();if(w<=0||h<=0){w=720;h=1280;}int sw=96,sh=Math.max(1,96*h/w);small=android.graphics.Bitmap.createBitmap(sw,sh,android.graphics.Bitmap.Config.ARGB_8888);android.graphics.Canvas cv=new android.graphics.Canvas(small);d.setBounds(0,0,sw,sh);d.draw(cv);}}catch(Throwable t){android.util.Log.w("WathakkerHome","wallpaper drawable failed",t);}
   if(small==null){android.graphics.Bitmap m=wallBlur(c,false);if(m==null)return null;small=android.graphics.Bitmap.createScaledBitmap(m,96,64,true);}
   boxBlur(small,2);
   wpLight=small;wpLightId=id;

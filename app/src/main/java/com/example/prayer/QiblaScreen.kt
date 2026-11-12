@@ -202,7 +202,7 @@ fun QiblaScreen(onBack: (() -> Unit)? = null) {
             try {
                 val v = context.getSystemService(Vibrator::class.java)
                 v?.vibrate(VibrationEffect.createOneShot(60, VibrationEffect.DEFAULT_AMPLITUDE))
-            } catch (_: Throwable) {}
+            } catch (t: Throwable) { android.util.Log.w("QiblaScreen", "operation failed", t) }
             buzzed = true
         } else if (!aligned) {
             buzzed = false
