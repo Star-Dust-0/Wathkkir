@@ -73,13 +73,14 @@ def center(b):
 def tap_xy(x, y, settle=1.2):
     adb('shell', 'input', 'tap', str(x), str(y)); time.sleep(settle)
 
-def tap(text, exact=False, settle=1.2):
-    """Tap the visible node whose text or content-desc matches, climbing to the clickable parent."""
+def tap(text, exact=False, settle=1.2, last=False):
+    """Tap the visible node whose text or content-desc matches, climbing to the clickable parent.
+    last=True taps the last match in the hierarchy (topmost when a sheet duplicates labels)."""
     for _ in range(3):
         dismiss_dialogs()
         ns = nodes()
         parents = {c: p for p in ns for c in p}
-        for n in ns:
+        for n in (reversed(ns) if last else ns):
             t, d = n.get('text', ''), n.get('content-desc', '')
             ok = (t == text or d == text) if exact else (text in t or text in d)
             if not ok or n.get('enabled', 'true') != 'true':
@@ -223,10 +224,11 @@ home()
 
 tap('القائمة', exact=True); time.sleep(2)
 tap('محول التاريخ', exact=True); time.sleep(2.5)
+tap('اليوم', exact=True); time.sleep(1.5)
 shot('12-converter-g2h')
 if not tap('من هجري إلى ميلادي'):
     tap('هجري إلى ميلادي')
-time.sleep(2)
+tap('اليوم', exact=True); time.sleep(1.5)
 shot('13-converter-h2g')
 home()
 
@@ -234,7 +236,7 @@ home()
 tap('القائمة', exact=True); time.sleep(2)
 tap('الإعدادات', exact=True); time.sleep(2.5)
 shot('11-settings-page')
-tap('المظهر'); time.sleep(2)
+tap('خط التطبيق'); time.sleep(2)
 shot('11-dialog')
 tap('إلغاء', exact=True)
 home()
@@ -244,7 +246,7 @@ tap('التذكيرات', exact=True); time.sleep(2)
 ok = False
 if tap('خيارات'):
     if tap('أوقات التنبيه'):
-        if tap('إضافة وقت تنبيه'):
+        if tap('إضافة وقت تنبيه', last=True):
             time.sleep(1.5); shot('14-time-picker'); ok = True
 if not ok:
     (out/'14-fallback.xml').write_text(dump())
