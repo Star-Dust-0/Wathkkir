@@ -54,7 +54,7 @@ object HijriEvents {
     fun forDay(context: Context, cal: Calendar): List<Occasion> {
         val off = PrayerAdjustments.hijriOffsetDays(context)
         val hcal = if (off != 0) (cal.clone() as Calendar).apply { add(Calendar.DATE, off) } else cal
-        val h = HijriDate.INSTANCE.hijriYmd(hcal)
+        val h = HijriDate.hijriYmd(hcal)
         val hm = h.component2()
         val hd = h.component3()
         val out = FIXED.filter { it.hijriMonth == hm && it.hijriDay == hd }.toMutableList()

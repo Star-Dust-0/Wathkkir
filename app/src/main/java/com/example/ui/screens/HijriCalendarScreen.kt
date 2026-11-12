@@ -163,16 +163,16 @@ private fun MonthView(
     val off = PrayerAdjustments.hijriOffsetDays(context)
     val firstH = remember(viewMonth) {
         val c = if (off != 0) (viewMonth.clone() as Calendar).apply { add(Calendar.DATE, off) } else viewMonth
-        HijriDate.INSTANCE.hijriYmd(c as Calendar)
+        HijriDate.hijriYmd(c as Calendar)
     }
     val lastDay = (viewMonth.clone() as Calendar).apply { set(Calendar.DAY_OF_MONTH, getActualMaximum(Calendar.DAY_OF_MONTH)) }
     val lastH = remember(viewMonth) {
         val c = if (off != 0) (lastDay.clone() as Calendar).apply { add(Calendar.DATE, off) } else lastDay
-        HijriDate.INSTANCE.hijriYmd(c as Calendar)
+        HijriDate.hijriYmd(c as Calendar)
     }
     val hijriTitle = remember(viewMonth, L10n.lang) {
-        val m1 = HijriDate.INSTANCE.monthName(firstH.component2(), L10n.lang.code)
-        val m2 = HijriDate.INSTANCE.monthName(lastH.component2(), L10n.lang.code)
+        val m1 = HijriDate.monthName(firstH.component2(), L10n.lang.code)
+        val m2 = HijriDate.monthName(lastH.component2(), L10n.lang.code)
         if (firstH.component2() == lastH.component2()) "$m1 ${firstH.component1()}" + (if (isAr) " هـ" else " AH")
         else "$m1 – $m2 ${lastH.component1()}" + (if (isAr) " هـ" else " AH")
     }
@@ -255,7 +255,7 @@ private fun DayCell(
     val off = PrayerAdjustments.hijriOffsetDays(context)
     val hDay = remember(day) {
         val c = if (off != 0) (day.clone() as Calendar).apply { add(Calendar.DATE, off) } else day
-        HijriDate.INSTANCE.hijriYmd(c as Calendar).component3()
+        HijriDate.hijriYmd(c as Calendar).component3()
     }
     val bg = when {
         isSelected -> cs.primary.copy(alpha = 0.28f)
@@ -324,7 +324,7 @@ private fun EventRow(o: HijriEvents.Occasion, day: Calendar, locale: Locale, tic
     val gDate = SimpleDateFormat("d MMM", locale).format(day.time)
     val off = PrayerAdjustments.hijriOffsetDays(context)
     val hcal = if (off != 0) (day.clone() as Calendar).apply { add(Calendar.DATE, off) } else day
-    val hDate = HijriDate.INSTANCE.format(hcal as Calendar, L10n.lang.code)
+    val hDate = HijriDate.format(hcal as Calendar, L10n.lang.code)
     Row(
         modifier = Modifier
             .fillMaxWidth()

@@ -174,7 +174,7 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
     val hijri = remember(dayKey, L10n.lang, resumeTick) {
         val off = PrayerAdjustments.hijriOffsetDays(context)
         val hcal = if (off != 0) (cal.clone() as Calendar).apply { add(Calendar.DATE, off) } else cal
-        HijriDate.INSTANCE.format(hcal, L10n.lang.code)
+        HijriDate.format(hcal, L10n.lang.code)
     }
 
     val optionalOn = remember(resumeTick) {

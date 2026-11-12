@@ -709,7 +709,7 @@ public final class WidgetUpdater {
         remoteViews.setTextViewText(R.id.widget_hero_next_time, formatTimeShort(prayerState.getNextMillis()));
         remoteViews.setTextViewText(R.id.widget_hero_remaining, faceRemaining(prayerState.getNextName(), compactRemaining(prayerState.getNextMillis() - j), L10n.INSTANCE.getLang().getCode()));
         remoteViews.setProgressBar(R.id.widget_hero_progress, 100, iR, false);
-        String strA = HijriDate.INSTANCE.format(calendar);
+        String strA = HijriDate.format(calendar);
         if (strA.endsWith(" هـ")) {
             strA = strA.substring(0, strA.length() - 3);
         }
@@ -731,11 +731,11 @@ public final class WidgetUpdater {
 
     private final void updateHijri(Context context, AppWidgetManager appWidgetManager, Calendar calendar) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_hijri);
-        Triple<Integer,Integer,Integer> v42VarC = HijriDate.INSTANCE.hijriYmd(calendar);
+        Triple<Integer,Integer,Integer> v42VarC = HijriDate.hijriYmd(calendar);
         int iIntValue = ((Integer) v42VarC.getFirst()).intValue();
         int iIntValue2 = ((Integer) v42VarC.getSecond()).intValue();
         remoteViews.setTextViewText(R.id.widget_hijri_day, String.valueOf(((Integer) v42VarC.getThird()).intValue()));
-        remoteViews.setTextViewText(R.id.widget_hijri_month, HijriDate.INSTANCE.monthName(iIntValue2));
+        remoteViews.setTextViewText(R.id.widget_hijri_month, HijriDate.monthName(iIntValue2));
         remoteViews.setTextViewText(R.id.widget_hijri_year, iIntValue + " هـ");
         remoteViews.setOnClickPendingIntent(R.id.widget_hijri_day, launchIntent(context));
         applyToAll(context, appWidgetManager, HijriWidgetProvider.class, remoteViews);
@@ -839,7 +839,7 @@ public final class WidgetUpdater {
             nextMillis = 1;
         }
         remoteViews.setProgressBar(R.id.widget_wide_progress, 100, RangesKt.coerceIn((int) (((j - prayerState.getPrevMillis()) * 100) / nextMillis), 0, 100), false);
-        String strA = HijriDate.INSTANCE.format(calendar);
+        String strA = HijriDate.format(calendar);
         if (strA.endsWith(" هـ")) {
             strA = strA.substring(0, strA.length() - 3);
         }

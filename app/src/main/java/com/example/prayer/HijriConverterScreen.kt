@@ -225,7 +225,7 @@ fun HijriConverterScreen(onBack: (() -> Unit)? = null) {
     var hYear by remember { mutableStateOf("") }
 
     val gMonths = gregorianMonths(locale)
-    val hMonths = (1..12).map { HijriDate.INSTANCE.monthName(it, langCode) }
+    val hMonths = (1..12).map { HijriDate.monthName(it, langCode) }
 
     // G -> H result (null until fields form a valid Gregorian date)
     val gY = gYear.trim().toIntOrNull()
@@ -280,7 +280,7 @@ fun HijriConverterScreen(onBack: (() -> Unit)? = null) {
                         if (resultHijriCal != null) {
                             ConverterResult(
                                 weekdayOf(resultHijriCal, locale),
-                                HijriDate.INSTANCE.format(resultHijriCal, langCode)
+                                HijriDate.format(resultHijriCal, langCode)
                             )
                         }
                     } else {
@@ -309,7 +309,7 @@ fun HijriConverterScreen(onBack: (() -> Unit)? = null) {
                         gDay = now.get(Calendar.DAY_OF_MONTH).toString()
                         gMonth = now.get(Calendar.MONTH) + 1
                         gYear = now.get(Calendar.YEAR).toString()
-                        val hy = HijriDate.INSTANCE.hijriYmd(now)
+                        val hy = HijriDate.hijriYmd(now)
                         hDay = hy.third!!.toString()
                         hMonth = hy.second
                         hYear = hy.first!!.toString()
