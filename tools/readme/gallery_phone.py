@@ -112,6 +112,34 @@ def go_home():
         back()
     return False
 
+
+def top_xml():
+    return dump()
+
+def in_app(x):
+    return 'package="com.wathakker.app"' in x
+
+def at_main(x):
+    return in_app(x) and 'حصن المسلم' in x and 'التذكيرات' in x
+
+def home():
+    """Return to a main tab without ever exiting the app; relaunch if backgrounded."""
+    for _ in range(6):
+        x = top_xml()
+        if at_main(x):
+            return True
+        if not in_app(x):
+            adb('shell', 'am', 'start', '-W', '-n', PKG + '/com.example.MainActivity')
+            time.sleep(6)
+            continue
+        adb('shell', 'input', 'keyevent', 'KEYCODE_BACK'); time.sleep(1.5)
+    print('home() failed', flush=True)
+    return False
+
+def relaunch():
+    adb('shell', 'am', 'start', '-W', '-n', PKG + '/com.example.MainActivity')
+    time.sleep(6)
+
 def set_prefs(files):
     folder = f'/data/data/{PKG}/shared_prefs'
     adb('shell', 'mkdir', '-p', folder)
@@ -173,12 +201,10 @@ shot('04-prayer')
 
 tap('القائمة', exact=True); time.sleep(1.5)
 shot('10-menu')
-back()
-
-tap('القائمة', exact=True); time.sleep(1)
-tap('منبه صلاة الفجر'); time.sleep(2)
+# drawer is still open here; tap items directly (a back press at root would exit the app)
+tap('منبه صلاة الفجر', exact=True); time.sleep(2.5)
 shot('05-fajr-alarm')
-go_home()
+home()
 
 tap('حصن المسلم', exact=True); time.sleep(2)
 shot('06-hisn')
@@ -189,29 +215,29 @@ shot('07-reminders')
 tap('التقويم', exact=True); time.sleep(2)
 shot('08-calendar')
 
-go_home()
-tap('القائمة', exact=True); time.sleep(1)
-tap('القبلة'); time.sleep(2)
+home()
+tap('القائمة', exact=True); time.sleep(2)
+tap('القبلة', exact=True); time.sleep(2.5)
 shot('09-qibla')
-go_home()
+home()
 
-tap('القائمة', exact=True); time.sleep(1)
-tap('محوّل التاريخ'); time.sleep(2)
+tap('القائمة', exact=True); time.sleep(2)
+tap('محول التاريخ', exact=True); time.sleep(2.5)
 shot('12-converter-g2h')
 if not tap('من هجري إلى ميلادي'):
     tap('هجري إلى ميلادي')
-time.sleep(1.5)
+time.sleep(2)
 shot('13-converter-h2g')
-go_home()
+home()
 
 # 11: One UI picker dialog (appearance theme picker)
-tap('القائمة', exact=True); time.sleep(1)
-tap('الإعدادات'); time.sleep(2)
+tap('القائمة', exact=True); time.sleep(2)
+tap('الإعدادات', exact=True); time.sleep(2.5)
 shot('11-settings-page')
-tap('المظهر'); time.sleep(1.5)
+tap('المظهر'); time.sleep(2)
 shot('11-dialog')
 tap('إلغاء', exact=True)
-go_home()
+home()
 
 # 14: reminder time wheel. Try azkar options route first, then reminders route.
 tap('التذكيرات', exact=True); time.sleep(2)
@@ -223,12 +249,11 @@ if tap('خيارات'):
 if not ok:
     (out/'14-fallback.xml').write_text(dump())
     shot('14-time-picker-candidate')
-back(3)
-go_home()
+home()
 
 # fallback candidates for 02/03 inside the app proper
-tap('القائمة', exact=True); time.sleep(1)
-tap('الإعدادات'); time.sleep(1.5)
+tap('القائمة', exact=True); time.sleep(2)
+tap('الإعدادات', exact=True); time.sleep(2)
 if tap('تغيير الموقع'):
     time.sleep(1.5)
     shot('02-location-page')
@@ -236,7 +261,7 @@ if tap('تغيير الموقع'):
         time.sleep(1.5)
         shot('02-calc-dialog')
         tap('إلغاء', exact=True)
-go_home()
+home()
 
 (out/'date.txt').write_text(adb('shell', 'date'))
 (out/'logcat.txt').write_text(adb('logcat', '-d', t=120))
