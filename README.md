@@ -79,17 +79,8 @@
     <tr><td align="center"><img src="docs/screenshots/04-prayer.png" width="200" alt="شاشة الصلاة"><br><sub>شاشة الصلاة</sub></td><td align="center"><img src="docs/screenshots/05-fajr-alarm.png" width="200" alt="منبه صلاة الفجر"><br><sub>منبه صلاة الفجر</sub></td><td align="center"><img src="docs/screenshots/06-hisn.png" width="200" alt="حصن المسلم"><br><sub>حصن المسلم</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/07-reminders.png" width="200" alt="التذكيرات"><br><sub>التذكيرات</sub></td><td align="center"><img src="docs/screenshots/08-calendar.png" width="200" alt="التقويم"><br><sub>التقويم</sub></td><td align="center"><img src="docs/screenshots/09-qibla.png" width="200" alt="القبلة"><br><sub>القبلة</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/10-menu.png" width="200" alt="قوائم بأسلوب One UI"><br><sub>قوائم بأسلوب One UI</sub></td><td align="center"><img src="docs/screenshots/11-dialog.png" width="200" alt="نوافذ الحوار"><br><sub>نوافذ الحوار</sub></td><td align="center"><img src="docs/screenshots/01-language.png" width="200" alt="بداية الاستخدام: اللغة"><br><sub>بداية الاستخدام: اللغة</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/02-calculation.png" width="200" alt="طريقة الحساب"><br><sub>طريقة الحساب</sub></td><td align="center"><img src="docs/screenshots/03-alerts.png" width="200" alt="تفعيل التنبيهات"><br><sub>تفعيل التنبيهات</sub></td><td align="center"><img src="docs/screenshots/14-time-picker.png" width="200" alt="عجلة الوقت"><br><sub>عجلة الوقت</sub></td></tr>
+    <tr><td align="center"><img src="docs/screenshots/02-calculation.png" width="200" alt="طريقة الحساب"><br><sub>طريقة الحساب</sub></td><td align="center"><img src="docs/screenshots/03-alerts.png" width="200" alt="تفعيل التنبيهات"><br><sub>تفعيل التنبيهات</sub></td><td align="center"><img src="docs/screenshots/14-time-picker.png" width="200" alt="أوقات التنبيه"><br><sub>أوقات التنبيه</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/12-converter-g2h.png" width="200" alt="محوّل التاريخ: ميلادي إلى هجري"><br><sub>ميلادي إلى هجري</sub></td><td align="center"><img src="docs/screenshots/13-converter-h2g.png" width="200" alt="محوّل التاريخ: هجري إلى ميلادي"><br><sub>هجري إلى ميلادي</sub></td></tr>
-  </table>
-</div>
-
-### 📲 الودجت
-
-<div align="center" dir="rtl">
-  <table>
-    <tr><td align="center"><img src="docs/screenshots/p01-lock-widgets.jpg" width="170" alt="ودجت شاشة القفل"><br><sub>شاشة القفل</sub></td><td align="center"><img src="docs/screenshots/p02-lock-widget-picker.jpg" width="170" alt="منتقي ودجت القفل"><br><sub>منتقي ودجت القفل</sub></td><td align="center"><img src="docs/screenshots/p03-lock-widget-picker-2.jpg" width="170" alt="ودجت القفل"><br><sub>ودجت القفل</sub></td><td align="center"><img src="docs/screenshots/p04-lock-widget-picker-3.jpg" width="170" alt="ودجت القفل"><br><sub>ودجت القفل</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/p05-home-widgets.jpg" width="170" alt="ودجت الشاشة الرئيسية"><br><sub>ودجت الرئيسية</sub></td><td align="center"><img src="docs/screenshots/p06-home-widget-picker.jpg" width="170" alt="منتقي ودجت الرئيسية"><br><sub>منتقي ودجت الرئيسية</sub></td><td align="center"><img src="docs/screenshots/p07-widget-settings.jpg" width="170" alt="إعدادات الودجت"><br><sub>إعدادات الودجت</sub></td></tr>
   </table>
 </div>
 
@@ -107,7 +98,7 @@
 <div align="center" dir="rtl">
   <table>
     <tr><td align="center"><img src="docs/screenshots/w01-tile.png" width="170" alt="بلاطة الساعة"><br><sub>بلاطة الساعة</sub></td><td align="center"><img src="docs/screenshots/w02-main.png" width="170" alt="الشاشة الرئيسية"><br><sub>الشاشة الرئيسية</sub></td><td align="center"><img src="docs/screenshots/w03-countdown.png" width="170" alt="قطعة العد التنازلي"><br><sub>قطعة العد التنازلي</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/w06-friday-times.jpg" width="170" alt="مواقيت يوم الجمعة"><br><sub>مواقيت يوم الجمعة</sub></td><td align="center"><img src="docs/screenshots/w05-theme-colors.jpg" width="170" alt="ألوان السمات"><br><sub>ألوان السمات</sub></td><td align="center"><img src="docs/screenshots/w04-qibla.jpg" width="170" alt="بوصلة القبلة"><br><sub>بوصلة القبلة</sub></td></tr>
+    <tr><td align="center"><img src="docs/screenshots/w06-friday-times.png" width="170" alt="مواقيت يوم الجمعة"><br><sub>مواقيت يوم الجمعة</sub></td><td align="center"><img src="docs/screenshots/w05-theme-colors.png" width="170" alt="ألوان السمات"><br><sub>ألوان السمات</sub></td><td align="center"><img src="docs/screenshots/w04-qibla.png" width="170" alt="بوصلة القبلة"><br><sub>بوصلة القبلة</sub></td></tr>
   </table>
 </div>
 

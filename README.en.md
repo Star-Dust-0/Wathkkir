@@ -75,17 +75,8 @@ Wathkkir is an open-source Android app that brings the everyday tools a Muslim n
     <tr><td align="center"><img src="docs/screenshots/04-prayer.png" width="200" alt="Prayer screen"><br><sub>Prayer screen</sub></td><td align="center"><img src="docs/screenshots/05-fajr-alarm.png" width="200" alt="Fajr alarm"><br><sub>Fajr alarm</sub></td><td align="center"><img src="docs/screenshots/06-hisn.png" width="200" alt="Hisn Al-Muslim"><br><sub>Hisn Al-Muslim</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/07-reminders.png" width="200" alt="Reminders"><br><sub>Reminders</sub></td><td align="center"><img src="docs/screenshots/08-calendar.png" width="200" alt="Calendar"><br><sub>Calendar</sub></td><td align="center"><img src="docs/screenshots/09-qibla.png" width="200" alt="Qibla"><br><sub>Qibla</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/10-menu.png" width="200" alt="One UI style menus"><br><sub>One UI style menus</sub></td><td align="center"><img src="docs/screenshots/11-dialog.png" width="200" alt="Dialogs"><br><sub>Dialogs</sub></td><td align="center"><img src="docs/screenshots/01-language.png" width="200" alt="Onboarding: language"><br><sub>Onboarding: language</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/02-calculation.png" width="200" alt="Calculation method"><br><sub>Calculation method</sub></td><td align="center"><img src="docs/screenshots/03-alerts.png" width="200" alt="Enable alerts"><br><sub>Enable alerts</sub></td><td align="center"><img src="docs/screenshots/14-time-picker.png" width="200" alt="Time wheel"><br><sub>Time wheel</sub></td></tr>
+    <tr><td align="center"><img src="docs/screenshots/02-calculation.png" width="200" alt="Calculation method"><br><sub>Calculation method</sub></td><td align="center"><img src="docs/screenshots/03-alerts.png" width="200" alt="Enable alerts"><br><sub>Enable alerts</sub></td><td align="center"><img src="docs/screenshots/14-time-picker.png" width="200" alt="Reminder times"><br><sub>Reminder times</sub></td></tr>
     <tr><td align="center"><img src="docs/screenshots/12-converter-g2h.png" width="200" alt="Date converter: Gregorian to Hijri"><br><sub>Gregorian to Hijri</sub></td><td align="center"><img src="docs/screenshots/13-converter-h2g.png" width="200" alt="Date converter: Hijri to Gregorian"><br><sub>Hijri to Gregorian</sub></td></tr>
-  </table>
-</div>
-
-### 📲 Widgets
-
-<div align="center">
-  <table>
-    <tr><td align="center"><img src="docs/screenshots/p01-lock-widgets.jpg" width="170" alt="Lock-screen widgets"><br><sub>Lock screen</sub></td><td align="center"><img src="docs/screenshots/p02-lock-widget-picker.jpg" width="170" alt="Lock widget picker"><br><sub>Lock widget picker</sub></td><td align="center"><img src="docs/screenshots/p03-lock-widget-picker-2.jpg" width="170" alt="Lock widgets"><br><sub>Lock widgets</sub></td><td align="center"><img src="docs/screenshots/p04-lock-widget-picker-3.jpg" width="170" alt="Lock widgets"><br><sub>Lock widgets</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/p05-home-widgets.jpg" width="170" alt="Home-screen widgets"><br><sub>Home widgets</sub></td><td align="center"><img src="docs/screenshots/p06-home-widget-picker.jpg" width="170" alt="Home widget picker"><br><sub>Home widget picker</sub></td><td align="center"><img src="docs/screenshots/p07-widget-settings.jpg" width="170" alt="Widget settings"><br><sub>Widget settings</sub></td></tr>
   </table>
 </div>
 
@@ -103,7 +94,7 @@ The watch app is a separate download and runs on Wear OS 3 and newer. Its featur
 <div align="center">
   <table>
     <tr><td align="center"><img src="docs/screenshots/w01-tile.png" width="170" alt="Watch tile"><br><sub>Watch tile</sub></td><td align="center"><img src="docs/screenshots/w02-main.png" width="170" alt="Main screen"><br><sub>Main screen</sub></td><td align="center"><img src="docs/screenshots/w03-countdown.png" width="170" alt="Countdown complication"><br><sub>Countdown complication</sub></td></tr>
-    <tr><td align="center"><img src="docs/screenshots/w06-friday-times.jpg" width="170" alt="Friday prayer times"><br><sub>Friday prayer times</sub></td><td align="center"><img src="docs/screenshots/w05-theme-colors.jpg" width="170" alt="Theme colors"><br><sub>Theme colors</sub></td><td align="center"><img src="docs/screenshots/w04-qibla.jpg" width="170" alt="Qibla compass"><br><sub>Qibla compass</sub></td></tr>
+    <tr><td align="center"><img src="docs/screenshots/w06-friday-times.png" width="170" alt="Friday prayer times"><br><sub>Friday prayer times</sub></td><td align="center"><img src="docs/screenshots/w05-theme-colors.png" width="170" alt="Theme colors"><br><sub>Theme colors</sub></td><td align="center"><img src="docs/screenshots/w04-qibla.png" width="170" alt="Qibla compass"><br><sub>Qibla compass</sub></td></tr>
   </table>
 </div>
 
