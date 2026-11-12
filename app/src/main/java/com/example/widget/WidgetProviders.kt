@@ -14,7 +14,7 @@ abstract class BaseWathakkerWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         WidgetUpdater.INSTANCE.updateAll(context)
-        WidgetTickScheduler.INSTANCE.schedule(context)
+        WidgetTickScheduler.schedule(context)
     }
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
@@ -28,12 +28,12 @@ abstract class BaseWathakkerWidgetProvider : AppWidgetProvider() {
         // Re-evaluate the shared pulse: LockWidgets.schedule cancels it only when no widget of
         // ANY family remains, so deleting the last com.example.widget.* instance stops the pulse
         // immediately instead of at the next (possibly doze-deferred) tick delivery.
-        WidgetTickScheduler.INSTANCE.schedule(context)
+        WidgetTickScheduler.schedule(context)
     }
 
     override fun onEnabled(context: Context) {
         WidgetUpdater.INSTANCE.updateAll(context)
-        WidgetTickScheduler.INSTANCE.schedule(context)
+        WidgetTickScheduler.schedule(context)
     }
 }
 
@@ -43,3 +43,14 @@ class OneUIWidgetProvider : BaseWathakkerWidgetProvider()
 class HeroWidgetProvider : BaseWathakkerWidgetProvider()
 
 class NextPrayerWidgetProvider : BaseWathakkerWidgetProvider()
+
+class PrayerBarWidgetProvider : BaseWathakkerWidgetProvider()
+class ScheduleWidgetProvider : BaseWathakkerWidgetProvider()
+class HijriWidgetProvider : BaseWathakkerWidgetProvider()
+class GregorianWidgetProvider : BaseWathakkerWidgetProvider()
+class DayPrayerWidgetProvider : BaseWathakkerWidgetProvider()
+class PillWidgetProvider : BaseWathakkerWidgetProvider()
+class ClockWidgetProvider : BaseWathakkerWidgetProvider()
+class WideBarWidgetProvider : BaseWathakkerWidgetProvider()
+class IqamaWidgetProvider : BaseWathakkerWidgetProvider()
+class IqamaSmallWidgetProvider : BaseWathakkerWidgetProvider()
