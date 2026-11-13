@@ -55,6 +55,10 @@ if apk:
  b=find('bell_2')
  check('bell_2 found',b is not None)
  if b is not None:
+  # The pre-adhan controls intentionally show only while the prayer bell is enabled.
+  tap_node(b)
+  b=find('bell_2')
+  assert b is not None, 'bell missing after enable'
   longpress_node(b)
   tr2=tree();(out/'release-sheet.xml').write_text(tr2)
   shot('release-sheet')
@@ -62,3 +66,5 @@ if apk:
   check('Friday sheet hides iqama row','تنبيه الإقامة' not in tr2)
   check('Friday sheet keeps pre-adhan row','تنبيه قبل الأذان' in tr2)
 print('done',flush=True)
+
+assert all(x["passed"] for x in checks), "Smoke assertions failed; see checks.json"
