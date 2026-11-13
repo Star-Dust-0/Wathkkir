@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p "$HOME/.android"
           keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -storepass android -keypass android -alias androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
-          gradle :wear:assembleDebug -PwithWear --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+          gradle :wear:assembleDebug -PwithWear -PcompareSuffix --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
           cp wear/build/outputs/apk/debug/*.apk watch-rebuilt.apk
       - name: Enable acceleration
         run: |
