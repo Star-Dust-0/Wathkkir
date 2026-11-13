@@ -11,11 +11,23 @@ def check(n,ok,detail=''):
  checks.append(dict(name=n,passed=bool(ok),detail=detail));(out/'checks.json').write_text(json.dumps(checks,ensure_ascii=False,indent=2));print(n,ok,detail,flush=True);return bool(ok)
 def shot(name):
  (out/(name+'.png')).write_bytes(subprocess.check_output(['adb','exec-out','screencap','-p'],timeout=25))
+import xml.etree.ElementTree as ET,re
+def tree():
+ s=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
+ return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+def tap_text(label):
+ for n in ET.fromstring(tree()).iter('node'):
+  if n.get('text')==label:
+   x0,y0,x1,y1=map(int,re.findall(r'\d+',n.get('bounds','')))
+   adb('shell','input','tap',str((x0+x1)//2),str((y0+y1)//2));time.sleep(2);return True
+ return False
 def launch(pkg):
+ adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
  adb('shell','am','force-stop',pkg)
  adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity');time.sleep(6)
+ tap_text('Close app')  # dismiss a launcher ANR dialog if one appeared (emulator flake)
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
-for a in ['original.apk','comparison.apk']:
+for a in ['original.apk','comparison.apk','widgethost.apk']:
  check('install '+a,'Success' in adb('install','-r','-g',a))
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.app.compare')]:
