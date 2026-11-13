@@ -68,7 +68,7 @@ def setup(pkg,lang,theme):
     adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
     adb('shell','cmd','uimode','night','yes' if theme=='dark' else 'no')
     adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
-    adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
+    adb('shell','am','start','-n',pkg+'/com.example.MainActivity')
     time.sleep(7)
 
 def measure(name,pkg,lang,theme,repeat):
@@ -84,7 +84,7 @@ def measure(name,pkg,lang,theme,repeat):
             button=find(label)
             if button: tap(button);time.sleep(.5)
         adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
-        adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
+        adb('shell','am','start','-n',pkg+'/com.example.MainActivity')
         time.sleep(3)
     shot(slug+'-ready')
     (OUT/(slug+'-startup-logcat.txt')).write_text(adb('logcat','-d','-t','500'))
@@ -116,6 +116,15 @@ def measure(name,pkg,lang,theme,repeat):
     tap(menu);time.sleep(.5); shot(slug+'-after-cycles')
     tr=tree();check(slug+' repeated opening works',('الإعدادات' if lang=='ar' else 'Settings') in tr)
     tap(outside);time.sleep(.5)
+    if name=='candidate' and repeat==1:
+        video='/sdcard/'+slug+'.mp4'
+        with (OUT/(slug+'-recording-log.txt')).open('w') as log:
+            rec=subprocess.Popen(['adb','shell','screenrecord','--time-limit','8',video],stdout=log,stderr=log)
+            time.sleep(.5);tap(menu);time.sleep(1);tap(outside);time.sleep(1)
+            adb('shell','pkill','-INT','screenrecord')
+            try:rec.wait(timeout=10)
+            except subprocess.TimeoutExpired:rec.kill();rec.wait()
+        adb('pull',video,str(OUT/(slug+'-motion.mp4')))
     (OUT/'drawer-frame-summary.json').write_text(json.dumps(results,indent=2))
     adb('shell','am','force-stop',pkg)
 
