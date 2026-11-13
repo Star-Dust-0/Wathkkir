@@ -12,8 +12,8 @@ android {
     applicationId = "com.wathakker.app" + (if (providers.gradleProperty("compareSuffix").isPresent) ".compare" else "")
     minSdk = 23
     targetSdk = 36
-    versionCode = 83
-    versionName = "3.5.1"
+    versionCode = 84
+    versionName = "3.5.2"
   }
 
   signingConfigs {
