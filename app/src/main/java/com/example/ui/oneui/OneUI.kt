@@ -944,7 +944,7 @@ fun OneUIDrawer(
                         layout(p.width, p.height) { p.place(0, 0) }
                     }
                     .fillMaxHeight()
-                    .then(Modifier.oneUIFrosted(RoundedCornerShape(26.dp), drawerFrost, 48))
+                    .then(Modifier.oneUIFrosted(RoundedCornerShape(26.dp), drawerFrost, 48, downsampleBlur = true))
                     .then(Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState()))
                     .padding(vertical = 18.dp)
             ) {

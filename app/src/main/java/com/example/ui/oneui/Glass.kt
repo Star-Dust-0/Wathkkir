@@ -52,15 +52,27 @@ class FrostSpec(val base: Color, val alpha: Float, val border: Color)
  * and a subtle 1dp border - the v3.2.0 "one glass system" material used by the prayer
  * cards, and by the header pills / bottom bar / drawer while the prayer sky is showing.
  */
+@OptIn(dev.chrisbanes.haze.ExperimentalHazeApi::class)
 @Composable
-fun Modifier.oneUIFrosted(shape: Shape, spec: FrostSpec, blurRadius: Int = 28, haze: HazeState? = null): Modifier {
+fun Modifier.oneUIFrosted(
+    shape: Shape,
+    spec: FrostSpec,
+    blurRadius: Int = 28,
+    haze: HazeState? = null,
+    downsampleBlur: Boolean = false
+): Modifier {
     val state = haze ?: LocalHazeState.current
     return if (state != null && blurSupported) {
         this.clip(shape)
             .hazeEffect(
                 state,
                 HazeStyle(spec.base, HazeTint(spec.base.copy(alpha = spec.alpha)), blurRadius.dp, 0.04f)
-            )
+            ) {
+                // Large moving surfaces otherwise blur every native pixel on every frame.
+                // Scale only the blur input, never the foreground text, icons or layout.
+                inputScale = if (downsampleBlur) dev.chrisbanes.haze.HazeInputScale.Auto
+                    else dev.chrisbanes.haze.HazeInputScale.None
+            }
             .border(1.dp, spec.border, shape)
     } else {
         this.clip(shape).background(spec.base.copy(alpha = 0.96f))

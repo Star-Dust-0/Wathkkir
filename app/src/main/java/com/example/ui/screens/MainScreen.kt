@@ -10,7 +10,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import com.example.utils.clickable
-import com.example.utils.plainClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -42,7 +41,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
@@ -150,7 +148,13 @@ fun MainScreen(viewModel: MainViewModel) {
             // 3.4: one full-screen blur source under the pages. The frosted bottom bar used to blur only the list
             // that sat under it, so on wide pages (centred frame, two-pane Hisn) and mid-swipe the bar had no
             // background where no list was drawn. This source always covers the whole screen.
-            Box(Modifier.fillMaxSize().hazeSource(hazeState).background(MaterialTheme.colorScheme.background)) {
+            // Prayer supplies its own full-screen sky source. Recording the whole rendered
+            // prayer page as another source captures all its frosted cards as well,
+            // creating a nested blur path when a shell effect (especially the drawer) moves.
+            val prayerSkySource = isTab && currentTabRoute == "prayer"
+            Box(Modifier.fillMaxSize()
+                .then(if (prayerSkySource) Modifier else Modifier.hazeSource(hazeState))
+                .background(MaterialTheme.colorScheme.background)) {
             NavHost(
                 navController = navController,
                 startDestination = "tabs",
@@ -277,16 +281,7 @@ fun MainScreen(viewModel: MainViewModel) {
                     if (route != it) navController.navigate(it) { launchSingleTop = true }
                 },
                 onDismiss = { drawerOpen = false },
-                frost = skyFrost,
-                footer = {
-                    val uri = LocalUriHandler.current
-                    Text(
-                        "brought to you by Instinct",
-                        modifier = Modifier.plainClickable { uri.openUri("https://instinct.com") },
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        style = MaterialTheme.typography.bodySmall
-                    )
-                }
+                frost = skyFrost
             )
             if (showAddDialog) {
                 DhikrAddDialog(

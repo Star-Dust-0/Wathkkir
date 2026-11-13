@@ -1,5 +1,5 @@
 """Smoke-verify the signed release APK (Wathkkir-phone-*.apk in the workspace) on an emulator:
-install, confirm version 3.5.1 (83) for com.wathakker.app, launch the prayer screen,
+install, confirm version 3.5.2 (84) for com.wathakker.app, launch the prayer screen,
 and open the Friday alert sheet to confirm the Jumu'a surface (no iqama option).
 Uses uiautomator dump directly; no helper apps.
 """
@@ -35,8 +35,8 @@ if apk:
  (out/'package-dump.txt').write_text(dump)
  vn=re.search(r'versionName=([\d.]+)',dump)
  vc=re.search(r'versionCode=(\d+)',dump)
- check('versionName is 3.5.1',vn and vn.group(1)=='3.5.1',vn.group(1) if vn else 'missing')
- check('versionCode is 83',vc and vc.group(1)=='83',vc.group(1) if vc else 'missing')
+ check('versionName is 3.5.2',vn and vn.group(1)=='3.5.2',vn.group(1) if vn else 'missing')
+ check('versionCode is 84',vc and vc.group(1)=='84',vc.group(1) if vc else 'missing')
  adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
  adb('shell','setprop','persist.sys.timezone','Africa/Cairo');time.sleep(1)
  for perm in ['POST_NOTIFICATIONS','ACCESS_COARSE_LOCATION','ACCESS_FINE_LOCATION']:adb('shell','pm','grant',PKG,'android.permission.'+perm)
