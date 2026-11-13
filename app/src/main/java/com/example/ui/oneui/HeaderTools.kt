@@ -64,9 +64,9 @@ object HeaderTools {
     // Apply on a background layer only (see OneUIScreen) so the fade-in alpha never touches
     // the pill's icons/labels; the strip between pills stays clear.
     @androidx.compose.runtime.Composable
-    fun glassTile(modifier: Modifier, frost: FrostSpec? = null): Modifier =
+    fun glassTile(modifier: Modifier, frost: FrostSpec? = null, haze: dev.chrisbanes.haze.HazeState? = null): Modifier =
         if (frost != null) {
-            modifier.oneUIFrosted(RoundedCornerShape(26.dp), frost, 28)
+            modifier.oneUIFrosted(RoundedCornerShape(26.dp), frost, 28, haze)
         } else {
             // Non-prayer screens (build 50, his call - 3.1.0 design): solid pill like
             // HeaderTools.tile; the layer alpha outside handles the fade-in.

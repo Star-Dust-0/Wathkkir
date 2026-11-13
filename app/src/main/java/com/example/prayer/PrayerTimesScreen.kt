@@ -503,6 +503,7 @@ fun PrayerTimesContent(
         titleTopExtra = 1.5.dp,
         titleBottomTrim = 0.dp,
         frost = frost,
+        headerHaze = skyHaze,
         actions = if (onQibla != null) {
             { OneUIIconAction(Icons.Outlined.Explore, L10n.t(S.QiblaTitle), onQibla) }
         } else null

@@ -53,8 +53,8 @@ class FrostSpec(val base: Color, val alpha: Float, val border: Color)
  * cards, and by the header pills / bottom bar / drawer while the prayer sky is showing.
  */
 @Composable
-fun Modifier.oneUIFrosted(shape: Shape, spec: FrostSpec, blurRadius: Int = 28): Modifier {
-    val state = LocalHazeState.current
+fun Modifier.oneUIFrosted(shape: Shape, spec: FrostSpec, blurRadius: Int = 28, haze: HazeState? = null): Modifier {
+    val state = haze ?: LocalHazeState.current
     return if (state != null && blurSupported) {
         this.clip(shape)
             .hazeEffect(

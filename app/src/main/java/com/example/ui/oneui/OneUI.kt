@@ -138,6 +138,10 @@ fun OneUIScreen(
     // v3.2.0 glass system: when non-null the header pills use this frost material
     // (prayer screen: matches the cards over the sky). Null = default tile, unchanged.
     frost: FrostSpec? = null,
+    // Hotfix (top-bar blur): explicit haze source for the header pills. The prayer
+    // screen passes its sky state so the pills blur the sky exactly like the cards;
+    // null keeps the shell state (previous behaviour) on every other screen.
+    headerHaze: dev.chrisbanes.haze.HazeState? = null,
     content: LazyListScope.() -> Unit
 ) {
     val density = LocalDensity.current
@@ -256,7 +260,7 @@ fun OneUIScreen(
         ) {
             Box(modifier = Modifier.weight(1f, fill = false)) {
                 // Glass tile fades in on scroll as a background layer; icons/labels stay visible.
-                Box(Modifier.matchParentSize().alpha(tileAlpha).then(HeaderTools.glassTile(Modifier, frost)))
+                Box(Modifier.matchParentSize().alpha(tileAlpha).then(HeaderTools.glassTile(Modifier, frost, headerHaze)))
                 Row(
                     modifier = Modifier
                         .height(52.dp)
@@ -291,7 +295,7 @@ fun OneUIScreen(
             val showSettingsButton = onBack == null && !HeaderTools.isOnSettings()
             if (showSettingsButton || actions != null) {
                 Box {
-                    Box(Modifier.matchParentSize().alpha(tileAlpha).then(HeaderTools.glassTile(Modifier, frost)))
+                    Box(Modifier.matchParentSize().alpha(tileAlpha).then(HeaderTools.glassTile(Modifier, frost, headerHaze)))
                     Row(
                         modifier = Modifier.height(52.dp).padding(horizontal = 6.dp),
                         verticalAlignment = Alignment.CenterVertically
