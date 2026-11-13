@@ -35,6 +35,10 @@ def dump_alarms(pkg,tag):
  s=adb('shell','dumpsys','alarm',timeout=60)
  (out/(tag+'-alarms.txt')).write_text(s)
  return alarm_epochs(pkg,s)
+def launch(pkg):
+ adb('shell','am','force-stop',pkg)
+ adb('shell','am','start','-n',pkg+'/.MainActivity')
+ time.sleep(10)
 
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 for a in ['original.apk','comparison.apk','widgethost.apk']:
