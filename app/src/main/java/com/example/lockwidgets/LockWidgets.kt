@@ -59,10 +59,10 @@ open class LockWidgets : AppWidgetProvider() {
         }
         if (action(c, "TICK") == a || action(c, "BOUNDARY") == a) {
             android.util.Log.i("WathakkerLock", (if (action(c, "BOUNDARY") == a) "boundary fire" else "tick fire") + " t=" + System.currentTimeMillis())
-            val full = action(c, "BOUNDARY") == a || phaseChanged(c); updateAllTick(c, full); HomeWidgets.updateAll(c, !full); try { com.example.widget.WidgetUpdater.INSTANCE.updateFace(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "face widget update failed", t) }; schedule(c); return
+            val full = action(c, "BOUNDARY") == a || phaseChanged(c); updateAllTick(c, full); HomeWidgets.updateAll(c, !full); try { com.example.widget.WidgetUpdater.updateFace(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "face widget update failed", t) }; schedule(c); return
         }
         if (Intent.ACTION_BOOT_COMPLETED == a || Intent.ACTION_TIME_CHANGED == a || Intent.ACTION_TIMEZONE_CHANGED == a || Intent.ACTION_DATE_CHANGED == a || Intent.ACTION_MY_PACKAGE_REPLACED == a) {
-            updateAll(c); HomeWidgets.updateAll(c); try { com.example.widget.WidgetUpdater.INSTANCE.updateAll(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "home widget updater failed", t) }; schedule(c); return
+            updateAll(c); HomeWidgets.updateAll(c); try { com.example.widget.WidgetUpdater.updateAll(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "home widget updater failed", t) }; schedule(c); return
         }
         super.onReceive(c, `in`)
     }

@@ -102,7 +102,7 @@ fun LocationCalculationScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
         prefsTick++
         viewModel.refreshFajrTimeManually()
         try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
-        try { WidgetUpdater.INSTANCE.updateAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
+        try { WidgetUpdater.updateAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
         try { LockWidgets.updateAll(context) } catch (t: Throwable) { android.util.Log.w("LocCalc", "operation failed", t) }
     }
 

@@ -9,7 +9,7 @@ class FaceWidgetReceiver : BroadcastReceiver() {
         if (intent.action == ACTION_REQUEST) {
             val pageId = intent.getStringExtra("pageId")
             if (pageId != null) {
-                WidgetUpdater.INSTANCE.pushFaceWidget(context, pageId)
+                WidgetUpdater.pushFaceWidget(context, pageId)
             }
         }
     }

@@ -9,7 +9,7 @@ class WidgetTickReceiver : BroadcastReceiver() {
         if (intent.action == WidgetTickScheduler.ACTION_TICK) {
             // Legacy alarm fired after upgrade: refresh once, then hand scheduling to the
             // consolidated LockWidgets pulse instead of re-arming this chain.
-            WidgetUpdater.INSTANCE.updateAll(context)
+            WidgetUpdater.updateAll(context)
             WidgetTickScheduler.schedule(context)
         }
     }

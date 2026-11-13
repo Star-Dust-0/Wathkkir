@@ -260,7 +260,7 @@ class WidgetConfigActivity : ComponentActivity() {
             override fun handleOnBackPressed() {
                 android.util.Log.i("WidgetConfig", "back isNew=" + isNew + " id=" + appWidgetId)
                 if (isNew) {
-                    WidgetUpdater.INSTANCE.updateAll(this@WidgetConfigActivity)
+                    WidgetUpdater.updateAll(this@WidgetConfigActivity)
                     com.example.lockwidgets.HomeWidgets.updateAll(this@WidgetConfigActivity)
                     setResult(RESULT_OK, Intent().putExtra("appWidgetId", appWidgetId))
                 }
@@ -283,7 +283,7 @@ class WidgetConfigActivity : ComponentActivity() {
                         val ed = sp.edit()
                         if (!tapOnly) ed.putString(keyFor("widget_bar_color"), bar).putString(keyFor("widget_bg_color"), bg).putInt(keyFor("widget_pattern"), pat).putInt(keyFor("widget_oneui_color"), accent)
                         ed.putString(keyFor("widget_tap"), if (tap) "open" else if (refreshable) "refresh" else "none").apply()
-                        WidgetUpdater.INSTANCE.updateAll(this@WidgetConfigActivity)
+                        WidgetUpdater.updateAll(this@WidgetConfigActivity)
                         com.example.lockwidgets.HomeWidgets.updateAll(this@WidgetConfigActivity)
                         setResult(RESULT_OK, Intent().putExtra("appWidgetId", appWidgetId))
                         finish()

@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(state)
         ThemeSettings.init(this)
         com.example.utils.Digits.init(this)
-        WidgetUpdater.INSTANCE.updateAll(this)
+        WidgetUpdater.updateAll(this)
         com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(this)
         handleIntent(intent)
         enableEdgeToEdge()

@@ -13,7 +13,7 @@ abstract class BaseWathakkerWidgetProvider : AppWidgetProvider() {
     }
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        WidgetUpdater.INSTANCE.updateAll(context)
+        WidgetUpdater.updateAll(context)
         WidgetTickScheduler.schedule(context)
     }
 
@@ -32,7 +32,7 @@ abstract class BaseWathakkerWidgetProvider : AppWidgetProvider() {
     }
 
     override fun onEnabled(context: Context) {
-        WidgetUpdater.INSTANCE.updateAll(context)
+        WidgetUpdater.updateAll(context)
         WidgetTickScheduler.schedule(context)
     }
 }
