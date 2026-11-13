@@ -67,6 +67,7 @@ def setup(pkg,lang,theme):
     x=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><string name="theme_mode">{theme}</string><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
     adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
     adb('shell','cmd','uimode','night','yes' if theme=='dark' else 'no')
+    adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
     adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
     time.sleep(7)
 
@@ -79,10 +80,10 @@ def measure(name,pkg,lang,theme,repeat):
     for attempt in range(4):
         menu=find('القائمة' if lang=='ar' else 'Menu') or find('Menu') or find('القائمة')
         if menu: break
-        for label in ['OK', 'Continue', 'Allow', 'موافق', 'متابعة', 'السماح']:
+        for label in ['Close app', 'OK', 'Continue', 'Allow', 'إغلاق التطبيق', 'موافق', 'متابعة', 'السماح']:
             button=find(label)
             if button: tap(button);time.sleep(.5)
-        adb('shell','input','keyevent','KEYCODE_BACK')
+        adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
         adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
         time.sleep(3)
     shot(slug+'-ready')
