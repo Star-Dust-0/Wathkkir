@@ -19,6 +19,9 @@ import android.graphics.PorterDuffColorFilter
 import android.graphics.RectF
 import android.graphics.Typeface
 import android.icu.util.IslamicCalendar
+import com.example.fajr.calculation.CalculationMethod
+import com.example.fajr.calculation.PrayerAdjustments
+import com.example.fajr.data.FajrPreferences
 import android.os.Bundle
 import android.text.Layout
 import android.text.StaticLayout
@@ -143,11 +146,11 @@ open class LockWidgets : AppWidgetProvider() {
             } catch (e: Exception) { android.util.Log.w("WathakkerLock", "phase tracking failed - full update", e); return true }
         }
         private var tcDay = -1L; private var tcLat = Double.NaN; private var tcLng = Double.NaN; private var tcMethod = -1; private var tcVal: LongArray? = null
-        /** Per-day cache of the reflection-based prayer-time calculation, keyed on date + location + method. */
+        /** Per-day cache of the prayer-time calculation, keyed on date + location + method. */
         @Synchronized @JvmStatic @Throws(Exception::class) fun timesCached(c: Context, day: Calendar): LongArray {
-            val p = Class.forName("com.example.fajr.data.FajrPreferences"); val prefs = p.getConstructor(Context::class.java).newInstance(c)
-            val lat = p.getMethod("getLatitude").invoke(prefs) as Double; val lng = p.getMethod("getLongitude").invoke(prefs) as Double
-            val method = p.getMethod("getCalculationMethodId").invoke(prefs) as Int
+            val prefs = FajrPreferences(c)
+            val lat = prefs.latitude; val lng = prefs.longitude
+            val method = prefs.calculationMethodId
             val key = day.get(Calendar.YEAR) * 1000L + day.get(Calendar.DAY_OF_YEAR)
             val cached = tcVal
             if (cached != null && key == tcDay && lat == tcLat && lng == tcLng && method == tcMethod) return cached.clone()
@@ -163,17 +166,11 @@ open class LockWidgets : AppWidgetProvider() {
             v.setOnClickPendingIntent(res(c, "id", "lock_widget_art"), null)
             m.updateAppWidget(id, v)
         }
-        /** Call r7's own calculator/preferences so all widgets agree with its prayer screen. */
+        /** Call the app's own calculator/preferences so all widgets agree with its prayer screen. */
         @Throws(Exception::class) private fun times(c: Context, day: Calendar): LongArray {
-            val p = Class.forName("com.example.fajr.data.FajrPreferences"); val prefs = p.getConstructor(Context::class.java).newInstance(c)
-            val lat = p.getMethod("getLatitude").invoke(prefs) as Double; val lng = p.getMethod("getLongitude").invoke(prefs) as Double
-            val method = p.getMethod("getCalculationMethodId").invoke(prefs) as Int
-            val meth = Class.forName("com.example.fajr.calculation.CalculationMethod")
-            val companion: Any = try { meth.getField("Companion").get(null) } catch (nf: NoSuchFieldException) { meth.getField("INSTANCE").get(null) }
-            val choice = companion.javaClass.getMethod("fromId", Int::class.javaPrimitiveType).invoke(companion, method)
-            val calc = Class.forName("com.example.fajr.calculation.PrayerAdjustments")
-            val result = calc.getMethod("calculateAll", android.content.Context::class.java, Calendar::class.java, Double::class.javaPrimitiveType, Double::class.javaPrimitiveType, meth).invoke(calc.getField("INSTANCE").get(null), c, day, lat, lng, choice)
-            val getters = arrayOf("getFajr", "getSunrise", "getDhuhr", "getAsr", "getMaghrib", "getIsha"); val out = LongArray(6); for (i in 0 until 6) out[i] = result.javaClass.getMethod(getters[i]).invoke(result) as Long; return out
+            val prefs = FajrPreferences(c)
+            val result = PrayerAdjustments.calculateAll(c, day, prefs.latitude, prefs.longitude, CalculationMethod.fromId(prefs.calculationMethodId))
+            return longArrayOf(result.fajr, result.sunrise, result.dhuhr, result.asr, result.maghrib, result.isha)
         }
         private fun time(value: Long, l: Locale): String = HomeWidgets.tm(value, l.language)
         private fun number(n: Long, l: Locale): String { val f = NumberFormat.getIntegerInstance(l); f.isGroupingUsed = false; return f.format(n) }

@@ -1,14 +1,14 @@
-# Keep rules prepared for enabling R8/minification on the release build.
-# The lock-screen and home widgets (LockWidgets.java / HomeWidgets.java) reach these
-# classes only by reflection (Class.forName / getMethod), so shrinking would strip
-# them and blank every widget - this is exactly the 3.1.0 widget regression.
+# Keep rules for the R8/minified release build.
+# The widget/refresh/receiver classes are kept defensively: widgets and their tap
+# routing must survive shrinking exactly as in the launcher app - the 3.1.0
+# widget regression came from an empty keep list.
 
 # FajrPreferences: getLatitude/getLongitude/getCalculationMethodId via reflection
 -keep class com.example.fajr.data.FajrPreferences { *; }
 
-# CalculationMethod.Companion.fromId via reflection
+# CalculationMethod.INSTANCE.fromId (named companion)
 -keep class com.example.fajr.calculation.CalculationMethod { *; }
--keep class com.example.fajr.calculation.CalculationMethod$Companion { *; }
+-keep class com.example.fajr.calculation.CalculationMethod$INSTANCE { *; }
 
 # PrayerAdjustments.INSTANCE.calculateAll(...) via reflection
 -keep class com.example.fajr.calculation.PrayerAdjustments { *; }
