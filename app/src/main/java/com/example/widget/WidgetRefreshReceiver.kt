@@ -25,7 +25,7 @@ class WidgetRefreshReceiver : BroadcastReceiver() {
         } catch (e: Exception) {
             Log.w("WathakkerWidgetRefresh", "provider lookup failed for id $id", e)
         }
-        val text = HomeWidgets.refreshAllAndText(context, kind)
+        val text = HomeWidgets.refreshAllAndText(context, kind ?: "")
         Log.i("WathakkerWidgetRefresh", "tap id=$id kind=$kind text=$text")
         Toast.makeText(context.applicationContext, text, Toast.LENGTH_LONG).show()
     }
