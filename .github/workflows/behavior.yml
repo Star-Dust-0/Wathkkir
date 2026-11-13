@@ -1,6 +1,12 @@
 name: Manual stateful phone comparison
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: 'Parity script under tools/parity, without .py'
+        required: true
+        type: string
+        default: 'phone_converter_manual'
 permissions:
   contents: read
 jobs:
@@ -38,7 +44,11 @@ jobs:
           target: google_apis
           profile: pixel_6
           disable-animations: false
-          script: python3 -u tools/parity/phone_converter_manual.py
+          script: |
+            case "$SCRIPT" in (*[!a-z0-9_]*|"") echo "invalid script name"; exit 1;; esac
+            exec python3 -u "tools/parity/$SCRIPT.py"
+        env:
+          SCRIPT: ${{ inputs.script }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,6 +1,12 @@
 name: Manual recovered Oct26 watch comparison
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: 'Parity script under tools/parity, without .py'
+        required: true
+        type: string
+        default: 'watch_provider_service'
 permissions:
   contents: read
 jobs:
@@ -39,7 +45,11 @@ jobs:
           target: android-wear
           profile: wearos_large_round
           disable-animations: false
-          script: python3 -u tools/parity/watch_provider_service.py
+          script: |
+            case "$SCRIPT" in (*[!a-z0-9_]*|"") echo "invalid script name"; exit 1;; esac
+            exec python3 -u "tools/parity/$SCRIPT.py"
+        env:
+          SCRIPT: ${{ inputs.script }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
