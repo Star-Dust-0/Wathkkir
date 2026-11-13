@@ -148,7 +148,13 @@ fun MainScreen(viewModel: MainViewModel) {
             // 3.4: one full-screen blur source under the pages. The frosted bottom bar used to blur only the list
             // that sat under it, so on wide pages (centred frame, two-pane Hisn) and mid-swipe the bar had no
             // background where no list was drawn. This source always covers the whole screen.
-            Box(Modifier.fillMaxSize().hazeSource(hazeState).background(MaterialTheme.colorScheme.background)) {
+            // Prayer supplies its own full-screen sky source. Recording the whole rendered
+            // prayer page as another source captures all its frosted cards as well,
+            // creating a nested blur path when a shell effect (especially the drawer) moves.
+            val prayerSkySource = isTab && currentTabRoute == "prayer"
+            Box(Modifier.fillMaxSize()
+                .then(if (prayerSkySource) Modifier else Modifier.hazeSource(hazeState))
+                .background(MaterialTheme.colorScheme.background)) {
             NavHost(
                 navController = navController,
                 startDestination = "tabs",

@@ -45,7 +45,9 @@ def frames(raw):
             try:
                 if int(d['Flags']) != 0: continue
                 start=int(d['IntendedVsync']); end=int(d['FrameCompleted'])
-                if end > start and end < 9e18:
+                # SurfaceFlinger can return an unready/sentinel completion value.
+                # Reject implausible >10s samples, not valid slow animation frames.
+                if 0 < end - start < 10_000_000_000:
                     found.append((end-start)/1e6)
             except (KeyError,ValueError): pass
     return found
