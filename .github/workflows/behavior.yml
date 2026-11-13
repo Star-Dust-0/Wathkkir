@@ -7,6 +7,11 @@ on:
         required: true
         type: string
         default: 'phone_converter_manual'
+      minified:
+        description: 'Build the comparison app as a signed minified release'
+        required: true
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -25,12 +30,33 @@ jobs:
       - name: Build test-only comparison and restore reference
         env:
           FIXTURE_KEY: ${{ secrets.FIXTURE_KEY }}
+          MINIFIED: ${{ inputs.minified }}
+          WATHKKIR_KEYSTORE_BASE64: ${{ secrets.WATHKKIR_KEYSTORE_BASE64 }}
+          WATHKKIR_STORE_PASSWORD: ${{ secrets.WATHKKIR_STORE_PASSWORD }}
+          WATHKKIR_KEY_PASSWORD: ${{ secrets.WATHKKIR_KEY_PASSWORD }}
+          MORPHE_KEYSTORE_BASE64: ${{ secrets.MORPHE_KEYSTORE_BASE64 }}
+          MORPHE_KEY_PASSWORD: ${{ secrets.MORPHE_KEY_PASSWORD }}
         run: |
+          set -e
           openssl enc -d -aes-256-cbc -pbkdf2 -pass env:FIXTURE_KEY -in tools/parity/reference-phone.enc -out original.apk
           mkdir -p "$HOME/.android"
           keytool -genkeypair -keystore "$HOME/.android/debug.keystore" -storepass android -keypass android -alias androiddebugkey -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048 -validity 10000
-          gradle :app:assembleDebug :widgethost:assembleDebug -PwithVerification -PcompareSuffix --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
-          cp app/build/outputs/apk/debug/*.apk comparison.apk
+          if [ "$MINIFIED" = "true" ]; then
+            gradle :app:assembleRelease :widgethost:assembleDebug -PwithVerification -PcompareSuffix --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+            KS_B64="${WATHKKIR_KEYSTORE_BASE64:-$MORPHE_KEYSTORE_BASE64}"
+            KS_PASS="${WATHKKIR_STORE_PASSWORD:-$MORPHE_KEY_PASSWORD}"
+            KEY_PASS="${WATHKKIR_KEY_PASSWORD:-$KS_PASS}"
+            if [ -z "$KS_B64" ]; then echo "no keystore secret set"; exit 1; fi
+            echo "$KS_B64" | base64 -d > release.keystore
+            ALIAS=$(keytool -list -keystore release.keystore -storepass "$KS_PASS" 2>/dev/null | grep -i 'PrivateKeyEntry' | head -1 | cut -d, -f1)
+            BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)
+            "$ANDROID_HOME/build-tools/$BT/zipalign" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk aligned.apk
+            "$ANDROID_HOME/build-tools/$BT/apksigner" sign --ks release.keystore --ks-pass "pass:$KS_PASS" --key-pass "pass:$KEY_PASS" --ks-key-alias "$ALIAS" --out comparison.apk aligned.apk
+            rm -f release.keystore aligned.apk
+          else
+            gradle :app:assembleDebug :widgethost:assembleDebug -PwithVerification -PcompareSuffix --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+            cp app/build/outputs/apk/debug/*.apk comparison.apk
+          fi
           cp widgethost/build/outputs/apk/debug/*.apk widgethost.apk
       - name: Enable emulator acceleration
         run: |
