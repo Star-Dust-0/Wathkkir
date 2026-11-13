@@ -108,6 +108,8 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
     val enabled = remember(tick) { PrayerAlertStore.isEnabled(context, prayer) }
     val offset = remember(tick) { PrayerAlertStore.offsetMinutes(context, prayer) }
     val iqama = remember(tick) { PrayerAlertStore.iqamaReminder(context, prayer) }
+    // Friday has no iqama: the option stays hidden for Jumu'a (3.3.3 behavior).
+    val friday = remember { java.util.Calendar.getInstance().get(java.util.Calendar.DAY_OF_WEEK) == java.util.Calendar.FRIDAY }
 
     OneUIDialog(
         title = prayerName,
@@ -219,8 +221,8 @@ fun PrayerAlertDialog(prayer: Int, prayerName: String, onDismiss: () -> Unit) {
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
-                // Iqama reminder (no iqama for Shuruq)
-                if (prayer != 1) {
+                // Iqama reminder (no iqama for Shuruq, and none for Jumu'a on Friday)
+                if (prayer != 1 && !(prayer == 2 && friday)) {
                     Spacer(Modifier.height(8.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),

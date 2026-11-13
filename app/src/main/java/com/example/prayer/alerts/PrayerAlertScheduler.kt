@@ -79,7 +79,10 @@ object PrayerAlertScheduler {
         // or leave DND on until tomorrow.
         val iqamaBase = if (todayAdhan + IQAMA_OFFSETS[prayer] * 60000L > now) todayAdhan else adhanTrigger
         val iqamaAt = iqamaBase + IQAMA_OFFSETS[prayer] * 60000L
-        if (PrayerAlertStore.iqamaReminder(context, prayer) && IQAMA_OFFSETS[prayer] > 0) {
+        // Friday has no iqama: no iqama reminder for Jumu'a (3.3.3 behavior).
+        val iqamaFriday = Calendar.getInstance().apply { timeInMillis = iqamaAt }
+            .get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && prayer == 2
+        if (PrayerAlertStore.iqamaReminder(context, prayer) && IQAMA_OFFSETS[prayer] > 0 && !iqamaFriday) {
             if (iqamaAt > now) {
                 setExact(context, am, iqamaAt, pending(context, prayer, KIND_IQAMA))
             }

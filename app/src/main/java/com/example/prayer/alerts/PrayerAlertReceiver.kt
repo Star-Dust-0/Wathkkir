@@ -82,10 +82,9 @@ class PrayerAlertReceiver : BroadcastReceiver() {
             .setContentIntent(openIntent)
             .setAutoCancel(true)
         if (isEarly) {
-            // Native live countdown to the prayer; the notification removes itself at that moment
-            // and the adhan notification (or nothing, if that bell is off) takes over.
+            // Native live countdown to the prayer. It never removes itself (3.3.0 behavior):
+            // the adhan notification replaces it when it arrives.
             builder.setShowWhen(true).setWhen(at).setUsesChronometer(true).setChronometerCountDown(true)
-                .setTimeoutAfter(at - now)
         }
         else {
             // Adhan and iqama notifications remove themselves 5 minutes after they appear. The system
