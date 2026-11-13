@@ -30,10 +30,28 @@ def set_clock(epoch_ms):
  lt=datetime.datetime.fromtimestamp(epoch_ms/1000,datetime.timezone(datetime.timedelta(hours=2)))
  adb('shell','date',lt.strftime('%m%d%H%M%Y.%S'));time.sleep(6)
  return lt.strftime('%Y-%m-%d %H:%M:%S')
+import xml.etree.ElementTree as ET
+def tree():
+ s=adb('shell','am','instrument','-w','com.example.widgethost/.HierarchyDump')
+ return next((x.split('=',1)[1] for x in s.splitlines() if x.startswith('INSTRUMENTATION_RESULT: hierarchy=')),'<hierarchy/>')
+def tap_text(label):
+ for n in ET.fromstring(tree()).iter('node'):
+  if n.get('text')==label:
+   x0,y0,x1,y1=map(int,re.findall(r'\d+',n.get('bounds','')))
+   adb('shell','input','tap',str((x0+x1)//2),str((y0+y1)//2));time.sleep(2);return True
+ return False
+def launch(pkg):
+ adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
+ adb('shell','am','force-stop',pkg)
+ adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
+ time.sleep(8)
+ tap_text('Close app')  # dismiss a launcher ANR dialog if one appeared (emulator flake)
+ time.sleep(2)
 
 PKG='com.wathakker.app.compare'
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 check('install','Success' in adb('install','-r','-g','comparison.apk'))
+check('install widgethost','Success' in adb('install','-r','-g','widgethost.apk'))
 adb('shell','wm','size','1080x2400');adb('shell','wm','density','420');adb('shell','settings','put','global','hide_error_dialogs','1')
 adb('shell','setprop','persist.sys.timezone','Africa/Cairo');time.sleep(1)
 adb('shell','pm','clear',PKG)
@@ -46,7 +64,7 @@ pa='<map><boolean name="migrated_v1" value="true"/><boolean name="enabled_3" val
 adb('shell',f"echo '{pa}' > {folder}/prayer_alerts.xml; chown $(stat -c %u:%g /data/data/{PKG}) {folder}/prayer_alerts.xml; chmod 660 {folder}/prayer_alerts.xml; restorecon -R {folder}")
 
 # Day 1: launch -> scheduleAll creates the early-reminder PendingIntent (first creation freezes its extras).
-adb('shell','am','start','-n',PKG+'/.MainActivity');time.sleep(10)
+launch(PKG)
 eps=dump_alarms(PKG,'day1-after-launch')
 now=int(time.time()*1000)
 fut=[e for e in eps if e>now+30000]
@@ -61,8 +79,7 @@ if pair:
  # the delivered EXTRA_AT stays day1's adhan (a past moment on day 2).
  adhan2=adhan1+86400000
  check('clock to day2 -25min',set_clock(adhan2-1500000))
- adb('shell','am','force-stop',PKG)
- adb('shell','am','start','-n',PKG+'/.MainActivity');time.sleep(10)
+ launch(PKG)
  eps2=dump_alarms(PKG,'day2-after-relaunch')
  now2=int(time.time()*1000)
  fut2=[e for e in eps2 if e>now2+30000]

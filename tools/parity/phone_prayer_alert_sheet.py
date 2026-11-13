@@ -35,10 +35,17 @@ def dump_alarms(pkg,tag):
  s=adb('shell','dumpsys','alarm',timeout=60)
  (out/(tag+'-alarms.txt')).write_text(s)
  return alarm_epochs(pkg,s)
+def tap_text(label):
+ n=find(label)
+ if n is not None: tap_node(n); return True
+ return False
 def launch(pkg):
+ adb('shell','am','force-stop','com.google.android.apps.nexuslauncher')
  adb('shell','am','force-stop',pkg)
- adb('shell','am','start','-n',pkg+'/.MainActivity')
- time.sleep(10)
+ adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
+ time.sleep(8)
+ tap_text('Close app')  # dismiss a launcher ANR dialog if one appeared (emulator flake)
+ time.sleep(2)
 
 adb('wait-for-device');adb('root');time.sleep(3);adb('wait-for-device')
 for a in ['original.apk','comparison.apk','widgethost.apk']:
