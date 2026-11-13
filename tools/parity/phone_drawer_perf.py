@@ -16,7 +16,12 @@ def check(name, ok, detail=''):
     return bool(ok)
 def tree():
     value = adb('shell', 'am', 'instrument', '-w', 'com.example.widgethost/.HierarchyDump')
-    return next((s.split('=', 1)[1] for s in value.splitlines() if s.startswith('INSTRUMENTATION_RESULT: hierarchy=')), '<hierarchy/>')
+    result=next((s.split('=', 1)[1] for s in value.splitlines() if s.startswith('INSTRUMENTATION_RESULT: hierarchy=')), None)
+    if result and '<node' in result:return result
+    (OUT/'hierarchy-helper-last.txt').write_text(value)
+    adb('shell','uiautomator','dump','/sdcard/drawer-ui.xml',timeout=40)
+    fallback=adb('shell','cat','/sdcard/drawer-ui.xml')
+    return fallback[fallback.index('<?xml'):] if '<?xml' in fallback else '<hierarchy/>'
 def find(label):
     for n in ET.fromstring(tree()).iter('node'):
         if label in (n.get('text'), n.get('content-desc')):
@@ -66,7 +71,20 @@ def setup(pkg,lang,theme):
 def measure(name,pkg,lang,theme,repeat):
     slug=f'{name}-{lang}-{theme}-{repeat}'
     setup(pkg,lang,theme)
-    menu=find('القائمة' if lang=='ar' else 'Menu')
+    # First launch can be covered by an Android compatibility/permission dialog.
+    shot(slug+'-startup')
+    menu=None
+    for attempt in range(4):
+        menu=find('القائمة' if lang=='ar' else 'Menu') or find('Menu') or find('القائمة')
+        if menu: break
+        for label in ['OK', 'Continue', 'Allow', 'موافق', 'متابعة', 'السماح']:
+            button=find(label)
+            if button: tap(button);time.sleep(.5)
+        adb('shell','input','keyevent','KEYCODE_BACK')
+        adb('shell','am','start','-W','-n',pkg+'/com.example.MainActivity')
+        time.sleep(3)
+    shot(slug+'-ready')
+    (OUT/(slug+'-startup-logcat.txt')).write_text(adb('logcat','-d','-t','500'))
     assert check(slug+' menu exists',menu is not None), 'menu missing'
     outside=(50 if lang=='ar' else 1030,1200)
     # Capture first opening separately from the warm-loop sample.
