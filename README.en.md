@@ -51,7 +51,7 @@ Wathkkir is an open-source Android app that brings the everyday tools a Muslim n
 
 - Alerts arrive precisely on time and are automatically rescheduled after the device reboots.
 - Each prayer has its own settings sheet via a long-press on its bell: timing, iqama reminder, and automatic DND.
-- If the Do-Not-Disturb policy permission is missing, the app routes you to the system permission screen instead of silently pretending the feature works.
+- If the Do-Not-Disturb policy permission is missing, the app routes you to the system permission screen.
 
 </details>
 
@@ -66,7 +66,6 @@ Wathkkir is an open-source Android app that brings the everyday tools a Muslim n
 - New onboarding, new icon, and the name Wathkkir (وذكّر) in every language.
 - **Date converter redesigned**: one box, a One UI direction switch, and a "Today" button.
 - **Time wheels**: the selected value sits inside the selection band, and AM/PM is a plain two-item wheel with no looping.
-- **Page titles**: the gap above each title now matches the gap below it.
 
 ## 📸 Gallery
 
