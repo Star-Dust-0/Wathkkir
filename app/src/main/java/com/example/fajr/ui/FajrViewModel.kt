@@ -72,7 +72,7 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
         _aliasVersion.value++
     }
     fun toggleAlarm(enabled: Boolean) {
-        prefs.setAlarmEnabled(enabled); _uiState.update { it.copy(isAlarmEnabled = enabled) }
+        prefs.isAlarmEnabled = enabled; _uiState.update { it.copy(isAlarmEnabled = enabled) }
         if (enabled) scheduler.scheduleNextFajrAlarm() else scheduler.cancelAllAlarms()
         refreshFajrTimeInternal()
     }
@@ -114,7 +114,7 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
         refreshFajrTimeInternal(); if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm()
     }
     fun setRingtone(uri: Uri, title: String) { prefs.ringtoneUri = uri.toString(); prefs.ringtoneTitle = title; _uiState.update { it.copy(ringtoneTitle = title) } }
-    fun toggleVibration(enabled: Boolean) { prefs.setVibrationEnabled(enabled); _uiState.update { it.copy(isVibrationEnabled = enabled) } }
+    fun toggleVibration(enabled: Boolean) { prefs.isVibrationEnabled = enabled; _uiState.update { it.copy(isVibrationEnabled = enabled) } }
     fun setMaxDuration(minutes: Int) { prefs.maxDurationMinutes = minutes; _uiState.update { it.copy(maxDurationMinutes = minutes) } }
     fun setAlarmVolume(volume: Int) { prefs.alarmVolume = volume; _uiState.update { it.copy(alarmVolume = volume) } }
     fun refreshFajrTimeManually() { viewModelScope.launch(Dispatchers.IO) {

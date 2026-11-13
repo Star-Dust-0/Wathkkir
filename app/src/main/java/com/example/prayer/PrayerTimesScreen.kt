@@ -254,7 +254,7 @@ fun PrayerTimesScreen(onQibla: (() -> Unit)? = null, onMenu: (() -> Unit)? = nul
                 prefs.longitude = item.longitude
                 prefs.cityName = item.cityNameAr
                 prefs.countryName = item.countryNameAr
-                prefs.setUseCurrentLocation(false)
+                prefs.useCurrentLocation = false
                 latitude = item.latitude
                 longitude = item.longitude
                 city = item.cityNameAr
