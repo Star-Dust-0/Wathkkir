@@ -18,6 +18,12 @@ jobs:
           gradle-version: '9.3.1'
       - name: Run unit tests
         run: gradle :wear:testDebugUnitTest -PwithWear --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+      # The wear release build type points at the standard debug keystore (we re-sign with the real
+      # release key below), so create it; fresh CI runners have none.
+      - name: Create debug keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkeypair -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
       - name: Build release APK
         run: gradle :wear:assembleRelease -PwithWear --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
       # The wear release build type is wired to the debug key in wear/build.gradle.kts; like the
