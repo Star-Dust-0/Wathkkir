@@ -24,6 +24,7 @@ import java.util.concurrent.Executors
  * so the old resume-detection path always skipped updateDhikrTags. The fix links the tags as a
  * plain sequential step of the same coroutine; this test proves the link lands in the database.
  */
+@OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class DhikrTagLinkTest {
