@@ -8,12 +8,16 @@ import com.example.lockwidgets.HomeWidgets
 
 /** Base provider: refreshes widget content and the shared tick on lifecycle events. */
 abstract class BaseWathakkerWidgetProvider : AppWidgetProvider() {
+    /** The HomeWidgets family name of this provider, e.g. "Hero" for HeroWidgetProvider. */
+    private val kind: String get() = javaClass.simpleName.removeSuffix("WidgetProvider")
+
     override fun onAppWidgetOptionsChanged(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, newOptions: Bundle?) {
-        HomeWidgets.updateAll(context)
+        // A resize only affects this widget family, so only it is redrawn.
+        HomeWidgets.updateAll(context, false, kind)
     }
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        WidgetUpdater.updateAll(context)
+        WidgetUpdater.updateKind(context, kind)
         WidgetTickScheduler.schedule(context)
     }
 

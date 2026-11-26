@@ -12,8 +12,8 @@ android {
     applicationId = "com.wathakker.app" + (if (providers.gradleProperty("compareSuffix").isPresent) ".compare" else "")
     minSdk = 23
     targetSdk = 36
-    versionCode = 84
-    versionName = "3.5.2"
+    versionCode = 85
+    versionName = "3.6"
   }
 
   signingConfigs {
@@ -39,7 +39,7 @@ android {
   buildFeatures {
     buildConfig = true
   }
-  lint { abortOnError = false }
+  lint { abortOnError = true }
 }
 
 // Room writes its schema JSON here so migrations are reviewable and testable.

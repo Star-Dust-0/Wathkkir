@@ -97,7 +97,53 @@ class LocationManagerHelper(private val context: Context) {
         }
     }
 
+    /**
+     * The location the prayer calculation should use: the last-known fix when it passes
+     * [LocationPolicy], otherwise a single fresh fix (bounded by [FIX_TIMEOUT_MS]). Falls back to
+     * the stale last-known fix rather than nothing, so a weak GPS day never blocks the update.
+     */
+    suspend fun getFreshLocation(): Location? {
+        if (!hasLocationPermission()) return null
+        val last = getLastKnownLocation()
+        if (last != null && LocationPolicy.isAcceptable(ageMs(last), last.hasAccuracy(), last.accuracy)) return last
+        val fresh = requestSingleFix()
+        return fresh ?: last
+    }
+
+    private fun ageMs(loc: Location): Long = (System.currentTimeMillis() - loc.time).coerceAtLeast(0L)
+
+    /** One fresh fix from the best enabled provider, on the main looper, with a hard timeout. */
+    private suspend fun requestSingleFix(): Location? = kotlinx.coroutines.suspendCancellableCoroutine { cont ->
+        val lm = context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
+        if (lm == null) { cont.resumeWith(Result.success(null)); return@suspendCancellableCoroutine }
+        val fine = ContextCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) == 0
+        val provider = when {
+            fine && lm.isProviderEnabled(LocationManager.GPS_PROVIDER) -> LocationManager.GPS_PROVIDER
+            lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) -> LocationManager.NETWORK_PROVIDER
+            else -> { cont.resumeWith(Result.success(null)); return@suspendCancellableCoroutine }
+        }
+        val handler = android.os.Handler(android.os.Looper.getMainLooper())
+        var done = false
+        fun finish(loc: Location?) {
+            if (done) return
+            done = true
+            handler.removeCallbacksAndMessages(null) // local Handler: only this fix's timeout
+            if (cont.isActive) cont.resumeWith(Result.success(loc))
+        }
+        handler.postDelayed({ finish(null) }, FIX_TIMEOUT_MS)
+        try {
+            @Suppress("DEPRECATION")
+            lm.requestSingleUpdate(provider, { loc -> finish(loc) }, android.os.Looper.getMainLooper())
+        } catch (e: SecurityException) {
+            Log.w("LocationHelper", "single fix denied", e)
+            finish(null)
+        }
+        cont.invokeOnCancellation { finish(null) }
+    }
+
     companion object {
+        /** Longest a fresh-fix request may take before the stale last-known fix is used. */
+        const val FIX_TIMEOUT_MS = 20_000L
         /** Production identity seam: same field selection and normalization as the display name. */
         @JvmStatic
         fun buildPlaceKey(countryCode: String?, cityField: String?): String =

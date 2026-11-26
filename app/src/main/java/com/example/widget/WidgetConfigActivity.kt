@@ -156,7 +156,7 @@ fun PatternSection(selected: Int, onPick: (Int) -> Unit) {
 }
 
 @Composable
-fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, currentTapOpens: Boolean = true, refreshable: Boolean = false, showColors: Boolean = true, showPattern: Boolean = true, onApply: (String, String, Int, Int, Boolean) -> Unit, onNeedFilesPermission: () -> Unit = {}) {
+fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, currentAccent: Int = 0, currentTapOpens: Boolean = true, refreshable: Boolean = false, showColors: Boolean = true, showPattern: Boolean = true, onApply: (String, String, Int, Int, Boolean) -> Unit) {
     val cs = MaterialTheme.colorScheme
     // Taps only select; nothing is saved or closed until Apply (One UI style).
     var barSel by remember { mutableStateOf(current) }
@@ -187,7 +187,9 @@ fun ConfigScreen(current: String, currentBg: String, currentPattern: Int = 1, cu
                 if (showColors) {
                     ColorSection(L10n.t(S.BarColor), options, barSel, { barSel = it }, splitAutoSwatch = true)
                     Spacer(Modifier.height(16.dp))
-                    ColorSection(L10n.t(S.BgColor), bgOptions, bgSel, { bgSel = it; if (it == "wallblur") onNeedFilesPermission() }, captions = mapOf("wallblur" to L10n.t(S.NeedsFilesPerm)))
+                    // "wallblur" no longer asks for all-files access (permission removed in 3.6);
+                    // where the system blocks the real wallpaper it draws the same colour mesh as Frosted.
+                    ColorSection(L10n.t(S.BgColor), bgOptions, bgSel, { bgSel = it })
                     Spacer(Modifier.height(16.dp))
                 }
                 if (showPattern) {
@@ -276,7 +278,6 @@ class WidgetConfigActivity : ComponentActivity() {
                     currentAccent = sp.getInt(keyFor("widget_oneui_color"), 0),
                     showColors = !decorated && !tapOnly,
                     showPattern = decorated,
-                    onNeedFilesPermission = { com.example.ui.PermissionFlow.requestFilesIfNeeded(this@WidgetConfigActivity) },
                     currentTapOpens = sp.getString(keyFor("widget_tap"), "open") == "open",
                     refreshable = refreshable,
                     onApply = { bar, bg, pat, accent, tap ->

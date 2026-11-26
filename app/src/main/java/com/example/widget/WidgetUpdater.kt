@@ -38,6 +38,13 @@ object WidgetUpdater {
         try { pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER) } catch (e: Exception) {}
     }
 
+    /** Re-renders one Home widget family plus the face widget - used by a provider's own onUpdate so
+     *  adding or updating a single widget no longer redraws every Home widget. */
+    fun updateKind(context: Context, kind: String) {
+        HomeWidgets.updateAll(context, false, kind)
+        try { pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER) } catch (e: Exception) {}
+    }
+
     /** Face-widget push only - used by the minute pulse, which already updates home widgets itself. */
     fun updateFace(context: Context) {
         try { pushFaceWidget(context, FaceWidgetReceiver.PAGE_ID_PRAYER) } catch (e: Exception) { android.util.Log.w("WathakkerHome", "face widget push failed", e) }

@@ -120,11 +120,15 @@ object HomeWidgets {
     }
     @JvmStatic fun res(c: Context, t: String, n: String): Int = c.resources.getIdentifier(n, t, c.packageName)
     @JvmStatic fun open(c: Context, prayer: Boolean): PendingIntent { val i = Intent().setClassName(c.packageName, "com.example.MainActivity").setAction(if (prayer) "com.wathakker.locktest.OPEN_PRAYER" else Intent.ACTION_MAIN).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP); return PendingIntent.getActivity(c, if (prayer) 91212 else 91213, i, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE) }
-    @JvmStatic @Synchronized fun updateAll(c: Context) { updateAll(c, false) }
-    @JvmStatic @Synchronized fun updateAll(c: Context, pulseOnly: Boolean) {
+    @JvmStatic @Synchronized fun updateAll(c: Context) { updateAll(c, false, null) }
+    @JvmStatic @Synchronized fun updateAll(c: Context, pulseOnly: Boolean) { updateAll(c, pulseOnly, null) }
+    /** [onlyKind] renders a single Home widget family (e.g. from that provider's onUpdate); null renders all. */
+    @JvmStatic @Synchronized fun updateAll(c: Context, pulseOnly: Boolean, onlyKind: String?) {
         com.example.utils.Digits.refresh(c)
-        try { batchState.set(state(c)) } catch (e: Exception) { android.util.Log.e("WathakkerHome", "state() failed - widget update aborted", e); return }
-        try { updateBatch(c, pulseOnly) } finally { batchState.remove(); LockWidgets.schedule(c); WidgetPreviews.maybeGenerate(c) }
+        // The shared pulse/boundary re-arm runs even when the state snapshot fails, so a transient
+        // error can never leave the widgets without their next scheduled update.
+        try { batchState.set(state(c)) } catch (e: Exception) { android.util.Log.e("WathakkerHome", "state() failed - widget update aborted", e); LockWidgets.schedule(c); return }
+        try { updateBatch(c, pulseOnly, onlyKind) } finally { batchState.remove(); LockWidgets.schedule(c); WidgetPreviews.maybeGenerate(c) }
     }
     /* 3.4: every Home widget is drawn at the size the launcher reports for the CURRENT orientation (landscape = MAX_WIDTH x MIN_HEIGHT, portrait = MIN_WIDTH x MAX_HEIGHT, per the AppWidgetManager docs), so the bitmap is at the displayed pixel size and is never stretched or upscaled. Before, only the decorated widget did this; the other nine used the portrait width and were stretched on a landscape tablet. */
     /** Large screens only (smallest width 600dp+, evaluated from the current configuration so display-size/DPI changes are followed): widgets are drawn at 2x the size the launcher reports (1x when that would be too big for a RemoteViews bitmap) and shrunk by the ImageView, so a launcher that shows the widget larger than it reports (zoomed widgets, density differences) is never upscaled. All geometry stays in the 1x pixel space. */
@@ -159,12 +163,14 @@ object HomeWidgets {
         for (q in cs) { val z = android.util.SizeF(q[0].toFloat(), q[1].toFloat()); if (!r.contains(z)) r.add(z) }
         return r
     }
-    @JvmStatic fun updateBatch(c: Context) { updateBatch(c, false) }
-    @JvmStatic fun updateBatch(c: Context, pulseOnly: Boolean) {
-        android.util.Log.i("WathakkerHome", "updateBatch pulseOnly=$pulseOnly t=${System.currentTimeMillis()}")
+    @JvmStatic fun updateBatch(c: Context) { updateBatch(c, false, null) }
+    @JvmStatic fun updateBatch(c: Context, pulseOnly: Boolean) { updateBatch(c, pulseOnly, null) }
+    @JvmStatic fun updateBatch(c: Context, pulseOnly: Boolean, onlyKind: String?) {
+        android.util.Log.i("WathakkerHome", "updateBatch pulseOnly=$pulseOnly kind=$onlyKind t=${System.currentTimeMillis()}")
         val m = AppWidgetManager.getInstance(c)
         val providers = arrayOf("Hero", "NextPrayer", "PrayerBar", "Schedule", "DayPrayer", "Pill", "Clock", "Hijri", "Gregorian", "OneUI")
         for (kind in providers) {
+            if (onlyKind != null && kind != onlyKind) continue
             if (pulseOnly && (kind == "Hijri" || kind == "Gregorian" || kind == "Schedule" || kind == "DayPrayer")) continue
             for (id in m.getAppWidgetIds(ComponentName(c, "com.example.widget.${kind}WidgetProvider"))) {
                 try {
@@ -360,10 +366,10 @@ object HomeWidgets {
     }
     /** real=true: the actual wallpaper image. Verified on an API 34 emulator (glass_proto.txt) and per
      *  developer.android.com/reference/android/app/WallpaperManager: on Android 13 the system returns
-     *  the DEFAULT wallpaper or throws SecurityException, on Android 14+ getWallpaperFile ALWAYS throws,
-     *  and only MANAGE_EXTERNAL_STORAGE (Play-restricted, answer 10467955) or the privileged
-     *  READ_WALLPAPER_INTERNAL unlock the real image - no normal runtime permission (incl.
-     *  READ_MEDIA_IMAGES) helps. So real=true falls back to the colour mesh on modern Android.
+     *  the DEFAULT wallpaper or throws SecurityException and on Android 14+ getWallpaperFile ALWAYS
+     *  throws; only the Play-restricted MANAGE_EXTERNAL_STORAGE or the privileged READ_WALLPAPER_INTERNAL
+     *  used to unlock the real image. MANAGE_EXTERNAL_STORAGE was removed in 3.6 (cosmetic-only use is
+     *  not allowed to request it), so real=true now resolves to the colour mesh everywhere.
      *  real=false: the frosted colour mesh only (WallpaperColors, permissionless). */
     @JvmStatic fun wallBlur(c: Context, real: Boolean): Bitmap? {
         val wm = android.app.WallpaperManager.getInstance(c)

@@ -73,19 +73,27 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
     }
     fun toggleAlarm(enabled: Boolean) {
         prefs.isAlarmEnabled = enabled; _uiState.update { it.copy(isAlarmEnabled = enabled) }
-        if (enabled) scheduler.scheduleNextFajrAlarm() else scheduler.cancelAllAlarms()
+        try { if (enabled) scheduler.scheduleNextFajrAlarm() else scheduler.cancelAllAlarms() }
+        catch (t: Throwable) { android.util.Log.w("FajrViewModel", "alarm toggle scheduling failed", t) }
         refreshFajrTimeInternal()
     }
     fun setUseCurrentLocation(useGps: Boolean) {
         prefs.useCurrentLocation = useGps; _uiState.update { it.copy(useCurrentLocation = useGps) }
         if (useGps) updateLocationFromGps() else refreshFajrTimeInternal()
     }
-    fun updateLocationFromGps() { viewModelScope.launch(Dispatchers.IO) {
+    fun updateLocationFromGps() { viewModelScope.launch(Dispatchers.IO) { updateLocationFromGpsInternal() } }
+
+    /**
+     * Awaits a quality-checked fix (see [LocationManagerHelper.getFreshLocation]), saves it, then
+     * re-arms every time-based consumer from the NEW coordinates. Nothing schedules alarms while a
+     * location update is still in flight, so a stale fix can never feed the Fajr alarm or the bells.
+     */
+    private suspend fun updateLocationFromGpsInternal() {
         _uiState.update { it.copy(isRefreshing = true) }
         val permitted = locationHelper.hasLocationPermission(); val gps = locationHelper.isGpsEnabled()
         _uiState.update { it.copy(isGpsAvailable = gps, hasLocationPermission = permitted) }
         if (permitted && gps) {
-            val loc = locationHelper.getLastKnownLocation()
+            val loc = locationHelper.getFreshLocation()
             if (loc != null) {
                 prefs.latitude = loc.latitude; prefs.longitude = loc.longitude
                 var ar = locationHelper.getCityNameFromCoordinates(loc.latitude, loc.longitude, Locale("ar"))
@@ -98,7 +106,24 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
                     longitude = loc.longitude, isGpsAvailable = true, hasLocationPermission = true) }
             }
         }
-        refreshFajrTimeInternal(); _uiState.update { it.copy(isRefreshing = false) }
+        refreshFajrTimeInternal()
+        rescheduleAll()
+        _uiState.update { it.copy(isRefreshing = false) }
+    }
+
+    /** Central re-arm after any location/calculation change: prayer bells, the Fajr alarm, all widgets. */
+    private fun rescheduleAll() {
+        val app = getApplication<Application>()
+        try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(app) } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "alert reschedule failed", t) }
+        try { if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm() } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "fajr reschedule failed", t) }
+        try { com.example.widget.WidgetUpdater.updateAll(app) } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "home widget update failed", t) }
+        try { com.example.lockwidgets.LockWidgets.updateAll(app) } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "lock widget update failed", t) }
+    }
+
+    /** Re-arms the Fajr alarm and prayer bells, e.g. after returning from system exact-alarm settings. */
+    fun rescheduleAlarms() { viewModelScope.launch(Dispatchers.IO) {
+        try { if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm() } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "fajr reschedule failed", t) }
+        try { com.example.prayer.alerts.PrayerAlertScheduler.scheduleAll(getApplication()) } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "alert reschedule failed", t) }
     } }
     fun setCity(city: CityItem) {
         prefs.useCurrentLocation = false; prefs.latitude = city.latitude; prefs.longitude = city.longitude
@@ -107,20 +132,23 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
         LocationAliasStore.aliasFor(getApplication(), key)?.let { ar = it; en = it }
         prefs.setCityNames(ar, en); prefs.countryName = city.countryNameAr
         _uiState.update { it.copy(useCurrentLocation = false, cityName = if (L10n.lang.code == "ar") ar else en, latitude = city.latitude, longitude = city.longitude) }
-        refreshFajrTimeInternal(); if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm()
+        refreshFajrTimeInternal(); rescheduleAll()
     }
     fun setCalculationMethod(method: CalculationMethod) {
         prefs.calculationMethodId = method.id; _uiState.update { it.copy(calculationMethod = method) }
-        refreshFajrTimeInternal(); if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm()
+        refreshFajrTimeInternal(); rescheduleAll()
     }
     fun setRingtone(uri: Uri, title: String) { prefs.ringtoneUri = uri.toString(); prefs.ringtoneTitle = title; _uiState.update { it.copy(ringtoneTitle = title) } }
     fun toggleVibration(enabled: Boolean) { prefs.isVibrationEnabled = enabled; _uiState.update { it.copy(isVibrationEnabled = enabled) } }
     fun setMaxDuration(minutes: Int) { prefs.maxDurationMinutes = minutes; _uiState.update { it.copy(maxDurationMinutes = minutes) } }
     fun setAlarmVolume(volume: Int) { prefs.alarmVolume = volume; _uiState.update { it.copy(alarmVolume = volume) } }
     fun refreshFajrTimeManually() { viewModelScope.launch(Dispatchers.IO) {
+        // The GPS path awaits the fix and re-arms everything itself, so the alarm is never
+        // scheduled from coordinates that are about to be replaced.
+        if (prefs.useCurrentLocation) { updateLocationFromGpsInternal(); return@launch }
         _uiState.update { it.copy(isRefreshing = true) }
-        if (prefs.useCurrentLocation) updateLocationFromGps() else refreshFajrTimeInternal()
-        if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm()
+        refreshFajrTimeInternal()
+        try { if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm() } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "fajr reschedule failed", t) }
         _uiState.update { it.copy(isRefreshing = false) }
     } }
     private fun refreshFajrTimeInternal() {

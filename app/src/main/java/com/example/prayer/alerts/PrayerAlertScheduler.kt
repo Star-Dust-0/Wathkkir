@@ -111,7 +111,7 @@ object PrayerAlertScheduler {
     }
 
     /** One notification per day at most, pointing at the exact-alarm settings screen. */
-    private fun notifyExactAlarmDenied(context: Context) {
+    fun notifyExactAlarmDenied(context: Context) {
         try {
             val prefs = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             val last = prefs.getLong(KEY_EXACT_DENIED_NOTIFIED, 0L)

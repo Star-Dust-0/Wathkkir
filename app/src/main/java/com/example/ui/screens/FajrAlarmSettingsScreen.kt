@@ -86,7 +86,9 @@ fun FajrAlarmSettingsScreen(viewModel: FajrViewModel, onBack: () -> Unit) {
     DisposableEffect(Unit) { onDispose { viewModel.stopRingtonePreview() } }
     val owner = LocalLifecycleOwner.current
     DisposableEffect(owner) {
-        val obs = LifecycleEventObserver { _, e -> if (e == Lifecycle.Event.ON_RESUME) tick++ }
+        // Returning from the system exact-alarm/full-screen settings: refresh the prompts AND
+        // re-arm the alarms so a fresh grant takes effect immediately.
+        val obs = LifecycleEventObserver { _, e -> if (e == Lifecycle.Event.ON_RESUME) { tick++; viewModel.rescheduleAlarms() } }
         owner.lifecycle.addObserver(obs)
         onDispose { owner.lifecycle.removeObserver(obs) }
     }

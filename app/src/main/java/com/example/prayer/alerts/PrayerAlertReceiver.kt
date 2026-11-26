@@ -150,32 +150,60 @@ class PrayerAlertReceiver : BroadcastReceiver() {
         }
     }
 
-    private fun enableDnd(context: Context) {
-        try {
-            val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            if (nm.isNotificationPolicyAccessGranted) {
-                nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
-            }
-        } catch (t: Throwable) {
-            android.util.Log.w("PrayerAlertReceiver", "enable DND failed", t)
-        }
-    }
-
-    private fun restoreDnd(context: Context) {
-        try {
-            val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            if (nm.isNotificationPolicyAccessGranted) {
-                nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-            }
-        } catch (t: Throwable) {
-            android.util.Log.w("PrayerAlertReceiver", "restore DND failed", t)
-        }
-    }
+    private fun enableDnd(context: Context) = Companion.enableDnd(context)
+    private fun restoreDnd(context: Context) = Companion.restoreDnd(context)
 
     companion object {
         const val ALERT_CHANNEL = "prayer_alerts_channel"
         const val IQAMA_CHANNEL = "iqama_reminders_channel"
         private const val CHANNEL_PREFS = "bell_channels"
+        internal const val DND_PREFS = "prayer_dnd_state"
+        internal const val KEY_DND_BY_US = "dnd_enabled_by_app"
+        internal const val KEY_DND_PREV = "dnd_previous_filter"
+
+        /**
+         * Auto-DND at the adhan: remembers the interruption filter the phone was in and that THIS
+         * app turned DND on, so [restoreDnd] can put the user's own mode back instead of blindly
+         * forcing INTERRUPTION_FILTER_ALL over whatever the phone had before.
+         */
+        @JvmStatic internal fun enableDnd(context: Context) {
+            try {
+                val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                if (nm.isNotificationPolicyAccessGranted) {
+                    val prev = nm.currentInterruptionFilter
+                    nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
+                    context.getSharedPreferences(DND_PREFS, Context.MODE_PRIVATE).edit()
+                        .putBoolean(KEY_DND_BY_US, true)
+                        .putInt(KEY_DND_PREV, prev)
+                        .apply()
+                }
+            } catch (t: Throwable) {
+                android.util.Log.w("PrayerAlertReceiver", "enable DND failed", t)
+            }
+        }
+
+        /**
+         * Iqama-time DND-off. Only acts when this app turned DND on (otherwise it was never ours to
+         * undo - e.g. the full-screen Fajr alarm suppressed the adhan bell, so DND was never enabled).
+         * If the user turned DND off by hand meanwhile (filter back to ALL) that choice is kept.
+         */
+        @JvmStatic internal fun restoreDnd(context: Context) {
+            try {
+                val p = context.getSharedPreferences(DND_PREFS, Context.MODE_PRIVATE)
+                if (!p.getBoolean(KEY_DND_BY_US, false)) return
+                p.edit().putBoolean(KEY_DND_BY_US, false).apply()
+                val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                if (!nm.isNotificationPolicyAccessGranted) return
+                if (nm.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_ALL) return
+                val prev = p.getInt(KEY_DND_PREV, NotificationManager.INTERRUPTION_FILTER_ALL)
+                nm.setInterruptionFilter(
+                    if (prev in NotificationManager.INTERRUPTION_FILTER_ALL..NotificationManager.INTERRUPTION_FILTER_ALARMS)
+                        prev else NotificationManager.INTERRUPTION_FILTER_ALL
+                )
+            } catch (t: Throwable) {
+                android.util.Log.w("PrayerAlertReceiver", "restore DND failed", t)
+            }
+        }
 
         /** Applies the current tone/vibration to the prayer channels right away (shared channels,
          *  plus one channel per prayer that has its own choice; stale per-prayer channels are removed). */

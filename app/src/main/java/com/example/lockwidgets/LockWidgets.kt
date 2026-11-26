@@ -62,16 +62,23 @@ open class LockWidgets : AppWidgetProvider() {
         }
         if (action(c, "TICK") == a || action(c, "BOUNDARY") == a) {
             android.util.Log.i("WathakkerLock", (if (action(c, "BOUNDARY") == a) "boundary fire" else "tick fire") + " t=" + System.currentTimeMillis())
-            val full = action(c, "BOUNDARY") == a || phaseChanged(c); updateAllTick(c, full); HomeWidgets.updateAll(c, !full); try { com.example.widget.WidgetUpdater.updateFace(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "face widget update failed", t) }; schedule(c); return
+            // HomeWidgets.updateAll always re-arms the pulse/boundary itself, so no schedule(c) here.
+            val full = action(c, "BOUNDARY") == a || phaseChanged(c); updateAllTick(c, full); HomeWidgets.updateAll(c, !full); try { com.example.widget.WidgetUpdater.updateFace(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "face widget update failed", t) }; return
         }
         if (Intent.ACTION_BOOT_COMPLETED == a || Intent.ACTION_TIME_CHANGED == a || Intent.ACTION_TIMEZONE_CHANGED == a || Intent.ACTION_DATE_CHANGED == a || Intent.ACTION_MY_PACKAGE_REPLACED == a) {
-            updateAll(c); HomeWidgets.updateAll(c); try { com.example.widget.WidgetUpdater.updateAll(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "home widget updater failed", t) }; schedule(c); return
+            // WidgetUpdater.updateAll = HomeWidgets.updateAll + face push, and it re-arms the schedule.
+            updateAll(c); try { com.example.widget.WidgetUpdater.updateAll(c) } catch (t: Throwable) { android.util.Log.w("WathakkerLock", "home widget updater failed", t) }; return
         }
         super.onReceive(c, `in`)
     }
 
     companion object {
         private val TYPES = arrayOf<Class<*>>(Day::class.java, Tasbih::class.java, Hijri::class.java, Gregorian::class.java, Next::class.java, Bar::class.java, Countdown::class.java, CountdownClean::class.java)
+        /** Lock widgets that paint a ticking countdown/progress and therefore need the per-minute pulse. */
+        private val DYNAMIC_TYPES = arrayOf<Class<*>>(Next::class.java, Bar::class.java, Countdown::class.java, CountdownClean::class.java)
+        private val ALL_HOME = arrayOf("Hero", "NextPrayer", "PrayerBar", "Clock", "Pill", "DayPrayer", "OneUI", "Gregorian", "Hijri", "Iqama", "IqamaSmall", "Schedule", "WideBar")
+        /** Home widgets with a ticking countdown/progress; the rest (dates, schedule, day) change only at prayer/midnight boundaries. */
+        private val DYNAMIC_HOME = arrayOf("Hero", "NextPrayer", "PrayerBar", "Clock", "Pill", "OneUI")
         private fun action(c: Context, suffix: String): String = c.packageName + ".lockwidgets." + suffix
         private fun res(c: Context, type: String, name: String): Int = c.resources.getIdentifier(name, type, c.packageName)
         private fun lang(c: Context): String = c.getSharedPreferences("app_prefs", 0).getString("language", "ar") ?: "ar"
@@ -88,17 +95,23 @@ open class LockWidgets : AppWidgetProvider() {
         private fun locale(c: Context): Locale = Locale(lang(c))
         private fun pulse(c: Context): PendingIntent = PendingIntent.getBroadcast(c, 700001, Intent(c, LockWidgets::class.java).setAction(action(c, "TICK")), PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         private fun boundaryPi(c: Context): PendingIntent = PendingIntent.getBroadcast(c, 700002, Intent(c, LockWidgets::class.java).setAction(action(c, "BOUNDARY")), PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
-        private fun active(c: Context): Boolean { val m = AppWidgetManager.getInstance(c); for (t in TYPES) if (m.getAppWidgetIds(ComponentName(c, t)).isNotEmpty()) return true; return false }
-        /** True while any lock/home widget instance exists; the per-minute pulse is armed only then. */
-        @JvmStatic fun anyActive(c: Context): Boolean {
-            var any = active(c); val m = AppWidgetManager.getInstance(c)
-            for (k in arrayOf("Hero", "NextPrayer", "PrayerBar", "Clock", "Pill", "DayPrayer", "OneUI", "Gregorian", "Hijri", "Iqama", "IqamaSmall", "Schedule", "WideBar")) any = any or m.getAppWidgetIds(ComponentName(c, "com.example.widget.${k}WidgetProvider")).isNotEmpty()
-            return any
+        private fun anyOf(c: Context, types: Array<Class<*>>, homeKinds: Array<String>): Boolean {
+            val m = AppWidgetManager.getInstance(c)
+            for (t in types) if (m.getAppWidgetIds(ComponentName(c, t)).isNotEmpty()) return true
+            for (k in homeKinds) if (m.getAppWidgetIds(ComponentName(c, "com.example.widget.${k}WidgetProvider")).isNotEmpty()) return true
+            return false
         }
+        /** True while any countdown/progress widget exists; only those justify waking every minute. */
+        @JvmStatic fun dynamicActive(c: Context): Boolean = anyOf(c, DYNAMIC_TYPES, DYNAMIC_HOME)
+        /** True while any lock/home widget instance exists; the boundary alarm is armed only then. */
+        @JvmStatic fun anyActive(c: Context): Boolean = anyOf(c, TYPES, ALL_HOME)
         @JvmStatic fun schedule(c: Context) {
             watchLanguage(c); val a = c.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             if (!anyActive(c)) { a.cancel(pulse(c)); a.cancel(boundaryPi(c)); return }
-            val now = System.currentTimeMillis(); val minute = (now / 60000 + 1) * 60000; var target = -1L
+            val now = System.currentTimeMillis(); val minute = (now / 60000 + 1) * 60000
+            // Static widgets (day name, Hijri/Gregorian dates) roll over at midnight even between
+            // prayer boundaries, so midnight is always a boundary while any widget exists.
+            var target = Calendar.getInstance().apply { add(Calendar.DAY_OF_YEAR, 1); set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0); set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0) }.timeInMillis
             try {
                 val day = Calendar.getInstance()
                 for (d in 0 until 2) {
@@ -125,9 +138,13 @@ open class LockWidgets : AppWidgetProvider() {
             // the OS denied exact alarms; otherwise deferral happened at delivery time (sleep/batching).
             val canExact = android.os.Build.VERSION.SDK_INT < 31 || a.canScheduleExactAlarms()
             var pulseExact = true; var boundExact = true
-            try { a.setExactAndAllowWhileIdle(AlarmManager.RTC, minute, pulse(c)) } catch (e: SecurityException) { pulseExact = false; a.setAndAllowWhileIdle(AlarmManager.RTC, minute, pulse(c)) }
+            // Per-minute pulse only while a countdown/progress widget exists; date/tasbih/schedule
+            // widgets change at midnight and prayer boundaries, which the boundary alarm covers.
+            val pulseOn = dynamicActive(c)
+            if (pulseOn) { try { a.setExactAndAllowWhileIdle(AlarmManager.RTC, minute, pulse(c)) } catch (e: SecurityException) { pulseExact = false; a.setAndAllowWhileIdle(AlarmManager.RTC, minute, pulse(c)) } }
+            else a.cancel(pulse(c))
             if (target > 0) { try { a.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, target, boundaryPi(c)) } catch (e: SecurityException) { boundExact = false; a.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, target, boundaryPi(c)) } }
-            android.util.Log.i("WathakkerLock", "arm next=$minute target=$target canExact=$canExact pulseExact=$pulseExact boundExact=$boundExact")
+            android.util.Log.i("WathakkerLock", "arm next=$minute target=$target pulseOn=$pulseOn canExact=$canExact pulseExact=$pulseExact boundExact=$boundExact")
         }
         @JvmStatic fun updateAll(c: Context) { com.example.utils.Digits.refresh(c); watchLanguage(c); val m = AppWidgetManager.getInstance(c); for (t in TYPES) for (id in m.getAppWidgetIds(ComponentName(c, t))) update(c, m, id, t) }
         /** Minute-pulse update: countdown types every tick, static types only when the phase tracker flags a boundary. */
@@ -145,16 +162,29 @@ open class LockWidgets : AppWidgetProvider() {
                 lastDayKey = dayKey; lastPhase = next; lastIqama = iqama; return changed
             } catch (e: Exception) { android.util.Log.w("WathakkerLock", "phase tracking failed - full update", e); return true }
         }
-        private var tcDay = -1L; private var tcLat = Double.NaN; private var tcLng = Double.NaN; private var tcMethod = -1; private var tcVal: LongArray? = null
-        /** Per-day cache of the prayer-time calculation, keyed on date + location + method. */
+        private var tcDay = -1L; private var tcLat = Double.NaN; private var tcLng = Double.NaN; private var tcMethod = -1; private var tcSig = Int.MIN_VALUE; private var tcVal: LongArray? = null
+        /** Every calculation input beyond date/location/method: Asr juristic factor, high-latitude
+         *  rule, the six per-prayer minute adjustments and the default time zone. A change to any of
+         *  them must invalidate the cache or widgets keep showing times computed with old settings. */
+        private fun settingsSig(c: Context): Int {
+            val p = c.getSharedPreferences("fajr_prefs", 0)
+            var h = 17
+            h = 31 * h + p.getInt("asr_juristic", 0)
+            h = 31 * h + p.getInt("high_lat_rule", 0)
+            for (k in arrayOf("adj_fajr", "adj_shuruq", "adj_dhuhr", "adj_asr", "adj_maghrib", "adj_isha")) h = 31 * h + p.getInt(k, 0)
+            h = 31 * h + java.util.TimeZone.getDefault().id.hashCode()
+            return h
+        }
+        /** Per-day cache of the prayer-time calculation, keyed on date + location + method + all other calc inputs. */
         @Synchronized @JvmStatic @Throws(Exception::class) fun timesCached(c: Context, day: Calendar): LongArray {
             val prefs = FajrPreferences(c)
             val lat = prefs.latitude; val lng = prefs.longitude
             val method = prefs.calculationMethodId
+            val sig = settingsSig(c)
             val key = day.get(Calendar.YEAR) * 1000L + day.get(Calendar.DAY_OF_YEAR)
             val cached = tcVal
-            if (cached != null && key == tcDay && lat == tcLat && lng == tcLng && method == tcMethod) return cached.clone()
-            val r = times(c, day); tcDay = key; tcLat = lat; tcLng = lng; tcMethod = method; tcVal = r; return r.clone()
+            if (cached != null && key == tcDay && lat == tcLat && lng == tcLng && method == tcMethod && sig == tcSig) return cached.clone()
+            val r = times(c, day); tcDay = key; tcLat = lat; tcLng = lng; tcMethod = method; tcSig = sig; tcVal = r; return r.clone()
         }
         private fun update(c: Context, m: AppWidgetManager, id: Int, type: Class<*>) {
             com.example.utils.Digits.refresh(c)
