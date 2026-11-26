@@ -1,0 +1,54 @@
+name: Build signed watch release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+      - name: Run unit tests
+        run: gradle :wear:testDebugUnitTest -PwithWear --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+      - name: Build release APK
+        run: gradle :wear:assembleRelease -PwithWear --no-daemon -Dorg.gradle.jvmargs="-Xmx4g -Dfile.encoding=UTF-8 -Djava.awt.headless=true"
+      # The wear release build type is wired to the debug key in wear/build.gradle.kts; like the
+      # shipped watch APKs, the release artifact is re-signed here with the real release key so a
+      # watch update installs cleanly over the previous release. Same secrets as release-phone.yml.
+      - name: Sign with the release key
+        env:
+          WATHKKIR_KEYSTORE_BASE64: ${{ secrets.WATHKKIR_KEYSTORE_BASE64 }}
+          WATHKKIR_STORE_PASSWORD: ${{ secrets.WATHKKIR_STORE_PASSWORD }}
+          WATHKKIR_KEY_PASSWORD: ${{ secrets.WATHKKIR_KEY_PASSWORD }}
+          MORPHE_KEYSTORE_BASE64: ${{ secrets.MORPHE_KEYSTORE_BASE64 }}
+          MORPHE_KEY_PASSWORD: ${{ secrets.MORPHE_KEY_PASSWORD }}
+        run: |
+          set -e
+          KS_B64="${WATHKKIR_KEYSTORE_BASE64:-$MORPHE_KEYSTORE_BASE64}"
+          KS_PASS="${WATHKKIR_STORE_PASSWORD:-$MORPHE_KEY_PASSWORD}"
+          KEY_PASS="${WATHKKIR_KEY_PASSWORD:-$KS_PASS}"
+          if [ -z "$KS_B64" ]; then echo "no keystore secret set (WATHKKIR_KEYSTORE_BASE64)"; exit 1; fi
+          echo "$KS_B64" | base64 -d > release.keystore
+          if ! keytool -list -keystore release.keystore -storepass "$KS_PASS" >/tmp/kt.txt 2>&1; then echo "keystore password rejected"; exit 1; fi
+          ALIAS=$(grep -i 'PrivateKeyEntry' /tmp/kt.txt | head -1 | cut -d, -f1)
+          echo "signing alias: $ALIAS"
+          BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)
+          VER=$(grep -oP 'versionName = "\K[^"]+' wear/build.gradle.kts)
+          APK=$(ls wear/build/outputs/apk/release/*.apk | head -1)
+          "$ANDROID_HOME/build-tools/$BT/zipalign" -p -f 4 "$APK" aligned.apk
+          "$ANDROID_HOME/build-tools/$BT/apksigner" sign --ks release.keystore --ks-pass "pass:$KS_PASS" --key-pass "pass:$KEY_PASS" --ks-key-alias "$ALIAS" --v1-signing-enabled=true --v2-signing-enabled=true --out "Wathkkir-watch-$VER.apk" aligned.apk
+          "$ANDROID_HOME/build-tools/$BT/apksigner" verify --print-certs "Wathkkir-watch-$VER.apk"
+          rm -f release.keystore aligned.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signed-watch-release
+          path: Wathkkir-watch-*.apk
+          retention-days: 7
