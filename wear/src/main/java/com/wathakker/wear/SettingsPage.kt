@@ -398,12 +398,32 @@ fun SettingsContent(sub: Int, w: Float, go: (Int) -> Unit, rootListState: Scalin
     }
 }
 
+/** Same gate the phone uses for prayer-time location: at most 30 minutes old, accuracy 500 m or better when reported. */
+internal fun isAcceptableGpsFix(ageMs: Long, hasAccuracy: Boolean, accuracyM: Float): Boolean =
+    ageMs <= 30L * 60 * 1000 && (!hasAccuracy || accuracyM <= 500f)
+
+private fun acceptableFix(l: android.location.Location): Boolean =
+    isAcceptableGpsFix((System.currentTimeMillis() - l.time).coerceAtLeast(0L), l.hasAccuracy(), l.accuracy)
+
 @android.annotation.SuppressLint("MissingPermission")
 fun refreshGps(c: Context) {
     try {
         if (ContextCompat.checkSelfPermission(c, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) return
         val lm = c.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        val l = lm.getProviders(true).mapNotNull { lm.getLastKnownLocation(it) }.maxByOrNull { it.time }
-        if (l != null) Settings.saveGps(c, l.latitude, l.longitude)
+        val providers = lm.getProviders(true)
+        val last = providers.mapNotNull { lm.getLastKnownLocation(it) }.filter { acceptableFix(it) }.maxByOrNull { it.time }
+        if (last != null) { Settings.saveGps(c, last.latitude, last.longitude); return }
+        // No acceptable cached fix: ask for one fresh fix (20 s cap). A stale or imprecise result is never saved.
+        val fine = ContextCompat.checkSelfPermission(c, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+        val provider = when {
+            fine && LocationManager.GPS_PROVIDER in providers -> LocationManager.GPS_PROVIDER
+            LocationManager.NETWORK_PROVIDER in providers -> LocationManager.NETWORK_PROVIDER
+            else -> return
+        }
+        val cancel = android.os.CancellationSignal()
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({ cancel.cancel() }, 20_000L)
+        lm.getCurrentLocation(provider, cancel, c.mainExecutor) { l ->
+            if (l != null && acceptableFix(l)) Settings.saveGps(c, l.latitude, l.longitude)
+        }
     } catch (_: Throwable) {}
 }

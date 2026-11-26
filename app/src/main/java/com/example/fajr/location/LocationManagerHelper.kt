@@ -99,15 +99,16 @@ class LocationManagerHelper(private val context: Context) {
 
     /**
      * The location the prayer calculation should use: the last-known fix when it passes
-     * [LocationPolicy], otherwise a single fresh fix (bounded by [FIX_TIMEOUT_MS]). Falls back to
-     * the stale last-known fix rather than nothing, so a weak GPS day never blocks the update.
+     * [LocationPolicy], otherwise a single fresh fix (bounded by [FIX_TIMEOUT_MS]) that must pass the same policy. Returns
+     * null when neither passes the policy, so callers keep the previously saved coordinates instead
+     * of computing from a stale or imprecise fix.
      */
     suspend fun getFreshLocation(): Location? {
         if (!hasLocationPermission()) return null
         val last = getLastKnownLocation()
         if (last != null && LocationPolicy.isAcceptable(ageMs(last), last.hasAccuracy(), last.accuracy)) return last
         val fresh = requestSingleFix()
-        return fresh ?: last
+        return if (fresh != null && LocationPolicy.isAcceptable(ageMs(fresh), fresh.hasAccuracy(), fresh.accuracy)) fresh else null
     }
 
     private fun ageMs(loc: Location): Long = (System.currentTimeMillis() - loc.time).coerceAtLeast(0L)
@@ -142,7 +143,7 @@ class LocationManagerHelper(private val context: Context) {
     }
 
     companion object {
-        /** Longest a fresh-fix request may take before the stale last-known fix is used. */
+        /** Longest a fresh-fix request may take before giving up (no location update is applied). */
         const val FIX_TIMEOUT_MS = 20_000L
         /** Production identity seam: same field selection and normalization as the display name. */
         @JvmStatic

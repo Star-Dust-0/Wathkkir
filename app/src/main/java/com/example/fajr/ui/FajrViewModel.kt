@@ -148,7 +148,7 @@ class FajrViewModel(application: Application) : AndroidViewModel(application) {
         if (prefs.useCurrentLocation) { updateLocationFromGpsInternal(); return@launch }
         _uiState.update { it.copy(isRefreshing = true) }
         refreshFajrTimeInternal()
-        try { if (prefs.isAlarmEnabled) scheduler.scheduleNextFajrAlarm() } catch (t: Throwable) { android.util.Log.w("FajrViewModel", "fajr reschedule failed", t) }
+        rescheduleAll()
         _uiState.update { it.copy(isRefreshing = false) }
     } }
     private fun refreshFajrTimeInternal() {
