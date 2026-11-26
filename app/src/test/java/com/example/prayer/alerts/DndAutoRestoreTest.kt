@@ -55,4 +55,22 @@ class DndAutoRestoreTest {
         PrayerAlertReceiver.restoreDnd(app)
         assertEquals(NotificationManager.INTERRUPTION_FILTER_ALL, nm().currentInterruptionFilter)
     }
+
+    @Test
+    fun userSwitchingToAlarmsOnlyIsNotOverwritten() {
+        nm().setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+        PrayerAlertReceiver.enableDnd(app)
+        nm().setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALARMS) // user changes mode by hand
+        PrayerAlertReceiver.restoreDnd(app)
+        assertEquals(NotificationManager.INTERRUPTION_FILTER_ALARMS, nm().currentInterruptionFilter)
+    }
+
+    @Test
+    fun userSwitchingToTotalSilenceIsNotOverwritten() {
+        nm().setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+        PrayerAlertReceiver.enableDnd(app)
+        nm().setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_NONE)
+        PrayerAlertReceiver.restoreDnd(app)
+        assertEquals(NotificationManager.INTERRUPTION_FILTER_NONE, nm().currentInterruptionFilter)
+    }
 }

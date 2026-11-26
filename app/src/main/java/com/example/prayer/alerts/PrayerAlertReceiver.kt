@@ -185,7 +185,7 @@ class PrayerAlertReceiver : BroadcastReceiver() {
         /**
          * Iqama-time DND-off. Only acts when this app turned DND on (otherwise it was never ours to
          * undo - e.g. the full-screen Fajr alarm suppressed the adhan bell, so DND was never enabled).
-         * If the user turned DND off by hand meanwhile (filter back to ALL) that choice is kept.
+         * If the user changed the mode by hand meanwhile (anything other than the PRIORITY we set) that choice is kept.
          */
         @JvmStatic internal fun restoreDnd(context: Context) {
             try {
@@ -194,7 +194,8 @@ class PrayerAlertReceiver : BroadcastReceiver() {
                 p.edit().putBoolean(KEY_DND_BY_US, false).apply()
                 val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 if (!nm.isNotificationPolicyAccessGranted) return
-                if (nm.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_ALL) return
+                // Only undo what we set: any other current mode (ALL, ALARMS, NONE...) is the user's own choice.
+                if (nm.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_PRIORITY) return
                 val prev = p.getInt(KEY_DND_PREV, NotificationManager.INTERRUPTION_FILTER_ALL)
                 nm.setInterruptionFilter(
                     if (prev in NotificationManager.INTERRUPTION_FILTER_ALL..NotificationManager.INTERRUPTION_FILTER_ALARMS)

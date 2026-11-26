@@ -68,12 +68,12 @@ for name,pkg in [('original','com.wathakker.app'),('comparison','com.wathakker.a
   x=f'<map><string name="language">{lang}</string><string name="digits_style">latin</string><string name="app_font">app</string><float name="font_scale" value="1.0"/><boolean name="onboarding_done" value="true"/><boolean name="perm_flow_done" value="true"/></map>'
   adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
   launch();time.sleep(8)
-  # Legacy permission-stage fixtures, explicit app-private test data only.
+  # Legacy permission-stage fixtures (location explainer only; the files step was removed in 3.6), explicit app-private test data only.
   adb('shell','am','force-stop',pkg)
   for permission in ['ACCESS_COARSE_LOCATION','ACCESS_FINE_LOCATION']:adb('shell','pm','revoke',pkg,'android.permission.'+permission)
   x=f'<map><string name="language">{lang}</string><boolean name="onboarding_done" value="true"/><int name="perm_stage" value="1"/></map>'
   adb('shell',f"echo '{x}' > {folder}/app_prefs.xml; chown $(stat -c %u:%g /data/data/{pkg}) {folder}/app_prefs.xml; chmod 660 {folder}/app_prefs.xml; restorecon -R {folder}")
-  launch();shot('location-explainer');check('deny location explainer',tap('Not now' if lang=='en' else 'ليس الآن'));shot('files-explainer');check('deny files explainer',tap('Not now' if lang=='en' else 'ليس الآن'));shot('permission-finished');check('permission stage3',prefs().get('perm_stage')=='3');check('permission done',prefs().get('perm_flow_done')=='true');launch();shot('permission-not-reasked')
+  launch();shot('location-explainer');check('deny location explainer',tap('Not now' if lang=='en' else 'ليس الآن'));shot('permission-finished');check('permission stage3',prefs().get('perm_stage')=='3');check('permission done',prefs().get('perm_flow_done')=='true');launch();shot('permission-not-reasked')
   # Fresh onboarding language page and persisted page advancement. No GPS/network assumptions.
   adb('shell','am','force-stop',pkg);adb('shell','pm','clear',pkg)
   for permission in ['POST_NOTIFICATIONS']:adb('shell','pm','grant',pkg,'android.permission.'+permission)
